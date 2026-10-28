@@ -11,9 +11,8 @@ Tämä kansio sisältää portfoliosivustolla käytettäviä kuvatiedostoja, kut
 
 Image paths referenced in the website should match the file names and directory names in this repository. Use descriptive file names when adding new assets.
 
+## Copyright and use | Tekijänoikeudet ja käyttö
 
-## Copyright and reuse | Tekijänoikeudet ja käyttö
+Images in this portfolio are my own unless otherwise stated beside the image or project. Some screenshots may show third-party software, coursework or collaborative work; the rights to those elements remain with their respective owners. Do not reuse images without permission from the relevant rights holder.
 
-Portfolio images and visual samples are provided for viewing as portfolio material. Copyright belongs to the respective rights holder. Do not reuse, redistribute, modify, or use images commercially without prior written permission. Some screenshots originate from coursework and may depict software or interfaces belonging to third parties; those third-party rights remain with their owners.
-
-Portfolion kuvat ja visuaaliset näytteet on julkaistu katseltaviksi työnäytteinä. Tekijänoikeudet kuuluvat kunkin materiaalin oikeudenhaltijalle. Kuvia ei saa käyttää uudelleen, jakaa, muokata tai käyttää kaupallisesti ilman etukäteen annettua kirjallista lupaa. Osa kuvakaappauksista on opintotöistä ja voi esittää kolmansille osapuolille kuuluvia ohjelmistoja tai käyttöliittymiä; näiden oikeudet säilyvät niiden omistajilla.
+Portfolion kuvat ovat omiani, ellei kuvan tai projektin yhteydessä toisin mainita. Osa kuvakaappauksista voi esittää kolmansien osapuolten ohjelmistoja, opintotöitä tai yhteistyöprojekteja; niiden oikeudet säilyvät asianomaisilla oikeudenhaltijoilla. Kuvia ei saa käyttää uudelleen ilman asianomaisen oikeudenhaltijan lupaa.
