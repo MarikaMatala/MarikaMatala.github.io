@@ -450,7 +450,7 @@ a:focus-visible,button:focus-visible{outline-color:#B6FF3B}
 .intro-strip-mark{font-size:clamp(2.5rem,6vw,5rem);font-weight:900;letter-spacing:-.1em;line-height:1;color:#B6FF3B;text-shadow:0 0 22px #B6FF3B24}
 .intro-strip-mark span{display:block;font-size:1.2rem;letter-spacing:0;margin-top:12px}
 .intro-strip-copy{max-width:920px}
-.intro-strip-copy h2{font-size:clamp(1.65rem,3.5vw,2.7rem);line-height:1.2;margin:12px 0 16px;letter-spacing:-.05em}
+.intro-strip-copy .intro-strip-title{font-size:clamp(1.65rem,3.5vw,2.7rem);line-height:1.2;margin:12px 0 16px;letter-spacing:-.05em}
 .intro-strip-copy>p:not(.eyebrow){max-width:800px;color:#C5C5BC;line-height:1.8;margin:0 0 12px}
 .intro-strip-copy .intro-strip-note{color:#B6FF3B;font-size:.87rem}
 .study-topics{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:22px 0 0;padding:0}
