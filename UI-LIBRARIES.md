@@ -62,9 +62,6 @@ Tämä on pieni, riippuvuuksista vapaa esimerkki. Lisää se vain koristeellisee
 }
 ```
 
-## Kuvat ja äänet
-
-Higgsfieldillä tuotetut hahmot, taustat, tunnusvideot tai peliesineiden kuvat eivät kuulu nykyiseen portfolioon automaattisesti. Lisää ne vasta, kun kuvat ovat saatavilla, niiden käyttötarkoitus on selvä ja niiden käyttöoikeudet on tarkistettu. Portfolion omat työnäytekuvat pidetään erillään muiden projektien aineistoista.
 
 ## Dokumentaatio ja inspiraatio
 
