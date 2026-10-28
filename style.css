@@ -2025,3 +2025,101 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
 @media(prefers-reduced-motion:reduce){
   .gothic-button,.home-work-cta,.contact-method,.project-card{transition:none!important}
 }
+
+
+/* Portfolio 2026 final legibility pass: readable title, subtle binary drift and responsive spacing. */
+.hero-index{
+  right:clamp(18px,5vw,72px);
+  bottom:clamp(18px,3vw,34px);
+  z-index:2;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:0;
+  padding:8px 12px 10px;
+  color:#f3e7e9;
+  font-family:'Cinzel',Georgia,serif;
+  font-size:clamp(1rem,2vw,1.35rem);
+  font-weight:700;
+  line-height:1;
+  letter-spacing:.13em;
+  text-align:right;
+  text-shadow:0 2px 5px #000,0 0 18px #a83e62a6;
+  isolation:isolate;
+}
+.hero-index::before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:0;
+  border:1px solid #8d4a5e9c;
+  background:linear-gradient(135deg,#080609e8,#2a0b1be0 62%,#0a0d0ae8);
+  box-shadow:inset 0 0 0 3px #ffffff05,0 8px 24px #0008;
+  transform:rotate(-2deg);
+}
+.hero-index::after{
+  content:"0101 0010 1101 0010 1011 0100";
+  position:absolute;
+  z-index:-2;
+  left:-1.8rem;
+  top:-1.5rem;
+  width:max-content;
+  color:#a8c49e;
+  font:500 clamp(.55rem,.9vw,.72rem)/1.6 var(--mono);
+  letter-spacing:.19em;
+  white-space:nowrap;
+  opacity:.5;
+  text-shadow:0 0 9px #92c48a70;
+  animation:portfolio-binary-drift 10s ease-in-out infinite alternate;
+  pointer-events:none;
+}
+.hero-index .portfolio-word{
+  display:block;
+  color:#f3e4eb;
+  font-family:'UnifrakturCook','Cormorant Garamond',serif;
+  font-size:clamp(1.45rem,3.4vw,2.5rem);
+  font-weight:700;
+  line-height:.95;
+  letter-spacing:.025em;
+  text-transform:none;
+}
+.hero-index .portfolio-year{
+  display:block;
+  margin-top:6px;
+  color:#d58aa1;
+  font-family:'Cinzel',Georgia,serif;
+  font-size:clamp(1.2rem,2.8vw,2rem);
+  font-weight:700;
+  letter-spacing:.17em;
+  line-height:1;
+}
+@keyframes portfolio-binary-drift{
+  0%{transform:translate3d(0,0,0);opacity:.18}
+  50%{opacity:.58}
+  100%{transform:translate3d(14px,-7px,0);opacity:.28}
+}
+/* Replace the flying animal motif with a small stream of binary code. */
+.site-header::before{
+  content:"0101 0010 1011 0100";
+  font-family:var(--mono);
+  font-size:clamp(.55rem,.8vw,.7rem);
+  font-weight:500;
+  letter-spacing:.12em;
+  color:#b7d0a9;
+  text-shadow:0 0 8px #7aa86d88;
+  white-space:nowrap;
+  width:max-content;
+}
+@media(max-width:760px){
+  .hero-index{right:18px;bottom:16px;padding:7px 9px}
+  .hero-index::after{left:-.5rem;top:-1rem;font-size:.52rem;letter-spacing:.1em}
+  .hero-index .portfolio-word{font-size:1.45rem}
+  .hero-index .portfolio-year{font-size:1.25rem}
+}
+@media(max-width:420px){
+  .hero-index{right:12px;bottom:12px}
+  .hero-index::after{content:"0101 0010 1011";opacity:.25}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-index::after{animation:none}
+}
