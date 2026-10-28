@@ -197,3 +197,26 @@ setLanguage('fi');
 updateCarouselLabels(currentLanguage);
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
+
+
+// Copyright details dialog: open from the compact © MM footer control.
+(() => {
+  const dialog = document.getElementById('copyright-dialog');
+  const trigger = document.getElementById('copyright-trigger');
+  const close = document.getElementById('copyright-close');
+  if (!dialog || !trigger || !close) return;
+  trigger.addEventListener('click', () => {
+    if (typeof dialog.showModal === 'function') dialog.showModal();
+    else dialog.setAttribute('open', '');
+  });
+  close.addEventListener('click', () => {
+    if (typeof dialog.close === 'function') dialog.close();
+    else dialog.removeAttribute('open');
+  });
+  dialog.addEventListener('click', (event) => {
+    if (event.target === dialog && typeof dialog.close === 'function') dialog.close();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && dialog.open && typeof dialog.close === 'function') dialog.close();
+  });
+})();
