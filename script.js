@@ -16,8 +16,9 @@ function setLanguage(language) {
     if (value !== undefined) element.innerHTML = value;
   });
   if (languageToggle) {
-    languageToggle.textContent = language === 'fi' ? 'EN ↗' : 'FI ↗';
-    languageToggle.setAttribute('aria-label', language === 'fi' ? 'Switch to English' : 'Vaihda suomeksi');
+    const label = languageToggle.querySelector('.language-label');
+    if (label) label.textContent = language === 'fi' ? 'ENGLISH' : 'SUOMEKSI';
+    languageToggle.setAttribute('aria-label', language === 'fi' ? 'Vaihda sivusto englanniksi' : 'Switch the website to Finnish');
   }
   updateCarouselLabels(language);
 }
@@ -192,6 +193,7 @@ if (oopBrowser) {
   });
 })();
 
+setLanguage('fi');
 updateCarouselLabels(currentLanguage);
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
