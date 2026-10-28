@@ -9,8 +9,28 @@
   <!-- MUOKKAUSVINKKI: sivun ulkoasu on tiedostossa style.css. Kommentit eivät näy verkkosivulla. -->
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
-  <!-- Umami Cloud: yksityisyyttä kunnioittava kävijätilastointi -->
-  <script defer src="https://cloud.umami.is/script.js" data-website-id="0f1e9249-905e-4386-881c-295fd7c92e3c"></script>
+  <!-- Umami Cloud: kävijätilastointi. Lisää ?owner=1 URL-osoitteeseen merkitäksesi tämän selaimen omistajan käynneiksi. -->
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('owner') === '1') {
+        localStorage.setItem('portfolio-analytics-owner', '1');
+      } else if (params.get('owner') === '0') {
+        localStorage.removeItem('portfolio-analytics-owner');
+      }
+
+      const tracker = document.createElement('script');
+      tracker.defer = true;
+      tracker.src = 'https://cloud.umami.is/script.js';
+      tracker.dataset.websiteId = '0f1e9249-905e-4386-881c-295fd7c92e3c';
+
+      if (localStorage.getItem('portfolio-analytics-owner') === '1') {
+        tracker.dataset.distinctId = 'portfolio-owner';
+      }
+
+      document.head.appendChild(tracker);
+    })();
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main-content" data-fi="Siirry sisältöön" data-en="Skip to content">Siirry sisältöön</a>
