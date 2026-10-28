@@ -135,10 +135,12 @@ if (oopBrowser) {
 
   const help = document.createElement('span');
   help.className = 'lightbox-help';
-  help.textContent = 'Sulje napsauttamalla kuvaa tai taustaa · Close by clicking image or backdrop';
   const enlarged = document.createElement('img');
   enlarged.alt = '';
-  overlay.append(help, enlarged);
+  const rights = document.createElement('div');
+  rights.className = 'lightbox-rights';
+  rights.innerHTML = '<strong>© MM · Tekijänoikeudet / Copyright</strong><span class="rights-copy-fi">Koodit ja visuaaliset työt ovat itse tekemiäni harrastusprojekteja tai opintojen harjoitustöitä, ellei toisin mainita. Kuvat ovat omiani, ellei kuvan tai projektin yhteydessä toisin ilmoiteta. Yhteistyö- ja kolmansien osapuolten materiaalien oikeudet säilyvät niiden omilla oikeudenhaltijoilla. Älä käytä materiaaleja uudelleen ilman lupaa.</span><span class="rights-copy-en" hidden>Code and visual work are created by me as personal projects or coursework unless otherwise credited. Images are my own unless stated otherwise alongside the image or project. Rights to collaborative and third-party materials remain with their respective owners. Please do not reuse materials without permission.</span>';
+  overlay.append(help, enlarged, rights);
   document.body.appendChild(overlay);
 
   let previousFocus = null;
@@ -147,6 +149,11 @@ if (oopBrowser) {
     previousFocus = image;
     enlarged.src = image.currentSrc || image.src;
     enlarged.alt = image.alt || 'Portfolio image';
+    help.textContent = currentLanguage === 'fi'
+      ? 'Sulje napsauttamalla kuvaa tai taustaa · ESC'
+      : 'Click image or backdrop to close · ESC';
+    rights.querySelector('.rights-copy-fi').hidden = currentLanguage !== 'fi';
+    rights.querySelector('.rights-copy-en').hidden = currentLanguage !== 'en';
     overlay.hidden = false;
     overlay.focus();
     document.body.style.overflow = 'hidden';
