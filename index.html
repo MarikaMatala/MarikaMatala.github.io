@@ -7,8 +7,8 @@
   <meta name="theme-color" content="#0B1820">
   <title>Marika Matalamäki — Portfolio</title>
   <!-- MUOKKAUSVINKKI: sivun ulkoasu on tiedostossa style.css. Kommentit eivät näy verkkosivulla. -->
-  <link rel="stylesheet" href="style.css?v=4">
-  <script src="script.js?v=4" defer></script>
+  <link rel="stylesheet" href="style.css?v=5">
+  <script src="script.js?v=5" defer></script>
   <!-- Umami Cloud: kävijätilastointi. Lisää ?owner=1 URL-osoitteeseen merkitäksesi tämän selaimen omistajan käynneiksi. -->
   <script>
     (function () {
@@ -66,10 +66,10 @@
         <div class="portrait-shape shape-one"></div>
         <div class="portrait-shape shape-two"></div>
         <div class="portrait-frame">
-          <img src="images/marika-portrait.jpg" alt="Marika Matalamäki" class="portrait" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+          <img src="images/omakuva.png" alt="Marika Matalamäki" class="portrait" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
           <div class="image-placeholder portrait-placeholder">
             <span class="placeholder-mark">MM</span>
-            <span data-fi="Lisää profiilikuvasi tiedostoon images/marika-portrait.jpg" data-en="Add your portrait as images/marika-portrait.jpg">Lisää profiilikuvasi tiedostoon images/marika-portrait.jpg</span>
+            <span data-fi="Profiilikuva ei latautunut." data-en="The profile image could not be loaded.">Profiilikuva ei latautunut.</span>
           </div>
         </div>
         <span class="portrait-caption" data-fi="Kehittäjä · Suunnittelija · Viestijä" data-en="Developer · Designer · Communicator">Kehittäjä · Suunnittelija · Viestijä</span>
@@ -142,11 +142,108 @@
             <span class="oop-grade" aria-label="Kurssin arvosana 5">5<span>/5</span></span>
           </div>
           <p data-fi="Sain olio-ohjelmoinnin kurssista arvosanan 5. Olin aidosti kiinnostunut aiheesta, ja C# oli jo tullut tutuksi ennen AMK-opintoja pelialan perusteet -kurssilla. Tehtävissä harjoittelin luokkien ja olioiden suunnittelua, kapselointia, perintää, rajapintoja sekä olioiden välistä yhteistyötä." data-en="I earned the highest grade, 5/5, in the object-oriented programming course. I was genuinely interested in the subject, and I had already become familiar with C# through a game development fundamentals course before starting my degree. The exercises covered classes and objects, encapsulation, inheritance, interfaces and object composition.">Sain olio-ohjelmoinnin kurssista arvosanan 5. Olin aidosti kiinnostunut aiheesta, ja C# oli jo tullut tutuksi ennen AMK-opintoja pelialan perusteet -kurssilla. Tehtävissä harjoittelin luokkien ja olioiden suunnittelua, kapselointia, perintää, rajapintoja sekä olioiden välistä yhteistyötä.</p>
-          <p class="interaction-hint" data-fi="Vinkki: avaa tai sulje koodiesimerkki napsauttamalla sen otsikkoa. + tarkoittaa, että esimerkki on suljettu, ja − tarkoittaa, että se on auki. Otsikkoa voi käyttää myös näppäimistöllä." data-en="Tip: select a code example’s heading to expand or collapse it. + means the example is closed, and − means it is open. You can also operate the heading with your keyboard.">Vinkki: avaa tai sulje koodiesimerkki napsauttamalla sen otsikkoa. + tarkoittaa, että esimerkki on suljettu, ja − tarkoittaa, että se on auki. Otsikkoa voi käyttää myös näppäimistöllä.</p>
-          <div class="oop-samples">
-            <details class="code-sample" open>
-              <summary><span>01</span><span data-fi="Perintä ja uudelleenkäyttö" data-en="Inheritance and reuse">Perintä ja uudelleenkäyttö</span></summary>
-              <p data-fi="Boss perii Employee-luokan ominaisuudet ja käyttää kantaluokan konstruktoria." data-en="Boss inherits Employee properties and reuses the base-class constructor.">Boss perii Employee-luokan ominaisuudet ja käyttää kantaluokan konstruktoria.</p>
+          <p class="interaction-hint" data-fi="Selaa esimerkkejä nuolipainikkeilla tai valitse tehtävä luettelosta. Koodit ovat lyhennettyjä, yleisiksi muokattuja näytteitä. Ne havainnollistavat tehtävissä käytettyjä ohjelmointiperiaatteita." data-en="Browse the examples with the arrow buttons or choose an exercise from the list. The code has been shortened and generalised to remove unnecessary personal or project-specific details. It illustrates the programming concepts used in the exercises.">Selaa esimerkkejä nuolipainikkeilla tai valitse tehtävä luettelosta. Koodit ovat lyhennettyjä, yleisiksi muokattuja näytteitä. Ne havainnollistavat tehtävissä käytettyjä ohjelmointiperiaatteita.</p>
+          <div class="oop-browser" id="oop-browser" role="region" aria-label="Olio-ohjelmoinnin koodiesimerkit" data-fi-label="Olio-ohjelmoinnin koodiesimerkit" data-en-label="Object-oriented programming code samples">
+            <div class="oop-browser-toolbar">
+              <label for="oop-sample-select" data-fi="Valitse esimerkki" data-en="Choose an example">Valitse esimerkki</label>
+              <select id="oop-sample-select" aria-label="Valitse olio-ohjelmoinnin esimerkki">
+                <option value="0" data-fi="T1 · Syötteen tarkistus" data-en="T1 · Input validation">T1 · Syötteen tarkistus</option>
+                <option value="1" data-fi="T6 · Luokka ja ominaisuudet" data-en="T6 · Class and properties">T6 · Luokka ja ominaisuudet</option>
+                <option value="2" data-fi="T9 · Konstruktori ja ToString" data-en="T9 · Constructor and ToString">T9 · Konstruktori ja ToString</option>
+                <option value="3" data-fi="T10 · Oliot kokoelmassa" data-en="T10 · Objects in a collection">T10 · Oliot kokoelmassa</option>
+                <option value="4" data-fi="T13 · Ehtojen tarkistus luokassa" data-en="T13 · Validation in a class">T13 · Ehtojen tarkistus luokassa</option>
+                <option value="5" data-fi="T15 · Perintä ja uudelleenkäyttö" data-en="T15 · Inheritance and reuse">T15 · Perintä ja uudelleenkäyttö</option>
+                <option value="6" data-fi="T20 · Abstrakti luokka ja ylikirjoitus" data-en="T20 · Abstract class and overriding">T20 · Abstrakti luokka ja ylikirjoitus</option>
+                <option value="7" data-fi="T23 · Rajapinta ja jono" data-en="T23 · Interface and queue">T23 · Rajapinta ja jono</option>
+                <option value="8" data-fi="T24 · Olioiden koostaminen" data-en="T24 · Object composition">T24 · Olioiden koostaminen</option>
+                <option value="9" data-fi="T29–T30 · Rajapinta ja eri toteutukset" data-en="T29–T30 · Interface and implementations">T29–T30 · Rajapinta ja eri toteutukset</option>
+              </select>
+            </div>
+            <div class="oop-sample-panels">
+            <article class="oop-sample-panel" data-sample="0">
+              <div class="sample-panel-heading"><span class="sample-task">T1</span><h4 data-fi="Syötteen tarkistus" data-en="Input validation">Syötteen tarkistus</h4></div>
+              <p data-fi="TryParse tarkistaa, että käyttäjän syöte voidaan tulkita kokonaisluvuksi ennen kuin ohjelma käyttää arvoa. Sama periaate auttaa käsittelemään virheellisiä syötteitä hallitusti." data-en="TryParse checks whether user input can be parsed as an integer before the program uses it. This helps handle invalid input gracefully.">TryParse tarkistaa, että käyttäjän syöte voidaan tulkita kokonaisluvuksi ennen kuin ohjelma käyttää arvoa. Sama periaate auttaa käsittelemään virheellisiä syötteitä hallitusti.</p>
+              <pre><code>if (int.TryParse(input, out int score))
+{
+    Console.WriteLine($&quot;Pisteet: {score}&quot;);
+}
+else
+{
+    Console.WriteLine(&quot;Anna kelvollinen numero.&quot;);
+}</code></pre>
+            </article>
+            <article class="oop-sample-panel" hidden data-sample="1">
+              <div class="sample-panel-heading"><span class="sample-task">T6</span><h4 data-fi="Luokka ja ominaisuudet" data-en="Class and properties">Luokka ja ominaisuudet</h4></div>
+              <p data-fi="Saunan kiukaan harjoituksessa mallinnetaan laitteen tilaa ominaisuuksilla ja metodilla. Käyttöliittymän tulostukset kannattaa pitää erillään luokan toiminnasta, jotta luokkaa voi käyttää uudelleen." data-en="The sauna-heater exercise models device state with properties and a method. Keeping console output outside the class makes the class more reusable.">Saunan kiukaan harjoituksessa mallinnetaan laitteen tilaa ominaisuuksilla ja metodilla. Käyttöliittymän tulostukset kannattaa pitää erillään luokan toiminnasta, jotta luokkaa voi käyttää uudelleen.</p>
+              <pre><code>public class SaunaHeater
+{
+    public bool IsOn { get; set; }
+    public int Temperature { get; set; }
+    public int Humidity { get; set; }
+
+    public string GetStatus()
+    {
+        return $&quot;On: {IsOn}, &quot; +
+            $&quot;temperature: {Temperature}&quot;;
+    }
+}</code></pre>
+            </article>
+            <article class="oop-sample-panel" hidden data-sample="2">
+              <div class="sample-panel-heading"><span class="sample-task">T9</span><h4 data-fi="Konstruktori ja ToString" data-en="Constructor and ToString">Konstruktori ja ToString</h4></div>
+              <p data-fi="Vehicle-luokka kokoaa ajoneuvon tiedot yhteen. Konstruktori alustaa olion, ja ToString-ylikirjoitus määrittelee, miten olio esitetään tekstinä." data-en="The Vehicle class groups vehicle data together. A constructor initializes the object, while overriding ToString defines its text representation.">Vehicle-luokka kokoaa ajoneuvon tiedot yhteen. Konstruktori alustaa olion, ja ToString-ylikirjoitus määrittelee, miten olio esitetään tekstinä.</p>
+              <pre><code>public class Vehicle
+{
+    public string Brand { get; set; }
+    public string Model { get; set; }
+    public int Speed { get; set; }
+
+    public Vehicle(string brand, string model)
+    {
+        Brand = brand;
+        Model = model;
+    }
+
+    public override string ToString() =&gt;
+        $&quot;{Brand} {Model}, {Speed} km/h&quot;;
+}</code></pre>
+            </article>
+            <article class="oop-sample-panel" hidden data-sample="3">
+              <div class="sample-panel-heading"><span class="sample-task">T10</span><h4 data-fi="Oliot kokoelmassa" data-en="Objects in a collection">Oliot kokoelmassa</h4></div>
+              <p data-fi="Student-tehtävässä luodaan opiskelijaolioita, lisätään ne List-kokoelmaan ja käsitellään niitä silmukalla. Esimerkki näyttää, miten samantyyppisiä olioita voidaan hallita yhdessä." data-en="The Student exercise creates student objects, stores them in a List and processes them in a loop. It shows how objects of the same type can be managed together.">Student-tehtävässä luodaan opiskelijaolioita, lisätään ne List-kokoelmaan ja käsitellään niitä silmukalla. Esimerkki näyttää, miten samantyyppisiä olioita voidaan hallita yhdessä.</p>
+              <pre><code>var students = new List&lt;Student&gt;
+{
+    new Student(&quot;Alex&quot;, 102),
+    new Student(&quot;Robin&quot;, 205),
+    new Student(&quot;Sam&quot;, 118)
+};
+
+students.Sort((a, b) =&gt;
+    a.StudentNumber.CompareTo(b.StudentNumber));
+
+foreach (Student student in students)
+{
+    Console.WriteLine(student.ShowInfo());
+}</code></pre>
+            </article>
+            <article class="oop-sample-panel" hidden data-sample="4">
+              <div class="sample-panel-heading"><span class="sample-task">T13</span><h4 data-fi="Ehtojen tarkistus luokassa" data-en="Validation in a class">Ehtojen tarkistus luokassa</h4></div>
+              <p data-fi="Hissi-esimerkissä GoTo-metodi tarkistaa kerrosnumeron ennen tilan muuttamista. Metodi palauttaa onnistumisen ja viestin, joten kutsuva ohjelma voi reagoida tulokseen." data-en="In the elevator example, GoTo validates the floor before changing state. It returns a success value and a message so the calling code can respond.">Hissi-esimerkissä GoTo-metodi tarkistaa kerrosnumeron ennen tilan muuttamista. Metodi palauttaa onnistumisen ja viestin, joten kutsuva ohjelma voi reagoida tulokseen.</p>
+              <pre><code>public bool GoTo(int floor, out string message)
+{
+    if (floor &lt; 1 || floor &gt; 5)
+    {
+        message = &quot;Kerros ei ole sallittu.&quot;;
+        return false;
+    }
+
+    CurrentFloor = floor;
+    message = $&quot;Hissi on kerroksessa {floor}.&quot;;
+    return true;
+}</code></pre>
+            </article>
+            <article class="oop-sample-panel" hidden data-sample="5">
+              <div class="sample-panel-heading"><span class="sample-task">T15</span><h4 data-fi="Perintä ja uudelleenkäyttö" data-en="Inheritance and reuse">Perintä ja uudelleenkäyttö</h4></div>
+              <p data-fi="Boss perii Employee-luokan yhteiset ominaisuudet ja kutsuu kantaluokan konstruktoria base-avainsanalla. Näin yhteistä koodia ei tarvitse kirjoittaa uudelleen." data-en="Boss inherits the shared properties of Employee and calls the base-class constructor with base. This avoids duplicating common code.">Boss perii Employee-luokan yhteiset ominaisuudet ja kutsuu kantaluokan konstruktoria base-avainsanalla. Näin yhteistä koodia ei tarvitse kirjoittaa uudelleen.</p>
               <pre><code>public class Employee
 {
     public string Name { get; set; }
@@ -169,15 +266,53 @@ public class Boss : Employee
         Bonus = bonus;
     }
 }</code></pre>
-              <span class="sample-source">T15 · Employee</span>
-            </details>
-            <details class="code-sample">
-              <summary><span>02</span><span data-fi="Olioiden koostaminen" data-en="Object composition">Olioiden koostaminen</span></summary>
-              <p data-fi="Vehicle sisältää Tire-olioita. Listan avulla yhdellä ajoneuvolla voi olla useita renkaita." data-en="Vehicle contains Tire objects. A list allows one vehicle to have multiple tyres.">Vehicle sisältää Tire-olioita. Listan avulla yhdellä ajoneuvolla voi olla useita renkaita.</p>
+            </article>
+            <article class="oop-sample-panel" hidden data-sample="6">
+              <div class="sample-panel-heading"><span class="sample-task">T20</span><h4 data-fi="Abstrakti luokka ja ylikirjoitus" data-en="Abstract class and overriding">Abstrakti luokka ja ylikirjoitus</h4></div>
+              <p data-fi="Mammal-tehtävässä abstrakti kantaluokka määrittelee yhteisen Move-metodin sopimuksen. Johdetut luokat toteuttavat toiminnan eri tavoin override-avainsanalla." data-en="The Mammal exercise uses an abstract base class to define a shared Move method. Derived classes implement that behaviour differently with override.">Mammal-tehtävässä abstrakti kantaluokka määrittelee yhteisen Move-metodin sopimuksen. Johdetut luokat toteuttavat toiminnan eri tavoin override-avainsanalla.</p>
+              <pre><code>public abstract class Mammal
+{
+    public int Age { get; set; }
+    public abstract string Move();
+}
+
+public class Human : Mammal
+{
+    public override string Move() =&gt; &quot;Walking&quot;;
+}
+
+public class Baby : Human
+{
+    public override string Move() =&gt; &quot;Crawling&quot;;
+}</code></pre>
+            </article>
+            <article class="oop-sample-panel" hidden data-sample="7">
+              <div class="sample-panel-heading"><span class="sample-task">T23</span><h4 data-fi="Rajapinta ja jono" data-en="Interface and queue">Rajapinta ja jono</h4></div>
+              <p data-fi="CheckoutQueue toteuttaa ICheckoutQueue-rajapinnan ja kapseloi jonon käsittelyn. Rajapinta määrittelee, mitä toimintoja jonon käyttäjä voi kutsua." data-en="CheckoutQueue implements ICheckoutQueue and encapsulates queue handling. The interface defines which operations callers can use.">CheckoutQueue toteuttaa ICheckoutQueue-rajapinnan ja kapseloi jonon käsittelyn. Rajapinta määrittelee, mitä toimintoja jonon käyttäjä voi kutsua.</p>
+              <pre><code>public interface ICheckoutQueue
+{
+    void Join(string customer);
+    string? Leave();
+    int Length { get; }
+}
+
+public class CheckoutQueue : ICheckoutQueue
+{
+    private readonly Queue&lt;string&gt; queue = new();
+
+    public int Length =&gt; queue.Count;
+    public void Join(string customer) =&gt; queue.Enqueue(customer);
+    public string? Leave() =&gt;
+        queue.Count &gt; 0 ? queue.Dequeue() : null;
+}</code></pre>
+            </article>
+            <article class="oop-sample-panel" hidden data-sample="8">
+              <div class="sample-panel-heading"><span class="sample-task">T24</span><h4 data-fi="Olioiden koostaminen" data-en="Object composition">Olioiden koostaminen</h4></div>
+              <p data-fi="Vehicle sisältää Tire-olioita listassa. Koostaminen kuvaa, miten isompi kokonaisuus rakentuu erillisistä olioista ja miten niiden tietoja voidaan käsitellä yhdessä." data-en="Vehicle contains Tire objects in a list. Composition shows how a larger object is built from smaller objects and their data can be handled together.">Vehicle sisältää Tire-olioita listassa. Koostaminen kuvaa, miten isompi kokonaisuus rakentuu erillisistä olioista ja miten niiden tietoja voidaan käsitellä yhdessä.</p>
               <pre><code>public class Tire
 {
-    public string Manufacturer { get; set; }
-    public string Model { get; set; }
+    public string Manufacturer { get; set; } = &quot;&quot;;
+    public string Model { get; set; } = &quot;&quot;;
 }
 
 public class Vehicle
@@ -185,38 +320,37 @@ public class Vehicle
     public string Name { get; set; }
     public List&lt;Tire&gt; Tires { get; } = new();
 
-    public Vehicle(string name)
-    {
-        Name = name;
-    }
+    public Vehicle(string name) =&gt; Name = name;
 }
 
-// Example: vehicle.Tires.Add(tire);</code></pre>
-              <span class="sample-source">T24 · Vehicle</span>
-            </details>
-            <details class="code-sample">
-              <summary><span>03</span><span data-fi="Rajapinta ja toteutukset" data-en="Interface and implementations">Rajapinta ja toteutukset</span></summary>
-              <p data-fi="Rajapinta määrittelee yhteisen toiminnan, jonka eri luokat toteuttavat omalla tavallaan." data-en="An interface defines a shared contract that different classes implement in their own way.">Rajapinta määrittelee yhteisen toiminnan, jonka eri luokat toteuttavat omalla tavallaan.</p>
+// Add a tyre to a vehicle:
+vehicle.Tires.Add(tire);</code></pre>
+            </article>
+            <article class="oop-sample-panel" hidden data-sample="9">
+              <div class="sample-panel-heading"><span class="sample-task">T29–T30</span><h4 data-fi="Rajapinta ja eri toteutukset" data-en="Interface and implementations">Rajapinta ja eri toteutukset</h4></div>
+              <p data-fi="ITransaction määrittelee yhteisen toiminnan maksutavoille. Käteis- ja korttimaksu voivat toteuttaa saman rajapinnan omalla logiikallaan. Sama ajatus näkyy ICourse-rajapinnan ja Course-luokan harjoituksessa." data-en="ITransaction defines shared behaviour for payment types. Cash and card payments can implement the same interface with their own logic. A similar idea appears in the ICourse and Course exercise.">ITransaction määrittelee yhteisen toiminnan maksutavoille. Käteis- ja korttimaksu voivat toteuttaa saman rajapinnan omalla logiikallaan. Sama ajatus näkyy ICourse-rajapinnan ja Course-luokan harjoituksessa.</p>
               <pre><code>public interface ITransaction
 {
     string ShowTransaction();
-    decimal Money { get; }
+    decimal Amount { get; }
 }
 
-public class PaidWithCash : ITransaction
+public class CardPayment : ITransaction
 {
-    public decimal Money { get; }
+    public decimal Amount { get; }
 
-    public PaidWithCash(decimal money)
-    {
-        Money = money;
-    }
+    public CardPayment(decimal amount) =&gt; Amount = amount;
 
-    public string ShowTransaction() =>
-        $"Cash payment: {Money:0.00} €";
+    public string ShowTransaction() =&gt;
+        $&quot;Card payment: {Amount:0.00}&quot;;
 }</code></pre>
-              <span class="sample-source">T29 · Cashier</span>
-            </details>
+            </article>
+            </div>
+            <div class="oop-browser-controls">
+              <button type="button" id="oop-prev" class="oop-nav-button" data-fi-label="Edellinen esimerkki" data-en-label="Previous example" aria-label="Edellinen esimerkki">← <span data-fi="Edellinen" data-en="Previous">Edellinen</span></button>
+              <span id="oop-counter" class="oop-counter" role="status" aria-live="polite" aria-atomic="true">1 / 10</span>
+              <button type="button" id="oop-next" class="oop-nav-button" data-fi-label="Seuraava esimerkki" data-en-label="Next example" aria-label="Seuraava esimerkki"><span data-fi="Seuraava" data-en="Next">Seuraava</span> →</button>
+            </div>
           </div>
           <div class="skill-list"><span>C#</span><span>OOP</span><span>Classes & objects</span><span>Inheritance</span><span>Interfaces</span></div>
           <p class="oop-note" data-fi="Nämä ovat alkuperäisistä kurssitehtävistä valittuja ja portfoliota varten rajattuja koodinäytteitä. Kokonaiset projektit eivät sisällä sivustolle siirrettyjä riippuvuuksia tai asetustiedostoja." data-en="These are selected and trimmed code samples based on the original course exercises. Full projects, dependencies and configuration files have not been copied into this portfolio.">Nämä ovat alkuperäisistä kurssitehtävistä valittuja ja portfoliota varten rajattuja koodinäytteitä. Kokonaiset projektit eivät sisällä sivustolle siirrettyjä riippuvuuksia tai asetustiedostoja.</p>
