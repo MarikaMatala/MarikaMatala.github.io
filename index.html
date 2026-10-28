@@ -7,8 +7,8 @@
   <meta name="theme-color" content="#1C1E20">
   <title>Marika Matalamäki — Portfolio</title>
   <!-- MUOKKAUSVINKKI: sivun ulkoasu on tiedostossa style.css. Kommentit eivät näy verkkosivulla. -->
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css?v=3">
+  <script src="script.js?v=3" defer></script>
   <!-- Umami Cloud: kävijätilastointi. Lisää ?owner=1 URL-osoitteeseen merkitäksesi tämän selaimen omistajan käynneiksi. -->
   <script>
     (function () {
@@ -88,15 +88,15 @@
 
       <div class="project-grid">
         <article class="project-card project-featured android-project">
-          <div class="android-carousel" id="android-carousel" aria-label="Android-kurssien kuvagalleria" data-fi-label="Android-kurssien kuvagalleria" data-en-label="Android course image gallery">
-            <div class="android-carousel-stage">
-              <img id="android-carousel-image" src="images/android-kurssin%20tehtavien%20kuvia/1.png" alt="Android-kurssin harjoitustyön kuvakaappaus 1 / 11">
+          <div class="android-carousel" id="android-carousel" role="group" aria-roledescription="carousel" aria-label="Android-kurssien kuvagalleria" data-fi-label="Android-kurssien kuvagalleria" data-en-label="Android course image gallery">
+            <div class="android-carousel-stage" id="android-carousel-stage" tabindex="0" aria-label="Käytä vasenta ja oikeaa nuolinäppäintä kuvien selaamiseen">
+              <img id="android-carousel-image" src="images/android-kurssin%20tehtavien%20kuvia/1.png" alt="Android-kurssin harjoitustyön kuvakaappaus 1 / 11" decoding="async">
               <button type="button" class="carousel-arrow carousel-arrow-prev" id="android-prev" aria-label="Edellinen kuva" data-fi-label="Edellinen kuva" data-en-label="Previous image">←</button>
               <button type="button" class="carousel-arrow carousel-arrow-next" id="android-next" aria-label="Seuraava kuva" data-fi-label="Seuraava kuva" data-en-label="Next image">→</button>
               <span class="image-label">ANDROID COURSEWORK</span>
             </div>
             <div class="android-carousel-controls">
-              <span class="carousel-counter" id="android-counter" aria-live="polite">1 / 11</span>
+              <span class="carousel-counter" id="android-counter" role="status" aria-live="polite" aria-atomic="true">1 / 11</span>
             </div>
           </div>
           <div class="android-project-copy">
