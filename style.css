@@ -1291,3 +1291,75 @@ body:after{opacity:.075;background:repeating-linear-gradient(0deg,transparent 0 
 @media(prefers-reduced-motion:reduce){
   .film-strip-back,.film-strip-front,.film-camera,.camera-reel{animation:none}
 }
+
+
+/* Skills overview: concrete, scannable evidence of technical and media skills. */
+.about-section{grid-template-columns:minmax(0,1fr)!important}
+.about-section>div:last-child{max-width:1040px;width:100%}
+.skills-overview{
+  margin-top:48px;
+  padding-top:30px;
+  border-top:1px solid #6c5142;
+}
+.skills-heading{max-width:760px;margin-bottom:24px}
+.skills-heading h3{
+  margin:12px 0;
+  font-size:clamp(1.7rem,3.4vw,2.7rem);
+  line-height:1.05;
+  letter-spacing:-.055em;
+}
+.skills-heading>p:last-child{
+  max-width:650px;
+  color:#c9bdb2;
+  line-height:1.7;
+}
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+.skills-card{
+  min-width:0;
+  padding:clamp(18px,2.5vw,28px);
+  border:1px solid #554039;
+  background:
+    linear-gradient(135deg,#26191b 0%,#171416 65%,#1b1c16 100%);
+  box-shadow:inset 3px 0 0 #8f3a32;
+  transition:transform .25s ease,border-color .25s ease,background .25s ease;
+}
+.skills-card:hover{
+  transform:translateY(-3px);
+  border-color:#b37d51;
+  background:linear-gradient(135deg,#30201f,#181416 68%,#222117);
+}
+.skills-number{
+  color:#d5b66f;
+  font: .64rem/1.4 var(--mono);
+  letter-spacing:.1em;
+}
+.skills-card h4{
+  margin:16px 0 12px;
+  color:#f1e4d3;
+  font-size:1.08rem;
+  letter-spacing:-.025em;
+}
+.skills-list{
+  margin:0 0 12px!important;
+  color:#e4b18b!important;
+  font: .77rem/1.9 var(--mono)!important;
+  overflow-wrap:anywhere;
+}
+.skills-detail{
+  margin:0!important;
+  color:#c9bdb2!important;
+  font-size:.91rem;
+  line-height:1.7!important;
+}
+@media(max-width:640px){
+  .skills-grid{grid-template-columns:minmax(0,1fr)}
+  .skills-card{padding:20px}
+  .skills-overview{margin-top:35px;padding-top:24px}
+}
+@media(prefers-reduced-motion:reduce){
+  .skills-card,.skills-card:hover{transition:none;transform:none}
+}
