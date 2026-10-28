@@ -164,22 +164,38 @@ h1 em,h2 em{font-style:normal;color:var(--copper)}
 }
 
 
-/* Android-kurssitöiden kuvakaruselli */
+/* Android-kurssitöiden kuvakaruselli: rajattu kuvakoko ja sivuille sijoitetut nuolet */
 .android-project{min-width:0}
-.android-carousel{min-width:0;background:#111214;border:1px solid var(--line);align-self:stretch;display:flex;flex-direction:column;justify-content:center}
-.android-carousel-stage{position:relative;display:grid;place-items:center;min-height:300px;aspect-ratio:4/3;padding:16px;overflow:hidden;background:#111214}
-.android-carousel-stage img{display:block;width:100%;height:100%;max-height:440px;object-fit:contain}
-.android-carousel-controls{display:flex;align-items:center;justify-content:center;gap:22px;padding:12px;border-top:1px solid var(--line)}
-.carousel-arrow{width:44px;height:44px;display:grid;place-items:center;border:1px solid #806b73;border-radius:50%;background:var(--surface);color:var(--paper);font-size:1.25rem;cursor:pointer;transition:background .2s ease,border-color .2s ease}
+.android-carousel{min-width:0;width:100%;background:#111214;border:1px solid var(--line);align-self:stretch;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.android-carousel-stage{position:relative;display:flex;align-items:center;justify-content:center;min-height:240px;aspect-ratio:16/9;padding:18px 64px;overflow:hidden;background:#111214}
+.android-carousel-stage img{display:block;width:100%;height:100%;max-width:100%;max-height:280px;object-fit:contain}
+.android-carousel-stage .image-label{position:absolute;left:14px;top:12px;z-index:1;pointer-events:none}
+.android-carousel-controls{display:flex;align-items:center;justify-content:center;padding:8px 12px;border-top:1px solid var(--line)}
+.carousel-arrow{position:absolute;top:50%;z-index:2;transform:translateY(-50%);width:42px;height:42px;display:grid;place-items:center;border:1px solid #806b73;border-radius:50%;background:rgba(46,0,20,.92);color:var(--paper);font-size:1.3rem;line-height:1;cursor:pointer;transition:background .2s ease,border-color .2s ease}
+.carousel-arrow-prev{left:12px}
+.carousel-arrow-next{right:12px}
 .carousel-arrow:hover{background:var(--burgundy);border-color:var(--copper)}
+.carousel-arrow:focus-visible{outline:2px solid var(--copper);outline-offset:3px}
 .carousel-counter{min-width:54px;text-align:center;font:.75rem var(--mono);color:#e0d7db;font-variant-numeric:tabular-nums}
 .android-project-copy{min-width:0}
 .carousel-hint{margin-top:18px;font-size:.75rem!important;color:#c6b9bf!important}
 @media(max-width:800px){
   .android-project{grid-template-columns:1fr}
-  .android-carousel-stage{min-height:240px;aspect-ratio:4/3}
+  .android-carousel-stage{min-height:220px;aspect-ratio:16/9;padding:16px 60px}
+  .android-carousel-stage img{max-height:260px}
 }
 @media(max-width:540px){
-  .android-carousel-stage{min-height:200px;padding:10px}
-  .android-carousel-controls{gap:18px;padding:10px}
+  .android-carousel-stage{min-height:190px;padding:14px 48px}
+  .android-carousel-stage img{max-height:220px}
+  .carousel-arrow{width:36px;height:36px;font-size:1.1rem}
+  .carousel-arrow-prev{left:7px}
+  .carousel-arrow-next{right:7px}
+  .android-carousel-controls{padding:7px}
+}
+@media(max-width:360px){
+  .android-carousel-stage{min-height:165px;padding:12px 42px}
+  .android-carousel-stage img{max-height:185px}
+  .carousel-arrow{width:32px;height:32px}
+  .carousel-arrow-prev{left:5px}
+  .carousel-arrow-next{right:5px}
 }
