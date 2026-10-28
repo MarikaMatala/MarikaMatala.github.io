@@ -1444,3 +1444,23 @@ body:after{opacity:.075;background:repeating-linear-gradient(0deg,transparent 0 
 .skills-scale .skill-bars i{height:12px;width:7px}
 @media(max-width:760px){.skills-grid-detailed{grid-template-columns:minmax(0,1fr)}.skills-grid-detailed .skills-card:last-child{grid-column:auto}}
 @media(max-width:420px){.skill-row{gap:8px}.skill-name{font-size:.82rem}.skill-rating{gap:5px}.skill-bars{gap:2px}.skill-bars i{width:6px;height:13px}.skills-card{padding:16px}}
+
+
+/* Update ribbon: clear status banner, separated from the main navigation. */
+.info-ribbon{position:relative;z-index:20;display:flex;align-items:center;justify-content:center;gap:14px;width:100%;min-height:clamp(66px,8vw,94px);padding:18px clamp(18px,5vw,64px);border:1px solid #D47A42;border-left:0;border-right:0;border-radius:0;background:#24171b;color:#fff4e9;box-shadow:inset 0 -1px 0 #633b34}
+.info-ribbon .notice-dot{flex:0 0 10px;width:10px;height:10px;background:#D47A42;box-shadow:0 0 0 4px #D47A4228}
+.info-ribbon p{margin:0;max-width:1100px;font-size:clamp(.94rem,1.9vw,1.3rem);font-weight:750;line-height:1.45;letter-spacing:.015em;text-align:center;overflow-wrap:anywhere}
+.skills-scale .skill-bars i{width:9px;height:17px}
+.skill-bars{gap:3px}
+.skill-bars i{width:7px;height:15px}
+.skill-level{min-width:28px;font-size:.72rem}
+.skills-scale-item .skill-bars i{height:12px;width:7px}
+.copyright-line{color:#e5d7c8;font-weight:600;letter-spacing:.025em}
+.contact-links{display:flex;flex-wrap:wrap;gap:12px 24px}
+.contact-links a{overflow-wrap:anywhere}
+@media(max-width:520px){
+  .info-ribbon{gap:10px;padding:14px 16px;min-height:74px}
+  .info-ribbon p{font-size:.9rem;line-height:1.45;text-align:left}
+  .skill-row{align-items:flex-start}
+  .skill-rating{padding-top:2px}
+}
