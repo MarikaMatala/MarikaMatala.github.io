@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Marika Matalamäki — ICT engineer combining frontend development, visual design and media. Portfolio under construction.">
+  <meta name="theme-color" content="#202522">
+  <title>Marika Matalamäki — Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="notice" role="status">
+    <span class="notice-dot"></span>
+    <span data-fi="Sivusto on työn alla — uusia projekteja ja työnäytteitä lisätään parhaillaan."
+          data-en="Portfolio under construction — new projects and work samples are being added.">Sivusto on työn alla — uusia projekteja ja työnäytteitä lisätään parhaillaan.</span>
+  </div>
+
+  <header class="site-header">
+    <a class="wordmark" href="#home" aria-label="Marika Matalamäki, etusivu">MM<span>.</span></a>
+    <nav aria-label="Päänavigaatio">
+      <a href="#work" data-fi="Työnäytteet" data-en="Selected work">Työnäytteet</a>
+      <a href="#about" data-fi="Minusta" data-en="About">Minusta</a>
+      <a href="#contact" data-fi="Yhteystiedot" data-en="Contact">Yhteystiedot</a>
+    </nav>
+    <button class="language-toggle" id="language-toggle" type="button" aria-label="Switch language">EN ↗</button>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span><span data-fi="ICT-insinööri · Luova tekijä" data-en="ICT Engineer · Creative Maker">ICT-insinööri · Luova tekijä</span></p>
+        <h1 data-fi="Teknistä osaamista.<br><em>Luovaa näkemystä.</em>" data-en="Technical skills.<br><em>Creative vision.</em>">Teknistä osaamista.<br><em>Luovaa näkemystä.</em></h1>
+        <p class="hero-intro" data-fi="Yhdistän frontend-kehityksen, visuaalisen suunnittelun ja mediaosaamisen toimiviksi digitaalisiksi kokonaisuuksiksi." data-en="I bring together frontend development, visual design and media skills to create thoughtful digital experiences.">Yhdistän frontend-kehityksen, visuaalisen suunnittelun ja mediaosaamisen toimiviksi digitaalisiksi kokonaisuuksiksi.</p>
+        <a class="text-link" href="#work"><span data-fi="Tutustu työnäytteisiin" data-en="Explore selected work">Tutustu työnäytteisiin</span> <span aria-hidden="true">↘</span></a>
+        <div class="hero-tags" aria-label="Osaamisalueet">
+          <span>WEB & FRONTEND</span><span>VISUAL DESIGN</span><span>MEDIA</span>
+        </div>
+      </div>
+      <div class="portrait-wrap">
+        <div class="portrait-shape shape-one"></div>
+        <div class="portrait-shape shape-two"></div>
+        <div class="portrait-frame">
+          <img src="images/marika-portrait.jpg" alt="Marika Matalamäki" class="portrait" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+          <div class="image-placeholder portrait-placeholder">
+            <span class="placeholder-mark">MM</span>
+            <span data-fi="Lisää profiilikuvasi tiedostoon images/marika-portrait.jpg" data-en="Add your portrait as images/marika-portrait.jpg">Lisää profiilikuvasi tiedostoon images/marika-portrait.jpg</span>
+          </div>
+        </div>
+        <span class="portrait-caption" data-fi="Kehittäjä · Suunnittelija · Viestijä" data-en="Developer · Designer · Communicator">Kehittäjä · Suunnittelija · Viestijä</span>
+        <span class="hero-stamp" aria-hidden="true">MAKE<br>IT<br>MATTER<span>✳</span></span>
+      </div>
+      <div class="hero-index" aria-hidden="true">PORTFOLIO / 2026</div>
+    </section>
+
+    <section class="work-section section-wrap" id="work">
+      <div class="section-heading">
+        <p class="eyebrow"><span class="eyebrow-line"></span><span data-fi="Valikoituja töitä" data-en="Selected work">Valikoituja töitä</span></p>
+        <h2 data-fi="Oppimista, kokeiluja<br>ja <em>käytännön tekemistä.</em>" data-en="Learning, exploring<br>and <em>making things work.</em>">Oppimista, kokeiluja<br>ja <em>käytännön tekemistä.</em></h2>
+        <p class="section-lead" data-fi="Tämä portfolio täydentyy parhaillaan. Tässä ovat ensimmäiset työnäytteet opintojen aikana tehdyistä Android-käyttöliittymäharjoituksista. Lisää projekteja ja media-alan töitä lisätään myöhemmin." data-en="This portfolio is a work in progress. These first samples show Android UI exercises completed during my studies. More development, design and media projects will be added.">Tämä portfolio täydentyy parhaillaan. Tässä ovat ensimmäiset työnäytteet opintojen aikana tehdyistä Android-käyttöliittymäharjoituksista. Lisää projekteja ja media-alan töitä lisätään myöhemmin.</p>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card project-featured">
+          <div class="project-image image-employee">
+            <img src="images/android-employee-layout.png" alt="Android Studion työntekijätietojen käyttöliittymäharjoitus" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+            <div class="image-placeholder project-placeholder"><span class="placeholder-number">01</span><span data-fi="Lisää kuvakaappaus: images/android-employee-layout.png" data-en="Add screenshot: images/android-employee-layout.png">Lisää kuvakaappaus: images/android-employee-layout.png</span></div>
+            <span class="image-label">ANDROID UI / 01</span>
+          </div>
+          <div class="project-meta"><span>ANDROID STUDIO</span><span data-fi="Opintoharjoitus" data-en="Study exercise">Opintoharjoitus</span></div>
+          <h3 data-fi="Työntekijätietojen käyttöliittymä" data-en="Employee Information UI">Työntekijätietojen käyttöliittymä</h3>
+          <p data-fi="Android-käyttöliittymäharjoitus, jossa rakensin työntekijän tietoja esittävän näkymän: kuvan, henkilötiedot, esittelytekstin ja numeroidun navigointialueen. Harjoituksessa keskityin näkymän asetteluun ja mobiiliesikatseluun." data-en="An Android UI exercise building an employee information view with an image, personal details, descriptive text and a numbered navigation area. The focus was on layout and previewing the interface on a mobile screen.">Android-käyttöliittymäharjoitus, jossa rakensin työntekijän tietoja esittävän näkymän: kuvan, henkilötiedot, esittelytekstin ja numeroidun navigointialueen. Harjoituksessa keskityin näkymän asetteluun ja mobiiliesikatseluun.</p>
+          <div class="skill-list"><span>Layout Editor</span><span>Mobile UI</span><span>Android Studio</span></div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image image-calculator">
+            <img src="images/android-sum-calculator.png" alt="Android Studion Sum Calculator -laskinsovelluksen käyttöliittymäharjoitus" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+            <div class="image-placeholder project-placeholder"><span class="placeholder-number">02</span><span data-fi="Lisää kuvakaappaus: images/android-sum-calculator.png" data-en="Add screenshot: images/android-sum-calculator.png">Lisää kuvakaappaus: images/android-sum-calculator.png</span></div>
+            <span class="image-label">ANDROID UI / 02</span>
+          </div>
+          <div class="project-meta"><span>ANDROID STUDIO</span><span data-fi="Opintoharjoitus" data-en="Study exercise">Opintoharjoitus</span></div>
+          <h3 data-fi="Sum Calculator" data-en="Sum Calculator">Sum Calculator</h3>
+          <p data-fi="Laskinsovelluksen käyttöliittymäharjoitus. Rakensin numeronäytön ja laskutoimituspainikkeiden asettelun ja tarkastelin näkymää Android-emulaattorissa. Tämä esittely kuvaa käyttöliittymää, ei vahvista laskutoimintojen toteutusta." data-en="A calculator UI exercise. I arranged the number display and operation buttons, then previewed the layout in the Android emulator. This sample documents the interface and does not claim that the calculator logic was implemented.">Laskinsovelluksen käyttöliittymäharjoitus. Rakensin numeronäytön ja laskutoimituspainikkeiden asettelun ja tarkastelin näkymää Android-emulaattorissa. Tämä esittely kuvaa käyttöliittymää, ei vahvista laskutoimintojen toteutusta.</p>
+          <div class="skill-list"><span>Layout Editor</span><span>UI layout</span><span>Android Studio</span></div>
+        </article>
+
+        <article class="project-card project-coming">
+          <div class="coming-art" aria-hidden="true"><span>W</span><span>✳</span><span>CAPSTONE</span></div>
+          <div class="project-meta"><span>BRAND IDENTITY</span><span data-fi="Tulossa" data-en="Coming soon">Tulossa</span></div>
+          <h3>WIMMA Capstone</h3>
+          <p data-fi="Brändiuudistus: logo, väripaletti, visuaalinen ilme ja brändikirja. Projektiesittely ja omat suunnittelumateriaalit lisätään seuraavassa vaiheessa." data-en="Brand renewal covering the logo, colour palette, visual identity and brand book. A fuller case study and design materials will be added in a later update.">Brändiuudistus: logo, väripaletti, visuaalinen ilme ja brändikirja. Projektiesittely ja omat suunnittelumateriaalit lisätään seuraavassa vaiheessa.</p>
+          <a class="text-link small-link" href="https://wimma-capstone.jamk.fi/" target="_blank" rel="noreferrer"><span data-fi="Avaa projektisivusto" data-en="Visit project website">Avaa projektisivusto</span> ↗</a>
+        </article>
+      </div>
+      <p class="privacy-note"><span aria-hidden="true">✳</span> <span data-fi="Lisää työnäytteitä on saatavilla pyynnöstä. Osa portfolion muista materiaaleista on toistaiseksi yksityisiä." data-en="More work samples are available on request. Some other portfolio materials are currently private.">Lisää työnäytteitä on saatavilla pyynnöstä. Osa portfolion muista materiaaleista on toistaiseksi yksityisiä.</span></p>
+    </section>
+
+    <section class="about-section section-wrap" id="about">
+      <div class="about-mark" aria-hidden="true">✳</div>
+      <div>
+        <p class="eyebrow"><span class="eyebrow-line"></span><span data-fi="Pieni esittely" data-en="A little about me">Pieni esittely</span></p>
+        <h2 data-fi="Tekniikka ja visuaalisuus<br><em>samassa paketissa.</em>" data-en="Technology and visual thinking<br><em>in the same toolkit.</em>">Tekniikka ja visuaalisuus<br><em>samassa paketissa.</em></h2>
+        <p data-fi="Olen JAMKista valmistunut ICT-insinööri. Minua kiinnostavat erityisesti frontend- ja web-kehitys, käyttöliittymät, visuaalinen suunnittelu sekä media ja viestintä. Nautin työstä, jossa tekninen toteutus ja luova ajattelu tukevat toisiaan." data-en="I am an ICT engineer graduate from JAMK University of Applied Sciences. My main interests include frontend and web development, user interfaces, visual design, media and communication. I enjoy work where technical implementation and creative thinking support each other.">Olen JAMKista valmistunut ICT-insinööri. Minua kiinnostavat erityisesti frontend- ja web-kehitys, käyttöliittymät, visuaalinen suunnittelu sekä media ja viestintä. Nautin työstä, jossa tekninen toteutus ja luova ajattelu tukevat toisiaan.</p>
+        <div class="about-tags"><span>HTML / CSS / JavaScript</span><span>React / TypeScript</span><span>Visual design</span><span>Photo & video</span><span>WordPress</span></div>
+      </div>
+    </section>
+
+    <section class="contact-section section-wrap" id="contact">
+      <p class="eyebrow"><span class="eyebrow-line"></span><span data-fi="Jatketaan keskustelua" data-en="Let's connect">Jatketaan keskustelua</span></p>
+      <h2 data-fi="Onko mielessä<br><em>hyvä yhteistyö?</em>" data-en="Have a good project<br><em>in mind?</em>">Onko mielessä<br><em>hyvä yhteistyö?</em></h2>
+      <p data-fi="Etsin uusia mahdollisuuksia erityisesti IT:n, web-kehityksen, visuaalisen suunnittelun ja median parista pääkaupunkiseudulla." data-en="I am exploring new opportunities in IT, web development, visual design and media in the Helsinki metropolitan area.">Etsin uusia mahdollisuuksia erityisesti IT:n, web-kehityksen, visuaalisen suunnittelun ja median parista pääkaupunkiseudulla.</p>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/marika-matalamaki/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        <a href="https://github.com/MarikaMatala" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer section-wrap">
+    <a class="wordmark" href="#home">MM<span>.</span></a>
+    <span data-fi="Rakenteilla, askel kerrallaan." data-en="A work in progress, one step at a time.">Rakenteilla, askel kerrallaan.</span>
+    <span>© <span id="year">2026</span> MARIKA MATALAMÄKI</span>
+  </footer>
+</body>
+</html>
