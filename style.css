@@ -1840,3 +1840,18 @@ a:hover{color:#d6bba5}
 .hero-copy::after{color:#a9c2a0}
 @media(max-width:640px){.site-header::before{font-size:1.05rem}}
 @media(prefers-reduced-motion:reduce){.site-header::before{animation:none;display:none}body{background-attachment:scroll}}
+
+
+/* Skills page: keep long labels readable beside the fixed five-step rating. */
+.skills-grid-detailed .skill-row{align-items:center;gap:clamp(8px,1vw,14px)}
+.skills-grid-detailed .skill-name{flex:1 1 auto;min-width:0;overflow-wrap:anywhere;line-height:1.45}
+.skills-grid-detailed .skill-rating{flex:0 0 auto;white-space:nowrap}
+.skills-grid-detailed .skill-level{display:inline-block;text-align:right}
+.skills-grid-detailed .skills-card h4{line-height:1.25;overflow-wrap:anywhere}
+@media(max-width:520px){
+  .skills-grid-detailed .skill-row{align-items:flex-start}
+  .skills-grid-detailed .skill-name{font-size:.88rem}
+  .skills-grid-detailed .skill-rating{padding-top:2px}
+  .skills-grid-detailed .skill-bars i{width:6px;height:12px}
+  .skills-grid-detailed .skill-level{font-size:.7rem;min-width:25px}
+}
