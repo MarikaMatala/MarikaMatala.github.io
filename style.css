@@ -1933,3 +1933,18 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
 @media(prefers-reduced-motion:reduce){
   .site-header::before,.site-footer::after{animation:none!important}
 }
+
+
+/* Homepage greeting: personal welcome before the education and job-search introduction. */
+.hero-greeting{
+  max-width:560px;
+  margin:clamp(18px,2.2vw,28px) 0 12px;
+  color:#E5B9C9;
+  font-size:clamp(1.02rem,1.45vw,1.2rem);
+  font-weight:500;
+  line-height:1.8;
+  text-wrap:pretty;
+}
+@media(max-width:640px){
+  .hero-greeting{max-width:100%;font-size:1rem;line-height:1.75;margin-top:18px}
+}
