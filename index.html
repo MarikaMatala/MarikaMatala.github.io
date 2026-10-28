@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Marika Matalamäki — ICT-insinööri, web-kehitys, frontend, UI/UX, visuaalinen suunnittelu ja media. Etsin uusia työmahdollisuuksia pääkaupunkiseudulta.">
-  <meta name="theme-color" content="#1C1E20">
+  <meta name="theme-color" content="#0B1820">
   <title>Marika Matalamäki — Portfolio</title>
   <!-- MUOKKAUSVINKKI: sivun ulkoasu on tiedostossa style.css. Kommentit eivät näy verkkosivulla. -->
-  <link rel="stylesheet" href="style.css?v=3">
-  <script src="script.js?v=3" defer></script>
+  <link rel="stylesheet" href="style.css?v=4">
+  <script src="script.js?v=4" defer></script>
   <!-- Umami Cloud: kävijätilastointi. Lisää ?owner=1 URL-osoitteeseen merkitäksesi tämän selaimen omistajan käynneiksi. -->
   <script>
     (function () {
@@ -131,6 +131,94 @@
           <h3>WIMMA Capstone</h3>
           <p data-fi="Olin mukana WIMMA Capstonen brändiuudistuksessa. Oma osuuteni keskittyi logoon, väripalettiin ja visuaaliseen ilmeeseen. Lisäksi osallistuin verkkosivun visuaalisen ilmeen ja käytettävyyden suunnitteluun. Lisään tänne tarkemman esittelyn ja työnäytteitä myöhemmin." data-en="I contributed to the WIMMA Capstone brand renewal, focusing on the logo, colour palette and visual identity. I also contributed to the website’s visual design and usability. I’ll add a fuller case study and samples here later.">Olin mukana WIMMA Capstonen brändiuudistuksessa. Oma osuuteni keskittyi logoon, väripalettiin ja visuaaliseen ilmeeseen. Lisäksi osallistuin verkkosivun visuaalisen ilmeen ja käytettävyyden suunnitteluun. Lisään tänne tarkemman esittelyn ja työnäytteitä myöhemmin.</p>
           <a class="text-link small-link" href="https://wimma-capstone.jamk.fi/" target="_blank" rel="noreferrer"><span data-fi="Avaa projektisivusto" data-en="Visit project website">Avaa projektisivusto</span> ↗</a>
+        </article>
+
+        <article class="project-card project-oop">
+          <div class="oop-heading">
+            <div>
+              <div class="project-meta"><span>C# · OBJECT-ORIENTED PROGRAMMING</span><span data-fi="Arvosana 5" data-en="Grade 5">Arvosana 5</span></div>
+              <h3 data-fi="Olio-ohjelmointi" data-en="Object-oriented programming">Olio-ohjelmointi</h3>
+            </div>
+            <span class="oop-grade" aria-label="Kurssin arvosana 5">5<span>/5</span></span>
+          </div>
+          <p data-fi="Sain olio-ohjelmoinnin kurssista arvosanan 5. Olin aidosti kiinnostunut aiheesta, ja C# oli jo tullut tutuksi ennen AMK-opintoja pelialan perusteet -kurssilla. Tehtävissä harjoittelin luokkien ja olioiden suunnittelua, kapselointia, perintää, rajapintoja sekä olioiden välistä yhteistyötä." data-en="I earned the highest grade, 5/5, in the object-oriented programming course. I was genuinely interested in the subject, and I had already become familiar with C# through a game development fundamentals course before starting my degree. The exercises covered classes and objects, encapsulation, inheritance, interfaces and object composition.">Sain olio-ohjelmoinnin kurssista arvosanan 5. Olin aidosti kiinnostunut aiheesta, ja C# oli jo tullut tutuksi ennen AMK-opintoja pelialan perusteet -kurssilla. Tehtävissä harjoittelin luokkien ja olioiden suunnittelua, kapselointia, perintää, rajapintoja sekä olioiden välistä yhteistyötä.</p>
+          <div class="oop-samples">
+            <details class="code-sample" open>
+              <summary><span>01</span><span data-fi="Perintä ja uudelleenkäyttö" data-en="Inheritance and reuse">Perintä ja uudelleenkäyttö</span></summary>
+              <p data-fi="Boss perii Employee-luokan ominaisuudet ja käyttää kantaluokan konstruktoria." data-en="Boss inherits Employee properties and reuses the base-class constructor.">Boss perii Employee-luokan ominaisuudet ja käyttää kantaluokan konstruktoria.</p>
+              <pre><code>public class Employee
+{
+    public string Name { get; set; }
+    public double Salary { get; set; }
+
+    public Employee(string name, double salary)
+    {
+        Name = name;
+        Salary = salary;
+    }
+}
+
+public class Boss : Employee
+{
+    public double Bonus { get; set; }
+
+    public Boss(string name, double salary, double bonus)
+        : base(name, salary)
+    {
+        Bonus = bonus;
+    }
+}</code></pre>
+              <span class="sample-source">T15 · Employee</span>
+            </details>
+            <details class="code-sample">
+              <summary><span>02</span><span data-fi="Olioiden koostaminen" data-en="Object composition">Olioiden koostaminen</span></summary>
+              <p data-fi="Vehicle sisältää Tire-olioita. Listan avulla yhdellä ajoneuvolla voi olla useita renkaita." data-en="Vehicle contains Tire objects. A list allows one vehicle to have multiple tyres.">Vehicle sisältää Tire-olioita. Listan avulla yhdellä ajoneuvolla voi olla useita renkaita.</p>
+              <pre><code>public class Tire
+{
+    public string Manufacturer { get; set; }
+    public string Model { get; set; }
+}
+
+public class Vehicle
+{
+    public string Name { get; set; }
+    public List&lt;Tire&gt; Tires { get; } = new();
+
+    public Vehicle(string name)
+    {
+        Name = name;
+    }
+}
+
+// Example: vehicle.Tires.Add(tire);</code></pre>
+              <span class="sample-source">T24 · Vehicle</span>
+            </details>
+            <details class="code-sample">
+              <summary><span>03</span><span data-fi="Rajapinta ja toteutukset" data-en="Interface and implementations">Rajapinta ja toteutukset</span></summary>
+              <p data-fi="Rajapinta määrittelee yhteisen toiminnan, jonka eri luokat toteuttavat omalla tavallaan." data-en="An interface defines a shared contract that different classes implement in their own way.">Rajapinta määrittelee yhteisen toiminnan, jonka eri luokat toteuttavat omalla tavallaan.</p>
+              <pre><code>public interface ITransaction
+{
+    string ShowTransaction();
+    decimal Money { get; }
+}
+
+public class PaidWithCash : ITransaction
+{
+    public decimal Money { get; }
+
+    public PaidWithCash(decimal money)
+    {
+        Money = money;
+    }
+
+    public string ShowTransaction() =>
+        $"Cash payment: {Money:0.00} €";
+}</code></pre>
+              <span class="sample-source">T29 · Cashier</span>
+            </details>
+          </div>
+          <div class="skill-list"><span>C#</span><span>OOP</span><span>Classes & objects</span><span>Inheritance</span><span>Interfaces</span></div>
+          <p class="oop-note" data-fi="Nämä ovat alkuperäisistä kurssitehtävistä valittuja ja portfoliota varten rajattuja koodinäytteitä. Kokonaiset projektit eivät sisällä sivustolle siirrettyjä riippuvuuksia tai asetustiedostoja." data-en="These are selected and trimmed code samples based on the original course exercises. Full projects, dependencies and configuration files have not been copied into this portfolio.">Nämä ovat alkuperäisistä kurssitehtävistä valittuja ja portfoliota varten rajattuja koodinäytteitä. Kokonaiset projektit eivät sisällä sivustolle siirrettyjä riippuvuuksia tai asetustiedostoja.</p>
         </article>
       </div>
       <p class="privacy-note"><span aria-hidden="true">✳</span> <span data-fi="Lisää työnäytteitä on saatavilla pyynnöstä. Osa portfolion muista materiaaleista on toistaiseksi yksityisiä." data-en="More work samples are available on request. Some other portfolio materials are currently private.">Lisää työnäytteitä on saatavilla pyynnöstä. Osa portfolion muista materiaaleista on toistaiseksi yksityisiä.</span></p>
