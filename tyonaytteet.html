@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Marika Matalamäki — työnäytteitä sovelluskehityksestä, C#-olio-ohjelmoinnista, Androidista, visuaalisesta suunnittelusta ja mediasta.">
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
-  <meta name="theme-color" content="#0B1820">
+  <meta name="theme-color" content="#0b080d">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; upgrade-insecure-requests; script-src 'self' 'unsafe-inline' https://cloud.umami.is; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://raw.githubusercontent.com; connect-src 'self' https://cloud.umami.is">
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
   <title>Marika Matalamäki — Työnäytteet</title>
   <!-- MUOKKAUSVINKKI: sivun ulkoasu on tiedostossa style.css. Kommentit eivät näy verkkosivulla. -->
-  <link rel="stylesheet" href="style.css?v=21">
+  <link rel="stylesheet" href="style.css?v=22">
   <script src="script.js?v=14" defer></script>
   <!-- Umami Cloud: kävijätilastointi. Lisää ?owner=1 URL-osoitteeseen merkitäksesi tämän selaimen omistajan käynneiksi. -->
   <script>
@@ -46,8 +46,9 @@
   <header class="site-header">
     <a class="wordmark full-name" href="index.html#home" aria-label="Marika Matalamäki, etusivu">Marika Matalamäki<span>.</span></a>
     <nav aria-label="Päänavigaatio">
-      <a href="index.html#about" data-fi="Minusta" data-en="About">Minusta</a>
-      <a href="#projects" data-fi="Työnäytteet" data-en="Selected work">Työnäytteet</a>
+      <a href="index.html" data-fi="Etusivu" data-en="Home">Etusivu</a>
+      <a href="minusta.html" data-fi="Minusta" data-en="About">Minusta</a>
+      <a href="tyonaytteet.html" aria-current="page" data-fi="Työnäytteet" data-en="Work samples">Työnäytteet</a>
       <a href="yhteystiedot.html" data-fi="Yhteystiedot" data-en="Contact">Yhteystiedot</a>
     </nav>
     <button class="language-toggle" id="language-toggle" type="button" aria-label="Vaihda sivusto englanniksi"><span class="language-icon" aria-hidden="true">◎</span><span class="language-label" data-fi="ENGLISH" data-en="SUOMEKSI">ENGLISH</span><span class="language-arrow" aria-hidden="true">↗</span></button>
@@ -57,60 +58,17 @@
     <section class="work-page-intro section-wrap">
       <p class="eyebrow"><span class="eyebrow-line"></span><span data-fi="Projektit ja käytännön osaaminen" data-en="Projects and practical skills">Projektit ja käytännön osaaminen</span></p>
       <h1 data-fi="Työnäytteet ja<br><em>projektit.</em>" data-en="Work samples and<br><em>projects.</em>">Työnäytteet ja<br><em>projektit.</em></h1>
-      <p data-fi="Tällä sivulla esittelen valikoituja opintoprojekteja, koodiesimerkkejä ja visuaalisia töitäni. Olen nostanut työnäytteet tekstien yläpuolelle, jotta näet ensin konkreettisen lopputuloksen ja sen jälkeen taustatiedot." data-en="This page presents selected coursework, code examples and visual projects. Work samples appear before their descriptions, so you can see the result first and then read the context.">Tällä sivulla esittelen valikoituja opintoprojekteja, koodiesimerkkejä ja visuaalisia töitäni. Olen nostanut työnäytteet tekstien yläpuolelle, jotta näet ensin konkreettisen lopputuloksen ja sen jälkeen taustatiedot.</p>
-      <a class="text-link" href="index.html#home"><span data-fi="Takaisin etusivulle" data-en="Back to homepage">Takaisin etusivulle</span> ↗</a>
+      <p data-fi="Tällä sivulla voit lukea projektien taustoista ja sen jälkeen katsella työnäytteitä, kokeilla koodiesimerkkejä ja selata kuvia. Käytettävissä olevat näytteet ovat valikoituja opinto- ja suunnittelutöitäni." data-en="Read about each project first, then browse screenshots, visual work and interactive code examples. The samples are selected coursework and design projects.">Tällä sivulla esittelen valikoituja opintoprojekteja, koodiesimerkkejä ja visuaalisia töitäni. Olen nostanut työnäytteet tekstien yläpuolelle, jotta näet ensin konkreettisen lopputuloksen ja sen jälkeen taustatiedot.</p>
+      <div class="work-page-actions"><a class="gothic-button" href="index.html"><span data-fi="Etusivulle" data-en="Home">Etusivulle</span><span aria-hidden="true">↗</span></a><a class="gothic-button" href="yhteystiedot.html"><span data-fi="Ota yhteyttä" data-en="Contact me">Ota yhteyttä</span><span aria-hidden="true">↗</span></a></div>
     </section>
-    <!-- VISUAL INTERLUDE: original CSS artwork with selected work from my own repositories. -->
-    <section class="visual-interlude section-wrap" id="media" aria-labelledby="visual-interlude-title">
-      <div class="interlude-topline">
-        <span data-fi="DIGITAALINEN MEDIA" data-en="DIGITAL MEDIA">DIGITAALINEN MEDIA</span>
-        
-      </div>
-      <div class="interlude-copy">
-        <p class="eyebrow"><span class="eyebrow-line"></span><span data-fi="Visuaalinen suunnittelu ja audiovisuaalinen tuotanto" data-en="Visual Design and Audiovisual Production">Visuaalinen suunnittelu ja audiovisuaalinen tuotanto</span></p>
-        <h2 id="visual-interlude-title" data-fi="Kuvaa, ääntä ja visuaalista suunnittelua" data-en="Image, Sound and Visual Design">Kuvaa, ääntä ja visuaalista suunnittelua</h2>
-        <p data-fi="Minua kiinnostavat pinnat, värit ja tunnelmat, mutta myös se, miten visuaalinen idea muuttuu toimivaksi digitaaliseksi kokemukseksi." data-en="I’m drawn to texture, colour and atmosphere, as well as the process of turning a visual idea into a working digital experience.">Minua kiinnostavat pinnat, värit ja tunnelmat, mutta myös se, miten visuaalinen idea muuttuu toimivaksi digitaaliseksi kokemukseksi.</p>
-      </div>
-      <div class="media-reel-art" role="img" aria-label="Animoitu filmikamera ja liikkuva filminauha">
-        <div class="film-strip film-strip-back" aria-hidden="true">
-          <span class="film-frame"></span><span class="film-frame"></span><span class="film-frame"></span><span class="film-frame"></span>
-        </div>
-        <div class="film-camera" aria-hidden="true">
-          <span class="camera-top"></span>
-          <span class="camera-reel camera-reel-left"></span>
-          <span class="camera-reel camera-reel-right"></span>
-          <span class="camera-body"><span class="camera-lens"></span><span class="camera-flash"></span></span>
-          <span class="camera-grip"></span>
-        </div>
-        <div class="film-strip film-strip-front" aria-hidden="true">
-          <span class="film-frame"></span><span class="film-frame"></span><span class="film-frame"></span>
-        </div>
-        
-      </div>
-      <div class="interlude-photo-grid">
-        <figure class="interlude-photo interlude-photo-wide">
-          <img src="https://raw.githubusercontent.com/MarikaMatala/toita/main/Blender-GRAFIKKAA-%20LEHTITOIMITUSTOITA-JA-%20MUUTA/KOULUTOITA-AMK/kuvakollaasiteht%C3%A4v%C3%A4_MM.png" alt="Oma kuvakollaasitehtävä graafisen suunnittelun opinnoista" loading="lazy">
-          <figcaption><span data-fi="KUVAKOLLAASI / OMA TYÖ" data-en="VISUAL COLLAGE / MY WORK">KUVAKOLLAASI / OMA TYÖ</span><span>OWN WORK · DESIGN</span></figcaption>
-        </figure>
-        <figure class="interlude-photo interlude-photo-tall">
-          <img src="https://raw.githubusercontent.com/MarikaMatala/toita/main/Blender-GRAFIKKAA-%20LEHTITOIMITUSTOITA-JA-%20MUUTA/peli-kurssi/5-hengen%20peli.jpg" alt="Viiden hengen peliprojektiin liittyvä oma kurssityö" loading="lazy">
-          <figcaption><span data-fi="PELIPROJEKTI" data-en="GAME PROJECT">PELIPROJEKTI</span><span>OWN WORK · GAME DESIGN</span></figcaption>
-        </figure>
-        <figure class="interlude-photo interlude-photo-small">
-          <img src="https://raw.githubusercontent.com/MarikaMatala/toita/main/Blender-GRAFIKKAA-%20LEHTITOIMITUSTOITA-JA-%20MUUTA/KOULUTOITA-AMK/hertan_huone.png" alt="Oma digitaalinen ympäristö- ja grafiikkaharjoitus" loading="lazy">
-          <figcaption><span data-fi="DIGITAALINEN YMPÄRISTÖ" data-en="DIGITAL ENVIRONMENT">DIGITAALINEN YMPÄRISTÖ</span><span>OWN WORK · 3D / ART</span></figcaption>
-        </figure>
-      </div>
-      <p class="interlude-credit" data-fi="Valikoituja omia opinto- ja luovia töitä GitHub-repositoriostani." data-en="Selected original coursework and creative work from my GitHub repository.">Valikoituja omia opinto- ja luovia töitä GitHub-repositoriostani.</p>
-    </section>
-
     <section class="work-section section-wrap" id="projects">
       <div class="section-heading">
         <p class="eyebrow"><span class="eyebrow-line"></span><span data-fi="Valikoituja töitä" data-en="Selected work">Valikoituja töitä</span></p>
         <h2 data-fi="Opintoprojekteja ja<br><em>omia työnäytteitä.</em>" data-en="Study projects and<br><em>creative work.</em>">Opintoprojekteja ja<br><em>omia työnäytteitä.</em></h2>
-        <p class="section-lead" data-fi="Tarkemmat esittelyt opintoprojekteista ja visuaalisista töistä. Kunkin työn yhteydessä kerron omasta osuudestani, käytetyistä työkaluista ja harjoitelluista taidoista." data-en="Detailed examples of coursework and visual projects. Each project describes my contribution, the tools used and the skills practised.">Tarkemmat esittelyt opintoprojekteista ja visuaalisista töistä. Kunkin työn yhteydessä kerron omasta osuudestani, käytetyistä työkaluista ja harjoitelluista taidoista.</p>
+        <p class="section-lead" data-fi="Kunkin projektin kuvaus ja käyttämäni teknologiat ovat ensin. Sen jälkeen voit katsella kuvia ja selata koodiesimerkkejä. Android-galleriassa vaihda kuvaa nuolilla; olio-ohjelmoinnissa valitse esimerkki luettelosta tai selaa niitä painikkeilla." data-en="Each project description and its technologies come first, followed by the visual sample or code. Browse the Android gallery with the arrows; choose an object-oriented programming example from the menu or use the navigation buttons.">Kunkin projektin kuvaus ja käyttämäni teknologiat ovat ensin. Sen jälkeen voit katsella kuvia ja selata koodiesimerkkejä. Android-galleriassa vaihda kuvaa nuolilla; olio-ohjelmoinnissa valitse esimerkki luettelosta tai selaa niitä painikkeilla.</p>
       </div>
 
+      <p class="work-browse-note" data-fi="Vinkki: selaa Android-kuvia nuolilla ja kokeile C#-koodiesimerkkejä valikosta. Kuvien ja koodin alla näet, mitä kullakin työllä harjoittelin." data-en="Tip: browse Android screenshots with the arrows and try the C# code examples using the menu. Each sample is followed by notes on the skills practised.">Vinkki: selaa Android-kuvia nuolilla ja kokeile C#-koodiesimerkkejä valikosta. Kuvien ja koodin alla näet, mitä kullakin työllä harjoittelin.</p>
       <div class="project-grid">
         <article class="project-card project-featured android-project" id="android">
           <div class="android-carousel" id="android-carousel" role="group" aria-roledescription="carousel" aria-label="Android-kurssien kuvagalleria" data-fi-label="Android-kurssien kuvagalleria" data-en-label="Android course image gallery">
@@ -387,6 +345,50 @@ public class CardPayment : ITransaction
     </section>
 
     <!-- YHTEYSTIEDOT: tarkista linkit ennen julkaisua. -->
+    <!-- VISUAL INTERLUDE: original CSS artwork with selected work from my own repositories. -->
+    <section class="visual-interlude section-wrap" id="media" aria-labelledby="visual-interlude-title">
+      <div class="interlude-topline">
+        <span data-fi="DIGITAALINEN MEDIA" data-en="DIGITAL MEDIA">DIGITAALINEN MEDIA</span>
+        
+      </div>
+      <div class="interlude-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span><span data-fi="Visuaalinen suunnittelu ja audiovisuaalinen tuotanto" data-en="Visual Design and Audiovisual Production">Visuaalinen suunnittelu ja audiovisuaalinen tuotanto</span></p>
+        <h2 id="visual-interlude-title" data-fi="Kuvaa, ääntä ja visuaalista suunnittelua" data-en="Image, Sound and Visual Design">Kuvaa, ääntä ja visuaalista suunnittelua</h2>
+        <p data-fi="Minua kiinnostavat pinnat, värit ja tunnelmat, mutta myös se, miten visuaalinen idea muuttuu toimivaksi digitaaliseksi kokemukseksi." data-en="I’m drawn to texture, colour and atmosphere, as well as the process of turning a visual idea into a working digital experience.">Minua kiinnostavat pinnat, värit ja tunnelmat, mutta myös se, miten visuaalinen idea muuttuu toimivaksi digitaaliseksi kokemukseksi.</p>
+      </div>
+      <div class="media-reel-art" role="img" aria-label="Animoitu filmikamera ja liikkuva filminauha">
+        <div class="film-strip film-strip-back" aria-hidden="true">
+          <span class="film-frame"></span><span class="film-frame"></span><span class="film-frame"></span><span class="film-frame"></span>
+        </div>
+        <div class="film-camera" aria-hidden="true">
+          <span class="camera-top"></span>
+          <span class="camera-reel camera-reel-left"></span>
+          <span class="camera-reel camera-reel-right"></span>
+          <span class="camera-body"><span class="camera-lens"></span><span class="camera-flash"></span></span>
+          <span class="camera-grip"></span>
+        </div>
+        <div class="film-strip film-strip-front" aria-hidden="true">
+          <span class="film-frame"></span><span class="film-frame"></span><span class="film-frame"></span>
+        </div>
+        
+      </div>
+      <div class="interlude-photo-grid">
+        <figure class="interlude-photo interlude-photo-wide">
+          <img src="https://raw.githubusercontent.com/MarikaMatala/toita/main/Blender-GRAFIKKAA-%20LEHTITOIMITUSTOITA-JA-%20MUUTA/KOULUTOITA-AMK/kuvakollaasiteht%C3%A4v%C3%A4_MM.png" alt="Oma kuvakollaasitehtävä graafisen suunnittelun opinnoista" loading="lazy">
+          <figcaption><span data-fi="KUVAKOLLAASI / OMA TYÖ" data-en="VISUAL COLLAGE / MY WORK">KUVAKOLLAASI / OMA TYÖ</span><span>OWN WORK · DESIGN</span></figcaption>
+        </figure>
+        <figure class="interlude-photo interlude-photo-tall">
+          <img src="https://raw.githubusercontent.com/MarikaMatala/toita/main/Blender-GRAFIKKAA-%20LEHTITOIMITUSTOITA-JA-%20MUUTA/peli-kurssi/5-hengen%20peli.jpg" alt="Viiden hengen peliprojektiin liittyvä oma kurssityö" loading="lazy">
+          <figcaption><span data-fi="PELIPROJEKTI" data-en="GAME PROJECT">PELIPROJEKTI</span><span>OWN WORK · GAME DESIGN</span></figcaption>
+        </figure>
+        <figure class="interlude-photo interlude-photo-small">
+          <img src="https://raw.githubusercontent.com/MarikaMatala/toita/main/Blender-GRAFIKKAA-%20LEHTITOIMITUSTOITA-JA-%20MUUTA/KOULUTOITA-AMK/hertan_huone.png" alt="Oma digitaalinen ympäristö- ja grafiikkaharjoitus" loading="lazy">
+          <figcaption><span data-fi="DIGITAALINEN YMPÄRISTÖ" data-en="DIGITAL ENVIRONMENT">DIGITAALINEN YMPÄRISTÖ</span><span>OWN WORK · 3D / ART</span></figcaption>
+        </figure>
+      </div>
+      <p class="interlude-credit" data-fi="Valikoituja omia opinto- ja luovia töitä GitHub-repositoriostani." data-en="Selected original coursework and creative work from my GitHub repository.">Valikoituja omia opinto- ja luovia töitä GitHub-repositoriostani.</p>
+    </section>
+
     <section class="contact-section section-wrap" id="contact">
       <p class="eyebrow"><span class="eyebrow-line"></span><span data-fi="Jatketaan keskustelua" data-en="Let's connect">Jatketaan keskustelua</span></p>
       <h2 data-fi="Etsin seuraavaa<br><em>mahdollisuutta.</em>" data-en="Looking for my next<br><em>opportunity.</em>">Etsin seuraavaa<br><em>mahdollisuutta.</em></h2>
