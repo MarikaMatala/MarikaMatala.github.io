@@ -10,8 +10,8 @@
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
   <title>Marika Matalamäki — Portfolio</title>
   <!-- MUOKKAUSVINKKI: sivun ulkoasu on tiedostossa style.css. Kommentit eivät näy verkkosivulla. -->
-  <link rel="stylesheet" href="style.css?v=9">
-  <script src="script.js?v=9" defer></script>
+  <link rel="stylesheet" href="style.css?v=10">
+  <script src="script.js?v=10" defer></script>
   <!-- Umami Cloud: kävijätilastointi. Lisää ?owner=1 URL-osoitteeseen merkitäksesi tämän selaimen omistajan käynneiksi. -->
   <script>
     (function () {
@@ -402,7 +402,18 @@ public class CardPayment : ITransaction
   <footer class="site-footer section-wrap">
     <a class="wordmark full-name" href="#home">Marika Matalamäki<span>.</span></a>
     <span data-fi="Valikoituja työnäytteitä ja omia suunnittelutöitä." data-en="Selected work samples and original design work.">Portfolio rakentuu vähitellen.</span>
-    <span>© <span id="year">2026</span> MARIKA MATALAMÄKI · <span data-fi="Kaikki oikeudet pidätetään." data-en="All rights reserved.">Kaikki oikeudet pidätetään.</span></span>
+    <button class="copyright-trigger" id="copyright-trigger" type="button" aria-haspopup="dialog" aria-controls="copyright-dialog" data-fi="© MM · Kuvien ja koodin käyttö" data-en="© MM · Image and code use">© MM · Kuvien ja koodin käyttö</button>
   </footer>
+
+  <dialog class="copyright-dialog" id="copyright-dialog" aria-labelledby="copyright-title">
+    <div class="copyright-dialog-inner">
+      <button class="copyright-close" id="copyright-close" type="button" aria-label="Sulje / Close">×</button>
+      <p class="eyebrow">© MM / RIGHTS &amp; USE</p>
+      <h2 id="copyright-title" data-fi="Tekijänoikeudet ja käyttö" data-en="Copyright and use">Tekijänoikeudet ja käyttö</h2>
+      <p data-fi="Portfolion koodit ja visuaaliset työt ovat itse tekemiäni. Ne on luotu harrastuksena tai opintojen aikana harjoitustöinä, ellei yksittäisen työn yhteydessä toisin ilmoiteta." data-en="The code and visual work in this portfolio are created by me, either as personal projects or coursework, unless a specific item is credited otherwise.">Portfolion koodit ja visuaaliset työt ovat itse tekemiäni. Ne on luotu harrastuksena tai opintojen aikana harjoitustöinä, ellei yksittäisen työn yhteydessä toisin ilmoiteta.</p>
+      <p data-fi="Kuvat ovat omiani, ellei kuvan tai projektin yhteydessä toisin mainita. Yhteistyöprojektien, opintotöiden ja kolmansien osapuolten materiaalien oikeudet säilyvät niiden omilla oikeudenhaltijoilla." data-en="Images are my own unless otherwise stated alongside the image or project. Rights to collaborative work, coursework materials and third-party assets remain with their respective rights holders.">Kuvat ovat omiani, ellei kuvan tai projektin yhteydessä toisin mainita. Yhteistyöprojektien, opintotöiden ja kolmansien osapuolten materiaalien oikeudet säilyvät niiden omilla oikeudenhaltijoilla.</p>
+      <p data-fi="Älä kopioi, julkaise uudelleen, muokkaa tai käytä materiaaleja ilman asianomaisen oikeudenhaltijan lupaa. Luvattomasta käytöstä voidaan vaatia hyvitystä tai vahingonkorvausta sovellettavan lain mukaisesti." data-en="Do not copy, republish, modify or reuse materials without permission from the relevant rights holder. Unauthorised use may lead to claims for remuneration or damages where applicable by law.">Älä kopioi, julkaise uudelleen, muokkaa tai käytä materiaaleja ilman asianomaisen oikeudenhaltijan lupaa. Luvattomasta käytöstä voidaan vaatia hyvitystä tai vahingonkorvausta sovellettavan lain mukaisesti.</p>
+    </div>
+  </dialog>
 </body>
 </html>
