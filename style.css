@@ -1682,3 +1682,14 @@ a:focus-visible,button:focus-visible{outline-color:#e2a8b8}
   .gothic-button,.project-card{transition:none!important}
   html{scroll-behavior:auto}
 }
+
+/* PrismJS C# syntax highlighting — coordinated with the dark burgundy palette. */
+#projects .oop-sample-panel pre[class*="language-"]{margin:0;background:#100a12;color:#eee4eb;text-shadow:none;border-radius:0;white-space:pre;tab-size:4}
+#projects .oop-sample-panel code[class*="language-"]{font-family:var(--mono);font-size:inherit;line-height:inherit;color:#eee4eb;text-shadow:none;white-space:pre}
+#projects .oop-sample-panel .token.comment,#projects .oop-sample-panel .token.prolog{color:#a48da3}
+#projects .oop-sample-panel .token.keyword,#projects .oop-sample-panel .token.boolean{color:#e0a0b5}
+#projects .oop-sample-panel .token.string,#projects .oop-sample-panel .token.char{color:#d8b07a}
+#projects .oop-sample-panel .token.function,#projects .oop-sample-panel .token.class-name{color:#c3c5ed}
+#projects .oop-sample-panel .token.number{color:#cba8e3}
+#projects .oop-sample-panel .token.operator,#projects .oop-sample-panel .token.punctuation{color:#d8c9d8}
+#projects .oop-sample-panel .token.property,#projects .oop-sample-panel .token.parameter{color:#b6d2c3}
