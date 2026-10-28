@@ -1,23 +1,21 @@
 # Portfolio images | Portfolion kuvat
 
-This directory contains image assets used by the portfolio website, including project visuals and branding samples.
+This directory contains local assets used by the Portfolio 2026 website. Local paths are preferred so the portfolio does not depend on a separate repository being public.
 
-Tämä kansio sisältää portfoliosivustolla käytettäviä kuvatiedostoja, kuten projektikuvia ja visuaalisen suunnittelun näytteitä.
+## Assets / Sisältö
 
-## Organization
-
-- `android-kurssin tehtavien kuvia/` — image samples from Android coursework
-- `wi-branding/` — selected visual identity and logo assets
-
-Image paths referenced in the website should match the file names and directory names in this repository. Use descriptive file names when adding new assets.
+- `SanaVapaa-tapahtumajuliste.pdf` — event poster created for SanaVapaa.
+- `Video ja valokuvaesittely PDF.pdf` — portfolio from the vocational qualification in audiovisual communications.
+- `omakuva.png` — profile photo.
+- `omena2.png` — visual design coursework from JAMK.
+- `peli.jpg` — animation exercise from a game-industry course.
+- `kaivo.jpg` — 3D well model from a game-industry course.
+- `android-kurssin tehtavien kuvia/` — screenshots from Android coursework.
+- `creative-samples/` — selected additional creative and 3D samples.
+- `wi-branding/` — WI and WIMMA Capstone branding samples.
 
 ## Copyright and use | Tekijänoikeudet ja käyttö
 
-Images in this portfolio are my own unless otherwise stated beside the image or project. Some screenshots may show third-party software, coursework or collaborative work; the rights to those elements remain with their respective owners. Do not reuse images without permission from the relevant rights holder.
+Images and projects are my own coursework unless otherwise stated. Some screenshots may show third-party software, coursework or collaborative work; the rights to those elements remain with their respective owners. Do not reuse images without permission from the relevant rights holder.
 
-Portfolion kuvat ovat omiani, ellei kuvan tai projektin yhteydessä toisin mainita. Osa kuvakaappauksista voi esittää kolmansien osapuolten ohjelmistoja, opintotöitä tai yhteistyöprojekteja; niiden oikeudet säilyvät asianomaisilla oikeudenhaltijoilla. Kuvia ei saa käyttää uudelleen ilman asianomaisen oikeudenhaltijan lupaa.
-
-
-## Creative samples
-
-The `creative-samples/` folder contains local copies of selected graphic design, game-project and 3D environment images used by the public portfolio. These are stored here so the portfolio does not depend on image URLs from the private coursework repository.
+Kuvat ja projektit ovat omia opintotöitäni, ellei toisin mainita. Osa kuvakaappauksista voi esittää kolmansien osapuolten ohjelmistoja tai yhteistyöprojekteja; niiden oikeudet säilyvät asianomaisilla oikeudenhaltijoilla. Älä käytä kuvia uudelleen ilman asianmukaista lupaa.
