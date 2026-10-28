@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Marika Matalamäki — työnäytteitä sovelluskehityksestä, C#-olio-ohjelmoinnista, Androidista, visuaalisesta suunnittelusta ja mediasta.">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="theme-color" content="#0B1820">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; upgrade-insecure-requests; script-src 'self' 'unsafe-inline' https://cloud.umami.is; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://raw.githubusercontent.com; connect-src 'self' https://cloud.umami.is">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+  <title>Marika Matalamäki — Työnäytteet</title>
+  <!-- MUOKKAUSVINKKI: sivun ulkoasu on tiedostossa style.css. Kommentit eivät näy verkkosivulla. -->
+  <link rel="stylesheet" href="style.css?v=18">
+  <script src="script.js?v=14" defer></script>
+  <!-- Umami Cloud: kävijätilastointi. Lisää ?owner=1 URL-osoitteeseen merkitäksesi tämän selaimen omistajan käynneiksi. -->
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('owner') === '1') {
+        localStorage.setItem('portfolio-analytics-owner', '1');
+      } else if (params.get('owner') === '0') {
+        localStorage.removeItem('portfolio-analytics-owner');
+      }
+
+      const tracker = document.createElement('script');
+      tracker.defer = true;
+      tracker.src = 'https://cloud.umami.is/script.js';
+      tracker.dataset.websiteId = '0f1e9249-905e-4386-881c-295fd7c92e3c';
+
+      if (localStorage.getItem('portfolio-analytics-owner') === '1') {
+        tracker.dataset.distinctId = 'portfolio-owner';
+      }
+
+      document.head.appendChild(tracker);
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content" data-fi="Siirry sisältöön" data-en="Skip to content">Siirry sisältöön</a>
+  <div class="notice" role="status">
+    <span class="notice-dot"></span>
+    <span data-fi="Portfolio täydentyy uusilla työnäytteillä."
+          data-en="This portfolio is being updated with selected work samples.">Portfolio on vielä kesken. Lisään tänne työnäytteitä vähitellen.</span>
+  </div>
+
+  <header class="site-header">
+    <a class="wordmark full-name" href="index.html#home" aria-label="Marika Matalamäki, etusivu">Marika Matalamäki<span>.</span></a>
+    <nav aria-label="Päänavigaatio">
+      <a href="index.html#about" data-fi="Minusta" data-en="About">Minusta</a>
+      <a href="#projects" data-fi="Työnäytteet" data-en="Selected work">Työnäytteet</a>
+      <a href="index.html#contact" data-fi="Yhteystiedot" data-en="Contact">Yhteystiedot</a>
+    </nav>
+    <button class="language-toggle" id="language-toggle" type="button" aria-label="Vaihda sivusto englanniksi"><span class="language-icon" aria-hidden="true">◎</span><span class="language-label" data-fi="ENGLISH" data-en="SUOMEKSI">ENGLISH</span><span class="language-arrow" aria-hidden="true">↗</span></button>
+  </header>
+
+  <main id="main-content">
+    <section class="work-page-intro section-wrap">
+      <p class="eyebrow"><span class="eyebrow-line"></span><span data-fi="Projektit ja käytännön osaaminen" data-en="Projects and practical skills">Projektit ja käytännön osaaminen</span></p>
+      <h1 data-fi="Työnäytteet ja<br><em>projektit.</em>" data-en="Work samples and<br><em>projects.</em>">Työnäytteet ja<br><em>projektit.</em></h1>
+      <p data-fi="Tällä sivulla esittelen valikoituja opintoprojekteja, koodiesimerkkejä ja visuaalisia töitäni. Olen nostanut työnäytteet tekstien yläpuolelle, jotta näet ensin konkreettisen lopputuloksen ja sen jälkeen taustatiedot." data-en="This page presents selected coursework, code examples and visual projects. Work samples appear before their descriptions, so you can see the result first and then read the context.">Tällä sivulla esittelen valikoituja opintoprojekteja, koodiesimerkkejä ja visuaalisia töitäni. Olen nostanut työnäytteet tekstien yläpuolelle, jotta näet ensin konkreettisen lopputuloksen ja sen jälkeen taustatiedot.</p>
+      <a class="text-link" href="index.html#home"><span data-fi="Takaisin etusivulle" data-en="Back to homepage">Takaisin etusivulle</span> ↗</a>
+    </section>
+    <!-- VISUAL INTERLUDE: original CSS artwork with selected work from my own repositories. -->
+    <section class="visual-interlude section-wrap" id="media" aria-labelledby="visual-interlude-title">
+      <div class="interlude-topline">
+        <span data-fi="DIGITAALINEN MEDIA" data-en="DIGITAL MEDIA">DIGITAALINEN MEDIA</span>
+        
+      </div>
+      <div class="interlude-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span><span data-fi="Visuaalinen suunnittelu ja audiovisuaalinen tuotanto" data-en="Visual Design and Audiovisual Production">Visuaalinen suunnittelu ja audiovisuaalinen tuotanto</span></p>
+        <h2 id="visual-interlude-title" data-fi="Kuvaa, ääntä ja visuaalista suunnittelua" data-en="Image, Sound and Visual Design">Kuvaa, ääntä ja visuaalista suunnittelua</h2>
+        <p data-fi="Minua kiinnostavat pinnat, värit ja tunnelmat, mutta myös se, miten visuaalinen idea muuttuu toimivaksi digitaaliseksi kokemukseksi." data-en="I’m drawn to texture, colour and atmosphere, as well as the process of turning a visual idea into a working digital experience.">Minua kiinnostavat pinnat, värit ja tunnelmat, mutta myös se, miten visuaalinen idea muuttuu toimivaksi digitaaliseksi kokemukseksi.</p>
+      </div>
+      <div class="media-reel-art" role="img" aria-label="Animoitu filmikamera ja liikkuva filminauha">
+        <div class="film-strip film-strip-back" aria-hidden="true">
+          <span class="film-frame"></span><span class="film-frame"></span><span class="film-frame"></span><span class="film-frame"></span>
+        </div>
+        <div class="film-camera" aria-hidden="true">
+          <span class="camera-top"></span>
+          <span class="camera-reel camera-reel-left"></span>
+          <span class="camera-reel camera-reel-right"></span>
+          <span class="camera-body"><span class="camera-lens"></span><span class="camera-flash"></span></span>
+          <span class="camera-grip"></span>
+        </div>
+        <div class="film-strip film-strip-front" aria-hidden="true">
+          <span class="film-frame"></span><span class="film-frame"></span><span class="film-frame"></span>
+        </div>
+        
+      </div>
+      <div class="interlude-photo-grid">
+        <figure class="interlude-photo interlude-photo-wide">
+          <img src="https://raw.githubusercontent.com/MarikaMatala/toita/main/Blender-GRAFIKKAA-%20LEHTITOIMITUSTOITA-JA-%20MUUTA/KOULUTOITA-AMK/kuvakollaasiteht%C3%A4v%C3%A4_MM.png" alt="Oma kuvakollaasitehtävä graafisen suunnittelun opinnoista" loading="lazy">
+          <figcaption><span data-fi="KUVAKOLLAASI / OMA TYÖ" data-en="VISUAL COLLAGE / MY WORK">KUVAKOLLAASI / OMA TYÖ</span><span>OWN WORK · DESIGN</span></figcaption>
+        </figure>
+        <figure class="interlude-photo interlude-photo-tall">
+          <img src="https://raw.githubusercontent.com/MarikaMatala/toita/main/Blender-GRAFIKKAA-%20LEHTITOIMITUSTOITA-JA-%20MUUTA/peli-kurssi/5-hengen%20peli.jpg" alt="Viiden hengen peliprojektiin liittyvä oma kurssityö" loading="lazy">
+          <figcaption><span data-fi="PELIPROJEKTI" data-en="GAME PROJECT">PELIPROJEKTI</span><span>OWN WORK · GAME DESIGN</span></figcaption>
+        </figure>
+        <figure class="interlude-photo interlude-photo-small">
+          <img src="https://raw.githubusercontent.com/MarikaMatala/toita/main/Blender-GRAFIKKAA-%20LEHTITOIMITUSTOITA-JA-%20MUUTA/KOULUTOITA-AMK/hertan_huone.png" alt="Oma digitaalinen ympäristö- ja grafiikkaharjoitus" loading="lazy">
+          <figcaption><span data-fi="DIGITAALINEN YMPÄRISTÖ" data-en="DIGITAL ENVIRONMENT">DIGITAALINEN YMPÄRISTÖ</span><span>OWN WORK · 3D / ART</span></figcaption>
+        </figure>
+      </div>
+      <p class="interlude-credit" data-fi="Valikoituja omia opinto- ja luovia töitä GitHub-repositoriostani." data-en="Selected original coursework and creative work from my GitHub repository.">Valikoituja omia opinto- ja luovia töitä GitHub-repositoriostani.</p>
+    </section>
+
+    <section class="work-section section-wrap" id="projects">
+      <div class="section-heading">
+        <p class="eyebrow"><span class="eyebrow-line"></span><span data-fi="Valikoituja töitä" data-en="Selected work">Valikoituja töitä</span></p>
+        <h2 data-fi="Opintoprojekteja ja<br><em>omia työnäytteitä.</em>" data-en="Study projects and<br><em>creative work.</em>">Opintoprojekteja ja<br><em>omia työnäytteitä.</em></h2>
+        <p class="section-lead" data-fi="Tarkemmat esittelyt opintoprojekteista ja visuaalisista töistä. Kunkin työn yhteydessä kerron omasta osuudestani, käytetyistä työkaluista ja harjoitelluista taidoista." data-en="Detailed examples of coursework and visual projects. Each project describes my contribution, the tools used and the skills practised.">Tarkemmat esittelyt opintoprojekteista ja visuaalisista töistä. Kunkin työn yhteydessä kerron omasta osuudestani, käytetyistä työkaluista ja harjoitelluista taidoista.</p></p>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card project-featured android-project" id="android">
+          <div class="android-carousel" id="android-carousel" role="group" aria-roledescription="carousel" aria-label="Android-kurssien kuvagalleria" data-fi-label="Android-kurssien kuvagalleria" data-en-label="Android course image gallery">
+            <div class="android-carousel-stage" id="android-carousel-stage" tabindex="0" aria-label="Käytä vasenta ja oikeaa nuolinäppäintä kuvien selaamiseen">
+              <img id="android-carousel-image" src="images/android-kurssin%20tehtavien%20kuvia/1.png" alt="Android-kurssin harjoitustyön kuvakaappaus 1 / 11" decoding="async">
+              <button type="button" class="carousel-arrow carousel-arrow-prev" id="android-prev" aria-label="Edellinen kuva" data-fi-label="Edellinen kuva" data-en-label="Previous image">←</button>
+              <button type="button" class="carousel-arrow carousel-arrow-next" id="android-next" aria-label="Seuraava kuva" data-fi-label="Seuraava kuva" data-en-label="Next image">→</button>
+              <span class="image-label">ANDROID COURSEWORK</span>
+            </div>
+            <div class="android-carousel-controls">
+              <span class="carousel-counter" id="android-counter" role="status" aria-live="polite" aria-atomic="true">1 / 11</span>
+            </div>
+          </div>
+          <div class="android-project-copy">
+            <div class="project-meta"><span>ANDROID STUDIO</span><span data-fi="Opintoharjoituksia" data-en="Course exercises">Opintoharjoituksia</span></div>
+            <h3 data-fi="Android-kehityksen harjoitustyöt" data-en="Android Development Exercises">Android-kehityksen harjoitustyöt</h3>
+            <p data-fi="Kuvagalleria esittelee Android-kehityksen kurssilla tekemiäni harjoitustöitä ja niiden käyttöliittymiä. Tehtävissä harjoittelin mobiilikäyttöliittymien rakentamista Android Studiossa sekä käyttöliittymän ja sovelluksen toiminnan yhdistämistä." data-en="This gallery presents screenshots from exercises completed during an Android development course. The work gave me practice building mobile interfaces in Android Studio and connecting user interfaces with app functionality.">Kuvagalleria esittelee Android-kehityksen kurssilla tekemiäni harjoitustöitä ja niiden käyttöliittymiä. Tehtävissä harjoittelin mobiilikäyttöliittymien rakentamista Android Studiossa sekä käyttöliittymän ja sovelluksen toiminnan yhdistämistä.</p>
+            <div class="skill-list"><span>Android Studio</span><span>Mobile UI</span><span>UI layout</span></div>
+            <p class="carousel-hint" data-fi="Selaa kuvia nuolipainikkeilla." data-en="Browse the screenshots using the arrow buttons.">Selaa kuvia nuolipainikkeilla.</p>
+          </div>
+        </article>
+
+        <article class="project-card" id="branding">
+          <div class="project-image branding-gallery" aria-label="Logo design samples">
+            <figure>
+              <img src="images/wi-branding/wi-logo.png" alt="WI-logoluonnos: valkoinen WI-typografia mustalla taustalla ja turkoosilla yksityiskohdalla" loading="lazy">
+              <figcaption>WI logo</figcaption>
+            </figure>
+            <figure>
+              <img src="images/wi-branding/wimma-capstone-logo.png" alt="WIMMA Capstone -logoluonnos: valkoinen typografia ja musta varjostus tummalla taustalla" loading="lazy">
+              <figcaption>WIMMA Capstone</figcaption>
+            </figure>
+          </div>
+          <div class="project-meta"><span>VISUAL DESIGN</span><span data-fi="Oma suunnittelutyö" data-en="Design by me">Oma suunnittelutyö</span></div>
+          <h3 data-fi="WI- ja WIMMA Capstone -logot" data-en="WI and WIMMA Capstone logos">WI- ja WIMMA Capstone -logot</h3>
+          <p data-fi="Suunnittelin WI-logon ja WIMMA Capstone -logon osana visuaalisen ilmeen kehittämistä. Työskentelin typografian, kontrastin ja tunnistettavan ilmeen parissa. Logot ovat esillä tässä portfoliossa, ja WIMMA Capstone -brändityötä hyödynnetään projektin verkkosivustolla." data-en="I designed the WI logo and the WIMMA Capstone logo as part of visual identity work, exploring typography, contrast and a recognisable look. The logos are shown in this portfolio, and the WIMMA Capstone visual identity work is used on the project website.">Valikoima logotyönäytteitä visuaalisen suunnittelun harjoituksesta. Näytteissä tutkin typografiaa, kontrastia ja tunnistettavaa ilmettä.</p>
+          <div class="skill-list"><span>Logo design</span><span>Typography</span><span>Visual identity</span></div>
+        </article>
+
+        <article class="project-card project-coming" id="wimma">
+          <div class="coming-art" aria-hidden="true"><span>W</span><span>✳</span><span>CAPSTONE</span></div>
+          <div class="project-meta"><span>BRAND IDENTITY</span><span data-fi="Tulossa" data-en="Coming soon">Tulossa</span></div>
+          <h3>WIMMA Capstone</h3>
+          <p data-fi="Suunnittelin WIMMA Capstonen brändiuudistuksen visuaalista perustaa: logon, väripaletin ja visuaalisen ilmeen. Suunnittelin myös verkkosivun visuaalista ilmettä ja huomioin käytettävyyden sekä saavutettavuuden. Työni pohjalta syntynyttä visuaalista perustaa hyödynnetään projektin verkkosivustolla." data-en="I designed the visual foundation for the WIMMA Capstone brand renewal, including the logo, colour palette and visual identity. I also designed the website’s visual direction, considering usability and accessibility. My work established a visual foundation for further development and is used on the project website.">Olin mukana WIMMA Capstonen brändiuudistuksessa. Oma osuuteni keskittyi logoon, väripalettiin ja visuaaliseen ilmeeseen. Lisäksi osallistuin verkkosivun visuaalisen ilmeen ja käytettävyyden suunnitteluun. Lisään tänne tarkemman esittelyn ja työnäytteitä myöhemmin.</p>
+          <a class="text-link small-link" href="https://wimma-capstone.jamk.fi/" target="_blank" rel="noreferrer"><span data-fi="Avaa projektisivusto" data-en="Visit project website">Avaa projektisivusto</span> ↗</a>
+        </article>
+
+        <article class="project-card project-oop" id="oop">
+          <div class="oop-heading">
+            <div>
+              <div class="project-meta"><span>C# · OBJECT-ORIENTED PROGRAMMING</span><span data-fi="Arvosana 5" data-en="Grade 5">Arvosana 5</span></div>
+              <h3 data-fi="Olio-ohjelmointi" data-en="Object-oriented programming">Olio-ohjelmointi</h3>
+            </div>
+            <span class="oop-grade" aria-label="Kurssin arvosana 5">5<span>/5</span></span>
+          </div>
+          <p data-fi="Sain olio-ohjelmoinnin kurssista arvosanan 5. Olin aiheesta aidosti kiinnostunut, ja C# oli tullut tutuksi jo ennen AMK-opintoja pelialan perusteet -kurssilla. Olio-ohjelmointi (OOP, object-oriented programming) on ohjelmointitapa, jossa ohjelmaa rakennetaan olioista. Olio yhdistää samaan kokonaisuuteen tietoa eli tilaa ja toimintoja eli metodeja. Luokka toimii olion mallina: esimerkiksi Auto-luokka voi määritellä merkin, mallin ja nopeuden sekä metodit, joilla auto kiihdyttää tai pysähtyy.">Sain olio-ohjelmoinnin kurssista arvosanan 5. Olin aiheesta aidosti kiinnostunut, ja C# oli tullut tutuksi jo ennen AMK-opintoja pelialan perusteet -kurssilla. Olio-ohjelmointi (OOP, object-oriented programming) on ohjelmointitapa, jossa ohjelmaa rakennetaan olioista. Olio yhdistää samaan kokonaisuuteen tietoa eli tilaa ja toimintoja eli metodeja. Luokka toimii olion mallina: esimerkiksi Auto-luokka voi määritellä merkin, mallin ja nopeuden sekä metodit, joilla auto kiihdyttää tai pysähtyy.</p>
+          <p data-fi="Olio-ohjelmoinnin ideana on jakaa ohjelma selkeisiin osiin, joilla on omat vastuut. Kapselointi auttaa hallitsemaan sitä, miten olion tietoja muutetaan. Perintä mahdollistaa yhteisten ominaisuuksien ja toiminnan hyödyntämisen eri luokissa, ja rajapinnat määrittelevät, millä tavalla eri osat voivat toimia yhdessä. Koostamisessa suurempi kokonaisuus rakennetaan pienemmistä olioista. Näiden avulla koodia voi jäsentää, ylläpitää, testata ja laajentaa." data-en="The idea is to divide a program into clear components with their own responsibilities. Encapsulation helps control how an object's data is changed. Inheritance lets related classes reuse shared properties and behaviour, while interfaces define how different parts can work together. Composition builds larger structures from smaller objects. These techniques can make code easier to organise, maintain, test and extend.">Olio-ohjelmoinnin ideana on jakaa ohjelma selkeisiin osiin, joilla on omat vastuut. Kapselointi auttaa hallitsemaan sitä, miten olion tietoja muutetaan. Perintä mahdollistaa yhteisten ominaisuuksien ja toiminnan hyödyntämisen eri luokissa, ja rajapinnat määrittelevät, millä tavalla eri osat voivat toimia yhdessä. Koostamisessa suurempi kokonaisuus rakennetaan pienemmistä olioista. Näiden avulla koodia voi jäsentää, ylläpitää, testata ja laajentaa.</p>
+          <p data-fi="Olio-ohjelmointia käytetään esimerkiksi peleissä, Android- ja muissa mobiilisovelluksissa, verkkopalveluiden taustajärjestelmissä, työpöytäsovelluksissa sekä yritysten järjestelmissä. Pelissä olio voi kuvata pelaajaa, vihollista tai esinettä; verkkopalvelussa se voi kuvata käyttäjää, tilausta tai tuotetta. Olio-ohjelmointi ei ole ainoa tapa toteuttaa ohjelmistoa, mutta se on hyödyllinen silloin, kun järjestelmässä on useita toisiinsa liittyviä tietoja ja toimintoja." data-en="Object-oriented programming is used in games, Android and other mobile apps, web-service backends, desktop applications and business systems. In a game, an object might represent a player, enemy or item; in a web service, it might represent a user, order or product. OOP is not the only way to build software, but it is useful when a system contains many related pieces of data and behaviour.">Olio-ohjelmointia käytetään esimerkiksi peleissä, Android- ja muissa mobiilisovelluksissa, verkkopalveluiden taustajärjestelmissä, työpöytäsovelluksissa sekä yritysten järjestelmissä. Pelissä olio voi kuvata pelaajaa, vihollista tai esinettä; verkkopalvelussa se voi kuvata käyttäjää, tilausta tai tuotetta. Olio-ohjelmointi ei ole ainoa tapa toteuttaa ohjelmistoa, mutta se on hyödyllinen silloin, kun järjestelmässä on useita toisiinsa liittyviä tietoja ja toimintoja.</p>
+          <p class="interaction-hint" data-fi="Selaa esimerkkejä nuolipainikkeilla tai valitse tehtävä luettelosta. Koodit ovat lyhennettyjä, yleisiksi muokattuja näytteitä. Ne havainnollistavat tehtävissä käytettyjä ohjelmointiperiaatteita." data-en="Browse the examples with the arrow buttons or choose an exercise from the list. The code has been shortened and generalised to remove unnecessary personal or project-specific details. It illustrates the programming concepts used in the exercises.">Selaa esimerkkejä nuolipainikkeilla tai valitse tehtävä luettelosta. Koodit ovat lyhennettyjä, yleisiksi muokattuja näytteitä. Ne havainnollistavat tehtävissä käytettyjä ohjelmointiperiaatteita.</p>
+          <div class="oop-browser" id="oop-browser" role="region" aria-label="Olio-ohjelmoinnin koodiesimerkit" data-fi-label="Olio-ohjelmoinnin koodiesimerkit" data-en-label="Object-oriented programming code samples">
+            <div class="oop-browser-toolbar">
+              <label for="oop-sample-select" data-fi="Valitse esimerkki" data-en="Choose an example">Valitse esimerkki</label>
+              <select id="oop-sample-select" aria-label="Valitse olio-ohjelmoinnin esimerkki">
+                <option value="0" data-fi="T1 · Syötteen tarkistus" data-en="T1 · Input validation">T1 · Syötteen tarkistus</option>
+                <option value="1" data-fi="T6 · Luokka ja ominaisuudet" data-en="T6 · Class and properties">T6 · Luokka ja ominaisuudet</option>
+                <option value="2" data-fi="T9 · Konstruktori ja ToString" data-en="T9 · Constructor and ToString">T9 · Konstruktori ja ToString</option>
+                <option value="3" data-fi="T10 · Oliot kokoelmassa" data-en="T10 · Objects in a collection">T10 · Oliot kokoelmassa</option>
+                <option value="4" data-fi="T13 · Ehtojen tarkistus luokassa" data-en="T13 · Validation in a class">T13 · Ehtojen tarkistus luokassa</option>
+                <option value="5" data-fi="T15 · Perintä ja uudelleenkäyttö" data-en="T15 · Inheritance and reuse">T15 · Perintä ja uudelleenkäyttö</option>
+                <option value="6" data-fi="T20 · Abstrakti luokka ja ylikirjoitus" data-en="T20 · Abstract class and overriding">T20 · Abstrakti luokka ja ylikirjoitus</option>
+                <option value="7" data-fi="T23 · Rajapinta ja jono" data-en="T23 · Interface and queue">T23 · Rajapinta ja jono</option>
+                <option value="8" data-fi="T24 · Olioiden koostaminen" data-en="T24 · Object composition">T24 · Olioiden koostaminen</option>
+                <option value="9" data-fi="T29–T30 · Rajapinta ja eri toteutukset" data-en="T29–T30 · Interface and implementations">T29–T30 · Rajapinta ja eri toteutukset</option>
+              </select>
+            </div>
+            <div class="oop-sample-panels">
+            <article class="oop-sample-panel" data-sample="0">
+              <div class="sample-panel-heading"><span class="sample-task">T1</span><h4 data-fi="Syötteen tarkistus" data-en="Input validation">Syötteen tarkistus</h4></div>
+              <p data-fi="TryParse tarkistaa, että käyttäjän syöte voidaan tulkita kokonaisluvuksi ennen kuin ohjelma käyttää arvoa. Sama periaate auttaa käsittelemään virheellisiä syötteitä hallitusti." data-en="TryParse checks whether user input can be parsed as an integer before the program uses it. This helps handle invalid input gracefully.">TryParse tarkistaa, että käyttäjän syöte voidaan tulkita kokonaisluvuksi ennen kuin ohjelma käyttää arvoa. Sama periaate auttaa käsittelemään virheellisiä syötteitä hallitusti.</p>
+              <pre><code>if (int.TryParse(input, out int score))
+{
+    Console.WriteLine($&quot;Pisteet: {score}&quot;);
+}
+else
+{
+    Console.WriteLine(&quot;Anna kelvollinen numero.&quot;);
+}</code></pre>
+            </article>
+            <article class="oop-sample-panel" hidden data-sample="1">
+              <div class="sample-panel-heading"><span class="sample-task">T6</span><h4 data-fi="Luokka ja ominaisuudet" data-en="Class and properties">Luokka ja ominaisuudet</h4></div>
+              <p data-fi="Saunan kiukaan harjoituksessa mallinnetaan laitteen tilaa ominaisuuksilla ja metodilla. Käyttöliittymän tulostukset kannattaa pitää erillään luokan toiminnasta, jotta luokkaa voi käyttää uudelleen." data-en="The sauna-heater exercise models device state with properties and a method. Keeping console output outside the class makes the class more reusable.">Saunan kiukaan harjoituksessa mallinnetaan laitteen tilaa ominaisuuksilla ja metodilla. Käyttöliittymän tulostukset kannattaa pitää erillään luokan toiminnasta, jotta luokkaa voi käyttää uudelleen.</p>
+              <pre><code>public class SaunaHeater
+{
+    public bool IsOn { get; set; }
+    public int Temperature { get; set; }
+    public int Humidity { get; set; }
+
+    public string GetStatus()
+    {
+        return $&quot;On: {IsOn}, &quot; +
+            $&quot;temperature: {Temperature}&quot;;
+    }
+}</code></pre>
+            </article>
+            <article class="oop-sample-panel" hidden data-sample="2">
+              <div class="sample-panel-heading"><span class="sample-task">T9</span><h4 data-fi="Konstruktori ja ToString" data-en="Constructor and ToString">Konstruktori ja ToString</h4></div>
+              <p data-fi="Vehicle-luokka kokoaa ajoneuvon tiedot yhteen. Konstruktori alustaa olion, ja ToString-ylikirjoitus määrittelee, miten olio esitetään tekstinä." data-en="The Vehicle class groups vehicle data together. A constructor initializes the object, while overriding ToString defines its text representation.">Vehicle-luokka kokoaa ajoneuvon tiedot yhteen. Konstruktori alustaa olion, ja ToString-ylikirjoitus määrittelee, miten olio esitetään tekstinä.</p>
+              <pre><code>public class Vehicle
+{
+    public string Brand { get; set; }
+    public string Model { get; set; }
+    public int Speed { get; set; }
+
+    public Vehicle(string brand, string model)
+    {
+        Brand = brand;
+        Model = model;
+    }
+
+    public override string ToString() =&gt;
+        $&quot;{Brand} {Model}, {Speed} km/h&quot;;
+}</code></pre>
+            </article>
+            <article class="oop-sample-panel" hidden data-sample="3">
+              <div class="sample-panel-heading"><span class="sample-task">T10</span><h4 data-fi="Oliot kokoelmassa" data-en="Objects in a collection">Oliot kokoelmassa</h4></div>
+              <p data-fi="Student-tehtävässä luodaan opiskelijaolioita, lisätään ne List-kokoelmaan ja käsitellään niitä silmukalla. Esimerkki näyttää, miten samantyyppisiä olioita voidaan hallita yhdessä." data-en="The Student exercise creates student objects, stores them in a List and processes them in a loop. It shows how objects of the same type can be managed together.">Student-tehtävässä luodaan opiskelijaolioita, lisätään ne List-kokoelmaan ja käsitellään niitä silmukalla. Esimerkki näyttää, miten samantyyppisiä olioita voidaan hallita yhdessä.</p>
+              <pre><code>var students = new List&lt;Student&gt;
+{
+    new Student(&quot;Alex&quot;, 102),
+    new Student(&quot;Robin&quot;, 205),
+    new Student(&quot;Sam&quot;, 118)
+};
+
+students.Sort((a, b) =&gt;
+    a.StudentNumber.CompareTo(b.StudentNumber));
+
+foreach (Student student in students)
+{
+    Console.WriteLine(student.ShowInfo());
+}</code></pre>
+            </article>
+            <article class="oop-sample-panel" hidden data-sample="4">
+              <div class="sample-panel-heading"><span class="sample-task">T13</span><h4 data-fi="Ehtojen tarkistus luokassa" data-en="Validation in a class">Ehtojen tarkistus luokassa</h4></div>
+              <p data-fi="Hissi-esimerkissä GoTo-metodi tarkistaa kerrosnumeron ennen tilan muuttamista. Metodi palauttaa onnistumisen ja viestin, joten kutsuva ohjelma voi reagoida tulokseen." data-en="In the elevator example, GoTo validates the floor before changing state. It returns a success value and a message so the calling code can respond.">Hissi-esimerkissä GoTo-metodi tarkistaa kerrosnumeron ennen tilan muuttamista. Metodi palauttaa onnistumisen ja viestin, joten kutsuva ohjelma voi reagoida tulokseen.</p>
+              <pre><code>public bool GoTo(int floor, out string message)
+{
+    if (floor &lt; 1 || floor &gt; 5)
+    {
+        message = &quot;Kerros ei ole sallittu.&quot;;
+        return false;
+    }
+
+    CurrentFloor = floor;
+    message = $&quot;Hissi on kerroksessa {floor}.&quot;;
+    return true;
+}</code></pre>
+            </article>
+            <article class="oop-sample-panel" hidden data-sample="5">
+              <div class="sample-panel-heading"><span class="sample-task">T15</span><h4 data-fi="Perintä ja uudelleenkäyttö" data-en="Inheritance and reuse">Perintä ja uudelleenkäyttö</h4></div>
+              <p data-fi="Boss perii Employee-luokan yhteiset ominaisuudet ja kutsuu kantaluokan konstruktoria base-avainsanalla. Näin yhteistä koodia ei tarvitse kirjoittaa uudelleen." data-en="Boss inherits the shared properties of Employee and calls the base-class constructor with base. This avoids duplicating common code.">Boss perii Employee-luokan yhteiset ominaisuudet ja kutsuu kantaluokan konstruktoria base-avainsanalla. Näin yhteistä koodia ei tarvitse kirjoittaa uudelleen.</p>
+              <pre><code>public class Employee
+{
+    public string Name { get; set; }
+    public double Salary { get; set; }
+
+    public Employee(string name, double salary)
+    {
+        Name = name;
+        Salary = salary;
+    }
+}
+
+public class Boss : Employee
+{
+    public double Bonus { get; set; }
+
+    public Boss(string name, double salary, double bonus)
+        : base(name, salary)
+    {
+        Bonus = bonus;
+    }
+}</code></pre>
+            </article>
+            <article class="oop-sample-panel" hidden data-sample="6">
+              <div class="sample-panel-heading"><span class="sample-task">T20</span><h4 data-fi="Abstrakti luokka ja ylikirjoitus" data-en="Abstract class and overriding">Abstrakti luokka ja ylikirjoitus</h4></div>
+              <p data-fi="Mammal-tehtävässä abstrakti kantaluokka määrittelee yhteisen Move-metodin sopimuksen. Johdetut luokat toteuttavat toiminnan eri tavoin override-avainsanalla." data-en="The Mammal exercise uses an abstract base class to define a shared Move method. Derived classes implement that behaviour differently with override.">Mammal-tehtävässä abstrakti kantaluokka määrittelee yhteisen Move-metodin sopimuksen. Johdetut luokat toteuttavat toiminnan eri tavoin override-avainsanalla.</p>
+              <pre><code>public abstract class Mammal
+{
+    public int Age { get; set; }
+    public abstract string Move();
+}
+
+public class Human : Mammal
+{
+    public override string Move() =&gt; &quot;Walking&quot;;
+}
+
+public class Baby : Human
+{
+    public override string Move() =&gt; &quot;Crawling&quot;;
+}</code></pre>
+            </article>
+            <article class="oop-sample-panel" hidden data-sample="7">
+              <div class="sample-panel-heading"><span class="sample-task">T23</span><h4 data-fi="Rajapinta ja jono" data-en="Interface and queue">Rajapinta ja jono</h4></div>
+              <p data-fi="CheckoutQueue toteuttaa ICheckoutQueue-rajapinnan ja kapseloi jonon käsittelyn. Rajapinta määrittelee, mitä toimintoja jonon käyttäjä voi kutsua." data-en="CheckoutQueue implements ICheckoutQueue and encapsulates queue handling. The interface defines which operations callers can use.">CheckoutQueue toteuttaa ICheckoutQueue-rajapinnan ja kapseloi jonon käsittelyn. Rajapinta määrittelee, mitä toimintoja jonon käyttäjä voi kutsua.</p>
+              <pre><code>public interface ICheckoutQueue
+{
+    void Join(string customer);
+    string? Leave();
+    int Length { get; }
+}
+
+public class CheckoutQueue : ICheckoutQueue
+{
+    private readonly Queue&lt;string&gt; queue = new();
+
+    public int Length =&gt; queue.Count;
+    public void Join(string customer) =&gt; queue.Enqueue(customer);
+    public string? Leave() =&gt;
+        queue.Count &gt; 0 ? queue.Dequeue() : null;
+}</code></pre>
+            </article>
+            <article class="oop-sample-panel" hidden data-sample="8">
+              <div class="sample-panel-heading"><span class="sample-task">T24</span><h4 data-fi="Olioiden koostaminen" data-en="Object composition">Olioiden koostaminen</h4></div>
+              <p data-fi="Vehicle sisältää Tire-olioita listassa. Koostaminen kuvaa, miten isompi kokonaisuus rakentuu erillisistä olioista ja miten niiden tietoja voidaan käsitellä yhdessä." data-en="Vehicle contains Tire objects in a list. Composition shows how a larger object is built from smaller objects and their data can be handled together.">Vehicle sisältää Tire-olioita listassa. Koostaminen kuvaa, miten isompi kokonaisuus rakentuu erillisistä olioista ja miten niiden tietoja voidaan käsitellä yhdessä.</p>
+              <pre><code>public class Tire
+{
+    public string Manufacturer { get; set; } = &quot;&quot;;
+    public string Model { get; set; } = &quot;&quot;;
+}
+
+public class Vehicle
+{
+    public string Name { get; set; }
+    public List&lt;Tire&gt; Tires { get; } = new();
+
+    public Vehicle(string name) =&gt; Name = name;
+}
+
+// Add a tyre to a vehicle:
+vehicle.Tires.Add(tire);</code></pre>
+            </article>
+            <article class="oop-sample-panel" hidden data-sample="9">
+              <div class="sample-panel-heading"><span class="sample-task">T29–T30</span><h4 data-fi="Rajapinta ja eri toteutukset" data-en="Interface and implementations">Rajapinta ja eri toteutukset</h4></div>
+              <p data-fi="ITransaction määrittelee yhteisen toiminnan maksutavoille. Käteis- ja korttimaksu voivat toteuttaa saman rajapinnan omalla logiikallaan. Sama ajatus näkyy ICourse-rajapinnan ja Course-luokan harjoituksessa." data-en="ITransaction defines shared behaviour for payment types. Cash and card payments can implement the same interface with their own logic. A similar idea appears in the ICourse and Course exercise.">ITransaction määrittelee yhteisen toiminnan maksutavoille. Käteis- ja korttimaksu voivat toteuttaa saman rajapinnan omalla logiikallaan. Sama ajatus näkyy ICourse-rajapinnan ja Course-luokan harjoituksessa.</p>
+              <pre><code>public interface ITransaction
+{
+    string ShowTransaction();
+    decimal Amount { get; }
+}
+
+public class CardPayment : ITransaction
+{
+    public decimal Amount { get; }
+
+    public CardPayment(decimal amount) =&gt; Amount = amount;
+
+    public string ShowTransaction() =&gt;
+        $&quot;Card payment: {Amount:0.00}&quot;;
+}</code></pre>
+            </article>
+            </div>
+            <div class="oop-browser-controls">
+              <button type="button" id="oop-prev" class="oop-nav-button" data-fi-label="Edellinen esimerkki" data-en-label="Previous example" aria-label="Edellinen esimerkki">← <span data-fi="Edellinen" data-en="Previous">Edellinen</span></button>
+              <span id="oop-counter" class="oop-counter" role="status" aria-live="polite" aria-atomic="true">1 / 10</span>
+              <button type="button" id="oop-next" class="oop-nav-button" data-fi-label="Seuraava esimerkki" data-en-label="Next example" aria-label="Seuraava esimerkki"><span data-fi="Seuraava" data-en="Next">Seuraava</span> →</button>
+            </div>
+          </div>
+          <div class="skill-list"><span>C#</span><span>OOP</span><span>Classes & objects</span><span>Inheritance</span><span>Interfaces</span></div>
+          <p class="oop-note" data-fi="Nämä ovat alkuperäisistä kurssitehtävistä valittuja ja portfoliota varten rajattuja koodinäytteitä. Kokonaiset projektit eivät sisällä sivustolle siirrettyjä riippuvuuksia tai asetustiedostoja." data-en="These are selected and trimmed code samples based on the original course exercises. Full projects, dependencies and configuration files have not been copied into this portfolio.">Nämä ovat alkuperäisistä kurssitehtävistä valittuja ja portfoliota varten rajattuja koodinäytteitä. Kokonaiset projektit eivät sisällä sivustolle siirrettyjä riippuvuuksia tai asetustiedostoja.</p>
+        </article>
+      </div>
+      <p class="privacy-note"><span aria-hidden="true">✳</span> <span data-fi="Lisää työnäytteitä on saatavilla pyynnöstä. Osa portfolion muista materiaaleista on toistaiseksi yksityisiä." data-en="More work samples are available on request. Some other portfolio materials are currently private.">Lisää työnäytteitä on saatavilla pyynnöstä. Osa portfolion muista materiaaleista on toistaiseksi yksityisiä.</span></p>
+    </section>
+
+    <!-- YHTEYSTIEDOT: tarkista linkit ennen julkaisua. -->
+    <section class="contact-section section-wrap" id="contact">
+      <p class="eyebrow"><span class="eyebrow-line"></span><span data-fi="Jatketaan keskustelua" data-en="Let's connect">Jatketaan keskustelua</span></p>
+      <h2 data-fi="Etsin seuraavaa<br><em>mahdollisuutta.</em>" data-en="Looking for my next<br><em>opportunity.</em>">Etsin seuraavaa<br><em>mahdollisuutta.</em></h2>
+      <p data-fi="Etsin töitä pääkaupunkiseudulta. Minua kiinnostavat erityisesti IT, web-kehitys, visuaalinen suunnittelu ja media, mutta olen avoin myös muille tehtäville, joissa osaamisestani olisi hyötyä. Etsin ensisijaisesti kokoaikaista työtä, mutta myös osa-aikaiset tehtävät käyvät. Sekä vakituiset että määräaikaiset työsuhteet kiinnostavat. Voin aloittaa 1.1.2027 tai sopimuksen mukaan." data-en="I’m looking for work in the Helsinki metropolitan area, especially in IT, web development, visual design and media, but I’m open to other roles where my skills could be useful. I’m primarily looking for full-time work, but I’m also open to part-time roles and both permanent and fixed-term contracts. I can start on 1 January 2027 or by agreement.">Etsin töitä pääkaupunkiseudulta. Minua kiinnostavat erityisesti IT, web-kehitys, visuaalinen suunnittelu ja media, mutta olen avoin myös muille tehtäville, joissa osaamisestani olisi hyötyä.</p>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/marika-matalamaki/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        <a href="https://github.com/MarikaMatala" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </div>
+    </section>  </main>
+  <footer class="site-footer section-wrap">
+    <a class="wordmark full-name" href="#home">Marika Matalamäki<span>.</span></a>
+    <span data-fi="©-merkintä muistuttaa tekijyydestä. Klikkaa kuvaa nähdäksesi tekijänoikeus- ja käyttöehdot." data-en="The © mark identifies authorship. Click an image to view copyright and reuse information.">©-merkintä muistuttaa tekijyydestä. Klikkaa kuvaa nähdäksesi tekijänoikeus- ja käyttöehdot.</span>
+    <span class="footer-note" data-fi="Omat kuvat ja koodit, ellei toisin mainita." data-en="Original images and code unless otherwise credited.">Omat kuvat ja koodit, ellei toisin mainita.</span>
+  </footer>
+</body>
+</html>
