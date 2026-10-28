@@ -32,6 +32,20 @@ The portfolio website and this README are available in Finnish and English. The 
 
 PrismJS 1.30.0 is loaded from jsDelivr on the work samples page to highlight C# code examples. The library is used under its MIT license. The gothic textures, responsive layouts and subtle decorative animation are implemented with CSS to keep the site lightweight. The language choice is remembered between pages in the browser.
 
+## UI libraries, animation and accessibility
+
+The current site uses native HTML, CSS and JavaScript and is published directly with GitHub Pages. Its gothic visual effects and motion are implemented in CSS, with reduced-motion support. PrismJS 1.30.0 is used for C# syntax highlighting on the work samples page.
+
+A reference guide for possible future libraries—including Tailwind CSS v4, tw-animate-css, Radix/shadcn UI, Lucide, Simple Icons and the Web Audio API—is available in [UI-LIBRARIES.md](UI-LIBRARIES.md). These React/Vite libraries are documented as future options, not dependencies installed in the current static site.
+
+The guide also includes animation examples and links to official documentation and CSS learning resources.
+
+## Käyttöliittymäkirjastot, animaatiot ja saavutettavuus
+
+Nykyinen sivusto käyttää tavallista HTML:ää, CSS:ää ja JavaScriptiä, ja GitHub Pages julkaisee sen ilman erillistä build-vaihetta. Goottilaiset koristeet ja animaatiot on toteutettu CSS:llä, ja liikkeen vähentämisen asetukset huomioidaan. C#-koodiesimerkkien korostamiseen käytetään PrismJS 1.30.0 -kirjastoa.
+
+Mahdollisia tulevan React/Vite-version kirjastoja, animaatioesimerkkejä ja virallisia dokumentaatioita käsitellään tiedostossa [UI-LIBRARIES.md](UI-LIBRARIES.md). React/Vite-kirjastot on dokumentoitu jatkokehityksen vaihtoehtoina; niitä ei ole lisätty nykyisen staattisen sivuston riippuvuuksiksi.
+
 ## Copyright and use | Tekijänoikeudet ja käyttö
 
 The code and visual work in this portfolio are created by Marika Matalamäki, either as personal projects or coursework, unless a specific item is credited otherwise. Images are her own unless otherwise stated alongside an image or project. Rights to collaborative work, coursework materials and third-party assets remain with their respective rights holders. Do not reuse materials without permission from the relevant rights holder. Unauthorised use may lead to claims for remuneration or damages where applicable by law.
