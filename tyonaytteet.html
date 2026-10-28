@@ -7,12 +7,15 @@
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
   <meta name="theme-color" content="#0b080d">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; upgrade-insecure-requests; script-src 'self' 'unsafe-inline' https://cloud.umami.is; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://raw.githubusercontent.com; connect-src 'self' https://cloud.umami.is">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; upgrade-insecure-requests; script-src 'self' 'unsafe-inline' https://cloud.umami.is https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://raw.githubusercontent.com; connect-src 'self' https://cloud.umami.is">
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
   <title>Marika Matalamäki — Työnäytteet</title>
   <!-- MUOKKAUSVINKKI: sivun ulkoasu on tiedostossa style.css. Kommentit eivät näy verkkosivulla. -->
-  <link rel="stylesheet" href="style.css?v=22">
-  <script src="script.js?v=14" defer></script>
+  <link rel="stylesheet" href="style.css?v=23">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/themes/prism-tomorrow.min.css">
+  <script src="script.js?v=15" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-core.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-csharp.min.js" defer></script>
   <!-- Umami Cloud: kävijätilastointi. Lisää ?owner=1 URL-osoitteeseen merkitäksesi tämän selaimen omistajan käynneiksi. -->
   <script>
     (function () {
@@ -58,7 +61,7 @@
     <section class="work-page-intro section-wrap">
       <p class="eyebrow"><span class="eyebrow-line"></span><span data-fi="Projektit ja käytännön osaaminen" data-en="Projects and practical skills">Projektit ja käytännön osaaminen</span></p>
       <h1 data-fi="Työnäytteet ja<br><em>projektit.</em>" data-en="Work samples and<br><em>projects.</em>">Työnäytteet ja<br><em>projektit.</em></h1>
-      <p data-fi="Tällä sivulla voit lukea projektien taustoista ja sen jälkeen katsella työnäytteitä, kokeilla koodiesimerkkejä ja selata kuvia. Käytettävissä olevat näytteet ovat valikoituja opinto- ja suunnittelutöitäni." data-en="Read about each project first, then browse screenshots, visual work and interactive code examples. The samples are selected coursework and design projects.">Tällä sivulla esittelen valikoituja opintoprojekteja, koodiesimerkkejä ja visuaalisia töitäni. Olen nostanut työnäytteet tekstien yläpuolelle, jotta näet ensin konkreettisen lopputuloksen ja sen jälkeen taustatiedot.</p>
+      <p data-fi="Tällä sivulla voit lukea projektien taustoista ja sen jälkeen katsella työnäytteitä, kokeilla koodiesimerkkejä ja selata kuvia. Käytettävissä olevat näytteet ovat valikoituja opinto- ja suunnittelutöitäni." data-en="Read about each project first, then browse screenshots, visual work and interactive code examples. The samples are selected coursework and design projects.">Tällä sivulla voit lukea projektien taustoista ja sen jälkeen katsella työnäytteitä, kokeilla koodiesimerkkejä ja selata kuvia. Käytettävissä olevat näytteet ovat valikoituja opinto- ja suunnittelutöitäni.</p>
       <div class="work-page-actions"><a class="gothic-button" href="index.html"><span data-fi="Etusivulle" data-en="Home">Etusivulle</span><span aria-hidden="true">↗</span></a><a class="gothic-button" href="yhteystiedot.html"><span data-fi="Ota yhteyttä" data-en="Contact me">Ota yhteyttä</span><span aria-hidden="true">↗</span></a></div>
     </section>
     <section class="work-section section-wrap" id="projects">
@@ -148,7 +151,7 @@
             <article class="oop-sample-panel" data-sample="0">
               <div class="sample-panel-heading"><span class="sample-task">T1</span><h4 data-fi="Syötteen tarkistus" data-en="Input validation">Syötteen tarkistus</h4></div>
               <p data-fi="TryParse tarkistaa, että käyttäjän syöte voidaan tulkita kokonaisluvuksi ennen kuin ohjelma käyttää arvoa. Sama periaate auttaa käsittelemään virheellisiä syötteitä hallitusti." data-en="TryParse checks whether user input can be parsed as an integer before the program uses it. This helps handle invalid input gracefully.">TryParse tarkistaa, että käyttäjän syöte voidaan tulkita kokonaisluvuksi ennen kuin ohjelma käyttää arvoa. Sama periaate auttaa käsittelemään virheellisiä syötteitä hallitusti.</p>
-              <pre><code>if (int.TryParse(input, out int score))
+              <pre><code class="language-csharp">if (int.TryParse(input, out int score))
 {
     Console.WriteLine($&quot;Pisteet: {score}&quot;);
 }
@@ -160,7 +163,7 @@ else
             <article class="oop-sample-panel" hidden data-sample="1">
               <div class="sample-panel-heading"><span class="sample-task">T6</span><h4 data-fi="Luokka ja ominaisuudet" data-en="Class and properties">Luokka ja ominaisuudet</h4></div>
               <p data-fi="Saunan kiukaan harjoituksessa mallinnetaan laitteen tilaa ominaisuuksilla ja metodilla. Käyttöliittymän tulostukset kannattaa pitää erillään luokan toiminnasta, jotta luokkaa voi käyttää uudelleen." data-en="The sauna-heater exercise models device state with properties and a method. Keeping console output outside the class makes the class more reusable.">Saunan kiukaan harjoituksessa mallinnetaan laitteen tilaa ominaisuuksilla ja metodilla. Käyttöliittymän tulostukset kannattaa pitää erillään luokan toiminnasta, jotta luokkaa voi käyttää uudelleen.</p>
-              <pre><code>public class SaunaHeater
+              <pre><code class="language-csharp">public class SaunaHeater
 {
     public bool IsOn { get; set; }
     public int Temperature { get; set; }
@@ -176,7 +179,7 @@ else
             <article class="oop-sample-panel" hidden data-sample="2">
               <div class="sample-panel-heading"><span class="sample-task">T9</span><h4 data-fi="Konstruktori ja ToString" data-en="Constructor and ToString">Konstruktori ja ToString</h4></div>
               <p data-fi="Vehicle-luokka kokoaa ajoneuvon tiedot yhteen. Konstruktori alustaa olion, ja ToString-ylikirjoitus määrittelee, miten olio esitetään tekstinä." data-en="The Vehicle class groups vehicle data together. A constructor initializes the object, while overriding ToString defines its text representation.">Vehicle-luokka kokoaa ajoneuvon tiedot yhteen. Konstruktori alustaa olion, ja ToString-ylikirjoitus määrittelee, miten olio esitetään tekstinä.</p>
-              <pre><code>public class Vehicle
+              <pre><code class="language-csharp">public class Vehicle
 {
     public string Brand { get; set; }
     public string Model { get; set; }
@@ -195,7 +198,7 @@ else
             <article class="oop-sample-panel" hidden data-sample="3">
               <div class="sample-panel-heading"><span class="sample-task">T10</span><h4 data-fi="Oliot kokoelmassa" data-en="Objects in a collection">Oliot kokoelmassa</h4></div>
               <p data-fi="Student-tehtävässä luodaan opiskelijaolioita, lisätään ne List-kokoelmaan ja käsitellään niitä silmukalla. Esimerkki näyttää, miten samantyyppisiä olioita voidaan hallita yhdessä." data-en="The Student exercise creates student objects, stores them in a List and processes them in a loop. It shows how objects of the same type can be managed together.">Student-tehtävässä luodaan opiskelijaolioita, lisätään ne List-kokoelmaan ja käsitellään niitä silmukalla. Esimerkki näyttää, miten samantyyppisiä olioita voidaan hallita yhdessä.</p>
-              <pre><code>var students = new List&lt;Student&gt;
+              <pre><code class="language-csharp">var students = new List&lt;Student&gt;
 {
     new Student(&quot;Alex&quot;, 102),
     new Student(&quot;Robin&quot;, 205),
@@ -213,7 +216,7 @@ foreach (Student student in students)
             <article class="oop-sample-panel" hidden data-sample="4">
               <div class="sample-panel-heading"><span class="sample-task">T13</span><h4 data-fi="Ehtojen tarkistus luokassa" data-en="Validation in a class">Ehtojen tarkistus luokassa</h4></div>
               <p data-fi="Hissi-esimerkissä GoTo-metodi tarkistaa kerrosnumeron ennen tilan muuttamista. Metodi palauttaa onnistumisen ja viestin, joten kutsuva ohjelma voi reagoida tulokseen." data-en="In the elevator example, GoTo validates the floor before changing state. It returns a success value and a message so the calling code can respond.">Hissi-esimerkissä GoTo-metodi tarkistaa kerrosnumeron ennen tilan muuttamista. Metodi palauttaa onnistumisen ja viestin, joten kutsuva ohjelma voi reagoida tulokseen.</p>
-              <pre><code>public bool GoTo(int floor, out string message)
+              <pre><code class="language-csharp">public bool GoTo(int floor, out string message)
 {
     if (floor &lt; 1 || floor &gt; 5)
     {
@@ -229,7 +232,7 @@ foreach (Student student in students)
             <article class="oop-sample-panel" hidden data-sample="5">
               <div class="sample-panel-heading"><span class="sample-task">T15</span><h4 data-fi="Perintä ja uudelleenkäyttö" data-en="Inheritance and reuse">Perintä ja uudelleenkäyttö</h4></div>
               <p data-fi="Boss perii Employee-luokan yhteiset ominaisuudet ja kutsuu kantaluokan konstruktoria base-avainsanalla. Näin yhteistä koodia ei tarvitse kirjoittaa uudelleen." data-en="Boss inherits the shared properties of Employee and calls the base-class constructor with base. This avoids duplicating common code.">Boss perii Employee-luokan yhteiset ominaisuudet ja kutsuu kantaluokan konstruktoria base-avainsanalla. Näin yhteistä koodia ei tarvitse kirjoittaa uudelleen.</p>
-              <pre><code>public class Employee
+              <pre><code class="language-csharp">public class Employee
 {
     public string Name { get; set; }
     public double Salary { get; set; }
@@ -255,7 +258,7 @@ public class Boss : Employee
             <article class="oop-sample-panel" hidden data-sample="6">
               <div class="sample-panel-heading"><span class="sample-task">T20</span><h4 data-fi="Abstrakti luokka ja ylikirjoitus" data-en="Abstract class and overriding">Abstrakti luokka ja ylikirjoitus</h4></div>
               <p data-fi="Mammal-tehtävässä abstrakti kantaluokka määrittelee yhteisen Move-metodin sopimuksen. Johdetut luokat toteuttavat toiminnan eri tavoin override-avainsanalla." data-en="The Mammal exercise uses an abstract base class to define a shared Move method. Derived classes implement that behaviour differently with override.">Mammal-tehtävässä abstrakti kantaluokka määrittelee yhteisen Move-metodin sopimuksen. Johdetut luokat toteuttavat toiminnan eri tavoin override-avainsanalla.</p>
-              <pre><code>public abstract class Mammal
+              <pre><code class="language-csharp">public abstract class Mammal
 {
     public int Age { get; set; }
     public abstract string Move();
@@ -274,7 +277,7 @@ public class Baby : Human
             <article class="oop-sample-panel" hidden data-sample="7">
               <div class="sample-panel-heading"><span class="sample-task">T23</span><h4 data-fi="Rajapinta ja jono" data-en="Interface and queue">Rajapinta ja jono</h4></div>
               <p data-fi="CheckoutQueue toteuttaa ICheckoutQueue-rajapinnan ja kapseloi jonon käsittelyn. Rajapinta määrittelee, mitä toimintoja jonon käyttäjä voi kutsua." data-en="CheckoutQueue implements ICheckoutQueue and encapsulates queue handling. The interface defines which operations callers can use.">CheckoutQueue toteuttaa ICheckoutQueue-rajapinnan ja kapseloi jonon käsittelyn. Rajapinta määrittelee, mitä toimintoja jonon käyttäjä voi kutsua.</p>
-              <pre><code>public interface ICheckoutQueue
+              <pre><code class="language-csharp">public interface ICheckoutQueue
 {
     void Join(string customer);
     string? Leave();
@@ -294,7 +297,7 @@ public class CheckoutQueue : ICheckoutQueue
             <article class="oop-sample-panel" hidden data-sample="8">
               <div class="sample-panel-heading"><span class="sample-task">T24</span><h4 data-fi="Olioiden koostaminen" data-en="Object composition">Olioiden koostaminen</h4></div>
               <p data-fi="Vehicle sisältää Tire-olioita listassa. Koostaminen kuvaa, miten isompi kokonaisuus rakentuu erillisistä olioista ja miten niiden tietoja voidaan käsitellä yhdessä." data-en="Vehicle contains Tire objects in a list. Composition shows how a larger object is built from smaller objects and their data can be handled together.">Vehicle sisältää Tire-olioita listassa. Koostaminen kuvaa, miten isompi kokonaisuus rakentuu erillisistä olioista ja miten niiden tietoja voidaan käsitellä yhdessä.</p>
-              <pre><code>public class Tire
+              <pre><code class="language-csharp">public class Tire
 {
     public string Manufacturer { get; set; } = &quot;&quot;;
     public string Model { get; set; } = &quot;&quot;;
@@ -314,7 +317,7 @@ vehicle.Tires.Add(tire);</code></pre>
             <article class="oop-sample-panel" hidden data-sample="9">
               <div class="sample-panel-heading"><span class="sample-task">T29–T30</span><h4 data-fi="Rajapinta ja eri toteutukset" data-en="Interface and implementations">Rajapinta ja eri toteutukset</h4></div>
               <p data-fi="ITransaction määrittelee yhteisen toiminnan maksutavoille. Käteis- ja korttimaksu voivat toteuttaa saman rajapinnan omalla logiikallaan. Sama ajatus näkyy ICourse-rajapinnan ja Course-luokan harjoituksessa." data-en="ITransaction defines shared behaviour for payment types. Cash and card payments can implement the same interface with their own logic. A similar idea appears in the ICourse and Course exercise.">ITransaction määrittelee yhteisen toiminnan maksutavoille. Käteis- ja korttimaksu voivat toteuttaa saman rajapinnan omalla logiikallaan. Sama ajatus näkyy ICourse-rajapinnan ja Course-luokan harjoituksessa.</p>
-              <pre><code>public interface ITransaction
+              <pre><code class="language-csharp">public interface ITransaction
 {
     string ShowTransaction();
     decimal Amount { get; }
