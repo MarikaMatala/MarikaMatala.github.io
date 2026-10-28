@@ -1098,3 +1098,196 @@ body:after{opacity:.075;background:repeating-linear-gradient(0deg,transparent 0 
     will-change:auto;
   }
 }
+
+
+/* === Media craft: an original CSS film camera and moving film === */
+.android-carousel-stage::after,
+.branding-gallery figure::after{
+  content:"(c) MM";
+  display:block;
+  width:auto;
+  min-width:0;
+  height:auto;
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+  color:#fff0d8;
+  font:700 10px/1.2 var(--mono);
+  letter-spacing:.07em;
+  text-shadow:
+    0 1px 2px #000,
+    1px 0 3px #000,
+    -1px 0 3px #000,
+    0 0 8px #000,
+    0 0 10px #8f2637;
+}
+.android-carousel-stage::after{right:12px;bottom:10px}
+.branding-gallery figure::after{left:10px;bottom:9px}
+@media(max-width:540px){
+  .android-carousel-stage::after,.branding-gallery figure::after{
+    min-width:0;height:auto;font-size:9px;padding:0;
+  }
+}
+
+/* Replaces stock-looking decoration with CSS-drawn media equipment. */
+.media-reel-art{
+  position:absolute;
+  right:6vw;
+  top:15%;
+  width:clamp(210px,31vw,410px);
+  aspect-ratio:1.05;
+  z-index:1;
+  pointer-events:none;
+  transform:rotate(5deg);
+  filter:drop-shadow(0 18px 22px #0008);
+}
+.film-strip{
+  position:absolute;
+  display:flex;
+  gap:8px;
+  align-items:center;
+  width:145%;
+  height:30%;
+  padding:10px 13px;
+  overflow:hidden;
+  border:2px solid #d5b66f9c;
+  background:
+    repeating-linear-gradient(90deg,transparent 0 20px,#d5b66f 20px 30px,transparent 30px 40px),
+    linear-gradient(135deg,#180d11,#3b1821 48%,#171115);
+  box-shadow:0 6px 15px #0008,inset 0 0 0 2px #100b0e;
+}
+.film-strip:before,.film-strip:after{
+  content:"";
+  position:absolute;
+  left:0;right:0;
+  height:5px;
+  background:repeating-linear-gradient(90deg,#e9d5a6 0 9px,transparent 9px 22px);
+  opacity:.9;
+}
+.film-strip:before{top:2px}
+.film-strip:after{bottom:2px}
+.film-strip-back{
+  left:-20%;
+  top:13%;
+  transform:rotate(-18deg);
+  animation:film-drift-back 13s ease-in-out infinite alternate;
+}
+.film-strip-front{
+  left:-8%;
+  bottom:7%;
+  transform:rotate(13deg);
+  z-index:3;
+  animation:film-drift-front 10s ease-in-out infinite alternate;
+}
+.film-frame{
+  flex:0 0 22%;
+  height:calc(100% - 12px);
+  border:1px solid #d5b66f6b;
+  background:
+    radial-gradient(ellipse at 30% 20%,#d5b66f88,transparent 23%),
+    linear-gradient(145deg,#a34d3b,#40202a 48%,#18251f);
+  box-shadow:inset 0 0 12px #08070a88;
+}
+.film-frame:nth-child(2){background:linear-gradient(135deg,#1e3b35,#b65d43 52%,#171116)}
+.film-frame:nth-child(3){background:linear-gradient(145deg,#d5b66f,#72343c 48%,#19231d)}
+.film-frame:nth-child(4){background:linear-gradient(135deg,#263a34,#171116 60%,#a84e37)}
+.film-camera{
+  position:absolute;
+  z-index:2;
+  left:24%;
+  top:25%;
+  width:54%;
+  height:48%;
+  transform:rotate(-7deg);
+  animation:camera-float 5.8s ease-in-out infinite;
+}
+.camera-body{
+  position:absolute;
+  left:2%;right:2%;bottom:0;
+  height:69%;
+  border:2px solid #e1c88b;
+  border-radius:10px 10px 15px 15px;
+  background:
+    linear-gradient(160deg,#49302b 0%,#21171a 42%,#0b0b0e 100%);
+  box-shadow:inset 0 4px 0 #ffffff10,0 9px 15px #0008;
+}
+.camera-top{
+  position:absolute;
+  left:20%;top:7%;
+  width:39%;height:24%;
+  border:2px solid #d5b66f;
+  border-bottom:0;
+  border-radius:7px 7px 0 0;
+  background:linear-gradient(130deg,#5b4034,#171115);
+}
+.camera-reel{
+  position:absolute;
+  top:0;
+  width:27%;aspect-ratio:1;
+  border-radius:50%;
+  border:3px solid #d5b66f;
+  background:repeating-conic-gradient(from 0deg,#23151a 0deg 28deg,#9b4b3b 29deg 42deg,#23151a 43deg 60deg);
+  box-shadow:0 0 0 4px #181116,0 3px 8px #0009;
+  animation:reel-turn 16s linear infinite;
+}
+.camera-reel-left{left:10%}
+.camera-reel-right{right:10%;animation-direction:reverse;animation-duration:19s}
+.camera-lens{
+  position:absolute;
+  left:13%;top:10%;
+  width:54%;aspect-ratio:1;
+  border-radius:50%;
+  border:5px solid #d5b66f;
+  background:
+    radial-gradient(circle at 34% 30%,#d9c6a4 0 3%,transparent 4%),
+    radial-gradient(circle at 40% 35%,#628b81 0 8%,#162729 24%,#09090d 48%,#54332e 52%,#0b0b0e 69%);
+  box-shadow:0 0 0 4px #0b0b0e,0 0 18px #71948a33;
+}
+.camera-flash{
+  position:absolute;right:12%;top:18%;
+  width:15%;height:13%;border:1px solid #d5b66f;
+  background:#d5b66f;border-radius:2px;
+}
+.camera-grip{
+  position:absolute;right:-2%;bottom:8%;
+  width:8%;height:43%;
+  border:1px solid #d5b66f;
+  border-radius:0 5px 5px 0;
+  background:repeating-linear-gradient(0deg,#23171b 0 3px,#75513a 4px 5px);
+}
+.media-art-label{
+  position:absolute;
+  z-index:4;
+  right:0;top:43%;
+  color:#f2dfbb;
+  font:700 clamp(.55rem,.9vw,.78rem)/1.2 var(--mono);
+  letter-spacing:.12em;
+  text-align:center;
+  transform:rotate(8deg);
+  text-shadow:0 2px 8px #000,0 0 12px #8f2637;
+}
+@keyframes film-drift-back{
+  from{translate:-1% -3%;rotate:-2deg}
+  to{translate:5% 5%;rotate:2deg}
+}
+@keyframes film-drift-front{
+  from{translate:3% 2%;rotate:1deg}
+  to{translate:-4% -3%;rotate:-2deg}
+}
+@keyframes camera-float{
+  0%,100%{translate:0 0;rotate:-1deg}
+  50%{translate:0 -9px;rotate:1deg}
+}
+@keyframes reel-turn{to{transform:rotate(360deg)}}
+@media(max-width:800px){
+  .media-reel-art{right:2vw;top:23%;width:clamp(170px,34vw,270px);opacity:.86}
+}
+@media(max-width:540px){
+  .media-reel-art{right:1vw;top:31%;width:145px;opacity:.72}
+  .media-art-label{font-size:7px}
+}
+@media(prefers-reduced-motion:reduce){
+  .film-strip-back,.film-strip-front,.film-camera,.camera-reel{animation:none}
+}
