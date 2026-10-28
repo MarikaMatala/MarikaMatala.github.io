@@ -1,40 +1,28 @@
-# Marika Matalamäki — Portfolio
+# Portfolio | Marika Matalamäki
 
-> **Sivusto on työn alla.** Portfolioa rakennetaan vaiheittain, ja uusia projekteja, kuvia sekä videoita lisätään parhaillaan.  
-> **Portfolio under construction.** New projects, images and videos are being added step by step.
+**Portfolio website:** https://marikamatala.github.io/
 
-🌐 **Live site:** https://marikamatala.github.io/
+## About
 
-## About / Esittely
+I am an ICT engineer graduate from JAMK with an interest in frontend and web development, application development, UI/UX, visual design, and digital media. My background combines technical skills with experience in visual communication and media production.
 
-ICT engineer graduate from JAMK, interested in frontend and web development, UI, visual design, media and communication. This portfolio brings together technical and creative work samples.
+My portfolio is being developed continuously. Selected projects and examples are presented on the website and in this repository. Additional work samples may be available on request.
 
-JAMKista valmistunut ICT-insinööri. Minua kiinnostavat frontend- ja web-kehitys, käyttöliittymät, visuaalinen suunnittelu sekä media ja viestintä. Portfolio kokoaa yhteen teknisiä ja luovia työnäytteitä.
+Olen JAMKista valmistunut ICT-insinööri. Osaamiseni ja kiinnostuksenkohteeni yhdistävät frontend- ja web-kehityksen, sovelluskehityksen, UI/UX-suunnittelun, visuaalisen suunnittelun sekä digitaalisen median. Taustassani yhdistyvät tekninen osaaminen ja kokemus visuaalisesta viestinnästä sekä mediatuotannosta.
 
-## Site files / Sivuston tiedostot
+Portfolio kehittyy jatkuvasti. Valikoituja projekteja ja työnäytteitä esitellään verkkosivulla ja tässä repositoriossa. Muita työnäytteitä voi tiedustella erikseen.
+
+## Repository structure
 
 - `index.html` — portfolio content in Finnish and English
-- `style.css` — responsive layout and visual styling
-- `script.js` — language toggle
+- `style.css` — responsive layout and visual styles
+- `script.js` — language toggle and small interactive features
+- `images/` — image assets used for portfolio projects
 
-## Images / Kuvat
+## Technologies and areas
 
-Add the following files to the `images/` folder to display the supplied work samples:
+HTML · CSS · JavaScript · Git · GitHub Pages · Web and application development · UI/UX · Visual design · Digital media
 
-- `marika-portrait.jpg` — profile portrait
-- `android-employee-layout.png` — Android employee information UI exercise
-- `android-sum-calculator.png` — Android Sum Calculator UI exercise
+## Languages
 
-Image assets are added separately from the HTML and CSS. Large videos should normally be embedded from a video hosting service rather than stored directly in this repository.
-
-## Work samples / Työnäytteet
-
-- Android UI layout exercise — employee information view
-- Android UI layout exercise — Sum Calculator
-- WIMMA Capstone brand renewal — project site: https://wimma-capstone.jamk.fi/
-
-More work samples are available on request. Some other portfolio materials are currently private.
-
-## Technologies
-
-HTML · CSS · JavaScript · GitHub Pages
+The portfolio website and this README are available in Finnish and English.
