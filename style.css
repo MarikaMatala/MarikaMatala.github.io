@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=UnifrakturCook:wght@700&display=swap');
 
 :root{
   color-scheme:dark;
-  --ink:#090A0F;
-  --paper:#E8E8E0;
-  --burgundy:#14241D;
-  --copper:#B6FF3B;
-  --muted:#A4A59B;
-  --line:#343B34;
-  --surface:#11131A;
-  --surface-raised:#191C23;
+  --ink:#0b080d;
+  --paper:#eee4eb;
+  --burgundy:#2b1021;
+  --copper:#c27b92;
+  --muted:#b8a8b4;
+  --line:#493344;
+  --surface:#140e17;
+  --surface-raised:#211522;
   --mono:'DM Mono',monospace;
   --sans:'Manrope',Arial,sans-serif;
 }
@@ -1554,3 +1554,131 @@ h1 em,h2 em,.work-page-intro h1 em,.contact-page h1 em{color:#c77c8a;font-style:
   .contact-page-grid{grid-template-columns:1fr}
 }
 @media(prefers-reduced-motion:reduce){.gothic-button{transition:none}}
+
+/* === Gothic portfolio refresh: page structure, texture and compact sample cards === */
+:root{--ink:#0b080d;--paper:#eee4eb;--burgundy:#2b1021;--copper:#c27b92;--muted:#b8a8b4;--line:#493344;--surface:#140e17;--surface-raised:#211522;--display:'Cinzel',Georgia,serif;--gothic:'UnifrakturCook',serif;--sans:'Manrope',Arial,sans-serif}
+body{background-color:var(--ink);background-image:radial-gradient(ellipse at 16% 4%,rgba(105,37,72,.23),transparent 40%),radial-gradient(ellipse at 90% 32%,rgba(55,30,77,.18),transparent 38%),repeating-linear-gradient(135deg,rgba(255,255,255,.012) 0 1px,transparent 1px 7px);background-attachment:fixed}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.12;background-image:radial-gradient(circle,rgba(207,151,176,.72) .7px,transparent 1px);background-size:31px 31px;mask-image:linear-gradient(to bottom,black,transparent 78%)}
+body>*{position:relative;z-index:1}
+.notice.info-ribbon{background:linear-gradient(90deg,#160b15,#351323 45%,#170c17);border-bottom:1px solid #734358;color:#f0dce5}
+.notice-dot{background:#d99aaa;box-shadow:0 0 0 4px #d99aaa22}
+.site-header{background:rgba(13,8,15,.94);border-bottom:1px solid #543247;backdrop-filter:blur(16px)}
+.site-header nav a{font-family:var(--display);font-size:.69rem;letter-spacing:.045em;color:#cbbbc8}
+.site-header nav a:hover,.site-header nav a[aria-current="page"]{color:#e5a3b5}
+.site-header nav a[aria-current="page"]{text-decoration:underline;text-decoration-color:#a65c78;text-underline-offset:8px;text-decoration-thickness:1px}
+.wordmark.full-name{font-family:var(--display);letter-spacing:-.025em}
+.wordmark span{color:#d69aad}
+.language-toggle{border-color:#684153}
+.language-toggle:hover{border-color:#d69aad;background:#291523}
+h1,h2,h3,h4{font-family:var(--display);text-wrap:balance}
+h1 em,h2 em{color:#d18ba0}
+.eyebrow,.project-meta,.skills-number,.home-work-type{color:#d69aad}
+.eyebrow-line{background:#b96f8b}
+.hero:before,.hero:after{border-color:#a96d8a35;border-radius:48% 48% 4px 4px}
+.hero:before{background:linear-gradient(180deg,#3c172a12,transparent);box-shadow:inset 0 0 36px #6c29401a}
+.portrait-frame{border-color:#7d4b63;box-shadow:0 0 0 8px #2a1422,0 0 0 9px #684154,0 18px 55px #0008}
+.portrait-caption{color:#d0b9c8}
+.about-section{background:linear-gradient(112deg,rgba(33,17,29,.9),rgba(14,10,17,.94) 58%,rgba(30,16,34,.9));border-top:1px solid #513247;border-bottom:1px solid #513247}
+.about-section:before{border-color:#9e6b8628}
+.about-section h2,.section-heading h2,.contact-section h2{font-family:var(--display);letter-spacing:-.015em;line-height:1.12}
+.about-section h2 em,.section-heading h2 em,.contact-section h2 em{color:#d18ba0}
+.gothic-button{border-color:#80506a;background:linear-gradient(135deg,#2a1424,#170d18);color:#f1e8ed}
+.gothic-button:hover{background:linear-gradient(135deg,#432038,#211021);border-color:#d091aa}
+.gothic-button span:last-child{color:#d99aaa}
+a:focus-visible,button:focus-visible{outline-color:#e2a8b8}
+::selection{background:#8b4264;color:#fff3f7}
+.skills-card,.skills-overview,.about-work-callout,.project-card,.contact-method{border-color:#503247}
+.skills-card{background:linear-gradient(145deg,#241622,#130d17 82%)}
+.skills-overview{background:rgba(14,9,15,.76)}
+.skills-scale{border-color:#634057!important;background:#1a101b!important}
+.skills-scale-title,.skill-level{color:#e0a1b3}
+.skill-bars i.is-filled{background:#bd718d;box-shadow:0 0 7px #bd718d3b}
+.skill-bars i{border-color:#634057}
+.home-about-teaser{display:grid;grid-template-columns:minmax(120px,.35fr) minmax(0,1fr);gap:clamp(26px,5vw,76px);align-items:center;padding-top:clamp(64px,8vw,108px);padding-bottom:clamp(64px,8vw,108px);border-bottom:1px solid #493344}
+.home-about-emblem{aspect-ratio:1;max-width:240px;width:100%;display:grid;place-items:center;position:relative;border:1px solid #8e5c75;border-radius:50% 50% 4px 4px;background:radial-gradient(ellipse at 50% 35%,#51233a55,transparent 65%),#110b13;color:#dca2b5}
+.home-about-emblem:before,.home-about-emblem:after{content:"";position:absolute;inset:12px;border:1px solid #70445c;border-radius:50% 50% 2px 2px}
+.home-about-emblem:after{inset:23px;border-color:#70445c66}
+.home-about-emblem span:first-child{font-size:2rem;position:absolute;top:17%}
+.home-about-emblem span:last-child{font:clamp(2.5rem,5vw,4.5rem)/1 var(--gothic);letter-spacing:.03em}
+.home-about-copy{max-width:850px}
+.home-about-copy h2{font-size:clamp(2.3rem,5.4vw,5rem);line-height:1.1;margin:18px 0 24px}
+.home-about-copy h2 em{font-style:normal;color:#d18ba0}
+.home-about-copy>p:not(.eyebrow){max-width:720px;color:#d0c1cd;line-height:1.85;font-size:clamp(1rem,1.3vw,1.12rem)}
+.home-work-cta-section{border-top:1px solid #493344;background:linear-gradient(180deg,rgba(21,12,22,.75),rgba(11,8,13,.25))}
+.home-work-cta{border-color:#57354a}
+.home-work-cta span:last-child{color:#d69aad}
+.work-page-intro{position:relative}
+.work-page-intro:after{content:"✦  ✧  ✦";display:block;margin-top:24px;color:#88546f;letter-spacing:.7em;font-size:.8rem}
+.work-page-intro h1{font-family:var(--display);font-size:clamp(2.8rem,7vw,6rem);letter-spacing:-.025em;line-height:1.04}
+.work-page-intro h1 em{color:#d18ba0}
+.work-page-actions,.about-page-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.work-page-actions .gothic-button,.about-page-cta .gothic-button{min-width:190px}
+.about-page-intro{padding-bottom:clamp(24px,4vw,44px)}
+.about-page-cta{padding-top:0;padding-bottom:clamp(60px,8vw,100px)}
+#projects .section-heading{max-width:940px;margin-bottom:22px}
+#projects .section-lead{max-width:850px;line-height:1.8}
+.work-browse-note{font-size:.84rem;color:#d0c1cd;border-left:2px solid #bd718d;padding:10px 14px;background:linear-gradient(90deg,#31172777,transparent);margin:18px 0 26px}
+#projects .project-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,1.7vw,22px)}
+#projects .project-card,#projects .project-card:nth-child(n){border-color:#503247;background:linear-gradient(150deg,rgba(36,20,34,.96),rgba(15,10,17,.98) 84%);border-radius:2px}
+#projects .project-card:hover{border-color:#b87591;box-shadow:0 10px 24px #0007}
+#projects .project-card .project-meta,#projects .project-card h3,#projects .project-card>p,#projects .project-card .skill-list,#projects .project-card>.text-link{margin-left:clamp(14px,1.8vw,20px);margin-right:clamp(14px,1.8vw,20px)}
+#projects .project-card .project-meta{font-size:.62rem;margin-top:14px}
+#projects .project-card h3{font-size:clamp(1.05rem,1.5vw,1.35rem);line-height:1.32;margin-top:9px;margin-bottom:8px}
+#projects .project-card>p{font-size:.82rem;line-height:1.7}
+#projects .project-card .skill-list{margin-top:8px;margin-bottom:16px}
+#projects .project-card .skill-list span{font-size:.62rem;padding:4px 7px}
+#projects .android-project-copy{order:0;padding:0 0 8px;width:100%}
+#projects .android-carousel{order:2;width:100%;border-top:1px solid #503247;border-bottom:0}
+#projects .android-carousel-stage{height:clamp(175px,19vw,235px);min-height:clamp(175px,19vw,235px);padding:12px 36px;background:linear-gradient(145deg,#100a12,#1c101d)}
+#projects .android-project-copy h3{font-size:clamp(1.05rem,1.5vw,1.35rem)}
+#projects .branding-gallery{order:2;min-height:clamp(130px,16vw,190px);padding:12px;gap:10px;background:#100a12}
+#projects .branding-gallery img{height:clamp(100px,13vw,155px)}
+#projects .project-coming .coming-art{order:2;min-height:clamp(130px,16vw,190px);padding:12px}
+#projects .project-coming .coming-art span:first-child{font-size:clamp(3rem,6vw,5rem)}
+#projects .project-coming .coming-art span:last-child{font-size:clamp(.9rem,1.7vw,1.35rem)}
+#projects .project-oop .oop-heading{order:0;padding:16px 16px 0}
+#projects .project-oop .oop-heading h3{font-size:clamp(1.1rem,1.5vw,1.4rem)}
+#projects .project-oop .oop-grade{font-size:1.7rem}
+#projects .project-oop .oop-browser{order:2;margin:10px 14px 0;width:calc(100% - 28px)}
+#projects .project-oop .oop-sample-panel{padding:12px}
+#projects .project-oop .oop-sample-panel>p{font-size:.77rem;line-height:1.65}
+#projects .project-oop .oop-sample-panel pre{font-size:.69rem;line-height:1.5;max-height:220px;overflow:auto}
+#projects .project-oop .oop-browser-controls{padding:8px}
+#projects .project-oop .oop-nav-button{font-size:.65rem;min-height:32px}
+.contact-page{background:radial-gradient(ellipse at 85% 10%,#35172b35,transparent 48%)}
+.contact-method{background:linear-gradient(145deg,#241521,#100a13)}
+.contact-method a{color:#e0a0b5}
+.site-footer{border-top-color:#493344}
+.site-footer .copyright-line,.site-footer .footer-note{color:#ad9aaa}
+@keyframes gothic-shimmer{0%,100%{opacity:.35;transform:translateY(0)}50%{opacity:.8;transform:translateY(-3px)}}
+.home-about-emblem span:first-child{animation:gothic-shimmer 5s ease-in-out infinite}
+@media(max-width:800px){
+  .home-about-teaser{grid-template-columns:90px minmax(0,1fr);gap:22px;padding-top:64px;padding-bottom:64px}
+  .home-about-emblem{max-width:90px}
+  .home-about-emblem:before{inset:7px}.home-about-emblem:after{inset:13px}
+  .home-about-emblem span:first-child{font-size:1rem}
+  .home-about-emblem span:last-child{font-size:2rem}
+}
+@media(max-width:760px){
+  .site-header{padding-inline:4vw;gap:10px}
+  .site-header nav{gap:clamp(8px,2vw,16px)}
+  .site-header nav a{font-size:.59rem;letter-spacing:0}
+  #projects .project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:540px){
+  .site-header{flex-wrap:wrap;justify-content:space-between;padding-top:8px}
+  .site-header nav{order:3;width:100%;justify-content:space-between;padding:0 0 10px;flex-wrap:wrap}
+  .site-header nav a{font-size:.59rem}
+  .home-about-teaser{grid-template-columns:1fr;gap:20px}
+  .home-about-emblem{display:none}
+  #projects .project-grid{grid-template-columns:minmax(0,1fr)}
+  #projects .project-card,#projects .project-card:nth-child(n){grid-column:1!important}
+  #projects .android-carousel-stage{height:clamp(200px,58vw,270px);min-height:clamp(200px,58vw,270px)}
+  #projects .branding-gallery{min-height:160px}
+  #projects .branding-gallery img{height:clamp(110px,32vw,150px)}
+}
+@media(prefers-reduced-motion:reduce){
+  .home-about-emblem span:first-child{animation:none}
+  .gothic-button,.project-card{transition:none!important}
+  html{scroll-behavior:auto}
+}
