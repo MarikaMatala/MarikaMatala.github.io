@@ -28,3 +28,66 @@ h1 em,h2 em,.work-page-intro h1 em,.contact-page h1 em{font-family:"Cormorant Ga
 @keyframes ribbon-glint{0%,60%{left:-35%;opacity:0}68%{opacity:.7}88%,100%{left:120%;opacity:0}}
 @media(max-width:640px){.gothic-mandala{width:105vw;right:-54vw;top:30vh;opacity:.045}.info-ribbon p{font-size:.72rem;letter-spacing:.025em}h1,h2,h3,.wordmark{letter-spacing:-.015em}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.gothic-mandala,.info-ribbon::before{animation:none!important}.site-header nav a,.gothic-button,.home-work-cta,.contact-method a,.project-card .project-image img,.android-carousel-stage img{transition:none!important}}
+
+
+/* Native disclosure controls keep the project cards compact until a visitor opens a sample. */
+body{isolation:isolate}
+.hero-index{font-family:"UnifrakturCook",serif;letter-spacing:.035em}
+.project-samples-toggle{
+  width:100%;
+  min-width:0;
+  margin-top:12px;
+  border-top:1px solid #4b2936;
+  border-bottom:1px solid #4b2936;
+  background:linear-gradient(90deg,#120b10,#0b0b0b 55%,#0c120d);
+}
+.project-samples-toggle summary{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  min-height:48px;
+  padding:12px clamp(14px,2vw,22px);
+  color:#e5c9d0;
+  font-size:clamp(.82rem,1vw,.95rem);
+  font-weight:700;
+  line-height:1.45;
+  list-style:none;
+  cursor:pointer;
+}
+.project-samples-toggle summary::-webkit-details-marker{display:none}
+.project-samples-toggle summary::marker{content:""}
+.project-samples-toggle summary:hover{color:#fff}
+.project-samples-toggle summary:focus-visible{outline:2px solid #d49aaa;outline-offset:3px}
+.project-samples-toggle .expand-symbol{
+  display:grid;
+  place-items:center;
+  flex:0 0 28px;
+  width:28px;
+  height:28px;
+  border:1px solid #754052;
+  border-radius:50%;
+  color:#d18b9d;
+  font-size:1.15rem;
+  line-height:1;
+  transition:transform .2s ease,background-color .2s ease;
+}
+.project-samples-toggle[open] .expand-symbol{transform:rotate(45deg);background:#4a1424}
+.project-samples-toggle .samples-toggle-content{padding:0 clamp(12px,1.8vw,20px) 18px;min-width:0}
+#projects .android-samples-toggle{order:2;width:100%;margin-top:12px}
+#projects .android-samples-toggle .android-carousel{width:100%;margin-top:0;border-top:0}
+#projects .branding-samples-toggle{order:3;width:100%;margin-top:auto}
+#projects .branding-samples-toggle .branding-gallery{width:100%;min-height:0;padding:clamp(12px,2vw,22px);grid-template-columns:repeat(2,minmax(0,1fr))}
+#projects .branding-samples-toggle .branding-gallery img{height:clamp(130px,15vw,190px)}
+#projects .oop-samples-toggle{order:2;width:calc(100% - 2 * clamp(14px,1.7vw,22px));margin:12px clamp(14px,1.7vw,22px) 20px}
+#projects .oop-samples-toggle .samples-toggle-content{padding:12px}
+#projects .oop-samples-toggle .oop-browser{width:100%;margin:0}
+#projects .oop-samples-toggle .oop-sample-panel pre{max-width:100%;white-space:pre;overflow-x:auto}
+@media(max-width:640px){
+  .project-samples-toggle summary{padding:10px 12px;font-size:.8rem}
+  #projects .branding-samples-toggle .branding-gallery{grid-template-columns:1fr}
+  #projects .branding-samples-toggle .branding-gallery img{height:clamp(160px,52vw,250px)}
+  #projects .oop-samples-toggle{width:calc(100% - 28px);margin:12px 14px 18px}
+  #projects .oop-samples-toggle .samples-toggle-content{padding:8px}
+}
+@media(prefers-reduced-motion:reduce){.project-samples-toggle .expand-symbol{transition:none}}
