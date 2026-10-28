@@ -467,3 +467,21 @@ img.image-zoomable:focus-visible{outline:3px solid #B6FF3B;outline-offset:4px}
 .oop-browser-controls .oop-nav-button:first-child{justify-self:start}\n.oop-browser-controls .oop-nav-button:last-child{justify-self:end}
 @media(max-width:800px){.intro-strip{grid-template-columns:1fr;gap:10px;padding-top:28px;padding-bottom:36px}.intro-strip-mark{font-size:2.5rem}.intro-strip-mark span{display:inline-block;margin:0 0 0 12px}.study-topics{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.image-lightbox img{scroll-behavior:auto}}
+
+
+/* Visible copyright watermark overlays on portfolio image previews.
+   Original image files remain unchanged; this is a deterrent, not copy protection. */
+.android-carousel-stage::after{
+  content:"© MARIKA MATALAMÄKI · PORTFOLIO";
+  position:absolute;right:10px;bottom:8px;z-index:1;pointer-events:none;
+  padding:4px 6px;background:#090A0FBB;color:#F0F0E8;
+  border:1px solid #B6FF3B77;font:.48rem var(--mono);letter-spacing:.04em;
+}
+.branding-gallery figure{position:relative}
+.branding-gallery figure::after{
+  content:"© MARIKA MATALAMÄKI";
+  position:absolute;left:5px;bottom:5px;z-index:1;pointer-events:none;
+  padding:3px 5px;background:#090A0FCC;color:#F0F0E8;
+  border:1px solid #B6FF3B77;font:.45rem var(--mono);letter-spacing:.02em;
+}
+.hero-copyright{max-width:510px;margin:18px 0 0;color:#B8B9AA;font-size:.72rem;line-height:1.65}
