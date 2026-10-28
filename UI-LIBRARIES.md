@@ -68,9 +68,9 @@ Higgsfieldillä tuotetut hahmot, taustat, tunnusvideot tai peliesineiden kuvat e
 
 ## Dokumentaatio ja inspiraatio
 
-- [W3Schools: CSS transitions](https://www.w3schools.com/css/css3_transitions.asp)
-- [W3Schools: CSS animations](https://www.w3schools.com/css/css3_animations.asp)
-- [W3Schools: CSS transforms](https://www.w3schools.com/css/css3_2dtransforms.asp)
+- [W3Schools: CSS transitions](https://www.w3schools.com/htmlcss/htmlcss_transitions.asp)
+- [W3Schools: CSS animations](https://www.w3schools.com/htmlcss/htmlcss_animations.asp)
+- [W3Schools: CSS transforms](https://www.w3schools.com/htmlcss/htmlcss_transforms.asp)
 - [MDN: prefers-reduced-motion](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion)
 - [Tailwind CSS v4 + Vite](https://tailwindcss.com/docs/installation/using-vite)
 - [Radix Primitives](https://www.radix-ui.com/primitives)
