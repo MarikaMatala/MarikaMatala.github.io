@@ -94,3 +94,9 @@ a:focus-visible,button:focus-visible{outline:3px solid #b4df79;outline-offset:4p
 .skip-link:focus{transform:translateY(0)}
 @media(hover:hover){.project-card:hover{transform:translateY(-3px)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+
+/* Nimi näkyy selkeästi myös pienillä näytöillä. */
+.wordmark.full-name{font-size:clamp(.9rem,1.6vw,1.2rem);letter-spacing:-.045em;white-space:nowrap}
+.branding-gallery figure:first-child img{height:72px;width:auto;max-width:100%;object-fit:contain}
+.branding-gallery figure:nth-child(2) img{height:88px;max-width:100%;object-fit:contain}
+@media(max-width:540px){.wordmark.full-name{font-size:.84rem;letter-spacing:-.04em}.branding-gallery{padding:12px;gap:8px}.branding-gallery figure:first-child img{height:62px}.branding-gallery figure:nth-child(2) img{height:76px}}
