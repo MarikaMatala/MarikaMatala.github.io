@@ -204,3 +204,32 @@ setLanguage('fi');
 updateCarouselLabels(currentLanguage);
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
+
+
+// Scroll-triggered reveals: subtle, staggered motion without an animation library.
+(() => {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const revealItems = document.querySelectorAll(
+    '.section-heading, .about-copy, .interlude-photo, .project-card, .contact-section .contact-links'
+  );
+
+  if (reduceMotion || !('IntersectionObserver' in window)) return;
+
+  revealItems.forEach((element, index) => {
+    element.classList.add('reveal-on-scroll');
+    element.style.setProperty('--reveal-delay', (index % 3) * 90 + 'ms');
+  });
+
+  const observer = new IntersectionObserver((entries, activeObserver) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-revealed');
+      activeObserver.unobserve(entry.target);
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -45px 0px'
+  });
+
+  revealItems.forEach((element) => observer.observe(element));
+})();
