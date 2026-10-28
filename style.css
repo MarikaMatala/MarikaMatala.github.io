@@ -1769,3 +1769,74 @@ h1 em,h2 em{color:#d782a0}
 @keyframes gothic-code-drift{0%{transform:translateY(-10px);opacity:.08}35%{opacity:.2}100%{transform:translateY(24px);opacity:.08}}
 @media(max-width:640px){.notice p{padding:0 10px}.info-ribbon::after,.notice::after{display:none}.hero-copy::after{right:0;top:-1rem;font-size:.62rem;opacity:.1}}
 @media(prefers-reduced-motion:reduce){.hero-copy::after{animation:none}body{background-attachment:scroll}}
+
+
+/* GOTHIC ROMANCE — black, oxblood, candle-cream and rose-leaf green. */
+:root{
+  color-scheme:dark;
+  --ink:#050606;
+  --paper:#f2eadc;
+  --burgundy:#300711;
+  --copper:#8b263d;
+  --muted:#c4b8ac;
+  --line:#3e2028;
+  --surface:#0c0b0b;
+  --surface-raised:#171012;
+  --display:'Cormorant Garamond',Georgia,serif;
+  --gothic:'UnifrakturCook',serif;
+  --sans:'Manrope',Arial,sans-serif;
+}
+body{
+  background-color:#050606;
+  background-image:radial-gradient(ellipse at 12% 6%,#1831262a 0,transparent 32rem),radial-gradient(ellipse at 88% 30%,#4a0c1a24 0,transparent 38rem),linear-gradient(180deg,#050606 0%,#090709 55%,#050606 100%);
+  color:var(--paper);
+}
+.site-header{
+  position:relative;
+  isolation:isolate;
+  background:linear-gradient(90deg,#050606f5,#11080cf2 55%,#050606f5);
+  border-bottom:1px solid #4b202b;
+  box-shadow:0 8px 24px #0007;
+}
+.site-header::before{
+  content:"🦇";
+  position:absolute;
+  z-index:5;
+  top:70%;
+  left:-2.2rem;
+  font-family:system-ui,sans-serif;
+  font-size:clamp(1.1rem,2.2vw,1.65rem);
+  line-height:1;
+  pointer-events:none;
+  opacity:0;
+  filter:drop-shadow(0 0 5px #8b263d99);
+  animation:bat-flight 7.5s cubic-bezier(.36,.03,.66,.99) 1.1s infinite;
+}
+@keyframes bat-flight{
+  0%{left:-2.2rem;top:72%;transform:translate(0,0) rotate(-12deg) scale(.9);opacity:0}
+  7%{opacity:1}
+  28%{left:24%;top:35%;transform:translate(0,-4px) rotate(12deg) scale(1.08);opacity:1}
+  52%{left:49%;top:-12%;transform:translate(0,-12px) rotate(-8deg) scale(.8);opacity:.95}
+  72%{left:67%;top:-75%;transform:translate(0,-20px) rotate(18deg) scale(.52);opacity:.45}
+  86%,100%{left:76%;top:-115%;transform:translate(0,-24px) rotate(28deg) scale(.25);opacity:0}
+}
+.info-ribbon,.notice{
+  background:linear-gradient(90deg,#080707,#260812 44%,#10180f 72%,#080707);
+  border-color:#6b2938;
+  color:#f4e9dc;
+}
+.info-ribbon .notice-dot{background:#a43a50;box-shadow:0 0 0 4px #a43a5026,0 0 15px #a43a5055}
+.info-ribbon::after,.notice::after{color:#c3d0b0}
+h1,h2,h3,.wordmark,.project-card h3,.skills-card h4,.contact-section h2,.work-page-intro h1,.contact-page h1{text-shadow:0 1px 0 #000,0 0 26px #4a10201c}
+h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#a94a5b}
+a:hover{color:#d6bba5}
+.gothic-button,.home-work-cta{background:linear-gradient(135deg,#210710,#10150f);border-color:#703044}
+.gothic-button:hover{background:linear-gradient(135deg,#3a0c1a,#18251a)}
+.skills-card,.skills-overview,.about-work-callout,.project-card,.contact-method{border-color:#3d2528;background:linear-gradient(145deg,#151013 0%,#090909 72%,#0c120d 100%)}
+.skills-card:hover,.contact-method:hover,.project-card:hover{border-color:#80505a;box-shadow:0 14px 36px #0008,0 0 0 1px #31503b26}
+.skill-level,.skills-scale-title{color:#d8b4a0}
+.skill-bars i.is-filled{background:#a33b51;box-shadow:0 0 8px #a33b512b}
+.site-footer{border-top-color:#3d2528}
+.hero-copy::after{color:#a9c2a0}
+@media(max-width:640px){.site-header::before{font-size:1.05rem}}
+@media(prefers-reduced-motion:reduce){.site-header::before{animation:none;display:none}body{background-attachment:scroll}}
