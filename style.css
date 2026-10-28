@@ -463,7 +463,7 @@ img.image-zoomable:focus-visible{outline:3px solid #B6FF3B;outline-offset:4px}
 .image-lightbox img{display:block;max-width:96vw;max-height:92vh;width:auto;height:auto;object-fit:contain;box-shadow:0 12px 60px #000b;cursor:zoom-out}
 .image-lightbox .lightbox-help{position:absolute;top:12px;right:16px;color:#F0F0E8;background:#12150f;border:1px solid #536341;padding:9px 12px;font-size:.76rem;line-height:1.5}
 .image-lightbox:focus-visible{outline:3px solid #B6FF3B;outline-offset:-6px}
-.oop-browser-controls .oop-nav-button{width:100%;min-width:0;height:48px;min-height:48px}
-.oop-browser-controls .oop-nav-button:last-child{justify-self:stretch}
+.oop-browser-controls .oop-nav-button{width:50%;min-width:0;height:32px;min-height:32px;padding:5px 8px}
+.oop-browser-controls .oop-nav-button:first-child{justify-self:start}\n.oop-browser-controls .oop-nav-button:last-child{justify-self:end}
 @media(max-width:800px){.intro-strip{grid-template-columns:1fr;gap:10px;padding-top:28px;padding-bottom:36px}.intro-strip-mark{font-size:2.5rem}.intro-strip-mark span{display:inline-block;margin:0 0 0 12px}.study-topics{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.image-lightbox img{scroll-behavior:auto}}
