@@ -11,7 +11,7 @@
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
   <title>Marika Matalamäki — Portfolio</title>
   <!-- MUOKKAUSVINKKI: sivun ulkoasu on tiedostossa style.css. Kommentit eivät näy verkkosivulla. -->
-  <link rel="stylesheet" href="style.css?v=20">
+  <link rel="stylesheet" href="style.css?v=21">
   <script src="script.js?v=14" defer></script>
   <!-- Umami Cloud: kävijätilastointi. Lisää ?owner=1 URL-osoitteeseen merkitäksesi tämän selaimen omistajan käynneiksi. -->
   <script>
@@ -48,7 +48,7 @@
     <nav aria-label="Päänavigaatio">
       <a href="#about" data-fi="Minusta" data-en="About">Minusta</a>
       <a href="tyonaytteet.html" data-fi="Työnäytteet" data-en="Selected work">Työnäytteet</a>
-      <a href="#contact" data-fi="Yhteystiedot" data-en="Contact">Yhteystiedot</a>
+      <a href="yhteystiedot.html" data-fi="Yhteystiedot" data-en="Contact">Yhteystiedot</a>
     </nav>
     <button class="language-toggle" id="language-toggle" type="button" aria-label="Vaihda sivusto englanniksi"><span class="language-icon" aria-hidden="true">◎</span><span class="language-label" data-fi="ENGLISH" data-en="SUOMEKSI">ENGLISH</span><span class="language-arrow" aria-hidden="true">↗</span></button>
   </header>
@@ -86,6 +86,10 @@
         <p class="eyebrow"><span class="eyebrow-line"></span><span data-fi="Pieni esittely" data-en="A little about me">Pieni esittely</span></p>
         <h2 data-fi="Sovelluskehitys ja digitaalinen media" data-en="Application Development and Digital Media">Sovelluskehitys ja digitaalinen media</h2>
         <p data-fi="Valmistuin ICT-insinööriksi JAMKista toukokuussa 2026. Suuntauduin sovelluskehitykseen ja digitaaliseen mediaan. Minua kiinnostaa erityisesti työ, jossa toimiva tekninen toteutus, käytettävyys ja visuaalinen suunnittelu tukevat toisiaan." data-en="I graduated as an ICT engineer from JAMK in May 2026, specialising in application development and digital media. I’m especially interested in work where technical implementation, usability and visual design support one another.">Valmistuin ICT-insinööriksi Jyväskylän ammattikorkeakoulusta (JAMK) toukokuussa 2026. JAMK on ammattikorkeakoulu, jossa opiskellaan käytännönläheisesti työelämän tarpeisiin. Suuntauduin opinnoissani sovelluskehitykseen ja digitaaliseen mediaan. Minua kiinnostaa erityisesti se, miten toimiva tekninen toteutus ja selkeä visuaalinen suunnittelu voidaan yhdistää samaan tuotteeseen.</p>
+        <div class="about-work-callout">
+          <p data-fi="Työnäytteet löytyvät omalta välilehdeltään. Siellä esittelen projektit, kuvat ja koodiesimerkit tarkemmin." data-en="My work samples have their own page, with more detailed project descriptions, images and code examples.">Työnäytteet löytyvät omalta välilehdeltään. Siellä esittelen projektit, kuvat ja koodiesimerkit tarkemmin.</p>
+          <a class="gothic-button" href="tyonaytteet.html"><span data-fi="Siirry työnäytteisiin" data-en="Explore work samples">Siirry työnäytteisiin</span><span aria-hidden="true">↗</span></a>
+        </div>
         <p data-fi="Opintojen aikana olen perehtynyt esimerkiksi ohjelmointiin ja olio-ohjelmointiin (C#), Android-sovelluskehitykseen, web-teknologioihin, frontend-kehitykseen, tietokantoihin, ohjelmistotestaukseen sekä digitaalisen median ja visuaalisen suunnittelun työkaluihin. Olio-ohjelmoinnin kurssista sain arvosanan 5. Pelialan perusteet -opintokokonaisuus (10 op) sisälsi C#-ohjelmointia, Unityä ja Autodesk 3ds Maxia. Suoritin lisäksi verkkosivujen ja sovellusten tietoturvaan keskittyneitä lisäopintoja. Alla on esimerkkejä opintosisällöistä; nimet ovat kuvaavia aihealueita eivätkä välttämättä opintorekisterin virallisia kurssinimiä." data-en="My studies covered topics such as programming and object-oriented programming (C#), Android development, web technologies, frontend development, databases, software testing, digital media and visual design tools. I earned grade 5 in object-oriented programming. The 10-ECTS Basics of the Gaming Industry module included C# programming, Unity and Autodesk 3ds Max. I also completed additional studies focused on website and application security. The list below describes example study topics; these are descriptive labels and may not be the official names recorded in the study register.">Opintojen aikana olen perehtynyt esimerkiksi ohjelmointiin ja olio-ohjelmointiin (C#), Android-sovelluskehitykseen, web-teknologioihin, frontend-kehitykseen, tietokantoihin, ohjelmistotestaukseen sekä digitaalisen median ja visuaalisen suunnittelun työkaluihin. Olio-ohjelmoinnin kurssista sain arvosanan 5. Pelialan perusteet -opintokokonaisuus (10 op) sisälsi C#-ohjelmointia, Unityä ja Autodesk 3ds Maxia. Suoritin lisäksi verkkosivujen ja sovellusten tietoturvaan keskittyneitä lisäopintoja. Alla on esimerkkejä opintosisällöistä; nimet ovat kuvaavia aihealueita eivätkä välttämättä opintorekisterin virallisia kurssinimiä.</p>
         <ul class="study-topics">
           <li data-fi="Olio-ohjelmointi ja C# · arvosana 5" data-en="Object-oriented programming and C# · grade 5">Olio-ohjelmointi ja C# · arvosana 5</li>
@@ -97,19 +101,16 @@
           <li data-fi="Verkkosivujen ja sovellusten tietoturva · lisäopinnot" data-en="Website and application security · additional studies">Verkkosivujen ja sovellusten tietoturva · lisäopinnot</li>
         </ul>
         <p data-fi="Etsin erityisesti junior-tason frontend- ja full stack -kehityksen, verkkosivujen toteutuksen sekä UI/UX- ja digitaalisen suunnittelun tehtäviä. Myös videokuvaus ja editointi, audiovisuaalinen tuotanto, journalismi, radiotyö, sisällöntuotanto, digitaalinen markkinointi ja tapahtumatuotanto kiinnostavat." data-en="I’m especially interested in junior frontend and full-stack development, website development, UI/UX and digital design. I’m also interested in video production and editing, audiovisual production, journalism, radio, content creation, digital marketing and event production.">Etsin erityisesti junior-tason frontend- ja full stack -kehityksen, verkkosivujen toteutuksen sekä UI/UX- ja digitaalisen suunnittelun tehtäviä. Myös videokuvaus ja editointi, audiovisuaalinen tuotanto, journalismi, radiotyö, sisällöntuotanto, digitaalinen markkinointi ja tapahtumatuotanto kiinnostavat.</p>
-        <section class="skills-overview" aria-labelledby="skills-title">
+        <section class="skills-overview skills-review-pending" aria-labelledby="skills-title">
           <div class="skills-heading">
             <p class="eyebrow"><span class="eyebrow-line"></span><span data-fi="Osaaminen" data-en="Skills">Osaaminen</span></p>
             <h3 id="skills-title" data-fi="Teknologiat ja työkalut" data-en="Technologies and Tools">Teknologiat ja työkalut</h3>
             <p data-fi="Olen käyttänyt näitä opintoprojekteissa, harjoitustöissä ja luovissa projekteissa. Kokemuksen syvyys vaihtelee teknologian mukaan." data-en="I have used these in coursework, study projects and creative projects. My level of hands-on experience varies by technology.">Olen käyttänyt näitä opintoprojekteissa, harjoitustöissä ja luovissa projekteissa. Kokemuksen syvyys vaihtelee teknologian mukaan.</p>
           </div>
           <div class="skills-scale">
-            <span class="skills-scale-title" data-fi="Oma arvio käytännön kokemuksesta · asteikko 1–5" data-en="Self-assessed practical experience · scale 1–5">Oma arvio käytännön kokemuksesta · asteikko 1–5</span>
-            <span class="skills-scale-item"><span class="skill-bars" aria-hidden="true"><i class="is-filled"></i><i class="is-filled"></i><i class="is-filled"></i><i class="is-filled"></i><i></i></span><span data-fi="4/5 · vahva käytännön kokemus" data-en="4/5 · strong hands-on experience">4/5 · vahva käytännön kokemus</span></span>
-            <span class="skills-scale-item"><span class="skill-bars" aria-hidden="true"><i class="is-filled"></i><i class="is-filled"></i><i class="is-filled"></i><i></i><i></i></span><span data-fi="3/5 · perusteet ja harjoittelukokemusta" data-en="3/5 · fundamentals and practice">3/5 · perusteet ja harjoittelukokemusta</span></span>
-            <p data-fi="Arvio on oma tämänhetkinen arvioni, ei sertifioitu tasomittaus. En merkitse perustason kokemusta syväksi asiantuntijuudeksi; osaaminen riippuu teknologiasta ja tehtävästä." data-en="These are my current self-assessments, not certified proficiency scores. Foundational experience is not presented as expert-level knowledge; depth varies by technology and task.">Arvio on oma tämänhetkinen arvioni, ei sertifioitu tasomittaus. En merkitse perustason kokemusta syväksi asiantuntijuudeksi; osaaminen riippuu teknologiasta ja tehtävästä.</p>
-          </div>
-          <div class="skills-grid skills-grid-detailed">
+            <span class="skills-scale-title" data-fi="Osaamistasot arvioidaan parhaillaan uudelleen · asteikko 1–5" data-en="Skill levels are being reviewed · scale 1–5">Osaamistasot arvioidaan parhaillaan uudelleen · asteikko 1–5</span>
+            <p data-fi="Näytän tässä työkalut ja teknologiat. Päivitän tasot vasta, kun olen käynyt ne kanssasi läpi, jotta sivu ei anna osaamisestani liian vahvaa tai väärää kuvaa." data-en="The technologies and tools are listed here. I’ll restore proficiency scores after reviewing them with you, so the site does not overstate my experience.">Näytän tässä työkalut ja teknologiat. Päivitän tasot vasta, kun olen käynyt ne kanssasi läpi, jotta sivu ei anna osaamisestani liian vahvaa tai väärää kuvaa.</p>
+          </div>          <div class="skills-grid skills-grid-detailed">
             <article class="skills-card">
               <span class="skills-number">01 / CODE</span>
               <h4 data-fi="Web ja ohjelmointi" data-en="Web and Programming">Web ja ohjelmointi</h4>
@@ -219,21 +220,16 @@
       <a class="home-work-cta" href="tyonaytteet.html"><span data-fi="Tutustu työnäytteisiin ja teknisiin yksityiskohtiin" data-en="Explore work samples and technical details">Tutustu työnäytteisiin ja teknisiin yksityiskohtiin</span><span aria-hidden="true">↗</span></a>
     </section>
 
-    <!-- YHTEYSTIEDOT: tarkista linkit ennen julkaisua. -->
-    <section class="contact-section section-wrap" id="contact">
-      <p class="eyebrow"><span class="eyebrow-line"></span><span data-fi="Jatketaan keskustelua" data-en="Let's connect">Jatketaan keskustelua</span></p>
-      <h2 data-fi="Etsin seuraavaa<br><em>mahdollisuutta.</em>" data-en="Looking for my next<br><em>opportunity.</em>">Etsin seuraavaa<br><em>mahdollisuutta.</em></h2>
-      <p data-fi="Etsin töitä pääkaupunkiseudulta. Minua kiinnostavat erityisesti IT, web-kehitys, visuaalinen suunnittelu ja media, mutta olen avoin myös muille tehtäville, joissa osaamisestani olisi hyötyä. Etsin ensisijaisesti kokoaikaista työtä, mutta myös osa-aikaiset tehtävät käyvät. Sekä vakituiset että määräaikaiset työsuhteet kiinnostavat. Voin aloittaa 1.1.2027 tai sopimuksen mukaan." data-en="I’m looking for work in the Helsinki metropolitan area, especially in IT, web development, visual design and media, but I’m open to other roles where my skills could be useful. I’m primarily looking for full-time work, but I’m also open to part-time roles and both permanent and fixed-term contracts. I can start on 1 January 2027 or by agreement.">Etsin töitä pääkaupunkiseudulta. Minua kiinnostavat erityisesti IT, web-kehitys, visuaalinen suunnittelu ja media, mutta olen avoin myös muille tehtäville, joissa osaamisestani olisi hyötyä.</p>
-      <div class="contact-links">
-        <a href="mailto:marika.matalamaki@gmail.com">marika.matalamaki@gmail.com ↗</a>
-        <a href="https://www.linkedin.com/in/marika-matalamaki/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-        <a href="https://github.com/MarikaMatala" target="_blank" rel="noreferrer">GitHub ↗</a>
-      </div>
+    <section class="contact-section section-wrap home-contact-cta" id="contact">
+      <p class="eyebrow"><span class="eyebrow-line"></span><span data-fi="Yhteydenotto" data-en="Get in touch">Yhteydenotto</span></p>
+      <h2 data-fi="Puhutaanko<br><em>mahdollisuuksista?</em>" data-en="Let's talk about<br><em>opportunities.</em>">Puhutaanko<br><em>mahdollisuuksista?</em></h2>
+      <p data-fi="Sähköposti, LinkedIn ja muut yhteystiedot löytyvät omalta välilehdeltään." data-en="My email, LinkedIn and other contact details are available on the dedicated Contact page.">Sähköposti, LinkedIn ja muut yhteystiedot löytyvät omalta välilehdeltään.</p>
+      <a class="gothic-button" href="yhteystiedot.html"><span data-fi="Avaa yhteystiedot" data-en="Open contact page">Avaa yhteystiedot</span><span aria-hidden="true">↗</span></a>
     </section>
   </main>
 
   <footer class="site-footer section-wrap">
-    <a class="wordmark full-name" href="#home">Marika Matalamäki<span>.</span></a>
+    <a class="wordmark full-name" href="index.html#home">Marika Matalamäki<span>.</span></a>
     <span class="copyright-line">© Marika Matalamäki 2026</span>
     <span class="footer-note" data-fi="Omat kuvat ja koodit, ellei toisin mainita." data-en="Original images and code unless otherwise credited.">Omat kuvat ja koodit, ellei toisin mainita.</span>
   </footer>
