@@ -1363,3 +1363,64 @@ body:after{opacity:.075;background:repeating-linear-gradient(0deg,transparent 0 
 @media(prefers-reduced-motion:reduce){
   .skills-card,.skills-card:hover{transition:none;transform:none}
 }
+
+
+/* 2027 portfolio layout: concise homepage, detailed work samples and readable project cards. */
+.home-work-cta-section{padding-top:clamp(60px,8vw,112px);padding-bottom:clamp(68px,9vw,120px);max-width:1100px}
+.home-work-cta-section h2{font-size:clamp(2.7rem,6vw,5.8rem);line-height:.98;letter-spacing:-.065em;margin:22px 0}
+.home-work-cta-section h2 em{font-style:normal;color:#D47A42}
+.home-work-cta-section>p:not(.eyebrow){max-width:760px;color:#D0C5BC;font-size:clamp(1rem,1.3vw,1.15rem);line-height:1.85}
+.home-work-cta{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:30px;padding:20px 0;border-top:1px solid #62423a;border-bottom:1px solid #62423a;color:#F1E4D3;text-decoration:none;font-size:1rem}
+.home-work-cta span:last-child{font-size:1.4rem;color:#D5B66F}
+.work-page-intro{padding-top:clamp(64px,9vw,120px);padding-bottom:clamp(40px,6vw,72px);max-width:1120px}
+.work-page-intro h1{max-width:900px;margin:24px 0;font-size:clamp(3.5rem,9vw,7.5rem);line-height:.92;letter-spacing:-.075em}
+.work-page-intro h1 em{font-style:normal;color:#D47A42}
+.work-page-intro>p:not(.eyebrow){max-width:760px;color:#D0C5BC;line-height:1.85;font-size:clamp(1rem,1.4vw,1.15rem)}
+.work-page-intro+.work-section{padding-top:20px}
+#projects .project-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(24px,4vw,48px);align-items:stretch}
+#projects .project-card,#projects .project-card:nth-child(n){grid-column:1 / -1;transform:none;min-width:0;display:flex;flex-direction:column;padding:0;overflow:hidden}
+#projects .project-card:hover{transform:translateY(-2px)}
+#projects .project-card .project-image,#projects .project-card .branding-gallery,#projects .project-card .coming-art{order:0;width:100%}
+#projects .project-card .project-meta,#projects .project-card h3,#projects .project-card>p,#projects .project-card .skill-list,#projects .project-card>.text-link{margin-left:clamp(20px,3vw,38px);margin-right:clamp(20px,3vw,38px)}
+#projects .project-card .project-meta{margin-top:clamp(20px,3vw,34px)}
+#projects .project-card h3{font-size:clamp(1.5rem,3vw,2.5rem);line-height:1.15}
+#projects .project-card>p{font-size:clamp(1rem,1.35vw,1.12rem);line-height:1.85;max-width:920px}
+#projects .project-card .skill-list{margin-bottom:clamp(22px,3vw,36px)}
+#projects .project-featured{display:flex;flex-direction:column;gap:0}
+#projects .android-carousel{order:0;width:100%;border:0;border-bottom:1px solid #5a3939}
+#projects .android-carousel-stage{height:clamp(360px,52vw,620px);min-height:clamp(360px,52vw,620px);padding:24px clamp(56px,8vw,100px)}
+#projects .android-carousel-stage img{max-height:100%;width:100%;object-fit:contain}
+#projects .android-project-copy{order:1;padding:clamp(24px,4vw,44px);width:100%}
+#projects .android-project-copy h3{font-size:clamp(1.7rem,3vw,2.5rem)}
+#projects .branding-gallery{min-height:clamp(260px,38vw,450px);padding:clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,3vw,32px);align-items:center}
+#projects .branding-gallery figure{margin:0;min-width:0}
+#projects .branding-gallery img{width:100%;height:clamp(200px,30vw,360px);object-fit:contain}
+#projects .project-coming .coming-art{min-height:clamp(240px,34vw,400px);display:flex;align-items:center;justify-content:center;gap:clamp(16px,5vw,64px)}
+#projects .project-coming .coming-art span:first-child{font-size:clamp(5rem,18vw,14rem)}
+#projects .project-coming .coming-art span:last-child{font-size:clamp(1.5rem,4vw,3.5rem)}
+#projects .project-oop{display:flex;flex-direction:column;grid-column:1/-1;padding:0;background:linear-gradient(145deg,#25171D,#111015 78%);border-color:#614047}
+#projects .project-oop .oop-browser{order:-1;margin:0;width:100%;border:0;border-bottom:1px solid #51373F;box-shadow:none}
+#projects .project-oop .oop-sample-panel{padding:clamp(20px,4vw,44px)}
+#projects .project-oop .oop-sample-panel>p{font-size:clamp(1rem,1.4vw,1.15rem);line-height:1.8}
+#projects .project-oop .oop-sample-panel pre{font-size:clamp(.9rem,1.2vw,1.08rem);line-height:1.8;padding:clamp(18px,3vw,32px);overflow-x:auto}
+#projects .project-oop .oop-browser-toolbar{padding:clamp(16px,2.5vw,28px);gap:18px}
+#projects .project-oop .oop-browser-toolbar label{font-size:clamp(.9rem,1.2vw,1rem)}
+#projects .project-oop .oop-browser-toolbar select{font-size:1rem;min-height:50px}
+#projects .project-oop .oop-heading{order:0;padding:clamp(24px,4vw,44px) clamp(24px,4vw,44px) 0}
+#projects .project-oop>p:not(.interaction-hint){margin-left:clamp(24px,4vw,44px);margin-right:clamp(24px,4vw,44px)}
+#projects .project-oop .interaction-hint{margin-left:clamp(24px,4vw,44px);margin-right:clamp(24px,4vw,44px)}
+#projects .project-oop .oop-browser-controls{padding:16px clamp(18px,3vw,32px)}
+#projects .project-oop .oop-grade{flex-shrink:0}
+#projects .project-oop .oop-heading h3{font-size:clamp(1.7rem,3vw,2.6rem)}
+#media,#android,#branding,#wimma,#oop{scroll-margin-top:90px}
+@media(max-width:640px){
+  #projects .android-carousel-stage{height:clamp(300px,90vw,420px);min-height:clamp(300px,90vw,420px);padding:16px 48px}
+  #projects .branding-gallery{grid-template-columns:1fr}
+  #projects .branding-gallery img{height:clamp(180px,58vw,280px)}
+  #projects .project-card .project-meta,#projects .project-card h3,#projects .project-card>p,#projects .project-card .skill-list,#projects .project-card>.text-link{margin-left:18px;margin-right:18px}
+  #projects .project-oop .oop-heading{padding:22px 18px 0}
+  #projects .project-oop>p:not(.interaction-hint),#projects .project-oop .interaction-hint{margin-left:18px;margin-right:18px}
+  #projects .project-oop .oop-sample-panel pre{font-size:.88rem}
+  .home-work-cta{align-items:flex-start;font-size:.92rem}
+}
+@media(prefers-reduced-motion:reduce){#projects .project-card:hover{transform:none}}
