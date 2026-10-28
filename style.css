@@ -443,3 +443,27 @@ a:focus-visible,button:focus-visible{outline-color:#B6FF3B}
   .oop-browser-controls{gap:7px;padding:10px 8px}
   .oop-nav-button{padding:8px 9px;font-size:.7rem}
 }
+
+
+/* Introductory summary, clickable image enlargement and study topic list. */
+.intro-strip{display:grid;grid-template-columns:minmax(90px,.22fr) 1fr;gap:clamp(18px,4vw,54px);align-items:start;padding-top:38px;padding-bottom:52px;border-bottom:1px solid #343b34;background:linear-gradient(100deg,#10151088,transparent 75%)}
+.intro-strip-mark{font-size:clamp(2.5rem,6vw,5rem);font-weight:900;letter-spacing:-.1em;line-height:1;color:#B6FF3B;text-shadow:0 0 22px #B6FF3B24}
+.intro-strip-mark span{display:block;font-size:1.2rem;letter-spacing:0;margin-top:12px}
+.intro-strip-copy{max-width:920px}
+.intro-strip-copy h2{font-size:clamp(1.65rem,3.5vw,2.7rem);line-height:1.2;margin:12px 0 16px;letter-spacing:-.05em}
+.intro-strip-copy>p:not(.eyebrow){max-width:800px;color:#C5C5BC;line-height:1.8;margin:0 0 12px}
+.intro-strip-copy .intro-strip-note{color:#B6FF3B;font-size:.87rem}
+.study-topics{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:22px 0 0;padding:0}
+.study-topics li{padding:12px 14px;border:1px solid #343b34;background:#0b0d11;color:#D8DCD0;font-size:.82rem;line-height:1.6}
+.study-topics li:before{content:"✳";color:#B6FF3B;margin-right:9px}
+img.image-zoomable{cursor:zoom-in}
+img.image-zoomable:focus-visible{outline:3px solid #B6FF3B;outline-offset:4px}
+.image-lightbox{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:clamp(12px,3vw,36px);background:rgba(3,4,6,.94);cursor:zoom-out}
+.image-lightbox[hidden]{display:none}
+.image-lightbox img{display:block;max-width:96vw;max-height:92vh;width:auto;height:auto;object-fit:contain;box-shadow:0 12px 60px #000b;cursor:zoom-out}
+.image-lightbox .lightbox-help{position:absolute;top:12px;right:16px;color:#F0F0E8;background:#12150f;border:1px solid #536341;padding:9px 12px;font-size:.76rem;line-height:1.5}
+.image-lightbox:focus-visible{outline:3px solid #B6FF3B;outline-offset:-6px}
+.oop-browser-controls .oop-nav-button{width:100%;min-width:0;height:48px;min-height:48px}
+.oop-browser-controls .oop-nav-button:last-child{justify-self:stretch}
+@media(max-width:800px){.intro-strip{grid-template-columns:1fr;gap:10px;padding-top:28px;padding-bottom:36px}.intro-strip-mark{font-size:2.5rem}.intro-strip-mark span{display:inline-block;margin:0 0 0 12px}.study-topics{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.image-lightbox img{scroll-behavior:auto}}
