@@ -205,7 +205,7 @@ if (oopBrowser) {
   });
 })();
 
-setLanguage('fi');
+// Keep the saved language selected above; Finnish is the default in the HTML.
 updateCarouselLabels(currentLanguage);
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
