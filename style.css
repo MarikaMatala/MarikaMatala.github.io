@@ -1424,3 +1424,23 @@ body:after{opacity:.075;background:repeating-linear-gradient(0deg,transparent 0 
   .home-work-cta{align-items:flex-start;font-size:.92rem}
 }
 @media(prefers-reduced-motion:reduce){#projects .project-card:hover{transform:none}}
+
+
+/* Skill levels are explicit self-assessments, not claims of expert proficiency. */
+.skills-scale{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px;margin:0 0 22px;padding:16px 18px;border:1px solid #554039;background:#171416;color:#d8c9bb;font-size:.8rem;line-height:1.6}
+.skills-scale-title{width:100%;color:#f1e4d3;font-weight:600}
+.skills-scale-item{display:flex;align-items:center;gap:9px}
+.skills-scale>p{width:100%;margin:0;color:#bfb0a4;font-size:.78rem}
+.skills-grid-detailed{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.skills-grid-detailed .skills-card:last-child{grid-column:1/-1}
+.skill-rows{list-style:none;padding:0;margin:0}
+.skill-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid #493638;min-width:0}
+.skill-name{color:#e7d9cb;font-size:.88rem;line-height:1.45;overflow-wrap:anywhere}
+.skill-rating{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.skill-bars{display:inline-flex;align-items:center;gap:3px;flex-shrink:0}
+.skill-bars i{display:block;width:8px;height:16px;border:1px solid #8e776a;background:transparent}
+.skill-bars i.is-filled{background:#d5b66f;border-color:#d5b66f}
+.skill-level{min-width:25px;color:#d8b18c;font:.7rem/1.2 var(--mono);text-align:right}
+.skills-scale .skill-bars i{height:12px;width:7px}
+@media(max-width:760px){.skills-grid-detailed{grid-template-columns:minmax(0,1fr)}.skills-grid-detailed .skills-card:last-child{grid-column:auto}}
+@media(max-width:420px){.skill-row{gap:8px}.skill-name{font-size:.82rem}.skill-rating{gap:5px}.skill-bars{gap:2px}.skill-bars i{width:6px;height:13px}.skills-card{padding:16px}}
