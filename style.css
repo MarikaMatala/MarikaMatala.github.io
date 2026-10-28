@@ -1948,3 +1948,80 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
 @media(max-width:640px){
   .hero-greeting{max-width:100%;font-size:1rem;line-height:1.75;margin-top:18px}
 }
+
+
+/* Final palette refinement: near-black burgundy with a restrained glossy highlight. */
+:root{
+  --ink:#080509;
+  --paper:#f2e7ed;
+  --burgundy:#19030d;
+  --copper:#b85c7a;
+  --muted:#c3adb8;
+  --line:#492333;
+  --surface:#10080e;
+  --surface-raised:#1c0a14;
+}
+.notice.info-ribbon{
+  background:
+    linear-gradient(112deg,transparent 0 34%,#ffffff08 42%,#ffffff00 49%),
+    linear-gradient(180deg,#4a1029 0%,#260817 18%,#18040d 58%,#0c080d 100%);
+  border-top:1px solid #7c304b;
+  border-bottom:1px solid #6a203d;
+  box-shadow:inset 0 1px 0 #ffc1d329,0 4px 18px #0008;
+}
+.info-ribbon::before{
+  background:linear-gradient(90deg,transparent,#d98aa45c,transparent);
+  opacity:.8;
+}
+.info-ribbon .notice-dot{
+  background:#c35c7b;
+  box-shadow:0 0 0 4px #c35c7b24,0 0 15px #df779855;
+}
+.site-header{
+  background:linear-gradient(180deg,#17050fef,#0c080df2);
+  border-bottom-color:#562039;
+}
+.site-header::after{
+  background:linear-gradient(90deg,transparent,#6d203f,#bd6c8b,#6d203f,transparent);
+  opacity:.85;
+}
+.hero h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{
+  color:#c66b89;
+  text-shadow:0 1px 0 #f8d8e4a8,0 0 14px #a3325a42;
+}
+.gothic-button,.home-work-cta,.contact-method{
+  background:
+    linear-gradient(115deg,#ffffff00 0 35%,#ffffff0a 44%,#ffffff00 54%),
+    linear-gradient(180deg,#421026 0%,#260817 45%,#13080e 100%);
+  border-color:#79304c;
+  box-shadow:inset 0 1px 0 #f7b4cd20,0 6px 18px #0005;
+}
+.gothic-button:hover,.home-work-cta:hover,.contact-method:hover{
+  background:
+    linear-gradient(115deg,#ffffff00 0 30%,#ffffff15 43%,#ffffff00 55%),
+    linear-gradient(180deg,#591630 0%,#320b1c 48%,#170910 100%);
+  border-color:#c16b89;
+  box-shadow:inset 0 1px 0 #f7b4cd3b,0 0 22px #8d284d30;
+}
+.project-card,.skills-card,.skills-overview,.about-work-callout{
+  background:
+    linear-gradient(118deg,#ffffff00 0 34%,#ffffff05 43%,#ffffff00 51%),
+    linear-gradient(145deg,#1b0c14 0%,#10090e 68%,#0c0a0d 100%);
+  border-color:#452331;
+}
+.project-card:hover{
+  border-color:#8e3a59;
+  box-shadow:0 16px 36px #000a,0 0 0 1px #c16b8918,0 0 24px #711d3a24;
+}
+.work-section{
+  background:
+    radial-gradient(ellipse at 82% 0%,#5b102b40,transparent 38rem),
+    linear-gradient(180deg,#16040d,#0b080c 88%);
+}
+.skill-bars i.is-filled{
+  background:linear-gradient(180deg,#d48aa2 0%,#a33d60 45%,#63152f 100%);
+  box-shadow:inset 0 1px 0 #ffe5ef5c,0 0 8px #9b34552b;
+}
+@media(prefers-reduced-motion:reduce){
+  .gothic-button,.home-work-cta,.contact-method,.project-card{transition:none!important}
+}
