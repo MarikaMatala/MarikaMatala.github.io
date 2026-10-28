@@ -1,8 +1,12 @@
-# WI / WIMMA Capstone visual design
+# Visual identity and branding | Visuaalinen ilme ja brändäys
 
-Selected logo concepts from a visual design exercise. These samples are presented as a small portfolio case study.
+This folder contains selected logo and visual identity assets created for a branding project associated with WIMMA Capstone.
 
-- `wi-logo.png`: WI logo concept.
-- `wimma-capstone-logo.png`: WIMMA Capstone wordmark concept.
+Tämä kansio sisältää valikoituja logo- ja visuaalisen ilmeen tiedostoja WIMMA Capstoneen liittyvästä brändäysprojektista.
 
-The original files remain in the source repository. This public portfolio contains selected visual samples only.
+## Files
+
+- `wi-logo.png` — WI logo asset
+- `wimma-capstone-logo.png` — WIMMA Capstone logo asset
+
+These files are included as visual examples in the portfolio repository.
