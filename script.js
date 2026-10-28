@@ -1,8 +1,13 @@
-// KIELEN VAIHTO: lisää käännettävään HTML-elementtiin data-fi- ja data-en-attribuutit.
+// Portfolio interactions: language switch, responsive Android image gallery and footer year.
 const languageToggle = document.getElementById('language-toggle');
 let currentLanguage = 'fi';
 
-// Päivittää kaikki tekstit valitulle kielelle ilman sivun uudelleenlatausta.
+function updateCarouselLabels(language) {
+  document.querySelectorAll('[data-fi-label][data-en-label]').forEach((element) => {
+    element.setAttribute('aria-label', element.dataset[language + 'Label']);
+  });
+}
+
 function setLanguage(language) {
   currentLanguage = language;
   document.documentElement.lang = language;
@@ -10,16 +15,19 @@ function setLanguage(language) {
     const value = element.dataset[language];
     if (value !== undefined) element.innerHTML = value;
   });
-  languageToggle.textContent = language === 'fi' ? 'EN ↗' : 'FI ↗';
-  languageToggle.setAttribute('aria-label', language === 'fi' ? 'Switch to English' : 'Vaihda suomeksi');
+  if (languageToggle) {
+    languageToggle.textContent = language === 'fi' ? 'EN ↗' : 'FI ↗';
+    languageToggle.setAttribute('aria-label', language === 'fi' ? 'Switch to English' : 'Vaihda suomeksi');
+  }
   updateCarouselLabels(language);
 }
 
-languageToggle.addEventListener('click', () => {
-  setLanguage(currentLanguage === 'fi' ? 'en' : 'fi');
-});
+if (languageToggle) {
+  languageToggle.addEventListener('click', () => {
+    setLanguage(currentLanguage === 'fi' ? 'en' : 'fi');
+  });
+}
 
-// Android-kurssitöiden kuvakaruselli.
 const androidImages = [
   { src: 'images/android-kurssin%20tehtavien%20kuvia/1.png', alt: 'Android-kurssin harjoitustyön kuvakaappaus' },
   { src: 'images/android-kurssin%20tehtavien%20kuvia/12.png', alt: 'Android-kurssin harjoitustyön kuvakaappaus' },
@@ -33,33 +41,54 @@ const androidImages = [
   { src: 'images/android-kurssin%20tehtavien%20kuvia/kuva-112.PNG', alt: 'Android-kurssin harjoitustyön kuvakaappaus' },
   { src: 'images/android-kurssin%20tehtavien%20kuvia/kuva-2.JPG', alt: 'Android-kurssin harjoitustyön valokuva' }
 ];
+
+const androidCarousel = document.getElementById('android-carousel');
 const androidImage = document.getElementById('android-carousel-image');
 const androidCounter = document.getElementById('android-counter');
-const androidPrevious = document.getElementById('android-prev');
-const androidNext = document.getElementById('android-next');
 let androidImageIndex = 0;
 
 function showAndroidImage(index) {
-  if (!androidImage || !androidCounter) return;
+  if (!androidImage || !androidCounter || !androidImages.length) return;
   androidImageIndex = (index + androidImages.length) % androidImages.length;
   const image = androidImages[androidImageIndex];
   androidImage.src = image.src;
-  androidImage.alt = `${image.alt} ${androidImageIndex + 1} / ${androidImages.length}`;
+  androidImage.alt = `${image.alt}, ${androidImageIndex + 1} / ${androidImages.length}`;
   androidCounter.textContent = `${androidImageIndex + 1} / ${androidImages.length}`;
 }
 
-if (androidPrevious && androidNext) {
-  androidPrevious.addEventListener('click', () => showAndroidImage(androidImageIndex - 1));
-  androidNext.addEventListener('click', () => showAndroidImage(androidImageIndex + 1));
-}
-
-// Päivittää karusellin painikkeiden nimet valitun kielen mukaan.
-function updateCarouselLabels(language) {
-  document.querySelectorAll('[data-fi-label][data-en-label]').forEach((element) => {
-    element.setAttribute('aria-label', element.dataset[language + 'Label']);
+if (androidCarousel) {
+  androidCarousel.addEventListener('click', (event) => {
+    const button = event.target.closest('button');
+    if (!button) return;
+    if (button.id === 'android-prev') showAndroidImage(androidImageIndex - 1);
+    if (button.id === 'android-next') showAndroidImage(androidImageIndex + 1);
   });
-}
-updateCarouselLabels(currentLanguage);
 
-// Päivittää alatunnisteen vuosiluvun automaattisesti.
-document.getElementById('year').textContent = new Date().getFullYear();
+  const keyboardStage = document.getElementById('android-carousel-stage');
+  if (keyboardStage) {
+    keyboardStage.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        showAndroidImage(androidImageIndex - 1);
+      } else if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        showAndroidImage(androidImageIndex + 1);
+      }
+    });
+  }
+
+  let touchStartX = null;
+  androidCarousel.addEventListener('touchstart', (event) => {
+    touchStartX = event.changedTouches[0].clientX;
+  }, { passive: true });
+  androidCarousel.addEventListener('touchend', (event) => {
+    if (touchStartX === null) return;
+    const deltaX = event.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(deltaX) > 45) showAndroidImage(androidImageIndex + (deltaX < 0 ? 1 : -1));
+    touchStartX = null;
+  }, { passive: true });
+}
+
+updateCarouselLabels(currentLanguage);
+const year = document.getElementById('year');
+if (year) year.textContent = new Date().getFullYear();
