@@ -14,18 +14,23 @@ Portfolio kehittyy jatkuvasti. Valikoituja projekteja ja työnäytteitä esitell
 
 ## Repository structure
 
-- `index.html` — portfolio content in Finnish and English
-- `style.css` — responsive layout and visual styles
-- `script.js` — language toggle and small interactive features
+- `index.html` — homepage and short introduction, in Finnish and English
+- `minusta.html` — education, background and self-assessed skills
+- `tyonaytteet.html` — project descriptions, image galleries and interactive C# examples
+- `yhteystiedot.html` — email, LinkedIn, GitHub and job availability
+- `style.css` — responsive layout, gothic visual theme, textures and motion effects
+- `script.js` — persistent language toggle, Android image carousel and interactive OOP examples
 - `images/` — image assets used for portfolio projects
 
 ## Technologies and areas
 
-HTML · CSS · JavaScript · Git · GitHub Pages · Web and application development · UI/UX · Visual design · Digital media
+HTML · CSS · JavaScript · C# examples · Git · GitHub Pages · PrismJS · Web and application development · UI/UX · Visual design · Digital media
 
 ## Languages
 
-The portfolio website and this README are available in Finnish and English.
+The portfolio website and this README are available in Finnish and English. The site is a static HTML/CSS/JavaScript project and does not require a build step or npm dependencies.
+
+PrismJS 1.30.0 is loaded from jsDelivr on the work samples page to highlight C# code examples. The library is used under its MIT license. The gothic textures, responsive layouts and subtle decorative animation are implemented with CSS to keep the site lightweight. The language choice is remembered between pages in the browser.
 
 ## Copyright and use | Tekijänoikeudet ja käyttö
 
