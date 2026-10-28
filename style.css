@@ -472,17 +472,19 @@ img.image-zoomable:focus-visible{outline:3px solid #B6FF3B;outline-offset:4px}
 /* Visible copyright watermark overlays on portfolio image previews.
    Original image files remain unchanged; this is a deterrent, not copy protection. */
 .android-carousel-stage::after{
-  content:"© MARIKA MATALAMÄKI · PORTFOLIO";
+  content:"©";
   position:absolute;right:10px;bottom:8px;z-index:1;pointer-events:none;
-  padding:4px 6px;background:#090A0FBB;color:#F0F0E8;
-  border:1px solid #B6FF3B77;font:.48rem var(--mono);letter-spacing:.04em;
+  display:grid;place-items:center;width:24px;height:24px;
+  border-radius:50%;background:#090A0FCC;color:#F0E9DF;
+  border:1px solid #D47A42;font:.72rem var(--mono);font-weight:700;
 }
 .branding-gallery figure{position:relative}
 .branding-gallery figure::after{
-  content:"© MARIKA MATALAMÄKI";
+  content:"©";
   position:absolute;left:5px;bottom:5px;z-index:1;pointer-events:none;
-  padding:3px 5px;background:#090A0FCC;color:#F0F0E8;
-  border:1px solid #B6FF3B77;font:.45rem var(--mono);letter-spacing:.02em;
+  display:grid;place-items:center;width:23px;height:23px;
+  border-radius:50%;background:#090A0FCC;color:#F0E9DF;
+  border:1px solid #D47A42;font:.7rem var(--mono);font-weight:700;
 }
 .hero-copyright{max-width:510px;margin:18px 0 0;color:#B8B9AA;font-size:.72rem;line-height:1.65}
 
@@ -675,4 +677,34 @@ a:focus-visible,button:focus-visible{outline-color:#E7A16D}
 @media(prefers-reduced-motion:reduce){
   .hero:before,.hero-stamp{animation:none!important}
   .hero-tags span,.project-card,.contact-links a,.language-toggle{transition:none!important}
+}
+
+
+/* Copyright pop-up and compact (c)MM footer link */
+.copyright-trigger{
+  border:1px solid #694638;background:transparent;color:#D5B6A4;
+  padding:8px 10px;font: .68rem var(--mono);letter-spacing:.025em;
+  cursor:pointer;transition:color .2s ease,border-color .2s ease,background .2s ease;
+}
+.copyright-trigger:hover,.copyright-trigger:focus-visible{
+  color:#F0E9DF;border-color:#D47A42;background:#D47A4212;
+}
+.copyright-dialog{
+  width:min(590px,calc(100% - 32px));max-width:590px;
+  padding:0;border:1px solid #9A5D43;border-radius:5px;
+  background:linear-gradient(145deg,#21151B,#0C0B10 78%);
+  color:#F0E9DF;box-shadow:0 25px 100px #000C,0 0 45px #D47A4218;
+}
+.copyright-dialog::backdrop{background:#050407CC;backdrop-filter:blur(5px)}
+.copyright-dialog-inner{position:relative;padding:clamp(24px,5vw,38px)}
+.copyright-dialog h2{font-size:clamp(1.6rem,4vw,2.4rem);margin:8px 0 22px}
+.copyright-dialog p:not(.eyebrow){color:#D0C5BC;font-size:.92rem;line-height:1.8}
+.copyright-close{
+  position:absolute;top:14px;right:14px;width:38px;height:38px;
+  border:1px solid #694638;background:#130E13;color:#F0E9DF;
+  font-size:1.5rem;cursor:pointer;
+}
+.copyright-close:hover{border-color:#D47A42;color:#EBA16D}
+@media(max-width:540px){
+  .copyright-trigger{font-size:.58rem;padding:7px 8px}
 }
