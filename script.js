@@ -183,6 +183,8 @@ if (oopBrowser) {
   document.addEventListener('click', (event) => {
     const image = event.target.closest('main img.image-zoomable');
     if (image) {
+      // Keep image links inside the accessible lightbox instead of also opening a second tab.
+      event.preventDefault();
       openImage(image);
       return;
     }
