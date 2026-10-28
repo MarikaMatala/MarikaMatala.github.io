@@ -27,12 +27,8 @@ HTML · CSS · JavaScript · Git · GitHub Pages · Web and application developm
 
 The portfolio website and this README are available in Finnish and English.
 
+## Copyright and use | Tekijänoikeudet ja käyttö
 
-## Copyright and reuse | Tekijänoikeudet ja käyttö
+The code and visual work in this portfolio are created by Marika Matalamäki, either as personal projects or coursework, unless a specific item is credited otherwise. Images are her own unless otherwise stated alongside an image or project. Rights to collaborative work, coursework materials and third-party assets remain with their respective rights holders. Do not reuse materials without permission from the relevant rights holder. Unauthorised use may lead to claims for remuneration or damages where applicable by law.
 
-Unless a specific item is credited otherwise, the portfolio text, original code samples, photographs, screenshots and visual design assets are presented by Marika Matalamäki as her own work or selected work she is entitled to show. Copyright remains with the respective rights holder. All rights are reserved. Do not copy, republish, modify, redistribute, or use these materials commercially without prior written permission from the rights holder. Some project assets may be associated with coursework or collaborative projects; this notice does not claim ownership of third-party names, brands, or other contributors' work.
-
-Ellei yksittäisen materiaalin yhteydessä toisin mainita, portfolion tekstit, omat koodinäytteet, valokuvat, kuvakaappaukset ja visuaaliset suunnittelutyöt esitetään Marika Matalamäen omana työnä tai valikoituna materiaalina, jonka esittämiseen hänellä on oikeus. Tekijänoikeudet säilyvät niiden oikeudenhaltijoilla. Kaikki oikeudet pidätetään. Materiaaleja ei saa kopioida, julkaista uudelleen, muokata, jakaa edelleen tai käyttää kaupallisesti ilman oikeudenhaltijan etukäteen antamaa kirjallista lupaa. Osa projektimateriaaleista liittyy opintoihin tai yhteistyöprojekteihin; tämä ilmoitus ei väitä omistusoikeutta kolmansien osapuolten nimiin, brändeihin tai muiden tekijöiden osuuksiin.
-
-
-Luvattomasta käytöstä voidaan vaatia hyvitystä tai vahingonkorvausta sovellettavan lain mukaisesti. Unauthorised use may lead to claims for remuneration or damages where applicable by law.
+Portfolion koodit ja visuaaliset työt ovat Marika Matalamäen itse tekemiä, joko harrastusprojekteina tai opintojen harjoitustöinä, ellei yksittäisen työn yhteydessä toisin ilmoiteta. Kuvat ovat hänen omiaan, ellei kuvan tai projektin yhteydessä toisin mainita. Yhteistyöprojektien, opintotöiden ja kolmansien osapuolten materiaalien oikeudet säilyvät niiden omilla oikeudenhaltijoilla. Materiaaleja ei saa käyttää uudelleen ilman asianomaisen oikeudenhaltijan lupaa. Luvattomasta käytöstä voidaan vaatia hyvitystä tai vahingonkorvausta sovellettavan lain mukaisesti.
