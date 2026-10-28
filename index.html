@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#0B1820">
   <title>Marika Matalamäki — Portfolio</title>
   <!-- MUOKKAUSVINKKI: sivun ulkoasu on tiedostossa style.css. Kommentit eivät näy verkkosivulla. -->
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
   <script src="script.js?v=6" defer></script>
   <!-- Umami Cloud: kävijätilastointi. Lisää ?owner=1 URL-osoitteeseen merkitäksesi tämän selaimen omistajan käynneiksi. -->
   <script>
@@ -43,8 +43,8 @@
   <header class="site-header">
     <a class="wordmark full-name" href="#home" aria-label="Marika Matalamäki, etusivu">Marika Matalamäki<span>.</span></a>
     <nav aria-label="Päänavigaatio">
-      <a href="#work" data-fi="Työnäytteet" data-en="Selected work">Työnäytteet</a>
       <a href="#about" data-fi="Minusta" data-en="About">Minusta</a>
+      <a href="#work" data-fi="Työnäytteet" data-en="Selected work">Työnäytteet</a>
       <a href="#contact" data-fi="Yhteystiedot" data-en="Contact">Yhteystiedot</a>
     </nav>
     <button class="language-toggle" id="language-toggle" type="button" aria-label="Switch language">EN ↗</button>
@@ -85,6 +85,28 @@
         <span class="hero-stamp" aria-hidden="true">MAKE<br>IT<br>MATTER<span>✳</span></span>
       </div>
       <div class="hero-index" aria-hidden="true">PORTFOLIO / 2026</div>
+    </section>
+
+    <!-- MINUSTA: päivitä esittelyteksti ja osaamisalueet tähän. -->
+    <section class="about-section section-wrap" id="about">
+      <div class="about-mark" aria-hidden="true">✳</div>
+      <div>
+        <p class="eyebrow"><span class="eyebrow-line"></span><span data-fi="Pieni esittely" data-en="A little about me">Pieni esittely</span></p>
+        <h2 data-fi="Tekniikka ja visuaalisuus<br><em>samassa paketissa.</em>" data-en="Technology and visual thinking<br><em>in the same toolkit.</em>">Tekniikka ja visuaalisuus<br><em>samassa paketissa.</em></h2>
+        <p data-fi="Valmistuin ICT-insinööriksi Jyväskylän ammattikorkeakoulusta (JAMK) toukokuussa 2026. JAMK on ammattikorkeakoulu, jossa opiskellaan käytännönläheisesti työelämän tarpeisiin. Suuntauduin opinnoissani sovelluskehitykseen ja digitaaliseen mediaan. Minua kiinnostaa erityisesti se, miten toimiva tekninen toteutus ja selkeä visuaalinen suunnittelu voidaan yhdistää samaan tuotteeseen." data-en="I graduated as an ICT engineer from JAMK University of Applied Sciences in May 2026. JAMK is a Finnish university of applied sciences with a practical, working-life-oriented approach to education. My studies focused on application development and digital media. I’m especially interested in combining sound technical implementation with clear visual design.">Valmistuin ICT-insinööriksi Jyväskylän ammattikorkeakoulusta (JAMK) toukokuussa 2026. JAMK on ammattikorkeakoulu, jossa opiskellaan käytännönläheisesti työelämän tarpeisiin. Suuntauduin opinnoissani sovelluskehitykseen ja digitaaliseen mediaan. Minua kiinnostaa erityisesti se, miten toimiva tekninen toteutus ja selkeä visuaalinen suunnittelu voidaan yhdistää samaan tuotteeseen.</p>
+        <p data-fi="Opintojen aikana olen perehtynyt esimerkiksi ohjelmointiin ja olio-ohjelmointiin (C#), Android-sovelluskehitykseen, web-teknologioihin, frontend-kehitykseen, tietokantoihin, ohjelmistotestaukseen sekä digitaalisen median ja visuaalisen suunnittelun työkaluihin. Olio-ohjelmoinnin kurssista sain arvosanan 5. Pelialan perusteet -opintokokonaisuus (10 op) sisälsi C#-ohjelmointia, Unityä ja Autodesk 3ds Maxia. Suoritin lisäksi verkkosivujen ja sovellusten tietoturvaan keskittyneitä lisäopintoja. Alla on esimerkkejä opintosisällöistä; nimet ovat kuvaavia aihealueita eivätkä välttämättä opintorekisterin virallisia kurssinimiä." data-en="My studies covered topics such as programming and object-oriented programming (C#), Android development, web technologies, frontend development, databases, software testing, digital media and visual design tools. I earned grade 5 in object-oriented programming. The 10-ECTS Basics of the Gaming Industry module included C# programming, Unity and Autodesk 3ds Max. I also completed additional studies focused on website and application security. The list below describes example study topics; these are descriptive labels and may not be the official names recorded in the study register.">Opintojen aikana olen perehtynyt esimerkiksi ohjelmointiin ja olio-ohjelmointiin (C#), Android-sovelluskehitykseen, web-teknologioihin, frontend-kehitykseen, tietokantoihin, ohjelmistotestaukseen sekä digitaalisen median ja visuaalisen suunnittelun työkaluihin. Olio-ohjelmoinnin kurssista sain arvosanan 5. Pelialan perusteet -opintokokonaisuus (10 op) sisälsi C#-ohjelmointia, Unityä ja Autodesk 3ds Maxia. Suoritin lisäksi verkkosivujen ja sovellusten tietoturvaan keskittyneitä lisäopintoja. Alla on esimerkkejä opintosisällöistä; nimet ovat kuvaavia aihealueita eivätkä välttämättä opintorekisterin virallisia kurssinimiä.</p>
+        <ul class="study-topics">
+          <li data-fi="Olio-ohjelmointi ja C# · arvosana 5" data-en="Object-oriented programming and C# · grade 5">Olio-ohjelmointi ja C# · arvosana 5</li>
+          <li data-fi="Android-sovelluskehitys ja mobiilikäyttöliittymät" data-en="Android development and mobile user interfaces">Android-sovelluskehitys ja mobiilikäyttöliittymät</li>
+          <li data-fi="Web-teknologiat ja frontend-kehitys" data-en="Web technologies and frontend development">Web-teknologiat ja frontend-kehitys</li>
+          <li data-fi="Tietokannat, API-rajapinnat ja ohjelmistotestaus" data-en="Databases, APIs and software testing">Tietokannat, API-rajapinnat ja ohjelmistotestaus</li>
+          <li data-fi="Pelialan perusteet · 10 op · C#, Unity ja 3D-mallinnus" data-en="Basics of the Gaming Industry · 10 ECTS · C#, Unity and 3D modelling">Pelialan perusteet · 10 op · C#, Unity ja 3D-mallinnus</li>
+          <li data-fi="Digitaalinen media ja visuaalinen suunnittelu" data-en="Digital media and visual design">Digitaalinen media ja visuaalinen suunnittelu</li>
+          <li data-fi="Verkkosivujen ja sovellusten tietoturva · lisäopinnot" data-en="Website and application security · additional studies">Verkkosivujen ja sovellusten tietoturva · lisäopinnot</li>
+        </ul>
+        <p data-fi="Etsin erityisesti junior-tason frontend- ja full stack -kehityksen, verkkosivujen toteutuksen sekä UI/UX- ja digitaalisen suunnittelun tehtäviä. Myös videokuvaus ja editointi, audiovisuaalinen tuotanto, journalismi, radiotyö, sisällöntuotanto, digitaalinen markkinointi ja tapahtumatuotanto kiinnostavat." data-en="I’m especially interested in junior frontend and full-stack development, website development, UI/UX and digital design. I’m also interested in video production and editing, audiovisual production, journalism, radio, content creation, digital marketing and event production.">Etsin erityisesti junior-tason frontend- ja full stack -kehityksen, verkkosivujen toteutuksen sekä UI/UX- ja digitaalisen suunnittelun tehtäviä. Myös videokuvaus ja editointi, audiovisuaalinen tuotanto, journalismi, radiotyö, sisällöntuotanto, digitaalinen markkinointi ja tapahtumatuotanto kiinnostavat.</p>
+        <div class="about-tags"><span>HTML / CSS / JavaScript</span><span>React / TypeScript</span><span>Visual design</span><span>Photo & video</span><span>WordPress</span></div>
+      </div>
     </section>
 
     <!-- TYÖNÄYTTEET: kopioi project-card-rakenne, kun lisäät uuden projektin. -->
@@ -368,28 +390,6 @@ public class CardPayment : ITransaction
         </article>
       </div>
       <p class="privacy-note"><span aria-hidden="true">✳</span> <span data-fi="Lisää työnäytteitä on saatavilla pyynnöstä. Osa portfolion muista materiaaleista on toistaiseksi yksityisiä." data-en="More work samples are available on request. Some other portfolio materials are currently private.">Lisää työnäytteitä on saatavilla pyynnöstä. Osa portfolion muista materiaaleista on toistaiseksi yksityisiä.</span></p>
-    </section>
-
-    <!-- MINUSTA: päivitä esittelyteksti ja osaamisalueet tähän. -->
-    <section class="about-section section-wrap" id="about">
-      <div class="about-mark" aria-hidden="true">✳</div>
-      <div>
-        <p class="eyebrow"><span class="eyebrow-line"></span><span data-fi="Pieni esittely" data-en="A little about me">Pieni esittely</span></p>
-        <h2 data-fi="Tekniikka ja visuaalisuus<br><em>samassa paketissa.</em>" data-en="Technology and visual thinking<br><em>in the same toolkit.</em>">Tekniikka ja visuaalisuus<br><em>samassa paketissa.</em></h2>
-        <p data-fi="Valmistuin ICT-insinööriksi Jyväskylän ammattikorkeakoulusta (JAMK) toukokuussa 2026. JAMK on ammattikorkeakoulu, jossa opiskellaan käytännönläheisesti työelämän tarpeisiin. Suuntauduin opinnoissani sovelluskehitykseen ja digitaaliseen mediaan. Minua kiinnostaa erityisesti se, miten toimiva tekninen toteutus ja selkeä visuaalinen suunnittelu voidaan yhdistää samaan tuotteeseen." data-en="I graduated as an ICT engineer from JAMK University of Applied Sciences in May 2026. JAMK is a Finnish university of applied sciences with a practical, working-life-oriented approach to education. My studies focused on application development and digital media. I’m especially interested in combining sound technical implementation with clear visual design.">Valmistuin ICT-insinööriksi Jyväskylän ammattikorkeakoulusta (JAMK) toukokuussa 2026. JAMK on ammattikorkeakoulu, jossa opiskellaan käytännönläheisesti työelämän tarpeisiin. Suuntauduin opinnoissani sovelluskehitykseen ja digitaaliseen mediaan. Minua kiinnostaa erityisesti se, miten toimiva tekninen toteutus ja selkeä visuaalinen suunnittelu voidaan yhdistää samaan tuotteeseen.</p>
-        <p data-fi="Opintojen aikana olen perehtynyt esimerkiksi ohjelmointiin ja olio-ohjelmointiin (C#), Android-sovelluskehitykseen, web-teknologioihin, frontend-kehitykseen, tietokantoihin, ohjelmistotestaukseen sekä digitaalisen median ja visuaalisen suunnittelun työkaluihin. Olio-ohjelmoinnin kurssista sain arvosanan 5. Pelialan perusteet -opintokokonaisuus (10 op) sisälsi C#-ohjelmointia, Unityä ja Autodesk 3ds Maxia. Suoritin lisäksi verkkosivujen ja sovellusten tietoturvaan keskittyneitä lisäopintoja. Alla on esimerkkejä opintosisällöistä; nimet ovat kuvaavia aihealueita eivätkä välttämättä opintorekisterin virallisia kurssinimiä." data-en="My studies covered topics such as programming and object-oriented programming (C#), Android development, web technologies, frontend development, databases, software testing, digital media and visual design tools. I earned grade 5 in object-oriented programming. The 10-ECTS Basics of the Gaming Industry module included C# programming, Unity and Autodesk 3ds Max. I also completed additional studies focused on website and application security. The list below describes example study topics; these are descriptive labels and may not be the official names recorded in the study register.">Opintojen aikana olen perehtynyt esimerkiksi ohjelmointiin ja olio-ohjelmointiin (C#), Android-sovelluskehitykseen, web-teknologioihin, frontend-kehitykseen, tietokantoihin, ohjelmistotestaukseen sekä digitaalisen median ja visuaalisen suunnittelun työkaluihin. Olio-ohjelmoinnin kurssista sain arvosanan 5. Pelialan perusteet -opintokokonaisuus (10 op) sisälsi C#-ohjelmointia, Unityä ja Autodesk 3ds Maxia. Suoritin lisäksi verkkosivujen ja sovellusten tietoturvaan keskittyneitä lisäopintoja. Alla on esimerkkejä opintosisällöistä; nimet ovat kuvaavia aihealueita eivätkä välttämättä opintorekisterin virallisia kurssinimiä.</p>
-        <ul class="study-topics">
-          <li data-fi="Olio-ohjelmointi ja C# · arvosana 5" data-en="Object-oriented programming and C# · grade 5">Olio-ohjelmointi ja C# · arvosana 5</li>
-          <li data-fi="Android-sovelluskehitys ja mobiilikäyttöliittymät" data-en="Android development and mobile user interfaces">Android-sovelluskehitys ja mobiilikäyttöliittymät</li>
-          <li data-fi="Web-teknologiat ja frontend-kehitys" data-en="Web technologies and frontend development">Web-teknologiat ja frontend-kehitys</li>
-          <li data-fi="Tietokannat, API-rajapinnat ja ohjelmistotestaus" data-en="Databases, APIs and software testing">Tietokannat, API-rajapinnat ja ohjelmistotestaus</li>
-          <li data-fi="Pelialan perusteet · 10 op · C#, Unity ja 3D-mallinnus" data-en="Basics of the Gaming Industry · 10 ECTS · C#, Unity and 3D modelling">Pelialan perusteet · 10 op · C#, Unity ja 3D-mallinnus</li>
-          <li data-fi="Digitaalinen media ja visuaalinen suunnittelu" data-en="Digital media and visual design">Digitaalinen media ja visuaalinen suunnittelu</li>
-          <li data-fi="Verkkosivujen ja sovellusten tietoturva · lisäopinnot" data-en="Website and application security · additional studies">Verkkosivujen ja sovellusten tietoturva · lisäopinnot</li>
-        </ul>
-        <p data-fi="Etsin erityisesti junior-tason frontend- ja full stack -kehityksen, verkkosivujen toteutuksen sekä UI/UX- ja digitaalisen suunnittelun tehtäviä. Myös videokuvaus ja editointi, audiovisuaalinen tuotanto, journalismi, radiotyö, sisällöntuotanto, digitaalinen markkinointi ja tapahtumatuotanto kiinnostavat." data-en="I’m especially interested in junior frontend and full-stack development, website development, UI/UX and digital design. I’m also interested in video production and editing, audiovisual production, journalism, radio, content creation, digital marketing and event production.">Etsin erityisesti junior-tason frontend- ja full stack -kehityksen, verkkosivujen toteutuksen sekä UI/UX- ja digitaalisen suunnittelun tehtäviä. Myös videokuvaus ja editointi, audiovisuaalinen tuotanto, journalismi, radiotyö, sisällöntuotanto, digitaalinen markkinointi ja tapahtumatuotanto kiinnostavat.</p>
-        <div class="about-tags"><span>HTML / CSS / JavaScript</span><span>React / TypeScript</span><span>Visual design</span><span>Photo & video</span><span>WordPress</span></div>
-      </div>
     </section>
 
     <!-- YHTEYSTIEDOT: tarkista linkit ennen julkaisua. -->
