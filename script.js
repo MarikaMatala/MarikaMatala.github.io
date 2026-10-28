@@ -10,6 +10,7 @@ function updateCarouselLabels(language) {
 
 function setLanguage(language) {
   currentLanguage = language;
+  try { localStorage.setItem('portfolio-language', language); } catch (error) { /* storage may be disabled */ }
   document.documentElement.lang = language;
   document.querySelectorAll('[data-fi][data-en]').forEach((element) => {
     const value = element.dataset[language];
@@ -28,6 +29,10 @@ if (languageToggle) {
     setLanguage(currentLanguage === 'fi' ? 'en' : 'fi');
   });
 }
+
+try {
+  if (localStorage.getItem('portfolio-language') === 'en') setLanguage('en');
+} catch (error) { /* storage may be disabled */ }
 
 const androidImages = [
   { src: 'images/android-kurssin%20tehtavien%20kuvia/1.png', alt: 'Android-kurssin harjoitustyön kuvakaappaus' },
