@@ -16,3 +16,8 @@ Image paths referenced in the website should match the file names and directory 
 Images in this portfolio are my own unless otherwise stated beside the image or project. Some screenshots may show third-party software, coursework or collaborative work; the rights to those elements remain with their respective owners. Do not reuse images without permission from the relevant rights holder.
 
 Portfolion kuvat ovat omiani, ellei kuvan tai projektin yhteydessä toisin mainita. Osa kuvakaappauksista voi esittää kolmansien osapuolten ohjelmistoja, opintotöitä tai yhteistyöprojekteja; niiden oikeudet säilyvät asianomaisilla oikeudenhaltijoilla. Kuvia ei saa käyttää uudelleen ilman asianomaisen oikeudenhaltijan lupaa.
+
+
+## Creative samples
+
+The `creative-samples/` folder contains local copies of selected graphic design, game-project and 3D environment images used by the public portfolio. These are stored here so the portfolio does not depend on image URLs from the private coursework repository.
