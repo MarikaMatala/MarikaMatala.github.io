@@ -117,6 +117,81 @@ if (oopBrowser) {
   showOopSample(0);
 }
 
+
+// Accessible image enlargement: activate any portfolio image to open it, then
+// click the enlarged image or backdrop (or press Escape) to return to the page.
+(function setupImageLightbox() {
+  const images = Array.from(document.querySelectorAll('main img'));
+  if (!images.length) return;
+
+  const overlay = document.createElement('div');
+  overlay.className = 'image-lightbox';
+  overlay.hidden = true;
+  overlay.tabIndex = -1;
+  overlay.setAttribute('role', 'dialog');
+  overlay.setAttribute('aria-modal', 'true');
+  overlay.setAttribute('aria-label', 'Suurenna kuva / Enlarge image');
+
+  const help = document.createElement('span');
+  help.className = 'lightbox-help';
+  help.textContent = 'Sulje napsauttamalla kuvaa tai taustaa · Close by clicking image or backdrop';
+  const enlarged = document.createElement('img');
+  enlarged.alt = '';
+  overlay.append(help, enlarged);
+  document.body.appendChild(overlay);
+
+  let previousFocus = null;
+
+  function openImage(image) {
+    previousFocus = image;
+    enlarged.src = image.currentSrc || image.src;
+    enlarged.alt = image.alt || 'Portfolio image';
+    overlay.hidden = false;
+    overlay.focus();
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeImage() {
+    if (overlay.hidden) return;
+    overlay.hidden = true;
+    enlarged.removeAttribute('src');
+    document.body.style.overflow = '';
+    if (previousFocus && typeof previousFocus.focus === 'function') previousFocus.focus();
+  }
+
+  images.forEach((image) => {
+    image.classList.add('image-zoomable');
+    image.tabIndex = 0;
+    image.setAttribute('role', 'button');
+    image.setAttribute('aria-haspopup', 'dialog');
+    image.setAttribute('aria-label', (image.alt || 'Portfolio image') + ' — enlarge image');
+  });
+
+  document.addEventListener('click', (event) => {
+    const image = event.target.closest('main img.image-zoomable');
+    if (image) {
+      openImage(image);
+      return;
+    }
+    if (!overlay.hidden && (event.target === overlay || event.target === enlarged || event.target === help)) {
+      closeImage();
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (!overlay.hidden && event.key === 'Escape') {
+      event.preventDefault();
+      closeImage();
+      return;
+    }
+    const image = event.target.closest && event.target.closest('main img.image-zoomable');
+    if (image && (event.key === 'Enter' || event.key === ' ')) {
+      event.preventDefault();
+      openImage(image);
+    }
+  });
+})();
+
 updateCarouselLabels(currentLanguage);
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
