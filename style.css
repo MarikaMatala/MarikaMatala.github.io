@@ -2,14 +2,14 @@
 
 :root{
   color-scheme:dark;
-  --ink:#0B1820;
-  --paper:#F4F8F6;
-  --burgundy:#103A36;
-  --copper:#63D5B5;
-  --muted:#c6c2c4;
-  --line:#385458;
-  --surface:#152A30;
-  --surface-raised:#1D3438;
+  --ink:#090A0F;
+  --paper:#E8E8E0;
+  --burgundy:#14241D;
+  --copper:#B6FF3B;
+  --muted:#A4A59B;
+  --line:#343B34;
+  --surface:#11131A;
+  --surface-raised:#191C23;
   --mono:'DM Mono',monospace;
   --sans:'Manrope',Arial,sans-serif;
 }
@@ -228,4 +228,171 @@ h1 em,h2 em{font-style:normal;color:var(--copper)}
   .code-sample:last-child{grid-column:auto}
   .oop-grade{width:62px;height:62px;font-size:1.6rem}
   .oop-grade span{margin-top:-11px}
+}
+
+
+/* Marika's original visual direction: nocturnal grunge, dark academia and analog-retro details.
+   Custom palette; no company brand palette or assets are used. */
+body{
+  background:
+    radial-gradient(ellipse at 78% 8%,#16251d55 0%,transparent 34rem),
+    radial-gradient(ellipse at 8% 42%,#17152744 0%,transparent 38rem),
+    #090A0F;
+}
+::selection{background:#B6FF3B;color:#090A0F}
+.site-header{
+  background:rgba(9,10,15,.91);
+  border-bottom:1px solid #424638;
+  box-shadow:0 8px 26px #0008;
+}
+.wordmark span{color:#B6FF3B;text-shadow:0 0 16px #B6FF3B66}
+.notice{
+  background:linear-gradient(90deg,#101510,#1b2118 50%,#101510);
+  border-bottom:1px solid #3e4a2d;
+}
+.notice-dot{background:#B6FF3B;box-shadow:0 0 10px #B6FF3B,0 0 0 4px #B6FF3B22}
+.hero:before,.hero:after{border-color:#B6FF3B44}
+.hero:before{box-shadow:0 0 50px #B6FF3B0a,inset 0 0 45px #B6FF3B08}
+.eyebrow{color:#B6FF3B}
+.eyebrow-line{background:#B6FF3B;box-shadow:0 0 9px #B6FF3B77}
+h1 em,h2 em,.contact-section h2 em{color:#B6FF3B;text-shadow:0 0 22px #B6FF3B22}
+.hero-intro,.about-section p:not(.eyebrow),.project-card p{color:#C5C5BC}
+.hero-tags span,.skill-list span,.about-tags span{
+  border-color:#3c4637;
+  background:linear-gradient(135deg,#172018bb,#12131aee);
+}
+.text-link{border-color:#B6FF3B}
+.text-link:hover,.contact-links a:hover{color:#B6FF3B}
+.portrait-frame{
+  background:#12141a;
+  border-color:#64734a;
+  box-shadow:14px 14px 0 #14241D,0 0 28px #B6FF3B12;
+}
+.shape-one{background:#14241D;border-color:#B6FF3B55}
+.shape-two{background:#B6FF3B;box-shadow:0 0 28px #B6FF3B33}
+.hero-stamp{
+  background:#B6FF3B;
+  border-color:#D5FF93;
+  box-shadow:0 0 30px #B6FF3B22;
+}
+.hero-stamp span{color:#14241D}
+.work-section{
+  background:
+    radial-gradient(ellipse at 92% 0%,#1b2b1e 0%,transparent 34rem),
+    linear-gradient(145deg,#101510,#101116 62%,#14121b);
+}
+.work-section:before{border-color:#B6FF3B33}
+.project-card{
+  background:linear-gradient(150deg,#171920,#101116 72%);
+  border-color:#353b35;
+  box-shadow:0 8px 24px #0002;
+}
+.project-card:hover{
+  border-color:#82964c;
+  box-shadow:0 12px 35px #0006,0 0 0 1px #B6FF3B18;
+}
+.project-meta{color:#B8B9AA}
+.image-label{
+  background:#B6FF3B;
+  color:#090A0F;
+  box-shadow:0 2px 12px #0008;
+}
+.project-image,.project-image img,.coming-art,.branding-gallery{background:#090A0F}
+.project-coming{background:#12150F}
+.coming-art:before,.coming-art:after{border-color:#B6FF3B33}
+.coming-art span:first-child{color:#B6FF3B}
+.privacy-note{color:#BFC0B6}
+.privacy-note span{color:#B6FF3B}
+.branding-gallery{border-color:#343B34}
+.branding-gallery figcaption{color:#B8B9AA}
+.about-mark{color:#B6FF3B;text-shadow:0 0 24px #B6FF3B1c}
+.contact-section{
+  background:
+    radial-gradient(ellipse at 90% 10%,#14241d 0%,transparent 28rem),
+    #08090D;
+  border-top:1px solid #343b34;
+}
+.contact-section:after{border-color:#B6FF3B33}
+.contact-links a{border-color:#505847}
+.site-footer{background:#08090D;border-top:1px solid #242820}
+.site-footer>span{color:#A4A59B}
+.language-toggle{border-color:#526044}
+.language-toggle:hover{border-color:#B6FF3B;color:#B6FF3B}
+a:focus-visible,button:focus-visible{outline-color:#B6FF3B}
+.skip-link{background:#B6FF3B;color:#090A0F}
+.image-placeholder{background:#101116}
+.placeholder-mark,.placeholder-number{color:#B6FF3B}
+.project-placeholder{background:linear-gradient(135deg,#14241D,#090A0F)}
+/* Subtle analog scanlines and grain-like stripes, made entirely in CSS. */
+.work-section:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+  opacity:.12;
+  background:repeating-linear-gradient(0deg,transparent 0,transparent 3px,#8f9a7d 4px);
+  mask-image:linear-gradient(to bottom,transparent,#000 20%,#000 80%,transparent);
+}
+.work-section>.section-heading,.work-section>.project-grid{position:relative;z-index:1}
+
+/* Android screenshots: larger viewing area while preserving full image proportions. */
+.android-carousel{
+  background:#080A0D;
+  border:1px solid #4a5a3d;
+  box-shadow:0 12px 30px #0008,0 0 24px #B6FF3B0b;
+}
+.android-carousel-stage{
+  height:330px;
+  min-height:330px;
+  padding:16px 64px;
+  background:
+    radial-gradient(ellipse at center,#18201a 0%,#0b0d11 70%);
+}
+.android-carousel-stage img{
+  max-height:294px;
+  filter:drop-shadow(0 6px 14px #000a);
+}
+.android-carousel-stage .image-label{background:#B6FF3B;color:#090A0F}
+.android-carousel-controls{border-top-color:#30392b;background:#0a0c0f}
+.carousel-arrow{
+  border-color:#B6FF3B99;
+  background:rgba(10,15,12,.96);
+  color:#B6FF3B;
+  box-shadow:0 0 0 3px #090A0F,0 0 16px #B6FF3B20,0 4px 14px #000b;
+}
+.carousel-arrow:hover,.carousel-arrow:active{
+  background:#B6FF3B;
+  border-color:#D5FF93;
+  color:#090A0F;
+  box-shadow:0 0 22px #B6FF3B66;
+}
+.carousel-arrow:focus-visible{outline-color:#B6FF3B}
+.carousel-counter{color:#B6FF3B}
+.carousel-hint{color:#B6BBA8!important}
+.project-oop{
+  background:linear-gradient(135deg,#171d17 0%,#101116 75%);
+  border-color:#46533a;
+}
+.project-oop:hover{box-shadow:0 12px 35px #0008,0 0 0 1px #B6FF3B22}
+.oop-grade{border-color:#B6FF3B;color:#B6FF3B;box-shadow:inset 0 0 0 6px #B6FF3B0c,0 0 22px #B6FF3B0b}
+.code-sample{border-color:#394536;background:#0b0d11}
+.code-sample summary span:first-child,.code-sample summary::after{color:#B6FF3B}
+.code-sample pre{border-color:#30392b;color:#DCE9D0;background:#080A0D}
+.sample-source{color:#B6FF3B}
+.oop-note{color:#B8C1AD!important}
+@media(max-width:800px){
+  .android-carousel-stage{height:285px;min-height:285px;padding:14px 58px}
+  .android-carousel-stage img{max-height:249px}
+}
+@media(max-width:540px){
+  .android-carousel-stage{height:250px;min-height:250px;padding:12px 52px}
+  .android-carousel-stage img{max-height:214px}
+}
+@media(max-width:360px){
+  .android-carousel-stage{height:220px;min-height:220px;padding:10px 48px}
+  .android-carousel-stage img{max-height:184px}
+}
+@media(prefers-reduced-motion:reduce){
+  .work-section:after{display:none}
 }
