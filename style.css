@@ -1693,3 +1693,44 @@ a:focus-visible,button:focus-visible{outline-color:#e2a8b8}
 #projects .oop-sample-panel .token.number{color:#cba8e3}
 #projects .oop-sample-panel .token.operator,#projects .oop-sample-panel .token.punctuation{color:#d8c9d8}
 #projects .oop-sample-panel .token.property,#projects .oop-sample-panel .token.parameter{color:#b6d2c3}
+
+
+/* Final readability pass: consistent skill ratings and compact, aligned sample cards. */
+.skills-grid-detailed{align-items:stretch;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,2vw,22px)}
+.skills-grid-detailed .skills-card{height:100%;padding:clamp(16px,2vw,24px);min-width:0}
+.skills-grid-detailed .skills-card:last-child{grid-column:1/-1}
+.skills-grid-detailed .skill-row{gap:10px;padding:9px 0}
+.skills-grid-detailed .skill-name{font-size:clamp(.82rem,1vw,.94rem)}
+.skills-grid-detailed .skill-bars i{width:8px;height:14px}
+.skills-grid-detailed .skill-level{font-size:.72rem;min-width:28px}
+.skills-scale{margin-top:22px;padding:16px 18px;border-left:2px solid var(--copper);background:linear-gradient(90deg,#2b102180,transparent)}
+#projects .project-grid{align-items:stretch;gap:clamp(16px,2vw,24px)}
+#projects .project-card{height:100%;min-width:0;display:flex;flex-direction:column;align-self:stretch;padding:clamp(14px,1.7vw,22px);border-radius:2px}
+#projects .project-card .project-meta{margin-top:12px;font-size:.62rem}
+#projects .project-card h3{font-size:clamp(1.15rem,1.6vw,1.55rem);line-height:1.22;margin-top:8px}
+#projects .project-card>p{font-size:.88rem;line-height:1.72}
+#projects .project-card .skill-list{margin-top:auto;padding-top:14px}
+#projects .android-project-copy{order:0;padding:8px 0 12px}
+#projects .android-carousel{order:2;margin-top:10px}
+#projects .android-carousel-stage{height:clamp(190px,20vw,260px);min-height:clamp(190px,20vw,260px)}
+#projects .project-oop .oop-heading{order:0;padding:6px 0 0}
+#projects .project-oop>p:not(.interaction-hint){margin-left:0;margin-right:0}
+#projects .project-oop .interaction-hint{margin-left:0;margin-right:0}
+#projects .project-oop .oop-browser{order:2;margin:12px 0 0;width:100%}
+#projects .project-oop .oop-sample-panel pre{font-size:clamp(.72rem,.9vw,.85rem);max-height:260px}
+#projects .project-oop .oop-sample-panel>p{font-size:.85rem;line-height:1.7}
+#projects .branding-gallery{order:2;margin-top:10px}
+#projects .project-coming .coming-art{order:2;margin-top:10px}
+.contact-page-grid{align-items:stretch}
+.contact-method{height:100%;display:flex;flex-direction:column;align-items:flex-start}
+.contact-method a{overflow-wrap:anywhere;word-break:break-word}
+@media(max-width:760px){
+  .skills-grid-detailed{grid-template-columns:minmax(0,1fr)}
+  .skills-grid-detailed .skills-card:last-child{grid-column:auto}
+  #projects .project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #projects .project-card{padding:14px}
+}
+@media(max-width:540px){
+  .skills-grid-detailed{grid-template-columns:minmax(0,1fr)}
+  #projects .project-grid{grid-template-columns:minmax(0,1fr)}
+}
