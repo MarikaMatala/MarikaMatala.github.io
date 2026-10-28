@@ -89,6 +89,34 @@ if (androidCarousel) {
   }, { passive: true });
 }
 
+
+const oopBrowser = document.getElementById('oop-browser');
+if (oopBrowser) {
+  const panels = Array.from(oopBrowser.querySelectorAll('.oop-sample-panel'));
+  const selector = document.getElementById('oop-sample-select');
+  const counter = document.getElementById('oop-counter');
+  const previous = document.getElementById('oop-prev');
+  const next = document.getElementById('oop-next');
+  let activeSample = 0;
+
+  function showOopSample(index) {
+    if (!panels.length) return;
+    activeSample = Math.max(0, Math.min(index, panels.length - 1));
+    panels.forEach((panel, panelIndex) => {
+      panel.hidden = panelIndex !== activeSample;
+    });
+    if (selector) selector.value = String(activeSample);
+    if (counter) counter.textContent = `${activeSample + 1} / ${panels.length}`;
+    if (previous) previous.disabled = activeSample === 0;
+    if (next) next.disabled = activeSample === panels.length - 1;
+  }
+
+  if (selector) selector.addEventListener('change', () => showOopSample(Number(selector.value)));
+  if (previous) previous.addEventListener('click', () => showOopSample(activeSample - 1));
+  if (next) next.addEventListener('click', () => showOopSample(activeSample + 1));
+  showOopSample(0);
+}
+
 updateCarouselLabels(currentLanguage);
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
