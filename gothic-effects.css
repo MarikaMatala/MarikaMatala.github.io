@@ -1,9 +1,9 @@
 /* Gothic effects for Portfolio 2026 — no JavaScript dependency required. */
 :root{--gothic-paper:#f1e9df;--gothic-rose:#b65c72;--gothic-moss:#a6b49c;--gothic-ink:#050407}
 html{scroll-behavior:smooth}
-body{font-family:"Manrope",Arial,sans-serif;text-rendering:optimizeLegibility}
-h1,h2,h3,.wordmark,.project-card h3,.skills-card h4,.contact-page h1,.work-page-intro h1{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;letter-spacing:-.025em}
-h1 em,h2 em,.work-page-intro h1 em,.contact-page h1 em{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-style:italic}
+body{font-family:"Nunito Sans",Arial,sans-serif;text-rendering:optimizeLegibility}
+h1,h2,h3,.wordmark,.project-card h3,.skills-card h4,.contact-page h1,.work-page-intro h1{font-family:"Lora",Georgia,serif;font-weight:600;letter-spacing:-.025em}
+h1 em,h2 em,.work-page-intro h1 em,.contact-page h1 em{font-family:"Lora",Georgia,serif;font-weight:500;font-style:italic}
 .wordmark span,.eyebrow-line,.notice-dot{filter:drop-shadow(0 0 5px #b65c7266)}
 .gothic-mandala{position:fixed;z-index:-1;pointer-events:none;width:min(70vw,760px);aspect-ratio:1;right:-28vw;top:22vh;border-radius:50%;opacity:.065;background:repeating-conic-gradient(from 0deg,transparent 0deg 8deg,#b65c72 8.3deg 8.8deg,transparent 9deg 15deg),radial-gradient(circle,transparent 0 23%,#a6b49c 23.2% 23.45%,transparent 23.7% 35%,#b65c72 35.2% 35.5%,transparent 35.8% 49%,#a6b49c 49.2% 49.45%,transparent 49.8%);mask-image:radial-gradient(circle,black 0 42%,transparent 72%);animation:mandala-turn 100s linear infinite}
 .gothic-mandala::before,.gothic-mandala::after{content:"";position:absolute;inset:12%;border:1px solid #b65c72;border-radius:50%;transform:rotate(45deg) scaleX(.48)}
