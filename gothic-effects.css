@@ -91,3 +91,97 @@ body{isolation:isolate}
   #projects .oop-samples-toggle .samples-toggle-content{padding:8px}
 }
 @media(prefers-reduced-motion:reduce){.project-samples-toggle .expand-symbol{transition:none}}
+
+/* Portfolio 2026 — tactile print texture, restrained motion and layered colour.
+   Inline SVG grain is decorative, local, lightweight and does not require a third-party library. */
+body{
+  background-color:#0b080d;
+  background-image:
+    radial-gradient(ellipse at 8% 14%,rgba(116,35,61,.20),transparent 34%),
+    radial-gradient(ellipse at 90% 46%,rgba(102,104,70,.10),transparent 31%),
+    radial-gradient(ellipse at 50% 100%,rgba(130,70,46,.12),transparent 46%);
+  background-attachment:fixed;
+}
+body::before{
+  content:"";
+  position:fixed;
+  z-index:-1;
+  inset:0;
+  pointer-events:none;
+  opacity:.19;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.88' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.38'/%3E%3C/svg%3E"),
+    repeating-linear-gradient(117deg,transparent 0 17px,rgba(230,190,154,.025) 18px,transparent 19px 38px);
+  background-size:180px 180px,auto;
+  mix-blend-mode:screen;
+}
+main{position:relative}
+.hero,.home-about-teaser,.home-work-cta-section,.contact-section,.work-section,.about-section,.contact-page,.work-page-intro{
+  position:relative;
+  isolation:isolate;
+}
+.hero::before{
+  border-color:rgba(206,129,71,.20);
+}
+.hero-copy .eyebrow,.section-wrap>.eyebrow{color:#d6b9a7}
+.hero-tags span,.skill-list span,.about-tags span{
+  border-radius:2px;
+  background:linear-gradient(135deg,rgba(46,0,20,.62),rgba(28,30,32,.58));
+  box-shadow:inset 0 1px rgba(255,255,255,.025);
+}
+.project-card,.skills-card,.contact-method,.creative-samples-grid .creative-sample{
+  border-color:rgba(206,129,71,.30);
+  background-image:
+    linear-gradient(135deg,rgba(95,32,46,.18),transparent 46%),
+    repeating-linear-gradient(0deg,rgba(255,255,255,.012) 0 1px,transparent 1px 5px),
+    linear-gradient(155deg,#21171c 0%,#110e12 76%);
+}
+.project-card:hover,.skills-card:hover,.contact-method:hover{
+  border-color:#ce8147;
+  box-shadow:6px 7px 0 rgba(206,129,71,.12),0 18px 35px rgba(0,0,0,.24);
+}
+.hero-index{
+  border:1px solid rgba(206,129,71,.60);
+  box-shadow:5px 5px 0 rgba(46,0,20,.82),inset 0 0 0 1px rgba(255,255,255,.035);
+  transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease,filter .25s ease;
+}
+.hero-index:hover{
+  transform:translateY(-4px) rotate(-1deg);
+  border-color:#e5a36f;
+  box-shadow:8px 9px 0 rgba(46,0,20,.86),0 0 28px rgba(206,129,71,.12);
+  filter:brightness(1.08);
+}
+.hero-index:focus-visible{
+  outline:3px solid #ce8147;
+  outline-offset:5px;
+}
+.site-header{
+  border-bottom-color:rgba(206,129,71,.24);
+}
+.site-header nav a[aria-current="page"]{
+  color:#e6a06b;
+  text-decoration:underline;
+  text-decoration-color:rgba(206,129,71,.6);
+  text-underline-offset:7px;
+}
+.info-ribbon{
+  background-image:repeating-linear-gradient(135deg,rgba(206,129,71,.045) 0 1px,transparent 1px 9px);
+}
+.gothic-button,.home-work-cta,.contact-method-primary a{
+  border-radius:2px;
+  border-color:rgba(206,129,71,.66);
+  box-shadow:4px 4px 0 rgba(46,0,20,.85);
+}
+.gothic-button:hover,.home-work-cta:hover,.contact-method-primary a:hover{
+  box-shadow:6px 6px 0 rgba(46,0,20,.9);
+}
+.site-footer{
+  border-top-color:rgba(206,129,71,.28);
+}
+@media(max-width:760px){
+  body{background-attachment:scroll}
+  body::before{opacity:.12}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-index{transition:none!important}
+}
