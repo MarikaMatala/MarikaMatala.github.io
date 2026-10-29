@@ -2251,3 +2251,14 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
 .creative-samples-grid .sample-pdf-preview .sample-file-action{color:#e7bd83;font-size:.82rem;text-align:center}
 .creative-samples-grid .sample-pdf-preview:hover .sample-file-icon{transform:translateY(-3px)}
 @media(prefers-reduced-motion:reduce){.creative-samples-grid .sample-pdf-preview .sample-file-icon{transition:none}}
+
+
+/* Skill cards: keep the final category in the same two-column rhythm on desktop. */
+.skills-grid-detailed{align-items:stretch}
+.skills-grid-detailed .skills-card:last-child{grid-column:auto}
+.skills-grid-detailed .skills-card{min-width:0;height:100%}
+.skills-grid-detailed .skill-row{min-width:0}
+.skills-grid-detailed .skill-name{overflow-wrap:anywhere}
+@media(max-width:760px){
+  .skills-grid-detailed .skills-card:last-child{grid-column:auto}
+}
