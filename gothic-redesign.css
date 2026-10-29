@@ -334,3 +334,51 @@ h3 em {
   color: var(--metal-rose);
   text-shadow: 0 0 12px rgba(185,133,145,.24);
 }
+
+
+/* Clear, compact bilingual language switcher with a purpose-built globe/language mark. */
+.language-toggle{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  min-height:42px;
+  padding:9px 13px;
+  white-space:nowrap;
+  color:#f3eaf0;
+  background:linear-gradient(135deg,rgba(46,0,20,.96),rgba(28,30,32,.98));
+  border:1px solid rgba(191,194,200,.62);
+  border-radius:3px;
+  box-shadow:inset 0 0 0 1px rgba(185,133,145,.12),3px 3px 0 rgba(46,0,20,.78);
+  font-family:"Manrope",Arial,sans-serif;
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.045em;
+  line-height:1.25;
+}
+.language-toggle .language-icon{
+  display:inline-flex;
+  flex:0 0 20px;
+  width:20px;
+  height:20px;
+  align-items:center;
+  justify-content:center;
+  color:var(--metal-rose);
+}
+.language-toggle .language-icon svg{
+  display:block;
+  width:20px;
+  height:20px;
+}
+.language-toggle .language-label{display:inline-block}
+.language-toggle:hover,
+.language-toggle:focus-visible{
+  color:#fff;
+  border-color:var(--metal-copper);
+  box-shadow:0 0 14px rgba(185,133,145,.2),3px 3px 0 rgba(46,0,20,.78);
+}
+.language-toggle:focus-visible{outline:2px solid var(--metal-silver);outline-offset:3px}
+@media(max-width:760px){
+  .language-toggle{min-height:40px;padding:8px 10px;gap:7px;font-size:.66rem}
+  .language-toggle .language-icon,.language-toggle .language-icon svg{width:18px;height:18px}
+}
