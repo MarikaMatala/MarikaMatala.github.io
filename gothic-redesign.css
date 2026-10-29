@@ -1,4 +1,4 @@
-/* Experimental gothic art direction — prototype branch only. */
+/* Decorative details retained for the autumn cottagecore theme. Main colors and typography are set in autumn-cottagecore.css. */
 :root{
   --metal-copper:#ce8147;
   --metal-rose:#b98591;
@@ -48,10 +48,10 @@ h1,h2{
   letter-spacing:-.025em;
 }
 .hero-copy h1::first-letter,.work-page-intro h1::first-letter,.contact-page h1::first-letter{
-  font-family:"UnifrakturCook","Cormorant Garamond",serif;
-  font-size:1.2em;
-  color:var(--metal-rose);
-  text-shadow:0 0 12px rgba(185,133,145,.38),1px 1px 0 var(--metal-copper);
+  font-family:"Lora",Georgia,serif;
+  font-size:inherit;
+  color:inherit;
+  text-shadow:none;
 }
 h2::first-letter{
   color:var(--metal-rose);
@@ -149,7 +149,7 @@ h1 em,h2 em{
   content:"";
   display:inline-block;
   width:42px;height:52px;
-  background:url("images/metal-rose-sigil.svg?v=3") center/contain no-repeat;
+  background:url("images/metal-rose-sigil.svg?v=4") center/contain no-repeat;
   filter:drop-shadow(0 0 7px rgba(185,133,145,.24));
 }
 .info-ribbon{
