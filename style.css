@@ -216,7 +216,7 @@ h1 em,h2 em{font-style:normal;color:var(--copper)}
 .code-sample[open] summary::after{content:"−"}
 .code-sample summary span:first-child{color:var(--copper);font:.65rem var(--mono)}
 .code-sample>p{padding:0 12px;margin:0 0 12px;font-size:.76rem!important;line-height:1.65!important}
-.code-sample pre{margin:0;padding:14px 12px;overflow-x:auto;border-top:1px solid #294A4A;border-bottom:1px solid #294A4A;color:#D9F0E8;font: .7rem/1.65 'DM Mono',monospace;tab-size:4;white-space:pre}
+.code-sample pre{margin:0;padding:14px 12px;overflow-x:auto;border-top:1px solid #294A4A;border-bottom:1px solid #294A4A;color:#D9F0E8;font: .7rem/1.65 'Nunito Sans',monospace;tab-size:4;white-space:pre}
 .code-sample code{font:inherit}
 .sample-source{display:block;padding:9px 12px;color:#8ECFBE;font:.62rem var(--mono);letter-spacing:.04em}
 .oop-note{margin:18px 0 0!important;color:#BBD2CC!important;font-size:.76rem!important}
@@ -499,8 +499,8 @@ img.image-zoomable:focus-visible{outline:3px solid #B6FF3B;outline-offset:4px}
   --line:#44343A;
   --surface:#121116;
   --surface-raised:#20191E;
-  --mono:'DM Mono',monospace;
-  --sans:'Manrope',Arial,sans-serif;
+  --mono:'Nunito Sans',monospace;
+  --sans:'Nunito Sans',Arial,sans-serif;
 }
 body{
   background:
@@ -1470,7 +1470,7 @@ body:after{opacity:.075;background:repeating-linear-gradient(0deg,transparent 0 
 :root{
   --ink:#0b080d;--paper:#eee7ec;--burgundy:#28121f;--copper:#b56b7a;
   --muted:#b8a8b6;--line:#493241;--surface:#171019;--surface-raised:#211624;
-  --display:'Cinzel',Georgia,serif;--mono:'DM Mono',monospace;--sans:'Manrope',Arial,sans-serif;
+  --display:'Lora',Georgia,serif;--mono:'Nunito Sans',monospace;--sans:'Nunito Sans',Arial,sans-serif;
 }
 body{background-color:var(--ink);background-image:radial-gradient(ellipse at 12% 8%,#401c3025,transparent 42%),radial-gradient(ellipse at 92% 48%,#31192720,transparent 36%);color:var(--paper)}
 h1,h2,h3,.wordmark,.project-card h3,.skills-card h4,.contact-section h2,.work-page-intro h1,.contact-page h1{font-family:var(--display);font-weight:600;letter-spacing:.005em}
@@ -1556,7 +1556,7 @@ h1 em,h2 em,.work-page-intro h1 em,.contact-page h1 em{color:#c77c8a;font-style:
 @media(prefers-reduced-motion:reduce){.gothic-button{transition:none}}
 
 /* === Gothic portfolio refresh: page structure, texture and compact sample cards === */
-:root{--ink:#0b080d;--paper:#eee4eb;--burgundy:#2b1021;--copper:#c27b92;--muted:#b8a8b4;--line:#493344;--surface:#140e17;--surface-raised:#211522;--display:'Cinzel',Georgia,serif;--gothic:'UnifrakturCook',serif;--sans:'Manrope',Arial,sans-serif}
+:root{--ink:#0b080d;--paper:#eee4eb;--burgundy:#2b1021;--copper:#c27b92;--muted:#b8a8b4;--line:#493344;--surface:#140e17;--surface-raised:#211522;--display:'Lora',Georgia,serif;--gothic:'Lora',serif;--sans:'Nunito Sans',Arial,sans-serif}
 body{background-color:var(--ink);background-image:radial-gradient(ellipse at 16% 4%,rgba(105,37,72,.23),transparent 40%),radial-gradient(ellipse at 90% 32%,rgba(55,30,77,.18),transparent 38%),repeating-linear-gradient(135deg,rgba(255,255,255,.012) 0 1px,transparent 1px 7px);background-attachment:fixed}
 body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.12;background-image:radial-gradient(circle,rgba(207,151,176,.72) .7px,transparent 1px);background-size:31px 31px;mask-image:linear-gradient(to bottom,black,transparent 78%)}
 body>*{position:relative;z-index:1}
@@ -1737,7 +1737,7 @@ a:focus-visible,button:focus-visible{outline-color:#e2a8b8}
 
 
 /* Gothic atmosphere: typography, restrained ornament and lightweight native CSS motion. */
-:root{color-scheme:dark;--ink:#09070b;--paper:#f0e6ec;--burgundy:#250b1b;--copper:#b85c7a;--muted:#c1aeba;--line:#49303f;--surface:#130d16;--surface-raised:#211321;--sans:'Manrope',Arial,sans-serif}
+:root{color-scheme:dark;--ink:#09070b;--paper:#f0e6ec;--burgundy:#250b1b;--copper:#b85c7a;--muted:#c1aeba;--line:#49303f;--surface:#130d16;--surface-raised:#211321;--sans:'Nunito Sans',Arial,sans-serif}
 body{background-color:var(--ink);background-image:radial-gradient(ellipse at 14% 18%,#42172a38 0,transparent 36%),radial-gradient(ellipse at 86% 52%,#29143a33 0,transparent 42%),repeating-linear-gradient(90deg,transparent 0 59px,#b85c7a08 60px,#b85c7a08 61px,transparent 62px);background-attachment:fixed}
 .info-ribbon,.notice{position:relative;border-bottom:1px solid #8f3e5b;box-shadow:0 5px 24px #0005;overflow:hidden}
 .info-ribbon::after,.notice::after{content:"✦  ☾  ✦";position:absolute;right:clamp(12px,3vw,42px);top:50%;transform:translateY(-50%);color:#e3a2b8;font-size:.8rem;letter-spacing:.45em;opacity:.72;pointer-events:none}
@@ -1752,7 +1752,7 @@ body{background-color:var(--ink);background-image:radial-gradient(ellipse at 14%
 .shape-two{background:#8d3c5c}
 .hero-copy{position:relative}
 .hero-copy::after{content:"0101 ᚠ 0010 ᚱ 1010 ᛟ 0110 ᚷ 1001 ᚹ";position:absolute;right:-1.5rem;top:-3rem;writing-mode:vertical-rl;font:clamp(.65rem,1vw,.8rem)/2 var(--mono);letter-spacing:.4em;color:#df8ca9;opacity:.16;pointer-events:none;animation:gothic-code-drift 18s linear infinite}
-h1,h2,h3,.wordmark{font-family:'Cinzel','Cormorant Garamond',serif}
+h1,h2,h3,.wordmark{font-family:'Lora','Lora',serif}
 h1 em,h2 em{color:#d782a0}
 .skills-card h4::before{display:inline-block;margin-right:10px;color:#d782a0;font-family:var(--sans);font-size:.9em}
 .skills-grid-detailed .skills-card:nth-child(1) h4::before{content:"⌘"}
@@ -1782,9 +1782,9 @@ h1 em,h2 em{color:#d782a0}
   --line:#3e2028;
   --surface:#0c0b0b;
   --surface-raised:#171012;
-  --display:'Cormorant Garamond',Georgia,serif;
-  --gothic:'UnifrakturCook',serif;
-  --sans:'Manrope',Arial,sans-serif;
+  --display:'Lora',Georgia,serif;
+  --gothic:'Lora',serif;
+  --sans:'Nunito Sans',Arial,sans-serif;
 }
 body{
   background-color:#050606;
@@ -2056,7 +2056,7 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
   gap:0;
   padding:8px 12px 10px;
   color:#f3e7e9;
-  font-family:'Cinzel',Georgia,serif;
+  font-family:'Lora',Georgia,serif;
   font-size:clamp(1rem,2vw,1.35rem);
   font-weight:700;
   line-height:1;
@@ -2094,7 +2094,7 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
 .hero-index .portfolio-word{
   display:block;
   color:#f3e4eb;
-  font-family:'UnifrakturCook','Cormorant Garamond',serif;
+  font-family:'Lora','Lora',serif;
   font-size:clamp(1.45rem,3.4vw,2.5rem);
   font-weight:700;
   line-height:.95;
@@ -2105,7 +2105,7 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
   display:block;
   margin-top:6px;
   color:#d58aa1;
-  font-family:'Cinzel',Georgia,serif;
+  font-family:'Lora',Georgia,serif;
   font-size:clamp(1.2rem,2.8vw,2rem);
   font-weight:700;
   letter-spacing:.17em;
