@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=UnifrakturCook:wght@700&display=swap');
+/* Typography is loaded once in each page head: Lora for headings and Nunito Sans for body text. */
 
 :root{
   color-scheme:dark;
@@ -10,8 +10,8 @@
   --line:#493344;
   --surface:#140e17;
   --surface-raised:#211522;
-  --mono:'DM Mono',monospace;
-  --sans:'Manrope',Arial,sans-serif;
+  --mono:'Nunito Sans',Arial,sans-serif;
+  --sans:'Nunito Sans',Arial,sans-serif;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:85px}
