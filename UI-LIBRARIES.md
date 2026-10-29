@@ -8,7 +8,7 @@ Portfolio on tarkoituksella kevyt staattinen HTML-, CSS- ja JavaScript-sivusto. 
 
 Sivustossa on jo käytössä:
 
-- Google Fonts: Cormorant Garamond, Manrope ja UnifrakturCook.
+- Google Fonts: Lora otsikoihin ja Nunito Sans leipätekstiin.
 - `gothic-effects.css`: goottilainen mandala, sumumaiset taustavärit, infonauhan hohde, hover-siirtymät ja koristeelliset yksityiskohdat.
 - `style.css`: sivuston varsinainen responsiivinen asettelu ja komponenttityylit.
 - `script.js`: kielenvaihto, työnäytteiden vuorovaikutukset ja hillityt scroll-reveal-animaatiot.
