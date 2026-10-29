@@ -1,0 +1,300 @@
+/* Experimental gothic art direction — prototype branch only. */
+:root{
+  --metal-copper:#ce8147;
+  --metal-rose:#b98591;
+  --metal-silver:#bfc2c8;
+  --metal-wine:#2e0014;
+  --metal-ink:#0b080d;
+  --metal-paper:#fdfdfd;
+  --metal-glow:rgba(185,133,145,.28);
+}
+body{
+  background-image:
+    radial-gradient(ellipse at 12% 12%,rgba(46,0,20,.72),transparent 38%),
+    radial-gradient(ellipse at 91% 42%,rgba(206,129,71,.09),transparent 30%),
+    radial-gradient(ellipse at 55% 100%,rgba(185,133,145,.09),transparent 42%),
+    linear-gradient(145deg,#0b080d 0%,#121014 58%,#0b080d 100%);
+}
+.site-header{
+  gap:clamp(10px,1.8vw,24px);
+  border-bottom:1px solid rgba(191,194,200,.24);
+  background:linear-gradient(90deg,rgba(11,8,13,.97),rgba(28,30,32,.94),rgba(11,8,13,.97));
+  box-shadow:0 8px 30px rgba(0,0,0,.28),inset 0 -1px rgba(206,129,71,.15);
+}
+.site-header::before{content:none!important}
+.metal-rose-mark{
+  display:inline-flex;
+  width:clamp(38px,4.5vw,58px);
+  height:clamp(48px,5.4vw,68px);
+  flex:0 0 auto;
+  align-items:center;
+  justify-content:center;
+  margin-right:clamp(-14px,-1.2vw,-6px);
+  filter:drop-shadow(0 0 7px rgba(185,133,145,.24));
+}
+.metal-rose-mark img{display:block;width:100%;height:100%;object-fit:contain}
+.wordmark.full-name{
+  position:relative;
+  letter-spacing:.005em;
+  text-shadow:0 0 18px rgba(185,133,145,.09);
+}
+.wordmark.full-name span{
+  color:var(--metal-copper);
+  text-shadow:0 0 10px rgba(206,129,71,.7),0 0 22px rgba(185,133,145,.22);
+}
+h1,h2{
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-weight:600;
+  letter-spacing:-.025em;
+}
+.hero-copy h1::first-letter,.work-page-intro h1::first-letter,.contact-page h1::first-letter{
+  font-family:"UnifrakturCook","Cormorant Garamond",serif;
+  font-size:1.2em;
+  color:var(--metal-rose);
+  text-shadow:0 0 12px rgba(185,133,145,.38),1px 1px 0 var(--metal-copper);
+}
+h2::first-letter{
+  color:var(--metal-rose);
+  text-shadow:0 0 10px rgba(185,133,145,.24);
+}
+h1 em,h2 em{
+  color:var(--metal-rose);
+  text-shadow:0 0 18px rgba(185,133,145,.14);
+}
+.gothic-mandala{
+  opacity:.09;
+  background:
+    repeating-conic-gradient(from 7.5deg,transparent 0deg 7deg,rgba(191,194,200,.55) 7.2deg 7.55deg,transparent 7.8deg 15deg),
+    radial-gradient(circle,transparent 0 16%,rgba(206,129,71,.78) 16.2% 16.5%,transparent 16.8% 24%,rgba(191,194,200,.72) 24.2% 24.45%,transparent 24.8% 34%,rgba(185,133,145,.76) 34.2% 34.45%,transparent 34.8% 47%,rgba(206,129,71,.58) 47.2% 47.45%,transparent 47.8%);
+  filter:drop-shadow(0 0 18px rgba(185,133,145,.08));
+}
+.gothic-mandala::before,.gothic-mandala::after{
+  border-color:rgba(191,194,200,.7);
+  box-shadow:0 0 0 12px rgba(185,133,145,.035),0 0 0 24px rgba(206,129,71,.025);
+}
+.gothic-mist{
+  opacity:.25;
+  background:
+    radial-gradient(ellipse at 10% 100%,rgba(46,0,20,.4),transparent 58%),
+    radial-gradient(ellipse at 92% 100%,rgba(206,129,71,.13),transparent 55%);
+}
+.hero,.home-about-teaser,.home-work-cta-section,.contact-section,.work-section,.about-section,.contact-page,.work-page-intro{
+  position:relative;
+}
+.hero::after{
+  width:min(48vw,520px);
+  height:min(48vw,520px);
+  left:auto;
+  right:-16vw;
+  top:10%;
+  bottom:auto;
+  border:1px solid rgba(191,194,200,.13);
+  border-radius:50%;
+  box-shadow:0 0 0 14px rgba(185,133,145,.018),0 0 0 28px rgba(206,129,71,.015),inset 0 0 0 22px rgba(191,194,200,.018);
+  pointer-events:none;
+}
+.portrait-frame{
+  border:1px solid rgba(185,133,145,.82);
+  background:linear-gradient(135deg,#1c1e20,#0b080d);
+  box-shadow:8px 8px 0 var(--metal-wine),12px 12px 0 rgba(206,129,71,.24),0 0 35px rgba(185,133,145,.08);
+}
+.portrait-frame::after{
+  content:"";
+  position:absolute;
+  inset:-9px;
+  border:1px solid rgba(191,194,200,.48);
+  clip-path:polygon(0 12%,12% 12%,12% 0,88% 0,88% 12%,100% 12%,100% 88%,88% 88%,88% 100%,12% 100%,12% 88%,0 88%);
+  pointer-events:none;
+}
+.project-card,.skills-card,.contact-method,.creative-samples-grid .creative-sample{
+  border:1px solid rgba(191,194,200,.24);
+  border-radius:2px;
+  background:
+    linear-gradient(135deg,rgba(46,0,20,.27),transparent 44%),
+    radial-gradient(ellipse at 100% 0%,rgba(185,133,145,.07),transparent 44%),
+    linear-gradient(155deg,#21171c 0%,#110e12 76%);
+  box-shadow:inset 0 1px rgba(255,255,255,.025),0 14px 34px rgba(0,0,0,.23);
+}
+.project-card::before,.skills-card::before,.contact-method::before,.creative-samples-grid .creative-sample::before{
+  width:42px;height:42px;
+  border-color:rgba(206,129,71,.8);
+  filter:drop-shadow(0 0 4px rgba(206,129,71,.14));
+}
+.project-card::after,.skills-card::after,.contact-method::after,.creative-samples-grid .creative-sample::after{
+  width:30px;height:30px;
+  border-color:rgba(191,194,200,.55);
+}
+.project-card:hover,.skills-card:hover,.contact-method:hover{
+  border-color:rgba(185,133,145,.8);
+  box-shadow:0 0 0 1px rgba(191,194,200,.08),0 0 26px rgba(185,133,145,.08),6px 7px 0 rgba(46,0,20,.65);
+}
+.hero-tags span,.skill-list span,.about-tags span{
+  border-radius:2px;
+  border-color:rgba(191,194,200,.28);
+  background:linear-gradient(135deg,rgba(46,0,20,.58),rgba(28,30,32,.72));
+}
+.gothic-button,.home-work-cta,.language-toggle{
+  border-radius:2px;
+  border-color:rgba(185,133,145,.68);
+  box-shadow:3px 3px 0 rgba(46,0,20,.75);
+}
+.gothic-button:hover,.home-work-cta:hover,.language-toggle:hover{
+  border-color:var(--metal-silver);
+  box-shadow:0 0 18px rgba(185,133,145,.14),4px 4px 0 rgba(46,0,20,.82);
+}
+.site-footer{
+  border-top:1px solid rgba(191,194,200,.2);
+}
+.site-footer::after{
+  content:"";
+  display:inline-block;
+  width:42px;height:52px;
+  background:url("images/metal-rose-sigil.svg") center/contain no-repeat;
+  filter:drop-shadow(0 0 7px rgba(185,133,145,.24));
+}
+.info-ribbon{
+  background-color:#2e0014;
+  background-image:repeating-linear-gradient(135deg,rgba(206,129,71,.06) 0 1px,transparent 1px 9px);
+  border-bottom-color:rgba(185,133,145,.44);
+}
+.info-ribbon .notice-dot{
+  background:var(--metal-copper);
+  box-shadow:0 0 10px rgba(206,129,71,.65);
+}
+.gothic-ornament-divider{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  margin:clamp(24px,4vw,48px) auto;
+  color:var(--metal-rose);
+  font-size:1.1rem;
+  letter-spacing:.3em;
+}
+.gothic-ornament-divider::before,.gothic-ornament-divider::after{
+  content:"";
+  width:min(18vw,150px);
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--metal-copper),var(--metal-silver),transparent);
+}
+.metal-rose-sigil{
+  display:block;
+  width:clamp(80px,12vw,150px);
+  margin:1rem auto;
+  filter:drop-shadow(0 0 12px rgba(185,133,145,.18));
+}
+.metal-rose-sigil img{width:100%;height:auto;display:block}
+.reveal-ready [data-gothic-reveal]{opacity:0;transform:translateY(16px)}
+[data-gothic-reveal].is-visible{opacity:1;transform:none;transition:opacity .55s ease,transform .55s ease}
+@media(max-width:760px){
+  .site-header{flex-wrap:wrap;justify-content:space-between;padding:12px 5vw;gap:10px}
+  .metal-rose-mark{width:40px;height:50px;margin-right:-5px}
+  .site-header nav{order:3;width:100%;justify-content:space-between;gap:8px;flex-wrap:wrap}
+  .site-header nav a{font-size:.72rem}
+  .hero::after{width:75vw;height:75vw;right:-34vw;opacity:.7}
+  .project-card::before,.skills-card::before,.contact-method::before,.creative-samples-grid .creative-sample::before{width:28px;height:28px}
+}
+@media(prefers-reduced-motion:reduce){
+  .metal-rose-mark,.metal-rose-mark img,[data-gothic-reveal]{animation:none!important;transition:none!important;transform:none!important;opacity:1!important}
+}
+
+/* --- Final ornament pass: rose-window geometry, engraved borders and antique paper --- */
+:root{
+  --ornament-copper:#ce8147;
+  --ornament-rose:#b98591;
+  --ornament-silver:#bfc2c8;
+  --ornament-wine:#2e0014;
+}
+.hero,.home-about-teaser,.home-work-cta-section,.contact-section,.work-section,.about-section,.contact-page,.work-page-intro{
+  overflow:hidden;
+}
+.hero::before{
+  border-color:rgba(191,194,200,.22);
+  box-shadow:0 0 0 10px rgba(185,133,145,.025),0 0 0 20px rgba(206,129,71,.018),inset 0 0 0 12px rgba(191,194,200,.018);
+}
+.work-page-intro::after,.section-heading::after{
+  content:"";
+  display:block;
+  width:clamp(110px,17vw,210px);
+  height:18px;
+  margin-top:22px;
+  background:
+    radial-gradient(ellipse at 50% 50%,var(--ornament-rose) 0 2px,transparent 2.5px),
+    linear-gradient(90deg,transparent,var(--ornament-copper) 18% 30%,transparent 30% 36%,var(--ornament-silver) 36% 64%,transparent 64% 70%,var(--ornament-copper) 70% 82%,transparent);
+  opacity:.9;
+  clip-path:polygon(0 45%,35% 45%,42% 0,50% 45%,58% 0,65% 45%,100% 45%,100% 55%,65% 55%,58% 100%,50% 55%,42% 100%,35% 55%,0 55%);
+}
+.project-card,.skills-card,.contact-method,.creative-samples-grid .creative-sample{
+  border-style:solid;
+  border-width:1px;
+  border-image:linear-gradient(135deg,rgba(206,129,71,.82),rgba(191,194,200,.38) 32%,rgba(185,133,145,.72) 68%,rgba(206,129,71,.48)) 1;
+  background-image:
+    linear-gradient(135deg,rgba(46,0,20,.24),transparent 42%),
+    repeating-linear-gradient(0deg,rgba(255,255,255,.014) 0 1px,transparent 1px 5px),
+    radial-gradient(ellipse at 100% 0%,rgba(185,133,145,.09),transparent 44%),
+    linear-gradient(155deg,#21171c 0%,#110e12 76%);
+}
+.project-card::before,.skills-card::before,.contact-method::before,.creative-samples-grid .creative-sample::before{
+  width:46px;height:46px;
+  border-top:1px solid var(--ornament-copper);
+  border-left:1px solid var(--ornament-silver);
+  background:radial-gradient(circle at 3px 3px,rgba(206,129,71,.85) 0 1px,transparent 1.5px);
+}
+.project-card::after,.skills-card::after,.contact-method::after,.creative-samples-grid .creative-sample::after{
+  width:36px;height:36px;
+  border-right:1px solid var(--ornament-rose);
+  border-bottom:1px solid var(--ornament-silver);
+  background:radial-gradient(circle at calc(100% - 3px) calc(100% - 3px),rgba(191,194,200,.8) 0 1px,transparent 1.5px);
+}
+.project-card .project-meta{
+  text-shadow:0 0 10px rgba(206,129,71,.12);
+}
+.project-card h3::first-letter{
+  color:var(--ornament-rose);
+  text-shadow:0 0 8px rgba(185,133,145,.28);
+}
+.project-samples-toggle{
+  border-top-color:rgba(191,194,200,.28);
+  border-bottom-color:rgba(206,129,71,.35);
+  background:
+    url("images/antique-paper-texture.svg") center/320px 320px,
+    linear-gradient(135deg,#f3eadc,#e8d9c8);
+  color:#24151b;
+}
+.project-samples-toggle summary{
+  color:#2e0014;
+  text-shadow:0 1px rgba(255,255,255,.45);
+}
+.project-samples-toggle summary:hover{color:#74364a}
+.project-samples-toggle .expand-symbol{
+  border-color:#8d5c45;
+  color:#2e0014;
+  background:rgba(255,255,255,.35);
+}
+.project-samples-toggle[open] .expand-symbol{background:#ead4d5}
+.project-samples-toggle .samples-toggle-content{
+  color:#21151a;
+}
+.branding-gallery,.oop-browser,.android-carousel-stage{
+  border:1px solid rgba(206,129,71,.42);
+  box-shadow:inset 0 0 0 4px rgba(191,194,200,.05),0 8px 24px rgba(0,0,0,.18);
+}
+.hero-index{
+  background:
+    radial-gradient(circle at 50% 35%,rgba(185,133,145,.12),transparent 54%),
+    linear-gradient(145deg,#160e15,#0b080d);
+}
+.metal-rose-mark img,.site-footer::after{
+  filter:drop-shadow(0 0 5px rgba(185,133,145,.28)) drop-shadow(0 0 12px rgba(206,129,71,.12));
+}
+.gothic-ornament-divider{
+  color:var(--ornament-rose);
+  text-shadow:0 0 10px rgba(185,133,145,.3);
+}
+@media(max-width:640px){
+  .project-card::before,.skills-card::before,.contact-method::before,.creative-samples-grid .creative-sample::before{width:30px;height:30px}
+  .project-card::after,.skills-card::after,.contact-method::after,.creative-samples-grid .creative-sample::after{width:25px;height:25px}
+}
+@media(prefers-reduced-motion:reduce){
+  .project-card,.skills-card,.contact-method{scroll-behavior:auto}
+}
