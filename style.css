@@ -2262,3 +2262,38 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
 @media(max-width:760px){
   .skills-grid-detailed .skills-card:last-child{grid-column:auto}
 }
+
+
+/* Contact page: make the preferred contact route visually clear. */
+.contact-method-primary{
+  grid-column:1 / -1;
+  padding:clamp(24px,4vw,38px);
+  border-color:#9b6478;
+  background:linear-gradient(125deg,#281724 0%,#171019 64%,#11120f 100%);
+  box-shadow:inset 3px 0 0 #bd8195,0 12px 32px #0003;
+}
+.contact-method-primary h2{font-size:clamp(1.3rem,2.2vw,1.65rem)}
+.contact-method-primary p{max-width:720px;font-size:1.02rem;line-height:1.8}
+.contact-method-primary a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  margin-top:22px;
+  padding:12px 18px;
+  border:1px solid #a96d82;
+  background:#341d2b;
+  color:#fff0f5;
+  text-decoration:none;
+  line-height:1.5;
+}
+.contact-method-primary a:hover,.contact-method-primary a:focus-visible{
+  background:#482638;
+  border-color:#e0a0b5;
+  outline:2px solid #e0a0b5;
+  outline-offset:3px;
+}
+@media(max-width:640px){
+  .contact-method-primary{grid-column:auto;padding:22px}
+  .contact-method-primary a{max-width:100%;overflow-wrap:anywhere}
+}
