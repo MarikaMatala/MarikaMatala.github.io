@@ -416,3 +416,22 @@ h3 em {
 @media(prefers-reduced-motion:reduce){
   .gothic-mandala{animation:none!important;transform:none!important}
 }
+
+
+/* Strong final override: every heading uses the full blackletter font, not only its first character. */
+:where(h1,h2,h3,h4,h5,h6,.section-heading,.page-title,.hero-title,.work-page-intro,.contact-page) ,
+:where(h1,h2,h3,h4,h5,h6,.section-heading,.page-title,.hero-title,.work-page-intro,.contact-page) :is(span,em,strong){
+  font-family:"UnifrakturCook", "Old English Text MT", "Cormorant Garamond", Georgia, serif !important;
+  font-weight:700 !important;
+  font-style:normal;
+  letter-spacing:normal;
+  font-variant-ligatures:normal;
+}
+:where(h1,h2,h3,h4,h5,h6,.section-heading,.page-title,.hero-title,.work-page-intro,.contact-page)::first-letter,
+:where(h1,h2,h3,h4,h5,h6,.section-heading,.page-title,.hero-title,.work-page-intro,.contact-page) :is(span,em,strong)::first-letter{
+  font-family:"UnifrakturCook", "Old English Text MT", "Cormorant Garamond", Georgia, serif !important;
+  font-size:inherit !important;
+  font-weight:700 !important;
+  color:inherit;
+  text-shadow:inherit;
+}
