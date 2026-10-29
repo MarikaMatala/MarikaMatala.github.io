@@ -43,7 +43,7 @@ body{
   text-shadow:0 0 10px rgba(206,129,71,.7),0 0 22px rgba(185,133,145,.22);
 }
 h1,h2{
-  font-family:"Cormorant Garamond",Georgia,serif;
+  font-family:"Lora",Georgia,serif;
   font-weight:600;
   letter-spacing:-.025em;
 }
@@ -308,7 +308,7 @@ h3,
 .hero-copy h1,
 .work-page-intro h1,
 .contact-page h1 {
-  font-family: "UnifrakturCook", "Cormorant Garamond", Georgia, serif !important;
+  font-family: "Lora", "Lora", Georgia, serif !important;
   font-weight: 700;
   font-style: normal;
   letter-spacing: 0;
@@ -350,7 +350,7 @@ h3 em {
   border:1px solid rgba(191,194,200,.62);
   border-radius:3px;
   box-shadow:inset 0 0 0 1px rgba(185,133,145,.12),3px 3px 0 rgba(46,0,20,.78);
-  font-family:"Manrope",Arial,sans-serif;
+  font-family:"Nunito Sans",Arial,sans-serif;
   font-size:.72rem;
   font-weight:700;
   letter-spacing:.045em;
