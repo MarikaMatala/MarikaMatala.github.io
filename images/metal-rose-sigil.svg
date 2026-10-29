@@ -1,36 +1,41 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 200" role="img" aria-labelledby="title desc">
-  <title id="title">Metal rose sigil</title>
-  <desc id="desc">A decorative rose with copper petals, rose-gold leaves, silver thorns and a pointed gothic arch.</desc>
+  <title id="title">Silver and rose-gold gothic owl</title>
+  <desc id="desc">A watchful owl in a pointed gothic arch, engraved in silver with rose-gold details against a dark background.</desc>
   <defs>
-    <linearGradient id="copper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f2c49a"/><stop offset=".32" stop-color="#ce8147"/><stop offset=".65" stop-color="#7e3e29"/><stop offset="1" stop-color="#e6a16c"/></linearGradient>
+    <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset=".32" stop-color="#bfc2c8"/><stop offset=".62" stop-color="#747986"/><stop offset="1" stop-color="#e7e8eb"/></linearGradient>
     <linearGradient id="rose" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f0c5cf"/><stop offset=".45" stop-color="#b98591"/><stop offset="1" stop-color="#6f3546"/></linearGradient>
-    <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset=".5" stop-color="#bfc2c8"/><stop offset="1" stop-color="#6e747e"/></linearGradient>
-    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <linearGradient id="copper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f2c49a"/><stop offset=".45" stop-color="#ce8147"/><stop offset="1" stop-color="#7e3e29"/></linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
   </defs>
-  <path d="M80 8 C49 8 25 35 25 67 C25 112 49 148 80 185 C111 148 135 112 135 67 C135 35 111 8 80 8Z" fill="#0b080d" fill-opacity=".25" stroke="url(#silver)" stroke-width="1.8"/>
-  <path d="M80 18 C55 18 35 39 35 66 C35 103 55 134 80 162 C105 134 125 103 125 66 C125 39 105 18 80 18Z" fill="none" stroke="url(#copper)" stroke-width="1.2"/>
-  <g fill="none" stroke="url(#silver)" stroke-width="1.1" opacity=".9">
-    <path d="M80 21V49 M80 151V179 M38 66H57 M103 66H122"/>
-    <path d="M47 39 Q80 55 113 39 M47 120 Q80 103 113 120"/>
-    <path d="M53 29 Q80 44 107 29 M53 139 Q80 125 107 139"/>
+  <path d="M80 7 C47 7 22 34 22 68 C22 112 48 151 80 190 C112 151 138 112 138 68 C138 34 113 7 80 7Z" fill="#0b080d" fill-opacity=".75" stroke="url(#silver)" stroke-width="2"/>
+  <path d="M80 17 C53 17 32 40 32 68 C32 106 54 138 80 170 C106 138 128 106 128 68 C128 40 107 17 80 17Z" fill="none" stroke="url(#rose)" stroke-width="1.3"/>
+  <g fill="none" stroke="url(#silver)" stroke-width="1" opacity=".8">
+    <path d="M80 20V42 M38 68H52 M108 68H122 M45 39L57 52 M115 39L103 52"/>
+    <path d="M42 111 Q80 91 118 111 M52 132 Q80 118 108 132"/>
   </g>
-  <g filter="url(#glow)" stroke="url(#copper)" stroke-width="1.4">
-    <path d="M80 77 C56 57 48 80 65 91 C47 109 69 121 80 103 C94 122 113 105 96 91 C113 73 95 56 80 77Z" fill="url(#rose)"/>
-    <path d="M80 77 C73 68 61 73 66 84 C71 91 80 89 80 77Z" fill="url(#copper)"/>
-    <path d="M80 77 C91 65 101 77 92 86 C86 92 80 87 80 77Z" fill="url(#rose)"/>
-    <path d="M65 91 C70 82 78 86 80 96 C82 86 91 83 96 91 C93 108 68 112 65 91Z" fill="url(#copper)"/>
+  <g filter="url(#glow)">
+    <path d="M42 70 L35 42 L60 56 Q80 43 100 56 L125 42 L118 70 Q128 93 111 119 L96 143 L80 157 L64 143 L49 119 Q32 93 42 70Z" fill="#17121a" stroke="url(#silver)" stroke-width="2"/>
+    <path d="M42 68L39 49L57 62 M118 68L121 49L103 62" fill="none" stroke="url(#rose)" stroke-width="2"/>
+    <path d="M45 82 Q48 61 67 67 Q77 70 80 83 Q83 70 93 67 Q112 61 115 82 Q116 101 97 111 L80 118 L63 111 Q44 101 45 82Z" fill="url(#silver)" fill-opacity=".17" stroke="url(#rose)" stroke-width="1.6"/>
+    <path d="M49 83 Q61 67 75 83 Q62 100 49 83Z" fill="#0b080d" stroke="url(#silver)" stroke-width="2"/>
+    <path d="M111 83 Q99 67 85 83 Q98 100 111 83Z" fill="#0b080d" stroke="url(#silver)" stroke-width="2"/>
+    <circle cx="62" cy="83" r="5.5" fill="url(#rose)" stroke="url(#copper)" stroke-width="1"/>
+    <circle cx="98" cy="83" r="5.5" fill="url(#rose)" stroke="url(#copper)" stroke-width="1"/>
+    <circle cx="63" cy="82" r="1.6" fill="#fdfdfd"/><circle cx="99" cy="82" r="1.6" fill="#fdfdfd"/>
+    <path d="M80 87 L72 99 L80 105 L88 99Z" fill="url(#copper)" stroke="url(#silver)" stroke-width="1"/>
+    <path d="M56 112 Q67 124 80 124 Q93 124 104 112 L96 137 L80 150 L64 137Z" fill="url(#rose)" fill-opacity=".32" stroke="url(#silver)" stroke-width="1.2"/>
+    <path d="M66 118L72 132 M77 122L80 139 M94 118L88 132" stroke="url(#copper)" stroke-width="1.5" fill="none"/>
   </g>
-  <path d="M80 104 C79 124 85 145 79 169 C78 177 76 181 73 185" fill="none" stroke="url(#copper)" stroke-width="3" stroke-linecap="round"/>
-  <path d="M80 125 C61 107 49 119 57 134 C64 144 74 138 80 125Z" fill="#173e3b" stroke="url(#rose)" stroke-width="1.5"/>
-  <path d="M82 145 C101 125 113 137 104 151 C97 160 88 155 82 145Z" fill="#173e3b" stroke="url(#silver)" stroke-width="1.5"/>
-  <path d="M80 137 L69 128 L74 140Z M81 156 L93 148 L87 161Z M78 171 L66 164 L74 176Z" fill="url(#silver)" stroke="#bfc2c8" stroke-width=".7"/>
+  <g fill="none" stroke="url(#silver)" stroke-width="1.2">
+    <path d="M48 145L58 151L54 160L67 158L80 174L93 158L106 160L102 151L112 145"/>
+    <path d="M68 46L80 36L92 46 M68 162L80 174L92 162"/>
+  </g>
   <g fill="url(#copper)">
-    <path d="M80 53 L76 63 L80 60 L84 63Z"/>
-    <path d="M49 82 L59 86 L55 81 L58 76Z"/>
-    <path d="M111 82 L101 86 L105 81 L102 76Z"/>
+    <path d="M80 25L76 33L80 31L84 33Z"/>
+    <circle cx="80" cy="13" r="2"/><circle cx="28" cy="68" r="1.8"/><circle cx="132" cy="68" r="1.8"/>
   </g>
-  <g fill="url(#silver)">
-    <path d="M80 29 L76 37 L80 35 L84 37Z"/>
-    <circle cx="80" cy="14" r="2.2"/><circle cx="31" cy="66" r="1.8"/><circle cx="129" cy="66" r="1.8"/>
+  <g fill="url(#rose)">
+    <path d="M50 55L59 61L55 52Z M110 55L101 61L105 52Z"/>
+    <path d="M80 178L75 185L80 182L85 185Z"/>
   </g>
 </svg>
