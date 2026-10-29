@@ -149,7 +149,7 @@ h1 em,h2 em{
   content:"";
   display:inline-block;
   width:42px;height:52px;
-  background:url("images/metal-rose-sigil.svg") center/contain no-repeat;
+  background:url("images/metal-rose-sigil.svg?v=2") center/contain no-repeat;
   filter:drop-shadow(0 0 7px rgba(185,133,145,.24));
 }
 .info-ribbon{
@@ -393,9 +393,9 @@ h3 em {
   top:17vh;
   border-radius:0;
   opacity:.15;
-  background:url("images/metal-rose-sigil.svg") center/contain no-repeat;
+  background:url("images/metal-rose-sigil.svg?v=2") center/contain no-repeat;
   background-color:transparent;
-  background-image:url("images/metal-rose-sigil.svg");
+  background-image:url("images/metal-rose-sigil.svg?v=2");
   mask-image:none;
   filter:drop-shadow(0 0 22px rgba(185,133,145,.14));
   animation:none;
@@ -415,4 +415,27 @@ h3 em {
 }
 @media(prefers-reduced-motion:reduce){
   .gothic-mandala{animation:none!important;transform:none!important}
+}
+
+
+/* The emblem is now only an owl's head: remove any remaining window/medallion silhouette. */
+.gothic-mandala{
+  width:clamp(210px,34vw,440px);
+  aspect-ratio:1;
+  height:auto;
+  right:-7vw;
+  top:20vh;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  background:url("images/metal-rose-sigil.svg?v=2") center/contain no-repeat!important;
+  background-color:transparent!important;
+  mask:none!important;
+  opacity:.14;
+  filter:drop-shadow(0 0 14px rgba(185,133,145,.12));
+}
+.gothic-mandala::before,
+.gothic-mandala::after{display:none!important;content:none!important;border:0!important;box-shadow:none!important}
+@media(max-width:640px){
+  .gothic-mandala{width:58vw;right:-18vw;top:28vh;opacity:.09}
 }

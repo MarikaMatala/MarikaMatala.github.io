@@ -1,41 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 200" role="img" aria-labelledby="title desc">
-  <title id="title">Silver and rose-gold gothic owl</title>
-  <desc id="desc">A watchful owl in a pointed gothic arch, engraved in silver with rose-gold details against a dark background.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Silver and rose-gold gothic owl head</title>
+  <desc id="desc">A standalone owl head with pointed feather tufts, silver engraved lines and rose-gold eyes. No frame or window.</desc>
   <defs>
     <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset=".32" stop-color="#bfc2c8"/><stop offset=".62" stop-color="#747986"/><stop offset="1" stop-color="#e7e8eb"/></linearGradient>
     <linearGradient id="rose" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f0c5cf"/><stop offset=".45" stop-color="#b98591"/><stop offset="1" stop-color="#6f3546"/></linearGradient>
     <linearGradient id="copper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f2c49a"/><stop offset=".45" stop-color="#ce8147"/><stop offset="1" stop-color="#7e3e29"/></linearGradient>
-    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="glow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation="1.6" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
   </defs>
-  <path d="M80 7 C47 7 22 34 22 68 C22 112 48 151 80 190 C112 151 138 112 138 68 C138 34 113 7 80 7Z" fill="#0b080d" fill-opacity=".75" stroke="url(#silver)" stroke-width="2"/>
-  <path d="M80 17 C53 17 32 40 32 68 C32 106 54 138 80 170 C106 138 128 106 128 68 C128 40 107 17 80 17Z" fill="none" stroke="url(#rose)" stroke-width="1.3"/>
-  <g fill="none" stroke="url(#silver)" stroke-width="1" opacity=".8">
-    <path d="M80 20V42 M38 68H52 M108 68H122 M45 39L57 52 M115 39L103 52"/>
-    <path d="M42 111 Q80 91 118 111 M52 132 Q80 118 108 132"/>
-  </g>
   <g filter="url(#glow)">
-    <path d="M42 70 L35 42 L60 56 Q80 43 100 56 L125 42 L118 70 Q128 93 111 119 L96 143 L80 157 L64 143 L49 119 Q32 93 42 70Z" fill="#17121a" stroke="url(#silver)" stroke-width="2"/>
-    <path d="M42 68L39 49L57 62 M118 68L121 49L103 62" fill="none" stroke="url(#rose)" stroke-width="2"/>
-    <path d="M45 82 Q48 61 67 67 Q77 70 80 83 Q83 70 93 67 Q112 61 115 82 Q116 101 97 111 L80 118 L63 111 Q44 101 45 82Z" fill="url(#silver)" fill-opacity=".17" stroke="url(#rose)" stroke-width="1.6"/>
-    <path d="M49 83 Q61 67 75 83 Q62 100 49 83Z" fill="#0b080d" stroke="url(#silver)" stroke-width="2"/>
-    <path d="M111 83 Q99 67 85 83 Q98 100 111 83Z" fill="#0b080d" stroke="url(#silver)" stroke-width="2"/>
-    <circle cx="62" cy="83" r="5.5" fill="url(#rose)" stroke="url(#copper)" stroke-width="1"/>
-    <circle cx="98" cy="83" r="5.5" fill="url(#rose)" stroke="url(#copper)" stroke-width="1"/>
-    <circle cx="63" cy="82" r="1.6" fill="#fdfdfd"/><circle cx="99" cy="82" r="1.6" fill="#fdfdfd"/>
-    <path d="M80 87 L72 99 L80 105 L88 99Z" fill="url(#copper)" stroke="url(#silver)" stroke-width="1"/>
-    <path d="M56 112 Q67 124 80 124 Q93 124 104 112 L96 137 L80 150 L64 137Z" fill="url(#rose)" fill-opacity=".32" stroke="url(#silver)" stroke-width="1.2"/>
-    <path d="M66 118L72 132 M77 122L80 139 M94 118L88 132" stroke="url(#copper)" stroke-width="1.5" fill="none"/>
+    <path d="M24 65 15 25 48 44 Q80 23 112 44 L145 25 136 65 Q145 91 126 116 Q108 139 80 148 Q52 139 34 116 Q15 91 24 65Z" fill="#17121a" stroke="url(#silver)" stroke-width="2.8" stroke-linejoin="round"/>
+    <path d="M26 59 22 34 45 51 M134 59 138 34 115 51" fill="none" stroke="url(#rose)" stroke-width="2.6" stroke-linecap="round"/>
+    <path d="M29 80 Q31 53 58 56 Q73 58 80 76 Q87 58 102 56 Q129 53 131 80 Q131 103 108 116 L80 128 52 116 Q29 103 29 80Z" fill="url(#silver)" fill-opacity=".11" stroke="url(#rose)" stroke-width="2"/>
+    <path d="M35 79 Q49 58 68 77 Q56 99 35 79Z" fill="#0b080d" stroke="url(#silver)" stroke-width="2.5"/>
+    <path d="M125 79 Q111 58 92 77 Q104 99 125 79Z" fill="#0b080d" stroke="url(#silver)" stroke-width="2.5"/>
+    <circle cx="53" cy="78" r="8" fill="url(#rose)" stroke="url(#copper)" stroke-width="1.7"/>
+    <circle cx="107" cy="78" r="8" fill="url(#rose)" stroke="url(#copper)" stroke-width="1.7"/>
+    <circle cx="55" cy="76" r="2.3" fill="#fdfdfd"/><circle cx="109" cy="76" r="2.3" fill="#fdfdfd"/>
+    <path d="M80 82 69 96 80 106 91 96Z" fill="url(#copper)" stroke="url(#silver)" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M44 103 Q56 117 72 119 M116 103 Q104 117 88 119" fill="none" stroke="url(#silver)" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M55 111 65 130 M72 118 80 137 88 118 M105 111 95 130" fill="none" stroke="url(#copper)" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M41 62 50 55 M119 62 110 55 M62 48 80 40 98 48" fill="none" stroke="url(#silver)" stroke-width="1.4" stroke-linecap="round"/>
   </g>
-  <g fill="none" stroke="url(#silver)" stroke-width="1.2">
-    <path d="M48 145L58 151L54 160L67 158L80 174L93 158L106 160L102 151L112 145"/>
-    <path d="M68 46L80 36L92 46 M68 162L80 174L92 162"/>
-  </g>
-  <g fill="url(#copper)">
-    <path d="M80 25L76 33L80 31L84 33Z"/>
-    <circle cx="80" cy="13" r="2"/><circle cx="28" cy="68" r="1.8"/><circle cx="132" cy="68" r="1.8"/>
-  </g>
-  <g fill="url(#rose)">
-    <path d="M50 55L59 61L55 52Z M110 55L101 61L105 52Z"/>
-    <path d="M80 178L75 185L80 182L85 185Z"/>
-  </g>
+  <path d="M32 113 43 126 58 132 M128 113 117 126 102 132" fill="none" stroke="url(#rose)" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M80 13 75 24 80 21 85 24Z" fill="url(#copper)"/>
 </svg>
