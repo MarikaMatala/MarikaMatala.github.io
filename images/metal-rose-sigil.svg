@@ -1,27 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
-  <title id="title">Silver and rose-gold gothic fox head</title>
-  <desc id="desc">A standalone stylized fox head with tall pointed ears, sharp eyes and engraved silver lines with rose-gold and copper accents. No frame or window.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-labelledby="title desc">
+  <title id="title">Autumn fox emblem</title>
+  <desc id="desc">A friendly, elegant fox head in burnt orange, russet, cream and deep forest green.</desc>
   <defs>
-    <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset=".32" stop-color="#bfc2c8"/><stop offset=".62" stop-color="#747986"/><stop offset="1" stop-color="#e7e8eb"/></linearGradient>
-    <linearGradient id="rose" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f0c5cf"/><stop offset=".45" stop-color="#b98591"/><stop offset="1" stop-color="#6f3546"/></linearGradient>
-    <linearGradient id="copper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f2c49a"/><stop offset=".45" stop-color="#ce8147"/><stop offset="1" stop-color="#7e3e29"/></linearGradient>
-    <filter id="glow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation="1.5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <linearGradient id="fur" x1="0" y1="0" x2="0.9" y2="1"><stop stop-color="#e9a34c"/><stop offset=".48" stop-color="#c66b32"/><stop offset="1" stop-color="#873d27"/></linearGradient>
+    <linearGradient id="cream" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff4dd"/><stop offset="1" stop-color="#e7d2ac"/></linearGradient>
+    <linearGradient id="ear" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d98242"/><stop offset="1" stop-color="#8f3d2b"/></linearGradient>
   </defs>
-  <g filter="url(#glow)">
-    <path d="M27 70 17 15 58 43 Q80 35 102 43 L143 15 133 70 Q130 96 112 112 L80 148 48 112 Q30 96 27 70Z" fill="#17121a" stroke="url(#silver)" stroke-width="2.8" stroke-linejoin="round"/>
-    <path d="M29 60 23 25 49 48 M131 60 137 25 111 48" fill="none" stroke="url(#rose)" stroke-width="2.5" stroke-linecap="round"/>
-    <path d="M39 72 58 61 76 75 58 86Z" fill="#0b080d" stroke="url(#silver)" stroke-width="2"/>
-    <path d="M121 72 102 61 84 75 102 86Z" fill="#0b080d" stroke="url(#silver)" stroke-width="2"/>
-    <path d="M43 72 59 66 69 75 57 79Z" fill="url(#rose)" stroke="url(#copper)" stroke-width="1.2"/>
-    <path d="M117 72 101 66 91 75 103 79Z" fill="url(#rose)" stroke="url(#copper)" stroke-width="1.2"/>
-    <circle cx="59" cy="73" r="2" fill="#fdfdfd"/><circle cx="101" cy="73" r="2" fill="#fdfdfd"/>
-    <path d="M34 91 Q54 85 69 94 L80 111 91 94 Q106 85 126 91 L111 112 80 143 49 112Z" fill="url(#silver)" fill-opacity=".13" stroke="url(#rose)" stroke-width="1.8" stroke-linejoin="round"/>
-    <path d="M47 91 65 98 80 118 95 98 113 91 104 112 80 135 56 112Z" fill="url(#silver)" fill-opacity=".15" stroke="url(#silver)" stroke-width="1.2"/>
-    <path d="M69 96 80 105 91 96 86 112 80 118 74 112Z" fill="url(#copper)" stroke="url(#silver)" stroke-width="1.4" stroke-linejoin="round"/>
-    <path d="M74 112 80 118 86 112 83 127 80 133 77 127Z" fill="url(#rose)" stroke="url(#silver)" stroke-width="1.1"/>
-    <path d="M51 104 63 115 M109 104 97 115 M63 122 72 130 M97 122 88 130" fill="none" stroke="url(#copper)" stroke-width="1.4" stroke-linecap="round"/>
-    <path d="M58 46 67 53 M102 46 93 53 M73 46 80 42 87 46" fill="none" stroke="url(#silver)" stroke-width="1.4" stroke-linecap="round"/>
-  </g>
-  <path d="M29 79 39 88 M131 79 121 88 M48 115 43 124 M112 115 117 124" fill="none" stroke="url(#rose)" stroke-width="1.5" stroke-linecap="round"/>
-  <path d="M80 14 75 24 80 21 85 24Z" fill="url(#copper)"/>
+  <!-- Distinctive tall fox ears and a softly angular cheek silhouette -->
+  <path d="M34 78 20 13 68 43 Q90 34 112 43 L160 13 146 78 Q151 109 127 133 L90 166 53 133 Q29 109 34 78Z" fill="url(#fur)" stroke="#3c4d35" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M31 57 26 23 53 48Z M149 57 154 23 127 48Z" fill="#6f3429" stroke="#f3c77e" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M44 86 59 67 79 79 63 93Z M136 86 121 67 101 79 117 93Z" fill="#38291f" stroke="#f5d8a5" stroke-width="2.4" stroke-linejoin="round"/>
+  <path d="M48 84 62 76 71 82 61 87Z M132 84 118 76 109 82 119 87Z" fill="#d5a24d"/>
+  <circle cx="62" cy="81" r="2.8" fill="#fff6df"/><circle cx="118" cy="81" r="2.8" fill="#fff6df"/>
+  <path d="M39 101 Q57 91 76 101 L90 124 104 101 Q123 91 141 101 L122 132 90 159 58 132Z" fill="url(#cream)" stroke="#f4d8a4" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M73 108 90 116 107 108 99 125 90 131 81 125Z" fill="#493026" stroke="#f1d4a1" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M90 130 86 138 90 141 94 138Z" fill="#3b2b24"/>
+  <path d="M74 144 Q90 153 106 144" fill="none" stroke="#81503a" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M47 105 61 115 M133 105 119 115 M62 126 72 135 M118 126 108 135" fill="none" stroke="#c47b44" stroke-width="2" stroke-linecap="round"/>
+  <path d="M69 47 78 53 M111 47 102 53 M83 45 90 42 97 45" fill="none" stroke="#f7d7a0" stroke-width="2" stroke-linecap="round"/>
+  <path d="M31 70 38 78 M149 70 142 78" fill="none" stroke="#f4d8a4" stroke-width="2.2" stroke-linecap="round"/>
 </svg>
