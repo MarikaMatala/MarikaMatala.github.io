@@ -328,3 +328,93 @@ a:not(.wordmark):not(.hero-index):not(.skip-link){
 @media(prefers-reduced-motion:reduce){
   .project-image img,.sample-visual img{transition:none!important}
 }
+
+
+/* Cathedral-inspired details — rose gold, silver and a restrained deep teal. */
+:root{
+  --portfolio-rose-gold:#b98591;
+  --portfolio-silver:#bfc2c8;
+  --portfolio-teal:#3b8581;
+  --portfolio-teal-soft:rgba(59,133,129,.16);
+}
+body{
+  background-image:
+    radial-gradient(ellipse at 8% 14%,rgba(116,35,61,.22),transparent 34%),
+    radial-gradient(ellipse at 91% 39%,rgba(59,133,129,.075),transparent 28%),
+    radial-gradient(ellipse at 50% 100%,rgba(185,133,145,.09),transparent 45%);
+}
+.gothic-mandala{
+  background:
+    repeating-conic-gradient(from 7.5deg,transparent 0deg 7deg,rgba(191,194,200,.45) 7.2deg 7.55deg,transparent 7.8deg 15deg),
+    radial-gradient(circle,transparent 0 16%,rgba(185,133,145,.7) 16.2% 16.5%,transparent 16.8% 24%,rgba(191,194,200,.75) 24.2% 24.45%,transparent 24.8% 34%,rgba(59,133,129,.6) 34.2% 34.45%,transparent 34.8% 47%,rgba(185,133,145,.6) 47.2% 47.45%,transparent 47.8%);
+  opacity:.075;
+}
+.gothic-mandala::before,.gothic-mandala::after{
+  border-color:rgba(191,194,200,.58);
+  box-shadow:0 0 0 12px rgba(185,133,145,.035),0 0 0 24px rgba(59,133,129,.025);
+}
+.site-header nav a:hover,.site-header nav a:focus-visible{
+  color:var(--portfolio-silver);
+  text-shadow:0 0 14px rgba(191,194,200,.2);
+}
+.site-header nav a[aria-current="page"]{
+  text-decoration-color:rgba(185,133,145,.8);
+}
+.hero-copy .eyebrow,.section-wrap>.eyebrow{
+  color:#d7c5cc;
+}
+.eyebrow-line{
+  background:linear-gradient(90deg,var(--portfolio-rose-gold),var(--portfolio-silver),var(--portfolio-teal));
+}
+.hero-tags span,.skill-list span,.about-tags span{
+  border-color:rgba(191,194,200,.23);
+}
+.project-card,.skills-card,.contact-method,.creative-samples-grid .creative-sample{
+  border-color:rgba(191,194,200,.24);
+  background-image:
+    linear-gradient(135deg,rgba(185,133,145,.12),transparent 42%),
+    radial-gradient(ellipse at 100% 0%,rgba(59,133,129,.09),transparent 42%),
+    repeating-linear-gradient(0deg,rgba(255,255,255,.012) 0 1px,transparent 1px 5px),
+    linear-gradient(155deg,#21171c 0%,#110e12 76%);
+}
+.project-card::before,.skills-card::before,.contact-method::before,.creative-samples-grid .creative-sample::before{
+  border-color:rgba(185,133,145,.8);
+}
+.project-card::after,.skills-card::after,.contact-method::after,.creative-samples-grid .creative-sample::after{
+  border-color:rgba(191,194,200,.5);
+}
+.project-card:hover,.skills-card:hover,.contact-method:hover{
+  border-color:rgba(185,133,145,.82);
+  box-shadow:5px 6px 0 rgba(46,0,20,.62),0 0 0 1px rgba(191,194,200,.08),0 18px 35px rgba(0,0,0,.24);
+}
+.portrait-frame{
+  border-color:rgba(185,133,145,.72);
+  box-shadow:12px 12px 0 var(--portfolio-wine),15px 15px 0 rgba(191,194,200,.15);
+}
+.portrait-caption{
+  border-color:rgba(191,194,200,.38);
+}
+.project-card .project-meta,.interlude-photo-grid figcaption{
+  color:#c9a8b2;
+}
+.info-ribbon{
+  border-bottom-color:rgba(185,133,145,.4);
+  box-shadow:0 4px 18px #0005,inset 0 -1px rgba(191,194,200,.08);
+}
+.gothic-button,.home-work-cta,.contact-method-primary a{
+  border-color:rgba(185,133,145,.75);
+}
+.gothic-button:hover,.home-work-cta:hover,.contact-method-primary a:hover{
+  border-color:var(--portfolio-silver);
+}
+.site-footer::before{
+  color:rgba(185,133,145,.82);
+}
+.site-footer::after{
+  color:var(--portfolio-silver);
+  filter:drop-shadow(0 0 7px rgba(185,133,145,.3));
+}
+@media(max-width:760px){
+  .gothic-mandala{opacity:.045}
+  .portrait-frame{box-shadow:8px 8px 0 var(--portfolio-wine),10px 10px 0 rgba(191,194,200,.12)}
+}
