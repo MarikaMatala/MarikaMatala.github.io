@@ -382,3 +382,37 @@ h3 em {
   .language-toggle{min-height:40px;padding:8px 10px;gap:7px;font-size:.66rem}
   .language-toggle .language-icon,.language-toggle .language-icon svg{width:18px;height:18px}
 }
+
+
+/* Replace the circular rose-window motif with a matching metallic owl watermark. */
+.gothic-mandala{
+  width:clamp(280px,48vw,620px);
+  aspect-ratio:4 / 5;
+  height:auto;
+  right:-10vw;
+  top:17vh;
+  border-radius:0;
+  opacity:.15;
+  background:url("images/metal-rose-sigil.svg") center/contain no-repeat;
+  background-color:transparent;
+  background-image:url("images/metal-rose-sigil.svg");
+  mask-image:none;
+  filter:drop-shadow(0 0 22px rgba(185,133,145,.14));
+  animation:none;
+}
+.gothic-mandala::before,
+.gothic-mandala::after{
+  content:none!important;
+  display:none!important;
+}
+@media(max-width:640px){
+  .gothic-mandala{
+    width:82vw;
+    right:-31vw;
+    top:27vh;
+    opacity:.09;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .gothic-mandala{animation:none!important;transform:none!important}
+}
