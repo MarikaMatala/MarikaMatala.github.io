@@ -78,4 +78,4 @@ Tämä on pieni, riippuvuuksista vapaa esimerkki. Lisää se vain koristeellisee
 
 ## English summary
 
-The current portfolio is a lightweight static HTML/CSS/JavaScript site. Tailwind CSS v4, Radix/shadcn UI and `lucide-react` are documented as options for a possible future React/Vite version, not as dependencies already installed on the live site. Existing CSS effects are dependency-free and respect reduced-motion preferences. Add third-party images or generated audio only when the assets, intended use and permissions are clear.
+The current portfolio is a lightweight static HTML/CSS/JavaScript site with a readable Lora/Nunito Sans type system and an autumn cottagecore palette. Tailwind CSS v4, Radix/shadcn UI and `lucide-react` are documented as options for a possible future React/Vite version, not as dependencies already installed on the live site. Existing CSS effects are dependency-free and respect reduced-motion preferences. Add third-party images or generated audio only when the assets, intended use and permissions are clear.
