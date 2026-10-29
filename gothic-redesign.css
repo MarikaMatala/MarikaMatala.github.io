@@ -298,3 +298,39 @@ h1 em,h2 em{
 @media(prefers-reduced-motion:reduce){
   .project-card,.skills-card,.contact-method{scroll-behavior:auto}
 }
+
+
+/* Unified gothic typography: no decorative first-letter drop caps. */
+h1,
+h2,
+h3,
+.section-heading,
+.hero-copy h1,
+.work-page-intro h1,
+.contact-page h1 {
+  font-family: "UnifrakturCook", "Cormorant Garamond", Georgia, serif !important;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0;
+  line-height: 1.18;
+  text-wrap: balance;
+}
+h1::first-letter,
+h2::first-letter,
+h3::first-letter,
+.hero-copy h1::first-letter,
+.work-page-intro h1::first-letter,
+.contact-page h1::first-letter {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  text-shadow: inherit;
+}
+h1 em,
+h2 em,
+h3 em {
+  font-family: inherit;
+  font-style: normal;
+  color: var(--metal-rose);
+  text-shadow: 0 0 12px rgba(185,133,145,.24);
+}
