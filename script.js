@@ -1,4 +1,4 @@
-// Portfolio interactions: language switch, responsive Android image gallery and footer year.
+// Portfolio interactions: language switch, responsive Android image gallery and interactive C# examples.
 const languageToggle = document.getElementById('language-toggle');
 let currentLanguage = 'fi';
 
@@ -209,9 +209,6 @@ if (oopBrowser) {
 
 // Keep the saved language selected above; Finnish is the default in the HTML.
 updateCarouselLabels(currentLanguage);
-const year = document.getElementById('year');
-if (year) year.textContent = new Date().getFullYear();
-
 
 // Scroll-triggered reveals: subtle, staggered motion without an animation library.
 (() => {
