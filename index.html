@@ -7,7 +7,7 @@
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
   <meta name="theme-color" content="#0b080d">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; upgrade-insecure-requests; script-src 'self' 'unsafe-inline' https://cloud.umami.is; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://raw.githubusercontent.com; connect-src 'self' https://cloud.umami.is">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; upgrade-insecure-requests; script-src 'self' 'unsafe-inline' https://cloud.umami.is https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://raw.githubusercontent.com; connect-src 'self' https://cloud.umami.is">
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
   <title>Marika Matalamäki — Portfolio 2026</title>
   <!-- MUOKKAUSVINKKI: sivun ulkoasu on tiedostossa style.css. Kommentit eivät näy verkkosivulla. -->
@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="gothic-effects.css?v=5">
+  <link rel="stylesheet" href="gothic-effects.css?v=5">\n  <link rel="stylesheet" href="gothic-redesign.css?v=1">\n  <!-- Prototype-only browser builds: Tailwind utilities, GSAP motion and Lucide icons. -->\n  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>\n  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>\n  <script src="https://cdn.jsdelivr.net/npm/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>\n  <script src="gothic-enhancements.js?v=1" defer></script>
   <script src="script.js?v=18" defer></script>
   <!-- Umami Cloud: kävijätilastointi. Lisää ?owner=1 URL-osoitteeseen merkitäksesi tämän selaimen omistajan käynneiksi. -->
   <script>
@@ -50,14 +50,14 @@
   </div>
 
   <header class="site-header">
-    <a class="wordmark full-name" href="index.html#home" aria-label="Marika Matalamäki, etusivu">Marika Matalamäki<span>.</span></a>
+    <a class="metal-rose-mark flex items-center justify-center shrink-0" href="index.html#home" aria-label="Marika Matalamäki — etusivu"><img src="images/metal-rose-sigil.svg" alt="" width="58" height="68"></a>\n    <a class="wordmark full-name" href="index.html#home" aria-label="Marika Matalamäki, etusivu">Marika Matalamäki<span>.</span></a>
     <nav aria-label="Päänavigaatio">
       <a href="index.html" aria-current="page" data-fi="Etusivu" data-en="Home">Etusivu</a>
       <a href="minusta.html" data-fi="Minusta" data-en="About">Minusta</a>
       <a href="tyonaytteet.html" data-fi="Työnäytteet" data-en="Work samples">Työnäytteet</a>
       <a href="yhteystiedot.html" data-fi="Yhteystiedot" data-en="Contact">Yhteystiedot</a>
     </nav>
-    <button class="language-toggle" id="language-toggle" type="button" aria-label="Vaihda sivusto englanniksi"><span class="language-icon" aria-hidden="true">◎</span><span class="language-label" data-fi="ENGLISH" data-en="SUOMEKSI">ENGLISH</span><span class="language-arrow" aria-hidden="true">↗</span></button>
+    <button class="language-toggle" id="language-toggle" type="button" aria-label="Vaihda sivusto englanniksi"><span class="language-icon" data-lucide="languages" aria-hidden="true"></span><span class="language-label" data-fi="ENGLISH" data-en="SUOMEKSI">ENGLISH</span><span class="language-arrow" aria-hidden="true">↗</span></button>
   </header>
 
   <!-- ETUSIVU: intro ja profiilikuva. Kuvan tiedostopolku löytyy alta img-elementistä. -->
