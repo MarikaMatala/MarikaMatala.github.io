@@ -224,3 +224,30 @@ section[id]{scroll-margin-top:7rem}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
+
+
+/* CONTENT SURFACES: keep inherited dark prototype sections from reducing contrast. */
+.home-work-cta-section,.contact-section,.about-section,.work-page-intro,.contact-page,.work-section{
+  background:transparent!important;color:var(--autumn-ink)!important;
+}
+.home-work-cta-section h1,.home-work-cta-section h2,.home-work-cta-section h3,
+.contact-section h1,.contact-section h2,.contact-section h3,
+.about-section h1,.about-section h2,.about-section h3,
+.work-section h1,.work-section h2,.work-section h3,
+.work-page-intro h1,.contact-page h1{color:var(--autumn-forest-deep)!important}
+.home-work-cta-section p,.contact-section p,.work-section p,.work-section li,
+.about-section p,.about-section li,.work-page-intro p,.contact-page p{color:var(--autumn-muted)!important}
+.wordmark,.project-card h3,.skills-card h4,.hero-index{font-family:"Lora",Georgia,serif!important}
+.hero-index{
+  display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  min-width:124px;min-height:84px;padding:12px 18px;
+  border:1px solid var(--autumn-line);border-radius:12px;
+  background:var(--autumn-cream)!important;color:var(--autumn-forest-deep)!important;
+  text-decoration:none!important;box-shadow:var(--autumn-shadow);
+  letter-spacing:.02em;transition:transform .18s ease,box-shadow .18s ease;
+}
+.hero-index:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(56,42,26,.16);color:var(--autumn-rust)!important}
+.hero-index .portfolio-word{font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em}
+.hero-index .portfolio-year{font-size:1.9rem;font-weight:700;line-height:1}
+.site-footer::after{background-image:url("images/metal-rose-sigil.svg?v=4")!important}
+@media(max-width:760px){.hero-index{position:relative!important;right:auto!important;bottom:auto!important;justify-self:start;margin-top:8px}}

@@ -8,7 +8,7 @@ Portfolio on tarkoituksella kevyt staattinen HTML-, CSS- ja JavaScript-sivusto. 
 
 Sivustossa on jo käytössä:
 
-- Google Fonts: Cormorant Garamond, Manrope ja UnifrakturCook.
+- Google Fonts: Lora otsikoihin ja Nunito Sans leipätekstiin.
 - `gothic-effects.css`: goottilainen mandala, sumumaiset taustavärit, infonauhan hohde, hover-siirtymät ja koristeelliset yksityiskohdat.
 - `style.css`: sivuston varsinainen responsiivinen asettelu ja komponenttityylit.
 - `script.js`: kielenvaihto, työnäytteiden vuorovaikutukset ja hillityt scroll-reveal-animaatiot.
@@ -78,4 +78,4 @@ Tämä on pieni, riippuvuuksista vapaa esimerkki. Lisää se vain koristeellisee
 
 ## English summary
 
-The current portfolio is a lightweight static HTML/CSS/JavaScript site. Tailwind CSS v4, Radix/shadcn UI and `lucide-react` are documented as options for a possible future React/Vite version, not as dependencies already installed on the live site. Existing CSS effects are dependency-free and respect reduced-motion preferences. Add third-party images or generated audio only when the assets, intended use and permissions are clear.
+The current portfolio is a lightweight static HTML/CSS/JavaScript site with a readable Lora/Nunito Sans type system and an autumn cottagecore palette. Tailwind CSS v4, Radix/shadcn UI and `lucide-react` are documented as options for a possible future React/Vite version, not as dependencies already installed on the live site. Existing CSS effects are dependency-free and respect reduced-motion preferences. Add third-party images or generated audio only when the assets, intended use and permissions are clear.

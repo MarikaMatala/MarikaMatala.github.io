@@ -6,11 +6,11 @@
 
 I am an ICT engineer graduate from JAMK with an interest in frontend and web development, application development, UI/UX, visual design, and digital media. My background combines technical skills with experience in visual communication and media production.
 
-My portfolio is being developed continuously. Selected projects and examples are presented on the website and in this repository. Additional work samples may be available on request.
+My portfolio is being developed continuously. Selected projects and examples are presented on the website. Some additional work samples are in private repositories and can be requested by message.
 
 Olen JAMKista valmistunut ICT-insinööri. Osaamiseni ja kiinnostuksenkohteeni yhdistävät frontend- ja web-kehityksen, sovelluskehityksen, UI/UX-suunnittelun, visuaalisen suunnittelun sekä digitaalisen median. Taustassani yhdistyvät tekninen osaaminen ja kokemus visuaalisesta viestinnästä sekä mediatuotannosta.
 
-Portfolio kehittyy jatkuvasti. Valikoituja projekteja ja työnäytteitä esitellään verkkosivulla ja tässä repositoriossa. Muita työnäytteitä voi tiedustella erikseen.
+Portfolio kehittyy jatkuvasti. Valikoituja projekteja ja työnäytteitä esitellään verkkosivulla. Osa muista työnäytteistä on yksityisissä repositorioissa, ja niitä voi pyytää nähtäväksi viestillä.
 
 ## Repository structure
 
@@ -18,7 +18,8 @@ Portfolio kehittyy jatkuvasti. Valikoituja projekteja ja työnäytteitä esitell
 - `minusta.html` — education, background and self-assessed skills
 - `tyonaytteet.html` — project descriptions, image galleries and interactive C# examples
 - `yhteystiedot.html` — email, LinkedIn, GitHub and job availability
-- `style.css` — responsive layout, gothic visual theme, textures and motion effects
+- `style.css` — responsive layout and shared component styles
+- `autumn-cottagecore.css` — autumn colors, readable typography, cottagecore-inspired details and accessibility refinements
 - `script.js` — persistent language toggle, Android image carousel and interactive OOP examples
 - `images/` — image assets used for portfolio projects
 
@@ -34,7 +35,7 @@ PrismJS 1.30.0 is loaded from jsDelivr on the work samples page to highlight C# 
 
 ## UI libraries, animation and accessibility
 
-The current site uses native HTML, CSS and JavaScript and is published directly with GitHub Pages. Its gothic visual effects and motion are implemented in CSS, with reduced-motion support. PrismJS 1.30.0 is used for C# syntax highlighting on the work samples page.
+The current site uses native HTML, CSS and JavaScript and is published directly with GitHub Pages. Its autumn cottagecore visual theme, decorative details and motion are implemented mainly in CSS, with reduced-motion support. PrismJS 1.30.0 is used for C# syntax highlighting on the work samples page.
 
 A reference guide for possible future libraries—including Tailwind CSS v4, tw-animate-css, Radix/shadcn UI, Lucide, Simple Icons and the Web Audio API—is available in [UI-LIBRARIES.md](UI-LIBRARIES.md). These React/Vite libraries are documented as future options, not dependencies installed in the current static site.
 
@@ -42,7 +43,7 @@ The guide also includes animation examples and links to official documentation a
 
 ## Käyttöliittymäkirjastot, animaatiot ja saavutettavuus
 
-Nykyinen sivusto käyttää tavallista HTML:ää, CSS:ää ja JavaScriptiä, ja GitHub Pages julkaisee sen ilman erillistä build-vaihetta. Goottilaiset koristeet ja animaatiot on toteutettu CSS:llä, ja liikkeen vähentämisen asetukset huomioidaan. C#-koodiesimerkkien korostamiseen käytetään PrismJS 1.30.0 -kirjastoa.
+Nykyinen sivusto käyttää tavallista HTML:ää, CSS:ää ja JavaScriptiä, ja GitHub Pages julkaisee sen ilman erillistä build-vaihetta. Syksyinen cottagecore-ilme, koristeet ja animaatiot on toteutettu pääosin CSS:llä, ja liikkeen vähentämisen asetukset huomioidaan. C#-koodiesimerkkien korostamiseen käytetään PrismJS 1.30.0 -kirjastoa.
 
 Mahdollisia tulevan React/Vite-version kirjastoja, animaatioesimerkkejä ja virallisia dokumentaatioita käsitellään tiedostossa [UI-LIBRARIES.md](UI-LIBRARIES.md). React/Vite-kirjastot on dokumentoitu jatkokehityksen vaihtoehtoina; niitä ei ole lisätty nykyisen staattisen sivuston riippuvuuksiksi.
 
