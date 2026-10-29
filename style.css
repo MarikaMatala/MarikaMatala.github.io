@@ -2027,6 +2027,24 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
 }
 
 
+/* Make the Portfolio 2026 badge a clear, keyboard-accessible link to work samples. */
+.hero-index{
+  text-decoration:none;
+  cursor:pointer;
+  transition:transform .2s ease,filter .2s ease;
+}
+.hero-index:hover{
+  transform:translateY(-3px) rotate(-1deg);
+  filter:brightness(1.15);
+}
+.hero-index:focus-visible{
+  outline:3px solid var(--copper);
+  outline-offset:6px;
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-index{transition:none}
+}
+
 /* Portfolio 2026 final legibility pass: readable title, subtle binary drift and responsive spacing. */
 .hero-index{
   right:clamp(18px,5vw,72px);
