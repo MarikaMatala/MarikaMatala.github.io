@@ -2575,3 +2575,66 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
 @media(max-width:560px){
   .site-header .language-toggle{height:34px;min-height:34px;padding:4px 8px;font-size:.62rem}
 }
+
+
+/* Collapsible skill categories */
+.skills-card{
+  padding:0;
+  overflow:hidden;
+}
+.skills-card-summary{
+  display:grid;
+  grid-template-columns:1fr auto;
+  grid-template-areas:"number toggle" "title toggle";
+  align-items:center;
+  gap:5px 16px;
+  min-height:104px;
+  padding:20px clamp(18px,2.5vw,28px);
+  cursor:pointer;
+  list-style:none;
+}
+.skills-card-summary::-webkit-details-marker{display:none}
+.skills-card-summary::marker{content:""}
+.skills-card-summary .skills-number{grid-area:number}
+.skills-card-summary h4{
+  grid-area:title;
+  margin:0;
+}
+.skills-toggle{
+  grid-area:toggle;
+  display:grid;
+  place-items:center;
+  width:42px;
+  height:42px;
+  border:1px solid rgba(206,129,71,.65);
+  border-radius:50%;
+  color:#f1e4d3;
+  transition:transform .2s ease,background .2s ease;
+}
+.skills-toggle::before{
+  content:"+";
+  font:300 1.8rem/1 var(--sans);
+}
+.skills-card[open] .skills-toggle{
+  background:rgba(206,129,71,.16);
+}
+.skills-card[open] .skills-toggle::before{content:"−"}
+.skills-card > .skill-rows{
+  margin:0;
+  padding:0 clamp(18px,2.5vw,28px) 22px;
+}
+.skills-card-summary:focus-visible{
+  outline:2px solid #ce8147;
+  outline-offset:-4px;
+}
+.skills-card-summary:hover .skills-toggle{
+  background:rgba(206,129,71,.18);
+}
+@media(max-width:420px){
+  .skills-card-summary{min-height:92px;padding:17px 16px;gap:5px 10px}
+  .skills-toggle{width:38px;height:38px}
+  .skills-card > .skill-rows{padding:0 16px 18px}
+}
+@media(prefers-reduced-motion:reduce){
+  .skills-toggle{transition:none}
+}
