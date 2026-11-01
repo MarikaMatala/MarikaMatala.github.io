@@ -2527,3 +2527,32 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
   .site-header .language-toggle{min-width:42px;width:42px;height:42px;padding:8px}
   .site-header .language-icon{display:inline-flex}
 }
+
+
+/* More legible footer navigation across desktop, tablet and mobile. */
+.footer-nav{gap:16px clamp(22px,3vw,42px)}
+.footer-nav a{
+  display:inline-flex;
+  align-items:center;
+  min-height:44px;
+  padding:8px 2px;
+  color:#f0e4eb;
+  font-size:clamp(.9rem,1.15vw,1.05rem);
+  font-weight:800;
+  letter-spacing:.015em;
+  text-decoration:underline;
+  text-decoration-color:#b56b7a88;
+  text-underline-offset:6px;
+}
+.footer-nav a:hover,.footer-nav a:focus-visible{
+  color:#fff;
+  text-decoration-color:#d99aaa;
+}
+@media(max-width:900px){
+  .footer-nav{gap:10px 24px}
+  .footer-nav a{font-size:1rem;min-height:46px}
+}
+@media(max-width:560px){
+  .footer-nav{gap:8px 18px}
+  .footer-nav a{font-size:.98rem;min-height:48px}
+}
