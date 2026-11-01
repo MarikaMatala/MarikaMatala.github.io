@@ -659,3 +659,31 @@ input:focus-visible,textarea:focus-visible,select:focus-visible{
  background:#17271D!important;color:#C9D2C6!important;
  border-color:#526657!important;
 }
+
+
+/* Final homepage badge and link colour cleanup: remove residual rose/pink tones. */
+.hero-index{
+ background:linear-gradient(145deg,#1B2A20,#17271D)!important;
+ background-color:#1B2A20!important;
+ border:1px solid #D98245!important;
+ box-shadow:10px 10px 0 #101512,0 0 0 1px #526657!important;
+ color:#E8E5DA!important;
+}
+.hero-index .portfolio-word{color:#E8E5DA!important}
+.hero-index .portfolio-year{color:#E6A06A!important}
+.hero-index:hover,.hero-index:focus-visible{
+ background:linear-gradient(145deg,#294B35,#17271D)!important;
+ border-color:#B6CDAF!important;color:#FFFFFF!important;
+}
+.hero-index:hover .portfolio-word,.hero-index:focus-visible .portfolio-word{color:#FFFFFF!important}
+.hero-index:hover .portfolio-year,.hero-index:focus-visible .portfolio-year{color:#E6A06A!important}
+/* Keep ordinary text links, navigation links and their decorations in the same palette. */
+a:not(.hero-index):not(.gothic-button):not(.home-work-cta):not(.sample-pdf-link){
+ color:#E6A06A!important;
+ text-decoration-color:rgba(230,160,106,.62)!important;
+}
+a:not(.hero-index):not(.gothic-button):not(.home-work-cta):not(.sample-pdf-link):hover,
+a:not(.hero-index):not(.gothic-button):not(.home-work-cta):not(.sample-pdf-link):focus-visible{
+ color:#F0BB88!important;text-decoration-color:#F0BB88!important;
+}
+.site-header nav a[aria-current="page"]{color:#E6A06A!important}
