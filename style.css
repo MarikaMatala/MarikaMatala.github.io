@@ -2501,7 +2501,7 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
 @media(max-width:900px){
   .site-header{display:flex;gap:14px}
   .site-header .wordmark.full-name{margin-left:auto}
-  .site-header .language-toggle{order:3}
+  .site-header .language-toggle{order:3;flex:0 0 auto}
   .menu-toggle{display:flex;order:4;flex:0 0 46px}
   .site-header nav#primary-navigation{display:none;position:absolute;top:100%;right:4vw;left:4vw;z-index:31;flex-direction:column;align-items:stretch;gap:0;padding:10px;border:1px solid #754056;background:#120b14;box-shadow:0 18px 38px #000b}
   .site-header nav#primary-navigation.is-open{display:flex}
@@ -2523,9 +2523,8 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
 @media(prefers-reduced-motion:reduce){.menu-toggle span{transition:none}}
 
 @media(max-width:420px){
-  .site-header .language-label{display:none}
-  .site-header .language-toggle{min-width:42px;width:42px;height:42px;padding:8px}
-  .site-header .language-icon{display:inline-flex}
+  .site-header .language-toggle{min-width:0;width:auto;height:34px;min-height:34px;padding:4px 8px}
+  .site-header .language-label{display:inline;font-size:.62rem}
 }
 
 
