@@ -303,16 +303,7 @@ a:not(.wordmark):not(.hero-index):not(.skip-link){
 .site-footer{
   position:relative;
 }
-.site-footer::before{
-  content:"✳  /  MM  /  2026  /  ✳";
-  display:block;
-  width:100%;
-  margin-bottom:18px;
-  color:rgba(206,129,71,.65);
-  font:500 .62rem/1.5 var(--mono);
-  letter-spacing:.24em;
-  text-align:center;
-}
+/* Removed decorative MM / 2026 footer marker. */
 .language-toggle{
   border-color:rgba(206,129,71,.55);
 }
