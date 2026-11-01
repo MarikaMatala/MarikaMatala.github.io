@@ -1,5 +1,6 @@
 // Portfolio interactions: language switch, responsive Android image gallery and interactive C# examples.
 const languageToggle = document.getElementById('language-toggle');
+const primaryNavigation = document.getElementById('primary-navigation');
 let currentLanguage = 'fi';
 
 function updateCarouselLabels(language) {
@@ -22,6 +23,9 @@ function setLanguage(language) {
     languageToggle.setAttribute('aria-label', language === 'fi' ? 'Sivuston kieli: suomi. Vaihda englanniksi.' : 'Website language: English. Switch to Finnish.');
     languageToggle.setAttribute('title', language === 'fi' ? 'Suomi / English' : 'Finnish / English');
   }
+  if (primaryNavigation) primaryNavigation.setAttribute('aria-label', language === 'fi' ? 'Päänavigaatio' : 'Main navigation');
+  const menuToggle = document.getElementById('menu-toggle');
+  if (menuToggle && menuToggle.getAttribute('aria-expanded') !== 'true') menuToggle.setAttribute('aria-label', language === 'fi' ? 'Avaa navigaatiovalikko' : 'Open navigation menu');
   updateCarouselLabels(language);
 }
 
