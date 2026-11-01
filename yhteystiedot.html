@@ -88,9 +88,9 @@
       </div>
       <section class="contact-form-section" aria-labelledby="contact-form-heading">
         <div class="contact-form-heading">
-          <p class="eyebrow"><span class="eyebrow-line"></span><span data-fi="Lähetä viesti" data-en="Send a message">Lähetä viesti</span></p>
-          <h2 id="contact-form-heading" data-fi="Ota yhteyttä lomakkeella" data-en="Get in touch">Ota yhteyttä lomakkeella</h2>
-          <p data-fi="Voit lähettää minulle viestin suoraan tämän lomakkeen kautta. Vastaan viestiin sähköpostitse." data-en="Send me a message directly using this form. I'll reply by email.">Voit lähettää minulle viestin suoraan tämän lomakkeen kautta. Vastaan viestiin sähköpostitse.</p>
+          <p class="eyebrow"><span class="eyebrow-line"></span><span data-fi="Viestiboxi" data-en="Message box">Viestiboxi</span></p>
+          <h2 id="contact-form-heading" data-fi="Lähetä minulle viesti" data-en="Send me a message">Lähetä minulle viesti</h2>
+          <p data-fi="Täytä kaikki kentät, niin saat lähetettyä minulle viestin suoraan tämän lomakkeen kautta. Vastaan viestiin sähköpostitse." data-en="Fill in all fields to send me a message directly through this form. I'll reply by email.">Täytä kaikki kentät, niin saat lähetettyä minulle viestin suoraan tämän lomakkeen kautta. Vastaan viestiin sähköpostitse.</p>
         </div>
         <form class="contact-form" action="https://formsubmit.co/marika.matalamaki@gmail.com" method="POST">
           <input type="hidden" name="_subject" value="Uusi yhteydenotto portfoliosivustolta">
@@ -98,24 +98,27 @@
           <input type="hidden" name="_captcha" value="true">
           <input type="text" name="_honey" class="contact-form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="contact-form-field">
-            <label for="contact-name" data-fi="Nimi" data-en="Name">Nimi</label>
-            <input id="contact-name" name="name" type="text" autocomplete="name" required maxlength="100" data-fi-placeholder="Nimesi" data-en-placeholder="Your name" placeholder="Nimesi">
-          </div>
-          <div class="contact-form-field">
-            <label for="contact-email" data-fi="Sähköpostiosoite" data-en="Email address">Sähköpostiosoite</label>
-            <input id="contact-email" name="email" type="email" autocomplete="email" required maxlength="254" data-fi-placeholder="sinä@esimerkki.fi" data-en-placeholder="you@example.com" placeholder="sinä@esimerkki.fi">
-          </div>
-          <div class="contact-form-field">
             <label for="contact-subject" data-fi="Aihe" data-en="Subject">Aihe</label>
             <input id="contact-subject" name="subject" type="text" required maxlength="150" data-fi-placeholder="Mistä haluat ottaa yhteyttä?" data-en-placeholder="What would you like to discuss?" placeholder="Mistä haluat ottaa yhteyttä?">
           </div>
           <div class="contact-form-field">
-            <label for="contact-message" data-fi="Viesti" data-en="Message">Viesti</label>
-            <textarea id="contact-message" name="message" rows="6" required maxlength="5000" data-fi-placeholder="Kirjoita viestisi tähän..." data-en-placeholder="Write your message here..." placeholder="Kirjoita viestisi tähän..."></textarea>
+            <label for="contact-name" data-fi="Lähettäjän nimi" data-en="Your name">Lähettäjän nimi</label>
+            <input id="contact-name" name="name" type="text" autocomplete="name" required maxlength="100" data-fi-placeholder="Kirjoita nimesi" data-en-placeholder="Enter your name" placeholder="Kirjoita nimesi">
           </div>
-          <p class="contact-form-feedback" id="contact-form-feedback" role="alert" aria-live="polite" hidden></p>
-          <button class="gothic-button contact-form-submit" type="submit"><span data-fi="Lähetä viesti" data-en="Send message">Lähetä viesti</span> <span aria-hidden="true">↗</span></button>
-          <p class="contact-form-note" data-fi="Lomakkeen lähetys välittää viestin sähköpostitse. Älä lisää viestiin arkaluonteisia henkilötietoja." data-en="Submitting this form sends your message by email. Please don't include sensitive personal information.">Lomakkeen lähetys välittää viestin sähköpostitse. Älä lisää viestiin arkaluonteisia henkilötietoja.</p>
+          <div class="contact-form-field">
+            <label for="contact-email" data-fi="Lähettäjän sähköposti" data-en="Your email address">Lähettäjän sähköposti</label>
+            <input id="contact-email" name="email" type="email" autocomplete="email" required maxlength="254" data-fi-placeholder="sinä@esimerkki.fi" data-en-placeholder="you@example.com" placeholder="sinä@esimerkki.fi">
+          </div>
+          <div class="contact-form-field contact-message-field">
+            <label for="contact-message" data-fi="Viesti" data-en="Message">Viesti</label>
+            <textarea id="contact-message" name="message" rows="8" required maxlength="5000" data-fi-placeholder="Kirjoita viestisi tähän..." data-en-placeholder="Write your message here..." placeholder="Kirjoita viestisi tähän..."></textarea>
+          </div>
+          <p class="contact-form-feedback" id="contact-form-feedback" role="alert" aria-live="polite" tabindex="-1" hidden></p>
+          <div class="contact-form-actions">
+            <button class="gothic-button contact-form-submit" type="submit"><span data-fi="Lähetä viesti" data-en="Send message">Lähetä viesti</span> <span aria-hidden="true">↗</span></button>
+            <button class="contact-form-discard" type="reset" data-fi="Hylkää" data-en="Discard">Hylkää</button>
+          </div>
+          <p class="contact-form-note" data-fi="Lomakkeen lähetys välittää viestin sähköpostitse. Hylkää-painike tyhjentää kaikki kentät. Älä lisää viestiin arkaluonteisia henkilötietoja." data-en="Submitting this form sends your message by email. The Discard button clears all fields. Please don't include sensitive personal information.">Lomakkeen lähetys välittää viestin sähköpostitse. Hylkää-painike tyhjentää kaikki kentät. Älä lisää viestiin arkaluonteisia henkilötietoja.</p>
         </form>
       </section>
       <section class="contact-support" aria-labelledby="support-heading">
