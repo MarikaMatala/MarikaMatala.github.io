@@ -1754,10 +1754,7 @@ body{background-color:var(--ink);background-image:radial-gradient(ellipse at 14%
 .hero-copy::after{content:"0101 ᚠ 0010 ᚱ 1010 ᛟ 0110 ᚷ 1001 ᚹ";position:absolute;right:-1.5rem;top:-3rem;writing-mode:vertical-rl;font:clamp(.65rem,1vw,.8rem)/2 var(--mono);letter-spacing:.4em;color:#df8ca9;opacity:.16;pointer-events:none;animation:gothic-code-drift 18s linear infinite}
 h1,h2,h3,.wordmark{font-family:'Lora','Lora',serif}
 h1 em,h2 em{color:#d782a0}
-.skills-card h4::before{display:inline-block;margin-right:10px;color:#d782a0;font-family:var(--sans);font-size:.9em}
-.skills-grid-detailed .skills-card:nth-child(1) h4::before{content:"⌘"}
-.skills-grid-detailed .skills-card:nth-child(2) h4::before{content:"⚙"}
-.skills-grid-detailed .skills-card:nth-child(3) h4::before{content:"☾"}
+/* Removed redundant decorative glyphs before skill-card headings. */
 .skills-scale{border-left-color:#b85c7a;background:linear-gradient(90deg,#42172a88,transparent)}
 .skill-bars i.is-filled{background:linear-gradient(180deg,#e2a1b7,#963b5c);box-shadow:0 0 7px #b85c7a40}
 .contact-method,.skills-card,.project-card{border-color:#523044}
