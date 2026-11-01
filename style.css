@@ -2399,3 +2399,22 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
   line-height:1.65;
 }
 .contact-form-feedback[hidden]{display:none}
+
+
+/* Footer contact navigation */
+.site-footer .footer-contact-link{
+  color:#D9B18E;
+  font:700 .78rem var(--sans);
+  text-decoration:none;
+  border-bottom:1px solid rgba(217,177,142,.55);
+  padding:6px 0;
+  transition:color .2s ease,border-color .2s ease;
+}
+.site-footer .footer-contact-link:hover,
+.site-footer .footer-contact-link:focus-visible{
+  color:#fff;
+  border-color:#fff;
+}
+@media(max-width:800px){
+  .site-footer{flex-wrap:wrap;padding-top:22px;padding-bottom:22px;}
+}
