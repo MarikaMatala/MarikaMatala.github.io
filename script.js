@@ -238,3 +238,43 @@ updateCarouselLabels(currentLanguage);
 
   revealItems.forEach((element) => observer.observe(element));
 })();
+
+
+// Accessible responsive navigation for tablet and mobile layouts.
+(() => {
+  const toggle = document.getElementById('menu-toggle');
+  const navigation = document.getElementById('primary-navigation');
+  if (!toggle || !navigation) return;
+
+  const closeMenu = (returnFocus = false) => {
+    toggle.setAttribute('aria-expanded', 'false');
+    navigation.classList.remove('is-open');
+    toggle.setAttribute('aria-label', currentLanguage === 'fi' ? 'Avaa navigaatiovalikko' : 'Open navigation menu');
+    if (returnFocus) toggle.focus();
+  };
+
+  toggle.addEventListener('click', () => {
+    const opening = toggle.getAttribute('aria-expanded') !== 'true';
+    toggle.setAttribute('aria-expanded', String(opening));
+    navigation.classList.toggle('is-open', opening);
+    toggle.setAttribute('aria-label', opening
+      ? (currentLanguage === 'fi' ? 'Sulje navigaatiovalikko' : 'Close navigation menu')
+      : (currentLanguage === 'fi' ? 'Avaa navigaatiovalikko' : 'Open navigation menu'));
+  });
+
+  navigation.addEventListener('click', (event) => {
+    if (event.target.closest('a')) closeMenu();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') closeMenu(true);
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!navigation.contains(event.target) && !toggle.contains(event.target)) closeMenu();
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) closeMenu();
+  });
+})();
