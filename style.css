@@ -2521,3 +2521,9 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
   .site-footer .copyright-line,.site-footer .footer-note{width:100%}
 }
 @media(prefers-reduced-motion:reduce){.menu-toggle span{transition:none}}
+
+@media(max-width:420px){
+  .site-header .language-label{display:none}
+  .site-header .language-toggle{min-width:42px;width:42px;height:42px;padding:8px}
+  .site-header .language-icon{display:inline-flex}
+}
