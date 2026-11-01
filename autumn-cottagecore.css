@@ -251,3 +251,158 @@ section[id]{scroll-margin-top:7rem}
 .hero-index .portfolio-year{font-size:1.9rem;font-weight:700;line-height:1}
 .site-footer::after{background-image:url("images/metal-rose-sigil.svg?v=4")!important}
 @media(max-width:760px){.hero-index{position:relative!important;right:auto!important;bottom:auto!important;justify-self:start;margin-top:8px}}
+
+
+/* FINAL THEME: dark forest, charcoal and accessible burnt orange.
+   This portfolio intentionally stays in dark mode on every device. */
+:root{
+  color-scheme:dark!important;
+  --autumn-paper:#101512;
+  --autumn-paper-deep:#171f19;
+  --autumn-cream:#1b241e;
+  --autumn-ink:#f1f0e8;
+  --autumn-muted:#c6d0c7;
+  --autumn-forest:#294b35;
+  --autumn-forest-deep:#17271d;
+  --autumn-moss:#a8c99a;
+  --autumn-rust:#e7a06a;
+  --autumn-orange:#d98245;
+  --autumn-gold:#e7a06a;
+  --autumn-line:#526657;
+  --autumn-shadow:0 14px 34px rgba(0,0,0,.34);
+  --metal-rose:#d98245;
+  --metal-copper:#e7a06a;
+  --metal-silver:#c6d0c7;
+}
+html{color-scheme:dark!important;background:#101512!important}
+body{
+  background-color:#101512!important;
+  background-image:
+    radial-gradient(ellipse at 8% 8%,rgba(41,75,53,.30),transparent 36%),
+    radial-gradient(ellipse at 92% 42%,rgba(217,130,69,.09),transparent 31%),
+    linear-gradient(180deg,#111914 0%,#101512 58%,#0b100d 100%)!important;
+  color:#f1f0e8!important;
+}
+h1,h2,h3,h4,h5,h6,.section-heading,.hero-copy h1,.work-page-intro h1,.contact-page h1,
+.project-card h2,.project-card h3,.skills-card h2,.skills-card h3,.skills-card h4,
+.contact-method h2,.creative-sample-copy h3,.sample-panel-heading,.skills-heading{
+  color:#f1f0e8!important;text-shadow:none!important;
+}
+p,li,dd,dt,label,.hero-intro,.hero-copy p,.section-lead,.work-page-intro p,
+.about-section p,.contact-page p,.project-card p,.skills-card p,.contact-method p,
+.creative-sample-copy p,.skill-name,.skill-rating,.about-section li{
+  color:#c6d0c7!important;
+}
+a{color:#e7a06a!important}
+a:hover{color:#f2b982!important}
+a:focus-visible,button:focus-visible,summary:focus-visible,
+input:focus-visible,textarea:focus-visible,select:focus-visible{
+  outline:3px solid #e7a06a!important;outline-offset:3px!important;
+}
+.skip-link{background:#e7a06a!important;color:#101512!important}
+.site-header{
+  background:rgba(15,22,17,.97)!important;
+  border-bottom:1px solid #526657!important;
+  box-shadow:0 8px 26px rgba(0,0,0,.38),inset 0 -1px rgba(217,130,69,.18)!important;
+}
+.site-header nav a,.wordmark,.full-name{color:#f1f0e8!important}
+.site-header nav a:hover,.site-header nav a:focus-visible,
+.site-header nav a[aria-current="page"]{color:#e7a06a!important}
+.wordmark span{color:#e7a06a!important}
+.language-toggle{
+  background:#1b2a20!important;color:#f1f0e8!important;
+  border:1px solid #a8c99a!important;
+}
+.language-toggle .language-icon{color:#a8c99a!important}
+.language-toggle:hover{background:#294b35!important;border-color:#e7a06a!important}
+.notice,.info-ribbon{
+  background:#1b2a20!important;color:#f1f0e8!important;border-color:#526657!important;
+}
+.notice p,.info-ribbon p{color:#f1f0e8!important}
+.notice-dot{background:#e7a06a!important}
+.hero,.hero-index,.home-about-teaser,.home-work-cta-section,.contact-section,
+.work-section,.about-section,.contact-page,.work-page-intro{
+  background-color:transparent!important;color:#f1f0e8!important;
+}
+.hero-copy .eyebrow,.section-wrap>.eyebrow,.eyebrow,.intro-strip-note,
+.intro-strip-mark,.privacy-note span{color:#e7a06a!important}
+.eyebrow-line{background:#e7a06a!important}
+.hero-tags span,.skill-list span,.about-tags span{
+  color:#dce8dc!important;background:#1b2a20!important;border:1px solid #526657!important;
+}
+.gothic-button,.home-work-cta,.contact-method-primary a,
+.project-samples-toggle .expand-symbol,.creative-samples-grid .sample-expand{
+  background:#294b35!important;border:1px solid #a8c99a!important;color:#f1f0e8!important;
+}
+.gothic-button:hover,.home-work-cta:hover,.contact-method-primary a:hover,
+.creative-samples-grid .sample-expand:hover{
+  background:#365f43!important;border-color:#e7a06a!important;color:#fff!important;
+}
+.text-link,.small-link,.project-card .sample-open-link,.sample-file-action,
+.sample-pdf-link{color:#e7a06a!important}
+.project-card,.skills-card,.contact-method,.creative-samples-grid .creative-sample,
+.home-about-teaser,.project-featured,.skills-overview,.about-work-callout{
+  background:#1b241e!important;
+  background-image:linear-gradient(145deg,rgba(41,75,53,.20),transparent 58%)!important;
+  border:1px solid #526657!important;border-radius:12px!important;
+  box-shadow:var(--autumn-shadow)!important;color:#f1f0e8!important;
+}
+.project-card:hover,.skills-card:hover,.contact-method:hover{
+  border-color:#e7a06a!important;box-shadow:0 16px 36px rgba(0,0,0,.42)!important;
+}
+.project-card::before,.skills-card::before,.contact-method::before,
+.creative-samples-grid .creative-sample::before{border-color:rgba(231,160,106,.72)!important}
+.project-card::after,.skills-card::after,.contact-method::after,
+.creative-samples-grid .creative-sample::after{border-color:rgba(168,201,154,.55)!important}
+.project-card .project-meta,.interlude-photo-grid figcaption,.project-meta,
+.portrait-caption,.footer-note{color:#c6d0c7!important}
+.project-samples-toggle{
+  background:#171f19!important;background-image:none!important;
+  border:1px solid #526657!important;color:#f1f0e8!important;
+}
+.project-samples-toggle summary,.project-samples-toggle .samples-toggle-content{
+  color:#f1f0e8!important;text-shadow:none!important;
+}
+.project-samples-toggle summary:hover{color:#e7a06a!important}
+.project-samples-toggle .expand-symbol{
+  background:#1b2a20!important;color:#e7a06a!important;border-color:#a8c99a!important;
+}
+.branding-gallery,.oop-browser,.android-carousel-stage,.sample-visual,
+.sample-pdf-preview{
+  background-color:#111914!important;background-image:none!important;
+  border-color:#526657!important;color:#f1f0e8!important;
+}
+.branding-gallery figcaption,.sample-source,.sample-task{color:#c6d0c7!important}
+.sample-file-icon{background:#294b35!important;border-color:#a8c99a!important;color:#fff!important}
+.contact-method-primary{
+  background:#1b2a20!important;border-color:#526657!important;
+  box-shadow:inset 4px 0 0 #a8c99a,var(--autumn-shadow)!important;
+}
+.contact-method-primary p{color:#c6d0c7!important}
+.portrait-frame{
+  background:#1b241e!important;border-color:#d98245!important;
+  box-shadow:10px 10px 0 #17271d,14px 14px 0 rgba(217,130,69,.22)!important;
+}
+.portrait-caption{background:#1b241e!important;border-color:#526657!important;color:#f1f0e8!important}
+.site-footer{
+  background:#0b100d!important;border-top:3px solid #d98245!important;color:#f1f0e8!important;
+}
+.site-footer p,.site-footer a,.site-footer .footer-note,.site-footer .copyright-line{
+  color:#f1f0e8!important;
+}
+.site-footer a:hover{color:#e7a06a!important}
+.hero-index{
+  background:#1b241e!important;color:#f1f0e8!important;border-color:#526657!important;
+}
+.hero-index:hover{color:#e7a06a!important}
+input,textarea,select{
+  background:#111914!important;color:#f1f0e8!important;
+  border:1px solid #718575!important;
+}
+input::placeholder,textarea::placeholder{color:#b7c4b9!important;opacity:1}
+button{color:#f1f0e8}
+hr{border-color:#526657!important}
+::selection{background:#e7a06a!important;color:#101512!important}
+@media(prefers-color-scheme:light){
+  :root,html{color-scheme:dark!important}
+}
