@@ -2315,3 +2315,76 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
   .contact-method-primary{grid-column:auto;padding:22px}
   .contact-method-primary a{max-width:100%;overflow-wrap:anywhere}
 }
+
+
+/* Contact form — bilingual, responsive and styled to match the dark burgundy portfolio. */
+.contact-form-section{
+  display:grid;
+  grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
+  gap:clamp(28px,5vw,64px);
+  align-items:start;
+  margin:clamp(56px,8vw,104px) 0;
+  padding:clamp(24px,4vw,44px);
+  border:1px solid #492333;
+  background:linear-gradient(145deg,#160c13 0%,#0c090d 70%,#0d100c 100%);
+  box-shadow:0 18px 48px #0005,inset 0 1px 0 #f7b4cd12;
+}
+.contact-form-heading h2{
+  margin:12px 0 14px;
+  font-family:'Lora',Georgia,serif;
+  font-size:clamp(1.7rem,3vw,2.5rem);
+  line-height:1.2;
+  color:#f2e7ed;
+}
+.contact-form-heading>p:last-child{
+  max-width:34rem;
+  color:#c3adb8;
+  line-height:1.8;
+}
+.contact-form{display:grid;gap:18px;min-width:0}
+.contact-form-field{display:grid;gap:8px;min-width:0}
+.contact-form-field label{color:#ead9e0;font-size:.92rem;font-weight:700}
+.contact-form-field input,.contact-form-field textarea{
+  width:100%;
+  min-width:0;
+  border:1px solid #593044;
+  border-radius:2px;
+  padding:13px 14px;
+  background:#09070a;
+  color:#f2e7ed;
+  font:inherit;
+  line-height:1.55;
+  transition:border-color .2s ease,box-shadow .2s ease,background .2s ease;
+}
+.contact-form-field textarea{min-height:150px;resize:vertical}
+.contact-form-field input::placeholder,.contact-form-field textarea::placeholder{color:#8f7c86;opacity:1}
+.contact-form-field input:focus,.contact-form-field textarea:focus{
+  outline:none;
+  border-color:#c16b89;
+  box-shadow:0 0 0 3px #c16b8928;
+  background:#100a10;
+}
+.contact-form-submit{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  min-height:50px;
+  width:max-content;
+  max-width:100%;
+  padding:12px 22px;
+  color:#f8eaf0;
+  font:inherit;
+  font-weight:700;
+  cursor:pointer;
+}
+.contact-form-submit:focus-visible{outline:2px solid #e0a0b5;outline-offset:4px}
+.contact-form-note{margin:0;color:#a9949e;font-size:.82rem;line-height:1.65}
+.contact-form-honey{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+@media(max-width:760px){
+  .contact-form-section{grid-template-columns:minmax(0,1fr);gap:24px;padding:22px}
+  .contact-form-submit{width:100%}
+}
+@media(prefers-reduced-motion:reduce){
+  .contact-form-field input,.contact-form-field textarea{transition:none}
+}
