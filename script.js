@@ -18,9 +18,9 @@ function setLanguage(language) {
   });
   if (languageToggle) {
     const label = languageToggle.querySelector('.language-label');
-    if (label) label.textContent = language === 'fi' ? 'SUOMI → ENGLISH' : 'ENGLISH → SUOMI';
+    if (label) label.textContent = 'FIN / ENG';
     languageToggle.setAttribute('aria-label', language === 'fi' ? 'Sivuston kieli: suomi. Vaihda englanniksi.' : 'Website language: English. Switch to Finnish.');
-    languageToggle.setAttribute('title', language === 'fi' ? 'Suomi → English' : 'English → Suomi');
+    languageToggle.setAttribute('title', language === 'fi' ? 'Suomi / English' : 'Finnish / English');
   }
   updateCarouselLabels(language);
 }
