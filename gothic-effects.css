@@ -314,7 +314,6 @@ a:not(.wordmark):not(.hero-index):not(.skip-link){
 @media(max-width:760px){
   .home-about-teaser::before,.home-work-cta-section::before,.contact-section::before{opacity:.5}
   .portrait-frame{box-shadow:8px 8px 0 var(--portfolio-wine),10px 10px 0 rgba(206,129,71,.18)}
-  .site-footer::before{letter-spacing:.14em}
 }
 @media(prefers-reduced-motion:reduce){
   .project-image img,.sample-visual img{transition:none!important}
