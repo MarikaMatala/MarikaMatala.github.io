@@ -406,3 +406,19 @@ hr{border-color:#526657!important}
 @media(prefers-color-scheme:light){
   :root,html{color-scheme:dark!important}
 }
+
+
+/* Final heading color override: burnt orange throughout the site. */
+h1,h2,h3,h4,h5,h6,
+.section-heading,.skills-heading,.sample-panel-heading,
+.hero-copy h1,.work-page-intro h1,.contact-page h1,
+.project-card h2,.project-card h3,.project-card h4,
+.skills-card h2,.skills-card h3,.skills-card h4,
+.contact-method h2,.creative-sample-copy h3,
+.home-work-cta-section h1,.home-work-cta-section h2,.home-work-cta-section h3,
+.contact-section h1,.contact-section h2,.contact-section h3,
+.about-section h1,.about-section h2,.about-section h3,
+.work-section h1,.work-section h2,.work-section h3 {
+  color:#D98245!important;
+  text-shadow:none!important;
+}
