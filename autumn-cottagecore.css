@@ -554,3 +554,55 @@ input:focus-visible,textarea:focus-visible,select:focus-visible{
  outline:2px solid #E6A06A!important;outline-offset:3px;
 }
 @media(prefers-color-scheme:light){:root,html,body{color-scheme:dark!important}}
+
+
+/* Replace the old burgundy/wine identity with deep pine green.
+   Palette harmony: forest green + muted sage (analogous) + copper (warm accent). */
+:root{
+ --burgundy:#17271D!important;
+ --wine:#17271D!important;
+ --portfolio-wine:#17271D!important;
+ --metal-wine:#17271D!important;
+ --ornament-wine:#17271D!important;
+ --gothic-rose:#B6CDAF!important;
+ --metal-rose:#D98245!important;
+ --ornament-rose:#D98245!important;
+ --portfolio-rose-gold:#D98245!important;
+ --line:#526657!important;
+}
+.notice,.work-section,.project-coming,.project-placeholder,
+.hero-tags span,.skill-list span,.about-tags span{
+ background-color:#17271D!important;
+ border-color:#526657!important;
+}
+.notice{color:#E8E5DA!important}
+.notice-dot{background:#D98245!important;box-shadow:0 0 0 4px rgba(217,130,69,.16)!important}
+.work-section:before,.hero:before,.hero:after,.coming-art:before,.coming-art:after,
+.contact-section:after{
+ border-color:rgba(182,205,175,.28)!important;
+}
+.portrait-frame{box-shadow:14px 14px 0 #17271D,0 0 0 1px #526657!important}
+.shape-one{background:#17271D!important;border-color:#526657!important}
+.hero-stamp span{color:#101512!important}
+.project-placeholder{
+ background:linear-gradient(135deg,#17271D,#101512)!important;
+}
+.project-card:hover,.project-oop:hover{
+ box-shadow:8px 8px 0 rgba(182,205,175,.14)!important;
+}
+.oop-grade{box-shadow:inset 0 0 0 6px rgba(182,205,175,.10)!important}
+.skills-scale{
+ border-left-color:#B6CDAF!important;
+ background:linear-gradient(90deg,rgba(41,75,53,.55),transparent)!important;
+}
+.gothic-button,.project-samples-toggle .expand-symbol{
+ background:#294B35!important;border-color:#B6CDAF!important;
+}
+.project-samples-toggle[open] .expand-symbol{background:#294B35!important}
+.info-ribbon{border-bottom-color:#526657!important}
+.gothic-mist{
+ background:radial-gradient(ellipse at 10% 100%,rgba(35,69,45,.32),transparent 58%),
+ radial-gradient(ellipse at 92% 100%,rgba(41,75,53,.24),transparent 55%)!important;
+}
+.gothic-mandala{opacity:.035!important}
+.gothic-mandala::before,.gothic-mandala::after{border-color:#526657!important}
