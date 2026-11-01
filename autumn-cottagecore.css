@@ -606,3 +606,56 @@ input:focus-visible,textarea:focus-visible,select:focus-visible{
 }
 .gothic-mandala{opacity:.035!important}
 .gothic-mandala::before,.gothic-mandala::after{border-color:#526657!important}
+
+
+/* Mobile navigation and portrait decoration: match the forest/copper theme. */
+.menu-toggle{
+ background:#1B241E!important;
+ border:1px solid #526657!important;
+ color:#E6A06A!important;
+ border-radius:10px!important;
+ box-shadow:0 4px 12px rgba(0,0,0,.22)!important;
+}
+.menu-toggle span{background:#E6A06A!important}
+.menu-toggle:hover,.menu-toggle:focus-visible{
+ background:#294B35!important;border-color:#B6CDAF!important;color:#E8E5DA!important;
+}
+.site-header nav#primary-navigation{
+ background:#1B241E!important;
+ border:1px solid #526657!important;
+ box-shadow:0 18px 38px rgba(0,0,0,.48)!important;
+}
+.site-header nav#primary-navigation a{
+ color:#E8E5DA!important;border-bottom-color:#526657!important;
+}
+.site-header nav#primary-navigation a:hover,
+.site-header nav#primary-navigation a:focus-visible,
+.site-header nav#primary-navigation a[aria-current="page"]{
+ color:#E6A06A!important;background:#17271D!important;
+}
+.portrait-frame{
+ background:#1B241E!important;
+ border:1px solid #D98245!important;
+ box-shadow:14px 14px 0 #17271D,0 0 0 1px #526657!important;
+}
+.portrait-wrap:before{
+ border-color:rgba(182,205,175,.48)!important;
+}
+.shape-one{
+ background:#17271D!important;
+ border-color:#526657!important;
+}
+.shape-two{
+ background:#B6CDAF!important;
+ border:1px solid #D98245!important;
+ box-shadow:0 0 24px rgba(182,205,175,.12)!important;
+}
+.portrait-caption{
+ background:#1B241E!important;
+ color:#E8E5DA!important;
+ border:1px solid #526657!important;
+}
+.image-placeholder,.portrait-placeholder{
+ background:#17271D!important;color:#C9D2C6!important;
+ border-color:#526657!important;
+}
