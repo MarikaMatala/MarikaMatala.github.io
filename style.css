@@ -2638,3 +2638,10 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
 @media(prefers-reduced-motion:reduce){
   .skills-toggle{transition:none}
 }
+
+
+/* Subject icons beside every collapsible skill-category heading. */
+.skills-card-title{grid-area:title;display:flex;align-items:center;gap:12px;min-width:0}
+.skills-card-title h4{grid-area:auto;min-width:0}
+.skills-category-icon{display:inline-grid;place-items:center;flex:0 0 42px;width:42px;height:42px;border:1px solid rgba(206,129,71,.55);border-radius:50%;background:rgba(206,129,71,.10);font-size:1.2rem;line-height:1}
+@media(max-width:420px){.skills-card-title{gap:9px}.skills-category-icon{flex-basis:36px;width:36px;height:36px;font-size:1.05rem}}
