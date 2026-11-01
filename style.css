@@ -2388,3 +2388,14 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
 @media(prefers-reduced-motion:reduce){
   .contact-form-field input,.contact-form-field textarea{transition:none}
 }
+
+.contact-form-feedback{
+  margin:0;
+  padding:13px 15px;
+  border:1px solid #b85c7a;
+  background:#2b0d1b;
+  color:#ffe7ee;
+  font-weight:700;
+  line-height:1.65;
+}
+.contact-form-feedback[hidden]{display:none}
