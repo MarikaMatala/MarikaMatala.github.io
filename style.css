@@ -2645,3 +2645,24 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
 .skills-card-title h4{grid-area:auto;min-width:0}
 .skills-category-icon{display:inline-grid;place-items:center;flex:0 0 42px;width:42px;height:42px;border:1px solid rgba(206,129,71,.55);border-radius:50%;background:rgba(206,129,71,.10);font-size:1.2rem;line-height:1}
 @media(max-width:420px){.skills-card-title{gap:9px}.skills-category-icon{flex-basis:36px;width:36px;height:36px;font-size:1.05rem}}
+
+
+/* Keep skill-card headings readable on narrow screens in both languages. */
+.skills-card-title{flex:1;min-width:0;gap:10px}
+.skills-card-title h4{font-size:clamp(1rem,1.35vw,1.2rem);line-height:1.28;overflow-wrap:break-word;hyphens:auto}
+.skills-card-summary{grid-template-columns:minmax(0,1fr) 42px;column-gap:12px}
+.skills-card-summary .skills-number{font-size:clamp(.58rem,.75vw,.7rem);letter-spacing:.07em;overflow-wrap:anywhere}
+@media(max-width:560px){
+  .skills-card-summary{grid-template-columns:minmax(0,1fr) 38px;padding:16px 14px;column-gap:9px}
+  .skills-card-title{gap:8px}
+  .skills-card-title h4{font-size:1rem;line-height:1.25}
+  .skills-category-icon{flex-basis:36px;width:36px;height:36px}
+  .skills-toggle{width:36px;height:36px}
+}
+@media(max-width:360px){
+  .skills-card-summary{grid-template-columns:minmax(0,1fr) 34px;padding:14px 11px;column-gap:7px}
+  .skills-card-title{gap:7px}
+  .skills-card-title h4{font-size:.94rem}
+  .skills-category-icon{flex-basis:32px;width:32px;height:32px;font-size:.95rem}
+  .skills-toggle{width:32px;height:32px}
+}
