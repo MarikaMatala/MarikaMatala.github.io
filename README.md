@@ -47,6 +47,16 @@ Nykyinen sivusto käyttää tavallista HTML:ää, CSS:ää ja JavaScriptiä, ja 
 
 Mahdollisia tulevan React/Vite-version kirjastoja, animaatioesimerkkejä ja virallisia dokumentaatioita käsitellään tiedostossa [UI-LIBRARIES.md](UI-LIBRARIES.md). React/Vite-kirjastot on dokumentoitu jatkokehityksen vaihtoehtoina; niitä ei ole lisätty nykyisen staattisen sivuston riippuvuuksiksi.
 
+## Support my work | Tue työskentelyäni
+
+Developing my skills, working on new projects and building my portfolio require time, effort and financial resources. If you enjoy my work or would like to support my journey, you can optionally contribute through a monetary donation or by gifting useful equipment, software or other tools. Your support would help with my current financial situation and make it possible to invest in resources for professional development and future projects. All support is entirely voluntary, and every contribution is genuinely appreciated.
+
+Osaamisen kehittäminen, uusien projektien toteuttaminen ja portfolion rakentaminen vaativat aikaa, työtä ja myös taloudellisia resursseja. Jos pidät työstäni tai haluat kannustaa minua eteenpäin, voit halutessasi tukea minua vapaaehtoisella rahalahjoituksella tai esimerkiksi työskentelyssä tarvittavilla laitteilla, ohjelmistoilla tai muilla hyödyllisillä tuotteilla. Tuki auttaa tämänhetkisessä taloudellisessa tilanteessani ja mahdollistaa työvälineiden hankkimisen osaamisen kehittämistä ja tulevia projekteja varten. Kaikki tuki on vapaaehtoista ja arvostan jokaista elettä suuresti.
+
+☕ **[Support me on Buy Me a Coffee](https://buymeacoffee.com/marikamatala)**
+
+---
+
 ## Copyright and use | Tekijänoikeudet ja käyttö
 
 The code and visual work in this portfolio are created by Marika Matalamäki, either as personal projects or coursework, unless a specific item is credited otherwise. Images are her own unless otherwise stated alongside an image or project. Rights to collaborative work, coursework materials and third-party assets remain with their respective rights holders. Do not reuse materials without permission from the relevant rights holder. Unauthorised use may lead to claims for remuneration or damages where applicable by law.
