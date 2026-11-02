@@ -6,9 +6,13 @@
 
 I am an ICT engineer graduate from JAMK with an interest in frontend and web development, application development, UI/UX, visual design, and digital media. My background combines technical skills with experience in visual communication and media production.
 
+I am looking for **entry-level and junior positions, not internships**. My first preference is **on-site and hybrid work in the Helsinki metropolitan area, Finland**. I am also interested in **remote roles and travel-based work opportunities worldwide**.
+
 My portfolio is being developed continuously. Selected projects and examples are presented on the website. Some additional work samples are in private repositories and can be requested by message.
 
 Olen JAMKista valmistunut ICT-insinööri. Osaamiseni ja kiinnostuksenkohteeni yhdistävät frontend- ja web-kehityksen, sovelluskehityksen, UI/UX-suunnittelun, visuaalisen suunnittelun sekä digitaalisen median. Taustassani yhdistyvät tekninen osaaminen ja kokemus visuaalisesta viestinnästä sekä mediatuotannosta.
+
+Etsin **entry-tason ja junior-tason työpaikkoja, en harjoittelupaikkoja**. Ensisijaisesti kiinnostavat **paikan päällä tehtävät ja hybridityöt pääkaupunkiseudulla Suomessa**. Olen kiinnostunut myös **etätyöstä ja matkustamista edellyttävistä työtehtävistä maailmanlaajuisesti**.
 
 Portfolio kehittyy jatkuvasti. Valikoituja projekteja ja työnäytteitä esitellään verkkosivulla. Osa muista työnäytteistä on yksityisissä repositorioissa, ja niitä voi pyytää nähtäväksi viestillä.
 
