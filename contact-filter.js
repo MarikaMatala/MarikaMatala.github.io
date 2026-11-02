@@ -1,4 +1,4 @@
-/* Contact form moderation and AJAX delivery through FormSubmit. */
+/* Lightweight contact-form content filter. Valid submissions use native HTML POST. */
 (() => {
   const form = document.querySelector('.contact-form');
   const feedback = document.getElementById('contact-form-feedback');
@@ -33,66 +33,19 @@
       abusivePhrases.some((phrase) => normalized.includes(normalize(phrase)));
   }
 
-  function showFeedback(message, isError = false) {
-    feedback.hidden = false;
-    feedback.textContent = message;
-    feedback.setAttribute('role', isError ? 'alert' : 'status');
-    feedback.focus();
-    feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  }
-
-  form.addEventListener('submit', async (event) => {
-    event.preventDefault();
+  form.addEventListener('submit', (event) => {
     const name = form.elements.namedItem('name');
     const message = form.elements.namedItem('message');
     if ([name, message].some((field) => containsBlockedContent(field.value))) {
-      showFeedback(document.documentElement.lang.startsWith('en')
+      event.preventDefault();
+      feedback.hidden = false;
+      feedback.textContent = document.documentElement.lang.startsWith('en')
         ? 'Your message could not be sent. Please remove abusive or discriminatory content and try again.'
-        : 'Viestiä ei voitu lähettää. Poista asiaton tai syrjivä sisältö ja yritä uudelleen.', true);
-      return;
+        : 'Viestiä ei voitu lähettää. Poista asiaton tai syrjivä sisältö ja yritä uudelleen.';
+      feedback.focus();
+      feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
-
-    const submitButton = form.querySelector('[type="submit"]');
-    const label = submitButton ? submitButton.innerHTML : '';
-    if (submitButton) {
-      submitButton.disabled = true;
-      submitButton.setAttribute('aria-busy', 'true');
-      submitButton.textContent = document.documentElement.lang.startsWith('en') ? 'Sending…' : 'Lähetetään…';
-    }
-    feedback.hidden = true;
-
-    try {
-      const response = await fetch(form.action, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(Object.fromEntries(new FormData(form).entries()))
-      });
-      const result = await response.json();
-      // FormSubmit can return HTTP 200 even when it rejects a submission.
-      if (String(result.success) !== 'true') {
-        throw new Error(result.message || 'The form service did not accept the message.');
-      }
-      showFeedback(document.documentElement.lang.startsWith('en')
-        ? 'Thank you! Your message was sent successfully.'
-        : 'Kiitos! Viestisi lähetettiin onnistuneesti.');
-      form.reset();
-    } catch (error) {
-      const detail = error && error.message ? error.message : '';
-      const activation = /activat/i.test(detail);
-      showFeedback(document.documentElement.lang.startsWith('en')
-        ? (activation
-          ? 'The form needs to be activated first. Please check the inbox and spam folder of the receiving email address and confirm the FormSubmit activation email. Then try again.'
-          : 'The message could not be sent. Please try again later or contact me directly by email.')
-        : (activation
-          ? 'Lomake vaatii vielä käyttöönoton vahvistamisen. Tarkista sähköpostin saapuneet- ja roskapostikansiot ja vahvista FormSubmitin aktivointiviesti. Yritä sen jälkeen uudelleen.'
-          : 'Viestin lähetys ei onnistunut. Yritä myöhemmin uudelleen tai ota yhteyttä suoraan sähköpostitse.'), true);
-    } finally {
-      if (submitButton) {
-        submitButton.disabled = false;
-        submitButton.removeAttribute('aria-busy');
-        submitButton.innerHTML = label;
-      }
-    }
+    // Otherwise, do not prevent the browser's normal POST submission.
   });
 
   form.addEventListener('input', () => {
