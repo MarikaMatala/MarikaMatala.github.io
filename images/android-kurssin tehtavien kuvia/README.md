@@ -1,8 +1,8 @@
 # Android coursework | Android-kurssin tehtävät
 
-This folder contains image examples related to Android application development coursework. The images can be used to present interface layouts, application screens, and the outcomes of individual exercises.
+This folder contains images from my Android application development coursework. They show interface layouts, application screens and the results of individual exercises.
 
-Tämä kansio sisältää kuvia Android-sovelluskehityksen kurssitehtävistä. Kuvia voidaan käyttää käyttöliittymäratkaisujen, sovellusnäkymien ja yksittäisten harjoitustöiden lopputulosten esittelyyn.
+Tämä kansio sisältää kuvia Android-sovelluskehityksen kurssitehtävistä. Ne esittelevät käyttöliittymäratkaisuja, sovellusnäkymiä ja yksittäisten harjoitustöiden lopputuloksia.
 
 ## Contents
 
