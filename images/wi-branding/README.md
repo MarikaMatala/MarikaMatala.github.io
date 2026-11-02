@@ -1,8 +1,8 @@
 # Visual identity and branding | Visuaalinen ilme ja brändäys
 
-This folder contains the WI logo and WIMMA Capstone logo designed by Marika Matalamäki. The designs are shown in her portfolio; the WIMMA Capstone visual identity work is also used on the project website.
+This folder contains the WI and WIMMA Capstone logos designed by Marika Matalamäki. Both are featured in her portfolio, and the WIMMA Capstone visual identity is also used on the project website.
 
-Tämä kansio sisältää Marika Matalamäen suunnittelemat WI-logon ja WIMMA Capstone -logon. Logot ovat esillä portfoliossa, ja WIMMA Capstonen visuaalista brändityötä hyödynnetään myös projektin verkkosivustolla.
+Tämä kansio sisältää Marika Matalamäen suunnittelemat WI- ja WIMMA Capstone -logot. Ne ovat esillä portfoliossa, ja WIMMA Capstonen visuaalista ilmettä käytetään myös projektin verkkosivustolla.
 
 ## Files
 
