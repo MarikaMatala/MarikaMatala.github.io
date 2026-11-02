@@ -1,81 +1,101 @@
-/* Basic multilingual contact-form moderation.
-   This client-side filter blocks common profanity, slurs and abusive phrases.
-   It is a deterrent, not a complete moderation or translation system. */
+/* Contact form moderation and AJAX delivery through FormSubmit. */
 (() => {
   const form = document.querySelector('.contact-form');
   const feedback = document.getElementById('contact-form-feedback');
   if (!form || !feedback) return;
 
   const blockedTerms = [
-    // Finnish profanity and abusive language
     'vittu','vitun','vittua','vittuil','perkele','saatana','saatanan','helvetti',
     'paska','paskan','paskaa','kusip','mulkk','runkk','runkkari','huora','huoran',
     'lutka','idiootti','kusipää','painu vittuun',
-    // English profanity and common abusive slurs
     'fuck','fucking','fucked','motherfucker','shit','bullshit','bitch','bastard',
     'asshole','arsehole','cunt','dickhead','slut','whore','retard',
     'nigger','nigga','faggot','kike','chink','spic','wetback','raghead',
-    // Common profanity in several other languages
     'scheisse','arschloch','hurensohn','schlampe','joder','mierda',
     'putain','connard','salope','merde','encule','stronzo','cazzo','vaffanculo',
     'knulla','jävel','helvete'
   ];
-
   const abusivePhrases = [
     'kill all','go kill yourself','you should die','i will kill you',
     'heil hitler','white power','white supremac','racial supremac',
     'tapa itsesi','kuole pois','toivon että kuolet','painu vittuun'
   ];
 
-  const normalize = (value) => value
-    .toLocaleLowerCase()
-    .normalize('NFKD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[0]/g, 'o')
-    .replace(/[1!|]/g, 'i')
-    .replace(/[3]/g, 'e')
-    .replace(/[4@]/g, 'a')
-    .replace(/[5$]/g, 's')
-    .replace(/[7]/g, 't')
-    .replace(/[^\p{L}\p{N}]+/gu, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
-
-  const termPatterns = blockedTerms.map((term) => {
-    const escaped = term.split(/\s+/).map((part) => part.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('\\s+');
-    return new RegExp('(^|\\s)' + escaped + '($|\\s)', 'iu');
-  });
+  const normalize = (value) => value.toLocaleLowerCase()
+    .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[0]/g, 'o').replace(/[1!|]/g, 'i').replace(/[3]/g, 'e')
+    .replace(/[4@]/g, 'a').replace(/[5$]/g, 's').replace(/[7]/g, 't')
+    .replace(/[^\p{L}\p{N}]+/gu, ' ').replace(/\s+/g, ' ').trim();
 
   function containsBlockedContent(value) {
-    const normalized = normalize(value);
-    if (!normalized) return false;
-    return termPatterns.some((pattern) => pattern.test(normalized)) ||
+    const normalized = ' ' + normalize(value) + ' ';
+    return blockedTerms.some((term) => normalized.includes(' ' + normalize(term) + ' ')) ||
       abusivePhrases.some((phrase) => normalized.includes(normalize(phrase)));
   }
 
-  form.addEventListener('submit', (event) => {
-    const fields = ['name', 'subject', 'message']
-      .map((name) => form.elements.namedItem(name))
-      .filter(Boolean);
+  function showFeedback(message, isError = false) {
+    feedback.hidden = false;
+    feedback.textContent = message;
+    feedback.setAttribute('role', isError ? 'alert' : 'status');
+    feedback.focus();
+    feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
 
-    if (fields.some((field) => containsBlockedContent(field.value))) {
-      event.preventDefault();
-      feedback.hidden = false;
-      feedback.textContent = document.documentElement.lang.startsWith('en')
-        ? 'Your message could not be sent. Please remove profanity, insults, discriminatory language, threats or other abusive content and try again.'
-        : 'Viestiä ei voitu lähettää. Poista kirosanat, loukkaukset, syrjivä kielenkäyttö, uhkaukset ja muu asiaton sisältö ja yritä uudelleen.';
-      feedback.focus();
-      feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    } else {
-      feedback.hidden = true;
-      feedback.textContent = '';
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const name = form.elements.namedItem('name');
+    const message = form.elements.namedItem('message');
+    if ([name, message].some((field) => containsBlockedContent(field.value))) {
+      showFeedback(document.documentElement.lang.startsWith('en')
+        ? 'Your message could not be sent. Please remove abusive or discriminatory content and try again.'
+        : 'Viestiä ei voitu lähettää. Poista asiaton tai syrjivä sisältö ja yritä uudelleen.', true);
+      return;
+    }
+
+    const submitButton = form.querySelector('[type="submit"]');
+    const label = submitButton ? submitButton.innerHTML : '';
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.setAttribute('aria-busy', 'true');
+      submitButton.textContent = document.documentElement.lang.startsWith('en') ? 'Sending…' : 'Lähetetään…';
+    }
+    feedback.hidden = true;
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(form).entries()))
+      });
+      const result = await response.json();
+      // FormSubmit can return HTTP 200 even when it rejects a submission.
+      if (String(result.success) !== 'true') {
+        throw new Error(result.message || 'The form service did not accept the message.');
+      }
+      showFeedback(document.documentElement.lang.startsWith('en')
+        ? 'Thank you! Your message was sent successfully.'
+        : 'Kiitos! Viestisi lähetettiin onnistuneesti.');
+      form.reset();
+    } catch (error) {
+      const detail = error && error.message ? error.message : '';
+      const activation = /activat/i.test(detail);
+      showFeedback(document.documentElement.lang.startsWith('en')
+        ? (activation
+          ? 'The form needs to be activated first. Please check the inbox and spam folder of the receiving email address and confirm the FormSubmit activation email. Then try again.'
+          : 'The message could not be sent. Please try again later or contact me directly by email.')
+        : (activation
+          ? 'Lomake vaatii vielä käyttöönoton vahvistamisen. Tarkista sähköpostin saapuneet- ja roskapostikansiot ja vahvista FormSubmitin aktivointiviesti. Yritä sen jälkeen uudelleen.'
+          : 'Viestin lähetys ei onnistunut. Yritä myöhemmin uudelleen tai ota yhteyttä suoraan sähköpostitse.'), true);
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.removeAttribute('aria-busy');
+        submitButton.innerHTML = label;
+      }
     }
   });
 
   form.addEventListener('input', () => {
-    if (!feedback.hidden) {
-      feedback.hidden = true;
-      feedback.textContent = '';
-    }
+    if (!feedback.hidden) feedback.hidden = true;
   });
 })();
