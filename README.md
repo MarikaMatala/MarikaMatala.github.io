@@ -4,17 +4,17 @@
 
 ## About
 
-I am an ICT engineer graduate from JAMK with an interest in frontend and web development, application development, UI/UX, visual design, and digital media. My background combines technical skills with experience in visual communication and media production.
+I am an ICT engineer who graduated from JAMK. My interests and skills include frontend and web development, application development, UI/UX, visual design and digital media. My background combines technical skills with experience in visual communication and media production.
 
 I am looking for **entry-level and junior positions**, as well as **paid company trainee, graduate and other early-career programmes or internships open to graduates**, including people who graduated within the past 12 months. I am **not looking for internships required as part of a Finnish university of applied sciences degree**, as I have already graduated, or for **unpaid work or internships**. My first preference is **on-site and hybrid work in the Helsinki metropolitan area, Finland**. I am also interested in **remote roles and travel-based work opportunities worldwide**.
 
-My portfolio is being developed continuously. Selected projects and examples are presented on the website. Some additional work samples are in private repositories and can be requested by message.
+I continue to develop my portfolio and add selected projects and examples to the website. Some additional work samples are kept in private repositories and are available on request.
 
-Olen JAMKista valmistunut ICT-insinööri. Osaamiseni ja kiinnostuksenkohteeni yhdistävät frontend- ja web-kehityksen, sovelluskehityksen, UI/UX-suunnittelun, visuaalisen suunnittelun sekä digitaalisen median. Taustassani yhdistyvät tekninen osaaminen ja kokemus visuaalisesta viestinnästä sekä mediatuotannosta.
+Olen JAMKista valmistunut ICT-insinööri. Osaamiseeni ja kiinnostuksenkohteisiini kuuluvat frontend- ja web-kehitys, sovelluskehitys, UI/UX-suunnittelu, visuaalinen suunnittelu ja digitaalinen media. Taustassani yhdistyvät tekninen osaaminen sekä kokemus visuaalisesta viestinnästä ja mediatuotannosta.
 
 Etsin **entry-tason ja junior-tason työpaikkoja** sekä **palkallisia yritysten trainee-, graduate- ja muita uransa alkuvaiheen ohjelmia tai harjoittelupaikkoja**, jotka soveltuvat myös jo valmistuneille tai viimeisen 12 kuukauden aikana valmistuneille. **En etsi AMK-tutkintoon kuuluvia harjoittelupaikkoja**, sillä olen jo valmistunut, enkä **palkattomia töitä tai harjoitteluja**. Ensisijaisesti kiinnostavat **paikan päällä tehtävät ja hybridityöt pääkaupunkiseudulla Suomessa**. Olen kiinnostunut myös **etätyöstä ja matkustamista edellyttävistä työtehtävistä maailmanlaajuisesti**.
 
-Portfolio kehittyy jatkuvasti. Valikoituja projekteja ja työnäytteitä esitellään verkkosivulla. Osa muista työnäytteistä on yksityisissä repositorioissa, ja niitä voi pyytää nähtäväksi viestillä.
+Kehitän portfoliotani jatkuvasti ja lisään verkkosivulle valikoituja projekteja ja työnäytteitä. Osa muista työnäytteistä on yksityisissä repositorioissa, ja niitä voi pyytää nähtäväksi viestillä.
 
 ## Repository structure
 
@@ -43,7 +43,7 @@ The current site uses native HTML, CSS and JavaScript and is published directly 
 
 A reference guide for possible future libraries—including Tailwind CSS v4, tw-animate-css, Radix/shadcn UI, Lucide, Simple Icons and the Web Audio API—is available in [UI-LIBRARIES.md](UI-LIBRARIES.md). These React/Vite libraries are documented as future options, not dependencies installed in the current static site.
 
-The guide also includes animation examples and links to official documentation and CSS learning resources.
+ The guide also includes animation examples and links to official documentation and CSS learning resources.
 
 ## Käyttöliittymäkirjastot, animaatiot ja saavutettavuus
 
