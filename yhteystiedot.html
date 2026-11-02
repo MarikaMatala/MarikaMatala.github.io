@@ -7,7 +7,7 @@
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#344a35">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self' https://formsubmit.co; upgrade-insecure-requests; script-src 'self' 'unsafe-inline' https://cloud.umami.is https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://raw.githubusercontent.com; connect-src 'self' https://cloud.umami.is">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self' https://formsubmit.co; upgrade-insecure-requests; script-src 'self' 'unsafe-inline' https://cloud.umami.is https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://raw.githubusercontent.com; connect-src 'self' https://cloud.umami.is https://formsubmit.co">
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
   <title>Marika Matalamäki — Portfolio 2026 | Yhteystiedot</title>
   <!-- MUOKKAUSVINKKI: sivun ulkoasu on tiedostossa style.css. Kommentit eivät näy verkkosivulla. -->
@@ -111,11 +111,12 @@
         <div class="contact-form-heading">
           <p class="eyebrow"><span class="eyebrow-line"></span><span data-fi="Viestiboxi" data-en="Message box">Viestiboxi</span></p>
           <h2 id="contact-form-heading" data-fi="Lähetä minulle viesti" data-en="Send me a message">Lähetä minulle viesti</h2>
-          <p data-fi="Täytä kaikki kentät, niin saat lähetettyä minulle viestin suoraan tämän lomakkeen kautta. Vastaan viestiin sähköpostitse." data-en="Fill in all fields to send me a message directly through this form. I'll reply by email.">Täytä kaikki kentät, niin saat lähetettyä minulle viestin suoraan tämän lomakkeen kautta. Vastaan viestiin sähköpostitse.</p>
+          <p data-fi="Täytä kentät ja lähetä viesti. Lomake ilmoittaa, onnistuiko lähetys. Vastaan viestiin sähköpostitse." data-en="Complete the fields and send your message. The form will tell you whether it was sent successfully. I'll reply by email.">Täytä kaikki kentät, niin saat lähetettyä minulle viestin suoraan tämän lomakkeen kautta. Vastaan viestiin sähköpostitse.</p>
         </div>
-        <form class="contact-form" action="https://formsubmit.co/marika.matalamaki@gmail.com" method="POST">
+        <form class="contact-form" action="https://formsubmit.co/ajax/marika.matalamaki@gmail.com" method="POST">
           <input type="hidden" name="_subject" value="Uusi yhteydenotto portfoliosivustolta">
           <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_url" value="https://marikamatala.github.io/yhteystiedot.html">
           <input type="hidden" name="_captcha" value="true">
           <div class="contact-form-field">
             <label for="contact-name" data-fi="Lähettäjän nimi" data-en="Your name">Lähettäjän nimi</label>
