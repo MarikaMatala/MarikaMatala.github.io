@@ -61,6 +61,7 @@ Rakennan uraani IT:n, digitaalisen median ja luovien alojen parissa ja olen valm
 
 Olen kiinnostunut esimerkiksi verkkosivuihin ja digitaalisiin palveluihin, visuaaliseen suunnitteluun, sisällöntuotantoon, valokuvaukseen, videoihin, viestintään ja sosiaaliseen mediaan liittyvistä projekteista. Teen mielelläni myös mainos- ja markkinointitarkoituksiin suunniteltua työtä sekä sovittaessa yhteistyöjulkaisuja ja sponsoroituja postauksia sosiaalisen median kanavissani. Sovimme etukäteen työn sisällöstä, toimitettavista materiaaleista, korvauksesta ja mahdollisesta näkyvyydestä. Kaupalliset yhteistyöt ja sponsoroitu sisältö merkitään asianmukaisesti.
 
+💜 **[Support my work on GitHub Sponsors](https://github.com/sponsors/MarikaMatala)**  
 ☕ **[Support my work on Buy Me a Coffee](https://buymeacoffee.com/marikamatala)**
 
 ---
