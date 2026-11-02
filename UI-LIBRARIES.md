@@ -1,6 +1,6 @@
 # UI-kirjastot, animaatiot ja jatkokehitys
 
-Tämä dokumentti kokoaa portfolion nykyiset toteutustavat, mahdolliset jatkokehityksen kirjastot ja luotettavat dokumentaatiolinkit.
+Tämä dokumentti kokoaa yhteen portfolion nykyiset toteutustavat, mahdolliset jatkokehityksessä käytettävät kirjastot sekä linkit niiden dokumentaatioihin.
 
 ## Portfolion nykyinen toteutus
 
@@ -14,7 +14,7 @@ Sivustossa on jo käytössä:
 - `script.js`: kielenvaihto, työnäytteiden vuorovaikutukset ja hillityt scroll-reveal-animaatiot.
 - PrismJS 1.30.0: C#-koodiesimerkkien syntaksikorostus työnäytteet-sivulla.
 
-Animaatioissa huomioidaan `prefers-reduced-motion`, jotta käyttöjärjestelmän vähennetyn liikkeen asetus saa vähentää tai poistaa liikkeen.
+Animaatioissa huomioidaan `prefers-reduced-motion`-asetus, jonka avulla käyttäjä voi vähentää tai poistaa liikkeen käyttöjärjestelmän asetuksista.
 
 ## Kirjastot tulevaa React/Vite-versiota varten
 
@@ -78,4 +78,4 @@ Tämä on pieni, riippuvuuksista vapaa esimerkki. Lisää se vain koristeellisee
 
 ## English summary
 
-The current portfolio is a lightweight static HTML/CSS/JavaScript site with a readable Lora/Nunito Sans type system and an autumn cottagecore palette. Tailwind CSS v4, Radix/shadcn UI and `lucide-react` are documented as options for a possible future React/Vite version, not as dependencies already installed on the live site. Existing CSS effects are dependency-free and respect reduced-motion preferences. Add third-party images or generated audio only when the assets, intended use and permissions are clear.
+The current portfolio is a lightweight static HTML/CSS/JavaScript website. It uses Lora and Nunito Sans typography and an autumn-inspired cottagecore colour palette. Tailwind CSS v4, Radix/shadcn UI and `lucide-react` are documented as options for a possible future React/Vite version, not as dependencies already installed on the live site. Existing CSS effects are dependency-free and respect reduced-motion preferences. Add third-party images or generated audio only when the assets, intended use and permissions are clear.
