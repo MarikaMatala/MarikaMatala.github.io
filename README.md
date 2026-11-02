@@ -6,13 +6,13 @@
 
 I am an ICT engineer graduate from JAMK with an interest in frontend and web development, application development, UI/UX, visual design, and digital media. My background combines technical skills with experience in visual communication and media production.
 
-I am looking for **entry-level and junior positions, not internships**. My first preference is **on-site and hybrid work in the Helsinki metropolitan area, Finland**. I am also interested in **remote roles and travel-based work opportunities worldwide**.
+I am looking for **entry-level and junior positions**, as well as **paid company trainee, graduate and other early-career programmes or internships open to graduates**, including people who graduated within the past 12 months. I am **not looking for internships required as part of a Finnish university of applied sciences degree**, as I have already graduated, or for **unpaid work or internships**. My first preference is **on-site and hybrid work in the Helsinki metropolitan area, Finland**. I am also interested in **remote roles and travel-based work opportunities worldwide**.
 
 My portfolio is being developed continuously. Selected projects and examples are presented on the website. Some additional work samples are in private repositories and can be requested by message.
 
 Olen JAMKista valmistunut ICT-insinööri. Osaamiseni ja kiinnostuksenkohteeni yhdistävät frontend- ja web-kehityksen, sovelluskehityksen, UI/UX-suunnittelun, visuaalisen suunnittelun sekä digitaalisen median. Taustassani yhdistyvät tekninen osaaminen ja kokemus visuaalisesta viestinnästä sekä mediatuotannosta.
 
-Etsin **entry-tason ja junior-tason työpaikkoja, en harjoittelupaikkoja**. Ensisijaisesti kiinnostavat **paikan päällä tehtävät ja hybridityöt pääkaupunkiseudulla Suomessa**. Olen kiinnostunut myös **etätyöstä ja matkustamista edellyttävistä työtehtävistä maailmanlaajuisesti**.
+Etsin **entry-tason ja junior-tason työpaikkoja** sekä **palkallisia yritysten trainee-, graduate- ja muita uransa alkuvaiheen ohjelmia tai harjoittelupaikkoja**, jotka soveltuvat myös jo valmistuneille tai viimeisen 12 kuukauden aikana valmistuneille. **En etsi AMK-tutkintoon kuuluvia harjoittelupaikkoja**, sillä olen jo valmistunut, enkä **palkattomia töitä tai harjoitteluja**. Ensisijaisesti kiinnostavat **paikan päällä tehtävät ja hybridityöt pääkaupunkiseudulla Suomessa**. Olen kiinnostunut myös **etätyöstä ja matkustamista edellyttävistä työtehtävistä maailmanlaajuisesti**.
 
 Portfolio kehittyy jatkuvasti. Valikoituja projekteja ja työnäytteitä esitellään verkkosivulla. Osa muista työnäytteistä on yksityisissä repositorioissa, ja niitä voi pyytää nähtäväksi viestillä.
 
