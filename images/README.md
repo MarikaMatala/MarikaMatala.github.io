@@ -1,6 +1,6 @@
 # Portfolio images | Portfolion kuvat
 
-This directory contains local assets used by the Portfolio 2026 website. Local paths are preferred so the portfolio does not depend on a separate repository being public.
+This directory contains the local image and document assets used by the Portfolio 2026 website. Using local files means the portfolio does not depend on a separate repository being public.
 
 ## Assets / Sisältö
 
@@ -16,6 +16,6 @@ This directory contains local assets used by the Portfolio 2026 website. Local p
 
 ## Copyright and use | Tekijänoikeudet ja käyttö
 
-Images and projects are my own coursework unless otherwise stated. Some screenshots may show third-party software, coursework or collaborative work; the rights to those elements remain with their respective owners. Do not reuse images without permission from the relevant rights holder.
+The images and projects are my own work or coursework unless otherwise stated. Some screenshots may show third-party software, coursework or collaborative work; the rights to those elements remain with their respective owners. Do not reuse images without permission from the relevant rights holder.
 
-Kuvat ja projektit ovat omia opintotöitäni, ellei toisin mainita. Osa kuvakaappauksista voi esittää kolmansien osapuolten ohjelmistoja tai yhteistyöprojekteja; niiden oikeudet säilyvät asianomaisilla oikeudenhaltijoilla. Älä käytä kuvia uudelleen ilman asianmukaista lupaa.
+Kuvat ja projektit ovat omia töitäni tai opintotöitäni, ellei toisin mainita. Osa kuvakaappauksista voi esittää kolmansien osapuolten ohjelmistoja tai yhteistyöprojekteja; niiden oikeudet säilyvät asianomaisilla oikeudenhaltijoilla. Älä käytä kuvia uudelleen ilman asianmukaista lupaa.
