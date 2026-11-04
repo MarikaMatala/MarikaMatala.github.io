@@ -60,6 +60,16 @@ At each width, check for horizontal overflow, clipped text, overlapping controls
 - [ ] Previous and next C# controls are disabled at the first and last samples.
 - [ ] External project links open the intended destination.
 
+## PDF previews | PDF-esikatselut
+
+- [ ] The Sana Vapaa poster PDF is visible inside its portfolio card.
+- [ ] The audiovisual communications portfolio PDF is visible inside its portfolio card.
+- [ ] Both embedded viewers resize appropriately on mobile and desktop.
+- [ ] Both separate full-document links open the matching PDF.
+- [ ] The Sana Vapaa filename is `Sana-Vapaa-tapahtumajuliste.pdf` in both the iframe and link.
+- [ ] The Sana Vapaa description credits Jyvässeudun 4H-yhdistys's Luotsaamo project, not Ohjaamo.
+- [ ] The PDF previews work in the target mobile browser; if its built-in PDF viewer is unsupported, check the full-document link fallback.
+
 ## Page metadata and publishing | Sivumetadata ja julkaisu
 
 - [ ] Each public page has a unique title and meta description.
