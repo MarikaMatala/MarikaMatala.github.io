@@ -20,16 +20,23 @@ Kehitän portfoliotani jatkuvasti ja lisään verkkosivulle valikoituja projekte
 
 - `index.html` — homepage and short introduction, in Finnish and English
 - `minusta.html` — education, background and self-assessed skills
-- `tyonaytteet.html` — project descriptions, image galleries and interactive C# examples
+- `tyonaytteet.html` — project descriptions, image galleries, interactive C# examples and inline PDF work-sample previews
 - `yhteystiedot.html` — email, LinkedIn, GitHub and job availability
 - `style.css` — responsive layout and shared component styles
 - `autumn-cottagecore.css` — autumn colors, readable typography, cottagecore-inspired details and accessibility refinements
 - `script.js` — persistent language toggle, Android image carousel and interactive OOP examples
-- `images/` — image assets used for portfolio projects
+- `images/` — image assets, the `Sana-Vapaa-tapahtumajuliste.pdf` event poster and the audiovisual communications portfolio PDF
+- `scripts/validate_site.py` and `.github/workflows/site-validation.yml` — automated checks for missing local references and duplicate HTML IDs
 
 ## Development and local preview
 
 See [DEVELOPMENT.md](DEVELOPMENT.md) for instructions on running the static site locally, its file structure, language conventions, accessibility considerations, validation and publishing.
+
+## Recent portfolio updates
+
+The Work Samples page now displays the **Sana Vapaa** event poster and the audiovisual communications portfolio directly in responsive, embedded PDF viewers. The Sana Vapaa poster was created for an event organised as part of the **Luotsaamo project run by Jyvässeudun 4H-yhdistys**. Its PDF asset is named `images/Sana-Vapaa-tapahtumajuliste.pdf`.
+
+The Work Samples page also includes quick links to its main project sections. A GitHub Actions workflow checks local HTML file references and duplicate IDs on pull requests and pushes to `main`. See [DEVELOPMENT.md](DEVELOPMENT.md) and [TESTING.md](TESTING.md) for the current development and QA instructions.
 
 ## Technologies and areas
 
