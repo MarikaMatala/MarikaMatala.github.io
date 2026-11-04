@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://marikamatala.github.io/sitemap.xml
