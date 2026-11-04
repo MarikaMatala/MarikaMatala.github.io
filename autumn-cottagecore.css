@@ -691,3 +691,9 @@ a:not(.hero-index):not(.gothic-button):not(.home-work-cta):not(.sample-pdf-link)
 
 /* Remove the decorative corner square from the Image, Sound and Visual Design samples. */
 .creative-samples-grid .creative-sample::before{display:none!important;content:none!important}
+
+
+/* Display PDF work samples directly inside their portfolio cards. */
+.creative-samples-grid .sample-pdf-embed{width:100%;height:clamp(440px,65vw,760px);overflow:hidden;border:1px solid #526657;border-radius:14px;background:#111914;box-shadow:0 12px 30px rgba(0,0,0,.28)}
+.creative-samples-grid .sample-pdf-embed iframe{display:block;width:100%;height:100%;border:0;background:#111914}
+@media(max-width:600px){.creative-samples-grid .sample-pdf-embed{height: min(78vh,680px);min-height:440px}}
