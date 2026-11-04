@@ -64,6 +64,8 @@ It checks root-level HTML pages for duplicate IDs and missing local `href` and `
 
 The live site is published from the repository's `main` branch using GitHub Pages. Keep published assets and page paths relative to the repository root. After merging a change, allow GitHub Pages a short time to deploy before checking the live site.
 
+For a detailed browser-based verification plan, use [TESTING.md](TESTING.md).
+
 ## Pull request checklist | Pull request -tarkistuslista
 
 - [ ] The change has one clear purpose.
