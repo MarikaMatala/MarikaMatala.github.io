@@ -42,6 +42,12 @@ You can also open `index.html` directly, but using a local server is recommended
 - Keep page titles, meta descriptions, Open Graph metadata and canonical URLs consistent when adding or renaming a page.
 - Give informative images meaningful `alt` text. Use an empty `alt=""` only for decorative images.
 
+## PDF work samples | PDF-työnäytteet
+
+The Work Samples page embeds the Sana Vapaa event poster and the audiovisual communications portfolio in responsive `<iframe>` PDF viewers. Keep the files in `images/` and update both the iframe `src` and the separate full-document link if a PDF is renamed. The Sana Vapaa asset is currently `images/Sana-Vapaa-tapahtumajuliste.pdf`; its event credit belongs to the Luotsaamo project run by Jyvässeudun 4H-yhdistys.
+
+Työnäytteet-sivulla Sana Vapaa -tapahtumajuliste ja audiovisuaalisen viestinnän portfolio näytetään responsiivisissa PDF-kehyksissä (`<iframe>`). Säilytä PDF-tiedostot `images/`-kansiossa ja päivitä sekä kehyksen `src` että erillinen koko tiedoston avauslinkki, jos tiedostonimi muuttuu. Sana Vapaa -julisteen tiedosto on `images/Sana-Vapaa-tapahtumajuliste.pdf`. Tapahtuma on osa Jyvässeudun 4H-yhdistyksen Luotsaamo-hanketta.
+
 ## Styling and accessibility | Tyylit ja saavutettavuus
 
 - Prefer shared styles in the existing CSS files instead of adding one-off inline styles.
