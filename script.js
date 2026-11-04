@@ -13,6 +13,11 @@ function setLanguage(language) {
   currentLanguage = language;
   try { localStorage.setItem('portfolio-language', language); } catch (error) { /* storage may be disabled */ }
   document.documentElement.lang = language;
+  const pageTitle = document.querySelector('title');
+  if (pageTitle) {
+    const localizedTitle = pageTitle.dataset[language + 'Title'];
+    if (localizedTitle) pageTitle.textContent = localizedTitle;
+  }
   document.querySelectorAll('[data-fi][data-en]').forEach((element) => {
     const value = element.dataset[language];
     if (value !== undefined) element.innerHTML = value;
