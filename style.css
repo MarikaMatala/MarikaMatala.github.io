@@ -2666,3 +2666,11 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
   .skills-category-icon{flex-basis:32px;width:32px;height:32px;font-size:.95rem}
   .skills-toggle{width:32px;height:32px}
 }
+
+
+/* Quick links make the long work-samples page easier to scan and navigate. */
+.project-jump-nav{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 28px;padding:16px;border:1px solid rgba(206,129,71,.42);background:rgba(12,13,16,.72)}
+.project-jump-nav a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 14px;border:1px solid rgba(206,129,71,.55);border-radius:3px;color:#f0e9df;text-decoration:none;font-size:.88rem;font-weight:700;transition:background .2s ease,border-color .2s ease,color .2s ease}
+.project-jump-nav a:hover,.project-jump-nav a:focus-visible{background:rgba(206,129,71,.16);border-color:#e7a16d;color:#fff;text-decoration:underline;text-underline-offset:4px}
+@media(max-width:560px){.project-jump-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:12px}.project-jump-nav a{padding:9px 8px;text-align:center;font-size:.78rem}}
+@media(prefers-reduced-motion:reduce){.project-jump-nav a{transition:none}}
