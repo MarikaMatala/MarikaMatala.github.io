@@ -687,3 +687,7 @@ a:not(.hero-index):not(.gothic-button):not(.home-work-cta):not(.sample-pdf-link)
  color:#F0BB88!important;text-decoration-color:#F0BB88!important;
 }
 .site-header nav a[aria-current="page"]{color:#E6A06A!important}
+
+
+/* Remove the decorative corner square from the Image, Sound and Visual Design samples. */
+.creative-samples-grid .creative-sample::before{display:none!important;content:none!important}
