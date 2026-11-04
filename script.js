@@ -143,6 +143,11 @@ if (oopBrowser) {
   overlay.setAttribute('aria-modal', 'true');
   overlay.setAttribute('aria-label', 'Suurenna kuva / Enlarge image');
 
+  const closeButton = document.createElement('button');
+  closeButton.className = 'lightbox-close';
+  closeButton.type = 'button';
+  closeButton.textContent = '×';
+  closeButton.setAttribute('aria-label', 'Sulje suurennettu kuva');
   const help = document.createElement('span');
   help.className = 'lightbox-help';
   const enlarged = document.createElement('img');
@@ -150,7 +155,7 @@ if (oopBrowser) {
   const rights = document.createElement('div');
   rights.className = 'lightbox-rights';
   rights.innerHTML = '<strong>© MM · Tekijänoikeudet / Copyright</strong><span class="rights-copy-fi">Koodit ja visuaaliset työt ovat itse tekemiäni harrastusprojekteja tai opintojen harjoitustöitä, ellei toisin mainita. Kuvat ovat omiani, ellei kuvan tai projektin yhteydessä toisin ilmoiteta. Yhteistyö- ja kolmansien osapuolten materiaalien oikeudet säilyvät niiden omilla oikeudenhaltijoilla. Älä käytä materiaaleja uudelleen ilman lupaa.</span><span class="rights-copy-en" hidden>Code and visual work are created by me as personal projects or coursework unless otherwise credited. Images are my own unless stated otherwise alongside the image or project. Rights to collaborative and third-party materials remain with their respective owners. Please do not reuse materials without permission.</span>';
-  overlay.append(help, enlarged, rights);
+  overlay.append(closeButton, help, enlarged, rights);
   document.body.appendChild(overlay);
 
   let previousFocus = null;
@@ -160,14 +165,17 @@ if (oopBrowser) {
     enlarged.src = image.currentSrc || image.src;
     enlarged.alt = image.alt || 'Portfolio image';
     help.textContent = currentLanguage === 'fi'
-      ? 'Sulje napsauttamalla kuvaa tai taustaa · ESC'
-      : 'Click image or backdrop to close · ESC';
+      ? 'Sulje Sulje-painikkeella tai painamalla ESC'
+      : 'Use the Close button or press ESC';
+    closeButton.setAttribute('aria-label', currentLanguage === 'fi' ? 'Sulje suurennettu kuva' : 'Close enlarged image');
     rights.querySelector('.rights-copy-fi').hidden = currentLanguage !== 'fi';
     rights.querySelector('.rights-copy-en').hidden = currentLanguage !== 'en';
     overlay.hidden = false;
-    overlay.focus();
+    closeButton.focus();
     document.body.style.overflow = 'hidden';
   }
+
+  closeButton.addEventListener('click', closeImage);
 
   function closeImage() {
     if (overlay.hidden) return;
@@ -202,6 +210,11 @@ if (oopBrowser) {
     if (!overlay.hidden && event.key === 'Escape') {
       event.preventDefault();
       closeImage();
+      return;
+    }
+    if (!overlay.hidden && event.key === 'Tab') {
+      event.preventDefault();
+      closeButton.focus();
       return;
     }
     const image = event.target.closest && event.target.closest('main img.image-zoomable');
