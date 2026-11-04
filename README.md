@@ -27,6 +27,10 @@ Kehitän portfoliotani jatkuvasti ja lisään verkkosivulle valikoituja projekte
 - `script.js` — persistent language toggle, Android image carousel and interactive OOP examples
 - `images/` — image assets used for portfolio projects
 
+## Development and local preview
+
+See [DEVELOPMENT.md](DEVELOPMENT.md) for instructions on running the static site locally, its file structure, language conventions, accessibility considerations, validation and publishing.
+
 ## Technologies and areas
 
 HTML · CSS · JavaScript · C# examples · Git · GitHub Pages · PrismJS · Web and application development · UI/UX · Visual design · Digital media
