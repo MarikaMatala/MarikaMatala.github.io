@@ -460,6 +460,9 @@ img.image-zoomable{cursor:zoom-in}
 img.image-zoomable:focus-visible{outline:3px solid #B6FF3B;outline-offset:4px}
 .image-lightbox{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:clamp(12px,3vw,36px);background:rgba(3,4,6,.94);cursor:zoom-out}
 .image-lightbox[hidden]{display:none}
+.image-lightbox .lightbox-close{position:absolute;top:14px;left:14px;z-index:2;display:grid;place-items:center;width:48px;height:48px;border:2px solid #B6FF3B;border-radius:50%;background:#12150f;color:#F0F0E8;font:700 2rem/1 sans-serif;cursor:pointer}
+.image-lightbox .lightbox-close:hover,.image-lightbox .lightbox-close:focus-visible{background:#B6FF3B;color:#090A0F}
+.image-lightbox .lightbox-close:focus-visible{outline:3px solid #F0F0E8;outline-offset:4px}
 .image-lightbox img{display:block;max-width:96vw;max-height:92vh;width:auto;height:auto;object-fit:contain;box-shadow:0 12px 60px #000b;cursor:zoom-out}
 .image-lightbox .lightbox-help{position:absolute;top:12px;right:16px;color:#F0F0E8;background:#12150f;border:1px solid #536341;padding:9px 12px;font-size:.76rem;line-height:1.5}
 .image-lightbox:focus-visible{outline:3px solid #B6FF3B;outline-offset:-6px}
