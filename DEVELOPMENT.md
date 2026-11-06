@@ -64,7 +64,7 @@ The repository includes a dependency-free validation script:
 python scripts/validate_site.py
 ```
 
-It checks root-level HTML pages for duplicate IDs and missing local `href` and `src` targets. GitHub Actions runs the same check on pull requests and pushes to `main`.
+It checks root-level HTML pages for duplicate IDs, missing local `href` and `src` targets, and broken fragment links to IDs on the same site. GitHub Actions runs the same check on pull requests and pushes to `main`.
 
 ## Publishing | Julkaisu
 
