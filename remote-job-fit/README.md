@@ -1,5 +1,7 @@
 # Remote Job Fit — project templates
 
+<!-- Last updated: 2026-11-06 20:27 (Europe/Helsinki). -->
+
 This folder contains **optional setup templates** for future development of the Remote Job Fit project.
 
 ## Current demo status
