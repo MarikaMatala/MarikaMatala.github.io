@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; form-action 'none'; script-src 'self'; style-src 'self'; img-src 'none'; connect-src 'none';">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Remote Job Fit — Browser Demo</title>
+  <link rel="stylesheet" href="remote-job-fit-demo.css">
+  <script src="remote-job-fit-demo.js" defer></script>
+</head>
+<body>
+  <main class="demo-shell">
+    <header class="demo-heading">
+      <div>
+        <p class="eyebrow" data-fi="INTERAKTIIVINEN DEMO · KESKENERÄINEN PROJEKTI" data-en="INTERACTIVE DEMO · WORK IN PROGRESS">INTERAKTIIVINEN DEMO · KESKENERÄINEN PROJEKTI</p>
+        <h1>Remote Job Fit</h1>
+        <p data-fi="Kokeile, miten oma osaamisprofiili voidaan vertailla työpaikkailmoituksen tekstiin. Tämä on selaimessa toimiva esittelyversio, ei vielä varsinainen työpaikkahaku." data-en="Explore how a skills profile can be compared with a job description. This is a browser-based prototype, not a live job search service.">Kokeile, miten oma osaamisprofiili voidaan vertailla työpaikkailmoituksen tekstiin. Tämä on selaimessa toimiva esittelyversio, ei vielä varsinainen työpaikkahaku.</p>
+      </div>
+      <button class="language-button" id="demo-language" type="button" aria-label="Switch language">FIN / ENG</button>
+    </header>
+
+    <div class="privacy-banner" role="note">
+      <strong data-fi="Yksityisyys:" data-en="Privacy:">Yksityisyys:</strong>
+      <span data-fi="Kirjoittamasi tiedot käsitellään vain tässä selaimen välilehdessä. Niitä ei lähetetä palvelimelle, tallenneta tai lisätä GitHub-repositorioon. Sivun päivittäminen tyhjentää kentät." data-en="Your entries are processed only in this browser tab. They are not sent to a server, stored, or added to the GitHub repository. Refreshing the page clears the fields.">Kirjoittamasi tiedot käsitellään vain tässä selaimen välilehdessä. Niitä ei lähetetä palvelimelle, tallenneta tai lisätä GitHub-repositorioon. Sivun päivittäminen tyhjentää kentät.</span>
+    </div>
+
+    <form id="fit-form" autocomplete="off">
+      <div class="form-grid">
+        <label>
+          <span data-fi="Tavoiteltu tehtävänimike" data-en="Target job title">Tavoiteltu tehtävänimike</span>
+          <input id="target-title" type="text" maxlength="100" placeholder="e.g. Junior Frontend Developer" data-fi-placeholder="esim. Junior Frontend Developer" data-en-placeholder="e.g. Junior Frontend Developer">
+        </label>
+        <label>
+          <span data-fi="Osaamiset ja teknologiat (pilkuilla eroteltuna)" data-en="Skills and technologies (comma-separated)">Osaamiset ja teknologiat (pilkuilla eroteltuna)</span>
+          <textarea id="skills" rows="3" maxlength="1500" placeholder="HTML, CSS, JavaScript, React, REST API, MySQL" data-fi-placeholder="HTML, CSS, JavaScript, React, REST API, MySQL" data-en-placeholder="HTML, CSS, JavaScript, React, REST API, MySQL"></textarea>
+        </label>
+        <label>
+          <span data-fi="Tärkeät hakusanat (valinnainen)" data-en="Important keywords (optional)">Tärkeät hakusanat (valinnainen)</span>
+          <input id="must-have" type="text" maxlength="500" placeholder="e.g. remote, junior, accessibility">
+        </label>
+        <label>
+          <span data-fi="Poissuljettavat sanat (valinnainen)" data-en="Words to exclude (optional)">Poissuljettavat sanat (valinnainen)</span>
+          <input id="exclude" type="text" maxlength="500" placeholder="e.g. senior, unpaid, internship">
+        </label>
+      </div>
+
+      <label class="job-description">
+        <span data-fi="Liitä työpaikkailmoituksen teksti (valinnainen)" data-en="Paste a job description (optional)">Liitä työpaikkailmoituksen teksti (valinnainen)</span>
+        <textarea id="custom-job" rows="5" maxlength="6000" placeholder="Paste a job title and description here. The text stays in this browser tab." data-fi-placeholder="Liitä tähän työpaikan nimi ja ilmoituksen teksti. Teksti pysyy tässä selaimen välilehdessä." data-en-placeholder="Paste a job title and description here. The text stays in this browser tab."></textarea>
+      </label>
+
+      <div class="actions">
+        <button class="primary-button" type="submit" data-fi="Arvioi sopivuus" data-en="Calculate match">Arvioi sopivuus</button>
+        <button class="secondary-button" id="reset-demo" type="reset" data-fi="Tyhjennä kentät" data-en="Clear fields">Tyhjennä kentät</button>
+      </div>
+    </form>
+
+    <section class="results-section" aria-live="polite" aria-labelledby="results-title">
+      <div class="results-heading">
+        <div>
+          <p class="eyebrow" data-fi="ESIMERKKIARVIOINTI" data-en="DEMO RESULTS">ESIMERKKIARVIOINTI</p>
+          <h2 id="results-title" data-fi="Sopivuusvertailu" data-en="Job fit comparison">Sopivuusvertailu</h2>
+        </div>
+        <span class="demo-tag" data-fi="Ei oikeita työpaikkailmoituksia" data-en="No live job listings">Ei oikeita työpaikkailmoituksia</span>
+      </div>
+      <div id="results" class="results-list">
+        <p class="empty-state" data-fi="Täytä osaamisesi ja paina “Arvioi sopivuus”. Voit käyttää esimerkkitehtäviä tai liittää oman ilmoitustekstin." data-en="Enter your skills and select “Calculate match”. You can use the sample roles or paste your own job description.">Täytä osaamisesi ja paina “Arvioi sopivuus”. Voit käyttää esimerkkitehtäviä tai liittää oman ilmoitustekstin.</p>
+      </div>
+    </section>
+
+    <footer class="demo-footer">
+      <p data-fi="WORK IN PROGRESS — EXPERIMENTAL. Sopivuusprosentti perustuu yksinkertaiseen hakusanojen vertailuun. Se ei ole rekrytointipäätös, työllistymistodennäköisyys eikä arvio hakijan todellisesta osaamistasosta." data-en="WORK IN PROGRESS — EXPERIMENTAL. Match percentages use simple keyword comparison. They are not hiring decisions, employment probabilities, or assessments of actual skill level.">WORK IN PROGRESS — EXPERIMENTAL. Sopivuusprosentti perustuu yksinkertaiseen hakusanojen vertailuun. Se ei ole rekrytointipäätös, työllistymistodennäköisyys eikä arvio hakijan todellisesta osaamistasosta.</p>
+      <p><a href="https://github.com/MarikaMatala/remote-job-fit" target="_blank" rel="noopener noreferrer">View the source project on GitHub ↗</a></p>
+    </footer>
+  </main>
+</body>
+</html>
