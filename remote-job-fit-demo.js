@@ -137,11 +137,11 @@ function tokenise(value) {
 function scoreRole(role, skills, targetTitle, mustHave, excluded) {
   const searchable = (role.title + " " + role.text).toLowerCase();
   const detectedTerms = vocabulary.extractSkills(searchable).map(item => item.canonical.toLowerCase());
-  const matchesTerm = term => searchable.includes(term) || detectedTerms.includes(term);
+  const matchesTerm = term => vocabulary.containsPhrase(searchable, term) || detectedTerms.includes(term);
   const excludedMatches = excluded.filter(matchesTerm);
   const matchedSkills = skills.filter(matchesTerm);
   const titleTerms = tokenise(vocabulary.normalizeRoleTitle(targetTitle)).filter(term => term.length > 2);
-  const matchedTitle = titleTerms.filter(term => searchable.includes(term) || detectedTerms.includes(term));
+  const matchedTitle = titleTerms.filter(term => vocabulary.containsPhrase(searchable, term) || detectedTerms.includes(term));
   const matchedMust = mustHave.filter(matchesTerm);
   const components = [];
   if (skills.length) components.push({ value: matchedSkills.length / skills.length, weight: 70 });
