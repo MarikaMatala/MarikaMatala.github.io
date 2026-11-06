@@ -192,6 +192,15 @@ document.getElementById("demo-language").addEventListener("click",()=>setLanguag
 window.addEventListener("message",event=>{
  if(event.data?.type==="portfolio-language")setLanguage(event.data.language);
 });
+const alphabetJumpInput=document.getElementById("alphabet-jump-input");
+alphabetJumpInput.addEventListener("input",()=>{
+ const letter=alphabetJumpInput.value.trim().toLocaleUpperCase("fi");
+ if(!/^[A-ZÅÄÖ]$/.test(letter))return;
+ sortSelect.value="title";
+ renderCatalogue();
+ const target=document.getElementById("catalogue-letter-"+letter);
+ if(target)target.scrollIntoView({behavior:"smooth",block:"start"});
+});
 populateReviewSelect();renderCatalogue();renderLocalReviews();renderLocalSuggestions();
 // Request the portfolio language after the embedded page has loaded.
 if (window.parent !== window) window.parent.postMessage({type:"remote-job-fit-language-request"},"*");
