@@ -2745,3 +2745,81 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
   letter-spacing: .01em;
   opacity: .82;
 }
+
+/* Final header layout: keep the two-line wordmark and controls readable without crowding. */
+@media(max-width:1100px){
+  .site-header{
+    display:flex;
+    align-items:center;
+    gap:clamp(8px,1.5vw,14px);
+    min-height:68px;
+    height:auto;
+    padding:8px 4vw;
+  }
+  .site-header nav#primary-navigation{
+    display:none;
+    position:absolute;
+    top:100%;
+    right:4vw;
+    left:4vw;
+    z-index:31;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+    padding:10px;
+    border:1px solid #754056;
+    background:#120b14;
+    box-shadow:0 18px 38px #000b;
+  }
+  .site-header nav#primary-navigation.is-open{display:flex}
+  .site-header .wordmark.full-name{
+    flex:1 1 auto;
+    min-width:0;
+    margin-left:0;
+    align-items:flex-start;
+    text-align:left;
+    white-space:nowrap;
+    font-size:clamp(.78rem,1.5vw,1rem);
+    line-height:1.12;
+  }
+  .site-header .language-toggle{
+    order:3;
+    flex:0 0 auto;
+    min-width:0;
+    min-height:36px;
+    height:36px;
+    padding:5px 9px;
+    font-size:.65rem;
+  }
+  .site-header .menu-toggle{
+    display:flex;
+    order:4;
+    flex:0 0 42px;
+    width:42px;
+    height:42px;
+  }
+}
+@media(max-width:560px){
+  .site-header{gap:7px;padding:7px 3vw}
+  .site-header .metal-rose-mark{width:38px;height:46px;flex:0 0 38px}
+  .site-header .metal-rose-mark img{width:38px;height:46px}
+  .site-header .wordmark.full-name{
+    font-size:clamp(.68rem,3.1vw,.82rem);
+    letter-spacing:-.025em;
+  }
+  .site-header .wordmark.full-name .wordmark-subtitle{
+    font-size:.58em;
+    letter-spacing:.015em;
+  }
+  .site-header .language-toggle{padding:4px 7px;min-height:34px;height:34px}
+  .site-header .language-label{font-size:.58rem}
+  .site-header .menu-toggle{width:38px;height:38px;flex-basis:38px;padding:8px}
+}
+@media(max-width:360px){
+  .site-header{gap:5px;padding-inline:2.5vw}
+  .site-header .metal-rose-mark{width:34px;height:42px;flex-basis:34px}
+  .site-header .metal-rose-mark img{width:34px;height:42px}
+  .site-header .wordmark.full-name{font-size:.66rem}
+  .site-header .language-toggle{padding-inline:5px}
+  .site-header .menu-toggle{width:36px;height:36px;flex-basis:36px}
+}
