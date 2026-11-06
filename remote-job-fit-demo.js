@@ -3,6 +3,7 @@ const form = document.getElementById("fit-form");
 const results = document.getElementById("results");
 const languageButton = document.getElementById("demo-language");
 let language = "fi";
+let lastEvaluated = [];
 
 const sampleRoles = [
   { title: "Junior Frontend Developer", company: "Illustrative sample role", text: "Build responsive web interfaces with HTML CSS JavaScript TypeScript React accessibility Git and REST API integrations. Collaborate with designers and backend developers." },
@@ -55,7 +56,10 @@ function renderRole(role, result, isCustom = false) {
   top.className = "result-top";
   const heading = document.createElement("div");
   addText(heading, "h3", "", role.title);
-  addText(heading, "p", "", role.company);
+  const companyLabel = isCustom
+    ? copy[language].customCompany
+    : language === "fi" ? "Esimerkkitehtävä" : "Illustrative sample role";
+  addText(heading, "p", "", companyLabel);
   top.appendChild(heading);
   addText(top, "span", "score", result.score + "%");
   card.appendChild(top);
@@ -79,6 +83,7 @@ form.addEventListener("submit", event => {
   const excluded = terms(document.getElementById("exclude").value);
   const customText = document.getElementById("custom-job").value.trim();
   if (!skills.length && !customText) {
+    lastEvaluated = [];
     results.replaceChildren();
     addText(results, "p", "empty-state", copy[language].missing);
     return;
@@ -88,12 +93,13 @@ form.addEventListener("submit", event => {
     const firstLine = customText.split(/\r?\n/).map(line => line.trim()).find(Boolean) || copy[language].custom;
     roles.unshift({ title: firstLine.slice(0, 100), company: copy[language].customCompany, text: customText });
   }
-  const evaluated = roles.map(role => ({ role, result: scoreRole(role, skills, targetTitle, mustHave, excluded), custom: role.company === copy[language].customCompany }));
-  evaluated.sort((a,b) => b.result.score - a.result.score);
-  results.replaceChildren(...evaluated.map(item => renderRole(item.role, item.result, item.custom)));
+  lastEvaluated = roles.map(role => ({ role, result: scoreRole(role, skills, targetTitle, mustHave, excluded), custom: role.company === copy[language].customCompany }));
+  lastEvaluated.sort((a,b) => b.result.score - a.result.score);
+  results.replaceChildren(...lastEvaluated.map(item => renderRole(item.role, item.result, item.custom)));
 });
 document.getElementById("reset-demo").addEventListener("click", () => {
   window.setTimeout(() => {
+    lastEvaluated = [];
     results.replaceChildren();
     addText(results, "p", "empty-state", language === "fi" ? "Kentät tyhjennetty. Täytä osaamisesi ja kokeile uudelleen." : "Fields cleared. Enter your skills and try again.");
   }, 0);
@@ -103,6 +109,10 @@ languageButton.addEventListener("click", () => {
   document.documentElement.lang = language;
   document.querySelectorAll("[data-fi][data-en]").forEach(element => { element.textContent = element.dataset[language]; });
   document.querySelectorAll("[data-fi-placeholder][data-en-placeholder]").forEach(element => { element.placeholder = element.dataset[language + "Placeholder"]; });
-  const state = results.querySelector(".empty-state");
-  if (state) state.textContent = language === "fi" ? "Täytä osaamisesi ja paina “Arvioi sopivuus”." : "Enter your skills and select “Calculate match”.";
+  if (lastEvaluated.length) {
+    results.replaceChildren(...lastEvaluated.map(item => renderRole(item.role, item.result, item.custom)));
+  } else {
+    const state = results.querySelector(".empty-state");
+    if (state) state.textContent = language === "fi" ? "Täytä osaamisesi ja paina “Arvioi sopivuus”." : "Enter your skills and select “Calculate match”.";
+  }
 });
