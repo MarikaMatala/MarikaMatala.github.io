@@ -848,7 +848,6 @@ body:after{opacity:.055}
   flex-direction:column;gap:14px;padding:clamp(18px,4vw,42px);
   background:#070609F2;backdrop-filter:blur(12px);cursor:zoom-out;overflow:auto;
 }
-.image-lightbox[hidden]{display:none}
 .image-lightbox img{
   max-width:min(88vw,1000px);max-height:70vh;object-fit:contain;
   border:1px solid #d47a42;padding:8px;background:#171116;box-shadow:0 0 70px #d47a4220;
@@ -1540,12 +1539,10 @@ h1 em,h2 em,.work-page-intro h1 em,.contact-page h1 em{color:#c77c8a;font-style:
 #projects .project-card .skill-list span{font-size:.65rem;padding:5px 8px}
 #projects .android-carousel{order:0;width:100%;border:0;border-bottom:1px solid #493241}
 #projects .android-carousel-stage{height:clamp(210px,25vw,310px);min-height:clamp(210px,25vw,310px);padding:16px 42px;background:#100b12}
-#projects .android-carousel-stage img{max-height:100%;width:100%;object-fit:contain}
 #projects .android-project-copy{order:1;padding:0 0 18px;width:100%}
 #projects .android-project-copy h3{font-size:clamp(1.1rem,1.7vw,1.55rem)}
 #projects .carousel-hint{font-size:.75rem!important}
 #projects .branding-gallery{min-height:clamp(150px,18vw,220px);padding:14px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:center;background:#100b12}
-#projects .branding-gallery figure{margin:0;min-width:0}
 #projects .branding-gallery img{width:100%;height:clamp(120px,15vw,180px);object-fit:contain}
 #projects .branding-gallery figcaption{font-size:.68rem}
 #projects .project-coming .coming-art{min-height:clamp(150px,18vw,220px);padding:18px;display:flex;align-items:center;justify-content:center;gap:clamp(10px,2vw,28px)}
@@ -1610,7 +1607,6 @@ h1 em,h2 em{color:#d18ba0}
 .portrait-caption{color:#d0b9c8}
 .about-section{background:linear-gradient(112deg,rgba(33,17,29,.9),rgba(14,10,17,.94) 58%,rgba(30,16,34,.9));border-top:1px solid #513247;border-bottom:1px solid #513247}
 .about-section:before{border-color:#9e6b8628}
-.about-section h2,.section-heading h2,.contact-section h2{font-family:var(--display);letter-spacing:-.015em;line-height:1.12}
 .about-section h2 em,.section-heading h2 em,.contact-section h2 em{color:#d18ba0}
 .gothic-button{border-color:#80506a;background:linear-gradient(135deg,#2a1424,#170d18);color:#f1e8ed}
 .gothic-button:hover{background:linear-gradient(135deg,#432038,#211021);border-color:#d091aa}
@@ -1710,7 +1706,6 @@ a:focus-visible,button:focus-visible{outline-color:#e2a8b8}
 @media(prefers-reduced-motion:reduce){
   .home-about-emblem span:first-child{animation:none}
   .gothic-button,.project-card{transition:none!important}
-  html{scroll-behavior:auto}
 }
 
 /* PrismJS C# syntax highlighting — coordinated with the dark burgundy palette. */
@@ -1728,7 +1723,6 @@ a:focus-visible,button:focus-visible{outline-color:#e2a8b8}
 /* Final readability pass: consistent skill ratings and compact, aligned sample cards. */
 .skills-grid-detailed{align-items:stretch;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,2vw,22px)}
 .skills-grid-detailed .skills-card{height:100%;padding:clamp(16px,2vw,24px);min-width:0}
-.skills-grid-detailed .skills-card:last-child{grid-column:1/-1}
 .skills-grid-detailed .skill-row{gap:10px;padding:9px 0}
 .skills-grid-detailed .skill-name{font-size:clamp(.82rem,1vw,.94rem)}
 .skills-grid-detailed .skill-bars i{width:8px;height:14px}
@@ -1755,14 +1749,10 @@ a:focus-visible,button:focus-visible{outline-color:#e2a8b8}
 .contact-method{height:100%;display:flex;flex-direction:column;align-items:flex-start}
 .contact-method a{overflow-wrap:anywhere;word-break:break-word}
 @media(max-width:760px){
-  .skills-grid-detailed{grid-template-columns:minmax(0,1fr)}
-  .skills-grid-detailed .skills-card:last-child{grid-column:auto}
-  #projects .project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   #projects .project-card{padding:14px}
 }
 @media(max-width:540px){
   .skills-grid-detailed{grid-template-columns:minmax(0,1fr)}
-  #projects .project-grid{grid-template-columns:minmax(0,1fr)}
 }
 
 
@@ -1868,7 +1858,7 @@ a:hover{color:#d6bba5}
 .site-footer{border-top-color:#3d2528}
 .hero-copy::after{color:#a9c2a0}
 @media(max-width:640px){.site-header::before{font-size:1rem}}
-@media(prefers-reduced-motion:reduce){.site-header::before{animation:none;display:none}body{background-attachment:scroll}}
+@media(prefers-reduced-motion:reduce){.site-header::before{animation:none;display:none}}
 
 
 /* Skills page: keep long labels readable beside the fixed five-step rating. */
@@ -2304,9 +2294,6 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
 .skills-grid-detailed .skills-card{min-width:0;height:100%}
 .skills-grid-detailed .skill-row{min-width:0}
 .skills-grid-detailed .skill-name{overflow-wrap:anywhere}
-@media(max-width:760px){
-  .skills-grid-detailed .skills-card:last-child{grid-column:auto}
-}
 
 
 /* Contact page: make the preferred contact route visually clear. */
@@ -2837,7 +2824,6 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
     letter-spacing:.015em;
   }
   .site-header .language-toggle{padding:4px 7px;min-height:34px;height:34px}
-  .site-header .language-label{font-size:.58rem}
   .site-header .menu-toggle{width:38px;height:38px;flex-basis:38px;padding:8px}
 }
 @media(max-width:360px){
