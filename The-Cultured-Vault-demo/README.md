@@ -1,6 +1,6 @@
 # The Cultured Vault — installable demo
 
-<!-- Last updated: 2026-11-06 21:00 (Europe/Helsinki). -->
+<!-- Last updated: 2026-11-06. -->
 
 > Culture worth discovering. Stories worth remembering.
 
@@ -15,7 +15,7 @@ The Cultured Vault is an open-source cultural catalogue concept. This folder con
 
 This is a lightweight front-end prototype. It does not require a framework, build process or third-party JavaScript package. It includes:
 
-- a 500-entry sample catalogue with multiple media categories, including 486 additions across films, series, animation, documentaries, podcasts, music albums, games and books; the selection also features cult television, films and cartoons from the 1980s, 1990s and 2000s;
+- a 550-entry sample catalogue with multiple media categories, including 536 additions across films, series, animation, documentaries, podcasts, music albums, games and books; the expanded selection includes Studio Ghibli and Disney animation, 1990s and 2000s nostalgia films, supernatural and cult series, and internationally popular Netflix titles such as Stranger Things, Wednesday, Squid Game, Dark and Bridgerton;
 - search by title, creator, country and genre;
 - category filters and sorting, with alphabetical title order as the default;
 - an A–Z / Å–Ä–Ö letter index and a 0–9 numeric index; both jump to matching catalogue groups, disable unavailable entries and follow the current search and category filters; the sticky indexes remain accessible while scrolling;
