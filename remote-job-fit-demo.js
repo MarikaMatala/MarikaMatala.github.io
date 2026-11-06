@@ -2,7 +2,7 @@
 const form = document.getElementById("fit-form");
 const results = document.getElementById("results");
 const languageButton = document.getElementById("demo-language");
-let language = "fi";
+let language = new URLSearchParams(window.location.search).get("lang") === "en" ? "en" : "fi";
 let lastEvaluated = [];
 
 
@@ -255,4 +255,19 @@ languageButton.addEventListener("click", () => {
     const state = results.querySelector(".empty-state");
     if (state) state.textContent = language === "fi" ? "Täytä osaamisesi ja paina “Arvioi sopivuus”." : "Enter your skills and select “Calculate match”.";
   }
+});
+
+
+// Keep the embedded demo language aligned with the portfolio page.
+window.addEventListener("message", (event) => {
+  if (event.data && event.data.type === "portfolio-language" && (event.data.language === "fi" || event.data.language === "en")) {
+    if (language !== event.data.language) {
+      language = event.data.language;
+      renderLanguage();
+      if (lastEvaluated.length) renderResults(lastEvaluated);
+    }
+  }
+});
+window.addEventListener("load", () => {
+  try { window.parent.postMessage({ type: "remote-job-fit-language-request" }, "*"); } catch (error) { /* standalone demo */ }
 });
