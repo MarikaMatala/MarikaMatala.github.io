@@ -2676,3 +2676,17 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
 .project-jump-nav a:hover,.project-jump-nav a:focus-visible{background:rgba(206,129,71,.16);border-color:#e7a16d;color:#fff;text-decoration:underline;text-underline-offset:4px}
 @media(max-width:560px){.project-jump-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:12px}.project-jump-nav a{padding:9px 8px;text-align:center;font-size:.78rem}}
 @media(prefers-reduced-motion:reduce){.project-jump-nav a{transition:none}}
+
+
+/* Keep the longer portfolio wordmark compact so the mobile menu button has room. */
+.site-header > .wordmark.full-name{
+  font-size:clamp(.82rem,1.25vw,1rem);
+  letter-spacing:-.04em;
+  min-width:0;
+}
+@media(max-width:540px){
+  .site-header > .wordmark.full-name{
+    font-size:clamp(.58rem,2.7vw,.72rem);
+    letter-spacing:-.045em;
+  }
+}
