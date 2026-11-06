@@ -120,3 +120,13 @@ select,input,textarea{background:#151310;color:var(--text);border:1px solid var(
 .suggestion-form>div:first-child{grid-column:1/-1}
 .suggestion-form h3{margin:0 0 5px;font-size:1.4rem}
 .suggestion-form p{margin:5px 0;color:var(--muted);font-size:.86rem}
+
+/* 13. Alphabetical catalogue navigation and letter group headings. */
+.alphabet-nav{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:18px 0 16px;padding:12px;border:1px solid var(--line);border-radius:12px;background:rgba(33,30,25,.82)}
+.alphabet-nav[hidden]{display:none}
+.alphabet-label{width:100%;color:var(--muted);font-size:.78rem;font-weight:800;letter-spacing:.06em}
+.alphabet-link{min-width:34px;min-height:34px;padding:4px 7px;border:1px solid var(--line);border-radius:8px;background:var(--panel-2);color:var(--text);font-weight:800;cursor:pointer}
+.alphabet-link:not(:disabled):hover{border-color:var(--gold);color:var(--gold)}
+.alphabet-link:disabled{opacity:.28;cursor:not-allowed}
+.catalogue-letter-heading{grid-column:1/-1;margin:22px 0 2px;padding:7px 12px;border-bottom:1px solid var(--line);border-left:3px solid var(--bronze);color:var(--gold);font-size:1.35rem;scroll-margin-top:18px}
+@media(max-width:600px){.alphabet-nav{gap:5px;padding:10px}.alphabet-link{min-width:31px;min-height:32px;padding:3px 5px}.catalogue-letter-heading{margin-top:16px}}
