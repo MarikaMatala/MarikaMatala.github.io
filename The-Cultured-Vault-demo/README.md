@@ -19,7 +19,7 @@ This is a lightweight front-end prototype. It does not require a framework, buil
 - search by title, creator, country and genre;
 - category filters and sorting, with alphabetical title order as the default;
 - an A–Z / Å–Ä–Ö letter index and a 0–9 numeric index; both jump to matching catalogue groups, disable unavailable entries and follow the current search and category filters; the sticky indexes remain accessible while scrolling;
-- separate sample ratings for the instance owner and the community;
+- separate owner ratings plus external IMDb and Rotten Tomatoes reference ratings;
 - a form for adding a personal demo rating and optional comment;
 - Finnish and English interface text;
 - responsive layouts for phones, tablets and desktop browsers;
@@ -169,6 +169,9 @@ Open app.js and find the works array near the top. An entry follows this structu
   country: "Country",
   owner: null,
   imdbRating: null,
+  rottenTomatoesCritics: null,
+  rottenTomatoesAudience: null,
+  rottenTomatoesUrl: null,
   ownerReview: ""
 }
 ~~~
@@ -246,9 +249,9 @@ For an independent fork, use your own hosting, domain, database and API credenti
 **Open the vault. Discover something extraordinary.**
 
 
-## Personal and IMDb ratings
+## Personal, IMDb and Rotten Tomatoes ratings
 
-Every catalogue entry starts with the instance-owner status **Not rated yet**. No personal owner score or review text is prefilled. IMDb ratings, when present, are shown separately. IMDb user ratings are shown separately and are never presented as the owner's rating or as a community average. The displayed IMDb values are a static reference snapshot; ratings change over time. A dash means that no verified IMDb value has been added to this demo, not a zero score. Each work has an IMDb search link for checking the current rating. IMDb rating data is sourced from IMDb chart/list pages; official non-commercial dataset details and terms are available at https://developer.imdb.com/non-commercial-datasets/.
+Every catalogue entry starts with the instance-owner status **Not rated yet**. No personal owner score or review text is prefilled. IMDb ratings, when present, are shown separately. IMDb user ratings and Rotten Tomatoes Tomatometer (critics) and Popcornmeter (audience) percentages are shown separately and are never presented as the owner's rating. Rotten Tomatoes values are added only when the matching work and source page have been verified. A dash means no verified value has been added, not a zero score. Reception labels are derived from available ratings; they do not claim actual viewership or popularity. Values are static snapshots and may change. Each work has IMDb and Rotten Tomatoes search links for checking current ratings. IMDb rating data is sourced from IMDb chart/list pages; official non-commercial dataset details and terms are available at https://developer.imdb.com/non-commercial-datasets/.
 
 The catalogue contains 486 additions beyond the original 14 sample entries. Some entries have not yet been enriched with creator, genre or country metadata.
 
