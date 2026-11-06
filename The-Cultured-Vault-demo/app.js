@@ -86,6 +86,7 @@ function setLanguage(next){
  language=next;document.documentElement.lang=language;
  document.querySelectorAll("[data-fi][data-en]").forEach(el=>{el.textContent=el.dataset[language]});
  document.querySelectorAll("[data-fi-placeholder][data-en-placeholder]").forEach(el=>{el.placeholder=el.dataset[language+"Placeholder"]});
+ document.querySelectorAll("[data-fi-aria-label][data-en-aria-label]").forEach(el=>el.setAttribute("aria-label",el.dataset[language+"AriaLabel"]));
  document.querySelectorAll("option[data-fi][data-en]").forEach(el=>{el.textContent=el.dataset[language]});
  document.getElementById("demo-language").setAttribute("aria-label",language==="fi"?"Switch to English":"Vaihda suomeksi");
  renderCatalogue();renderLocalReviews();renderLocalSuggestions();
