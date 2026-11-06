@@ -25,3 +25,11 @@ test("recognises Finnish and English job titles",()=>{
 test("normalises Finnish manual input to canonical terms",()=>{
  assert.deepEqual(vocabulary.normalizeSkillTerms(["Sovelluskehitys","tietoturva","React"]),["application development","cybersecurity","react"]);
 });
+
+test("recognises Golang without matching the ordinary verb go",()=>{
+ assert.equal(vocabulary.extractSkills("I want to go home").some(x=>x.canonical==="Go"),false);
+ assert.equal(vocabulary.extractSkills("Golang developer").some(x=>x.canonical==="Go"),true);
+});
+test("maps Finnish job titles to canonical English titles",()=>{
+ assert.equal(vocabulary.normalizeRoleTitle("Frontend-kehittäjä"),"frontend developer");
+});
