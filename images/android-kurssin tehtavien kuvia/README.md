@@ -1,6 +1,8 @@
 # Android coursework | Android-kurssin tehtävät
 
-<!-- // Last updated: 2026-11-06 13:27 (Europe/Helsinki). -->
+<!-- Last updated: 2026-11-06 20:27 (Europe/Helsinki). -->
+
+<!-- // Last updated: 2026-11-06 20:27 (Europe/Helsinki). -->
 
 This folder contains images from my Android application development coursework. They show interface layouts, application screens and the results of individual exercises.
 
