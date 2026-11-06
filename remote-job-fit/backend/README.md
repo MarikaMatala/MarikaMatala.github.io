@@ -1,5 +1,7 @@
 # Optional backend — not implemented
 
+<!-- Last updated: 2026-11-06 20:27 (Europe/Helsinki). -->
+
 The current Remote Job Fit demo is a browser-only static application. This directory is a planning placeholder for a possible future API/backend; it does not contain a working server.
 
 ## If you decide to build a backend
