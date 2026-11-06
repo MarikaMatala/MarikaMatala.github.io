@@ -10,9 +10,29 @@
   "orientation": "any",
   "background_color": "#171512",
   "theme_color": "#171512",
-  "categories": ["entertainment", "books", "music"],
+  "categories": [
+    "entertainment",
+    "books",
+    "music"
+  ],
   "icons": [
-    {"src":"./icons/vault-icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any"},
-    {"src":"./icons/vault-maskable.svg","sizes":"any","type":"image/svg+xml","purpose":"maskable"}
+    {
+      "src": "./icons/vault-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/vault-maskable.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
   ]
 }
