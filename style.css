@@ -2690,3 +2690,38 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
     letter-spacing:-.045em;
   }
 }
+
+
+/* Two-line portfolio wordmark: name first, descriptor below. */
+.site-header > .wordmark.full-name,
+.site-footer > .wordmark.full-name{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:center;
+  gap:2px;
+  min-width:0;
+  white-space:nowrap;
+  line-height:1.08;
+  letter-spacing:0;
+}
+.site-header > .wordmark.full-name .wordmark-name,
+.site-footer > .wordmark.full-name .wordmark-name{
+  font-size:1em;
+  letter-spacing:-.025em;
+}
+.site-header > .wordmark.full-name .wordmark-subtitle,
+.site-footer > .wordmark.full-name .wordmark-subtitle{
+  font-family:var(--sans);
+  font-size:.58em;
+  font-weight:600;
+  letter-spacing:.055em;
+  line-height:1.2;
+  opacity:.78;
+}
+.site-header > .wordmark.full-name{font-size:clamp(.9rem,1.4vw,1.08rem)}
+.site-footer > .wordmark.full-name{font-size:.95rem}
+@media(max-width:540px){
+  .site-header > .wordmark.full-name{font-size:.88rem}
+  .site-header > .wordmark.full-name .wordmark-subtitle{font-size:.56em}
+}
