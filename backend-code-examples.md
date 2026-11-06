@@ -431,6 +431,115 @@ NODE_ENV=development
 
 The Express application must connect to MongoDB, configure a persistent session store, set secure cookie options, initialize Passport and mount the authentication router. Use a strong, randomly generated session secret in your local environment. Do not use the placeholder as a real secret. Browser-based deployments also need appropriate CSRF protection and login rate limiting.
 
+
+### `app.js`
+
+```javascript
+require('dotenv').config();
+
+const express = require('express');
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
+const mongoose = require('mongoose');
+const helmet = require('helmet');
+const passport = require('./config/passport');
+const authRoutes = require('./routes/auth');
+
+const app = express();
+
+if (process.env.NODE_ENV === 'production') {
+  app.set('trust proxy', 1);
+}
+
+app.use(helmet());
+app.use(express.json({ limit: '10kb' }));
+
+if (!process.env.SESSION_SECRET) {
+  throw new Error('SESSION_SECRET is not configured.');
+}
+
+app.use(session({
+  name: 'connect.sid',
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false,
+  store: MongoStore.create({
+    mongoUrl: process.env.MONGODB_URI,
+    collectionName: 'sessions',
+  }),
+  cookie: {
+    httpOnly: true,
+    sameSite: 'lax',
+    secure: process.env.NODE_ENV === 'production',
+    maxAge: 1000 * 60 * 60,
+  },
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+app.use('/auth', authRoutes);
+
+app.use((error, req, res, next) => {
+  console.error(error.message);
+  res.status(500).json({ message: 'Internal server error.' });
+});
+
+async function startServer() {
+  if (!process.env.MONGODB_URI) {
+    throw new Error('MONGODB_URI is not configured.');
+  }
+
+  await mongoose.connect(process.env.MONGODB_URI);
+
+  const port = Number(process.env.PORT) || 3000;
+  app.listen(port, () => {
+    console.log(`Authentication example listening on port ${port}.`);
+  });
+}
+
+if (require.main === module) {
+  startServer().catch((error) => {
+    console.error('Could not start the application:', error.message);
+    process.exit(1);
+  });
+}
+
+module.exports = app;
+```
+
+### `package.json`
+
+```json
+{
+  "name": "session-authentication-example",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "connect-mongo": "^5.1.0",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "helmet": "^8.1.0",
+    "mongoose": "^8.18.0",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0"
+  }
+}
+```
+
+### `.gitignore`
+
+```gitignore
+node_modules/
+.env
+```
+
+Install the dependencies with `npm install`. Create a local `.env` file from `.env.example`, enter your own MongoDB connection string and generate a strong random session secret. Passport's login operation regenerates the session before establishing the authenticated session. For a browser-facing production application, also add CSRF protection and login/register rate limiting.
+
 ---
 
 ## Example 4 — Automated test for GET /api/albums
