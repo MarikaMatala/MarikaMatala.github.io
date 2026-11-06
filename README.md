@@ -158,3 +158,8 @@ This vocabulary is a project-specific curated list, not an official ESCO, O*NET 
 ### Suomeksi
 
 Demon sanasto on projektia varten käsin koottu ja muokattu suomi–englanti-synonyymilista. Sen suunnittelussa on tarkasteltu ESCO-luokitusta, Wikidataa, Wikipediaa ja O*NET-aineistoa. Demoon ei ole kopioitu Wikipedia-artikkelien tekstejä eikä lisätty ladattua ESCO-, O*NET- tai Wikidata-aineistopakettia. Sanasto ei ole näiden palveluiden virallinen luokitus. Mahdolliset myöhemmin lisättävät aineistot tarkistetaan erikseen lisenssien ja lähdemerkintöjen osalta.
+
+
+## Accessibility | Saavutettavuus
+
+See [ACCESSIBILITY.md](ACCESSIBILITY.md) for the current audit scope, known follow-up checks and the Finnish-English accessibility checklist. The automated site validator checks baseline HTML semantics, but does not claim WCAG conformance.
