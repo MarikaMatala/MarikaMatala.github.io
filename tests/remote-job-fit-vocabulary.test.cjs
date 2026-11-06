@@ -45,3 +45,16 @@ test("recognises software and roles from additional fields",()=>{
  assert.ok(vocabulary.detectRoles("AI engineer").includes("AI Engineer"));
  assert.ok(vocabulary.detectRoles("peliohjelmoijan tehtävä","fi").includes("Peliohjelmoija"));
 });
+
+test("compares candidate skills with job requirements and reports gaps in Finnish and English",()=>{
+ const en=vocabulary.compareSkills(["HTML","React"],"Required: HTML, React, TypeScript and accessibility","en");
+ assert.deepEqual(en.matched.map(x=>x.canonical),["HTML","React"]);
+ assert.deepEqual(en.missing.map(x=>x.canonical),["TypeScript","Accessibility"]);
+ const fi=vocabulary.compareSkills(["Sovelluskehitys"],"Odotamme sovelluskehityksen, Reactin ja tietoturvan osaamista","fi");
+ assert.deepEqual(fi.matched.map(x=>x.canonical),["Application development"]);
+ assert.deepEqual(fi.missing.map(x=>x.canonical),["React","Cybersecurity"]);
+});
+test("does not report ambiguous one-letter language names as automatic gaps",()=>{
+ const result=vocabulary.compareSkills([],"C, R and Go are mentioned in ordinary text","en");
+ assert.equal(result.missing.some(x=>["C","R","Go"].includes(x.canonical)),false);
+});
