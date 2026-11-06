@@ -290,3 +290,5 @@ if ("serviceWorker" in navigator && (location.protocol === "https:" || location.
   });
  });
 }
+
+// verification marker: reviewed 2026-11-06
