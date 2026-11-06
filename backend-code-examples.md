@@ -358,7 +358,7 @@ exports.register = async (req, res, next) => {
       return res.status(400).json({ message: 'Password does not meet the length requirements.' });
     }
 
-    const passwordHash = await bcrypt.hash(password, 12);
+    const passwordHash = await bcrypt.hash(password, 12); // [bcrypt-hash generated at runtime; never hard-code a password or hash]
     const user = await User.create({
       username: normalizedUsername,
       passwordHash,
