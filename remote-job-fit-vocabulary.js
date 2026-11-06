@@ -183,18 +183,35 @@
     const requiredMarkers = language === "fi"
       ? ["required","must have","essential","mandatory","välttämätön","pakollinen","vaaditaan","edellytetään","edellytämme","vaatimuksena","tulee osata","pitää osata"]
       : ["required","must have","essential","mandatory","must be able","you need","we require","requirement"];
-    function contextFor(item) {
-      const sentences = source.split(/[.!?;\\n]+/);
+    function nearestMarkerDistance(text, markers, position) {
+      let best = Infinity;
+      markers.forEach(marker => {
+        const needle = normalize(marker);
+        let from = 0, found;
+        while ((found = text.indexOf(needle, from)) !== -1) {
+          best = Math.min(best, Math.abs(found - position));
+          from = found + 1;
+        }
+      });
+      return best;
+    }
+    function classifyOptional(item) {
+      const normalizedSource = normalize(source);
       const record = skillRecords.find(row => row.canonical === item.canonical);
       const aliases = record ? record.aliases : [item.canonical, item.label];
-      return sentences.filter(sentence => aliases.some(alias => hasPhrase(sentence, alias)))
-        .join(" ");
+      let position = -1;
+      for (const alias of aliases) {
+        position = normalizedSource.indexOf(normalize(alias));
+        if (position >= 0) break;
+      }
+      if (position < 0) return false;
+      const optionalDistance = nearestMarkerDistance(normalizedSource, optionalMarkers, position);
+      const requiredDistance = nearestMarkerDistance(normalizedSource, requiredMarkers, position);
+      return optionalDistance <= 100 && optionalDistance < requiredDistance;
     }
     const required = [], optional = [];
     for (const item of unique) {
-      const context = normalize(contextFor(item));
-      const isOptional = optionalMarkers.some(marker => (" " + context + " ").includes(" " + normalize(marker) + " ")) &&
-        !requiredMarkers.some(marker => (" " + context + " ").includes(" " + normalize(marker) + " "));
+      const isOptional = classifyOptional(item);
       const entry = {...item, found: candidate.has(normalize(item.canonical))};
       (isOptional ? optional : required).push(entry);
     }
