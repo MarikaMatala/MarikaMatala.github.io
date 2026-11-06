@@ -89,7 +89,7 @@ Mahdollisia tulevan React/Vite-version kirjastoja, animaatioesimerkkejä ja vira
 
 **Suomeksi:** `remote-job-fit/`-kansiossa on valinnaisia pohjia mahdollista tulevaa backend-toteutusta varten: `.env.example`, kommentoitu JavaScript-asetustiedosto, kuvitteelliset JSON-esimerkkitiedot sekä ohjeet asetuksiin, aineistoihin ja backendin rakentamiseen. Nykyinen selain-demo ei lue näitä tiedostoja eikä tarvitse ympäristömuuttujia, API-avaimia, tietokantaa tai backend-palvelinta. Kaikki arvot ovat paikkamerkkejä. Kopioi `.env.example` paikalliseksi `.env`-tiedostoksi vasta, jos rakennat myöhemmin backendin, joka tarvitsee sitä; `.env` on rajattu pois Gitistä `.gitignore`-tiedostolla. Älä julkaise oikeita tunnistetietoja tai henkilötietoja. Lähde- ja lisenssitiedot löytyvät tiedostosta `THIRD-PARTY-NOTICES.md`.
 
-**Open-source licence note:** The portfolio repository currently has no separate licence granting reuse of the Remote Job Fit code. A project licence must be selected and added before the demo can be described as open source or others are invited to reuse its code.
+**Remote Job Fit licence:** The MIT licence in `remote-job-fit/LICENSE` applies only to the original demo source files listed in `remote-job-fit/README.md` and original files inside that folder. It does not apply to the portfolio website or its photographs, personal information, graphics, other projects or other content. All other rights are reserved unless a specific item says otherwise.
 
 ## Career Support, Sponsorship & Collaboration | Uran tukeminen, sponsorointi ja yhteistyö
 
