@@ -143,15 +143,7 @@ function scoreRole(role, skills, targetTitle, mustHave, excluded) {
   const titleTerms = tokenise(vocabulary.normalizeRoleTitle(targetTitle)).filter(term => term.length > 2);
   const matchedTitle = titleTerms.filter(term => vocabulary.containsPhrase(searchable, term) || detectedTerms.includes(term));
   const matchedMust = mustHave.filter(matchesTerm);
-  // Report only explicit vocabulary matches. Very short language names are
-  // excluded from automatic requirement extraction to reduce false positives.
-  const ambiguousSkills = new Set(["c", "r", "go"]);
-  const requirements = vocabulary.extractSkills(role.title + " " + role.text, language)
-    .filter(item => !ambiguousSkills.has(item.canonical.toLowerCase()));
-  const uniqueRequirements = [...new Map(requirements.map(item => [item.canonical, item])).values()];
-  const candidateSkills = new Set(vocabulary.normalizeSkillTerms(skills));
-  const matchedRequirements = uniqueRequirements.filter(item => candidateSkills.has(vocabulary.normalize(item.canonical)));
-  const missingRequirements = uniqueRequirements.filter(item => !candidateSkills.has(vocabulary.normalize(item.canonical)));
+  const { matched: matchedRequirements, missing: missingRequirements } = vocabulary.compareSkills(skills, role.title + " " + role.text, language);
   const components = [];
   if (skills.length) components.push({ value: matchedSkills.length / skills.length, weight: 70 });
   if (titleTerms.length) components.push({ value: matchedTitle.length / titleTerms.length, weight: 20 });
