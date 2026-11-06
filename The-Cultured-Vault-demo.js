@@ -119,3 +119,5 @@ window.addEventListener("message",event=>{
  if(event.data?.type==="portfolio-language")setLanguage(event.data.language);
 });
 populateReviewSelect();renderCatalogue();renderLocalReviews();
+// Request the portfolio language after the embedded page has loaded.
+if (window.parent !== window) window.parent.postMessage({type:"remote-job-fit-language-request"},"*");
