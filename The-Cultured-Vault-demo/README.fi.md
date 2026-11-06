@@ -13,7 +13,7 @@ The Cultured Vault on avoimen lähdekoodin kulttuurikatalogiprojekti. Tämä kan
 
 Demo on tarkoituksella kevyt eikä tarvitse ulkoisia kirjastoja tai build-vaihetta. Se sisältää:
 
-- 114 teoksen esimerkkikatalogin useista kulttuurisisällön kategorioista; mukana 100 uutta 1980-, 1990- ja 2000-lukujen kulttisarjaa, kulttileffaa, animaatiota ja piirrettyä;
+- 214 teoksen esimerkkikatalogin useista kulttuurisisällön kategorioista; mukana 100 uutta 1980-, 1990- ja 2000-lukujen kulttisarjaa, kulttileffaa, animaatiota ja piirrettyä;
 - haun nimen, tekijän, maan ja tyylilajien perusteella;
 - kategoriasuodattimet ja lajittelun;
 - ylläpitäjän ja yhteisön esimerkkiarviot erillään;
@@ -131,7 +131,7 @@ Sisältää visuaalisen ilmeen. Värit on määritelty tiedoston alussa :root-mu
 
 ### app.js
 
-Sisältää alkuperäisen works-katalogin ja 100 uutta kuratoitua lisäystä (yhteensä 114 teosta) sekä selaimessa toimivan logiikan:
+Sisältää alkuperäisen works-katalogin ja 100 uutta kuratoitua lisäystä (yhteensä 214 teosta) sekä selaimessa toimivan logiikan:
 
 1. lukee esimerkkikatalogin;
 2. suodattaa ja lajittelee teoksia käyttöliittymän valintojen perusteella;
@@ -242,3 +242,10 @@ Jos julkaiset oman haarautetun version, käytä omaa hostausta, verkkotunnusta, 
 ---
 
 **Avaa holvi. Löydä jotain poikkeuksellista.**
+
+
+## Omat arviot ja IMDb-arvosanat
+
+Kaikkien katalogin teosten ylläpitäjän oma arvosana alkaa arvosta **0/10**, eikä omia arvostelutekstejä ole esitäytetty. IMDb:n käyttäjäarvosanat näytetään erillään: niitä ei esitetä ylläpitäjän arvioina eikä yhteisön keskiarvoina. IMDb-arvot ovat staattinen lähdehetken tilanne ja voivat muuttua. Ajatusviiva tarkoittaa, ettei vahvistettua IMDb-arvoa ole lisätty tähän demoon – se ei tarkoita nollaa. Jokaisesta teoksesta on IMDb-hakulinkki ajantasaisen arvon tarkistamiseen. IMDb:n virallisen ei-kaupallisen aineiston kuvaus ja ehdot: https://developer.imdb.com/non-commercial-datasets/.
+
+Katalogiin lisättiin 100 uutta elokuvaa, sarjaa ja animaatiota. Osasta uusista teoksista puuttuu vielä tekijä-, lajityyppi- tai maatietoja.
