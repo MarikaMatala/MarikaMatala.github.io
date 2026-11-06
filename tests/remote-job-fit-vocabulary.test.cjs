@@ -2,10 +2,10 @@ const test = require("node:test");
 const assert = require("node:assert/strict");
 const vocabulary = require("../remote-job-fit-vocabulary.js");
 
-test("recognises Finnish and English skills",()=>{
- const fi=vocabulary.extractSkills("Olen tehnyt sovelluskehitystä, käyttöliittymäsuunnittelua ja tietoturvaa.","fi");
+test("recognises Finnish and English skills, including common Finnish inflections",()=>{
+ const fi=vocabulary.extractSkills("Olen tehnyt sovelluskehitystä, käyttöliittymäsuunnittelua ja tietoturvaa. Käytän Reactia ja JavaScriptiä.","fi");
  const en=vocabulary.extractSkills("I have experience in application development, UI/UX design and cybersecurity.","en");
- for(const term of ["Application development","UI/UX design","Cybersecurity"]) assert.ok(fi.some(x=>x.canonical===term));
+ for(const term of ["Application development","UI/UX design","Cybersecurity","React","JavaScript"]) assert.ok(fi.some(x=>x.canonical===term));
  assert.ok(en.some(x=>x.canonical==="Application development"));
 });
 test("recognises software and programming languages",()=>{
