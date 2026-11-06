@@ -39,3 +39,11 @@ input:focus,textarea:focus,button:focus-visible,a:focus-visible{outline:3px soli
 .demo-footer a{color:var(--accent)}
 @media(max-width:650px){.form-grid{grid-template-columns:1fr}.demo-heading{flex-direction:column}.language-button{align-self:flex-start}.results-heading{flex-direction:column}.result-top{flex-direction:column;gap:4px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+.import-panel{margin:24px 0;padding:clamp(16px,3vw,26px);background:var(--panel);border:1px solid var(--line);border-radius:16px}
+.import-panel h2{margin-top:0}
+.import-panel>p{color:var(--muted)}
+.import-panel label{margin:16px 0}
+.cv-upload input[type=file]{padding:9px;background:#100b12}
+.import-panel small{font-weight:400;color:var(--muted)}
+.import-status{min-height:1.5em;font-size:.88rem;color:var(--good)}
