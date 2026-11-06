@@ -1,5 +1,7 @@
 # The Cultured Vault — asennettava demo
 
+<!-- Päivitetty: 6.11.2026 klo 20.27 (Europe/Helsinki). -->
+
 > Kulttuuria löydettäväksi. Tarinoita muistettavaksi.
 
 The Cultured Vault on avoimen lähdekoodin kulttuurikatalogiprojekti. Tämä kansio sisältää sen staattisen, asennettavan Progressive Web App (PWA) -demon. Demo havainnollistaa, miten elokuvat, sarjat, animaatiot, dokumentit, podcastit, musiikki, pelit ja kirjat voisivat löytyä samasta katalogista.
@@ -13,7 +15,7 @@ The Cultured Vault on avoimen lähdekoodin kulttuurikatalogiprojekti. Tämä kan
 
 Demo on tarkoituksella kevyt eikä tarvitse ulkoisia kirjastoja tai build-vaihetta. Se sisältää:
 
-- 500 teoksen esimerkkikatalogin useista kulttuurisisällön kategorioista; mukana 100 uutta 1980-, 1990- ja 2000-lukujen kulttisarjaa, kulttileffaa, animaatiota ja piirrettyä;
+- 500 teoksen esimerkkikatalogin useista kulttuurisisällön kategorioista; alkuperäisten 14 esimerkin lisäksi katalogiin on lisätty 486 teosta eri kategorioista, mukaan lukien 1980-, 1990- ja 2000-lukujen kulttisarjoja, kulttileffoja, animaatioita ja piirrettyjä;
 - haun nimen, tekijän, maan ja tyylilajien perusteella;
 - kategoriasuodattimet ja lajittelun;
 - ylläpitäjän arvio tilassa ”Ei vielä arviota” ja IMDb-arviot erillään;
@@ -131,12 +133,12 @@ Sisältää visuaalisen ilmeen. Värit on määritelty tiedoston alussa :root-mu
 
 ### app.js
 
-Sisältää alkuperäisen works-katalogin ja 100 uutta kuratoitua lisäystä (yhteensä 500 teosta) sekä selaimessa toimivan logiikan:
+Sisältää alkuperäisen works-katalogin ja 486 lisäystä (yhteensä 500 teosta) sekä selaimessa toimivan logiikan:
 
 1. lukee esimerkkikatalogin;
 2. suodattaa ja lajittelee teoksia käyttöliittymän valintojen perusteella;
 3. muodostaa katalogikortit DOM-menetelmillä;
-4. näyttää ylläpitäjän arvion ennen yhteisön esimerkkiarviota;
+4. näyttää ylläpitäjän oman arvion tilassa ”Ei vielä arviota” ja IMDb-arvosanat erillisinä;
 5. tallentaa kävijän oman demoarvion selaimen paikalliseen tallennustilaan;
 6. vaihtaa suomen- ja englanninkielisen käyttöliittymän;
 7. rekisteröi service workerin HTTPS- tai localhost-ympäristössä.
@@ -246,9 +248,9 @@ Jos julkaiset oman haarautetun version, käytä omaa hostausta, verkkotunnusta, 
 
 ## Omat arviot ja IMDb-arvosanat
 
-Kaikkien katalogin teosten ylläpitäjän oma arvosana alkaa arvosta **0/10**, eikä omia arvostelutekstejä ole esitäytetty. IMDb:n käyttäjäarvosanat näytetään erillään: niitä ei esitetä ylläpitäjän arvioina eikä yhteisön keskiarvoina. IMDb-arvot ovat staattinen lähdehetken tilanne ja voivat muuttua. Ajatusviiva tarkoittaa, ettei vahvistettua IMDb-arvoa ole lisätty tähän demoon – se ei tarkoita nollaa. Jokaisesta teoksesta on IMDb-hakulinkki ajantasaisen arvon tarkistamiseen. IMDb:n virallisen ei-kaupallisen aineiston kuvaus ja ehdot: https://developer.imdb.com/non-commercial-datasets/.
+Kaikkien katalogin teosten ylläpitäjän oma arvio näkyy aluksi tekstinä **Ei vielä arviota**. Oma numeroarvio ja arvosteluteksti lisätään vasta, kun ylläpitäjä itse arvioi teoksen. IMDb:n käyttäjäarvosanat näytetään erillisinä ulkoisina viitetietoina, ei ylläpitäjän arvioina tai yhteisön keskiarvoina. IMDb-arvot ovat staattinen lähdehetken tilanne ja voivat muuttua. Ajatusviiva tarkoittaa, ettei vahvistettua IMDb-arvoa ole lisätty tähän demoon – se ei tarkoita nollaa. Jokaisesta teoksesta on IMDb-hakulinkki ajantasaisen arvon tarkistamiseen. IMDb:n virallisen ei-kaupallisen aineiston kuvaus ja ehdot: https://developer.imdb.com/non-commercial-datasets/.
 
-Katalogiin lisättiin 100 uutta elokuvaa, sarjaa ja animaatiota. Osasta uusista teoksista puuttuu vielä tekijä-, lajityyppi- tai maatietoja.
+Alkuperäisten 14 esimerkin lisäksi katalogiin on lisätty 486 teosta eri kategorioista. Kaikkien nimikkeiden tekijä-, lajityyppi- ja maatietoja ei ole vielä täydennetty. Osasta uusista teoksista puuttuu vielä tekijä-, lajityyppi- tai maatietoja.
 
 
 ## Teosehdotukset ja omat arviot
