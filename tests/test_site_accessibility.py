@@ -41,6 +41,15 @@ class AccessibilityValidatorTests(unittest.TestCase):
         ):
             self.assertIn(expected, joined)
 
+    def test_nested_label_is_recognized_as_a_programmatic_label(self):
+        parser = self.parse(
+            '<html lang="en"><body><a class="skip-link" href="#main">Skip</a>'
+            '<main id="main"><h1>Title</h1>'
+            '<label>Search<input id="search"></label>'
+            '</main></body></html>'
+        )
+        self.assertEqual(audit_page(ROOT / "fixture.html", parser), [])
+
     def test_noreferrer_is_valid_for_new_tab_links(self):
         parser = self.parse(
             '<html lang="en"><body><a class="skip-link" href="#main">Skip</a>'
