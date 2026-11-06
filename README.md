@@ -28,7 +28,8 @@ Kehitän portfoliotani jatkuvasti ja lisään verkkosivulle valikoituja projekte
 
 - `index.html` — homepage and short introduction, in Finnish and English
 - `minusta.html` — education, background and self-assessed skills
-- `tyonaytteet.html` — project descriptions, image galleries, interactive C# examples and inline PDF work-sample previews
+- `tyonaytteet.html` — project descriptions, image galleries, interactive C# examples, inline PDF previews and the embedded Remote Job Fit demo
+- `remote-job-fit-demo.html`, `remote-job-fit-demo.css`, `remote-job-fit-demo.js` — isolated browser-only Remote Job Fit prototype; entered data is processed in memory and is not transmitted or stored
 - `backend-code-examples.md` — four reviewed backend code examples covering Mongoose, REST API CRUD, session authentication and automated testing
 - `yhteystiedot.html` — email, LinkedIn, GitHub and job availability
 - `style.css` — responsive layout and shared component styles
@@ -45,7 +46,7 @@ See [DEVELOPMENT.md](DEVELOPMENT.md) for instructions on running the static site
 
 The Work Samples page now displays the **Sana Vapaa** event poster and the audiovisual communications portfolio directly in responsive, embedded PDF viewers. The Sana Vapaa poster was created for an event organised as part of the **Luotsaamo project run by Jyvässeudun 4H-yhdistys**. Its PDF asset is named `images/Sana-Vapaa-tapahtumajuliste.pdf`.
 
-The Work Samples page also includes quick links to its main project sections. A GitHub Actions workflow checks local HTML file references, duplicate IDs and same-site HTML anchors on pull requests and pushes to `main`. See [DEVELOPMENT.md](DEVELOPMENT.md) and [TESTING.md](TESTING.md) for the current development and QA instructions.
+The Work Samples page also includes an interactive Remote Job Fit browser demo. It uses illustrative sample roles or a job description entered by the visitor. The demo runs entirely in the browser, makes no network requests, and does not persist entered profile data. It is a limited front-end prototype and does not run the Python/FastAPI backend or fetch live vacancies. The full source project is available in the separate [remote-job-fit repository](https://github.com/MarikaMatala/remote-job-fit).\n\nThe Work Samples page also includes quick links to its main project sections. A GitHub Actions workflow checks local HTML file references, duplicate IDs and same-site HTML anchors on pull requests and pushes to `main`. See [DEVELOPMENT.md](DEVELOPMENT.md) and [TESTING.md](TESTING.md) for the current development and QA instructions.
 
 ## Technologies and areas
 
