@@ -19,7 +19,7 @@ Demo on tarkoituksella kevyt eikä tarvitse ulkoisia kirjastoja tai build-vaihet
 - haun nimen, tekijän, maan ja tyylilajien perusteella;
 - kategoriasuodattimet ja lajittelun, oletuksena aakkosjärjestys;
 - A–Ö- ja Å–Ä–Ö-aakkoshakemiston sekä 0–9-numerohakemiston; molemmista voi hypätä suoraan vastaavaan teosryhmään, puuttuvat vaihtoehdot eivät ole valittavissa ja hakemistot mukautuvat hakuun ja kategoriasuodatukseen; hakemistot pysyvät näkyvissä sivua vieritettäessä;
-- ylläpitäjän arvio tilassa ”Ei vielä arviota” ja IMDb-arviot erillään;
+- ylläpitäjän arvio tilassa ”Ei vielä arviota” sekä IMDb- ja Rotten Tomatoes -arviot erillään;
 - lomakkeen oman paikallisen demoarvion ja vapaaehtoisen kommentin lisäämiseen;
 - suomen- ja englanninkielisen käyttöliittymän;
 - puhelimille, tableteille ja tietokoneille mukautuvan asettelun;
@@ -169,6 +169,9 @@ Avaa app.js ja etsi tiedoston alusta works-taulukko. Yksittäinen teos noudattaa
   country: "Country",
   owner: null,
   imdbRating: null,
+  rottenTomatoesCritics: null,
+  rottenTomatoesAudience: null,
+  rottenTomatoesUrl: null,
   ownerReview: ""
 }
 ~~~
@@ -247,9 +250,9 @@ Jos julkaiset oman haarautetun version, käytä omaa hostausta, verkkotunnusta, 
 **Avaa holvi. Löydä jotain poikkeuksellista.**
 
 
-## Omat arviot ja IMDb-arvosanat
+## Omat arviot, IMDb ja Rotten Tomatoes
 
-Kaikkien katalogin teosten ylläpitäjän oma arvio näkyy aluksi tekstinä **Ei vielä arviota**. Oma numeroarvio ja arvosteluteksti lisätään vasta, kun ylläpitäjä itse arvioi teoksen. IMDb:n käyttäjäarvosanat näytetään erillisinä ulkoisina viitetietoina, ei ylläpitäjän arvioina tai yhteisön keskiarvoina. IMDb-arvot ovat staattinen lähdehetken tilanne ja voivat muuttua. Ajatusviiva tarkoittaa, ettei vahvistettua IMDb-arvoa ole lisätty tähän demoon – se ei tarkoita nollaa. Jokaisesta teoksesta on IMDb-hakulinkki ajantasaisen arvon tarkistamiseen. IMDb:n virallisen ei-kaupallisen aineiston kuvaus ja ehdot: https://developer.imdb.com/non-commercial-datasets/.
+Kaikkien katalogin teosten ylläpitäjän oma arvio näkyy aluksi tekstinä **Ei vielä arviota**. Oma numeroarvio ja arvosteluteksti lisätään vasta, kun ylläpitäjä itse arvioi teoksen. IMDb:n käyttäjäarvosanat sekä Rotten Tomatoesin kriitikoiden Tomatometer- ja yleisön Popcornmeter-prosentit näytetään erillisinä ulkoisina viitetietoina, ei ylläpitäjän arvioina. Rotten Tomatoes -arvot lisätään vain, kun oikea teos ja lähdesivu on vahvistettu. Ajatusviiva tarkoittaa, ettei vahvistettua arvoa ole lisätty tähän demoon – se ei tarkoita nollaa. Vastaanottoluokitus muodostetaan saatavilla olevista arvosanoista; se ei väitä teoksen katsojamäärää tai todellista suosiota. Arvot ovat staattinen lähdehetken tilanne ja voivat muuttua. Jokaisesta teoksesta on IMDb- ja Rotten Tomatoes -hakulinkit ajantasaisen arvon tarkistamiseen. IMDb:n virallisen ei-kaupallisen aineiston kuvaus ja ehdot: https://developer.imdb.com/non-commercial-datasets/.
 
 Alkuperäisten 14 esimerkin lisäksi katalogiin on lisätty 486 teosta eri kategorioista. Kaikkien nimikkeiden tekijä-, lajityyppi- ja maatietoja ei ole vielä täydennetty. Osasta uusista teoksista puuttuu vielä tekijä-, lajityyppi- tai maatietoja.
 
