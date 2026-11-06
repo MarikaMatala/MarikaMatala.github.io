@@ -214,7 +214,7 @@ window.addEventListener("message",event=>{
 const alphabetJumpInput=document.getElementById("alphabet-jump-input");
 alphabetJumpInput.addEventListener("input",()=>{
  const initial=alphabetJumpInput.value.trim().toLocaleUpperCase("fi");
- const isNumber=/^\\d$/.test(initial);
+ const isNumber=/^\d$/.test(initial);
  const isLetter=/^[A-ZÅÄÖ]$/.test(initial);
  if(!isNumber&&!isLetter)return;
  sortSelect.value="title";
