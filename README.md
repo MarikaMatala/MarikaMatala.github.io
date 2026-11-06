@@ -100,3 +100,22 @@ Olen kiinnostunut esimerkiksi verkkosivuihin ja digitaalisiin palveluihin, visua
 The code and visual work in this portfolio are created by Marika Matalamäki, either as personal projects or coursework, unless a specific item is credited otherwise. Images are her own unless otherwise stated alongside an image or project. Rights to collaborative work, coursework materials and third-party assets remain with their respective rights holders. Do not reuse materials without permission from the relevant rights holder. Unauthorised use may lead to claims for remuneration or damages where applicable by law.
 
 Portfolion koodit ja visuaaliset työt ovat Marika Matalamäen itse tekemiä, joko harrastusprojekteina tai opintojen harjoitustöinä, ellei yksittäisen työn yhteydessä toisin ilmoiteta. Kuvat ovat hänen omiaan, ellei kuvan tai projektin yhteydessä toisin mainita. Yhteistyöprojektien, opintotöiden ja kolmansien osapuolten materiaalien oikeudet säilyvät niiden omilla oikeudenhaltijoilla. Materiaaleja ei saa käyttää uudelleen ilman asianomaisen oikeudenhaltijan lupaa. Luvattomasta käytöstä voidaan vaatia hyvitystä tai vahingonkorvausta sovellettavan lain mukaisesti.
+
+
+## Remote Job Fit vocabulary and data sources | Osaamissanaston lähteet
+
+The browser demo uses a project-maintained, manually curated bilingual vocabulary of skills, programming languages, software, tools and job titles. Finnish and English aliases are mapped to shared internal terms. It is a keyword helper, not a complete labour-market taxonomy or an assessment of actual competence. The vocabulary is stored in `remote-job-fit-vocabulary.js`; no third-party skill-extraction model, scraped job-ad corpus or bulk dataset is bundled.
+
+Sources consulted as terminology and taxonomy references:
+
+- **European Commission ESCO** — multilingual European classification of occupations, skills and competences, including Finnish and English. ESCO is available for reuse free of charge subject to acknowledgement; adapted versions must be identified as modified. The demo does not bundle a downloaded ESCO dataset. [ESCO overview](https://esco.ec.europa.eu/en) · [Reuse conditions](https://esco.ec.europa.eu/en/about-esco/faq) · [Downloads](https://esco.ec.europa.eu/en/use-esco/download).
+- **Wikidata** — structured multilingual reference data released under CC0. Useful for cross-checking names of occupations, programming languages and software. No bulk Wikidata export is bundled. [Wikidata for developers](https://www.wikidata.org/wiki/Wikidata:For_developers/en).
+- **Wikipedia** — consulted as a general encyclopaedic reference, not copied as a source of descriptions. Most Wikipedia text is under CC BY-SA 4.0; reuse requires attribution, a licence link and compliance with ShareAlike conditions. [Wikimedia content reuse guidance](https://www.mediawiki.org/wiki/Wikimedia_APIs/Content_reuse).
+- **O*NET** — occupational reference containing job titles, skills and software-skill examples. Much of its database is CC BY 4.0, but third-party exceptions apply. O*NET data has not been imported into this vocabulary. [Database](https://www.onetcenter.org/database.html) · [Licence information](https://www.onetcenter.org/license_agreements.html).
+- **Nesta Skills Extractor** — open-source Python library for extracting skill phrases from job advertisements and mapping them to a skills taxonomy. It is a possible reference for a future NLP prototype and is not used by this browser-only demo. [Source repository](https://github.com/nestauk/ojd_daps_skills).
+
+This vocabulary is a project-specific curated list, not an official ESCO, O*NET or Wikidata classification. New terms must be checked for spelling, Finnish-English equivalents, context and licensing. Do not copy descriptions, proprietary job-ad content or bulk datasets without checking their individual terms.
+
+### Suomeksi
+
+Demon sanasto on projektia varten käsin koottu ja muokattu suomi–englanti-synonyymilista. Sen suunnittelussa on tarkasteltu ESCO-luokitusta, Wikidataa, Wikipediaa ja O*NET-aineistoa. Demoon ei ole kopioitu Wikipedia-artikkelien tekstejä eikä lisätty ladattua ESCO-, O*NET- tai Wikidata-aineistopakettia. Sanasto ei ole näiden palveluiden virallinen luokitus. Mahdolliset myöhemmin lisättävät aineistot tarkistetaan erikseen lisenssien ja lähdemerkintöjen osalta.
