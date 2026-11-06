@@ -47,3 +47,23 @@ input:focus,textarea:focus,button:focus-visible,a:focus-visible{outline:3px soli
 .cv-upload input[type=file]{padding:9px;background:#100b12}
 .import-panel small{font-weight:400;color:var(--muted)}
 .import-status{min-height:1.5em;font-size:.88rem;color:var(--good)}
+
+
+/* // Site status banner: shared Finnish/English development notice. */
+.demo-status {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem 1rem;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid rgba(180, 150, 105, 0.35);
+  background: #20251f;
+  color: #f2eee5;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-align: center;
+}
+.demo-status strong { color: #e5b77b; }
+@media (max-width: 520px) {
+  .demo-status { flex-direction: column; gap: 0.2rem; }
+}
