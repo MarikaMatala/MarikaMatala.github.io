@@ -13,10 +13,10 @@ The Cultured Vault on avoimen lähdekoodin kulttuurikatalogiprojekti. Tämä kan
 
 Demo on tarkoituksella kevyt eikä tarvitse ulkoisia kirjastoja tai build-vaihetta. Se sisältää:
 
-- 214 teoksen esimerkkikatalogin useista kulttuurisisällön kategorioista; mukana 100 uutta 1980-, 1990- ja 2000-lukujen kulttisarjaa, kulttileffaa, animaatiota ja piirrettyä;
+- 500 teoksen esimerkkikatalogin useista kulttuurisisällön kategorioista; mukana 100 uutta 1980-, 1990- ja 2000-lukujen kulttisarjaa, kulttileffaa, animaatiota ja piirrettyä;
 - haun nimen, tekijän, maan ja tyylilajien perusteella;
 - kategoriasuodattimet ja lajittelun;
-- ylläpitäjän ja yhteisön esimerkkiarviot erillään;
+- ylläpitäjän arvio tilassa ”Ei vielä arviota” ja IMDb-arviot erillään;
 - lomakkeen oman paikallisen demoarvion ja vapaaehtoisen kommentin lisäämiseen;
 - suomen- ja englanninkielisen käyttöliittymän;
 - puhelimille, tableteille ja tietokoneille mukautuvan asettelun;
@@ -131,7 +131,7 @@ Sisältää visuaalisen ilmeen. Värit on määritelty tiedoston alussa :root-mu
 
 ### app.js
 
-Sisältää alkuperäisen works-katalogin ja 100 uutta kuratoitua lisäystä (yhteensä 214 teosta) sekä selaimessa toimivan logiikan:
+Sisältää alkuperäisen works-katalogin ja 100 uutta kuratoitua lisäystä (yhteensä 500 teosta) sekä selaimessa toimivan logiikan:
 
 1. lukee esimerkkikatalogin;
 2. suodattaa ja lajittelee teoksia käyttöliittymän valintojen perusteella;
@@ -164,9 +164,9 @@ Avaa app.js ja etsi tiedoston alusta works-taulukko. Yksittäinen teos noudattaa
   year: 2026,
   genres: ["Drama", "Mystery"],
   country: "Country",
-  owner: 8.5,
-  community: 8.1,
-  ownerReview: "A short sample review."
+  owner: null,
+  imdbRating: null,
+  ownerReview: ""
 }
 ~~~
 
@@ -249,3 +249,10 @@ Jos julkaiset oman haarautetun version, käytä omaa hostausta, verkkotunnusta, 
 Kaikkien katalogin teosten ylläpitäjän oma arvosana alkaa arvosta **0/10**, eikä omia arvostelutekstejä ole esitäytetty. IMDb:n käyttäjäarvosanat näytetään erillään: niitä ei esitetä ylläpitäjän arvioina eikä yhteisön keskiarvoina. IMDb-arvot ovat staattinen lähdehetken tilanne ja voivat muuttua. Ajatusviiva tarkoittaa, ettei vahvistettua IMDb-arvoa ole lisätty tähän demoon – se ei tarkoita nollaa. Jokaisesta teoksesta on IMDb-hakulinkki ajantasaisen arvon tarkistamiseen. IMDb:n virallisen ei-kaupallisen aineiston kuvaus ja ehdot: https://developer.imdb.com/non-commercial-datasets/.
 
 Katalogiin lisättiin 100 uutta elokuvaa, sarjaa ja animaatiota. Osasta uusista teoksista puuttuu vielä tekijä-, lajityyppi- tai maatietoja.
+
+
+## Teosehdotukset ja omat arviot
+
+Katalogissa on nyt 500 teosta. Kävijä voi ehdottaa puuttuvaa elokuvaa, sarjaa, animaatiota, dokumenttia, podcastia, albumia, peliä tai kirjaa. Ehdotukseen voi lisätä julkaisuvuoden, tekijän ja lisätiedon. Ehdotukset tallentuvat selaimen localStorageen avaimella `cultured-vault-suggestions-v1`; ne näkyvät vain samassa selaimessa ja laitteessa, eikä niitä lähetetä ylläpitäjälle ilman backendia.
+
+Kaikkien teosten oma arvio näytetään tekstinä **Ei vielä arviota**. Oma numeroarvio ja arvosteluteksti lisätään vasta, kun ylläpitäjä itse arvioi teoksen. IMDb-arvosanat näytetään erillisinä ulkoisina viitetietoina.
