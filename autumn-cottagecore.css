@@ -895,10 +895,16 @@ h1 em, h2 em, h3 em, h4 em {
 .wimma-homepage-preview img{
   display:block;
   width:100%;
-  height:auto;
-  aspect-ratio:4/3;
-  object-fit:cover;
-  object-position:top center;
+  height:clamp(150px,22vw,230px);
+  padding:1.5rem;
+  object-fit:contain;
+  object-position:center;
+}
+.wimma-logo-link{
+  text-align:center;
+}
+.wimma-logo-link img{
+  background:rgba(10,10,10,.35);
 }
 .wimma-homepage-preview span{
   display:inline-block;
