@@ -4,6 +4,7 @@ const results = document.getElementById("results");
 const languageButton = document.getElementById("demo-language");
 let language = new URLSearchParams(window.location.search).get("lang") === "en" ? "en" : "fi";
 let lastEvaluated = [];
+const vocabulary = window.RemoteJobFitVocabulary;
 
 
 // CV import is intentionally local-only. It extracts known keywords for review;
@@ -14,60 +15,7 @@ const importStatus = document.getElementById("import-status");
 const importButton = document.getElementById("import-cv");
 const linkedinInput = document.getElementById("linkedin-url");
 
-const knownSkills = [
-  "HTML","CSS","JavaScript","TypeScript","React","Next.js","Node.js","Python","PHP","Java","C#",".NET","Kotlin","SQL","MySQL","SQLite","PostgreSQL","MongoDB","REST API","JSON","Git","GitHub","GitLab","Docker","Kubernetes","Azure","AWS","Linux","Windows","Microsoft 365","SharePoint","Figma","UI/UX","WordPress","Photoshop","Illustrator","InDesign","Premiere Pro","After Effects","DaVinci Resolve","Blender","Maya","Cinema 4D","Unreal Engine","3D modelling","2D animation","3D animation","Motion graphics","Rigging","Compositing","Photography","Video production","Video editing","Audio editing","Webcast","Streaming","SEO","GEO","Google Analytics","Google Ads","Meta Ads","HubSpot","CRM","Email marketing","Social media","Content strategy","Copywriting","Journalism","Communications","Internal communications","Media relations","Project coordination","Agile","Scrum","Testing","Postman","Cybersecurity","OWASP","Networking","Service desk","IT support","Data analysis","Power BI","Excel","Accessibility","Responsive design","Technical documentation","Programming","Graphic design","Photography","Communications","Marketing","Animation","Video production","Project management","Customer service","Information security","Application development","Web design","Digital media","Content production"
-];
-const skillAliases = {
-  "ohjelmointi": "Programming",
-  "ohjelmistokehitys": "Application development",
-  "sovelluskehitys": "Application development",
-  "web-kehitys": "Web development",
-  "verkkosivujen kehitys": "Web development",
-  "käyttöliittymäsuunnittelu": "UI/UX",
-  "graafinen suunnittelu": "Graphic design",
-  "valokuvaus": "Photography",
-  "videotuotanto": "Video production",
-  "videoeditointi": "Video editing",
-  "äänituotanto": "Audio editing",
-  "äänieditointi": "Audio editing",
-  "animaatio": "Animation",
-  "3d-mallinnus": "3D modelling",
-  "hahmoanimaatio": "3D animation",
-  "liikegrafiikka": "Motion graphics",
-  "viestintä": "Communications",
-  "sisällöntuotanto": "Content production",
-  "sisältöstrategia": "Content strategy",
-  "markkinointi": "Marketing",
-  "digitaalinen markkinointi": "Digital marketing",
-  "sosiaalinen media": "Social media",
-  "hakukoneoptimointi": "SEO",
-  "projektinhallinta": "Project management",
-  "projektikoordinointi": "Project coordination",
-  "asiakaspalvelu": "Customer service",
-  "käyttäjätuki": "IT support",
-  "tekninen tuki": "IT support",
-  "tietoturva": "Information security",
-  "verkkoturvallisuus": "Cybersecurity",
-  "testaus": "Testing",
-  "saavutettavuus": "Accessibility",
-  "responsiivinen suunnittelu": "Responsive design",
-  "tietokannat": "SQL",
-  "pilvipalvelut": "Cloud",
-  "valaisu": "Lighting",
-  "leikkaus": "Video editing",
-  "journalismi": "Journalism",
-  "kirjoittaminen": "Copywriting",
-  "sisäinen viestintä": "Internal communications",
-  "ulkoisen viestinnän": "External communications"
-};
-function extractKnownSkills(text) {
-  const normalized = text.toLowerCase().replace(/[’']/g, "'");
-  const found = knownSkills.filter(skill => normalized.includes(skill.toLowerCase()));
-  Object.entries(skillAliases).forEach(([alias, canonical]) => {
-    if (normalized.includes(alias) && !found.includes(canonical)) found.push(canonical);
-  });
-  return [...new Set(found)];
-}
+function extractKnownSkills(text) { return vocabulary.extractSkills(text, language); }
 cvFileInput.addEventListener("change", async () => {
   const file = cvFileInput.files && cvFileInput.files[0];
   if (!file) return;
@@ -96,12 +44,11 @@ importButton.addEventListener("click", () => {
     return;
   }
   const current = terms(document.getElementById("skills").value);
-  document.getElementById("skills").value = [...new Set([...current, ...found])].join(", ");
+  document.getElementById("skills").value = [...new Set([...current, ...found.map(item => item.label)])].join(", ");
   const titleInput = document.getElementById("target-title");
   if (!titleInput.value.trim()) {
-    const roleHints = ["Frontend Developer","Full-Stack Developer","Backend Developer","IT Support Specialist","ICT Specialist","UI/UX Designer","Graphic Designer","Communications Specialist","Digital Marketing Specialist","Multimedia Producer","3D Artist","Animator","Video Producer","Data Analyst","QA Tester"];
-    const foundRole = roleHints.find(role => text.toLowerCase().includes(role.toLowerCase()));
-    if (foundRole) titleInput.value = foundRole;
+    const foundRoles = vocabulary.detectRoles(text, language);
+    if (foundRoles.length) titleInput.value = foundRoles[0];
   }
   importStatus.textContent = language === "fi"
     ? "Tunnistetut osaamiset lisättiin osaamiskenttään (" + found.length + "). Tarkista ja muokkaa listaa ennen arviointia."
@@ -181,7 +128,8 @@ const roleTitlesFi = {
 };
 
 function terms(value) {
-  return [...new Set(value.toLowerCase().split(/[,;\n]+/).map(item => item.trim()).filter(item => item.length > 1))];
+  const values = [...new Set(value.toLowerCase().split(/[,;\n]+/).map(item => item.trim()).filter(item => item.length > 1))];
+  return [...new Set(vocabulary.normalizeSkillTerms(values))];
 }
 function tokenise(value) {
   return value.toLowerCase().replace(/[^a-z0-9+#.\s-]/g, " ").split(/\s+/).filter(word => word.length > 1);
