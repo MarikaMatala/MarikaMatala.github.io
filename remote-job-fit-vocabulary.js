@@ -60,9 +60,9 @@
     ["Campaign management","Campaign management","Kampanjanhallinta","kampanjasuunnittelu"],["Analytics","Analytics","Analytiikka","verkkoanalytiikka"]
   ];
   const roles = [
-    ["Frontend Developer","Frontend-kehittäjä","frontend developer","front-end developer","käyttöliittymäkehittäjä"],
-    ["Backend Developer","Backend-kehittäjä","backend developer","back-end developer","palvelinpuolen kehittäjä"],
-    ["Full-Stack Developer","Full-stack-kehittäjä","full stack developer","fullstack developer"],
+    ["Frontend Developer","Frontend-kehittäjä","frontend developer","front-end developer","frontend-kehittäjä","käyttöliittymäkehittäjä"],
+    ["Backend Developer","Backend-kehittäjä","backend developer","back-end developer","backend-kehittäjä","palvelinpuolen kehittäjä"],
+    ["Full-Stack Developer","Full-stack-kehittäjä","full stack developer","fullstack developer","full-stack-kehittäjä"],
     ["Software Developer","Ohjelmistokehittäjä","software developer","software engineer","ohjelmistosuunnittelija","ohjelmoija","sovelluskehittäjä"],
     ["Web Developer","Web-kehittäjä","web developer","verkkosivukehittäjä","verkkosivujen kehittäjä"],
     ["Mobile App Developer","Mobiilisovelluskehittäjä","mobile developer","mobile app developer","mobiilikehittäjä"],
@@ -119,7 +119,15 @@
       .replace(/[^a-z0-9+#.]+/g," ").trim().replace(/\s+/g," ");
   }
   function hasPhrase(text, phrase) {
-    return (" " + normalize(text) + " ").includes(" " + normalize(phrase) + " ");
+    const source = " " + normalize(text) + " ";
+    const target = normalize(phrase);
+    if (!target) return false;
+    if (source.includes(" " + target + " ")) return true;
+    const parts = target.split(" ");
+    const last = parts.pop();
+    const prefix = parts.length ? parts.join(" ") + " " : "";
+    const finnishEndings = ["ssa","ssä","sta","stä","lla","llä","lle","ksi","tta","ttä","ia","iä","ja","in","issa","issä","een","n","a","ä"];
+    return finnishEndings.some(ending => source.includes(" " + prefix + last + ending + " "));
   }
   const skillRecords = skills.map(([canonical,en,fi,...aliases]) => ({canonical,en,fi,aliases:[canonical,en,fi,...aliases]}));
   const roleRecords = roles.map(([en,fi,...aliases]) => ({en,fi,aliases:[en,fi,...aliases]}));
@@ -129,7 +137,7 @@
   }
   function normalizeSkillTerms(values) {
     return values.map(value=>{
-      const found=skillRecords.find(row=>row.aliases.some(alias=>normalize(alias)===normalize(value)));
+      const found=skillRecords.find(row=>row.aliases.some(alias=>hasPhrase(value,alias)));
       return found?normalize(found.canonical):normalize(value);
     });
   }
