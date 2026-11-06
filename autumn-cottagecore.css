@@ -697,3 +697,57 @@ a:not(.hero-index):not(.gothic-button):not(.home-work-cta):not(.sample-pdf-link)
 .creative-samples-grid .sample-pdf-embed{width:100%;height:clamp(440px,65vw,760px);overflow:hidden;border:1px solid #526657;border-radius:14px;background:#111914;box-shadow:0 12px 30px rgba(0,0,0,.28)}
 .creative-samples-grid .sample-pdf-embed iframe{display:block;width:100%;height:100%;border:0;background:#111914}
 @media(max-width:600px){.creative-samples-grid .sample-pdf-embed{height: min(78vh,680px);min-height:440px}}
+
+
+/* Responsive heading and footer refinement: keep long Finnish/English titles inside narrow screens. */
+.footer-nav a{
+  font-size:clamp(.76rem,.88vw,.84rem)!important;
+  font-weight:700!important;
+  letter-spacing:.01em!important;
+  line-height:1.35!important;
+  min-height:40px!important;
+  padding:6px 2px!important;
+}
+.hero-copy,.work-page-intro,.about-page-intro,.contact-page,.section-heading,
+.home-about-copy,.home-work-cta-section,.contact-section{min-width:0}
+.hero-copy h1,.work-page-intro h1,.about-page-intro h1,.contact-page h1{
+  max-width:100%!important;
+  font-size:clamp(2.35rem,5.2vw,4.1rem)!important;
+  line-height:1.12!important;
+  letter-spacing:-.035em!important;
+  overflow-wrap:anywhere;
+  hyphens:auto;
+  text-wrap:balance;
+}
+.section-heading h2,.about-section h2,.home-about-copy h2,
+.home-work-cta-section h2,.contact-section h2{
+  max-width:100%!important;
+  font-size:clamp(1.95rem,4.4vw,3.35rem)!important;
+  line-height:1.16!important;
+  letter-spacing:-.03em!important;
+  overflow-wrap:anywhere;
+  hyphens:auto;
+  text-wrap:balance;
+}
+@media(max-width:700px){
+  .hero-copy h1,.work-page-intro h1,.about-page-intro h1,.contact-page h1{
+    font-size:clamp(1.8rem,8.1vw,2.65rem)!important;
+    line-height:1.14!important;
+  }
+  .section-heading h2,.about-section h2,.home-about-copy h2,
+  .home-work-cta-section h2,.contact-section h2{
+    font-size:clamp(1.65rem,7.1vw,2.35rem)!important;
+    line-height:1.18!important;
+  }
+  .footer-nav{gap:8px 14px!important}
+  .footer-nav a{font-size:.8rem!important;min-height:38px!important}
+}
+@media(max-width:380px){
+  .hero-copy h1,.work-page-intro h1,.about-page-intro h1,.contact-page h1{
+    font-size:clamp(1.65rem,7.8vw,2rem)!important;
+  }
+  .section-heading h2,.about-section h2,.home-about-copy h2,
+  .home-work-cta-section h2,.contact-section h2{
+    font-size:clamp(1.5rem,6.8vw,1.85rem)!important;
+  }
+}
