@@ -81,3 +81,34 @@ For a detailed browser-based verification plan, use [TESTING.md](TESTING.md).
 - [ ] Mobile and desktop layouts have been checked.
 - [ ] `python scripts/validate_site.py` passes.
 - [ ] No credentials, tokens, private data or local development files are committed.
+
+
+## Adding a work sample | Työnäytteen lisääminen
+
+1. Choose the correct section on `tyonaytteet.html` (for example, application development, backend, Android or visual design).
+2. Add a concise title and explain the context: what the task was, what you built, which tools you used and what the result demonstrates.
+3. Write the visible description in both Finnish and English. Use the existing `data-fi` and `data-en` pattern so the language switch works.
+4. For images, add descriptive alternative text in both languages where appropriate. Keep decorative images empty-alt and do not use an image as the only way to communicate essential information.
+5. For downloadable files, store only material you have permission to publish. Use clear, descriptive filenames and update every reference when a file is renamed.
+6. For code examples, remove personal data, real credentials, private URLs and environment-specific configuration. Use explicit placeholders such as `[YOUR_DATABASE_URI]` and explain which values the reader must supply locally.
+7. Reuse the existing card, disclosure and code-browser patterns rather than introducing a new interaction without a clear need.
+8. Preview the page locally at mobile, tablet and desktop widths. Check both languages, keyboard navigation, links and any interactive controls.
+9. Run the validation script before publishing:
+
+   ```bash
+   python scripts/validate_site.py
+   ```
+
+1. Valitse työnäytteelle oikea osio `tyonaytteet.html`-sivulta (esimerkiksi sovelluskehitys, backend, Android tai visuaalinen suunnittelu).
+2. Lisää ytimekäs otsikko ja kerro työn tausta: mikä tehtävä oli, mitä toteutit, mitä työkaluja käytit ja mitä työnäyte osoittaa.
+3. Kirjoita näkyvä kuvaus suomeksi ja englanniksi. Käytä olemassa olevaa `data-fi`- ja `data-en`-rakennetta, jotta kielenvaihto toimii.
+4. Lisää kuville kuvaavat vaihtoehtoiset tekstit molemmilla kielillä tarpeen mukaan. Koristekuville käytetään tyhjää alt-tekstiä. Älä välitä olennaista tietoa vain kuvan kautta.
+5. Julkaise ladattavina tiedostoina vain materiaalia, jonka julkaisemiseen sinulla on oikeus. Käytä selkeitä tiedostonimiä ja päivitä kaikki viittaukset, jos tiedosto nimetään uudelleen.
+6. Poista koodiesimerkeistä henkilötiedot, oikeat tunnistetiedot, yksityiset URL-osoitteet ja ympäristökohtaiset asetukset. Käytä selkeitä paikkamerkkejä, kuten `[YOUR_DATABASE_URI]`, ja kerro, mitä arvoja käyttäjän pitää lisätä paikallisesti.
+7. Hyödynnä olemassa olevia kortti-, avattava sisältö- ja koodiselausratkaisuja sen sijaan, että lisäisit uuden käyttöliittymätoiminnon ilman selvää tarvetta.
+8. Esikatsele sivu paikallisesti mobiili-, tabletti- ja työpöytäkoossa. Tarkista molemmat kielet, näppäimistökäyttö, linkit ja vuorovaikutteiset toiminnot.
+9. Suorita validointiskripti ennen julkaisua:
+
+   ```bash
+   python scripts/validate_site.py
+   ```
