@@ -114,3 +114,9 @@ select,input,textarea{background:#151310;color:var(--text);border:1px solid var(
 .install-help strong{color:var(--bronze-light)}
 .install-help p{margin:6px 0 0}
 @media(max-width:600px){.demo-status{align-items:center}.install-app-button{margin-top:5px}}
+
+/* Local-only catalogue suggestion form. */
+.suggestion-form{margin-top:28px;border-color:rgba(193,139,85,.55)}
+.suggestion-form>div:first-child{grid-column:1/-1}
+.suggestion-form h3{margin:0 0 5px;font-size:1.4rem}
+.suggestion-form p{margin:5px 0;color:var(--muted);font-size:.86rem}
