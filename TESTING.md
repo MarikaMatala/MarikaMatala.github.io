@@ -105,3 +105,26 @@ For significant layout or interaction changes, check at least one Chromium-based
 - [ ] Kuvitteellinen JSON-esimerkki on kelvollista JSON-muotoa.
 - [ ] Demo ei tee verkkopyyntöjä eikä tallenna CV-tekstiä.
 - [ ] Jokaisesta lisätystä ulkopuolisesta aineistosta on kirjattu tarkka versio, lisenssi, lähdeosoite ja vaaditut lähdemerkinnät tiedostoon `THIRD-PARTY-NOTICES.md`.
+
+
+## Remote Job Fit skill-gap feedback | Osaamispuutteiden palaute
+
+- [ ] Paste a job description and confirm the demo lists vocabulary-recognised requirements missing from the candidate profile.
+- [ ] Confirm requirements already in the profile appear separately from missing requirements.
+- [ ] Confirm an empty or unrelated job description does not invent missing skills.
+- [ ] Confirm the learning suggestion is visible only when one or more recognised skills are missing.
+- [ ] Check the explanation that keyword extraction is indicative and does not measure actual proficiency.
+- [ ] Repeat in Finnish and English.
+- [ ] Confirm short ambiguous terms such as C, R and Go are excluded from automatic gap detection.
+- [ ] Confirm all analysis remains local to the browser and no profile or job text is transmitted or stored.
+
+## Remote Job Fit -osaamispuutteiden palaute
+
+- [ ] Liitä työpaikkailmoitus ja varmista, että demo näyttää sanastosta tunnistetut osaamiset, joita hakijan profiilissa ei ole.
+- [ ] Varmista, että profiilista löytyvät osaamiset ja puuttuvat osaamiset näytetään erikseen.
+- [ ] Varmista, ettei tyhjä tai asiaankuulumaton ilmoitus tuota keksittyjä osaamispuutteita.
+- [ ] Varmista, että oppimisehdotus näkyy, kun tunnistettuja puuttuvia osaamisia on vähintään yksi.
+- [ ] Tarkista huomautus siitä, että kyseessä on hakusanoihin perustuva suuntaa-antava poiminta, ei todellisen osaamistason mittaus.
+- [ ] Testaa sekä suomeksi että englanniksi.
+- [ ] Varmista, että lyhyet monitulkintaiset termit C, R ja Go ohitetaan automaattisessa puuteanalyysissä.
+- [ ] Varmista, että analyysi pysyy selaimessa eikä profiili- tai ilmoitustekstiä lähetetä tai tallenneta.
