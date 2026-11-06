@@ -2725,3 +2725,23 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
   .site-header > .wordmark.full-name{font-size:.88rem}
   .site-header > .wordmark.full-name .wordmark-subtitle{font-size:.56em}
 }
+
+/* Header wordmark: show the name and portfolio descriptor on separate lines. */
+.site-header .wordmark.full-name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2px;
+  line-height: 1.15;
+}
+.site-header .wordmark.full-name .wordmark-name,
+.site-header .wordmark.full-name .wordmark-subtitle {
+  display: block;
+}
+.site-header .wordmark.full-name .wordmark-subtitle {
+  font-size: .58em;
+  font-weight: 600;
+  letter-spacing: .01em;
+  opacity: .82;
+}
