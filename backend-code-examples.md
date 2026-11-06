@@ -2,15 +2,35 @@
 
 Selected, standalone backend examples adapted from coursework. Each example has been reviewed and rewritten for clarity and safer configuration.
 
-## Security and privacy
+## Tools and local setup
 
-These examples contain no personal information or real credentials. Replace the clearly marked placeholders with your own values when running them. Never commit real passwords, API keys, access tokens, database connection strings or session secrets. The password placeholder is written as `[password here]`; no password abbreviations or real password values are used.
+These exercises were created using **Visual Studio Code**. To recreate and run them, you will generally need:
+
+- Visual Studio Code;
+- Node.js and npm;
+- a terminal integrated into VS Code or another command-line terminal;
+- MongoDB or MongoDB Atlas for the examples that connect to a database (Examples 4 and 5 use an in-memory test database);
+- Postman or another API client to send requests to the REST API and authentication routes (recommended for Examples 2 and 3).
+
+Create a separate local project folder for each exercise and add the source files shown below to the matching folders. You must also create your own `package.json` with the dependencies and scripts required by that exercise, install them with npm, and create any required local configuration files yourself. For database-backed examples, configure your own `MONGODB_URI`; the session-authentication example also requires your own strong `SESSION_SECRET`. Add a local `.gitignore` so that `.env`, `node_modules` and other private or generated files are not committed.
+
+**Configuration files are intentionally not included in this portfolio.** The examples show the relevant application and test source code only. Do not copy credentials from public examples or place real secrets in source files. Use your own local values and keep them out of version control.
+
+### Suggested workflow
+
+1. Open the exercise folder in Visual Studio Code.
+2. Create the project metadata file (`package.json`) and install the packages listed for that example.
+3. Create any required local environment/configuration files using your own settings; do not publish them.
+4. Add the source files shown in the example, preserving the folder structure.
+5. Start the application or run the tests using the scripts you defined in your own project.
 
 ---
 
 ## Example 1 — MongoDB and Mongoose album model
 
 **Concepts:** Mongoose schemas, required fields, validation, environment-based configuration and asynchronous database operations.
+
+**To run it:** Create your own `package.json` and install `mongoose` and `dotenv`. Create a local `.env` containing your own `MONGODB_URI`, and make sure a MongoDB database is available. The `.env` file and package metadata are not included here.
 
 ### `models/Album.js`
 
@@ -32,18 +52,7 @@ const albumSchema = new mongoose.Schema({
 module.exports = mongoose.model('Album', albumSchema);
 ```
 
-### `.env.example`
 
-```env
-MONGODB_URI=[database connection string here]
-```
-
-### `.gitignore`
-
-```gitignore
-node_modules/
-.env
-```
 
 ### `index.js`
 
@@ -86,6 +95,8 @@ Install dependencies with `npm install mongoose dotenv`, then run `node index.js
 ## Example 2 — REST API CRUD for albums
 
 **Concepts:** Express routers, REST endpoints, input validation, filtering, sorting, pagination and Mongoose operations. This example uses the Album model from Example 1.
+
+**To run it:** Create your own `package.json`, install `express`, `mongoose` and the packages needed for your database connection, and create a local environment file with your own `MONGODB_URI`. Add a server entry point that connects to MongoDB and starts the Express app. Use Postman or a similar API client to test the endpoints. Keep the local configuration and server setup out of the public portfolio.
 
 ### `controllers/albumsController.js`
 
@@ -246,6 +257,8 @@ This API is an educational example. A production deployment also needs authentic
 ## Example 3 — User registration and session-based authentication
 
 **Concepts:** password hashing, Passport Local Strategy, session storage, protected routes and environment variables.
+
+**To run it:** Create your own `package.json` and install `express`, `mongoose`, `dotenv`, `express-session`, `connect-mongo`, `passport`, `passport-local`, `bcrypt` and `helmet`. Create a local `.env` with your own `MONGODB_URI`, a randomly generated `SESSION_SECRET`, and any optional port/environment settings. Add your own server start command and test registration, login, the protected `/auth/me` route and logout with Postman or another API client. The local environment file and package metadata are deliberately not published.
 
 ### `models/User.js`
 
@@ -420,14 +433,6 @@ router.get('/me', requireAuthentication, (req, res) => {
 module.exports = router;
 ```
 
-### `.env.example`
-
-```env
-MONGODB_URI=[database connection string here]
-SESSION_SECRET=[session secret here]
-PORT=3000
-NODE_ENV=development
-```
 
 The Express application must connect to MongoDB, configure a persistent session store, set secure cookie options, initialize Passport and mount the authentication router. Use a strong, randomly generated session secret in your local environment. Do not use the placeholder as a real secret. Browser-based deployments also need appropriate CSRF protection and login rate limiting.
 
@@ -507,36 +512,7 @@ if (require.main === module) {
 module.exports = app;
 ```
 
-### `package.json`
 
-```json
-{
-  "name": "session-authentication-example",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "start": "node app.js"
-  },
-  "dependencies": {
-    "bcrypt": "^6.0.0",
-    "connect-mongo": "^5.1.0",
-    "dotenv": "^16.4.7",
-    "express": "^5.1.0",
-    "express-session": "^1.18.2",
-    "helmet": "^8.1.0",
-    "mongoose": "^8.18.0",
-    "passport": "^0.7.0",
-    "passport-local": "^1.0.0"
-  }
-}
-```
-
-### `.gitignore`
-
-```gitignore
-node_modules/
-.env
-```
 
 Install the dependencies with `npm install`. Create a local `.env` file from `.env.example`, enter your own MongoDB connection string and generate a strong random session secret. Passport's login operation regenerates the session before establishing the authenticated session. For a browser-facing production application, also add CSRF protection and login/register rate limiting.
 
@@ -545,6 +521,8 @@ Install the dependencies with `npm install`. Create a local `.env` file from `.e
 ## Example 4 — Automated test for GET /api/albums
 
 **Concepts:** Jest, Supertest, Mongoose and isolated in-memory database testing.
+
+**To run it:** Create your own `package.json`; install `express` and `mongoose` as application dependencies, and `jest`, `supertest` and `mongodb-memory-server` as development dependencies. Add a test script that runs Jest. No MongoDB account or `.env` file is required for this isolated test because MongoDB Memory Server creates a temporary database for the test run.
 
 ### `models/Album.js`
 
@@ -622,34 +600,126 @@ describe('GET /api/albums', () => {
 });
 ```
 
-### `package.json`
-
-```json
-{
-  "name": "album-api-get-test",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "start": "node server.js",
-    "test": "jest --runInBand"
-  },
-  "dependencies": {
-    "dotenv": "^16.4.7",
-    "express": "^5.1.0",
-    "mongoose": "^8.18.0"
-  },
-  "devDependencies": {
-    "jest": "^30.0.5",
-    "mongodb-memory-server": "^10.2.0",
-    "supertest": "^7.1.4"
-  }
-}
-```
 
 Run `npm install` and then `npm test`. The test creates its own temporary database and does not connect to a production database.
 
 ---
 
+---
+
+## Example 5 — Automated test for POST /api/albums
+
+**Concepts:** Express POST routes, request validation, Mongoose model validation, HTTP status codes and automated API testing.
+
+**To run it:** Create your own `package.json`; install `express` and `mongoose` as application dependencies, and `jest`, `supertest` and `mongodb-memory-server` as development dependencies. Add a Jest test script. This test uses an in-memory MongoDB instance, so it does not require a separate MongoDB account or a `.env` file.
+
+### `models/Album.js`
+
+```javascript
+const mongoose = require('mongoose');
+
+const albumSchema = new mongoose.Schema({
+  title: { type: String, required: true, trim: true },
+  artist: { type: String, required: true, trim: true },
+  year: { type: Number, required: true, min: 1900, max: new Date().getFullYear() },
+}, { timestamps: true });
+
+module.exports = mongoose.model('Album', albumSchema);
+```
+
+### `app.js`
+
+```javascript
+const express = require('express');
+const Album = require('./models/Album');
+
+const app = express();
+app.use(express.json({ limit: '20kb' }));
+
+app.post('/api/albums', async (req, res) => {
+  try {
+    const { title, artist, year } = req.body || {};
+    if (
+      typeof title !== 'string' || !title.trim() ||
+      typeof artist !== 'string' || !artist.trim() ||
+      year === undefined
+    ) {
+      return res.status(400).json({ message: 'Title, artist and year are required.' });
+    }
+    const album = await Album.create({ title: title.trim(), artist: artist.trim(), year });
+    return res.status(201).json(album);
+  } catch (error) {
+    if (error.name === 'ValidationError' || error.name === 'CastError') {
+      return res.status(400).json({ message: 'Invalid album data.' });
+    }
+    console.error('Error creating album:', error.message);
+    return res.status(500).json({ message: 'Could not create album.' });
+  }
+});
+
+module.exports = app;
+```
+
+### `tests/albums.test.js`
+
+```javascript
+const request = require('supertest');
+const mongoose = require('mongoose');
+const { MongoMemoryServer } = require('mongodb-memory-server');
+const app = require('../app');
+const Album = require('../models/Album');
+
+let mongoServer;
+
+beforeAll(async () => {
+  mongoServer = await MongoMemoryServer.create();
+  await mongoose.connect(mongoServer.getUri());
+});
+
+beforeEach(async () => {
+  await Album.deleteMany({});
+});
+
+afterAll(async () => {
+  if (mongoose.connection.readyState !== 0) {
+    await mongoose.disconnect();
+  }
+  if (mongoServer) {
+    await mongoServer.stop();
+  }
+});
+
+describe('POST /api/albums', () => {
+  it('creates an album and returns status 201', async () => {
+    const response = await request(app)
+      .post('/api/albums')
+      .send({ title: 'Example Album', artist: 'Example Artist', year: 2022 });
+    expect(response.status).toBe(201);
+    expect(response.body.title).toBe('Example Album');
+    expect(await Album.countDocuments()).toBe(1);
+  });
+
+  it('rejects a request with missing fields', async () => {
+    const response = await request(app)
+      .post('/api/albums')
+      .send({ title: 'Example Album' });
+    expect(response.status).toBe(400);
+    expect(await Album.countDocuments()).toBe(0);
+  });
+
+  it('rejects an invalid year value', async () => {
+    const response = await request(app)
+      .post('/api/albums')
+      .send({
+        title: 'Example Album',
+        artist: 'Example Artist',
+        year: 'not-a-year',
+      });
+    expect(response.status).toBe(400);
+    expect(await Album.countDocuments()).toBe(0);
+  });
+});
+```
 ## Notes
 
-These examples are intended for learning and portfolio review. They demonstrate selected backend development practices, not complete production-ready systems. Review configuration, authentication, authorization, CSRF protection, rate limiting, logging, input validation and deployment security before using similar code in a real service.
+These examples are intended for learning and portfolio review. They demonstrate selected backend development practices, not complete production-ready systems. The portfolio contains selected source files only; create your own project configuration and dependency files locally. Review authentication, authorization, CSRF protection, rate limiting, logging, input validation and deployment security before using similar code in a real service.
