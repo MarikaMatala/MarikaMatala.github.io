@@ -143,3 +143,48 @@ select,input,textarea{background:#151310;color:var(--text);border:1px solid var(
 .numeric-nav .alphabet-link{min-width:38px}
 .catalogue-number-heading{grid-column:1/-1;margin:22px 0 2px;padding:7px 12px;border-bottom:1px solid var(--line);border-left:3px solid var(--bronze);color:var(--gold);font-size:1.35rem;scroll-margin-top:18px}
 @media(max-width:600px){.numeric-nav .alphabet-link{min-width:34px}.catalogue-number-heading{margin-top:16px}}
+
+
+/* Sticky catalogue index: keep A–Ö and 0–9 within reach while browsing. */
+.index-sticky-shell{
+  position:sticky;
+  top:8px;
+  z-index:30;
+  display:grid;
+  gap:5px;
+  margin:12px 0 16px;
+  padding:7px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:rgba(23,21,18,.94);
+  box-shadow:0 8px 24px rgba(0,0,0,.28);
+  -webkit-backdrop-filter:blur(14px);
+  backdrop-filter:blur(14px);
+}
+.index-sticky-shell[hidden]{display:none}
+.index-sticky-shell .alphabet-nav{
+  flex-wrap:nowrap;
+  gap:5px;
+  margin:0;
+  padding:4px;
+  overflow-x:auto;
+  overscroll-behavior-inline:contain;
+  scrollbar-width:thin;
+}
+.index-sticky-shell .alphabet-label{
+  flex:0 0 auto;
+  width:auto;
+  margin-right:5px;
+  align-self:center;
+}
+.index-sticky-shell .alphabet-link{flex:0 0 auto}
+.catalogue-letter-heading,.catalogue-number-heading{scroll-margin-top:150px}
+@media(max-width:600px){
+  .index-sticky-shell{top:4px;margin:10px 0 14px;padding:5px;border-radius:11px}
+  .index-sticky-shell .alphabet-nav{gap:4px;padding:3px}
+  .index-sticky-shell .alphabet-label{font-size:.72rem}
+  .catalogue-letter-heading,.catalogue-number-heading{scroll-margin-top:170px}
+}
+@media(prefers-reduced-motion:reduce){
+  .index-sticky-shell{scroll-behavior:auto}
+}
