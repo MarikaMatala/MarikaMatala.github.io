@@ -188,3 +188,7 @@ select,input,textarea{background:#151310;color:var(--text);border:1px solid var(
 @media(prefers-reduced-motion:reduce){
   .index-sticky-shell{scroll-behavior:auto}
 }
+
+/* 13. External rating sources and reception labels. */
+.external-ratings{display:flex;flex-wrap:wrap;align-items:center;gap:7px 12px;margin-top:9px;color:var(--silver);font-size:.76rem}
+.external-ratings strong{flex-basis:100%;color:var(--bronze-light);font-weight:600}
