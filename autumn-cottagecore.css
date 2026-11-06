@@ -880,3 +880,35 @@ h1 em, h2 em, h3 em, h4 em {
     line-height: 1.28 !important;
   }
 }
+
+
+/* WIMMA Capstone live homepage preview */
+.wimma-homepage-preview{
+  display:block;
+  margin:1rem 0 1.25rem;
+  overflow:hidden;
+  border:1px solid var(--autumn-border,rgba(220,190,150,.35));
+  border-radius:14px;
+  background:rgba(20,18,17,.8);
+  text-decoration:none;
+}
+.wimma-homepage-preview img{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:4/3;
+  object-fit:cover;
+  object-position:top center;
+}
+.wimma-homepage-preview span{
+  display:inline-block;
+  padding:.75rem 1rem;
+  color:var(--autumn-rust,#e48b6a);
+  font-weight:800;
+  text-decoration:underline;
+  text-underline-offset:4px;
+}
+.wimma-homepage-preview:focus-visible{
+  outline:3px solid var(--autumn-rust,#e48b6a);
+  outline-offset:4px;
+}
