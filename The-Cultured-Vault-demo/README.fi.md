@@ -13,7 +13,7 @@ The Cultured Vault on avoimen lähdekoodin kulttuurikatalogiprojekti. Tämä kan
 
 Demo on tarkoituksella kevyt eikä tarvitse ulkoisia kirjastoja tai build-vaihetta. Se sisältää:
 
-- esimerkkikatalogin useista kulttuurisisällön kategorioista;
+- 114 teoksen esimerkkikatalogin useista kulttuurisisällön kategorioista; mukana 100 uutta 1980-, 1990- ja 2000-lukujen kulttisarjaa, kulttileffaa, animaatiota ja piirrettyä;
 - haun nimen, tekijän, maan ja tyylilajien perusteella;
 - kategoriasuodattimet ja lajittelun;
 - ylläpitäjän ja yhteisön esimerkkiarviot erillään;
@@ -131,7 +131,7 @@ Sisältää visuaalisen ilmeen. Värit on määritelty tiedoston alussa :root-mu
 
 ### app.js
 
-Sisältää works-esimerkkikatalogin ja selaimessa toimivan logiikan:
+Sisältää alkuperäisen works-katalogin ja 100 uutta kuratoitua lisäystä (yhteensä 114 teosta) sekä selaimessa toimivan logiikan:
 
 1. lukee esimerkkikatalogin;
 2. suodattaa ja lajittelee teoksia käyttöliittymän valintojen perusteella;

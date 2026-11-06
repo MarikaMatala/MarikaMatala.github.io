@@ -13,7 +13,7 @@ The Cultured Vault is an open-source cultural catalogue concept. This folder con
 
 This is a lightweight front-end prototype. It does not require a framework, build process or third-party JavaScript package. It includes:
 
-- a sample catalogue with multiple media categories;
+- a 114-entry sample catalogue with multiple media categories, including 100 curated additions from 1980s, 1990s and 2000s cult television, films, animation and cartoons;
 - search by title, creator, country and genre;
 - category filters and sorting;
 - separate sample ratings for the instance owner and the community;
@@ -131,7 +131,7 @@ Contains the visual design. Theme variables are at the top in the :root block. E
 
 ### app.js
 
-Contains the sample works array and browser-side behaviour:
+Contains the original sample works plus 100 curated additions (114 entries total), and browser-side behaviour:
 
 1. reads the sample catalogue;
 2. filters and sorts works using the controls;

@@ -23,6 +23,8 @@ Samsung Internet may offer an **Add page to** or **Home screen** option dependin
 
 iOS uses Safari's Share menu for this flow. Chromium's JavaScript install prompt is not available in Safari.
 
+The catalogue currently contains 114 sample entries, including 100 additions from 1980s, 1990s and 2000s cult television, films, animation and cartoons. All catalogue scores and reviews are illustrative demo content.
+
 ## Important limitations
 
 This is a static PWA prototype, not a native APK/IPA or an App Store / Google Play release. It has no backend, user accounts, shared reviews or cloud synchronisation. Personal demo reviews remain in the current browser's local storage.
