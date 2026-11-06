@@ -1,6 +1,6 @@
 # The Cultured Vault — installable demo
 
-<!-- Last updated: 2026-11-06 20:27 (Europe/Helsinki). -->
+<!-- Last updated: 2026-11-06 21:00 (Europe/Helsinki). -->
 
 > Culture worth discovering. Stories worth remembering.
 
@@ -17,7 +17,8 @@ This is a lightweight front-end prototype. It does not require a framework, buil
 
 - a 500-entry sample catalogue with multiple media categories, including 486 additions across films, series, animation, documentaries, podcasts, music albums, games and books; the selection also features cult television, films and cartoons from the 1980s, 1990s and 2000s;
 - search by title, creator, country and genre;
-- category filters and sorting;
+- category filters and sorting, with alphabetical title order as the default;
+- an A–Z / Å–Ä–Ö quick index that jumps to letter sections; unavailable letters are disabled and the index follows the current search and category filters;
 - separate sample ratings for the instance owner and the community;
 - a form for adding a personal demo rating and optional comment;
 - Finnish and English interface text;
@@ -136,7 +137,7 @@ Contains the visual design. Theme variables are at the top in the :root block. E
 Contains the original sample works plus 486 additions (500 entries total), and browser-side behaviour:
 
 1. reads the sample catalogue;
-2. filters and sorts works using the controls;
+2. filters and sorts works using the controls, with alphabetic letter groups and quick navigation when title order is active;
 3. builds catalogue cards with DOM methods;
 4. shows the owner placeholder “Not rated yet” and IMDb ratings separately;
 5. stores personal demo reviews in localStorage;
