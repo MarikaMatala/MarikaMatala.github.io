@@ -184,9 +184,10 @@
       ? ["required","must have","essential","mandatory","välttämätön","pakollinen","vaaditaan","edellytetään","edellytämme","vaatimuksena","tulee osata","pitää osata"]
       : ["required","must have","essential","mandatory","must be able","you need","we require","requirement"];
     function contextFor(item) {
-      const sentences = source.split(/(?<=[.!?;\n])\s*/);
-      return sentences.filter(sentence => item.canonical && hasPhrase(sentence, item.canonical) ||
-        (item.label && hasPhrase(sentence, item.label)))
+      const sentences = source.split(/(?<=[.!?;\\n])\\s*/);
+      const record = skillRecords.find(row => row.canonical === item.canonical);
+      const aliases = record ? record.aliases : [item.canonical, item.label];
+      return sentences.filter(sentence => aliases.some(alias => hasPhrase(sentence, alias)))
         .join(" ");
     }
     const required = [], optional = [];
