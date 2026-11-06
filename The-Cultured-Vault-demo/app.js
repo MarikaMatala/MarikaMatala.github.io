@@ -134,6 +134,9 @@ works.push(...additionalWorks.map(([id,title,creator,type,year,genres,country,ow
 })));
 works.forEach(work => { work.owner = 0; work.ownerReview = ""; });
 
+const imdbRatingsByTitle = {"The Godfather":9.2,"Spirited Away":8.6,"Parasite":8.5,"Blade Runner":8.1,"Twin Peaks":8.7,"The Wire":9.3,"The Sopranos":9.2,"Breaking Bad":9.5,"Seinfeld":8.8,"Firefly":8.9,"The Simpsons":8.6,"Futurama":8.5,"Avatar: The Last Airbender":9.3,"Neon Genesis Evangelion":8.5,"Back to the Future":8.5,"The Shining":8.4,"Aliens":8.4,"The Lion King":8.5,"Grave of the Fireflies":8.4,"WALL·E":8.4,"Princess Mononoke":8.4,"Oldboy":8.4,"Fargo":8.1,"The Matrix":8.7,"Fight Club":8.8,"Pulp Fiction":8.8,"The Shawshank Redemption":9.3,"The Dark Knight":9.1,"The Lord of the Rings: The Return of the King":9,"The Lord of the Rings: The Fellowship of the Ring":8.9,"Schindler's List":9,"Forrest Gump":8.8,"Star Wars: The Empire Strikes Back":8.7,"The Green Mile":8.5,"Raiders of the Lost Ark":8.5,"The Prestige":8.5,"Memento":8.5,"Gladiator":8.5,"Whiplash":8.5,"The Departed":8.5,"American Beauty":8.4,"The Lives of Others":8.4,"Cinema Paradiso":8.4,"Django Unchained":8.4,"Terminator 2: Judgment Day":8.5,"The Pianist":8.5,"The Usual Suspects":8.5,"Léon: The Professional":8.5,"Inception":8.8,"Interstellar":8.7,"Band of Brothers":9.4,"Chernobyl":9.3,"Sherlock":9,"Better Call Saul":9,"Game of Thrones":9.2,"The Office (US)":9,"Rick and Morty":9,"Arcane":9,"One Piece":9};
+works.forEach(work=>{work.owner=0;work.ownerReview="";work.imdbRating=Object.prototype.hasOwnProperty.call(imdbRatingsByTitle,work.title)?imdbRatingsByTitle[work.title]:null;delete work.community;});
+
 // ---------------------------------------------------------------------------
 // 2. Bilingual media labels, interface messages and application state.
 // ---------------------------------------------------------------------------
@@ -142,8 +145,8 @@ fi:{film:"Elokuva",series:"Sarja",animation:"Animaatio",documentary:"Dokumentti"
 en:{film:"Film",series:"Series",animation:"Animation",documentary:"Documentary",podcast:"Podcast",music:"Music",game:"Game",book:"Book"}
 };
 const ui = {
-fi:{count: n => `Näytetään ${n} teosta`, owner:"Ylläpitäjän arvio", community:"Yhteisö", review:"Näytä esimerkkien arvostelut", hide:"Piilota arvostelut", noReview:"Tälle teokselle ei ole paikallista demoarviota.", saved:"Demoarvio tallennettu tähän selaimeen.", yourReview:"Oma paikallinen demoarviosi", choose:"Valitse teos", communityNote:"Yhteisön keskiarvo"},
-en:{count: n => `Showing ${n} works`, owner:"Owner rating", community:"Community", review:"Show sample reviews", hide:"Hide reviews", noReview:"There is no local demo review for this work.", saved:"Demo review saved in this browser.", yourReview:"Your local demo review", choose:"Choose a work", communityNote:"Community average"}
+fi:{count: n => `Näytetään ${n} teosta`, owner:"Oma arvio", imdb:"IMDb-arvio", review:"Näytä arvosanatiedot", hide:"Piilota arvosanatiedot", noReview:"Omaa arvostelua ei ole vielä lisätty.", saved:"Demoarvio tallennettu tähän selaimeen.", yourReview:"Oma paikallinen demoarviosi", choose:"Valitse teos", imdbMissing:"IMDb-arviota ei ole vahvistettu tähän demoon."},
+en:{count: n => `Showing ${n} works`, owner:"My rating", imdb:"IMDb rating", review:"Show rating details", hide:"Hide rating details", noReview:"No personal review has been added yet.", saved:"Demo review saved in this browser.", yourReview:"Your local demo review", choose:"Choose a work", imdbMissing:"No verified IMDb rating has been added to this demo yet."}
 };
 let language = "fi";
 let activeCategory = "all";
@@ -196,20 +199,21 @@ function renderCatalogue(){
   const creator=document.createElement("p");creator.className="work-creator";creator.textContent=work.creator;card.append(creator);
   const genres=document.createElement("div");genres.className="genre-list";work.genres.forEach(g=>{const tag=document.createElement("span");tag.textContent=g;genres.append(tag)});card.append(genres);
   const rating=document.createElement("div");rating.className="rating-strip";
-  const owner=document.createElement("span");owner.className="owner-score";owner.textContent="✦ "+work.owner.toFixed(1)+"/10";
-  owner.setAttribute("aria-label",ui[language].owner+" "+work.owner.toFixed(1)+" / 10");
-  const community=document.createElement("span");community.className="community-score";community.textContent=ui[language].community+" "+work.community.toFixed(1);
-  rating.append(owner,community);card.append(rating);
+  const owner=document.createElement("span");owner.className="owner-score";owner.textContent="✦ 0.0/10";
+  owner.setAttribute("aria-label",ui[language].owner+" 0 / 10");
+  const imdb=document.createElement("span");imdb.className="community-score";imdb.textContent=ui[language].imdb+": "+(work.imdbRating==null?"—":work.imdbRating.toFixed(1)+"/10");
+  rating.append(owner,imdb);card.append(rating);
   const toggle=document.createElement("button");toggle.className="review-toggle";toggle.type="button";toggle.textContent=ui[language].review;toggle.setAttribute("aria-expanded","false");
   const reviews=document.createElement("div");reviews.hidden=true;
   toggle.addEventListener("click",()=>{reviews.hidden=!reviews.hidden;toggle.setAttribute("aria-expanded",String(!reviews.hidden));toggle.textContent=reviews.hidden?ui[language].review:ui[language].hide});
   const ownerReview=document.createElement("div");ownerReview.className="local-review";
-  const ownerHeading=document.createElement("strong");ownerHeading.textContent=ui[language].owner+" · "+work.owner.toFixed(1)+"/10";ownerReview.append(ownerHeading);
-  const ownerText=document.createElement("p");ownerText.textContent=work.ownerReview;ownerReview.append(ownerText);
-  const communityReview=document.createElement("div");communityReview.className="local-review";
-  const communityHeading=document.createElement("strong");communityHeading.textContent=ui[language].communityNote+" · "+work.community.toFixed(1)+"/10";communityReview.append(communityHeading);
-  const communityText=document.createElement("p");communityText.textContent=language==="fi"?"Havainnollistava esimerkkikeskiarvo — ei oikeita käyttäjäarvioita.":"Illustrative sample average — not real user ratings.";communityReview.append(communityText);
-  reviews.append(ownerReview,communityReview);card.append(toggle,reviews);grid.append(card);
+  const ownerHeading=document.createElement("strong");ownerHeading.textContent=ui[language].owner+" · 0.0/10";ownerReview.append(ownerHeading);
+  const ownerText=document.createElement("p");ownerText.textContent=ui[language].noReview;ownerReview.append(ownerText);
+  const imdbReview=document.createElement("div");imdbReview.className="local-review";
+  const imdbHeading=document.createElement("strong");imdbHeading.textContent=ui[language].imdb;imdbReview.append(imdbHeading);
+  const imdbText=document.createElement("p");imdbText.textContent=work.imdbRating==null?ui[language].imdbMissing:(language==="fi"?"IMDb:n käyttäjäarvio: ":"IMDb user rating: ")+work.imdbRating.toFixed(1)+"/10. "+(language==="fi"?"Lähde: IMDb. Arvosana voi muuttua.":"Source: IMDb. Ratings may change.");imdbReview.append(imdbText);
+  const imdbLink=document.createElement("a");imdbLink.href="https://www.imdb.com/find/?q="+encodeURIComponent(work.title);imdbLink.target="_blank";imdbLink.rel="noopener noreferrer";imdbLink.textContent="IMDb";imdbReview.append(imdbLink);
+  reviews.append(ownerReview,imdbReview);card.append(toggle,reviews);grid.append(card);
  });
 }
 // ---------------------------------------------------------------------------
