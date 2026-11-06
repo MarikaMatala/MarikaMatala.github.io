@@ -1,35 +1,30 @@
-# The Cultured Vault — installable browser demo
+# The Cultured Vault — demo installation
 
-This directory contains the installable Progressive Web App (PWA) demo for The Cultured Vault. It is a static front-end prototype and does not require an application server beyond static HTTPS hosting.
+For the full setup guide, project explanation, architecture, file map, sample data format, privacy notes, troubleshooting and contribution guidance, read:
 
-## Install on Android (including Samsung)
+- [README — English](README.md)
+- [README — suomeksi](README.fi.md)
 
-1. Open the demo URL in Chrome.
-2. Use the browser menu and choose **Install app** or **Add to Home screen**.
-3. Confirm the installation. The app opens in its own window.
+## Android (including Samsung)
 
-Samsung Internet may offer **Add page to** / **Home screen** depending on version. Chrome is recommended for the install prompt.
+1. Open the published demo in Chrome over HTTPS.
+2. Open the browser's three-dot menu.
+3. Choose **Install app** or **Add to Home screen**.
+4. Confirm the installation.
 
-## Install on iPhone or iPad
+Samsung Internet may offer an **Add page to** or **Home screen** option depending on its version. Chrome is recommended for the install prompt.
 
-1. Open the demo URL in **Safari**.
+## iPhone and iPad
+
+1. Open the published demo in Safari over HTTPS.
 2. Tap **Share**.
 3. Choose **Add to Home Screen**.
 4. Confirm the name and tap **Add**.
 
-On iOS, installation is performed through Safari's Share menu; the web install prompt used by Chromium browsers is not available.
+iOS uses Safari's Share menu for this flow. Chromium's JavaScript install prompt is not available in Safari.
 
-## Included PWA capabilities
+## Important limitations
 
-- Web app manifest with standalone display mode and app icons.
-- Service worker scoped only to this demo directory.
-- Basic offline app-shell caching after the first successful visit.
-- Responsive layout for phone, tablet and desktop.
-- Finnish and English interface.
-- Browser-local demo ratings stored in local storage.
+This is a static PWA prototype, not a native APK/IPA or an App Store / Google Play release. It has no backend, user accounts, shared reviews or cloud synchronisation. Personal demo reviews remain in the current browser's local storage.
 
-## Current limitations
-
-This is not a native Android APK or an iOS App Store application. It has no backend, user accounts, shared reviews, authentication or cloud synchronization. Local demo reviews remain on the device/browser where they were created. Clearing browser storage can remove them.
-
-The service worker and install features require HTTPS. GitHub Pages provides HTTPS automatically for the published site. After a new deployment, close and reopen the installed app if an older cached version is still displayed.
+The first visit needs an internet connection so the service worker can cache the app shell. Basic offline loading is available after a successful initial load.
