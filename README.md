@@ -1,5 +1,7 @@
 # Portfolio | Marika Matalamäki
 
+<!-- // Last updated: 2026-11-06 13:07 (Europe/Helsinki). -->
+
 **Portfolio website:** https://marikamatala.github.io/
 
 ## About
@@ -24,13 +26,17 @@ Kehitän portfoliotani jatkuvasti ja lisään verkkosivulle valikoituja projekte
 
 ---
 
+**Website status:** This portfolio is still a work in progress. Its content, translations and work samples are being updated. The latest update is shown at the top of the published website.
+
+**Sivuston tila:** Portfolio on edelleen työn alla. Sen sisältöä, kieliversioita ja työnäytteitä päivitetään. Viimeisimmän päivityksen ajankohta näkyy julkaistun sivuston yläosassa.
+
 ## Repository structure
 
 - `index.html` — homepage and short introduction, in Finnish and English
 - `minusta.html` — education, background and self-assessed skills
 - `tyonaytteet.html` — project descriptions, image galleries, interactive C# examples, inline PDF previews and the embedded Remote Job Fit demo
 - `remote-job-fit-demo.html`, `remote-job-fit-demo.css`, `remote-job-fit-demo.js` — isolated browser-only Remote Job Fit prototype; entered data is processed in memory and is not transmitted or stored
-- `backend-code-examples.md` — four reviewed backend code examples covering Mongoose, REST API CRUD, session authentication and automated testing
+- `backend-code-examples.md` — five reviewed backend code examples covering Mongoose, REST API CRUD, session authentication and automated testing
 - `yhteystiedot.html` — email, LinkedIn, GitHub and job availability
 - `style.css` — responsive layout and shared component styles
 - `autumn-cottagecore.css` — autumn colors, readable typography, cottagecore-inspired details and accessibility refinements
