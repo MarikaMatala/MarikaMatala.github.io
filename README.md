@@ -99,7 +99,7 @@ The current site uses native HTML, CSS and JavaScript and is published directly 
 
 A reference guide for possible future libraries—including Tailwind CSS v4, tw-animate-css, Radix/shadcn UI, Lucide, Simple Icons and the Web Audio API—is available in [UI-LIBRARIES.md](UI-LIBRARIES.md). These React/Vite libraries are documented as future options, not dependencies installed in the current static site.
 
- The guide also includes animation examples and links to official documentation and CSS learning resources.
+The guide also includes animation examples and links to official documentation and CSS learning resources.
 
 ## Käyttöliittymäkirjastot, animaatiot ja saavutettavuus
 
