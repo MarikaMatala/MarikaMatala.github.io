@@ -119,7 +119,7 @@
       .replace(/[^a-z0-9+#.]+/g," ").trim().replace(/\s+/g," ");
   }
   function hasPhrase(text, phrase) {
-    const source = " " + normalize(text).replace(/([a-z0-9+#])\\.(?=\\s|$)/g, "$1 ") + " ";
+    const source = " " + normalize(text).replace(/([a-z0-9+#])\.(?=\s|$)/g, "$1 ") + " ";
     const target = normalize(phrase);
     if (!target) return false;
     if (source.includes(" " + target + " ")) return true;
