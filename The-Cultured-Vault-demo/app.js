@@ -1,3 +1,9 @@
+/* THE CULTURED VAULT DEMO APPLICATION
+   Dependency-free browser prototype. The sample catalogue is local code data;
+   personal demo reviews are stored only in this browser's localStorage. */
+// ---------------------------------------------------------------------------
+// 1. Sample catalogue. Add or edit entries here; see README.fi.md for the schema.
+// ---------------------------------------------------------------------------
 const works = [
 {id:"film-the-godfather-1972",title:"The Godfather",creator:"Francis Ford Coppola",type:"film",year:1972,genres:["Crime","Drama"],country:"United States",owner:9.5,community:9.2,ownerReview:"A defining crime drama with extraordinary performances, atmosphere and a story that rewards revisiting."},
 {id:"film-spirited-away-2001",title:"Spirited Away",creator:"Hayao Miyazaki",type:"animation",year:2001,genres:["Adventure","Fantasy"],country:"Japan",owner:10,community:9.1,ownerReview:"A beautifully imagined world, full of detail, emotion and unforgettable visual storytelling."},
@@ -15,6 +21,9 @@ const works = [
 {id:"book-the-left-hand-of-darkness-1969",title:"The Left Hand of Darkness",creator:"Ursula K. Le Guin",type:"book",year:1969,genres:["Science fiction"],country:"United States",owner:9.6,community:9.0,ownerReview:"A thoughtful, humane work of speculative fiction that invites reflection long after reading."}
 ];
 
+// ---------------------------------------------------------------------------
+// 2. Bilingual media labels, interface messages and application state.
+// ---------------------------------------------------------------------------
 const typeLabels = {
 fi:{film:"Elokuva",series:"Sarja",animation:"Animaatio",documentary:"Dokumentti",podcast:"Podcast",music:"Musiikki",game:"Peli",book:"Kirja"},
 en:{film:"Film",series:"Series",animation:"Animation",documentary:"Documentary",podcast:"Podcast",music:"Music",game:"Game",book:"Book"}
@@ -31,6 +40,10 @@ const sortSelect = document.getElementById("sort-select");
 const reviewSelect = document.getElementById("review-work");
 const storageKey = "cultured-vault-demo-reviews-v1";
 
+// ---------------------------------------------------------------------------
+// 3. Storage, language and catalogue filtering helpers.
+// Parse storage defensively so malformed data does not break the catalogue.
+// ---------------------------------------------------------------------------
 function getLocalReviews(){try{return JSON.parse(localStorage.getItem(storageKey)||"[]")}catch{return []}}
 function setLanguage(next){
  if(next!=="fi"&&next!=="en")return;
@@ -51,6 +64,10 @@ function filteredWorks(){
  if(sort==="rating")list.sort((a,b)=>b.community-a.community);
  return list;
 }
+// ---------------------------------------------------------------------------
+// 4. Build catalogue cards. textContent displays data as text instead of
+// parsing it as HTML, including any visitor-entered review comments.
+// ---------------------------------------------------------------------------
 function renderCatalogue(){
  const list=filteredWorks();
  grid.replaceChildren();
@@ -82,6 +99,9 @@ function renderCatalogue(){
   reviews.append(ownerReview,communityReview);card.append(toggle,reviews);grid.append(card);
  });
 }
+// ---------------------------------------------------------------------------
+// 5. Render this browser's own demo reviews and populate the work selector.
+// ---------------------------------------------------------------------------
 function renderLocalReviews(){
  const container=document.getElementById("local-review-list");container.replaceChildren();
  const reviews=getLocalReviews();
@@ -97,6 +117,9 @@ function populateReviewSelect(){
  reviewSelect.replaceChildren();
  works.forEach(work=>{const option=document.createElement("option");option.value=work.id;option.textContent=work.title;reviewSelect.append(option)});
 }
+// ---------------------------------------------------------------------------
+// 6. Event handlers for filtering, search, sorting and review submission.
+// ---------------------------------------------------------------------------
 document.getElementById("category-filters").addEventListener("click",event=>{
  const button=event.target.closest("button[data-category]");if(!button)return;
  activeCategory=button.dataset.category;
@@ -115,6 +138,8 @@ document.getElementById("personal-review-form").addEventListener("submit",event=
  catch{document.getElementById("review-status").textContent=language==="fi"?"Selaimen tallennustila ei ole käytettävissä.":"Browser storage is unavailable."}
 });
 document.getElementById("demo-language").addEventListener("click",()=>setLanguage(language==="fi"?"en":"fi"));
+// The portfolio can request that this embedded demo use the same UI language.
+// This synchronises presentation only; it does not exchange personal data.
 window.addEventListener("message",event=>{
  if(event.data?.type==="portfolio-language")setLanguage(event.data.language);
 });
@@ -122,7 +147,9 @@ populateReviewSelect();renderCatalogue();renderLocalReviews();
 // Request the portfolio language after the embedded page has loaded.
 if (window.parent !== window) window.parent.postMessage({type:"remote-job-fit-language-request"},"*");
 
-/* Progressive Web App: install prompt and scoped offline support */
+// ---------------------------------------------------------------------------
+// 7. PWA install prompt and service-worker registration.
+// ---------------------------------------------------------------------------
 let deferredInstallPrompt = null;
 const installButton = document.getElementById("install-app");
 window.addEventListener("beforeinstallprompt", event => {
@@ -143,6 +170,7 @@ window.addEventListener("appinstalled", () => {
  if (installButton) installButton.hidden = true;
  deferredInstallPrompt = null;
 });
+// Service workers require HTTPS or localhost and are scoped to this folder only.
 if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
  window.addEventListener("load", () => {
   navigator.serviceWorker.register("./sw.js", {scope:"./"}).catch(error => {
