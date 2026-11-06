@@ -24,6 +24,7 @@ class SiteParser(HTMLParser):
         self.form_controls, self.label_targets, self.idrefs = [], set(), []
         self.positive_tabindex, self.unnamed_buttons, self.skip_links = [], [], []
         self._button_stack = []
+        self._label_stack = []
 
     def handle_starttag(self, tag, attrs):
         attributes = dict(attrs)
@@ -38,10 +39,12 @@ class SiteParser(HTMLParser):
             self.images_missing_alt.append(attributes.get("src", "(image without src)"))
         if tag == "iframe" and not attributes.get("title", "").strip():
             self.iframes_missing_title.append(attributes.get("src", "(iframe without src)"))
-        if tag == "label" and attributes.get("for"):
-            self.label_targets.add(attributes["for"])
+        if tag == "label":
+            self._label_stack.append(attributes.get("for", ""))
+            if attributes.get("for"):
+                self.label_targets.add(attributes["for"])
         if tag in FORM_CONTROLS:
-            self.form_controls.append((tag, attributes))
+            self.form_controls.append((tag, attributes, bool(self._label_stack)))
         if tag == "button":
             self._button_stack.append({"attributes": attributes, "text": ""})
         for attribute in IDREF_ATTRIBUTES:
@@ -73,6 +76,8 @@ class SiteParser(HTMLParser):
             button["text"] += data
 
     def handle_endtag(self, tag):
+        if tag == "label" and self._label_stack:
+            self._label_stack.pop()
         if tag == "button" and self._button_stack:
             button = self._button_stack.pop()
             attrs = button["attributes"]
@@ -112,8 +117,8 @@ def audit_page(page, parser):
         errors.append(f"{relative}: iframe is missing a descriptive title: {frame}")
     for button in parser.unnamed_buttons:
         errors.append(f"{relative}: button has no accessible name: {button}")
-    for tag, attrs in parser.form_controls:
-        labelled = bool(attrs.get("aria-label", "").strip() or attrs.get("aria-labelledby", "").strip()
+    for tag, attrs, wrapped_label in parser.form_controls:
+        labelled = bool(wrapped_label or attrs.get("aria-label", "").strip() or attrs.get("aria-labelledby", "").strip()
                         or attrs.get("title", "").strip() or attrs.get("id") in parser.label_targets)
         if not labelled:
             errors.append(f"{relative}: <{tag}> has no programmatic label")
