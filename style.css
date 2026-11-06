@@ -2823,3 +2823,42 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
   .site-header .language-toggle{padding-inline:5px}
   .site-header .menu-toggle{width:36px;height:36px;flex-basis:36px}
 }
+
+
+/* Explicit two-line header identity on every viewport and language. */
+.site-header > a.wordmark.full-name{
+  display:block !important;
+  flex:0 1 auto;
+  width:max-content;
+  max-width:42vw;
+  min-width:0;
+  white-space:normal !important;
+  text-align:left !important;
+  line-height:1.12 !important;
+  letter-spacing:0 !important;
+}
+.site-header > a.wordmark.full-name .wordmark-name,
+.site-header > a.wordmark.full-name .wordmark-subtitle{
+  display:block !important;
+  white-space:nowrap;
+}
+.site-header > a.wordmark.full-name .wordmark-name{
+  font-size:1em;
+  line-height:1.12;
+}
+.site-header > a.wordmark.full-name .wordmark-subtitle{
+  margin-top:2px;
+  font-family:var(--sans);
+  font-size:.62em;
+  font-weight:600;
+  line-height:1.2;
+  letter-spacing:.025em;
+  opacity:.82;
+}
+.site-header > a.wordmark.full-name .wordmark-break{display:none}
+@media(max-width:560px){
+  .site-header > a.wordmark.full-name{max-width:calc(100vw - 150px);font-size:clamp(.68rem,3.1vw,.82rem)}
+}
+@media(max-width:360px){
+  .site-header > a.wordmark.full-name{font-size:.66rem;max-width:calc(100vw - 132px)}
+}
