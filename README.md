@@ -29,6 +29,7 @@ Kehitän portfoliotani jatkuvasti ja lisään verkkosivulle valikoituja projekte
 - `index.html` — homepage and short introduction, in Finnish and English
 - `minusta.html` — education, background and self-assessed skills
 - `tyonaytteet.html` — project descriptions, image galleries, interactive C# examples and inline PDF work-sample previews
+- `backend-code-examples.md` — four reviewed backend code examples covering Mongoose, REST API CRUD, session authentication and automated testing
 - `yhteystiedot.html` — email, LinkedIn, GitHub and job availability
 - `style.css` — responsive layout and shared component styles
 - `autumn-cottagecore.css` — autumn colors, readable typography, cottagecore-inspired details and accessibility refinements
