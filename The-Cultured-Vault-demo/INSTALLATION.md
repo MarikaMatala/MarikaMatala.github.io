@@ -25,7 +25,7 @@ Samsung Internet may offer an **Add page to** or **Home screen** option dependin
 
 iOS uses Safari's Share menu for this flow. Chromium's JavaScript install prompt is not available in Safari.
 
-The catalogue opens in alphabetical title order and includes A–Z / Å–Ä–Ö letter and 0–9 numeric indexes that jump to matching groups. Both indexes update with search results and category filters and remain available while scrolling. The one-character jump field accepts either a letter or a digit. The catalogue currently contains 500 sample entries, including 486 additions across several media categories, including cult television, films, animation and cartoons from the 1980s, 1990s and 2000s. Every instance-owner rating is initially marked “Not rated yet”; no owner score or review text is prefilled. IMDb ratings are shown separately when available; a dash means no verified rating has been added.
+The catalogue opens in alphabetical title order and includes A–Z / Å–Ä–Ö letter and 0–9 numeric indexes that jump to matching groups. Both indexes update with search results and category filters and remain available while scrolling. The one-character jump field accepts either a letter or a digit. The catalogue currently contains 550 sample entries, including 536 additions across several media categories, including cult television, films, animation and cartoons from the 1980s, 1990s and 2000s. Every instance-owner rating is initially marked “Not rated yet”; no owner score or review text is prefilled. IMDb ratings are shown separately when available; a dash means no verified rating has been added.
 
 ## Important limitations
 
@@ -34,4 +34,4 @@ This is a static PWA prototype, not a native APK/IPA or an App Store / Google Pl
 The first visit needs an internet connection so the service worker can cache the app shell. Basic offline loading is available after a successful initial load.
 
 
-The catalogue now contains 500 works. The owner rating is shown as “Not rated yet” until the instance owner enters a rating. Visitors can suggest missing works, but suggestions are stored only in the current browser and are not transmitted to the maintainer because this demo has no backend.
+The catalogue now contains 550 works. The owner rating is shown as “Not rated yet” until the instance owner enters a rating. Visitors can suggest missing works, but suggestions are stored only in the current browser and are not transmitted to the maintainer because this demo has no backend.

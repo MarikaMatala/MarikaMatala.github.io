@@ -141,7 +141,7 @@ Sisältää visuaalisen ilmeen. Värit on määritelty tiedoston alussa :root-mu
 
 ### app.js
 
-Sisältää alkuperäisen works-katalogin ja 486 lisäystä (yhteensä 500 teosta) sekä selaimessa toimivan logiikan:
+Sisältää alkuperäisen works-katalogin ja 536 lisäystä (yhteensä 550 teosta) sekä selaimessa toimivan logiikan:
 
 1. lukee esimerkkikatalogin;
 2. suodattaa ja lajittelee teoksia käyttöliittymän valintojen perusteella; näyttää aakkosjärjestyksessä kirjainryhmät sekä niihin johtavat A–Ö- ja 0–9-hakemistot;
@@ -266,6 +266,6 @@ Alkuperäisten 14 esimerkin lisäksi katalogiin on lisätty 486 teosta eri kateg
 
 ## Teosehdotukset ja omat arviot
 
-Katalogissa on nyt 500 teosta. Kävijä voi ehdottaa puuttuvaa elokuvaa, sarjaa, animaatiota, dokumenttia, podcastia, albumia, peliä tai kirjaa. Ehdotukseen voi lisätä julkaisuvuoden, tekijän ja lisätiedon. Ehdotukset tallentuvat selaimen localStorageen avaimella `cultured-vault-suggestions-v1`; ne näkyvät vain samassa selaimessa ja laitteessa, eikä niitä lähetetä ylläpitäjälle ilman backendia.
+Katalogissa on nyt 550 teosta. Kävijä voi ehdottaa puuttuvaa elokuvaa, sarjaa, animaatiota, dokumenttia, podcastia, albumia, peliä tai kirjaa. Ehdotukseen voi lisätä julkaisuvuoden, tekijän ja lisätiedon. Ehdotukset tallentuvat selaimen localStorageen avaimella `cultured-vault-suggestions-v1`; ne näkyvät vain samassa selaimessa ja laitteessa, eikä niitä lähetetä ylläpitäjälle ilman backendia.
 
 Kaikkien teosten oma arvio näytetään tekstinä **Ei vielä arviota**. Oma numeroarvio ja arvosteluteksti lisätään vasta, kun ylläpitäjä itse arvioi teoksen. IMDb-arvosanat näytetään erillisinä ulkoisina viitetietoina.

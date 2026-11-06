@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   validate:
-    name: Validate HTML references
+    name: Validate HTML, accessibility baseline and JavaScript
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -20,7 +20,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.x"
+          python-version: "3.11"
 
       - name: Check local references, semantics and accessibility baseline
         run: python scripts/validate_site.py
@@ -28,10 +28,24 @@ jobs:
       - name: Test accessibility validator
         run: python -m unittest discover -s tests -p "test_site_accessibility.py"
 
-      - name: Set up Node.js for Remote Job Fit vocabulary tests
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "22"
 
-      - name: Run Remote Job Fit vocabulary tests
+      - name: Check JavaScript syntax
+        run: |
+          node --check script.js
+          node --check contact-filter.js
+          node --check gothic-enhancements.js
+          node --check The-Cultured-Vault-demo.js
+          node --check The-Cultured-Vault-demo/app.js
+          node --check The-Cultured-Vault-demo/sw.js
+          node --check remote-job-fit-demo.js
+          node --check remote-job-fit-vocabulary.js
+
+      - name: Test Remote Job Fit vocabulary
         run: node --test tests/remote-job-fit-vocabulary.test.cjs
+
+      - name: Test The Cultured Vault demo data integrity
+        run: node --test tests/cultured-vault-demo-data.test.cjs
