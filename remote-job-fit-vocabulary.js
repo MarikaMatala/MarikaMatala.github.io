@@ -155,7 +155,7 @@
     const parts = target.split(" ");
     const last = parts.pop();
     const prefix = parts.length ? parts.join(" ") + " " : "";
-    const finnishEndings = ["ssa","ssä","sta","stä","lla","llä","lle","ksi","tta","ttä","ia","iä","ja","in","issa","issä","een","ta","tä","n","a","ä"];
+    const finnishEndings = ["ssa","ssä","sta","stä","lla","llä","lle","ksi","tta","ttä","ia","iä","ja","in","issa","issä","een","en","ta","tä","n","a","ä"];
     return finnishEndings.some(ending => source.includes(" " + prefix + last + ending + " "));
   }
   const skillRecords = skills.map(([canonical,en,fi,...aliases]) => ({canonical,en,fi,aliases:(canonical==="Go"?["Golang"]:[canonical,en,fi,...aliases])}));
