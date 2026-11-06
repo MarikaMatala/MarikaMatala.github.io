@@ -84,6 +84,7 @@ function getLocalSuggestions(){try{return JSON.parse(localStorage.getItem(sugges
 function setLanguage(next){
  if(next!=="fi"&&next!=="en")return;
  language=next;document.documentElement.lang=language;
+ // Keep language changes text-only: rich headings use separate spans and <em> elements in HTML.
  document.querySelectorAll("[data-fi][data-en]").forEach(el=>{el.textContent=el.dataset[language]});
  document.querySelectorAll("[data-fi-placeholder][data-en-placeholder]").forEach(el=>{el.placeholder=el.dataset[language+"Placeholder"]});
  document.querySelectorAll("[data-fi-aria-label][data-en-aria-label]").forEach(el=>el.setAttribute("aria-label",el.dataset[language+"AriaLabel"]));
@@ -212,11 +213,14 @@ window.addEventListener("message",event=>{
 });
 const alphabetJumpInput=document.getElementById("alphabet-jump-input");
 alphabetJumpInput.addEventListener("input",()=>{
- const letter=alphabetJumpInput.value.trim().toLocaleUpperCase("fi");
- if(!/^[A-ZÅÄÖ]$/.test(letter))return;
+ const initial=alphabetJumpInput.value.trim().toLocaleUpperCase("fi");
+ const isNumber=/^\\d$/.test(initial);
+ const isLetter=/^[A-ZÅÄÖ]$/.test(initial);
+ if(!isNumber&&!isLetter)return;
  sortSelect.value="title";
  renderCatalogue();
- const target=document.getElementById("catalogue-letter-"+letter);
+ const targetId=isNumber?"catalogue-number-"+initial:"catalogue-letter-"+initial;
+ const target=document.getElementById(targetId);
  if(target)target.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
 });
 populateReviewSelect();renderCatalogue();renderLocalReviews();renderLocalSuggestions();
