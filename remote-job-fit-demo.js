@@ -20,8 +20,7 @@ const knownSkills = [
 function extractKnownSkills(text) {
   const normalized = text.toLowerCase().replace(/[’']/g, "'");
   return knownSkills.filter(skill => {
-    const escaped = skill.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, "\\const sampleRoles = [");
-    return new RegExp("(^|[^a-z0-9+#])" + escaped + "([^a-z0-9+#]|$)", "i").test(normalized);
+    return normalized.includes(skill.toLowerCase());
   });
 }
 cvFileInput.addEventListener("change", async () => {
