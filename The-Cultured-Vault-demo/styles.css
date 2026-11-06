@@ -130,3 +130,9 @@ select,input,textarea{background:#151310;color:var(--text);border:1px solid var(
 .alphabet-link:disabled{opacity:.28;cursor:not-allowed}
 .catalogue-letter-heading{grid-column:1/-1;margin:22px 0 2px;padding:7px 12px;border-bottom:1px solid var(--line);border-left:3px solid var(--bronze);color:var(--gold);font-size:1.35rem;scroll-margin-top:18px}
 @media(max-width:600px){.alphabet-nav{gap:5px;padding:10px}.alphabet-link{min-width:31px;min-height:32px;padding:3px 5px}.catalogue-letter-heading{margin-top:16px}}
+
+/* 14. A–Ö type-to-jump field. */
+.alphabet-jump{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:16px 0 8px;color:var(--muted);font-size:.86rem;font-weight:800}
+#alphabet-jump-input{width:86px;min-height:42px;border:1px solid var(--bronze);border-radius:9px;padding:7px 12px;background:var(--panel);color:var(--text);font-size:1.05rem;font-weight:900;text-align:center;text-transform:uppercase}
+#alphabet-jump-input:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+@media(max-width:600px){.alphabet-jump{align-items:flex-start;flex-direction:column;gap:6px}#alphabet-jump-input{width:100%;max-width:180px}}
