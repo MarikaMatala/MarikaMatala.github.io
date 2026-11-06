@@ -88,8 +88,10 @@
       </div>
 
       <label class="alphabet-jump" for="alphabet-jump-input" data-fi="Siirry alkukirjaimella" data-en="Jump to initial">Siirry alkukirjaimella <input id="alphabet-jump-input" type="search" maxlength="1" placeholder="A–Ö"></label>
-      <nav class="alphabet-nav" id="alphabet-nav" aria-label="Aakkoshakemisto" data-fi-aria-label="Aakkoshakemisto" data-en-aria-label="Alphabetical index" hidden></nav>
-      <nav class="alphabet-nav numeric-nav" id="numeric-nav" aria-label="Numerohakemisto" data-fi-aria-label="Numerohakemisto" data-en-aria-label="Numeric index" hidden></nav>
+      <div class="index-sticky-shell" id="index-sticky-shell" hidden>
+        <nav class="alphabet-nav" id="alphabet-nav" aria-label="Aakkoshakemisto" data-fi-aria-label="Aakkoshakemisto" data-en-aria-label="Alphabetical index" hidden></nav>
+        <nav class="alphabet-nav numeric-nav" id="numeric-nav" aria-label="Numerohakemisto" data-fi-aria-label="Numerohakemisto" data-en-aria-label="Numeric index" hidden></nav>
+      </div>
       <p class="result-count" id="result-count" role="status" aria-live="polite">Näytetään 500 teosta</p>
       <div class="catalogue-grid" id="catalogue-grid"></div>
       <p class="empty-state" id="empty-state" hidden data-fi="Hakuehdoilla ei löytynyt teoksia. Kokeile toista hakusanaa tai kategoriaa." data-en="No works match your search. Try another keyword or category.">Hakuehdoilla ei löytynyt teoksia. Kokeile toista hakusanaa tai kategoriaa.</p>
