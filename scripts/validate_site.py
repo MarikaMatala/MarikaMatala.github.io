@@ -25,7 +25,7 @@ class SiteParser(HTMLParser):
         for attribute in ("href", "src"):
             value = attributes.get(attribute)
             if value:
-                self.references.append(value)
+                self.references.append((attribute, value))
 
 
 def resolve_local_reference(source, value):
@@ -52,15 +52,21 @@ def main():
 
     errors = []
     checked_references = 0
+    checked_fragments = 0
+    parsed_pages = {}
+
     for page in pages:
         parser = SiteParser()
         parser.feed(page.read_text(encoding="utf-8"))
         parser.close()
+        parsed_pages[page.resolve()] = parser
 
         for duplicate in sorted(set(parser.duplicates)):
             errors.append(f"{page.relative_to(ROOT)}: duplicate id '{duplicate}'")
 
-        for reference in parser.references:
+    for page in pages:
+        parser = parsed_pages[page.resolve()]
+        for attribute, reference in parser.references:
             target = resolve_local_reference(page, reference)
             if target is None:
                 continue
@@ -69,9 +75,29 @@ def main():
             except ValueError:
                 errors.append(f"{page.relative_to(ROOT)}: reference escapes site root: {reference}")
                 continue
+
             checked_references += 1
             if not target.is_file():
                 errors.append(f"{page.relative_to(ROOT)}: missing local file: {reference}")
+                continue
+
+            parsed_reference = urlsplit(reference)
+            if parsed_reference.fragment and target.suffix.lower() in {".html", ".htm"}:
+                target = target.resolve()
+                target_parser = parsed_pages.get(target)
+                if target_parser is None:
+                    target_parser = SiteParser()
+                    target_parser.feed(target.read_text(encoding="utf-8"))
+                    target_parser.close()
+                    parsed_pages[target] = target_parser
+
+                fragment = unquote(parsed_reference.fragment)
+                checked_fragments += 1
+                if fragment not in target_parser.ids:
+                    errors.append(
+                        f"{page.relative_to(ROOT)}: missing HTML anchor #{fragment} "
+                        f"in {target.relative_to(ROOT)} ({attribute}={reference})"
+                    )
 
     if errors:
         print("Site validation failed:")
@@ -79,7 +105,7 @@ def main():
             print(f" - {error}")
         return 1
 
-    print(f"Site validation passed: {len(pages)} HTML pages and {checked_references} local references checked.")
+    print(f"Site validation passed: {len(pages)} HTML pages, {checked_references} local references and {checked_fragments} HTML anchors checked.")
     return 0
 
 
