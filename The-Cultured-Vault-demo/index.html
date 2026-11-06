@@ -61,8 +61,8 @@
         <label class="sort-control">
           <span data-fi="Järjestä" data-en="Sort by">Järjestä</span>
           <select id="sort-select">
-            <option value="featured" data-fi="Suositellut" data-en="Featured">Suositellut</option>
             <option value="title" data-fi="Nimi A–Ö" data-en="Title A–Z">Nimi A–Ö</option>
+            <option value="featured" data-fi="Suositellut" data-en="Featured">Suositellut</option>
             <option value="year" data-fi="Julkaisuvuosi" data-en="Release year">Julkaisuvuosi</option>
             <option value="rating" data-fi="IMDb-arvio" data-en="IMDb rating">IMDb-arvio</option>
           </select>
@@ -87,7 +87,8 @@
         <button class="filter-chip" type="button" data-category="book" aria-pressed="false" data-fi="Kirjat" data-en="Books">Kirjat</button>
       </div>
 
-      <p class="result-count" id="result-count" role="status" aria-live="polite">Näytetään 14 teosta</p>
+      <nav class="alphabet-nav" id="alphabet-nav" aria-label="Aakkoshakemisto" data-fi-aria-label="Aakkoshakemisto" data-en-aria-label="Alphabetical index" hidden></nav>
+      <p class="result-count" id="result-count" role="status" aria-live="polite">Näytetään 500 teosta</p>
       <div class="catalogue-grid" id="catalogue-grid"></div>
       <p class="empty-state" id="empty-state" hidden data-fi="Hakuehdoilla ei löytynyt teoksia. Kokeile toista hakusanaa tai kategoriaa." data-en="No works match your search. Try another keyword or category.">Hakuehdoilla ei löytynyt teoksia. Kokeile toista hakusanaa tai kategoriaa.</p>
     </section>
