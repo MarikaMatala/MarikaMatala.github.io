@@ -132,6 +132,7 @@ works.push(...additionalWorks.map(([id,title,creator,type,year,genres,country,ow
  id,title,creator,type,year,genres,country,owner,community,
  ownerReview: "Curated sample catalogue entry. Replace this text with an instance owner's own review."
 })));
+works.forEach(work => { work.owner = 0; work.ownerReview = ""; });
 
 // ---------------------------------------------------------------------------
 // 2. Bilingual media labels, interface messages and application state.
