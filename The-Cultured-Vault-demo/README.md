@@ -19,7 +19,7 @@ This is a lightweight front-end prototype. It does not require a framework, buil
 - search by title, creator, country and genre;
 - category filters and sorting, with alphabetical title order as the default;
 - an A–Z / Å–Ä–Ö letter index and a 0–9 numeric index; both jump to matching catalogue groups, disable unavailable entries and follow the current search and category filters; the sticky indexes remain accessible while scrolling;
-- separate owner ratings plus external IMDb and Rotten Tomatoes reference ratings;
+- separate owner ratings and external reference scores: IMDb ratings (0–10), Rotten Tomatoes critic scores (Tomatometer) and audience scores (Popcornmeter);
 - a form for adding a personal demo rating and optional comment;
 - Finnish and English interface text;
 - responsive layouts for phones, tablets and desktop browsers;
@@ -27,6 +27,13 @@ This is a lightweight front-end prototype. It does not require a framework, buil
 - a service worker that caches the app shell for basic offline use.
 
 The goal is to make the concept testable before implementing a production backend.
+
+### IMDb and Rotten Tomatoes ratings
+
+Catalogue cards and work details can display an IMDb rating alongside two separate Rotten Tomatoes percentages: the **Tomatometer** represents critics’ reviews, while the **Popcornmeter** represents audience ratings. These are external reference data, not ratings submitted by this project’s owner. Values are shown only when a title can be matched reliably and the source information is available. Missing values are left blank rather than guessed or treated as zero.
+
+The reception label (for example, positive or divisive reception) is derived from the available scores. It is an indicative score-based label, not a measurement of a title’s popularity, viewership or number of reviews. Rotten Tomatoes scores are not available for every media category in the catalogue.
+
 
 ## 2. What it does not do
 
@@ -139,7 +146,7 @@ Contains the original sample works plus 486 additions (500 entries total), and b
 1. reads the sample catalogue;
 2. filters and sorts works using the controls, with alphabetic letter groups and quick navigation when title order is active;
 3. builds catalogue cards with DOM methods;
-4. shows the owner placeholder “Not rated yet” and IMDb ratings separately;
+4. displays the owner placeholder separately from available IMDb and Rotten Tomatoes reference scores (Tomatometer and Popcornmeter);
 5. stores personal demo reviews in localStorage;
 6. switches between Finnish and English;
 7. registers the service worker on HTTPS or localhost.
