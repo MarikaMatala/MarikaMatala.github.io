@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- THE CULTURED VAULT DEMO: semantic page structure and bilingual copy. Styling is in styles.css; behaviour is in app.js. -->
 <html lang="fi">
 <head>
   <meta charset="utf-8">
@@ -9,15 +10,17 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Cultured Vault">
+  <!-- PWA metadata: app identity, display mode and home-screen icons. -->
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icons/vault-icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; form-action 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self';">
   <title>The Cultured Vault — Browser Demo</title>
-  <link rel="stylesheet" href="The-Cultured-Vault-demo.css">
+  <link rel="stylesheet" href="styles.css">
   <script src="app.js" defer></script>
 </head>
 <body>
+  <!-- Accessibility: keyboard users can skip directly to the main content. -->
   <a class="skip-link" href="#main-content" data-fi="Siirry pääsisältöön" data-en="Skip to main content">Siirry pääsisältöön</a>
   <div class="demo-status" role="status">
     <strong data-fi="Interaktiivinen selain-demo · Kehitysvaiheessa" data-en="Interactive browser demo · Work in progress">Interaktiivinen selain-demo · Kehitysvaiheessa</strong>
@@ -36,6 +39,7 @@
       <button class="language-button" id="demo-language" type="button" aria-label="Vaihda kieltä">FIN / ENG</button>
     </header>
 
+    <!-- Introductory project description and catalogue summary. -->
     <section class="intro-panel">
       <p class="eyebrow" data-fi="OMA KULTTUURIARKISTOSI" data-en="YOUR PERSONAL CULTURAL ARCHIVE">OMA KULTTUURIARKISTOSI</p>
       <h2 data-fi="Kaikki kokemisen arvoinen.<br><em>Yhdessä holvissa.</em>" data-en="Everything worth experiencing.<br><em>In one vault.</em>">Kaikki kokemisen arvoinen.<br><em>Yhdessä holvissa.</em></h2>
@@ -47,6 +51,7 @@
       </div>
     </section>
 
+    <!-- Catalogue controls and the grid populated by app.js. -->
     <section class="catalogue-section" aria-labelledby="catalogue-title">
       <div class="section-heading">
         <div>
@@ -87,6 +92,7 @@
       <p class="empty-state" id="empty-state" hidden data-fi="Hakuehdoilla ei löytynyt teoksia. Kokeile toista hakusanaa tai kategoriaa." data-en="No works match your search. Try another keyword or category.">Hakuehdoilla ei löytynyt teoksia. Kokeile toista hakusanaa tai kategoriaa.</p>
     </section>
 
+    <!-- Review-order example and browser-local demo review form. -->
     <section class="review-demo-section">
       <div class="section-heading">
         <p class="eyebrow" data-fi="ARVOSTELUT JA YHTEISÖ" data-en="REVIEWS AND COMMUNITY">ARVOSTELUT JA YHTEISÖ</p>
@@ -121,10 +127,12 @@
       <div class="local-review-list" id="local-review-list" aria-live="polite"></div>
     </section>
 
+    <!-- Instructions for adding this PWA to Android and Apple home screens. -->
     <aside class="install-help" role="note">
       <strong data-fi="Lisää puhelimen aloitusnäyttöön" data-en="Add to your home screen">Lisää puhelimen aloitusnäyttöön</strong>
       <p data-fi="Samsung / Android: avaa sivu Chromessa ja valitse selaimen valikosta Asenna sovellus tai Lisää aloitusnäyttöön. iPhone / iPad: avaa sivu Safarissa, napauta Jaa ja valitse Lisää Koti-valikkoon. Valikkotekstit voivat vaihdella laitteen ja selaimen version mukaan." data-en="Samsung / Android: open this page in Chrome and choose Install app or Add to Home screen from the browser menu. iPhone / iPad: open this page in Safari, tap Share, then choose Add to Home Screen. Menu labels may vary by device and browser version.">Samsung / Android: avaa sivu Chromessa ja valitse selaimen valikosta Asenna sovellus tai Lisää aloitusnäyttöön. iPhone / iPad: avaa sivu Safarissa, napauta Jaa ja valitse Lisää Koti-valikkoon. Valikkotekstit voivat vaihdella laitteen ja selaimen version mukaan.</p>
     </aside>
+    <!-- Explain prototype limitations and local-only data handling. -->
     <aside class="demo-notice" role="note">
       <strong data-fi="Demon rajaukset ja tietosuoja" data-en="Demo limitations and privacy">Demon rajaukset ja tietosuoja</strong>
       <p data-fi="Tämä on staattinen selainprototyyppi. Katalogi sisältää esimerkkiteoksia, arviot ovat havainnollistavia eikä käyttäjätilejä, kirjautumista, yhteisiä kommentteja tai palvelinpuolen tietokantaa ole vielä toteutettu. Oma demoarviosi tallentuu vain tähän selaimeen. Tietoja ei lähetetä palvelimelle eikä lisätä GitHub-repositorioon. Älä syötä arkaluonteisia tai henkilökohtaisia tietoja." data-en="This is a static browser prototype. The catalogue contains sample works and illustrative ratings; user accounts, sign-in, shared comments and a server-side database are not implemented yet. Your demo review is stored only in this browser. Nothing is sent to a server or added to the GitHub repository. Do not enter sensitive or personal information.">Tämä on staattinen selainprototyyppi. Katalogi sisältää esimerkkiteoksia, arviot ovat havainnollistavia eikä käyttäjätilejä, kirjautumista, yhteisiä kommentteja tai palvelinpuolen tietokantaa ole vielä toteutettu. Oma demoarviosi tallentuu vain tähän selaimeen. Tietoja ei lähetetä palvelimelle eikä lisätä GitHub-repositorioon. Älä syötä arkaluonteisia tai henkilökohtaisia tietoja.</p>
