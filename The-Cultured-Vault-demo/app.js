@@ -108,30 +108,45 @@ function filteredWorks(){
 function renderCatalogue(){
   const list=filteredWorks();
   const alphabetNav=document.getElementById("alphabet-nav");
+  const numericNav=document.getElementById("numeric-nav");
   const alphabetical=sortSelect.value==="title"||sortSelect.value==="featured";
   grid.replaceChildren();
   document.getElementById("total-count").textContent=works.length;
   document.getElementById("result-count").textContent=ui[language].count(list.length);
   document.getElementById("empty-state").hidden=list.length!==0;
   alphabetNav.replaceChildren();
+  numericNav.replaceChildren();
   alphabetNav.hidden=!alphabetical||list.length===0;
+  numericNav.hidden=!alphabetical||list.length===0;
   if(alphabetical&&list.length){
-    const available=new Set(list.map(work=>{const first=work.title.trim().charAt(0).toLocaleUpperCase(language==="fi"?"fi":"en");return /^[A-ZÅÄÖ]$/i.test(first)?first:"#"}));
+    const firstCharacters=list.map(work=>work.title.trim().charAt(0).toLocaleUpperCase(language==="fi"?"fi":"en"));
+    const availableLetters=new Set(firstCharacters.filter(first=>/^[A-ZÅÄÖ]$/i.test(first)));
+    const availableNumbers=new Set(firstCharacters.filter(first=>/^\\d$/.test(first)));
     const letters="ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ".split("");
     const label=document.createElement("span");label.className="alphabet-label";label.textContent=language==="fi"?"Siirry kirjaimeen:":"Jump to letter:";alphabetNav.append(label);
     letters.forEach(letter=>{
-      const button=document.createElement("button");button.type="button";button.className="alphabet-link";button.textContent=letter;button.dataset.letter=letter;button.disabled=!available.has(letter);button.setAttribute("aria-label",(language==="fi"?"Siirry kirjaimeen ":"Jump to letter ")+letter);
+      const button=document.createElement("button");button.type="button";button.className="alphabet-link";button.textContent=letter;button.dataset.letter=letter;button.disabled=!availableLetters.has(letter);button.setAttribute("aria-label",(language==="fi"?"Siirry kirjaimeen ":"Jump to letter ")+letter);
       button.addEventListener("click",()=>{const target=document.getElementById("catalogue-letter-"+letter);if(target)target.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});});
       alphabetNav.append(button);
     });
+    const numberLabel=document.createElement("span");numberLabel.className="alphabet-label";numberLabel.textContent=language==="fi"?"Siirry numerolla:":"Jump to number:";numericNav.append(numberLabel);
+    "0123456789".split("").forEach(number=>{
+      const button=document.createElement("button");button.type="button";button.className="alphabet-link";button.textContent=number;button.dataset.number=number;button.disabled=!availableNumbers.has(number);button.setAttribute("aria-label",(language==="fi"?"Siirry numerolla ":"Jump to number ")+number);
+      button.addEventListener("click",()=>{const target=document.getElementById("catalogue-number-"+number);if(target)target.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});});
+      numericNav.append(button);
+    });
   }
-  let previousLetter="";
+  let previousGroup="";
   list.forEach(work=>{
    if(alphabetical){
     const first=work.title.trim().charAt(0).toLocaleUpperCase(language==="fi"?"fi":"en");
-    const letter=/^[A-ZÅÄÖ]$/i.test(first)?first:"#";
-    if(letter!==previousLetter){
-      const heading=document.createElement("h3");heading.className="catalogue-letter-heading";heading.id="catalogue-letter-"+letter;heading.textContent=letter;heading.setAttribute("aria-label",(language==="fi"?"Kirjain ":"Letter ")+letter);grid.append(heading);previousLetter=letter;
+    const isNumber=/^\\d$/.test(first);
+    const group=isNumber?"number:"+first:"letter:"+( /^[A-ZÅÄÖ]$/i.test(first)?first:"#");
+    if(group!==previousGroup){
+      const heading=document.createElement("h3");
+      if(isNumber){heading.className="catalogue-number-heading";heading.id="catalogue-number-"+first;heading.textContent=first;heading.setAttribute("aria-label",(language==="fi"?"Numero ":"Number ")+first);}
+      else{const letter=group.slice(7);heading.className="catalogue-letter-heading";heading.id="catalogue-letter-"+letter;heading.textContent=letter;heading.setAttribute("aria-label",(language==="fi"?"Kirjain ":"Letter ")+letter);}
+      grid.append(heading);previousGroup=group;
     }
    }
    const card=document.createElement("article");card.className="work-card";
@@ -199,7 +214,7 @@ alphabetJumpInput.addEventListener("input",()=>{
  sortSelect.value="title";
  renderCatalogue();
  const target=document.getElementById("catalogue-letter-"+letter);
- if(target)target.scrollIntoView({behavior:"smooth",block:"start"});
+ if(target)target.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
 });
 populateReviewSelect();renderCatalogue();renderLocalReviews();renderLocalSuggestions();
 // Request the portfolio language after the embedded page has loaded.
