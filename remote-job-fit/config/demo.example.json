@@ -1,0 +1,40 @@
+{
+  "_comment": "Fictional example only. The current browser demo does not load this file.",
+  "_instructions": "Copy and adapt this structure only if you build a separate backend or data-driven version. Do not put secrets or personal data here.",
+  "application": {
+    "name": "Remote Job Fit",
+    "environment": "local-example",
+    "defaultLanguage": "en",
+    "supportedLanguages": ["fi", "en"]
+  },
+  "matching": {
+    "minimumScore": 35,
+    "showUnmatchedTerms": true,
+    "includeRoleTitleMatch": true
+  },
+  "dataSources": {
+    "occupationTaxonomy": {
+      "provider": "ESCO",
+      "enabled": false,
+      "language": "en",
+      "_comment": "Disabled example. If enabled, follow the European Commission's ESCO acknowledgement and modification rules."
+    },
+    "jobListings": {
+      "provider": "replace-with-a-provider",
+      "enabled": false,
+      "baseUrl": "https://example.invalid/api",
+      "_comment": "example.invalid is a reserved placeholder domain, not a real API endpoint."
+    }
+  },
+  "sampleProfile": {
+    "_comment": "Entirely fictional profile for testing; replace with synthetic data, not a real person's CV.",
+    "jobTitle": "Junior Web Developer",
+    "skills": ["HTML", "CSS", "JavaScript", "Accessibility", "Git"]
+  },
+  "sampleVacancy": {
+    "_comment": "Fictional vacancy. Not copied from a real employer or job advertisement.",
+    "title": "Junior Frontend Developer",
+    "description": "Help build accessible web interfaces and maintain responsive user experiences.",
+    "skills": ["HTML", "CSS", "JavaScript", "Accessibility", "Git"]
+  }
+}
