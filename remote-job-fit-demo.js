@@ -143,6 +143,15 @@ function scoreRole(role, skills, targetTitle, mustHave, excluded) {
   const titleTerms = tokenise(vocabulary.normalizeRoleTitle(targetTitle)).filter(term => term.length > 2);
   const matchedTitle = titleTerms.filter(term => vocabulary.containsPhrase(searchable, term) || detectedTerms.includes(term));
   const matchedMust = mustHave.filter(matchesTerm);
+  // Report only explicit vocabulary matches. Very short language names are
+  // excluded from automatic requirement extraction to reduce false positives.
+  const ambiguousSkills = new Set(["c", "r", "go"]);
+  const requirements = vocabulary.extractSkills(role.title + " " + role.text)
+    .filter(item => !ambiguousSkills.has(item.canonical.toLowerCase()));
+  const uniqueRequirements = [...new Map(requirements.map(item => [item.canonical, item])).values()];
+  const candidateSkills = new Set(vocabulary.normalizeSkillTerms(skills));
+  const matchedRequirements = uniqueRequirements.filter(item => candidateSkills.has(vocabulary.normalize(item.canonical)));
+  const missingRequirements = uniqueRequirements.filter(item => !candidateSkills.has(vocabulary.normalize(item.canonical)));
   const components = [];
   if (skills.length) components.push({ value: matchedSkills.length / skills.length, weight: 70 });
   if (titleTerms.length) components.push({ value: matchedTitle.length / titleTerms.length, weight: 20 });
@@ -153,7 +162,7 @@ function scoreRole(role, skills, targetTitle, mustHave, excluded) {
     : 0;
   let score = Math.round(weightedScore * 100);
   if (excludedMatches.length) score = Math.max(0, score - 35);
-  return { score: Math.min(100, score), matchedSkills, matchedTitle, matchedMust, excludedMatches };
+  return { score: Math.min(100, score), matchedSkills, matchedTitle, matchedMust, excludedMatches, matchedRequirements, missingRequirements };
 }
 function addText(parent, tag, className, value) {
   const element = document.createElement(tag);
@@ -182,8 +191,21 @@ function renderRole(role, result, isCustom = false) {
   meter.value = result.score;
   meter.setAttribute("aria-label", (language === "fi" ? "Sopivuuspisteet " : "Match score ") + result.score + "%");
   card.appendChild(meter);
-  const matched = [...result.matchedSkills, ...result.matchedTitle, ...result.matchedMust];
-  addText(card, "p", "matched", matched.length ? copy[language].matched + " " + [...new Set(matched)].join(", ") : copy[language].noMatch);
+  const matched = result.matchedRequirements.map(item => item.label);
+  addText(card, "p", "matched", matched.length ? copy[language].matched + " " + matched.join(", ") : copy[language].noMatch);
+  const gapSection = document.createElement("div");
+  gapSection.className = "skills-gap";
+  addText(gapSection, "h4", "", copy[language].missingSkills);
+  if (result.missingRequirements.length) {
+    const list = document.createElement("ul");
+    result.missingRequirements.forEach(item => addText(list, "li", "", item.label));
+    gapSection.appendChild(list);
+    addText(gapSection, "p", "learning-tip", copy[language].learning);
+  } else {
+    addText(gapSection, "p", "", copy[language].noneMissing);
+  }
+  addText(gapSection, "p", "analysis-caveat", copy[language].caveat);
+  card.appendChild(gapSection);
   if (result.excludedMatches.length) addText(card, "p", "matched", (language === "fi" ? "Poissulkevat osumat: " : "Excluded terms found: ") + result.excludedMatches.join(", "));
   if (isCustom) addText(card, "p", "matched", language === "fi" ? "Arvio perustuu vain tähän liitettyyn tekstiin." : "This estimate uses only the text you pasted.");
   return card;
