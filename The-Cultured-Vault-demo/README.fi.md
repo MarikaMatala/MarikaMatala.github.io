@@ -18,7 +18,7 @@ Demo on tarkoituksella kevyt eikä tarvitse ulkoisia kirjastoja tai build-vaihet
 - 500 teoksen esimerkkikatalogin useista kulttuurisisällön kategorioista; alkuperäisten 14 esimerkin lisäksi katalogiin on lisätty 486 teosta eri kategorioista, mukaan lukien 1980-, 1990- ja 2000-lukujen kulttisarjoja, kulttileffoja, animaatioita ja piirrettyjä;
 - haun nimen, tekijän, maan ja tyylilajien perusteella;
 - kategoriasuodattimet ja lajittelun, oletuksena aakkosjärjestys;
-- A–Ö- ja Å–Ä–Ö-pikahakemiston, josta voi hypätä suoraan halutun alkukirjaimen kohdalle; puuttuvat kirjaimet eivät ole valittavissa, ja hakemisto mukautuu hakutuloksiin ja kategoriasuodatukseen;
+- A–Ö- ja Å–Ä–Ö-aakkoshakemiston sekä 0–9-numerohakemiston; molemmista voi hypätä suoraan vastaavaan teosryhmään, puuttuvat vaihtoehdot eivät ole valittavissa ja hakemistot mukautuvat hakuun ja kategoriasuodatukseen; hakemistot pysyvät näkyvissä sivua vieritettäessä;
 - ylläpitäjän arvio tilassa ”Ei vielä arviota” ja IMDb-arviot erillään;
 - lomakkeen oman paikallisen demoarvion ja vapaaehtoisen kommentin lisäämiseen;
 - suomen- ja englanninkielisen käyttöliittymän;
@@ -137,7 +137,7 @@ Sisältää visuaalisen ilmeen. Värit on määritelty tiedoston alussa :root-mu
 Sisältää alkuperäisen works-katalogin ja 486 lisäystä (yhteensä 500 teosta) sekä selaimessa toimivan logiikan:
 
 1. lukee esimerkkikatalogin;
-2. suodattaa ja lajittelee teoksia käyttöliittymän valintojen perusteella; näyttää aakkosjärjestyksessä kirjainryhmät ja niihin johtavan pikahakemiston;
+2. suodattaa ja lajittelee teoksia käyttöliittymän valintojen perusteella; näyttää aakkosjärjestyksessä kirjainryhmät sekä niihin johtavat A–Ö- ja 0–9-hakemistot;
 3. muodostaa katalogikortit DOM-menetelmillä;
 4. näyttää ylläpitäjän oman arvion tilassa ”Ei vielä arviota” ja IMDb-arvosanat erillisinä;
 5. tallentaa kävijän oman demoarvion selaimen paikalliseen tallennustilaan;
