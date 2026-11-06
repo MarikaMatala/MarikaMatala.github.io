@@ -1,0 +1,18 @@
+{
+  "id": "./",
+  "name": "The Cultured Vault",
+  "short_name": "Cultured Vault",
+  "description": "A personal archive for films, series, animation, documentaries, podcasts, music, games and books.",
+  "lang": "en",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#171512",
+  "theme_color": "#171512",
+  "categories": ["entertainment", "books", "music"],
+  "icons": [
+    {"src":"./icons/vault-icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any"},
+    {"src":"./icons/vault-maskable.svg","sizes":"any","type":"image/svg+xml","purpose":"maskable"}
+  ]
+}
