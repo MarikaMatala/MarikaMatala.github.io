@@ -1,6 +1,6 @@
 # Portfolio | Marika Matalamäki
 
-<!-- // Last updated: 2026-11-06 13:27 (Europe/Helsinki). -->
+<!-- // Last updated: 2026-11-06 13:36 (Europe/Helsinki). -->
 
 **Portfolio website:** https://marikamatala.github.io/
 
@@ -52,7 +52,9 @@ See [DEVELOPMENT.md](DEVELOPMENT.md) for instructions on running the static site
 
 The Work Samples page now displays the **Sana Vapaa** event poster and the audiovisual communications portfolio directly in responsive, embedded PDF viewers. The Sana Vapaa poster was created for an event organised as part of the **Luotsaamo project run by Jyvässeudun 4H-yhdistys**. Its PDF asset is named `images/Sana-Vapaa-tapahtumajuliste.pdf`.
 
-The Work Samples page also includes an interactive Remote Job Fit browser demo. The experiment began as a way for its author to map personal skills and explore possible job roles; the public examples now cover software development, IT and ICT support, testing, data, cybersecurity, design, media, marketing and communications. Visitors can replace the sample skills, target title and job description with their own information to make the experiment relevant to their background and goals. The demo runs entirely in the browser, makes no network requests, and does not persist entered profile data. It is a limited front-end prototype and does not run the Python/FastAPI backend or fetch live vacancies. The full source project is available in the separate [remote-job-fit repository](https://github.com/MarikaMatala/remote-job-fit).\n\nThe Work Samples page also includes quick links to its main project sections. A GitHub Actions workflow checks local HTML file references, duplicate IDs and same-site HTML anchors on pull requests and pushes to `main`. See [DEVELOPMENT.md](DEVELOPMENT.md) and [TESTING.md](TESTING.md) for the current development and QA instructions.
+The Work Samples page also includes an interactive Remote Job Fit browser demo. The experiment began as a way for its author to map personal skills and explore possible job roles; the public examples now cover software development, IT and ICT support, testing, data, cybersecurity, design, media, marketing and communications. Visitors can replace the sample skills, target title and job description with their own information to make the experiment relevant to their background and goals. The demo runs entirely in the browser, makes no network requests, and does not persist entered profile data. It is a limited front-end prototype and does not run the Python/FastAPI backend or fetch live vacancies. The full source project is available in the separate [remote-job-fit repository](https://github.com/MarikaMatala/remote-job-fit).
+
+The Work Samples page also includes quick links to its main project sections. A GitHub Actions workflow checks local HTML file references, duplicate IDs and same-site HTML anchors on pull requests and pushes to `main`. See [DEVELOPMENT.md](DEVELOPMENT.md) and [TESTING.md](TESTING.md) for the current development and QA instructions.
 
 ## Technologies and areas
 
