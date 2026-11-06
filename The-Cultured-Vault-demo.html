@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#171512">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; form-action 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self';">
+  <title>The Cultured Vault — Browser Demo</title>
+  <link rel="stylesheet" href="The-Cultured-Vault-demo.css">
+  <script src="The-Cultured-Vault-demo.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content" data-fi="Siirry pääsisältöön" data-en="Skip to main content">Siirry pääsisältöön</a>
+  <div class="demo-status" role="status">
+    <strong data-fi="Interaktiivinen selain-demo · Kehitysvaiheessa" data-en="Interactive browser demo · Work in progress">Interaktiivinen selain-demo · Kehitysvaiheessa</strong>
+    <span data-fi="Tämä versio toimii ilman backendia." data-en="This version works without a backend.">Tämä versio toimii ilman backendia.</span>
+  </div>
+
+  <main class="vault-shell" id="main-content">
+    <header class="vault-header">
+      <a class="vault-mark" href="#top" aria-label="The Cultured Vault home"><span aria-hidden="true">✦</span></a>
+      <div class="brand-copy" id="top">
+        <p class="eyebrow">A CULTURAL ARCHIVE</p>
+        <h1>The Cultured <span>Vault</span></h1>
+        <p class="tagline" data-fi="Kulttuuria löydettäväksi. Tarinoita muistettavaksi." data-en="Culture worth discovering. Stories worth remembering.">Kulttuuria löydettäväksi. Tarinoita muistettavaksi.</p>
+      </div>
+      <button class="language-button" id="demo-language" type="button" aria-label="Vaihda kieltä">FIN / ENG</button>
+    </header>
+
+    <section class="intro-panel">
+      <p class="eyebrow" data-fi="OMA KULTTUURIARKISTOSI" data-en="YOUR PERSONAL CULTURAL ARCHIVE">OMA KULTTUURIARKISTOSI</p>
+      <h2 data-fi="Kaikki kokemisen arvoinen.<br><em>Yhdessä holvissa.</em>" data-en="Everything worth experiencing.<br><em>In one vault.</em>">Kaikki kokemisen arvoinen.<br><em>Yhdessä holvissa.</em></h2>
+      <p data-fi="Selaa elokuvia, sarjoja, animaatioita, dokumentteja, podcasteja, musiikkia, pelejä ja kirjoja. Tutustu teoksiin, katso esimerkkiarvioita ja kokeile oman arvostelun lisäämistä." data-en="Explore films, series, animation, documentaries, podcasts, music, games and books. Discover works, browse sample reviews and try adding your own rating.">Selaa elokuvia, sarjoja, animaatioita, dokumentteja, podcasteja, musiikkia, pelejä ja kirjoja. Tutustu teoksiin, katso esimerkkiarvioita ja kokeile oman arvostelun lisäämistä.</p>
+      <div class="vault-stats" aria-label="Catalogue summary">
+        <div><strong id="total-count">14</strong><span data-fi="teosta katalogissa" data-en="works in catalogue">teosta katalogissa</span></div>
+        <div><strong>08</strong><span data-fi="kategoriaa" data-en="categories">kategoriaa</span></div>
+        <div><strong>∞</strong><span data-fi="löydettävää tarinaa" data-en="stories to discover">löydettävää tarinaa</span></div>
+      </div>
+    </section>
+
+    <section class="catalogue-section" aria-labelledby="catalogue-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow" data-fi="HOLVIN KOKOELMA" data-en="THE VAULT COLLECTION">HOLVIN KOKOELMA</p>
+          <h2 id="catalogue-title" data-fi="Tutustu katalogiin" data-en="Explore the catalogue">Tutustu katalogiin</h2>
+        </div>
+        <label class="sort-control">
+          <span data-fi="Järjestä" data-en="Sort by">Järjestä</span>
+          <select id="sort-select">
+            <option value="featured" data-fi="Suositellut" data-en="Featured">Suositellut</option>
+            <option value="title" data-fi="Nimi A–Ö" data-en="Title A–Z">Nimi A–Ö</option>
+            <option value="year" data-fi="Julkaisuvuosi" data-en="Release year">Julkaisuvuosi</option>
+            <option value="rating" data-fi="Yhteisön arvio" data-en="Community rating">Yhteisön arvio</option>
+          </select>
+        </label>
+      </div>
+
+      <label class="search-box">
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <span class="visually-hidden" data-fi="Hae teoksia" data-en="Search works">Hae teoksia</span>
+        <input id="search-input" type="search" maxlength="100" placeholder="Hae nimellä, tekijällä tai tyylilajilla…" data-fi-placeholder="Hae nimellä, tekijällä tai tyylilajilla…" data-en-placeholder="Search by title, creator or genre…">
+      </label>
+
+      <div class="category-filters" id="category-filters" aria-label="Catalogue categories">
+        <button class="filter-chip is-active" type="button" data-category="all" aria-pressed="true" data-fi="Kaikki" data-en="All">Kaikki</button>
+        <button class="filter-chip" type="button" data-category="film" aria-pressed="false" data-fi="Elokuvat" data-en="Films">Elokuvat</button>
+        <button class="filter-chip" type="button" data-category="series" aria-pressed="false" data-fi="Sarjat" data-en="Series">Sarjat</button>
+        <button class="filter-chip" type="button" data-category="animation" aria-pressed="false" data-fi="Animaatio" data-en="Animation">Animaatio</button>
+        <button class="filter-chip" type="button" data-category="documentary" aria-pressed="false" data-fi="Dokumentit" data-en="Documentaries">Dokumentit</button>
+        <button class="filter-chip" type="button" data-category="podcast" aria-pressed="false" data-fi="Podcastit" data-en="Podcasts">Podcastit</button>
+        <button class="filter-chip" type="button" data-category="music" aria-pressed="false" data-fi="Musiikki" data-en="Music">Musiikki</button>
+        <button class="filter-chip" type="button" data-category="game" aria-pressed="false" data-fi="Pelit" data-en="Games">Pelit</button>
+        <button class="filter-chip" type="button" data-category="book" aria-pressed="false" data-fi="Kirjat" data-en="Books">Kirjat</button>
+      </div>
+
+      <p class="result-count" id="result-count" role="status" aria-live="polite">Näytetään 14 teosta</p>
+      <div class="catalogue-grid" id="catalogue-grid"></div>
+      <p class="empty-state" id="empty-state" hidden data-fi="Hakuehdoilla ei löytynyt teoksia. Kokeile toista hakusanaa tai kategoriaa." data-en="No works match your search. Try another keyword or category.">Hakuehdoilla ei löytynyt teoksia. Kokeile toista hakusanaa tai kategoriaa.</p>
+    </section>
+
+    <section class="review-demo-section">
+      <div class="section-heading">
+        <p class="eyebrow" data-fi="ARVOSTELUT JA YHTEISÖ" data-en="REVIEWS AND COMMUNITY">ARVOSTELUT JA YHTEISÖ</p>
+        <h2 data-fi="Omistajan arvio ensin.<br><em>Yhteisön ääni sen jälkeen.</em>" data-en="The owner's review first.<br><em>The community follows.</em>">Omistajan arvio ensin.<br><em>Yhteisön ääni sen jälkeen.</em></h2>
+        <p data-fi="Jokaisessa itsenäisessä asennuksessa ylläpitäjän oma arvio voidaan nostaa esiin ennen yhteisön keskiarvoa ja jäsenten arvosteluja. Tässä demossa näet, miten näkymä voisi toimia." data-en="Each independent deployment can feature its instance owner's review before the community average and member reviews. This demo illustrates how that experience could work.">Jokaisessa itsenäisessä asennuksessa ylläpitäjän oma arvio voidaan nostaa esiin ennen yhteisön keskiarvoa ja jäsenten arvosteluja. Tässä demossa näet, miten näkymä voisi toimia.</p>
+      </div>
+      <div class="review-order">
+        <article class="review-card owner-review">
+          <div class="review-top"><span class="review-label" data-fi="HOLVIN YLLÄPITÄJÄN ARVIO" data-en="INSTANCE OWNER REVIEW">HOLVIN YLLÄPITÄJÄN ARVIO</span><strong>9.5<span>/10</span></strong></div>
+          <h3 data-fi="Oma näkökulma näkyy aina ensin." data-en="The owner's perspective comes first.">Oma näkökulma näkyy aina ensin.</h3>
+          <p data-fi="Tämä paikka on varattu kyseisen demo-instanssin ylläpitäjän omalle arviolle. Oikeassa sovelluksessa jokaisella omalla asennuksella on oma ylläpitäjänsä, oma tietokantansa ja omat arvionsa." data-en="This space is reserved for the owner of this demo instance. In the real application, every independent deployment has its own owner, database and reviews.">Tämä paikka on varattu kyseisen demo-instanssin ylläpitäjän omalle arviolle. Oikeassa sovelluksessa jokaisella omalla asennuksella on oma ylläpitäjänsä, oma tietokantansa ja omat arvionsa.</p>
+          <span class="review-signature" data-fi="Demo-instanssin ylläpitäjä" data-en="Demo instance owner">Demo-instanssin ylläpitäjä</span>
+        </article>
+        <article class="review-card community-review">
+          <div class="review-top"><span class="review-label" data-fi="YHTEISÖN KESKIARVO · ESIMERKKI" data-en="COMMUNITY AVERAGE · SAMPLE">YHTEISÖN KESKIARVO · ESIMERKKI</span><strong>8.7<span>/10</span></strong></div>
+          <p data-fi="Yhteisön arvosana näytetään erillään ylläpitäjän henkilökohtaisesta arviosta. Tämä luku on vain havainnollistava esimerkki." data-en="The community score is kept separate from the owner's personal rating. This number is illustrative only.">Yhteisön arvosana näytetään erillään ylläpitäjän henkilökohtaisesta arviosta. Tämä luku on vain havainnollistava esimerkki.</p>
+          <span class="review-signature" data-fi="128 esimerkkisummaa" data-en="128 sample ratings">128 esimerkkisummaa</span>
+        </article>
+      </div>
+      <form id="personal-review-form" class="personal-review-form">
+        <div>
+          <p class="eyebrow" data-fi="KOKEILE ITSE" data-en="TRY IT YOURSELF">KOKEILE ITSE</p>
+          <h3 data-fi="Lisää oma demoarviosi" data-en="Add your demo review">Lisää oma demoarviosi</h3>
+          <p data-fi="Valitse ensin teos katalogista. Arvio ja kommentti tallentuvat vain tämän selaimen paikalliseen tallennustilaan." data-en="Choose a work from the catalogue first. Your rating and comment are stored only in this browser's local storage.">Valitse ensin teos katalogista. Arvio ja kommentti tallentuvat vain tämän selaimen paikalliseen tallennustilaan.</p>
+        </div>
+        <label><span data-fi="Valitse teos" data-en="Choose a work">Valitse teos</span><select id="review-work" required></select></label>
+        <label><span data-fi="Oma arvosana (1–10)" data-en="Your rating (1–10)">Oma arvosana (1–10)</span><input id="review-rating" type="number" min="1" max="10" step="0.5" value="8" required></label>
+        <label class="review-comment"><span data-fi="Kommentti (valinnainen)" data-en="Comment (optional)">Kommentti (valinnainen)</span><textarea id="review-comment" rows="3" maxlength="600" placeholder="Mitä ajatuksia teos herätti?" data-fi-placeholder="Mitä ajatuksia teos herätti?" data-en-placeholder="What did you think about this work?"></textarea></label>
+        <button class="vault-button" type="submit" data-fi="Tallenna demoarvio" data-en="Save demo review">Tallenna demoarvio</button>
+        <p id="review-status" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+      <div class="local-review-list" id="local-review-list" aria-live="polite"></div>
+    </section>
+
+    <aside class="demo-notice" role="note">
+      <strong data-fi="Demon rajaukset ja tietosuoja" data-en="Demo limitations and privacy">Demon rajaukset ja tietosuoja</strong>
+      <p data-fi="Tämä on staattinen selainprototyyppi. Katalogi sisältää esimerkkiteoksia, arviot ovat havainnollistavia eikä käyttäjätilejä, kirjautumista, yhteisiä kommentteja tai palvelinpuolen tietokantaa ole vielä toteutettu. Oma demoarviosi tallentuu vain tähän selaimeen. Tietoja ei lähetetä palvelimelle eikä lisätä GitHub-repositorioon. Älä syötä arkaluonteisia tai henkilökohtaisia tietoja." data-en="This is a static browser prototype. The catalogue contains sample works and illustrative ratings; user accounts, sign-in, shared comments and a server-side database are not implemented yet. Your demo review is stored only in this browser. Nothing is sent to a server or added to the GitHub repository. Do not enter sensitive or personal information.">Tämä on staattinen selainprototyyppi. Katalogi sisältää esimerkkiteoksia, arviot ovat havainnollistavia eikä käyttäjätilejä, kirjautumista, yhteisiä kommentteja tai palvelinpuolen tietokantaa ole vielä toteutettu. Oma demoarviosi tallentuu vain tähän selaimeen. Tietoja ei lähetetä palvelimelle eikä lisätä GitHub-repositorioon. Älä syötä arkaluonteisia tai henkilökohtaisia tietoja.</p>
+      <p data-fi="Lähdekoodi ja kehityksen eteneminen:" data-en="Source code and development progress:">Lähdekoodi ja kehityksen eteneminen:</p>
+      <a href="https://github.com/MarikaMatala/The-Cultured-Vault" target="_blank" rel="noopener noreferrer">The Cultured Vault on GitHub ↗</a>
+    </aside>
+
+    <footer class="demo-footer">
+      <p>THE CULTURED VAULT · BROWSER DEMO</p>
+      <p data-fi="Avaa holvi. Löydä jotain poikkeuksellista." data-en="Open the vault. Discover something extraordinary.">Avaa holvi. Löydä jotain poikkeuksellista.</p>
+      <a href="https://github.com/MarikaMatala/The-Cultured-Vault" target="_blank" rel="noopener noreferrer" data-fi="Tutustu avoimen lähdekoodin projektiin ↗" data-en="Explore the open-source project ↗">Tutustu avoimen lähdekoodin projektiin ↗</a>
+    </footer>
+  </main>
+</body>
+</html>
