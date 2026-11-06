@@ -1,5 +1,7 @@
 # Data directory
 
+<!-- Last reviewed: 2026-11-06 20:27 (Europe/Helsinki). -->
+
 No third-party dataset is currently stored in this directory. The current demo uses its own small, manually curated keyword vocabulary and fictional example vacancy text.
 
 ## Before adding an external dataset
