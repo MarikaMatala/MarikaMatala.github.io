@@ -245,7 +245,14 @@ document.getElementById("reset-demo").addEventListener("click", () => {
   }, 0);
 });
 languageButton.addEventListener("click", () => {
-  language = language === "fi" ? "en" : "fi";
+  applyDemoLanguage(language === "fi" ? "en" : "fi");
+});
+
+
+// Keep the embedded demo language aligned with the portfolio page.
+function applyDemoLanguage(nextLanguage) {
+  if (nextLanguage !== "fi" && nextLanguage !== "en") return;
+  language = nextLanguage;
   document.documentElement.lang = language;
   document.querySelectorAll("[data-fi][data-en]").forEach(element => { element.textContent = element.dataset[language]; });
   document.querySelectorAll("[data-fi-placeholder][data-en-placeholder]").forEach(element => { element.placeholder = element.dataset[language + "Placeholder"]; });
@@ -255,18 +262,9 @@ languageButton.addEventListener("click", () => {
     const state = results.querySelector(".empty-state");
     if (state) state.textContent = language === "fi" ? "Täytä osaamisesi ja paina “Arvioi sopivuus”." : "Enter your skills and select “Calculate match”.";
   }
-});
-
-
-// Keep the embedded demo language aligned with the portfolio page.
+}
 window.addEventListener("message", (event) => {
-  if (event.data && event.data.type === "portfolio-language" && (event.data.language === "fi" || event.data.language === "en")) {
-    if (language !== event.data.language) {
-      language = event.data.language;
-      renderLanguage();
-      if (lastEvaluated.length) renderResults(lastEvaluated);
-    }
-  }
+  if (event.data && event.data.type === "portfolio-language") applyDemoLanguage(event.data.language);
 });
 window.addEventListener("load", () => {
   try { window.parent.postMessage({ type: "remote-job-fit-language-request" }, "*"); } catch (error) { /* standalone demo */ }
