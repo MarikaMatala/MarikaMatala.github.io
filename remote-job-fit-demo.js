@@ -153,6 +153,33 @@ const copy = {
   en: { missing:"Add at least one skill or paste a job description.", custom:"Your pasted job description", customCompany:"User-provided text", matched:"Matched keywords:", noMatch:"No direct keyword matches. Try adding skills or adjusting the job description.", title:"Job fit comparison", clear:"Clear fields" }
 };
 
+const roleTitlesFi = {
+  "Junior Frontend Developer": "Junior-tason frontend-kehittäjä",
+  "Junior Full-Stack Developer": "Junior-tason full-stack-kehittäjä",
+  "Junior Backend Developer": "Junior-tason backend-kehittäjä",
+  "IT Support Specialist": "IT-tukiasiantuntija",
+  "QA Tester": "Ohjelmistotestaaja",
+  "Junior Data Analyst": "Junior-tason data-analyytikko",
+  "Cybersecurity Analyst": "Tietoturva-analyytikko",
+  "UI/UX Designer": "Käyttöliittymä- ja UX-suunnittelija",
+  "Graphic Designer": "Graafinen suunnittelija",
+  "Digital Content Producer": "Digitaalisen sisällön tuottaja",
+  "Digital Marketing Specialist": "Digitaalisen markkinoinnin asiantuntija",
+  "Communications Specialist": "Viestinnän asiantuntija",
+  "Technical Writer": "Tekninen kirjoittaja",
+  "Multimedia Producer": "Multimediatuottaja",
+  "Digital Project Coordinator": "Digitaalisten projektien koordinaattori",
+  "Motion Graphics Designer": "Liikegrafiikan suunnittelija",
+  "3D Animator / 3D Generalist": "3D-animaattori / 3D-generalisti",
+  "Junior 3D Artist": "Junior-tason 3D-artisti",
+  "Lighting and Compositing Artist": "Valaistus- ja kompositioartisti",
+  "Video and AV Producer": "Video- ja AV-tuottaja",
+  "Content and Communications Specialist": "Sisällön ja viestinnän asiantuntija",
+  "Product Marketing Specialist": "Tuotemarkkinoinnin asiantuntija",
+  "Social Media Content Creator": "Sosiaalisen median sisällöntuottaja",
+  "Junior ICT Systems Specialist": "Junior-tason ICT-järjestelmäasiantuntija"
+};
+
 function terms(value) {
   return [...new Set(value.toLowerCase().split(/[,;\n]+/).map(item => item.trim()).filter(item => item.length > 1))];
 }
@@ -191,7 +218,7 @@ function renderRole(role, result, isCustom = false) {
   const top = document.createElement("div");
   top.className = "result-top";
   const heading = document.createElement("div");
-  addText(heading, "h3", "", role.title);
+  addText(heading, "h3", "", language === "fi" && !isCustom ? (roleTitlesFi[role.title] || role.title) : role.title);
   const companyLabel = isCustom
     ? copy[language].customCompany
     : language === "fi" ? "Esimerkkitehtävä" : "Illustrative sample role";
