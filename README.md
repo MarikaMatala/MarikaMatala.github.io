@@ -1,6 +1,6 @@
 # Portfolio | Marika Matalamäki
 
-<!-- // Last updated: 2026-11-06 17:55 (Europe/Helsinki). -->
+<!-- // Last updated: 2026-11-06 20:27 (Europe/Helsinki). -->
 
 **Portfolio website:** https://marikamatala.github.io/
 
@@ -52,6 +52,15 @@ Kehitän portfoliotani jatkuvasti ja lisään verkkosivulle valikoituja projekte
 See [DEVELOPMENT.md](DEVELOPMENT.md) for instructions on running the static site locally, its file structure, language conventions, accessibility considerations, validation and publishing.
 
 ## Recent portfolio updates
+
+The portfolio now includes **The-Cultured-Vault-demo v1.0**, an installable browser-based PWA work sample. The demo presents a 500-entry cultural catalogue covering films, series, animation, documentaries, podcasts, music albums, games, books and comics. The catalogue is a curated sample, not a production database. Every instance-owner rating is initially marked **Not rated yet**; no personal score or review is prefilled. IMDb values, where available, are labelled separately as external reference ratings.
+
+Visitors can suggest missing works. Suggestions are stored only in the current browser's local storage and are not sent to the maintainer or shared across devices; a backend and moderation workflow have not yet been implemented. The PWA supports basic offline loading after its first successful online visit, but it is not a native mobile app and has no user accounts or cloud synchronisation. The demo is shown on the Work Samples page before the planned backend examples. [Open the demo](https://marikamatala.github.io/The-Cultured-Vault-demo/) · [Open the project repository](https://github.com/MarikaMatala/The-Cultured-Vault).
+
+**The Cultured Vault — suomeksi:** Portfolioon on lisätty **The-Cultured-Vault-demo v1.0**, asennettava selainpohjainen PWA-työnäyte. Demossa on 500 teoksen esimerkkikatalogi: elokuvia, sarjoja, animaatioita, dokumentteja, podcasteja, albumeita, pelejä, kirjoja ja sarjakuvia. Kyseessä on kuratoitu esimerkkikatalogi, ei tuotantokäytössä oleva tietokanta. Ylläpitäjän oma arvio näkyy kaikissa teoksissa aluksi muodossa **Ei vielä arviota**; omia numeroarvioita tai arvostelutekstejä ei ole esitäytetty. IMDb-arvosanat näytetään erillisinä ulkoisina viitetietoina silloin, kun arvo on lisätty.
+
+Kävijä voi ehdottaa puuttuvia teoksia. Ehdotukset tallentuvat vain käytössä olevan selaimen paikalliseen tallennustilaan, eivätkä ne välity ylläpitäjälle tai synkronoidu laitteiden välillä. Backendia tai ehdotusten moderointia ei ole vielä toteutettu. PWA tukee perusmuotoista offline-latausta ensimmäisen onnistuneen verkkokäynnin jälkeen, mutta se ei ole natiivi mobiilisovellus eikä sisällä käyttäjätilejä tai pilvisynkronointia. Työnäyte on Työnäytteet-sivulla ennen backend-esimerkkejä. [Avaa demo](https://marikamatala.github.io/The-Cultured-Vault-demo/) · [Avaa projektin repositorio](https://github.com/MarikaMatala/The-Cultured-Vault).
+
 
 The Work Samples page now displays the **Sana Vapaa** event poster and the audiovisual communications portfolio directly in responsive, embedded PDF viewers. The Sana Vapaa poster was created for an event organised as part of the **Luotsaamo project run by Jyvässeudun 4H-yhdistys**. Its PDF asset is named `images/Sana-Vapaa-tapahtumajuliste.pdf`.
 
