@@ -1,6 +1,6 @@
 # Portfolio images | Portfolion kuvat
 
-<!-- // Last updated: 2026-11-06 13:10 (Europe/Helsinki). -->
+<!-- // Last updated: 2026-11-06 13:25 (Europe/Helsinki). -->
 
 This directory contains the local image and document assets used by the Portfolio 2026 website. Using local files means the portfolio does not depend on a separate repository being public.
 
