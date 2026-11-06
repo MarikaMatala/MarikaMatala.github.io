@@ -67,3 +67,10 @@ input:focus,textarea:focus,button:focus-visible,a:focus-visible{outline:3px soli
 @media (max-width: 520px) {
   .demo-status { flex-direction: column; gap: 0.2rem; }
 }
+
+.skills-gap{margin-top:14px;padding:13px 15px;border:1px solid #76536a;border-radius:10px;background:#19121a}
+.skills-gap h4{margin:0 0 8px;color:var(--text);font-size:.92rem}
+.skills-gap ul{margin:0;padding-left:1.3rem;color:var(--warn)}
+.skills-gap li{margin:3px 0}
+.learning-tip{padding:10px 12px;border-left:3px solid var(--accent);background:#241724;color:var(--text)!important;font-size:.84rem}
+.analysis-caveat{font-size:.76rem!important;color:var(--muted)!important}
