@@ -1,4 +1,28 @@
-/* Typography is loaded once in each page head: Lora for headings and Nunito Sans for body text. */
+/*
+  STYLE.CSS — PORTFOLION TYYLIT
+
+  SISÄLLYSLUETTELO
+  01. Perusasetukset: värit, typografia, saavutettavuuden perustyylit
+  02. Sivuston runko: header, navigaatio, hero, osiot ja footer
+  03. Etusivun ja työnäytteiden kortit sekä kuvat
+  04. Projektikohtaiset komponentit: Android-galleria ja C#-koodiesimerkit
+  05. Visuaalinen ilme: värit, tekstuurit, koristeet ja animaatiot
+  06. Työnäytteet, osaamisalueet ja taitokortit
+  07. Yhteystietosivu ja yhteydenottolomakkeen tyylit
+  08. Responsiivisuus: tabletit, puhelimet ja pienet näytöt
+  09. Alatunniste, kielivalitsin ja mobiilinavigaatio
+  10. Lopulliset tarkennukset ja komponenttikohtaiset yliajot
+
+  HUOMAUTUS YLLÄPIDOSTA
+  - Tämä tiedosto sisältää useita myöhempiä tarkennuskerroksia.
+  - Myöhemmin tiedostossa oleva sääntö voi tarkoituksella yliajaa aiemman säännön.
+  - Tarkista aina myös saman komponentin media query -säännöt ennen muutoksia.
+  - Käytä CSS-kommentteja muodossa /* ... */. //-kommentit eivät ole CSS:ssä kelvollisia.
+  - Muuta ulkoasua vain pieni osa kerrallaan ja testaa kaikki sivut sekä näyttökoot.
+*/
+
+/* 01. PERUSASETUKSET JA SAAVUTETTAVUUDEN POHJATYYLIT */
+
 
 :root{
   color-scheme:dark;
@@ -166,7 +190,7 @@ h1 em,h2 em{font-style:normal;color:var(--copper)}
 }
 
 
-/* Android gallery: compact image, robust controls and responsive sizing */
+/* 04. PROJEKTIKOMPONENTIT — Android-galleria: kuvasuhteet, ohjaimet ja kosketuskäyttö */
 .android-project{min-width:0}
 .android-carousel{min-width:0;width:100%;background:#0A151B;border:1px solid var(--line);align-self:start;display:flex;flex-direction:column;overflow:hidden}
 .android-carousel-stage{position:relative;display:flex;align-items:center;justify-content:center;height:190px;min-height:190px;padding:12px 58px;overflow:hidden;background:#0A151B}
@@ -200,7 +224,7 @@ h1 em,h2 em{font-style:normal;color:var(--copper)}
 }
 
 
-/* C# coursework: compact code panels and a distinct technical case-study layout */
+/* 04. PROJEKTIKOMPONENTIT — C#: koodipaneelit ja teknisen projektin esittely */
 .project-oop{grid-column:span 2;background:linear-gradient(135deg,#132E33 0%,#102F2B 100%);border-color:#3B6B66;padding:clamp(18px,3vw,32px)}
 .project-oop:hover{box-shadow:8px 8px 0 #b85c7a22}
 .oop-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
@@ -235,7 +259,8 @@ h1 em,h2 em{font-style:normal;color:var(--copper)}
 }
 
 
-/* Marika's original visual direction: nocturnal grunge, dark academia and analog-retro details.
+/* 05. VISUAALINEN ILME — alkuperäinen suunta: nocturnal grunge, dark academia ja analog-retro.
+   Tämä kerros muokkaa peruskomponenttien värejä ja tunnelmaa; se ei ole erillinen sivupohja.
    Custom palette; no company brand palette or assets are used. */
 body{
   background:
@@ -1298,7 +1323,7 @@ body:after{opacity:.075;background:repeating-linear-gradient(0deg,transparent 0 
 }
 
 
-/* Skills overview: concrete, scannable evidence of technical and media skills. */
+/* 06. OSAAMINEN — teknisten ja media-alan taitojen yleiskatsaus */
 .about-section{grid-template-columns:minmax(0,1fr)!important}
 .about-section>div:last-child{max-width:1040px;width:100%}
 .skills-overview{
@@ -2319,7 +2344,7 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
 }
 
 
-/* Contact form — bilingual, responsive and styled to match the dark burgundy portfolio. */
+/* 07. YHTEYSTIEDOT — kaksikielisen lomakkeen kentät, asettelu ja palautteet */
 .contact-form-section{
   display:grid;
   grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
@@ -2491,7 +2516,7 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
 }
 
 
-/* Responsive navigation and consistent footer links across every page. */
+/* 08–09. RESPONSIIIVINEN NAVIGAATIO JA FOOTER — yhteiset sivustokomponentit */
 .site-header{position:sticky;top:0}
 .menu-toggle{display:none;align-items:center;justify-content:center;flex-direction:column;gap:5px;width:46px;height:46px;padding:10px;border:1px solid #754056;background:#160e17;color:var(--paper);cursor:pointer;z-index:32}
 .menu-toggle span{display:block;width:21px;height:2px;background:currentColor;transition:transform .2s ease,opacity .2s ease}
@@ -2692,7 +2717,7 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
 }
 
 
-/* Two-line portfolio wordmark: name first, descriptor below. */
+/* 10. LOPULLISET YLIAJOT — kaksirivinen portfoliosivuston tunniste */
 .site-header > .wordmark.full-name,
 .site-footer > .wordmark.full-name{
   display:flex;
@@ -2825,7 +2850,7 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
 }
 
 
-/* Explicit two-line header identity on every viewport and language. */
+/* 10. VIIMEINEN HEADER-TARKENNUS — nimi ja portfoliosivuston kuvaus kahdelle riville */
 .site-header > a.wordmark.full-name{
   display:block !important;
   flex:0 1 auto;
