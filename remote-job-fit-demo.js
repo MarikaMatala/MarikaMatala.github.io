@@ -146,7 +146,7 @@ function scoreRole(role, skills, targetTitle, mustHave, excluded) {
   // Report only explicit vocabulary matches. Very short language names are
   // excluded from automatic requirement extraction to reduce false positives.
   const ambiguousSkills = new Set(["c", "r", "go"]);
-  const requirements = vocabulary.extractSkills(role.title + " " + role.text)
+  const requirements = vocabulary.extractSkills(role.title + " " + role.text, language)
     .filter(item => !ambiguousSkills.has(item.canonical.toLowerCase()));
   const uniqueRequirements = [...new Map(requirements.map(item => [item.canonical, item])).values()];
   const candidateSkills = new Set(vocabulary.normalizeSkillTerms(skills));
