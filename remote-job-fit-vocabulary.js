@@ -28,7 +28,7 @@
     ["Application development","Application development","Sovelluskehitys","Sovelluskehityksen","ohjelmistokehitys","software development","sovellusten kehittäminen"],
     ["Object-oriented programming","Object-oriented programming","Olio-ohjelmointi","OOP"],
     ["Responsive design","Responsive design","Responsiivinen suunnittelu","responsiivinen verkkosuunnittelu"],
-    ["Accessibility","Accessibility","Saavutettavuus","digitaalinen saavutettavuus","WCAG"],
+    ["Accessibility","Accessibility","Saavutettavuus","digitaalinen saavutettavuus","saavutettavuusosaaminen","WCAG"],
     ["Usability","Usability","Käytettävyys","käytettävyystestaus"],["Software testing","Software testing","Ohjelmistotestaus","testaus","QA"],
     ["Automated testing","Automated testing","Automaattinen testaus","testiautomaatio"],
     ["Cybersecurity","Cybersecurity","Kyberturvallisuus","tietoturva","tietoturvan","tietoturvallisuus"],
