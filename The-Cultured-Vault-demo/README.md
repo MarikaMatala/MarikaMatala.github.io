@@ -18,7 +18,7 @@ This is a lightweight front-end prototype. It does not require a framework, buil
 - a 500-entry sample catalogue with multiple media categories, including 486 additions across films, series, animation, documentaries, podcasts, music albums, games and books; the selection also features cult television, films and cartoons from the 1980s, 1990s and 2000s;
 - search by title, creator, country and genre;
 - category filters and sorting, with alphabetical title order as the default;
-- an A–Z / Å–Ä–Ö quick index that jumps to letter sections; unavailable letters are disabled and the index follows the current search and category filters;
+- an A–Z / Å–Ä–Ö letter index and a 0–9 numeric index; both jump to matching catalogue groups, disable unavailable entries and follow the current search and category filters; the sticky indexes remain accessible while scrolling;
 - separate sample ratings for the instance owner and the community;
 - a form for adding a personal demo rating and optional comment;
 - Finnish and English interface text;
