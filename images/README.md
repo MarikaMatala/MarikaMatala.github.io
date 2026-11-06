@@ -4,7 +4,7 @@ This directory contains the local image and document assets used by the Portfoli
 
 ## Assets / Sisältö
 
-- `SanaVapaa-tapahtumajuliste.pdf` — event poster created for SanaVapaa.
+- `Sana-Vapaa-tapahtumajuliste.pdf` — event poster created as part of the Luotsaamo project run by Jyvässeudun 4H-yhdistys.
 - `Video ja valokuvaesittely PDF.pdf` — portfolio from the vocational qualification in audiovisual communications.
 - `omakuva.png` — profile photo.
 - `omena2.png` — visual design coursework from JAMK.
