@@ -57,6 +57,27 @@ Validointi tarkistaa:
 4. PDF-iframe-kehysten otsikot vaihtuvat valitun kielen mukaan. Myös Remote Job Fit -kehyksen otsikko päivitetään yhteisellä käsittelyllä.
 5. Erillisessä selain-demossa on nyt oma näppäimistöllä käytettävä ohituslinkki. Validointi tunnistaa sekä `for`-attribuutilla liitetyt label-elementit että label-elementin sisään sijoitetut kentät.
 
+## Contrast spot-check and remaining work | Kontrastin pistetarkistus ja jäljellä oleva työ
+
+A calculation of the final active theme tokens gives these sample text/background ratios:
+
+| Foreground / background | Ratio | Initial result |
+| --- | ---: | --- |
+| `--paper` / `--ink` | 16.82:1 | Passes 4.5:1 |
+| `--copper` / `--ink` | 4.68:1 | Passes narrowly |
+| `--copper` / `--burgundy` | 4.57:1 | Passes narrowly |
+| `--muted` / `--surface` | 9.40:1 | Passes 4.5:1 |
+
+These are token-level spot checks, not a complete contrast audit. Some components use hard-coded colours, translucent overlays, hover states and different backgrounds. Check those rendered combinations individually. WCAG 2.2 SC 1.4.3 requires 4.5:1 for normal text and 3:1 for large text; do not round a value up to the threshold.
+
+Nämä ovat väritunnisteiden pistetarkistuksia, eivät täydellinen kontrastiauditointi. Osa komponenteista käyttää kovakoodattuja värejä, läpikuultavia kerroksia, hover-tiloja ja eri taustoja. Tarkista nämä yhdistelmät erikseen selaimessa. WCAG 2.2:n kriteeri 1.4.3 edellyttää normaalilta tekstiltä suhdetta 4,5:1 ja suurelta tekstiltä 3:1; kynnysarvoon ei saa pyöristää alaspäin jäävää tulosta.
+
+### Maintainability follow-up | Ylläpidettävyyden jatkotoimi
+
+The current `style.css` is approximately 137 KB and contains 11 separate `:root` palette declarations plus multiple later override blocks. The final declarations win in the cascade, but the accumulated themes make it harder to identify the active palette and to audit contrast confidently. A separate refactoring task should consolidate the active theme tokens and group component styles without changing the visual design. This is intentionally not mixed into the current accessibility fixes.
+
+Nykyinen `style.css` on noin 137 kt ja sisältää 11 erillistä `:root`-väripalettimääritystä sekä useita myöhempiä yliajolohkoja. CSS-kaskadissa viimeiset määritykset voittavat, mutta vanhojen teemojen kertyminen vaikeuttaa aktiivisen paletin tunnistamista ja kontrastien luotettavaa auditointia. Erillisenä refaktorointitehtävänä kannattaa yhdistää aktiiviset väritunnisteet ja ryhmitellä komponenttien tyylit muuttamatta sivuston ulkoasua. Tätä ei sekoitettu nykyisiin saavutettavuuskorjauksiin.
+
 ## Manual checklist | Manuaalinen tarkistuslista
 
 ### Keyboard and focus | Näppäimistö ja fokus
