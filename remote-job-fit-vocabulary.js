@@ -173,12 +173,34 @@
   function compareSkills(candidateValues, requirementText, language="en") {
     const ambiguousSkills = new Set(["c", "r", "go"]);
     const candidate = new Set(normalizeSkillTerms(candidateValues));
-    const requirements = extractSkills(requirementText, language)
+    const source = String(requirementText || "");
+    const requirements = extractSkills(source, language)
       .filter(item => !ambiguousSkills.has(normalize(item.canonical)));
     const unique = [...new Map(requirements.map(item => [item.canonical, item])).values()];
+    const optionalMarkers = language === "fi"
+      ? ["nice to have","preferred","bonus","an advantage","advantage","would be a plus","plussaa","eduksi","katsotaan eduksi","toivomme","arvostamme","etu","hyödyksi"]
+      : ["nice to have","preferred","bonus","an advantage","advantage","would be a plus","plus","desirable","ideally","we value","beneficial"];
+    const requiredMarkers = language === "fi"
+      ? ["required","must have","essential","mandatory","välttämätön","pakollinen","vaaditaan","edellytetään","edellytämme","vaatimuksena","tulee osata","pitää osata"]
+      : ["required","must have","essential","mandatory","must be able","you need","we require","requirement"];
+    function contextFor(item) {
+      const sentences = source.split(/(?<=[.!?;\n])\s*/);
+      return sentences.filter(sentence => item.canonical && hasPhrase(sentence, item.canonical) ||
+        (item.label && hasPhrase(sentence, item.label)))
+        .join(" ");
+    }
+    const required = [], optional = [];
+    for (const item of unique) {
+      const context = normalize(contextFor(item));
+      const isOptional = optionalMarkers.some(marker => hasPhrase(context, marker)) &&
+        !requiredMarkers.some(marker => hasPhrase(context, marker));
+      const entry = {...item, found: candidate.has(normalize(item.canonical))};
+      (isOptional ? optional : required).push(entry);
+    }
     return {
-      matched: unique.filter(item => candidate.has(normalize(item.canonical))),
-      missing: unique.filter(item => !candidate.has(normalize(item.canonical)))
+      matched: required.filter(item => item.found),
+      missing: required.filter(item => !item.found),
+      optional
     };
   }
   function detectRoles(text, language="en") {
