@@ -13,7 +13,7 @@ The Cultured Vault is an open-source cultural catalogue concept. This folder con
 
 This is a lightweight front-end prototype. It does not require a framework, build process or third-party JavaScript package. It includes:
 
-- a 114-entry sample catalogue with multiple media categories, including 100 curated additions from 1980s, 1990s and 2000s cult television, films, animation and cartoons;
+- a 214-entry sample catalogue with multiple media categories, including 100 curated additions from 1980s, 1990s and 2000s cult television, films, animation and cartoons;
 - search by title, creator, country and genre;
 - category filters and sorting;
 - separate sample ratings for the instance owner and the community;
@@ -131,7 +131,7 @@ Contains the visual design. Theme variables are at the top in the :root block. E
 
 ### app.js
 
-Contains the original sample works plus 100 curated additions (114 entries total), and browser-side behaviour:
+Contains the original sample works plus 100 curated additions (214 entries total), and browser-side behaviour:
 
 1. reads the sample catalogue;
 2. filters and sorts works using the controls;
@@ -241,3 +241,10 @@ For an independent fork, use your own hosting, domain, database and API credenti
 ---
 
 **Open the vault. Discover something extraordinary.**
+
+
+## Personal and IMDb ratings
+
+Every catalogue entry starts with an instance-owner score of **0/10** and no prefilled owner review text. IMDb user ratings are shown separately and are never presented as the owner's rating or as a community average. The displayed IMDb values are a static reference snapshot; ratings change over time. A dash means that no verified IMDb value has been added to this demo, not a zero score. Each work has an IMDb search link for checking the current rating. IMDb rating data is sourced from IMDb chart/list pages; official non-commercial dataset details and terms are available at https://developer.imdb.com/non-commercial-datasets/.
+
+The catalogue includes 100 additional works across films, television series and animation. Some entries have not yet been enriched with creator, genre or country metadata.
