@@ -15,13 +15,58 @@ const importButton = document.getElementById("import-cv");
 const linkedinInput = document.getElementById("linkedin-url");
 
 const knownSkills = [
-  "HTML","CSS","JavaScript","TypeScript","React","Next.js","Node.js","Python","PHP","Java","C#",".NET","Kotlin","SQL","MySQL","SQLite","PostgreSQL","MongoDB","REST API","JSON","Git","GitHub","GitLab","Docker","Kubernetes","Azure","AWS","Linux","Windows","Microsoft 365","SharePoint","Figma","UI/UX","WordPress","Photoshop","Illustrator","InDesign","Premiere Pro","After Effects","DaVinci Resolve","Blender","Maya","Cinema 4D","Unreal Engine","3D modelling","2D animation","3D animation","Motion graphics","Rigging","Compositing","Photography","Video production","Video editing","Audio editing","Webcast","Streaming","SEO","GEO","Google Analytics","Google Ads","Meta Ads","HubSpot","CRM","Email marketing","Social media","Content strategy","Copywriting","Journalism","Communications","Internal communications","Media relations","Project coordination","Agile","Scrum","Testing","Postman","Cybersecurity","OWASP","Networking","Service desk","IT support","Data analysis","Power BI","Excel","Accessibility","Responsive design","Technical documentation"
+  "HTML","CSS","JavaScript","TypeScript","React","Next.js","Node.js","Python","PHP","Java","C#",".NET","Kotlin","SQL","MySQL","SQLite","PostgreSQL","MongoDB","REST API","JSON","Git","GitHub","GitLab","Docker","Kubernetes","Azure","AWS","Linux","Windows","Microsoft 365","SharePoint","Figma","UI/UX","WordPress","Photoshop","Illustrator","InDesign","Premiere Pro","After Effects","DaVinci Resolve","Blender","Maya","Cinema 4D","Unreal Engine","3D modelling","2D animation","3D animation","Motion graphics","Rigging","Compositing","Photography","Video production","Video editing","Audio editing","Webcast","Streaming","SEO","GEO","Google Analytics","Google Ads","Meta Ads","HubSpot","CRM","Email marketing","Social media","Content strategy","Copywriting","Journalism","Communications","Internal communications","Media relations","Project coordination","Agile","Scrum","Testing","Postman","Cybersecurity","OWASP","Networking","Service desk","IT support","Data analysis","Power BI","Excel","Accessibility","Responsive design","Technical documentation","Programming","Graphic design","Photography","Communications","Marketing","Animation","Video production","Project management","Customer service","Information security","Application development","Web design","Digital media","Content production"
 ];
+const skillAliases = {
+  "ohjelmointi": "Programming",
+  "ohjelmistokehitys": "Application development",
+  "sovelluskehitys": "Application development",
+  "web-kehitys": "Web development",
+  "verkkosivujen kehitys": "Web development",
+  "käyttöliittymäsuunnittelu": "UI/UX",
+  "graafinen suunnittelu": "Graphic design",
+  "valokuvaus": "Photography",
+  "videotuotanto": "Video production",
+  "videoeditointi": "Video editing",
+  "äänituotanto": "Audio editing",
+  "äänieditointi": "Audio editing",
+  "animaatio": "Animation",
+  "3d-mallinnus": "3D modelling",
+  "hahmoanimaatio": "3D animation",
+  "liikegrafiikka": "Motion graphics",
+  "viestintä": "Communications",
+  "sisällöntuotanto": "Content production",
+  "sisältöstrategia": "Content strategy",
+  "markkinointi": "Marketing",
+  "digitaalinen markkinointi": "Digital marketing",
+  "sosiaalinen media": "Social media",
+  "hakukoneoptimointi": "SEO",
+  "projektinhallinta": "Project management",
+  "projektikoordinointi": "Project coordination",
+  "asiakaspalvelu": "Customer service",
+  "käyttäjätuki": "IT support",
+  "tekninen tuki": "IT support",
+  "tietoturva": "Information security",
+  "verkkoturvallisuus": "Cybersecurity",
+  "testaus": "Testing",
+  "saavutettavuus": "Accessibility",
+  "responsiivinen suunnittelu": "Responsive design",
+  "tietokannat": "SQL",
+  "pilvipalvelut": "Cloud",
+  "valaisu": "Lighting",
+  "leikkaus": "Video editing",
+  "journalismi": "Journalism",
+  "kirjoittaminen": "Copywriting",
+  "sisäinen viestintä": "Internal communications",
+  "ulkoisen viestinnän": "External communications"
+};
 function extractKnownSkills(text) {
   const normalized = text.toLowerCase().replace(/[’']/g, "'");
-  return knownSkills.filter(skill => {
-    return normalized.includes(skill.toLowerCase());
+  const found = knownSkills.filter(skill => normalized.includes(skill.toLowerCase()));
+  Object.entries(skillAliases).forEach(([alias, canonical]) => {
+    if (normalized.includes(alias) && !found.includes(canonical)) found.push(canonical);
   });
+  return [...new Set(found)];
 }
 cvFileInput.addEventListener("change", async () => {
   const file = cvFileInput.files && cvFileInput.files[0];
