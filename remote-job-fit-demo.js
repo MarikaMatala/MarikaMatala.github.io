@@ -256,6 +256,7 @@ function applyDemoLanguage(nextLanguage) {
   document.documentElement.lang = language;
   document.querySelectorAll("[data-fi][data-en]").forEach(element => { element.textContent = element.dataset[language]; });
   document.querySelectorAll("[data-fi-placeholder][data-en-placeholder]").forEach(element => { element.placeholder = element.dataset[language + "Placeholder"]; });
+  if (languageButton) languageButton.setAttribute("aria-label", language === "fi" ? "Vaihda englanniksi" : "Switch to Finnish");
   if (lastEvaluated.length) {
     results.replaceChildren(...lastEvaluated.map(item => renderRole(item.role, item.result, item.custom)));
   } else {
