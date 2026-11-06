@@ -16,6 +16,14 @@ Etsin **entry-tason ja junior-tason työpaikkoja** sekä **palkallisia yritysten
 
 Kehitän portfoliotani jatkuvasti ja lisään verkkosivulle valikoituja projekteja ja työnäytteitä. Osa muista työnäytteistä on yksityisissä repositorioissa, ja niitä voi pyytää nähtäväksi viestillä.
 
+## Security and privacy notice / Tietoturva ja yksityisyys
+
+**English:** All examples have been reviewed and modified before publication. They contain no personal information or real credentials. Passwords, usernames, API keys, access tokens, database connection strings, session secrets and private server details have been removed or replaced with clearly marked placeholders. Replace placeholders with your own values when using an example. Never publish actual passwords, API keys, tokens or other sensitive credentials in a public repository.
+
+**Suomeksi:** Kaikki esimerkit on tarkistettu ja muokattu ennen julkaisua. Ne eivät sisällä henkilökohtaisia tietoja tai oikeita tunnistetietoja. Salasanat, käyttäjätunnukset, API-avaimet, käyttöoikeustokenit, tietokantayhteydet, istuntosalaisuudet ja yksityiset palvelintiedot on poistettu tai korvattu selkeästi merkityillä paikkamerkeillä. Korvaa paikkamerkit omilla tiedoillasi, jos otat esimerkin käyttöön. Älä koskaan julkaise oikeita salasanoja, API-avaimia, tokeneita tai muita salassa pidettäviä tunnistetietoja julkisessa repositoriossa.
+
+---
+
 ## Repository structure
 
 - `index.html` — homepage and short introduction, in Finnish and English
