@@ -5,6 +5,78 @@ const languageButton = document.getElementById("demo-language");
 let language = "fi";
 let lastEvaluated = [];
 
+
+// CV import is intentionally local-only. It extracts known keywords for review;
+// it does not upload, save, or transmit CV contents.
+const cvFileInput = document.getElementById("cv-file");
+const cvTextInput = document.getElementById("cv-text");
+const importStatus = document.getElementById("import-status");
+const importButton = document.getElementById("import-cv");
+const linkedinInput = document.getElementById("linkedin-url");
+
+const knownSkills = [
+  "HTML","CSS","JavaScript","TypeScript","React","Next.js","Node.js","Python","PHP","Java","C#",".NET","Kotlin","SQL","MySQL","SQLite","PostgreSQL","MongoDB","REST API","JSON","Git","GitHub","GitLab","Docker","Kubernetes","Azure","AWS","Linux","Windows","Microsoft 365","SharePoint","Figma","UI/UX","WordPress","Photoshop","Illustrator","InDesign","Premiere Pro","After Effects","DaVinci Resolve","Blender","Maya","Cinema 4D","Unreal Engine","3D modelling","2D animation","3D animation","Motion graphics","Rigging","Compositing","Photography","Video production","Video editing","Audio editing","Webcast","Streaming","SEO","GEO","Google Analytics","Google Ads","Meta Ads","HubSpot","CRM","Email marketing","Social media","Content strategy","Copywriting","Journalism","Communications","Internal communications","Media relations","Project coordination","Agile","Scrum","Testing","Postman","Cybersecurity","OWASP","Networking","Service desk","IT support","Data analysis","Power BI","Excel","Accessibility","Responsive design","Technical documentation"
+];
+function extractKnownSkills(text) {
+  const normalized = text.toLowerCase().replace(/[’']/g, "'");
+  return knownSkills.filter(skill => {
+    const escaped = skill.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, "\\const sampleRoles = [");
+    return new RegExp("(^|[^a-z0-9+#])" + escaped + "([^a-z0-9+#]|$)", "i").test(normalized);
+  });
+}
+cvFileInput.addEventListener("change", async () => {
+  const file = cvFileInput.files && cvFileInput.files[0];
+  if (!file) return;
+  if (file.size > 1024 * 1024) {
+    importStatus.textContent = language === "fi" ? "Tiedosto on liian suuri. Enimmäiskoko on 1 Mt." : "File is too large. Maximum size is 1 MB.";
+    cvFileInput.value = "";
+    return;
+  }
+  if (!/\.(txt|md|text)$/i.test(file.name)) {
+    importStatus.textContent = language === "fi" ? "Valitse .txt- tai .md-tiedosto. PDF- ja Word-tiedostoista voit kopioida tekstin kenttään." : "Choose a .txt or .md file. For PDF and Word files, copy the text into the field.";
+    cvFileInput.value = "";
+    return;
+  }
+  cvTextInput.value = await file.text();
+  importStatus.textContent = language === "fi" ? "Tiedosto luettu paikallisesti. Tarkista teksti ja tunnista osaamiset." : "File read locally. Review the text and extract skills.";
+});
+importButton.addEventListener("click", () => {
+  const text = cvTextInput.value.trim();
+  if (!text) {
+    importStatus.textContent = language === "fi" ? "Liitä ensin CV:n tai LinkedIn-profiilin tekstisisältö." : "Paste your CV or LinkedIn profile text first.";
+    return;
+  }
+  const found = extractKnownSkills(text);
+  if (!found.length) {
+    importStatus.textContent = language === "fi" ? "Tunnettuja osaamissanoja ei löytynyt. Voit lisätä osaamiset käsin." : "No recognized skill keywords found. You can add skills manually.";
+    return;
+  }
+  const current = terms(document.getElementById("skills").value);
+  document.getElementById("skills").value = [...new Set([...current, ...found])].join(", ");
+  const titleInput = document.getElementById("target-title");
+  if (!titleInput.value.trim()) {
+    const roleHints = ["Frontend Developer","Full-Stack Developer","Backend Developer","IT Support Specialist","ICT Specialist","UI/UX Designer","Graphic Designer","Communications Specialist","Digital Marketing Specialist","Multimedia Producer","3D Artist","Animator","Video Producer","Data Analyst","QA Tester"];
+    const foundRole = roleHints.find(role => text.toLowerCase().includes(role.toLowerCase()));
+    if (foundRole) titleInput.value = foundRole;
+  }
+  importStatus.textContent = language === "fi"
+    ? "Tunnistetut osaamiset lisättiin osaamiskenttään (" + found.length + "). Tarkista ja muokkaa listaa ennen arviointia."
+    : "Extracted skills added to the skills field (" + found.length + "). Review and edit the list before calculating.";
+});
+linkedinInput.addEventListener("change", () => {
+  const value = linkedinInput.value.trim();
+  if (!value) return;
+  try {
+    const url = new URL(value);
+    if (url.protocol !== "https:" || !/(^|\\.)linkedin\\.com$/i.test(url.hostname)) throw new Error("invalid");
+    importStatus.textContent = language === "fi"
+      ? "LinkedIn-linkki on lisätty viitteeksi. Profiilitietoja ei haeta automaattisesti; kopioi haluamasi profiiliteksti CV-kenttään."
+      : "LinkedIn URL added as a reference. Profile data is not fetched automatically; paste the profile text into the CV field.";
+  } catch {
+    importStatus.textContent = language === "fi" ? "Anna kelvollinen LinkedIn-osoite muodossa https://www.linkedin.com/in/..." : "Enter a valid LinkedIn URL such as https://www.linkedin.com/in/...";
+  }
+});
+
 const sampleRoles = [
   { title: "Junior Frontend Developer", company: "Illustrative sample role", text: "Build responsive web interfaces with HTML CSS JavaScript TypeScript React accessibility Git and REST API integrations. Collaborate with designers and backend developers." },
   { title: "Junior Full-Stack Developer", company: "Illustrative sample role", text: "Develop frontend and backend features using JavaScript TypeScript Node.js REST APIs SQL MySQL testing Git and responsive design. Support application development and database integration." },
@@ -118,6 +190,10 @@ form.addEventListener("submit", event => {
   results.replaceChildren(...lastEvaluated.map(item => renderRole(item.role, item.result, item.custom)));
 });
 document.getElementById("reset-demo").addEventListener("click", () => {
+  cvTextInput.value = "";
+  cvFileInput.value = "";
+  linkedinInput.value = "";
+  importStatus.textContent = "";
   window.setTimeout(() => {
     lastEvaluated = [];
     results.replaceChildren();
