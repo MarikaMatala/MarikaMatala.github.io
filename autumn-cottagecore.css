@@ -918,3 +918,18 @@ h1 em, h2 em, h3 em, h4 em {
   outline:3px solid var(--autumn-rust,#e48b6a);
   outline-offset:4px;
 }
+
+/* Footer order: navigation first, copyright text underneath on every screen size. */
+.site-footer{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+}
+.site-footer .footer-nav{
+  order:1!important;
+  width:100%;
+}
+.site-footer .footer-rights{
+  order:2!important;
+  width:100%;
+}
