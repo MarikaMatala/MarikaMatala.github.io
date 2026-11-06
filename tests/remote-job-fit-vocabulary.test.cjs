@@ -58,3 +58,25 @@ test("does not report ambiguous one-letter language names as automatic gaps",()=
  const result=vocabulary.compareSkills([],"C, R and Go are mentioned in ordinary text","en");
  assert.equal(result.missing.some(x=>["C","R","Go"].includes(x.canonical)),false);
 });
+
+test("separates matched required, missing required and optional skills",()=>{
+ const result=vocabulary.compareSkills(
+  ["HTML","React"],
+  "Required: HTML and React. TypeScript is essential. Nice to have: Figma and accessibility.",
+  "en"
+ );
+ assert.deepEqual(result.matched.map(x=>x.canonical),["HTML","React"]);
+ assert.deepEqual(result.missing.map(x=>x.canonical),["TypeScript"]);
+ assert.deepEqual(result.optional.map(x=>x.canonical),["Figma","Accessibility"]);
+ assert.equal(result.optional[0].found,false);
+});
+test("recognises Finnish optional markers and keeps explicit mandatory requirements red",()=>{
+ const result=vocabulary.compareSkills(
+  ["React"],
+  "Reactin osaaminen vaaditaan. Figma katsotaan eduksi ja saavutettavuusosaaminen on plussaa.",
+  "fi"
+ );
+ assert.deepEqual(result.matched.map(x=>x.canonical),["React"]);
+ assert.deepEqual(result.missing.map(x=>x.canonical),[]);
+ assert.deepEqual(result.optional.map(x=>x.canonical),["Figma","Accessibility"]);
+});
