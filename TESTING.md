@@ -84,3 +84,47 @@ At each width, check for horizontal overflow, clipped text, overlapping controls
 ## Browsers | Selaimet
 
 For significant layout or interaction changes, check at least one Chromium-based browser and Firefox. When possible, also check Safari or a mobile browser.
+
+
+## Remote Job Fit templates and secrets | Asetuspohjat ja salaisuudet
+
+- [ ] The current browser demo works without an `.env` file or backend.
+- [ ] Public `.env.example` contains placeholders only.
+- [ ] A real local `.env` file is ignored by Git.
+- [ ] No API keys, passwords, tokens, personal data or private connection strings appear in tracked files.
+- [ ] The fictional JSON example parses as valid JSON.
+- [ ] The demo still makes no network requests and does not persist entered CV text.
+- [ ] Any imported external dataset has an exact version, licence, source URL and required attribution recorded in `THIRD-PARTY-NOTICES.md`.
+
+## Remote Job Fit -pohjat ja tunnistetiedot
+
+- [ ] Nykyinen selain-demo toimii ilman `.env`-tiedostoa tai backend-palvelinta.
+- [ ] Julkisessa `.env.example`-tiedostossa on vain paikkamerkkejä.
+- [ ] Oikea paikallinen `.env`-tiedosto on rajattu pois Gitistä.
+- [ ] Seurattaviin tiedostoihin ei ole lisätty API-avaimia, salasanoja, tokeneita, henkilötietoja tai yksityisiä yhteysmerkkijonoja.
+- [ ] Kuvitteellinen JSON-esimerkki on kelvollista JSON-muotoa.
+- [ ] Demo ei tee verkkopyyntöjä eikä tallenna CV-tekstiä.
+- [ ] Jokaisesta lisätystä ulkopuolisesta aineistosta on kirjattu tarkka versio, lisenssi, lähdeosoite ja vaaditut lähdemerkinnät tiedostoon `THIRD-PARTY-NOTICES.md`.
+
+
+## Remote Job Fit skill-gap feedback | Osaamispuutteiden palaute
+
+- [ ] Paste a job description and confirm the demo lists vocabulary-recognised requirements missing from the candidate profile.
+- [ ] Confirm requirements already in the profile appear separately from missing requirements.
+- [ ] Confirm an empty or unrelated job description does not invent missing skills.
+- [ ] Confirm the learning suggestion is visible only when one or more recognised skills are missing.
+- [ ] Check the explanation that keyword extraction is indicative and does not measure actual proficiency.
+- [ ] Repeat in Finnish and English.
+- [ ] Confirm short ambiguous terms such as C, R and Go are excluded from automatic gap detection.
+- [ ] Confirm all analysis remains local to the browser and no profile or job text is transmitted or stored.
+
+## Remote Job Fit -osaamispuutteiden palaute
+
+- [ ] Liitä työpaikkailmoitus ja varmista, että demo näyttää sanastosta tunnistetut osaamiset, joita hakijan profiilissa ei ole.
+- [ ] Varmista, että profiilista löytyvät osaamiset ja puuttuvat osaamiset näytetään erikseen.
+- [ ] Varmista, ettei tyhjä tai asiaankuulumaton ilmoitus tuota keksittyjä osaamispuutteita.
+- [ ] Varmista, että oppimisehdotus näkyy, kun tunnistettuja puuttuvia osaamisia on vähintään yksi.
+- [ ] Tarkista huomautus siitä, että kyseessä on hakusanoihin perustuva suuntaa-antava poiminta, ei todellisen osaamistason mittaus.
+- [ ] Testaa sekä suomeksi että englanniksi.
+- [ ] Varmista, että lyhyet monitulkintaiset termit C, R ja Go ohitetaan automaattisessa puuteanalyysissä.
+- [ ] Varmista, että analyysi pysyy selaimessa eikä profiili- tai ilmoitustekstiä lähetetä tai tallenneta.

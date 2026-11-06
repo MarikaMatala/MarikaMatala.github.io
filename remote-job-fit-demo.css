@@ -67,3 +67,25 @@ input:focus,textarea:focus,button:focus-visible,a:focus-visible{outline:3px soli
 @media (max-width: 520px) {
   .demo-status { flex-direction: column; gap: 0.2rem; }
 }
+
+.skills-gap{margin-top:14px;padding:13px 15px;border:1px solid #76536a;border-radius:10px;background:#19121a}
+.skills-gap h4{margin:0 0 8px;color:var(--text);font-size:.92rem}
+.skills-gap ul{margin:0;padding-left:1.3rem;color:var(--warn)}
+.skills-gap li{margin:3px 0}
+.learning-tip{padding:10px 12px;border-left:3px solid var(--accent);background:#241724;color:var(--text)!important;font-size:.84rem}
+.analysis-caveat{font-size:.76rem!important;color:var(--muted)!important}
+
+.skill-group{margin-top:13px;padding:13px 15px;border:1px solid var(--line);border-left:5px solid;border-radius:10px;background:#19121a}
+.skill-group h4{margin:0 0 8px;color:var(--text);font-size:.94rem}
+.skill-group ul{margin:0;padding-left:1.3rem}
+.skill-group li{margin:5px 0}
+.skill-match{border-left-color:#59bd78;background:rgba(31,112,62,.13)}
+.skill-match li,.skill-match .skill-empty{color:#a9e6b8}
+.skill-missing{border-left-color:#e45d68;background:rgba(145,35,48,.16)}
+.skill-missing li,.skill-missing .skill-empty{color:#ffabb0}
+.skill-optional{border-left-color:#e4bd4c;background:rgba(150,111,22,.14)}
+.skill-optional li{color:#f1d77e}
+.skill-status{display:inline-block;margin-left:8px;font-size:.78rem;color:var(--muted)}
+.skill-status::before{content:"· ";color:var(--muted)}
+.skill-empty{margin:0;color:var(--muted);font-size:.88rem}
+.analysis-caveat{font-size:.76rem!important;color:var(--muted)!important}

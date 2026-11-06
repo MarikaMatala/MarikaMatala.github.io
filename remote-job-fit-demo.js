@@ -4,6 +4,7 @@ const results = document.getElementById("results");
 const languageButton = document.getElementById("demo-language");
 let language = new URLSearchParams(window.location.search).get("lang") === "en" ? "en" : "fi";
 let lastEvaluated = [];
+const vocabulary = window.RemoteJobFitVocabulary;
 
 
 // CV import is intentionally local-only. It extracts known keywords for review;
@@ -14,60 +15,7 @@ const importStatus = document.getElementById("import-status");
 const importButton = document.getElementById("import-cv");
 const linkedinInput = document.getElementById("linkedin-url");
 
-const knownSkills = [
-  "HTML","CSS","JavaScript","TypeScript","React","Next.js","Node.js","Python","PHP","Java","C#",".NET","Kotlin","SQL","MySQL","SQLite","PostgreSQL","MongoDB","REST API","JSON","Git","GitHub","GitLab","Docker","Kubernetes","Azure","AWS","Linux","Windows","Microsoft 365","SharePoint","Figma","UI/UX","WordPress","Photoshop","Illustrator","InDesign","Premiere Pro","After Effects","DaVinci Resolve","Blender","Maya","Cinema 4D","Unreal Engine","3D modelling","2D animation","3D animation","Motion graphics","Rigging","Compositing","Photography","Video production","Video editing","Audio editing","Webcast","Streaming","SEO","GEO","Google Analytics","Google Ads","Meta Ads","HubSpot","CRM","Email marketing","Social media","Content strategy","Copywriting","Journalism","Communications","Internal communications","Media relations","Project coordination","Agile","Scrum","Testing","Postman","Cybersecurity","OWASP","Networking","Service desk","IT support","Data analysis","Power BI","Excel","Accessibility","Responsive design","Technical documentation","Programming","Graphic design","Photography","Communications","Marketing","Animation","Video production","Project management","Customer service","Information security","Application development","Web design","Digital media","Content production"
-];
-const skillAliases = {
-  "ohjelmointi": "Programming",
-  "ohjelmistokehitys": "Application development",
-  "sovelluskehitys": "Application development",
-  "web-kehitys": "Web development",
-  "verkkosivujen kehitys": "Web development",
-  "käyttöliittymäsuunnittelu": "UI/UX",
-  "graafinen suunnittelu": "Graphic design",
-  "valokuvaus": "Photography",
-  "videotuotanto": "Video production",
-  "videoeditointi": "Video editing",
-  "äänituotanto": "Audio editing",
-  "äänieditointi": "Audio editing",
-  "animaatio": "Animation",
-  "3d-mallinnus": "3D modelling",
-  "hahmoanimaatio": "3D animation",
-  "liikegrafiikka": "Motion graphics",
-  "viestintä": "Communications",
-  "sisällöntuotanto": "Content production",
-  "sisältöstrategia": "Content strategy",
-  "markkinointi": "Marketing",
-  "digitaalinen markkinointi": "Digital marketing",
-  "sosiaalinen media": "Social media",
-  "hakukoneoptimointi": "SEO",
-  "projektinhallinta": "Project management",
-  "projektikoordinointi": "Project coordination",
-  "asiakaspalvelu": "Customer service",
-  "käyttäjätuki": "IT support",
-  "tekninen tuki": "IT support",
-  "tietoturva": "Information security",
-  "verkkoturvallisuus": "Cybersecurity",
-  "testaus": "Testing",
-  "saavutettavuus": "Accessibility",
-  "responsiivinen suunnittelu": "Responsive design",
-  "tietokannat": "SQL",
-  "pilvipalvelut": "Cloud",
-  "valaisu": "Lighting",
-  "leikkaus": "Video editing",
-  "journalismi": "Journalism",
-  "kirjoittaminen": "Copywriting",
-  "sisäinen viestintä": "Internal communications",
-  "ulkoisen viestinnän": "External communications"
-};
-function extractKnownSkills(text) {
-  const normalized = text.toLowerCase().replace(/[’']/g, "'");
-  const found = knownSkills.filter(skill => normalized.includes(skill.toLowerCase()));
-  Object.entries(skillAliases).forEach(([alias, canonical]) => {
-    if (normalized.includes(alias) && !found.includes(canonical)) found.push(canonical);
-  });
-  return [...new Set(found)];
-}
+function extractKnownSkills(text) { return vocabulary.extractSkills(text, language); }
 cvFileInput.addEventListener("change", async () => {
   const file = cvFileInput.files && cvFileInput.files[0];
   if (!file) return;
@@ -96,12 +44,11 @@ importButton.addEventListener("click", () => {
     return;
   }
   const current = terms(document.getElementById("skills").value);
-  document.getElementById("skills").value = [...new Set([...current, ...found])].join(", ");
+  document.getElementById("skills").value = [...new Set([...current, ...found.map(item => item.label)])].join(", ");
   const titleInput = document.getElementById("target-title");
   if (!titleInput.value.trim()) {
-    const roleHints = ["Frontend Developer","Full-Stack Developer","Backend Developer","IT Support Specialist","ICT Specialist","UI/UX Designer","Graphic Designer","Communications Specialist","Digital Marketing Specialist","Multimedia Producer","3D Artist","Animator","Video Producer","Data Analyst","QA Tester"];
-    const foundRole = roleHints.find(role => text.toLowerCase().includes(role.toLowerCase()));
-    if (foundRole) titleInput.value = foundRole;
+    const foundRoles = vocabulary.detectRoles(text, language);
+    if (foundRoles.length) titleInput.value = foundRoles[0];
   }
   importStatus.textContent = language === "fi"
     ? "Tunnistetut osaamiset lisättiin osaamiskenttään (" + found.length + "). Tarkista ja muokkaa listaa ennen arviointia."
@@ -149,8 +96,34 @@ const sampleRoles = [
 ];
 
 const copy = {
-  fi: { missing:"Lisää vähintään yksi osaaminen tai liitä työpaikkailmoitus.", custom:"Oma ilmoitusteksti", customCompany:"Käyttäjän lisäämä teksti", matched:"Osuneet hakusanat:", noMatch:"Ei suoria hakusanaosumia. Kokeile lisätä osaamisia tai muokata ilmoituksen tekstiä.", title:"Sopivuusvertailu", clear:"Tyhjennä kentät" },
-  en: { missing:"Add at least one skill or paste a job description.", custom:"Your pasted job description", customCompany:"User-provided text", matched:"Matched keywords:", noMatch:"No direct keyword matches. Try adding skills or adjusting the job description.", title:"Job fit comparison", clear:"Clear fields" }
+  fi: {
+    missing:"Lisää vähintään yksi osaaminen tai liitä työpaikkailmoitus.",
+    custom:"Oma ilmoitusteksti", customCompany:"Käyttäjän lisäämä teksti",
+    greenTitle:"🟢 Pakollinen osaaminen löytyy profiilistasi",
+    redTitle:"🔴 Pakollinen osaaminen puuttuu profiilistasi",
+    yellowTitle:"🟡 Edut ja toivottavat lisäosaamiset (eivät pakollisia)",
+    noneMatched:"Ei tunnistettuja osumia pakollisiin osaamisiin.",
+    noneMissing:"Kaikki tunnistetut pakolliset osaamiset löytyvät profiilistasi.",
+    noneOptional:"Ilmoituksesta ei tunnistettu erikseen eduksi katsottavia osaamisia.",
+    found:"Löytyy profiilistasi", learn:"Ei vielä profiilissasi",
+    learning:"Voit kehittää puuttuvia pakollisia taitoja oppimistavoitteina. Etsi luotettava kurssi tai dokumentaatio, tee pieni käytännön harjoitus ja lisää taito profiiliisi vasta, kun hallitset sen.",
+    caveat:"Luokittelu perustuu ilmoituksen sanamuotoihin ja tunnistettuun sanastoon. Tarkista aina alkuperäinen ilmoitus: demo ei voi varmasti päätellä kaikkia vaatimuksia eikä arvioida todellista osaamistasoa.",
+    customNote:"Arvio perustuu vain tähän liitettyyn tekstiin."
+  },
+  en: {
+    missing:"Add at least one skill or paste a job description.",
+    custom:"Your pasted job description", customCompany:"User-provided text",
+    greenTitle:"🟢 Required skills found in your profile",
+    redTitle:"🔴 Required skills missing from your profile",
+    yellowTitle:"🟡 Preferred and useful additional skills (not mandatory)",
+    noneMatched:"No recognised matches among required skills.",
+    noneMissing:"All recognised required skills are listed in your profile.",
+    noneOptional:"No separately preferred or optional skills were detected in the job description.",
+    found:"Found in your profile", learn:"Not listed in your profile yet",
+    learning:"You can turn missing required skills into learning goals. Find reliable training or documentation, complete a small practical exercise, and add a skill to your profile only when you can use it confidently.",
+    caveat:"Classification is based on wording in the job description and the recognised vocabulary. Always check the original listing: the demo cannot reliably infer every requirement or assess actual proficiency.",
+    customNote:"This estimate uses only the text you pasted."
+  }
 };
 
 const roleTitlesFi = {
@@ -181,18 +154,22 @@ const roleTitlesFi = {
 };
 
 function terms(value) {
-  return [...new Set(value.toLowerCase().split(/[,;\n]+/).map(item => item.trim()).filter(item => item.length > 1))];
+  const values = [...new Set(value.toLowerCase().split(/[,;\n]+/).map(item => item.trim()).filter(item => item.length > 1))];
+  return [...new Set(vocabulary.normalizeSkillTerms(values))];
 }
 function tokenise(value) {
   return value.toLowerCase().replace(/[^a-z0-9+#.\s-]/g, " ").split(/\s+/).filter(word => word.length > 1);
 }
 function scoreRole(role, skills, targetTitle, mustHave, excluded) {
   const searchable = (role.title + " " + role.text).toLowerCase();
-  const excludedMatches = excluded.filter(term => searchable.includes(term));
-  const matchedSkills = skills.filter(term => searchable.includes(term));
-  const titleTerms = tokenise(targetTitle).filter(term => term.length > 2);
-  const matchedTitle = titleTerms.filter(term => (role.title + " " + role.text).toLowerCase().includes(term));
-  const matchedMust = mustHave.filter(term => searchable.includes(term));
+  const detectedTerms = vocabulary.extractSkills(searchable).map(item => item.canonical.toLowerCase());
+  const matchesTerm = term => vocabulary.containsPhrase(searchable, term) || detectedTerms.includes(term);
+  const excludedMatches = excluded.filter(matchesTerm);
+  const matchedSkills = skills.filter(matchesTerm);
+  const titleTerms = tokenise(vocabulary.normalizeRoleTitle(targetTitle)).filter(term => term.length > 2);
+  const matchedTitle = titleTerms.filter(term => vocabulary.containsPhrase(searchable, term) || detectedTerms.includes(term));
+  const matchedMust = mustHave.filter(matchesTerm);
+  const { matched: matchedRequirements, missing: missingRequirements, optional: optionalRequirements } = vocabulary.compareSkills(skills, role.title + " " + role.text, language);
   const components = [];
   if (skills.length) components.push({ value: matchedSkills.length / skills.length, weight: 70 });
   if (titleTerms.length) components.push({ value: matchedTitle.length / titleTerms.length, weight: 20 });
@@ -203,7 +180,7 @@ function scoreRole(role, skills, targetTitle, mustHave, excluded) {
     : 0;
   let score = Math.round(weightedScore * 100);
   if (excludedMatches.length) score = Math.max(0, score - 35);
-  return { score: Math.min(100, score), matchedSkills, matchedTitle, matchedMust, excludedMatches };
+  return { score: Math.min(100, score), matchedSkills, matchedTitle, matchedMust, excludedMatches, matchedRequirements, missingRequirements, optionalRequirements };
 }
 function addText(parent, tag, className, value) {
   const element = document.createElement(tag);
@@ -232,10 +209,29 @@ function renderRole(role, result, isCustom = false) {
   meter.value = result.score;
   meter.setAttribute("aria-label", (language === "fi" ? "Sopivuuspisteet " : "Match score ") + result.score + "%");
   card.appendChild(meter);
-  const matched = [...result.matchedSkills, ...result.matchedTitle, ...result.matchedMust];
-  addText(card, "p", "matched", matched.length ? copy[language].matched + " " + [...new Set(matched)].join(", ") : copy[language].noMatch);
+  function addSkillGroup(className, title, items, emptyText, showStatus=false) {
+    const section = document.createElement("section");
+    section.className = "skill-group " + className;
+    addText(section, "h4", "", title);
+    if (items.length) {
+      const list = document.createElement("ul");
+      items.forEach(item => {
+        const li = document.createElement("li");
+        addText(li, "span", "skill-name", item.label);
+        if (showStatus) addText(li, "span", "skill-status", item.found ? copy[language].found : copy[language].learn);
+        list.appendChild(li);
+      });
+      section.appendChild(list);
+    } else addText(section, "p", "skill-empty", emptyText);
+    card.appendChild(section);
+  }
+  addSkillGroup("skill-match", copy[language].greenTitle, result.matchedRequirements, copy[language].noneMatched);
+  addSkillGroup("skill-missing", copy[language].redTitle, result.missingRequirements, copy[language].noneMissing);
+  addSkillGroup("skill-optional", copy[language].yellowTitle, result.optionalRequirements, copy[language].noneOptional, true);
+  if (result.missingRequirements.length) addText(card, "p", "learning-tip", copy[language].learning);
+  addText(card, "p", "analysis-caveat", copy[language].caveat);
   if (result.excludedMatches.length) addText(card, "p", "matched", (language === "fi" ? "Poissulkevat osumat: " : "Excluded terms found: ") + result.excludedMatches.join(", "));
-  if (isCustom) addText(card, "p", "matched", language === "fi" ? "Arvio perustuu vain tähän liitettyyn tekstiin." : "This estimate uses only the text you pasted.");
+  if (isCustom) addText(card, "p", "matched", copy[language].customNote);
   return card;
 }
 form.addEventListener("submit", event => {

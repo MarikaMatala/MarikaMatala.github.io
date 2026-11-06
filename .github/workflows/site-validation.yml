@@ -24,3 +24,11 @@ jobs:
 
       - name: Check local references, duplicate IDs and HTML anchors
         run: python scripts/validate_site.py
+
+      - name: Set up Node.js for Remote Job Fit vocabulary tests
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run Remote Job Fit vocabulary tests
+        run: node --test tests/remote-job-fit-vocabulary.test.cjs

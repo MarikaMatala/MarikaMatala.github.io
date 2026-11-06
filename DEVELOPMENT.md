@@ -121,3 +121,51 @@ For a detailed browser-based verification plan, use [TESTING.md](TESTING.md).
 - Confirm that no credentials, private configuration, personal data or unlicensed assets have been added.
 - Confirm that code examples are labelled as examples and include the setup information needed to use them safely.
 - Review the rendered page, not only the source, after changing layout or interactive behaviour.
+
+
+## Remote Job Fit vocabulary | Osaamissanasto
+
+The bilingual keyword vocabulary is maintained in `remote-job-fit-vocabulary.js`. It maps Finnish and English aliases for skills, programming languages, software, tools and job titles to shared terms. It does not send text to a server or download vocabulary data at runtime.
+
+Run unit tests with Node.js:
+
+```bash
+node --test tests/remote-job-fit-vocabulary.test.cjs
+```
+
+When adding terms, include Finnish and English labels, check ambiguous short matches, add a test, and update README source notes if a new external dataset is used. Do not copy third-party descriptions or bulk datasets without checking licence and attribution requirements.
+
+Sanasto on tiedostossa `remote-job-fit-vocabulary.js`. Se yhdistää suomen- ja englanninkielisiä osaamisten, ohjelmistojen, työkalujen ja ammattinimikkeiden ilmauksia. Aja yksikkötestit Node.js:llä yllä olevalla komennolla. Uudet termit pitää testata molemmilla kielillä ja niiden lähteet dokumentoida.
+
+
+## Remote Job Fit — optional configuration templates | Valinnaiset asetuspohjat
+
+The embedded Remote Job Fit demo is browser-only and needs no `.env` file, backend, database, API key or package installation. The `remote-job-fit/` directory contains planning templates only:
+
+- `remote-job-fit/.env.example` — fake environment-variable examples for a possible future backend.
+- `remote-job-fit/config/demo.example.json` — valid JSON with fictional example values and explanatory `_comment` fields.
+- `remote-job-fit/config/app.example.js` — JavaScript configuration sample with `/* ... */` comments.
+- `remote-job-fit/backend/README.md` — notes for a backend that has not been implemented.
+- `remote-job-fit/data/README.md` — requirements for importing licensed datasets.
+
+To experiment with a future backend, copy `remote-job-fit/.env.example` to `remote-job-fit/.env` on your own computer and replace only the settings you actually need. The real `.env` is excluded by the root `.gitignore`; do not force-add it. The public `.env.example` contains placeholders only and is not read by GitHub Pages.
+
+Do not put API keys in frontend JavaScript, HTML, public JSON, screenshots or commits. Browser code cannot protect a secret. Keep private provider credentials on a secured backend and read them from environment variables or a deployment secret manager.
+
+The current demo does not require these templates. Do not install a framework or create a backend until a specific feature requires one.
+
+### Remote Job Fitin asetuspohjat
+
+Työnäytteissä oleva Remote Job Fit -demo toimii selaimessa eikä tarvitse `.env`-tiedostoa, backend-palvelinta, tietokantaa, API-avainta tai pakettien asennusta. `remote-job-fit/`-kansio sisältää vain jatkokehityksen suunnittelupohjia:
+
+- `remote-job-fit/.env.example` — kuvitteelliset ympäristömuuttujat mahdollista backend-versiota varten.
+- `remote-job-fit/config/demo.example.json` — kelvollinen JSON-tiedosto, jossa on satunnaisia esimerkkitietoja ja `_comment`-ohjekenttiä.
+- `remote-job-fit/config/app.example.js` — JavaScript-asetuspohja, jossa ohjeet ovat `/* ... */`-kommentteina.
+- `remote-job-fit/backend/README.md` — ohjeita backendille, jota ei ole vielä toteutettu.
+- `remote-job-fit/data/README.md` — ohjeet lisensoitujen aineistojen lisäämiseen.
+
+Jos kokeilet myöhemmin backend-versiota, kopioi `remote-job-fit/.env.example` omalla koneellasi tiedostoksi `remote-job-fit/.env` ja vaihda vain tarvitsemasi asetukset. Oikea `.env` on rajattu pois Gitistä juuren `.gitignore`-tiedostolla; älä pakota sitä mukaan committiin. Julkinen `.env.example` sisältää vain paikkamerkkejä eikä GitHub Pages lue sitä.
+
+Älä lisää API-avaimia frontend-JavaScriptiin, HTML:ään, julkisiin JSON-tiedostoihin, kuvakaappauksiin tai committeihin. Selaimessa suoritettava koodi ei pysty pitämään salaisuutta piilossa. Säilytä yksityiset tunnistetiedot suojatussa backendissä ympäristömuuttujina tai julkaisualustan salaisuuksissa.
+
+Nykyinen demo ei tarvitse näitä pohjia. Älä asenna kehystä tai rakenna backend-palvelinta ennen kuin jokin suunniteltu ominaisuus sitä oikeasti tarvitsee.
