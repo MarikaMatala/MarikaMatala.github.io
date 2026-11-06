@@ -20,8 +20,8 @@ fi:{film:"Elokuva",series:"Sarja",animation:"Animaatio",documentary:"Dokumentti"
 en:{film:"Film",series:"Series",animation:"Animation",documentary:"Documentary",podcast:"Podcast",music:"Music",game:"Game",book:"Book"}
 };
 const ui = {
-fi:{count:n:`Näytetään ${n} teosta`, owner:"Ylläpitäjän arvio", community:"Yhteisö", review:"Näytä esimerkkien arvostelut", hide:"Piilota arvostelut", noReview:"Tälle teokselle ei ole paikallista demoarviota.", saved:"Demoarvio tallennettu tähän selaimeen.", yourReview:"Oma paikallinen demoarviosi", choose:"Valitse teos", communityNote:"Yhteisön keskiarvo"},
-en:{count:n:`Showing ${n} works`, owner:"Owner rating", community:"Community", review:"Show sample reviews", hide:"Hide reviews", noReview:"There is no local demo review for this work.", saved:"Demo review saved in this browser.", yourReview:"Your local demo review", choose:"Choose a work", communityNote:"Community average"}
+fi:{count: n => `Näytetään ${n} teosta`, owner:"Ylläpitäjän arvio", community:"Yhteisö", review:"Näytä esimerkkien arvostelut", hide:"Piilota arvostelut", noReview:"Tälle teokselle ei ole paikallista demoarviota.", saved:"Demoarvio tallennettu tähän selaimeen.", yourReview:"Oma paikallinen demoarviosi", choose:"Valitse teos", communityNote:"Yhteisön keskiarvo"},
+en:{count: n => `Showing ${n} works`, owner:"Owner rating", community:"Community", review:"Show sample reviews", hide:"Hide reviews", noReview:"There is no local demo review for this work.", saved:"Demo review saved in this browser.", yourReview:"Your local demo review", choose:"Choose a work", communityNote:"Community average"}
 };
 let language = "fi";
 let activeCategory = "all";
