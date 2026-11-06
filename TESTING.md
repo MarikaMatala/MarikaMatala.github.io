@@ -17,6 +17,7 @@ Confirm that the GitHub Actions **Site validation** workflow passes for the pull
 ## Navigation and language | Navigaatio ja kieli
 
 - [ ] The logo and site name return to the homepage.
+- [ ] In-page and cross-page anchor links land on an existing section.
 - [ ] All main navigation links open the correct page.
 - [ ] The current page is identified with `aria-current="page"` in the main navigation.
 - [ ] The mobile menu opens and closes with its button.
