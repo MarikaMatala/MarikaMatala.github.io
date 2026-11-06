@@ -30,6 +30,10 @@ Confirm that the GitHub Actions **Site validation** workflow passes for the pull
 ## Keyboard and accessibility | Näppäimistö ja saavutettavuus
 
 - [ ] The skip link appears when reached by keyboard and moves focus to the main content.
+- [ ] Form controls have a visible, programmatically associated label in both languages.
+- [ ] Image alternative text and embedded-document titles change to the selected language.
+- [ ] Icon-only buttons expose a meaningful accessible name.
+- [ ] ARIA ID references such as `aria-controls`, `aria-labelledby` and `aria-describedby` point to existing elements.
 - [ ] Links, buttons, menus, galleries and interactive examples can be operated without a mouse.
 - [ ] Keyboard focus is always visible.
 - [ ] The image lightbox opens from a focused image, has a labelled close button and closes with Escape.
@@ -128,3 +132,14 @@ For significant layout or interaction changes, check at least one Chromium-based
 - [ ] Testaa sekä suomeksi että englanniksi.
 - [ ] Varmista, että lyhyet monitulkintaiset termit C, R ja Go ohitetaan automaattisessa puuteanalyysissä.
 - [ ] Varmista, että analyysi pysyy selaimessa eikä profiili- tai ilmoitustekstiä lähetetä tai tallenneta.
+
+
+## Accessibility regression checks | Saavutettavuuden regressiotarkistukset
+
+The automated validator checks baseline semantics: document language, one main landmark and one H1, heading-level jumps, skip-link targets, image alt attributes, iframe titles, form-control labels, button names, ARIA ID references, positive tabindex values, and safe `target="_blank"` links. It also checks local files, fragment links and duplicate IDs.
+
+Automaattinen validointi tarkistaa perustason semantiikan: dokumentin kielen, yhden main-maamerkin ja H1-otsikon, otsikkotasojen hypyt, ohituslinkin kohteen, kuvien alt-attribuutit, iframe-kehysten otsikot, lomakekenttien nimet, painikkeiden nimet, ARIA-tunnisteviittaukset, positiiviset tabindex-arvot sekä turvalliset `target="_blank"`-linkit. Lisäksi tarkistetaan paikalliset tiedostot, ankkurilinkit ja päällekkäiset ID-tunnisteet.
+
+These checks do not calculate colour contrast, inspect the rendered accessibility tree, or replace manual testing with a screen reader. See [ACCESSIBILITY.md](ACCESSIBILITY.md) for the audit scope and manual checklist.
+
+Nämä tarkistukset eivät laske värikontrastia, tutki selaimen muodostamaa saavutettavuuspuuta eivätkä korvaa ruudunlukijalla tehtävää manuaalista testausta. Katso auditoinnin rajaus ja manuaalinen tarkistuslista tiedostosta [ACCESSIBILITY.md](ACCESSIBILITY.md).

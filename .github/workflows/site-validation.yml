@@ -22,8 +22,11 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Check local references, duplicate IDs and HTML anchors
+      - name: Check local references, semantics and accessibility baseline
         run: python scripts/validate_site.py
+
+      - name: Test accessibility validator
+        run: python -m unittest discover -s tests -p "test_site_accessibility.py"
 
       - name: Set up Node.js for Remote Job Fit vocabulary tests
         uses: actions/setup-node@v4

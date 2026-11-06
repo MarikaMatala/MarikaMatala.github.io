@@ -89,3 +89,22 @@ input:focus,textarea:focus,button:focus-visible,a:focus-visible{outline:3px soli
 .skill-status::before{content:"· ";color:var(--muted)}
 .skill-empty{margin:0;color:var(--muted);font-size:.88rem}
 .analysis-caveat{font-size:.76rem!important;color:var(--muted)!important}
+
+
+.skip-link{
+  position:absolute;
+  left:-10000px;
+  top:1rem;
+  z-index:1000;
+  padding:10px 16px;
+  border:2px solid var(--accent);
+  border-radius:8px;
+  background:var(--panel2);
+  color:var(--text);
+  font-weight:800;
+}
+.skip-link:focus{
+  left:1rem;
+  outline:3px solid var(--accent);
+  outline-offset:3px;
+}

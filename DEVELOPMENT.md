@@ -52,6 +52,8 @@ Työnäytteet-sivulla Sana Vapaa -tapahtumajuliste ja audiovisuaalisen viestinn�
 
 - Prefer shared styles in the existing CSS files instead of adding one-off inline styles.
 - Keep keyboard focus indicators visible.
+- Localize informative image alt text, iframe titles and accessible names when the page language changes.
+- Prefer visible `<label for="...">` elements for form controls; avoid a fixed Finnish `aria-label` that overrides a translated visible label.
 - Preserve the skip link and semantic landmarks such as `header`, `nav`, `main` and `footer`.
 - Respect `prefers-reduced-motion` when adding animations.
 - Check layouts at mobile, tablet and desktop widths.
@@ -64,7 +66,7 @@ The repository includes a dependency-free validation script:
 python scripts/validate_site.py
 ```
 
-It checks root-level HTML pages for duplicate IDs, missing local `href` and `src` targets, and broken fragment links to IDs on the same site. GitHub Actions runs the same check on pull requests and pushes to `main`.
+It checks root-level HTML pages for duplicate IDs, missing local `href` and `src` targets, broken fragment links, and baseline accessibility semantics (document language, landmarks, heading structure, skip links, image alternatives, iframe titles, labelled controls, button names, ARIA references and positive tabindex values). GitHub Actions runs the same check on pull requests and pushes to `main`. These checks are not a WCAG conformance claim; use [ACCESSIBILITY.md](ACCESSIBILITY.md) and [TESTING.md](TESTING.md) for manual checks.
 
 ## Publishing | Julkaisu
 
