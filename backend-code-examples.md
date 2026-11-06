@@ -155,6 +155,9 @@ exports.getAlbum = async (req, res, next) => {
     if (!album) return res.status(404).json({ message: 'Album not found.' });
     res.status(200).json(album);
   } catch (error) {
+    if (error.name === 'CastError') {
+      return res.status(400).json({ message: 'Invalid album ID.' });
+    }
     next(error);
   }
 };
@@ -179,7 +182,7 @@ exports.updateAlbum = async (req, res, next) => {
   try {
     const allowedFields = ['title', 'artist', 'year', 'tracks'];
     const updates = Object.fromEntries(
-      Object.entries(req.body).filter(([key]) => allowedFields.includes(key))
+      Object.entries(req.body || {}).filter(([key]) => allowedFields.includes(key))
     );
 
     if (Object.keys(updates).length === 0) {
@@ -207,6 +210,9 @@ exports.deleteAlbum = async (req, res, next) => {
     if (!album) return res.status(404).json({ message: 'Album not found.' });
     res.status(204).send();
   } catch (error) {
+    if (error.name === 'CastError') {
+      return res.status(400).json({ message: 'Invalid album ID.' });
+    }
     next(error);
   }
 };
