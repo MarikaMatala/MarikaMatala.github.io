@@ -30,6 +30,5 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Run experimental Remote Job Fit vocabulary tests
-        continue-on-error: true
+      - name: Run Remote Job Fit vocabulary tests
         run: node --test tests/remote-job-fit-vocabulary.test.cjs
