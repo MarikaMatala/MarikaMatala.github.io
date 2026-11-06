@@ -17,6 +17,21 @@ The files in this folder are examples for a possible future backend or local dev
 - `data/README.md` — rules for adding external occupation/skill data and recording licences.
 - `backend/README.md` — optional backend setup notes. No backend is implemented by these instructions alone.
 
+## Licence for the Remote Job Fit demo
+
+The MIT licence in this folder applies **only to the Remote Job Fit demo's original source code**, specifically:
+
+- `remote-job-fit-demo.html`
+- `remote-job-fit-demo.css`
+- `remote-job-fit-demo.js`
+- `remote-job-fit-vocabulary.js`
+
+It also covers original documentation and example files located inside this `remote-job-fit/` folder, where they are authored by the copyright holder.
+
+The MIT licence does **not** apply to the rest of the portfolio website or repository. In particular, it does not grant permission to reuse portfolio photographs, personal information, graphics, other projects, PDF files, artwork, or other website content. Third-party components and assets remain under their respective licences. See the root `README.md` and `THIRD-PARTY-NOTICES.md`.
+
+MIT permits use, copying, modification, distribution and commercial use of the covered demo code, provided the copyright and licence notice are retained. The licence also includes warranty and liability disclaimers. If you do not want others to reuse the demo code on these terms, do not distribute it under MIT.
+
 ## Important: no real credentials
 
 All values are fictional placeholders. No personal data, usernames, passwords, API keys, access tokens, private URLs or database credentials are included.
