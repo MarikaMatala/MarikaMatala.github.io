@@ -121,3 +121,18 @@ For a detailed browser-based verification plan, use [TESTING.md](TESTING.md).
 - Confirm that no credentials, private configuration, personal data or unlicensed assets have been added.
 - Confirm that code examples are labelled as examples and include the setup information needed to use them safely.
 - Review the rendered page, not only the source, after changing layout or interactive behaviour.
+
+
+## Remote Job Fit vocabulary | Osaamissanasto
+
+The bilingual keyword vocabulary is maintained in `remote-job-fit-vocabulary.js`. It maps Finnish and English aliases for skills, programming languages, software, tools and job titles to shared terms. It does not send text to a server or download vocabulary data at runtime.
+
+Run unit tests with Node.js:
+
+```bash
+node --test tests/remote-job-fit-vocabulary.test.cjs
+```
+
+When adding terms, include Finnish and English labels, check ambiguous short matches, add a test, and update README source notes if a new external dataset is used. Do not copy third-party descriptions or bulk datasets without checking licence and attribution requirements.
+
+Sanasto on tiedostossa `remote-job-fit-vocabulary.js`. Se yhdistää suomen- ja englanninkielisiä osaamisten, ohjelmistojen, työkalujen ja ammattinimikkeiden ilmauksia. Aja yksikkötestit Node.js:llä yllä olevalla komennolla. Uudet termit pitää testata molemmilla kielillä ja niiden lähteet dokumentoida.
