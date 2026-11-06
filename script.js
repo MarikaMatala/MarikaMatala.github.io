@@ -314,7 +314,9 @@ if (backendBrowser) {
 
   function showBackendSample(index) {
     if (!panels.length) return;
-    activeSample = (index + panels.length) % panels.length;
+    const requestedIndex = Number(index);
+    if (!Number.isFinite(requestedIndex)) return;
+    activeSample = Math.max(0, Math.min(requestedIndex, panels.length - 1));
     panels.forEach((panel, panelIndex) => {
       panel.hidden = panelIndex !== activeSample;
     });
@@ -324,7 +326,9 @@ if (backendBrowser) {
     if (next) next.disabled = activeSample === panels.length - 1;
   }
 
-  if (selector) selector.addEventListener('change', () => showBackendSample(Number(selector.value)));
+  if (selector) {
+    selector.addEventListener('change', () => showBackendSample(selector.value));
+  }
   if (previous) previous.addEventListener('click', () => showBackendSample(activeSample - 1));
   if (next) next.addEventListener('click', () => showBackendSample(activeSample + 1));
   showBackendSample(0);
