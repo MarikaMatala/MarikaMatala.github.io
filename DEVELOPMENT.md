@@ -112,3 +112,12 @@ For a detailed browser-based verification plan, use [TESTING.md](TESTING.md).
    ```bash
    python scripts/validate_site.py
    ```
+
+
+## Before publishing | Ennen julkaisua
+
+- Confirm that every new visible text has Finnish and English versions.
+- Confirm that all local links and referenced assets exist.
+- Confirm that no credentials, private configuration, personal data or unlicensed assets have been added.
+- Confirm that code examples are labelled as examples and include the setup information needed to use them safely.
+- Review the rendered page, not only the source, after changing layout or interactive behaviour.
