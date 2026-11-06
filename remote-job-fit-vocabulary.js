@@ -79,7 +79,7 @@
     ["Graphic Designer","Graafinen suunnittelija","graphic designer","graafikko","visuaalinen suunnittelija"],
     ["Digital Designer","Digitaalinen suunnittelija","digital designer"],
     ["3D Artist","3D-artisti","3d artist","3d generalist","3d-mallintaja"],
-    ["3D Animator","3D-animaattori","3d animator","animaattori"],
+    ["3D Animator","3D-animaattori","3d animator"],
     ["Motion Graphics Designer","Liikegrafiikan suunnittelija","motion graphics designer","motion designer"],
     ["Video Editor","Videoeditoija","video editor","leikkaaja"],
     ["Video Producer","Videotuottaja","video producer"],
@@ -149,7 +149,7 @@
     const found=roleRecords.find(row=>row.aliases.some(alias=>hasPhrase(value,alias)));
     return found ? normalize(found.en) : normalize(value);
   }
-  const api={extractSkills,normalizeSkillTerms,detectRoles,normalizeRoleTitle,normalize};
+  const api={extractSkills,normalizeSkillTerms,detectRoles,normalizeRoleTitle,containsPhrase:hasPhrase,normalize};
   root.RemoteJobFitVocabulary=api;
   if(typeof module!=="undefined"&&module.exports) module.exports=api;
 })(typeof window!=="undefined"?window:globalThis);
