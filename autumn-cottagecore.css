@@ -829,3 +829,54 @@ a:not(.hero-index):not(.gothic-button):not(.home-work-cta):not(.sample-pdf-link)
 .footer-nav a {
   font-size: .72rem !important;
 }
+
+/* Final typography correction: improve word separation and prevent cramped headings.
+   Applies to Finnish and English headings across desktop and mobile layouts. */
+h1, h2, h3, h4, h5, h6,
+.hero-copy h1, .work-page-intro h1, .about-page-intro h1, .contact-page h1,
+.section-heading h2, .about-section h2, .home-about-copy h2,
+.home-work-cta-section h2, .contact-section h2,
+.project-card h2, .project-card h3, .project-card h4,
+.skills-card h2, .skills-card h3, .skills-card h4,
+.contact-method h2, .creative-sample-copy h3,
+.sample-panel-heading, .skills-heading {
+  letter-spacing: 0.005em !important;
+  word-spacing: 0.10em !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  hyphens: manual !important;
+  text-wrap: balance;
+}
+
+h1 em, h2 em, h3 em, h4 em {
+  letter-spacing: inherit !important;
+  word-spacing: inherit !important;
+}
+
+/* Preserve intentional line breaks in headings on narrow screens. */
+@media (max-width: 700px) {
+  .hero-copy h1 br,
+  .work-page-intro h1 br,
+  .about-page-intro h1 br,
+  .contact-page h1 br,
+  .section-heading h2 br,
+  .about-section h2 br,
+  .home-about-copy h2 br,
+  .home-work-cta-section h2 br,
+  .contact-section h2 br,
+  .work-section > .section-heading h2 br {
+    display: initial !important;
+  }
+
+  h1, h2, h3, h4, h5, h6,
+  .hero-copy h1, .work-page-intro h1, .about-page-intro h1, .contact-page h1,
+  .section-heading h2, .about-section h2, .home-about-copy h2,
+  .home-work-cta-section h2, .contact-section h2,
+  .project-card h2, .project-card h3, .project-card h4,
+  .skills-card h2, .skills-card h3, .skills-card h4,
+  .contact-method h2, .creative-sample-copy h3 {
+    word-spacing: 0.08em !important;
+    letter-spacing: 0 !important;
+    line-height: 1.28 !important;
+  }
+}
