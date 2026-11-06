@@ -108,6 +108,7 @@
         <a href="#wimma" data-fi="WIMMA Capstone" data-en="WIMMA Capstone">WIMMA Capstone</a>
         <a href="#oop" data-fi="Olio-ohjelmointi" data-en="Object-oriented programming">Olio-ohjelmointi</a>
         <a href="#backend-examples" data-fi="Backend-tehtävät" data-en="Backend exercises">Backend-tehtävät</a>
+        <a href="#remote-job-fit" data-fi="Remote Job Fit" data-en="Remote Job Fit">Remote Job Fit</a>
       </nav>
       <div class="project-grid">
         <article class="project-card project-featured android-project" id="android">
@@ -395,6 +396,17 @@ public class CardPayment : ITransaction
           <div class="skill-list"><span>C#</span><span>OOP</span><span>Classes & objects</span><span>Inheritance</span><span>Interfaces</span></div>
           <p class="oop-note" data-fi="Nämä ovat alkuperäisistä kurssitehtävistä valittuja ja portfoliota varten rajattuja koodinäytteitä. Kokonaiset projektit eivät sisällä sivustolle siirrettyjä riippuvuuksia tai asetustiedostoja." data-en="These are selected and trimmed code samples based on the original course exercises. Full projects, dependencies and configuration files have not been copied into this portfolio.">Nämä ovat alkuperäisistä kurssitehtävistä valittuja ja portfoliota varten rajattuja koodinäytteitä. Kokonaiset projektit eivät sisällä sivustolle siirrettyjä riippuvuuksia tai asetustiedostoja.</p>
         </article>
+        <article class="project-card" id="remote-job-fit-project">
+          <div class="project-meta"><span>PYTHON · TYPESCRIPT · HTML · CSS · REST API · SQL · SQLITE</span><span data-fi="Oma ohjelmistoprojekti · Keskeneräinen" data-en="Personal software project · In progress">Oma ohjelmistoprojekti · Keskeneräinen</span></div>
+          <h3>Remote Job Fit</h3>
+          <p data-fi="Kehitteillä oleva työnhaun apuväline, jossa Python-tausta käsittelee työpaikkalähteitä, asetuksia ja sopivuuspisteytystä. TypeScript-pohjainen selainkäyttöliittymä näyttää tuloksia paikallisen API:n kautta. Projekti yhdistää frontend-, backend-, API- ja tietokantatyöskentelyä." data-en="An experimental job-search assistant in development. Its Python backend handles job sources, configuration and fit scoring, while a TypeScript browser interface displays results through a local API. The project brings together frontend, backend, API and database work.">Kehitteillä oleva työnhaun apuväline, jossa Python-tausta käsittelee työpaikkalähteitä, asetuksia ja sopivuuspisteytystä. TypeScript-pohjainen selainkäyttöliittymä näyttää tuloksia paikallisen API:n kautta. Projekti yhdistää frontend-, backend-, API- ja tietokantatyöskentelyä.</p>
+          <p class="project-note" data-fi="WORK IN PROGRESS — EXPERIMENTAL. Varsinainen sovellus vaatii paikallisen Python-ympäristön ja asetukset. Alla oleva selain-demo on erillinen, rajattu esittelyversio: se käyttää vain esimerkkityöpaikkoja tai itse liittämääsi ilmoitustekstiä." data-en="WORK IN PROGRESS — EXPERIMENTAL. The full application requires a local Python environment and configuration. The browser demo below is a separate, limited prototype using sample roles or a job description you paste yourself.">WORK IN PROGRESS — EXPERIMENTAL. Varsinainen sovellus vaatii paikallisen Python-ympäristön ja asetukset. Alla oleva selain-demo on erillinen, rajattu esittelyversio: se käyttää vain esimerkkityöpaikkoja tai itse liittämääsi ilmoitustekstiä.</p>
+          <div class="skill-list"><span>Python</span><span>TypeScript</span><span>FastAPI</span><span>REST API</span><span>SQLite / SQL</span><span>HTML / CSS</span><span>JSON / YAML</span></div>
+          <div class="work-page-actions">
+            <a class="gothic-button" href="https://github.com/MarikaMatala/remote-job-fit" target="_blank" rel="noopener noreferrer"><span data-fi="Avaa GitHub-repositorio" data-en="View GitHub repository">Avaa GitHub-repositorio</span><span aria-hidden="true">↗</span></a>
+            <a class="gothic-button" href="#remote-job-fit"><span data-fi="Kokeile selaindemoa" data-en="Try the browser demo">Kokeile selaindemoa</span><span aria-hidden="true">↓</span></a>
+          </div>
+        </article>
       </div>
       <p class="privacy-note"><span aria-hidden="true">✳</span> <span data-fi="Lisää työnäytteitä on saatavilla pyynnöstä. Osa portfolion muista materiaaleista on toistaiseksi yksityisiä." data-en="More work samples are available on request. Some other portfolio materials are currently private.">Lisää työnäytteitä on saatavilla pyynnöstä. Osa portfolion muista materiaaleista on toistaiseksi yksityisiä.</span></p>
     
@@ -593,6 +605,25 @@ expect(response.body.title).toBe("Example Album");</code></pre>
         </figure>
       </div>
       <p class="interlude-credit" data-fi="Valikoituja omia opinto- ja luovia töitä GitHub-repositoriostani." data-en="Selected original coursework and creative work from my GitHub repository.">Valikoituja omia opinto- ja luovia töitä GitHub-repositoriostani.</p>
+    </section>
+
+    <section class="work-section section-wrap" id="remote-job-fit">
+      <div class="section-heading">
+        <p class="eyebrow"><span class="eyebrow-line"></span><span data-fi="Kokeile projektia" data-en="Try the project">Kokeile projektia</span></p>
+        <h2 data-fi="Remote Job Fit —<br><em>selaindemo.</em>" data-en="Remote Job Fit —<br><em>browser demo.</em>">Remote Job Fit —<br><em>selaindemo.</em></h2>
+        <p class="section-lead" data-fi="Voit syöttää tähän omia osaamisiasi ja liittää työpaikkailmoituksen tekstin. Demo vertaa hakusanoja ja näyttää suuntaa-antavan osumaprosentin. Käytä halutessasi keksittyjä tietoja." data-en="Enter your skills and paste a job description. The demo compares keywords and displays an indicative match percentage. You can use fictional details if you prefer.">Voit syöttää tähän omia osaamisiasi ja liittää työpaikkailmoituksen tekstin. Demo vertaa hakusanoja ja näyttää suuntaa-antavan osumaprosentin. Käytä halutessasi keksittyjä tietoja.</p>
+      </div>
+      <div class="project-card remote-job-fit-embed">
+        <iframe
+          src="remote-job-fit-demo.html"
+          title="Remote Job Fit interactive browser demo"
+          loading="lazy"
+          sandbox="allow-scripts allow-forms"
+          referrerpolicy="no-referrer"
+          style="width:100%;min-height:1050px;border:0;border-radius:12px;background:#100b12"
+        ></iframe>
+      </div>
+      <p class="privacy-note" data-fi="Tietosuoja: kenttiin kirjoittamasi tiedot käsitellään vain selaimessasi. Demo ei lähetä niitä verkkoon eikä tallenna niitä. Sivun uudelleenlataus tyhjentää tiedot. Tämä demo ei käytä oikeita työpaikkailmoituksia eikä korvaa varsinaisen Remote Job Fit -sovelluksen Python-taustaa." data-en="Privacy: information entered into the fields is processed only in your browser. The demo does not send or store it. Reloading the page clears the fields. This demo does not use live job listings and does not replace the full application's Python backend.">Tietosuoja: kenttiin kirjoittamasi tiedot käsitellään vain selaimessasi. Demo ei lähetä niitä verkkoon eikä tallenna niitä. Sivun uudelleenlataus tyhjentää tiedot. Tämä demo ei käytä oikeita työpaikkailmoituksia eikä korvaa varsinaisen Remote Job Fit -sovelluksen Python-taustaa.</p>
     </section>
 
     <section class="contact-section section-wrap" id="contact">
