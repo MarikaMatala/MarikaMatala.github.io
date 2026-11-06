@@ -129,7 +129,7 @@
     const finnishEndings = ["ssa","ssä","sta","stä","lla","llä","lle","ksi","tta","ttä","ia","iä","ja","in","issa","issä","een","n","a","ä"];
     return finnishEndings.some(ending => source.includes(" " + prefix + last + ending + " "));
   }
-  const skillRecords = skills.map(([canonical,en,fi,...aliases]) => ({canonical,en,fi,aliases:[canonical,en,fi,...aliases]}));
+  const skillRecords = skills.map(([canonical,en,fi,...aliases]) => ({canonical,en,fi,aliases:(canonical==="Go"?["Golang"]:[canonical,en,fi,...aliases])}));
   const roleRecords = roles.map(([en,fi,...aliases]) => ({en,fi,aliases:[en,fi,...aliases]}));
   function extractSkills(text, language="en") {
     return skillRecords.filter(row=>row.aliases.some(alias=>hasPhrase(text,alias)))
@@ -145,7 +145,11 @@
     return roleRecords.filter(row=>row.aliases.some(alias=>hasPhrase(text,alias)))
       .map(row=>language==="fi"?row.fi:row.en);
   }
-  const api={extractSkills,normalizeSkillTerms,detectRoles,normalize};
+  function normalizeRoleTitle(value) {
+    const found=roleRecords.find(row=>row.aliases.some(alias=>hasPhrase(value,alias)));
+    return found ? normalize(found.en) : normalize(value);
+  }
+  const api={extractSkills,normalizeSkillTerms,detectRoles,normalizeRoleTitle,normalize};
   root.RemoteJobFitVocabulary=api;
   if(typeof module!=="undefined"&&module.exports) module.exports=api;
 })(typeof window!=="undefined"?window:globalThis);
