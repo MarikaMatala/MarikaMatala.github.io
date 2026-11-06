@@ -1,5 +1,7 @@
 # Configuration templates
 
+<!-- Last updated: 2026-11-06 20:27 (Europe/Helsinki). -->
+
 The files in this directory are examples, not active configuration for the current browser demo.
 
 ## Files
