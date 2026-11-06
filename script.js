@@ -38,6 +38,16 @@ function setLanguage(language) {
   });
 }
 
+window.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'remote-job-fit-language-request') {
+    document.querySelectorAll('.remote-job-fit-embed iframe').forEach((frame) => {
+      if (frame.contentWindow === event.source) {
+        try { frame.contentWindow.postMessage({ type: 'portfolio-language', language: currentLanguage }, '*'); } catch (error) { /* iframe may have closed */ }
+      }
+    });
+  }
+});
+
 if (languageToggle) {
   languageToggle.addEventListener('click', () => {
     setLanguage(currentLanguage === 'fi' ? 'en' : 'fi');
