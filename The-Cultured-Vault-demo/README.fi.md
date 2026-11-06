@@ -19,7 +19,7 @@ Demo on tarkoituksella kevyt eikä tarvitse ulkoisia kirjastoja tai build-vaihet
 - haun nimen, tekijän, maan ja tyylilajien perusteella;
 - kategoriasuodattimet ja lajittelun, oletuksena aakkosjärjestys;
 - A–Ö- ja Å–Ä–Ö-aakkoshakemiston sekä 0–9-numerohakemiston; molemmista voi hypätä suoraan vastaavaan teosryhmään, puuttuvat vaihtoehdot eivät ole valittavissa ja hakemistot mukautuvat hakuun ja kategoriasuodatukseen; hakemistot pysyvät näkyvissä sivua vieritettäessä;
-- ylläpitäjän arvio tilassa ”Ei vielä arviota” sekä IMDb- ja Rotten Tomatoes -arviot erillään;
+- ylläpitäjän oma arvio erillään ulkoisista viitearvioista: IMDb-arvosana (asteikko 0–10) sekä Rotten Tomatoesin kriitikkoarvio (Tomatometer) ja yleisöarvio (Popcornmeter);
 - lomakkeen oman paikallisen demoarvion ja vapaaehtoisen kommentin lisäämiseen;
 - suomen- ja englanninkielisen käyttöliittymän;
 - puhelimille, tableteille ja tietokoneille mukautuvan asettelun;
@@ -27,6 +27,13 @@ Demo on tarkoituksella kevyt eikä tarvitse ulkoisia kirjastoja tai build-vaihet
 - perustason offline-latauksen sen jälkeen, kun sovelluksen tiedostot on tallennettu välimuistiin.
 
 Tämä on käyttöliittymäprototyyppi. Sen tarkoitus on tehdä konseptista kokeiltava ennen varsinaisen backendin suunnittelua.
+
+### IMDb- ja Rotten Tomatoes -arviot
+
+Teoskortit ja teosten lisätiedot voivat näyttää IMDb-arvosanan sekä Rotten Tomatoesin kaksi erillistä prosenttiarviota: **Tomatometer** kuvaa kriitikoiden arvioita ja **Popcornmeter** yleisön arvioita. Arvot ovat ulkoisista lähteistä koottuja viitetietoja, eivät tämän projektin omia arvioita. Tiedot näytetään vain silloin, kun ne on voitu yhdistää oikeaan teokseen ja lähdetieto on saatavilla. Puuttuva arvo merkitään puuttuvaksi — sitä ei tulkita nollaksi eikä arvailla.
+
+Vastaanottotunniste (esimerkiksi myönteinen tai mielipiteitä jakava vastaanotto) muodostetaan saatavilla olevien arvosanojen perusteella. Se on suuntaa antava luokitus, ei mittaus teoksen suosiosta, katselumääristä tai arvioiden lukumäärästä. Rotten Tomatoes -arvioita ei ole kaikille katalogin mediatyypeille.
+
 
 ## 2. Mitä demo ei vielä tee?
 
@@ -139,7 +146,7 @@ Sisältää alkuperäisen works-katalogin ja 486 lisäystä (yhteensä 500 teost
 1. lukee esimerkkikatalogin;
 2. suodattaa ja lajittelee teoksia käyttöliittymän valintojen perusteella; näyttää aakkosjärjestyksessä kirjainryhmät sekä niihin johtavat A–Ö- ja 0–9-hakemistot;
 3. muodostaa katalogikortit DOM-menetelmillä;
-4. näyttää ylläpitäjän oman arvion tilassa ”Ei vielä arviota” ja IMDb-arvosanat erillisinä;
+4. näyttää ylläpitäjän oman arvion erillään IMDb- ja Rotten Tomatoes -viitearvioista (Tomatometer ja Popcornmeter), kun tiedot ovat saatavilla;
 5. tallentaa kävijän oman demoarvion selaimen paikalliseen tallennustilaan;
 6. vaihtaa suomen- ja englanninkielisen käyttöliittymän;
 7. rekisteröi service workerin HTTPS- tai localhost-ympäristössä.
