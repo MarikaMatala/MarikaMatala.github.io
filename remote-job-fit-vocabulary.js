@@ -170,6 +170,17 @@
       return found?normalize(found.canonical):normalize(value);
     });
   }
+  function compareSkills(candidateValues, requirementText, language="en") {
+    const ambiguousSkills = new Set(["c", "r", "go"]);
+    const candidate = new Set(normalizeSkillTerms(candidateValues));
+    const requirements = extractSkills(requirementText, language)
+      .filter(item => !ambiguousSkills.has(normalize(item.canonical)));
+    const unique = [...new Map(requirements.map(item => [item.canonical, item])).values()];
+    return {
+      matched: unique.filter(item => candidate.has(normalize(item.canonical))),
+      missing: unique.filter(item => !candidate.has(normalize(item.canonical)))
+    };
+  }
   function detectRoles(text, language="en") {
     return roleRecords.filter(row=>row.aliases.some(alias=>hasPhrase(text,alias)))
       .map(row=>language==="fi"?row.fi:row.en);
@@ -178,7 +189,7 @@
     const found=roleRecords.find(row=>row.aliases.some(alias=>hasPhrase(value,alias)));
     return found ? normalize(found.en) : normalize(value);
   }
-  const api={extractSkills,normalizeSkillTerms,detectRoles,normalizeRoleTitle,containsPhrase:hasPhrase,normalize};
+  const api={extractSkills,normalizeSkillTerms,compareSkills,detectRoles,normalizeRoleTitle,containsPhrase:hasPhrase,normalize};
   root.RemoteJobFitVocabulary=api;
   if(typeof module!=="undefined"&&module.exports) module.exports=api;
 })(typeof window!=="undefined"?window:globalThis);
