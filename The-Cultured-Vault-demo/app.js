@@ -95,7 +95,7 @@ function filteredWorks(){
  const query=searchInput.value.trim().toLocaleLowerCase();
  let list=works.filter(w=>(activeCategory==="all"||w.type===activeCategory)&&(!query||getSearchText(w).includes(query)));
  const sort=sortSelect.value;
- if(sort==="title")list.sort((a,b)=>a.title.localeCompare(b.title));
+ if(sort==="title"||sort==="featured")list.sort((a,b)=>a.title.localeCompare(b.title,language==="fi"?"fi":"en",{sensitivity:"base"}));
  if(sort==="year")list.sort((a,b)=>(b.year||0)-(a.year||0));
  if(sort==="rating")list.sort((a,b)=>(b.imdbRating||0)-(a.imdbRating||0));
  return list;
@@ -105,36 +105,44 @@ function filteredWorks(){
 // parsing it as HTML, including any visitor-entered review comments.
 // ---------------------------------------------------------------------------
 function renderCatalogue(){
- const list=filteredWorks();
- grid.replaceChildren();
- document.getElementById("total-count").textContent=works.length;
- document.getElementById("result-count").textContent=ui[language].count(list.length);
- document.getElementById("empty-state").hidden=list.length!==0;
- list.forEach(work=>{
-  const card=document.createElement("article");card.className="work-card";
-  const top=document.createElement("div");top.className="work-card-top";
-  const badge=document.createElement("span");badge.className="media-badge";badge.textContent=typeLabels[language][work.type];
-  const year=document.createElement("span");year.className="work-year";year.textContent=work.year||"—";top.append(badge,year);card.append(top);
-  const title=document.createElement("h3");title.textContent=work.title;card.append(title);
-  if(work.creator){const creator=document.createElement("p");creator.className="work-creator";creator.textContent=work.creator;card.append(creator);}
-  if(work.genres?.length){const genres=document.createElement("div");genres.className="genre-list";work.genres.forEach(g=>{const tag=document.createElement("span");tag.textContent=g;genres.append(tag)});card.append(genres);}
-  const rating=document.createElement("div");rating.className="rating-strip";
-  const owner=document.createElement("span");owner.className="owner-score";owner.textContent="✦ "+ui[language].notRated;
-  owner.setAttribute("aria-label",ui[language].owner+": "+ui[language].notRated);
-  const imdb=document.createElement("span");imdb.className="community-score";imdb.textContent=ui[language].imdb+": "+(work.imdbRating==null?"—":work.imdbRating.toFixed(1)+"/10");
-  rating.append(owner,imdb);card.append(rating);
-  const toggle=document.createElement("button");toggle.className="review-toggle";toggle.type="button";toggle.textContent=ui[language].review;toggle.setAttribute("aria-expanded","false");
-  const reviews=document.createElement("div");reviews.hidden=true;
-  toggle.addEventListener("click",()=>{reviews.hidden=!reviews.hidden;toggle.setAttribute("aria-expanded",String(!reviews.hidden));toggle.textContent=reviews.hidden?ui[language].review:ui[language].hide});
-  const ownerReview=document.createElement("div");ownerReview.className="local-review";
-  const ownerHeading=document.createElement("strong");ownerHeading.textContent=ui[language].owner;ownerReview.append(ownerHeading);
-  const ownerText=document.createElement("p");ownerText.textContent=ui[language].noReview;ownerReview.append(ownerText);
-  const imdbReview=document.createElement("div");imdbReview.className="local-review";
-  const imdbHeading=document.createElement("strong");imdbHeading.textContent=ui[language].imdb;imdbReview.append(imdbHeading);
-  const imdbText=document.createElement("p");imdbText.textContent=work.imdbRating==null?ui[language].imdbMissing:(language==="fi"?"IMDb:n käyttäjäarvio: ":"IMDb user rating: ")+work.imdbRating.toFixed(1)+"/10. "+(language==="fi"?"Lähde: IMDb. Arvosana voi muuttua.":"Source: IMDb. Ratings may change.");imdbReview.append(imdbText);
-  const imdbLink=document.createElement("a");imdbLink.href="https://www.imdb.com/find/?q="+encodeURIComponent(work.title);imdbLink.target="_blank";imdbLink.rel="noopener noreferrer";imdbLink.textContent="IMDb";imdbReview.append(imdbLink);
-  reviews.append(ownerReview,imdbReview);card.append(toggle,reviews);grid.append(card);
- });
+  const list=filteredWorks();
+  const alphabetNav=document.getElementById("alphabet-nav");
+  const alphabetical=sortSelect.value==="title"||sortSelect.value==="featured";
+  grid.replaceChildren();
+  document.getElementById("total-count").textContent=works.length;
+  document.getElementById("result-count").textContent=ui[language].count(list.length);
+  document.getElementById("empty-state").hidden=list.length!==0;
+  alphabetNav.replaceChildren();
+  alphabetNav.hidden=!alphabetical||list.length===0;
+  if(alphabetical&&list.length){
+    const available=new Set(list.map(work=>{const first=work.title.trim().charAt(0).toLocaleUpperCase(language==="fi"?"fi":"en");return /^[A-ZÅÄÖ]$/i.test(first)?first:"#"}));
+    const letters="ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ".split("");
+    const label=document.createElement("span");label.className="alphabet-label";label.textContent=language==="fi"?"Siirry kirjaimeen:":"Jump to letter:";alphabetNav.append(label);
+    letters.forEach(letter=>{
+      const button=document.createElement("button");button.type="button";button.className="alphabet-link";button.textContent=letter;button.dataset.letter=letter;button.disabled=!available.has(letter);button.setAttribute("aria-label",(language==="fi"?"Siirry kirjaimeen ":"Jump to letter ")+letter);
+      button.addEventListener("click",()=>{const target=document.getElementById("catalogue-letter-"+letter);if(target)target.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});});
+      alphabetNav.append(button);
+    });
+  }
+  let previousLetter="";
+  list.forEach(work=>{
+   if(alphabetical){
+    const first=work.title.trim().charAt(0).toLocaleUpperCase(language==="fi"?"fi":"en");
+    const letter=/^[A-ZÅÄÖ]$/i.test(first)?first:"#";
+    if(letter!==previousLetter){
+      const heading=document.createElement("h3");heading.className="catalogue-letter-heading";heading.id="catalogue-letter-"+letter;heading.textContent=letter;heading.setAttribute("aria-label",(language==="fi"?"Kirjain ":"Letter ")+letter);grid.append(heading);previousLetter=letter;
+    }
+   }
+   const card=document.createElement("article");card.className="work-card";
+   const top=document.createElement("div");top.className="work-card-top";const badge=document.createElement("span");badge.className="media-badge";badge.textContent=typeLabels[language][work.type];const year=document.createElement("span");year.className="work-year";year.textContent=work.year||"—";top.append(badge,year);card.append(top);
+   const title=document.createElement("h3");title.textContent=work.title;card.append(title);
+   if(work.creator){const creator=document.createElement("p");creator.className="work-creator";creator.textContent=work.creator;card.append(creator);}
+   if(work.genres?.length){const genres=document.createElement("div");genres.className="genre-list";work.genres.forEach(g=>{const tag=document.createElement("span");tag.textContent=g;genres.append(tag)});card.append(genres);}
+   const rating=document.createElement("div");rating.className="rating-strip";const owner=document.createElement("span");owner.className="owner-score";owner.textContent="✦ "+ui[language].notRated;owner.setAttribute("aria-label",ui[language].owner+": "+ui[language].notRated);const imdb=document.createElement("span");imdb.className="community-score";imdb.textContent=ui[language].imdb+": "+(work.imdbRating==null?"—":work.imdbRating.toFixed(1)+"/10");rating.append(owner,imdb);card.append(rating);
+   const toggle=document.createElement("button");toggle.className="review-toggle";toggle.type="button";toggle.textContent=ui[language].review;toggle.setAttribute("aria-expanded","false");const reviews=document.createElement("div");reviews.hidden=true;toggle.addEventListener("click",()=>{reviews.hidden=!reviews.hidden;toggle.setAttribute("aria-expanded",String(!reviews.hidden));toggle.textContent=reviews.hidden?ui[language].review:ui[language].hide});
+   const ownerReview=document.createElement("div");ownerReview.className="local-review";const ownerHeading=document.createElement("strong");ownerHeading.textContent=ui[language].owner;ownerReview.append(ownerHeading);const ownerText=document.createElement("p");ownerText.textContent=ui[language].noReview;ownerReview.append(ownerText);
+   const imdbReview=document.createElement("div");imdbReview.className="local-review";const imdbHeading=document.createElement("strong");imdbHeading.textContent=ui[language].imdb;imdbReview.append(imdbHeading);const imdbText=document.createElement("p");imdbText.textContent=work.imdbRating==null?ui[language].imdbMissing:(language==="fi"?"IMDb:n käyttäjäarvio: ":"IMDb user rating: ")+work.imdbRating.toFixed(1)+"/10. "+(language==="fi"?"Lähde: IMDb. Arvosana voi muuttua.":"Source: IMDb. Ratings may change.");imdbReview.append(imdbText);const imdbLink=document.createElement("a");imdbLink.href="https://www.imdb.com/find/?q="+encodeURIComponent(work.title);imdbLink.target="_blank";imdbLink.rel="noopener noreferrer";imdbLink.textContent="IMDb";imdbReview.append(imdbLink);reviews.append(ownerReview,imdbReview);card.append(toggle,reviews);grid.append(card);
+  });
 }
 // ---------------------------------------------------------------------------
 // 5. Render this browser's own demo reviews and populate the work selector.
