@@ -22,5 +22,5 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Check local references and duplicate IDs
+      - name: Check local references, duplicate IDs and HTML anchors
         run: python scripts/validate_site.py
