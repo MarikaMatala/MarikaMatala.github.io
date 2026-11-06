@@ -18,7 +18,7 @@
         <h1>Remote Job Fit</h1>
         <p data-fi="Kokeilu sai alkunsa oman osaamiseni kartoittamisesta ja erilaisten työroolien hahmottamisesta. Mukana on nyt yleisiä IT-, ICT-, ohjelmisto-, media-, design- ja viestintäalan esimerkkitehtäviä. Muokkaa tehtävänimikkeitä, osaamissanoja ja ilmoitustekstiä vapaasti oman tilanteesi mukaan." data-en="This experiment began as a way to map my own skills and explore possible job roles. It now includes general sample roles from IT, ICT, software, media, design and communications. Feel free to change the job title, skill keywords and job description to reflect your own background and goals.">Kokeilu sai alkunsa oman osaamiseni kartoittamisesta ja erilaisten työroolien hahmottamisesta. Mukana on nyt yleisiä IT-, ICT-, ohjelmisto-, media-, design- ja viestintäalan esimerkkitehtäviä. Muokkaa tehtävänimikkeitä, osaamissanoja ja ilmoitustekstiä vapaasti oman tilanteesi mukaan.</p>
       </div>
-      <button class="language-button" id="demo-language" type="button" aria-label="Switch language">FIN / ENG</button>
+      <button class="language-button" id="demo-language" type="button" aria-label="Vaihda kieltä">FIN / ENG</button>
     </header>
 
     <div class="privacy-banner" role="note">
@@ -31,7 +31,7 @@
       <p data-fi="Voit poimia osaamisia CV:stäsi. Liitä CV:n tekstisisältö tai valitse tekstitiedosto (.txt, .md). Tiedosto luetaan vain selaimessa." data-en="Extract skills from your CV. Paste its text or select a text file (.txt, .md). The file is read locally in your browser only.">Voit poimia osaamisia CV:stäsi. Liitä CV:n tekstisisältö tai valitse tekstitiedosto (.txt, .md). Tiedosto luetaan vain selaimessa.</p>
       <label>
         <span data-fi="LinkedIn-profiilin osoite (valinnainen)" data-en="LinkedIn profile URL (optional)">LinkedIn-profiilin osoite (valinnainen)</span>
-        <input id="linkedin-url" type="url" maxlength="300" placeholder="https://www.linkedin.com/in/your-profile/">
+        <input id="linkedin-url" type="url" maxlength="300" placeholder="https://www.linkedin.com/in/profiili/" data-fi-placeholder="https://www.linkedin.com/in/profiili/" data-en-placeholder="https://www.linkedin.com/in/your-profile/">
         <small data-fi="Linkkiä ei haeta automaattisesti. LinkedIn rajoittaa profiilitietojen automaattista lukemista. Voit lisätä profiilin tekstisisällön CV-kenttään." data-en="The profile is not fetched automatically. LinkedIn restricts automated profile access. You can paste profile text into the CV field instead.">Linkkiä ei haeta automaattisesti. LinkedIn rajoittaa profiilitietojen automaattista lukemista. Voit lisätä profiilin tekstisisällön CV-kenttään.</small>
       </label>
       <label class="cv-upload">
@@ -53,7 +53,7 @@
       <div class="form-grid">
         <label>
           <span data-fi="Tavoiteltu tehtävänimike" data-en="Target job title">Tavoiteltu tehtävänimike</span>
-          <input id="target-title" type="text" maxlength="100" placeholder="e.g. Junior Frontend Developer" data-fi-placeholder="esim. Junior Frontend Developer" data-en-placeholder="e.g. Junior Frontend Developer">
+          <input id="target-title" type="text" maxlength="100" placeholder="esim. Junior Frontend Developer" data-fi-placeholder="esim. Junior Frontend Developer" data-en-placeholder="e.g. Junior Frontend Developer">
         </label>
         <label>
           <span data-fi="Osaamiset ja teknologiat (pilkuilla eroteltuna)" data-en="Skills and technologies (comma-separated)">Osaamiset ja teknologiat (pilkuilla eroteltuna)</span>
@@ -62,11 +62,11 @@
         </label>
         <label>
           <span data-fi="Tärkeät hakusanat (valinnainen)" data-en="Important keywords (optional)">Tärkeät hakusanat (valinnainen)</span>
-          <input id="must-have" type="text" maxlength="500" placeholder="e.g. remote, junior, accessibility">
+          <input id="must-have" type="text" maxlength="500" placeholder="esim. etätyö, junior, saavutettavuus" data-fi-placeholder="esim. etätyö, junior, saavutettavuus" data-en-placeholder="e.g. remote, junior, accessibility">
         </label>
         <label>
           <span data-fi="Poissuljettavat sanat (valinnainen)" data-en="Words to exclude (optional)">Poissuljettavat sanat (valinnainen)</span>
-          <input id="exclude" type="text" maxlength="500" placeholder="e.g. senior, unpaid, internship">
+          <input id="exclude" type="text" maxlength="500" placeholder="esim. senior, palkaton, harjoittelu" data-fi-placeholder="esim. senior, palkaton, harjoittelu" data-en-placeholder="e.g. senior, unpaid, internship">
         </label>
       </div>
 
@@ -96,7 +96,7 @@
 
     <footer class="demo-footer">
       <p data-fi="WORK IN PROGRESS — EXPERIMENTAL. Sopivuusprosentti perustuu yksinkertaiseen hakusanojen vertailuun. Se ei ole rekrytointipäätös, työllistymistodennäköisyys eikä arvio hakijan todellisesta osaamistasosta." data-en="WORK IN PROGRESS — EXPERIMENTAL. Match percentages use simple keyword comparison. They are not hiring decisions, employment probabilities, or assessments of actual skill level.">WORK IN PROGRESS — EXPERIMENTAL. Sopivuusprosentti perustuu yksinkertaiseen hakusanojen vertailuun. Se ei ole rekrytointipäätös, työllistymistodennäköisyys eikä arvio hakijan todellisesta osaamistasosta.</p>
-      <p><a href="https://github.com/MarikaMatala/remote-job-fit" target="_blank" rel="noopener noreferrer">View the source project on GitHub ↗</a></p>
+      <p><a href="https://github.com/MarikaMatala/remote-job-fit" target="_blank" rel="noopener noreferrer" data-fi="Avaa projektin lähdekoodi GitHubissa ↗" data-en="View the source project on GitHub ↗">Avaa projektin lähdekoodi GitHubissa ↗</a></p>
     </footer>
   </main>
 </body>
