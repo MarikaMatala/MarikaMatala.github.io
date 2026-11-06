@@ -1,6 +1,6 @@
 # The Cultured Vault — demo installation
 
-<!-- Last updated: 2026-11-06 20:27 (Europe/Helsinki). -->
+<!-- Last updated: 2026-11-06 21:00 (Europe/Helsinki). -->
 
 For the full setup guide, project explanation, architecture, file map, sample data format, privacy notes, troubleshooting and contribution guidance, read:
 
@@ -25,7 +25,7 @@ Samsung Internet may offer an **Add page to** or **Home screen** option dependin
 
 iOS uses Safari's Share menu for this flow. Chromium's JavaScript install prompt is not available in Safari.
 
-The catalogue currently contains 500 sample entries, including 486 additions across several media categories, including cult television, films, animation and cartoons from the 1980s, 1990s and 2000s. Every instance-owner rating is initially marked “Not rated yet”; no owner score or review text is prefilled. IMDb ratings are shown separately when available; a dash means no verified rating has been added.
+The catalogue opens in alphabetical title order and includes an A–Z / Å–Ä–Ö quick index that jumps to matching letter groups. The index updates with search results and category filters. The catalogue currently contains 500 sample entries, including 486 additions across several media categories, including cult television, films, animation and cartoons from the 1980s, 1990s and 2000s. Every instance-owner rating is initially marked “Not rated yet”; no owner score or review text is prefilled. IMDb ratings are shown separately when available; a dash means no verified rating has been added.
 
 ## Important limitations
 
