@@ -67,7 +67,7 @@ linkedinInput.addEventListener("change", () => {
   if (!value) return;
   try {
     const url = new URL(value);
-    if (url.protocol !== "https:" || !/(^|\\.)linkedin\\.com$/i.test(url.hostname)) throw new Error("invalid");
+    if (url.protocol !== "https:" || !/(^|\.)linkedin\.com$/i.test(url.hostname)) throw new Error("invalid");
     importStatus.textContent = language === "fi"
       ? "LinkedIn-linkki on lisätty viitteeksi. Profiilitietoja ei haeta automaattisesti; kopioi haluamasi profiiliteksti CV-kenttään."
       : "LinkedIn URL added as a reference. Profile data is not fetched automatically; paste the profile text into the CV field.";
