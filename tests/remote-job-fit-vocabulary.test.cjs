@@ -33,3 +33,8 @@ test("recognises Golang without matching the ordinary verb go",()=>{
 test("maps Finnish job titles to canonical English titles",()=>{
  assert.equal(vocabulary.normalizeRoleTitle("Frontend-kehittäjä"),"frontend developer");
 });
+
+test("uses word boundaries and Finnish inflections",()=>{
+ assert.equal(vocabulary.containsPhrase("JavaScript developer","Java"),false);
+ assert.equal(vocabulary.containsPhrase("Reactia käytetään projektissa","React"),true);
+});
