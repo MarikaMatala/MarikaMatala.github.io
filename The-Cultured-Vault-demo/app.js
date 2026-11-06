@@ -109,6 +109,7 @@ function renderCatalogue(){
   const list=filteredWorks();
   const alphabetNav=document.getElementById("alphabet-nav");
   const numericNav=document.getElementById("numeric-nav");
+  const indexStickyShell=document.getElementById("index-sticky-shell");
   const alphabetical=sortSelect.value==="title"||sortSelect.value==="featured";
   grid.replaceChildren();
   document.getElementById("total-count").textContent=works.length;
@@ -116,8 +117,10 @@ function renderCatalogue(){
   document.getElementById("empty-state").hidden=list.length!==0;
   alphabetNav.replaceChildren();
   numericNav.replaceChildren();
-  alphabetNav.hidden=!alphabetical||list.length===0;
-  numericNav.hidden=!alphabetical||list.length===0;
+  const showIndex=alphabetical&&list.length>0;
+  alphabetNav.hidden=!showIndex;
+  numericNav.hidden=!showIndex;
+  indexStickyShell.hidden=!showIndex;
   if(alphabetical&&list.length){
     const firstCharacters=list.map(work=>work.title.trim().charAt(0).toLocaleUpperCase(language==="fi"?"fi":"en"));
     const availableLetters=new Set(firstCharacters.filter(first=>/^[A-ZÅÄÖ]$/i.test(first)));
