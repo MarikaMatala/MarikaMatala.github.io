@@ -32,6 +32,10 @@ function setLanguage(language) {
   const menuToggle = document.getElementById('menu-toggle');
   if (menuToggle && menuToggle.getAttribute('aria-expanded') !== 'true') menuToggle.setAttribute('aria-label', language === 'fi' ? 'Avaa navigaatiovalikko' : 'Open navigation menu');
   updateCarouselLabels(language);
+  document.querySelectorAll('.remote-job-fit-embed iframe').forEach((frame) => {
+    try { frame.contentWindow.postMessage({ type: 'portfolio-language', language }, '*'); } catch (error) { /* iframe may not be ready */ }
+    frame.title = language === 'fi' ? 'Remote Job Fit - interaktiivinen selain-demo' : 'Remote Job Fit interactive browser demo';
+  });
 }
 
 if (languageToggle) {
