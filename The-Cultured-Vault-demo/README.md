@@ -141,7 +141,7 @@ Contains the visual design. Theme variables are at the top in the :root block. E
 
 ### app.js
 
-Contains the original sample works plus 486 additions (500 entries total), and browser-side behaviour:
+Contains the original sample works plus 536 additions (550 entries total), and browser-side behaviour:
 
 1. reads the sample catalogue;
 2. filters and sorts works using the controls, with alphabetic letter groups and quick navigation when title order is active;
@@ -265,6 +265,6 @@ The catalogue contains 486 additions beyond the original 14 sample entries. Some
 
 ## Catalogue suggestions and owner ratings
 
-The catalogue now contains 500 works. Visitors can suggest a missing film, series, animation, documentary, podcast, album, game or book, with optional year, creator and notes. Suggestions are stored in this browser's localStorage under `cultured-vault-suggestions-v1`; they remain local to this browser and device and are not sent to the maintainer without a backend.
+The catalogue now contains 550 works. Visitors can suggest a missing film, series, animation, documentary, podcast, album, game or book, with optional year, creator and notes. Suggestions are stored in this browser's localStorage under `cultured-vault-suggestions-v1`; they remain local to this browser and device and are not sent to the maintainer without a backend.
 
 Every work displays **Not rated yet** for the instance owner's rating. No owner score or review text is prefilled. IMDb ratings are displayed separately as external reference information.
