@@ -1,6 +1,6 @@
 # The Cultured Vault — asennettava demo
 
-<!-- Päivitetty: 6.11.2026 klo 20.27 (Europe/Helsinki). -->
+<!-- Päivitetty: 6.11.2026. -->
 
 > Kulttuuria löydettäväksi. Tarinoita muistettavaksi.
 
@@ -15,7 +15,7 @@ The Cultured Vault on avoimen lähdekoodin kulttuurikatalogiprojekti. Tämä kan
 
 Demo on tarkoituksella kevyt eikä tarvitse ulkoisia kirjastoja tai build-vaihetta. Se sisältää:
 
-- 500 teoksen esimerkkikatalogin useista kulttuurisisällön kategorioista; alkuperäisten 14 esimerkin lisäksi katalogiin on lisätty 486 teosta eri kategorioista, mukaan lukien 1980-, 1990- ja 2000-lukujen kulttisarjoja, kulttileffoja, animaatioita ja piirrettyjä;
+- 550 teoksen esimerkkikatalogin useista kulttuurisisällön kategorioista; alkuperäisten 14 esimerkin lisäksi mukana on 536 lisättyä teosta. Laajennettu valikoima sisältää Studio Ghiblin ja Disneyn animaatioita, 1990- ja 2000-lukujen nostalgiaelokuvia, yliluonnollisia ja kulttisarjoja sekä tunnettuja Netflix-sarjoja, kuten Stranger Things, Wednesday, Squid Game, Dark ja Bridgerton;
 - haun nimen, tekijän, maan ja tyylilajien perusteella;
 - kategoriasuodattimet ja lajittelun, oletuksena aakkosjärjestys;
 - A–Ö- ja Å–Ä–Ö-aakkoshakemiston sekä 0–9-numerohakemiston; molemmista voi hypätä suoraan vastaavaan teosryhmään, puuttuvat vaihtoehdot eivät ole valittavissa ja hakemistot mukautuvat hakuun ja kategoriasuodatukseen; hakemistot pysyvät näkyvissä sivua vieritettäessä;
