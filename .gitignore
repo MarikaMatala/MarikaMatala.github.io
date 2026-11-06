@@ -1,0 +1,29 @@
+# Local environment files: never commit real credentials or secrets.
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Dependencies and local runtimes
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Local development output
+.DS_Store
+Thumbs.db
+*.log
+coverage/
+dist/
+build/
+
+# Local databases and private exports
+*.sqlite
+*.sqlite3
+*.db
+local-data/
+private-data/
