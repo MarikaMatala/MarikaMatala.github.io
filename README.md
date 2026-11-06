@@ -1,6 +1,6 @@
 # Portfolio | Marika Matalamäki
 
-<!-- // Last updated: 2026-11-06 20:27 (Europe/Helsinki). -->
+<!-- // Last updated: 2026-11-06 20:31 (Europe/Helsinki). -->
 
 **Portfolio website:** https://marikamatala.github.io/
 
