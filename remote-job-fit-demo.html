@@ -23,8 +23,31 @@
 
     <div class="privacy-banner" role="note">
       <strong data-fi="Yksityisyys:" data-en="Privacy:">Yksityisyys:</strong>
-      <span data-fi="Kirjoittamasi tiedot käsitellään vain tässä selaimen välilehdessä. Niitä ei lähetetä palvelimelle, tallenneta tai lisätä GitHub-repositorioon. Sivun päivittäminen tyhjentää kentät." data-en="Your entries are processed only in this browser tab. They are not sent to a server, stored, or added to the GitHub repository. Refreshing the page clears the fields.">Kirjoittamasi tiedot käsitellään vain tässä selaimen välilehdessä. Niitä ei lähetetä palvelimelle, tallenneta tai lisätä GitHub-repositorioon. Sivun päivittäminen tyhjentää kentät.</span>
+      <span data-fi="CV-teksti ja valittu tekstitiedosto käsitellään vain tässä selaimen välilehdessä. Niitä ei lähetetä palvelimelle, tallenneta tai lisätä GitHub-repositorioon. LinkedIn-linkkiä ei avata eikä profiilia haeta automaattisesti. Sivun päivittäminen tyhjentää kentät." data-en="CV text and the selected text file are processed only in this browser tab. They are not sent to a server, stored, or added to the GitHub repository. The LinkedIn URL is not opened and the profile is not fetched automatically. Refreshing the page clears the fields.">Kirjoittamasi tiedot käsitellään vain tässä selaimen välilehdessä. Niitä ei lähetetä palvelimelle, tallenneta tai lisätä GitHub-repositorioon. Sivun päivittäminen tyhjentää kentät.</span>
     </div>
+
+    <section class="import-panel" aria-labelledby="import-title">
+      <h2 id="import-title" data-fi="Tuo oma osaamisprofiilisi" data-en="Import your skills profile">Tuo oma osaamisprofiilisi</h2>
+      <p data-fi="Voit poimia osaamisia CV:stäsi. Liitä CV:n tekstisisältö tai valitse tekstitiedosto (.txt, .md). Tiedosto luetaan vain selaimessa." data-en="Extract skills from your CV. Paste its text or select a text file (.txt, .md). The file is read locally in your browser only.">Voit poimia osaamisia CV:stäsi. Liitä CV:n tekstisisältö tai valitse tekstitiedosto (.txt, .md). Tiedosto luetaan vain selaimessa.</p>
+      <label>
+        <span data-fi="LinkedIn-profiilin osoite (valinnainen)" data-en="LinkedIn profile URL (optional)">LinkedIn-profiilin osoite (valinnainen)</span>
+        <input id="linkedin-url" type="url" maxlength="300" placeholder="https://www.linkedin.com/in/your-profile/">
+        <small data-fi="Linkkiä ei haeta automaattisesti. LinkedIn rajoittaa profiilitietojen automaattista lukemista. Voit lisätä profiilin tekstisisällön CV-kenttään." data-en="The profile is not fetched automatically. LinkedIn restricts automated profile access. You can paste profile text into the CV field instead.">Linkkiä ei haeta automaattisesti. LinkedIn rajoittaa profiilitietojen automaattista lukemista. Voit lisätä profiilin tekstisisällön CV-kenttään.</small>
+      </label>
+      <label class="cv-upload">
+        <span data-fi="Valitse CV:n tekstitiedosto" data-en="Choose a CV text file">Valitse CV:n tekstitiedosto</span>
+        <input id="cv-file" type="file" accept=".txt,.md,.text,text/plain,text/markdown">
+        <small data-fi="PDF- tai Word-CV:stä voit kopioida tekstin ja liittää sen alla olevaan kenttään." data-en="For a PDF or Word CV, copy its text and paste it into the field below.">PDF- tai Word-CV:stä voit kopioida tekstin ja liittää sen alla olevaan kenttään.</small>
+      </label>
+      <label>
+        <span data-fi="CV:n tai LinkedIn-profiilin tekstisisältö" data-en="CV or LinkedIn profile text">CV:n tai LinkedIn-profiilin tekstisisältö</span>
+        <textarea id="cv-text" rows="6" maxlength="20000" placeholder="Paste your CV text here..." data-fi-placeholder="Liitä CV:si tai LinkedIn-profiilisi tekstisisältö tähän..." data-en-placeholder="Paste your CV or LinkedIn profile text here..."></textarea>
+      </label>
+      <div class="actions">
+        <button class="secondary-button" id="import-cv" type="button" data-fi="Tunnista osaamiset CV:stä" data-en="Extract skills from CV">Tunnista osaamiset CV:stä</button>
+      </div>
+      <p id="import-status" class="import-status" role="status" aria-live="polite"></p>
+    </section>
 
     <form id="fit-form" autocomplete="off">
       <div class="form-grid">
