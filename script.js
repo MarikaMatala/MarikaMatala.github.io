@@ -184,7 +184,7 @@ if (oopBrowser) {
     enlarged.src = image.currentSrc || image.src;
     enlarged.alt = image.alt || 'Portfolio image';
     help.textContent = currentLanguage === 'fi'
-      ? 'Sulje Sulje-painikkeella tai painamalla ESC'
+      ? 'Sulje-painikkeella tai painamalla ESC'
       : 'Use the Close button or press ESC';
     closeButton.setAttribute('aria-label', currentLanguage === 'fi' ? 'Sulje suurennettu kuva' : 'Close enlarged image');
     rights.querySelector('.rights-copy-fi').hidden = currentLanguage !== 'fi';
