@@ -35,6 +35,7 @@ function setLanguage(language) {
   document.querySelectorAll('[data-fi-alt][data-en-alt]').forEach((image) => {
     image.setAttribute('alt', image.dataset[language + 'Alt']);
   });
+  if (androidImage) showAndroidImage(androidImageIndex);
   document.querySelectorAll('iframe[data-fi-title][data-en-title]').forEach((frame) => {
     frame.title = frame.dataset[language + 'Title'];
   });
