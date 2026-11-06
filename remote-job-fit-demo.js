@@ -96,8 +96,34 @@ const sampleRoles = [
 ];
 
 const copy = {
-  fi: { missing:"Lisää vähintään yksi osaaminen tai liitä työpaikkailmoitus.", custom:"Oma ilmoitusteksti", customCompany:"Käyttäjän lisäämä teksti", matched:"Osuneet hakusanat:", noMatch:"Ei suoria hakusanaosumia. Kokeile lisätä osaamisia tai muokata ilmoituksen tekstiä.", title:"Sopivuusvertailu", clear:"Tyhjennä kentät" },
-  en: { missing:"Add at least one skill or paste a job description.", custom:"Your pasted job description", customCompany:"User-provided text", matched:"Matched keywords:", noMatch:"No direct keyword matches. Try adding skills or adjusting the job description.", title:"Job fit comparison", clear:"Clear fields" }
+  fi: {
+    missing:"Lisää vähintään yksi osaaminen tai liitä työpaikkailmoitus.",
+    custom:"Oma ilmoitusteksti", customCompany:"Käyttäjän lisäämä teksti",
+    greenTitle:"🟢 Pakollinen osaaminen löytyy profiilistasi",
+    redTitle:"🔴 Pakollinen osaaminen puuttuu profiilistasi",
+    yellowTitle:"🟡 Edut ja toivottavat lisäosaamiset (eivät pakollisia)",
+    noneMatched:"Ei tunnistettuja osumia pakollisiin osaamisiin.",
+    noneMissing:"Kaikki tunnistetut pakolliset osaamiset löytyvät profiilistasi.",
+    noneOptional:"Ilmoituksesta ei tunnistettu erikseen eduksi katsottavia osaamisia.",
+    found:"Löytyy profiilistasi", learn:"Ei vielä profiilissasi",
+    learning:"Voit kehittää puuttuvia pakollisia taitoja oppimistavoitteina. Etsi luotettava kurssi tai dokumentaatio, tee pieni käytännön harjoitus ja lisää taito profiiliisi vasta, kun hallitset sen.",
+    caveat:"Luokittelu perustuu ilmoituksen sanamuotoihin ja tunnistettuun sanastoon. Tarkista aina alkuperäinen ilmoitus: demo ei voi varmasti päätellä kaikkia vaatimuksia eikä arvioida todellista osaamistasoa.",
+    customNote:"Arvio perustuu vain tähän liitettyyn tekstiin."
+  },
+  en: {
+    missing:"Add at least one skill or paste a job description.",
+    custom:"Your pasted job description", customCompany:"User-provided text",
+    greenTitle:"🟢 Required skills found in your profile",
+    redTitle:"🔴 Required skills missing from your profile",
+    yellowTitle:"🟡 Preferred and useful additional skills (not mandatory)",
+    noneMatched:"No recognised matches among required skills.",
+    noneMissing:"All recognised required skills are listed in your profile.",
+    noneOptional:"No separately preferred or optional skills were detected in the job description.",
+    found:"Found in your profile", learn:"Not listed in your profile yet",
+    learning:"You can turn missing required skills into learning goals. Find reliable training or documentation, complete a small practical exercise, and add a skill to your profile only when you can use it confidently.",
+    caveat:"Classification is based on wording in the job description and the recognised vocabulary. Always check the original listing: the demo cannot reliably infer every requirement or assess actual proficiency.",
+    customNote:"This estimate uses only the text you pasted."
+  }
 };
 
 const roleTitlesFi = {
@@ -143,7 +169,7 @@ function scoreRole(role, skills, targetTitle, mustHave, excluded) {
   const titleTerms = tokenise(vocabulary.normalizeRoleTitle(targetTitle)).filter(term => term.length > 2);
   const matchedTitle = titleTerms.filter(term => vocabulary.containsPhrase(searchable, term) || detectedTerms.includes(term));
   const matchedMust = mustHave.filter(matchesTerm);
-  const { matched: matchedRequirements, missing: missingRequirements } = vocabulary.compareSkills(skills, role.title + " " + role.text, language);
+  const { matched: matchedRequirements, missing: missingRequirements, optional: optionalRequirements } = vocabulary.compareSkills(skills, role.title + " " + role.text, language);
   const components = [];
   if (skills.length) components.push({ value: matchedSkills.length / skills.length, weight: 70 });
   if (titleTerms.length) components.push({ value: matchedTitle.length / titleTerms.length, weight: 20 });
@@ -154,7 +180,7 @@ function scoreRole(role, skills, targetTitle, mustHave, excluded) {
     : 0;
   let score = Math.round(weightedScore * 100);
   if (excludedMatches.length) score = Math.max(0, score - 35);
-  return { score: Math.min(100, score), matchedSkills, matchedTitle, matchedMust, excludedMatches, matchedRequirements, missingRequirements };
+  return { score: Math.min(100, score), matchedSkills, matchedTitle, matchedMust, excludedMatches, matchedRequirements, missingRequirements, optionalRequirements };
 }
 function addText(parent, tag, className, value) {
   const element = document.createElement(tag);
@@ -183,23 +209,29 @@ function renderRole(role, result, isCustom = false) {
   meter.value = result.score;
   meter.setAttribute("aria-label", (language === "fi" ? "Sopivuuspisteet " : "Match score ") + result.score + "%");
   card.appendChild(meter);
-  const matched = result.matchedRequirements.map(item => item.label);
-  addText(card, "p", "matched", matched.length ? copy[language].matched + " " + matched.join(", ") : copy[language].noMatch);
-  const gapSection = document.createElement("div");
-  gapSection.className = "skills-gap";
-  addText(gapSection, "h4", "", copy[language].missingSkills);
-  if (result.missingRequirements.length) {
-    const list = document.createElement("ul");
-    result.missingRequirements.forEach(item => addText(list, "li", "", item.label));
-    gapSection.appendChild(list);
-    addText(gapSection, "p", "learning-tip", copy[language].learning);
-  } else {
-    addText(gapSection, "p", "", copy[language].noneMissing);
+  function addSkillGroup(className, title, items, emptyText, showStatus=false) {
+    const section = document.createElement("section");
+    section.className = "skill-group " + className;
+    addText(section, "h4", "", title);
+    if (items.length) {
+      const list = document.createElement("ul");
+      items.forEach(item => {
+        const li = document.createElement("li");
+        addText(li, "span", "skill-name", item.label);
+        if (showStatus) addText(li, "span", "skill-status", item.found ? copy[language].found : copy[language].learn);
+        list.appendChild(li);
+      });
+      section.appendChild(list);
+    } else addText(section, "p", "skill-empty", emptyText);
+    card.appendChild(section);
   }
-  addText(gapSection, "p", "analysis-caveat", copy[language].caveat);
-  card.appendChild(gapSection);
+  addSkillGroup("skill-match", copy[language].greenTitle, result.matchedRequirements, copy[language].noneMatched);
+  addSkillGroup("skill-missing", copy[language].redTitle, result.missingRequirements, copy[language].noneMissing);
+  addSkillGroup("skill-optional", copy[language].yellowTitle, result.optionalRequirements, copy[language].noneOptional, true);
+  if (result.missingRequirements.length) addText(card, "p", "learning-tip", copy[language].learning);
+  addText(card, "p", "analysis-caveat", copy[language].caveat);
   if (result.excludedMatches.length) addText(card, "p", "matched", (language === "fi" ? "Poissulkevat osumat: " : "Excluded terms found: ") + result.excludedMatches.join(", "));
-  if (isCustom) addText(card, "p", "matched", language === "fi" ? "Arvio perustuu vain tähän liitettyyn tekstiin." : "This estimate uses only the text you pasted.");
+  if (isCustom) addText(card, "p", "matched", copy[language].customNote);
   return card;
 }
 form.addEventListener("submit", event => {
