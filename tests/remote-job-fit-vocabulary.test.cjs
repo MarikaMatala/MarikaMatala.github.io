@@ -38,3 +38,10 @@ test("uses word boundaries and Finnish inflections",()=>{
  assert.equal(vocabulary.containsPhrase("JavaScript developer","Java"),false);
  assert.equal(vocabulary.containsPhrase("Reactia käytetään projektissa","React"),true);
 });
+
+test("recognises software and roles from additional fields",()=>{
+ const terms=vocabulary.extractSkills("I use Unity, Godot, ZBrush and GitHub Copilot").map(x=>x.canonical);
+ for(const term of ["Unity","Godot","ZBrush","GitHub Copilot"]) assert.ok(terms.includes(term));
+ assert.ok(vocabulary.detectRoles("AI engineer").includes("AI Engineer"));
+ assert.ok(vocabulary.detectRoles("peliohjelmoijan tehtävä","fi").includes("Peliohjelmoija"));
+});
