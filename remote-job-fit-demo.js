@@ -29,10 +29,15 @@ function scoreRole(role, skills, targetTitle, mustHave, excluded) {
   const titleTerms = tokenise(targetTitle).filter(term => term.length > 2);
   const matchedTitle = titleTerms.filter(term => (role.title + " " + role.text).toLowerCase().includes(term));
   const matchedMust = mustHave.filter(term => searchable.includes(term));
-  const skillScore = skills.length ? matchedSkills.length / skills.length : 0;
-  const titleScore = titleTerms.length ? matchedTitle.length / titleTerms.length : 0;
-  const mustScore = mustHave.length ? matchedMust.length / mustHave.length : 1;
-  let score = Math.round((skillScore * 70) + (titleScore * 20) + (mustScore * 10));
+  const components = [];
+  if (skills.length) components.push({ value: matchedSkills.length / skills.length, weight: 70 });
+  if (titleTerms.length) components.push({ value: matchedTitle.length / titleTerms.length, weight: 20 });
+  if (mustHave.length) components.push({ value: matchedMust.length / mustHave.length, weight: 10 });
+  const totalWeight = components.reduce((sum, item) => sum + item.weight, 0);
+  const weightedScore = totalWeight
+    ? components.reduce((sum, item) => sum + item.value * item.weight, 0) / totalWeight
+    : 0;
+  let score = Math.round(weightedScore * 100);
   if (excludedMatches.length) score = Math.max(0, score - 35);
   return { score: Math.min(100, score), matchedSkills, matchedTitle, matchedMust, excludedMatches };
 }
