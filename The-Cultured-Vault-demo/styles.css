@@ -1,15 +1,23 @@
+/* THE CULTURED VAULT DEMO STYLES
+   Theme tokens are defined first. Component styles follow the page sections.
+   Responsive breakpoints support phones, tablets and desktop browsers. */
+/* 1. Theme tokens: edit these variables to adjust the dark bronze / silver / gold palette. */
 :root{color-scheme:dark;--bg:#171512;--panel:#211e19;--panel-2:#29251f;--text:#f2eee5;--muted:#c1b9aa;--bronze:#c18b55;--bronze-light:#e0b47c;--silver:#c8cbd0;--gold:#e0bd68;--line:#514536;--green:#a9c7a5}
+/* 2. Global reset and base document styles. */
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:radial-gradient(ellipse at 88% 0%,rgba(139,91,47,.2),transparent 36%),radial-gradient(ellipse at 4% 38%,rgba(110,104,95,.1),transparent 35%),var(--bg);color:var(--text);font:16px/1.65 "Nunito Sans",Arial,sans-serif}
 button,input,select,textarea{font:inherit}
 a{color:var(--bronze-light)}
 button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+/* 3. Accessibility helpers and visible keyboard focus. */
 .skip-link{position:absolute;left:-9999px;top:1rem;z-index:10;padding:10px 14px;background:var(--panel);color:var(--text);border:2px solid var(--gold);border-radius:8px}
 .skip-link:focus{left:1rem}
 .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+/* 4. Status banner and PWA install button. */
 .demo-status{display:flex;justify-content:center;flex-wrap:wrap;gap:.35rem 1rem;padding:.75rem 1rem;background:#28241e;border-bottom:1px solid rgba(193,139,85,.4);color:var(--muted);font-size:.88rem;text-align:center}
 .demo-status strong{color:var(--bronze-light)}
+/* 5. Main page frame, brand header and language control. */
 .vault-shell{max-width:1160px;margin:0 auto;padding:clamp(18px,4vw,48px)}
 .vault-header{display:flex;align-items:center;gap:18px;padding-bottom:30px;border-bottom:1px solid var(--line)}
 .vault-mark{display:grid;place-items:center;width:62px;height:62px;border:1px solid var(--bronze);border-radius:50%;color:var(--gold);font-size:2rem;text-decoration:none;box-shadow:inset 0 0 0 5px rgba(193,139,85,.08)}
@@ -20,6 +28,7 @@ h1{font-size:clamp(1.9rem,5vw,3.25rem);margin:0;color:var(--text);letter-spacing
 h1 span{color:var(--gold)}
 .tagline{margin:7px 0 0;color:var(--muted);font-size:.94rem}
 .language-button{border:1px solid var(--line);border-radius:999px;padding:9px 14px;background:transparent;color:var(--silver);cursor:pointer;font-weight:800;font-size:.78rem}
+/* 6. Introductory hero panel and catalogue statistics. */
 .intro-panel{position:relative;overflow:hidden;margin:30px 0;padding:clamp(24px,5vw,54px);border:1px solid #725536;border-radius:18px;background:linear-gradient(120deg,rgba(70,52,33,.8),rgba(34,30,24,.96) 60%),var(--panel);box-shadow:0 18px 45px rgba(0,0,0,.2)}
 .intro-panel:after{content:"✧";position:absolute;right:5%;top:8%;font-size:clamp(6rem,18vw,13rem);line-height:1;color:rgba(224,189,104,.08);pointer-events:none}
 .intro-panel h2{position:relative;z-index:1;margin:.2em 0 .45em;font-size:clamp(2rem,5vw,3.5rem)}
@@ -29,6 +38,7 @@ h2 em{color:var(--bronze-light);font-weight:500}
 .vault-stats div{display:grid;gap:1px}
 .vault-stats strong{font:700 1.5rem Georgia,serif;color:var(--gold)}
 .vault-stats span{font-size:.78rem;color:var(--muted)}
+/* 7. Catalogue layout, filters, cards and review presentation. */
 .catalogue-section,.review-demo-section{margin-top:48px}
 .section-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:20px}
 .section-heading h2{font-size:clamp(1.7rem,4vw,2.5rem);margin:0}
@@ -70,6 +80,7 @@ select,input,textarea{background:#151310;color:var(--text);border:1px solid var(
 .review-card p{color:var(--muted);font-size:.9rem}
 .review-signature{color:var(--bronze-light);font-size:.76rem}
 .community-review .review-signature{color:var(--silver)}
+/* 8. Local demo review form and review list. */
 .personal-review-form{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px;padding:22px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
 .personal-review-form>div:first-child{grid-column:1/-1}
 .personal-review-form h3{margin:0 0 5px;font-size:1.4rem}
@@ -82,14 +93,18 @@ select,input,textarea{background:#151310;color:var(--text);border:1px solid var(
 .local-review{padding:13px 16px;border-left:3px solid var(--bronze);background:rgba(193,139,85,.08);margin-top:9px}
 .local-review strong{color:var(--gold)}
 .local-review p{margin:4px 0;color:var(--muted);font-size:.88rem}
+/* 9. Privacy notice, installation help and footer. */
 .demo-notice{margin-top:38px;padding:17px 20px;border:1px solid #6c563a;border-left:4px solid var(--bronze);border-radius:12px;background:rgba(60,47,31,.35);color:var(--muted);font-size:.88rem}
 .demo-notice strong{color:var(--bronze-light)}
 .demo-notice p{margin:7px 0}
 .demo-footer{margin-top:28px;padding:20px 0;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:.8rem}
 .demo-footer p:first-child{color:var(--bronze-light);font-weight:900;letter-spacing:.15em}
 .empty-state{padding:25px;border:1px dashed var(--line);border-radius:12px;color:var(--muted)}
+/* 10. Tablet layout. */
 @media(max-width:850px){.catalogue-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.section-heading{align-items:flex-start;flex-direction:column}.sort-control{width:100%;max-width:240px}}
+/* 11. Phone layout. */
 @media(max-width:600px){.vault-shell{padding:16px}.vault-header{gap:12px;align-items:flex-start}.vault-mark{width:45px;height:45px;flex:0 0 45px}.language-button{padding:8px 10px}.brand-copy h1{font-size:1.65rem}.tagline{font-size:.78rem}.catalogue-grid,.review-order,.personal-review-form{grid-template-columns:1fr}.personal-review-form>div:first-child,.review-comment{grid-column:auto}.demo-status{flex-direction:column;gap:2px}.review-top{align-items:flex-start;flex-direction:column}.vault-stats{gap:16px 24px}}
+/* 12. Respect the operating-system reduced-motion preference. */
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
 
 /* PWA installation controls and mobile guidance */
