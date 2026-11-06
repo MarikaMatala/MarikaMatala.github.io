@@ -84,3 +84,24 @@ At each width, check for horizontal overflow, clipped text, overlapping controls
 ## Browsers | Selaimet
 
 For significant layout or interaction changes, check at least one Chromium-based browser and Firefox. When possible, also check Safari or a mobile browser.
+
+
+## Remote Job Fit templates and secrets | Asetuspohjat ja salaisuudet
+
+- [ ] The current browser demo works without an `.env` file or backend.
+- [ ] Public `.env.example` contains placeholders only.
+- [ ] A real local `.env` file is ignored by Git.
+- [ ] No API keys, passwords, tokens, personal data or private connection strings appear in tracked files.
+- [ ] The fictional JSON example parses as valid JSON.
+- [ ] The demo still makes no network requests and does not persist entered CV text.
+- [ ] Any imported external dataset has an exact version, licence, source URL and required attribution recorded in `THIRD-PARTY-NOTICES.md`.
+
+## Remote Job Fit -pohjat ja tunnistetiedot
+
+- [ ] Nykyinen selain-demo toimii ilman `.env`-tiedostoa tai backend-palvelinta.
+- [ ] Julkisessa `.env.example`-tiedostossa on vain paikkamerkkejä.
+- [ ] Oikea paikallinen `.env`-tiedosto on rajattu pois Gitistä.
+- [ ] Seurattaviin tiedostoihin ei ole lisätty API-avaimia, salasanoja, tokeneita, henkilötietoja tai yksityisiä yhteysmerkkijonoja.
+- [ ] Kuvitteellinen JSON-esimerkki on kelvollista JSON-muotoa.
+- [ ] Demo ei tee verkkopyyntöjä eikä tallenna CV-tekstiä.
+- [ ] Jokaisesta lisätystä ulkopuolisesta aineistosta on kirjattu tarkka versio, lisenssi, lähdeosoite ja vaaditut lähdemerkinnät tiedostoon `THIRD-PARTY-NOTICES.md`.
