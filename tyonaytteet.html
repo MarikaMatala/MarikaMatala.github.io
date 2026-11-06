@@ -410,6 +410,92 @@ public class CardPayment : ITransaction
         <h3 data-fi="Backend-kehityksen työnäytteet 1–5" data-en="Backend development samples 1–5">Backend-kehityksen työnäytteet 1–5</h3>
         <p data-fi="Tutustu viiteen backend- ja API-kehityksen opintotehtävistä muokattuun koodinäytteeseen. Dokumentissa kerrotaan myös, mitä ohjelmistoja, riippuvuuksia ja paikallisia asetustiedostoja tarvitset tehtävien suorittamiseen. Varsinaisia asetustiedostoja ei julkaista." data-en="Explore five backend and API code samples adapted from coursework. The document also explains the software, dependencies and local configuration files needed to run the exercises. Configuration files themselves are not published.">Tutustu viiteen backend- ja API-kehityksen opintotehtävistä muokattuun koodinäytteeseen. Dokumentissa kerrotaan myös, mitä ohjelmistoja, riippuvuuksia ja paikallisia asetustiedostoja tarvitset tehtävien suorittamiseen. Varsinaisia asetustiedostoja ei julkaista.</p>
         <p class="project-note" data-fi="Tehtävät on tehty Visual Studio Codella. Suorittamista varten tarvitset Node.js:n, npm:n ja tehtäväkohtaiset riippuvuudet. Luo itse paikallinen package.json, tarvittaessa .env sekä muut projektin tarvitsemat asetustiedostot; niitä ei julkaista sivustolla." data-en="The exercises were created in Visual Studio Code. To run them, you need Node.js, npm and the dependencies for each task. Create your own local package.json, .env where required, and any other project configuration files; these files are not published on the site.">Tehtävät on tehty Visual Studio Codella. Suorittamista varten tarvitset Node.js:n, npm:n ja tehtäväkohtaiset riippuvuudet. Luo itse paikallinen package.json-, .env- ja muut tarvittavat asetustiedostot; niitä ei ole julkaistu sivustolla.</p>
+        <p class="carousel-hint" data-fi="Avaa tehtäväselaimen ja selaa viittä backend-tehtävää nuolipainikkeilla tai valitse tehtävä luettelosta. Jokaisesta näet tehtävän idean ja keskeisen koodinäytteen." data-en="Open the task browser and browse all five backend exercises with the arrow buttons or choose one from the list. Each panel shows the task goal and a representative code sample.">Avaa tehtäväselaimen ja selaa viittä backend-tehtävää nuolipainikkeilla tai valitse tehtävä luettelosta. Jokaisesta näet tehtävän idean ja keskeisen koodinäytteen.</p>
+        <details class="project-samples-toggle backend-samples-toggle">
+          <summary><span data-fi="Avaa backend-tehtävien selaus" data-en="Open backend exercise browser">Avaa backend-tehtävien selaus</span><span class="expand-symbol" aria-hidden="true">+</span></summary>
+          <div class="samples-toggle-content">
+            <div class="oop-browser backend-browser" id="backend-browser" role="region" aria-label="Backend-tehtävien koodinäytteet" data-fi-label="Backend-tehtävien koodinäytteet" data-en-label="Backend exercise code samples">
+              <div class="oop-browser-toolbar">
+                <label for="backend-sample-select" data-fi="Valitse tehtävä" data-en="Choose an exercise">Valitse tehtävä</label>
+                <select id="backend-sample-select" aria-label="Valitse backend-tehtävä">
+                  <option value="0" data-fi="1 · MongoDB ja Mongoose" data-en="1 · MongoDB and Mongoose">1 · MongoDB ja Mongoose</option>
+                  <option value="1" data-fi="2 · REST API ja CRUD" data-en="2 · REST API and CRUD">2 · REST API ja CRUD</option>
+                  <option value="2" data-fi="3 · Käyttäjätunnistus ja istunnot" data-en="3 · Authentication and sessions">3 · Käyttäjätunnistus ja istunnot</option>
+                  <option value="3" data-fi="4 · GET-reitin automaattinen testi" data-en="4 · Automated GET route test">4 · GET-reitin automaattinen testi</option>
+                  <option value="4" data-fi="5 · POST-reitin automaattinen testi" data-en="5 · Automated POST route test">5 · POST-reitin automaattinen testi</option>
+                </select>
+              </div>
+              <div class="oop-sample-panels">
+                <article class="oop-sample-panel" data-backend-sample="0">
+                  <div class="sample-panel-heading"><span class="sample-task">01</span><h4 data-fi="MongoDB ja Mongoose -albumimalli" data-en="MongoDB and Mongoose album model">MongoDB ja Mongoose -albumimalli</h4></div>
+                  <p data-fi="Tehtävässä määritellään Mongoose-skeema albumin tiedoille. Mallissa käytetään pakollisia kenttiä, tietotyyppien tarkistuksia, vuosiluvun rajausta ja automaattisia aikaleimoja." data-en="This exercise defines a Mongoose schema for album data. It uses required fields, type validation, a year range and automatic timestamps.">Tehtävässä määritellään Mongoose-skeema albumin tiedoille. Mallissa käytetään pakollisia kenttiä, tietotyyppien tarkistuksia, vuosiluvun rajausta ja automaattisia aikaleimoja.</p>
+                  <pre><code>const albumSchema = new mongoose.Schema({
+  title: { type: String, required: true, trim: true },
+  artist: { type: String, required: true, trim: true },
+  year: { type: Number, required: true, min: 1900 },
+  tracks: { type: Number, min: 1 },
+}, { timestamps: true });
+
+module.exports = mongoose.model("Album", albumSchema);</code></pre>
+                </article>
+                <article class="oop-sample-panel" hidden data-backend-sample="1">
+                  <div class="sample-panel-heading"><span class="sample-task">02</span><h4 data-fi="REST API ja CRUD-toiminnot" data-en="REST API and CRUD operations">REST API ja CRUD-toiminnot</h4></div>
+                  <p data-fi="Tehtävässä rakennetaan Express-reitit albumien hakemiseen, lisäämiseen, päivittämiseen ja poistamiseen. Mukana ovat myös hakuehdot, lajittelu, sivutus ja virhetilanteiden käsittely." data-en="This exercise builds Express routes to read, create, update and delete albums. It also covers filtering, sorting, pagination and error handling.">Tehtävässä rakennetaan Express-reitit albumien hakemiseen, lisäämiseen, päivittämiseen ja poistamiseen. Mukana ovat myös hakuehdot, lajittelu, sivutus ja virhetilanteiden käsittely.</p>
+                  <pre><code>router.get("/", getAlbums);
+router.post("/", createAlbum);
+router.get("/:id", getAlbum);
+router.patch("/:id", updateAlbum);
+router.delete("/:id", deleteAlbum);</code></pre>
+                </article>
+                <article class="oop-sample-panel" hidden data-backend-sample="2">
+                  <div class="sample-panel-heading"><span class="sample-task">03</span><h4 data-fi="Käyttäjätunnistus ja istunnot" data-en="User authentication and sessions">Käyttäjätunnistus ja istunnot</h4></div>
+                  <p data-fi="Tehtävässä toteutetaan käyttäjän rekisteröityminen ja kirjautuminen Passport Local Strategyn avulla. Salasana tallennetaan tiivisteenä, istuntoja hallitaan palvelinpuolella ja suojatut reitit tarkistavat kirjautumisen." data-en="This exercise implements registration and login with Passport Local Strategy. Passwords are stored as hashes, sessions are managed server-side and protected routes check authentication.">Tehtävässä toteutetaan käyttäjän rekisteröityminen ja kirjautuminen Passport Local Strategyn avulla. Salasana tallennetaan tiivisteenä, istuntoja hallitaan palvelinpuolella ja suojatut reitit tarkistavat kirjautumisen.</p>
+                  <pre><code>const passwordHash = await bcrypt.hash(password, 12);
+const user = await User.create({
+  username: username.trim().toLowerCase(),
+  passwordHash,
+});
+
+req.login(user, (error) =&gt; {
+  if (error) return next(error);
+  res.status(201).json({ username: user.username });
+});</code></pre>
+                </article>
+                <article class="oop-sample-panel" hidden data-backend-sample="3">
+                  <div class="sample-panel-heading"><span class="sample-task">04</span><h4 data-fi="GET-reitin automaattinen testi" data-en="Automated test for a GET route">GET-reitin automaattinen testi</h4></div>
+                  <p data-fi="Tehtävässä testataan albumien hakureittiä Jestillä ja Supertestillä. MongoDB Memory Server käynnistää testejä varten erillisen väliaikaisen tietokannan, johon luodaan testidata." data-en="This exercise tests the album listing route with Jest and Supertest. MongoDB Memory Server creates a temporary database and test data for the test run.">Tehtävässä testataan albumien hakureittiä Jestillä ja Supertestillä. MongoDB Memory Server käynnistää testejä varten erillisen väliaikaisen tietokannan, johon luodaan testidata.</p>
+                  <pre><code>it("returns the albums", async () =&gt; {
+  const response = await request(app)
+    .get("/api/albums");
+
+  expect(response.status).toBe(200);
+  expect(response.body).toHaveLength(2);
+});</code></pre>
+                </article>
+                <article class="oop-sample-panel" hidden data-backend-sample="4">
+                  <div class="sample-panel-heading"><span class="sample-task">05</span><h4 data-fi="POST-reitin automaattinen testi" data-en="Automated test for a POST route">POST-reitin automaattinen testi</h4></div>
+                  <p data-fi="Tehtävässä testataan uuden albumin lisäämistä sekä virheellisten pyyntöjen hylkäämistä. Testit varmistavat onnistuneen HTTP 201 -vastauksen, puuttuvien kenttien käsittelyn ja virheellisen vuosiluvun hylkäämisen." data-en="This exercise tests album creation and rejection of invalid requests. The tests check a successful HTTP 201 response, missing fields and an invalid year value.">Tehtävässä testataan uuden albumin lisäämistä sekä virheellisten pyyntöjen hylkäämistä. Testit varmistavat onnistuneen HTTP 201 -vastauksen, puuttuvien kenttien käsittelyn ja virheellisen vuosiluvun hylkäämisen.</p>
+                  <pre><code>const response = await request(app)
+  .post("/api/albums")
+  .send({
+    title: "Example Album",
+    artist: "Example Artist",
+    year: 2022,
+  });
+
+expect(response.status).toBe(201);
+expect(response.body.title).toBe("Example Album");</code></pre>
+                </article>
+              </div>
+              <div class="oop-browser-controls">
+                <button type="button" id="backend-prev" class="oop-nav-button" data-fi-label="Edellinen tehtävä" data-en-label="Previous exercise" aria-label="Edellinen tehtävä">← <span data-fi="Edellinen" data-en="Previous">Edellinen</span></button>
+                <span id="backend-counter" class="oop-counter" role="status" aria-live="polite" aria-atomic="true">1 / 5</span>
+                <button type="button" id="backend-next" class="oop-nav-button" data-fi-label="Seuraava tehtävä" data-en-label="Next exercise" aria-label="Seuraava tehtävä"><span data-fi="Seuraava" data-en="Next">Seuraava</span> →</button>
+              </div>
+            </div>
+          </div>
+        </details>
+        <p class="oop-note" data-fi="Nämä ovat valikoituja koodinäytteitä. Koko tehtävien lähdekoodi ja kaikki suoritusohjeet löytyvät erillisestä dokumentista. Projektin asetustiedostot ja riippuvuudet luodaan itse paikallisesti." data-en="These are selected code samples. The full source code and complete setup instructions are available in the accompanying document. Project configuration files and dependencies must be created locally.">Nämä ovat valikoituja koodinäytteitä. Koko tehtävien lähdekoodi ja kaikki suoritusohjeet löytyvät erillisestä dokumentista. Projektin asetustiedostot ja riippuvuudet luodaan itse paikallisesti.</p>
         <div class="skill-list"><span>Node.js</span><span>Express</span><span>MongoDB</span><span>Mongoose</span><span>Passport</span><span>Jest</span><span>Supertest</span></div>
         <a class="gothic-button" href="https://github.com/MarikaMatala/MarikaMatala.github.io/blob/main/backend-code-examples.md" target="_blank" rel="noreferrer"><span data-fi="Avaa koodiesimerkit 1–5" data-en="Open code examples 1–5">Avaa koodiesimerkit 1–5</span><span aria-hidden="true">↗</span></a>
       </article>
