@@ -23,7 +23,7 @@ Samsung Internet may offer an **Add page to** or **Home screen** option dependin
 
 iOS uses Safari's Share menu for this flow. Chromium's JavaScript install prompt is not available in Safari.
 
-The catalogue currently contains 114 sample entries, including 100 additions from 1980s, 1990s and 2000s cult television, films, animation and cartoons. All catalogue scores and reviews are illustrative demo content.
+The catalogue currently contains 214 sample entries, including 100 additions from 1980s, 1990s and 2000s cult television, films, animation and cartoons. The instance-owner score is 0/10 for every work and no owner review text is prefilled. IMDb ratings are shown separately when verified; a dash means no verified rating has been added.
 
 ## Important limitations
 
