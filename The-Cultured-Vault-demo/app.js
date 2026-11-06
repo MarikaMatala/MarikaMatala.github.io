@@ -121,7 +121,7 @@ function renderCatalogue(){
   if(alphabetical&&list.length){
     const firstCharacters=list.map(work=>work.title.trim().charAt(0).toLocaleUpperCase(language==="fi"?"fi":"en"));
     const availableLetters=new Set(firstCharacters.filter(first=>/^[A-ZÅÄÖ]$/i.test(first)));
-    const availableNumbers=new Set(firstCharacters.filter(first=>/^\\d$/.test(first)));
+    const availableNumbers=new Set(firstCharacters.filter(first=>/^\d$/.test(first)));
     const letters="ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ".split("");
     const label=document.createElement("span");label.className="alphabet-label";label.textContent=language==="fi"?"Siirry kirjaimeen:":"Jump to letter:";alphabetNav.append(label);
     letters.forEach(letter=>{
@@ -140,7 +140,7 @@ function renderCatalogue(){
   list.forEach(work=>{
    if(alphabetical){
     const first=work.title.trim().charAt(0).toLocaleUpperCase(language==="fi"?"fi":"en");
-    const isNumber=/^\\d$/.test(first);
+    const isNumber=/^\d$/.test(first);
     const group=isNumber?"number:"+first:"letter:"+( /^[A-ZÅÄÖ]$/i.test(first)?first:"#");
     if(group!==previousGroup){
       const heading=document.createElement("h3");
