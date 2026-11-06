@@ -193,8 +193,8 @@
     const required = [], optional = [];
     for (const item of unique) {
       const context = normalize(contextFor(item));
-      const isOptional = optionalMarkers.some(marker => hasPhrase(context, marker)) &&
-        !requiredMarkers.some(marker => hasPhrase(context, marker));
+      const isOptional = optionalMarkers.some(marker => (" " + context + " ").includes(" " + normalize(marker) + " ")) &&
+        !requiredMarkers.some(marker => (" " + context + " ").includes(" " + normalize(marker) + " "));
       const entry = {...item, found: candidate.has(normalize(item.canonical))};
       (isOptional ? optional : required).push(entry);
     }
