@@ -6,7 +6,7 @@
     ["TypeScript","TypeScript","TypeScript","TS"],["React","React","React.js"],["Next.js","Next.js","Next.js"],
     ["Node.js","Node.js","Node.js"],["Python","Python","Python"],["PHP","PHP","PHP"],["Java","Java","Java"],
     ["C#","C#","C#","C Sharp"],["C++","C++","C++","Cpp"],[".NET",".NET",".NET","Dotnet","ASP.NET"],
-    ["Kotlin","Kotlin","Kotlin"],["Swift","Swift","Swift"],["Go","Go","Go","Golang"],["Rust","Rust","Rust"],
+    ["Kotlin","Kotlin","Kotlin"],["Swift","Swift","Swift"],["Go","Go","Go","Golang"],["Rust","Rust","Rust"],["C","C","C"],["Scala","Scala","Scala"],["Dart","Dart","Dart"],["R","R","R"],["MATLAB","MATLAB","MATLAB"],["Bash","Bash","Bash"],["PowerShell","PowerShell","PowerShell"],["Lua","Lua","Lua"],["Perl","Perl","Perl"],["Haskell","Haskell","Haskell"],["Objective-C","Objective-C","Objective-C"],["Assembly language","Assembly language","Assembly-kieli","ASM"],["Solidity","Solidity","Solidity"],["Elixir","Elixir","Elixir"],["Erlang","Erlang","Erlang"],["Visual Basic","Visual Basic","Visual Basic","VB.NET"],
     ["SQL","SQL","SQL"],["MySQL","MySQL","MySQL"],["PostgreSQL","PostgreSQL","PostgreSQL","Postgres"],
     ["SQLite","SQLite","SQLite"],["MongoDB","MongoDB","MongoDB"],["REST API","REST API","REST-rajapinnat","REST-rajapinta"],
     ["GraphQL","GraphQL","GraphQL"],["JSON","JSON","JSON"],["XML","XML","XML"],["Git","Git","Git"],
@@ -18,7 +18,7 @@
     ["Elementor","Elementor","Elementor"],["Photoshop","Photoshop","Photoshop"],["Illustrator","Illustrator","Illustrator"],
     ["InDesign","InDesign","InDesign"],["Premiere Pro","Premiere Pro","Premiere Pro"],["After Effects","After Effects","After Effects"],
     ["DaVinci Resolve","DaVinci Resolve","DaVinci Resolve"],["Blender","Blender","Blender"],["Maya","Maya","Maya"],
-    ["Unreal Engine","Unreal Engine","Unreal Engine"],["Canva","Canva","Canva"],["Jira","Jira","Jira"],["Postman","Postman","Postman"],
+    ["Unreal Engine","Unreal Engine","Unreal Engine"],["Unity","Unity","Unity"],["Godot","Godot","Godot"],["Cinema 4D","Cinema 4D","Cinema 4D","C4D"],["ZBrush","ZBrush","ZBrush"],["Substance 3D Painter","Substance 3D Painter","Substance 3D Painter","Substance Painter"],["Adobe Lightroom","Lightroom","Adobe Lightroom"],["Adobe Audition","Audition","Adobe Audition"],["OBS Studio","OBS Studio","OBS Studio"],["Audacity","Audacity","Audacity"],["Final Cut Pro","Final Cut Pro","Final Cut Pro"],["IntelliJ IDEA","IntelliJ IDEA","IntelliJ IDEA"],["PyCharm","PyCharm","PyCharm"],["Eclipse","Eclipse","Eclipse"],["WebStorm","WebStorm","WebStorm"],["GitHub Copilot","GitHub Copilot","GitHub Copilot"],["Google Analytics","Google Analytics","Google Analytics"],["Google Ads","Google Ads","Google Ads"],["Meta Ads","Meta Ads","Meta-mainonta"],["HubSpot","HubSpot","HubSpot"],["Canva","Canva","Canva"],["Jira","Jira","Jira"],["Postman","Postman","Postman"],
     ["Visual Studio Code","Visual Studio Code","Visual Studio Code","VS Code"],["Android Studio","Android Studio","Android Studio"],
     ["UI/UX design","UI/UX design","UI/UX-suunnittelu","käyttöliittymäsuunnittelu","käyttäjäkokemuksen suunnittelu"],
     ["Frontend development","Frontend development","Frontend-kehitys","front-end development","käyttöliittymäkehitys"],
@@ -57,7 +57,7 @@
     ["Problem solving","Problem solving","Ongelmanratkaisu"],["Teamwork","Teamwork","Tiimityö","tiimityöskentely"],
     ["User research","User research","Käyttäjätutkimus"],["Wireframing","Wireframing","Rautalankamallit"],
     ["Prototyping","Prototyping","Prototypointi"],["Email marketing","Email marketing","Sähköpostimarkkinointi"],
-    ["Campaign management","Campaign management","Kampanjanhallinta","kampanjasuunnittelu"],["Analytics","Analytics","Analytiikka","verkkoanalytiikka"]
+    ["Campaign management","Campaign management","Kampanjanhallinta","kampanjasuunnittelu"],["Analytics","Analytics","Analytiikka","verkkoanalytiikka"],["Artificial intelligence","Artificial intelligence","Tekoäly","AI"],["Machine learning","Machine learning","Koneoppiminen","ML"],["Natural language processing","Natural language processing","Luonnollisen kielen käsittely","NLP"],["DevOps","DevOps","DevOps"],["CI/CD","CI/CD","Jatkuva integraatio ja toimitus","continuous integration","continuous delivery"],["Software architecture","Software architecture","Ohjelmistoarkkitehtuuri"],["Product management","Product management","Tuotehallinta","tuotejohtaminen"],["Brand design","Brand design","Brändisuunnittelu","visuaalinen identiteetti"],["Storytelling","Storytelling","Tarinankerronta"],["Editorial planning","Editorial planning","Toimituksellinen suunnittelu","toimitustyö"],["Radio production","Radio production","Radiotuotanto","radio-ohjelmien tuotanto"],["Broadcast production","Broadcast production","Lähetystuotanto","broadcast"],["Guidance counselling","Guidance counselling","Ohjaus ja neuvonta","ohjaustyö"],["Teaching","Teaching","Opetus","opettaminen"],["Youth work","Youth work","Nuorisotyö"],["Event coordination","Event coordination","Tapahtumakoordinointi"]
   ];
   const roles = [
     ["Frontend Developer","Frontend-kehittäjä","frontend developer","front-end developer","frontend-kehittäjä","käyttöliittymäkehittäjä"],
@@ -111,7 +111,36 @@
     ["Game Developer","Pelinkehittäjä","game developer","peliohjelmoija"],
     ["Animator","Animaattori","animator"],
     ["Art Director","Taiteellinen johtaja","art director"],
-    ["Producer","Tuottaja","producer","tuotantokoordinaattori"]
+    ["Producer","Tuottaja","producer","tuotantokoordinaattori"],
+    ["AI Engineer","Tekoälyinsinööri","ai engineer","artificial intelligence engineer","tekoälyasiantuntija"],
+    ["Machine Learning Engineer","Koneoppimisinsinööri","machine learning engineer","ml engineer","koneoppimisasiantuntija"],
+    ["Data Engineer","Data-insinööri","data engineer","data engineering specialist"],
+    ["Data Scientist","Datatieteilijä","data scientist","datatieteilijä"],
+    ["Security Researcher","Tietoturvatutkija","security researcher","tietoturvatutkija"],
+    ["Penetration Tester","Tunkeutumistestaaja","penetration tester","pentester","tunkeutumistestaaja"],
+    ["Software Architect","Ohjelmistoarkkitehti","software architect","ohjelmistoarkkitehti"],
+    ["Systems Analyst","Järjestelmäanalyytikko","systems analyst","järjestelmäanalyytikko"],
+    ["Site Reliability Engineer","Site Reliability Engineer","site reliability engineer","sre"],
+    ["Platform Engineer","Alusta-asiantuntija","platform engineer","alustakehittäjä"],
+    ["Embedded Software Developer","Sulautettujen järjestelmien ohjelmistokehittäjä","embedded software developer","embedded developer","sulautettujen järjestelmien kehittäjä"],
+    ["Firmware Engineer","Laiteohjelmistokehittäjä","firmware engineer","laiteohjelmistokehittäjä"],
+    ["Database Developer","Tietokantakehittäjä","database developer","tietokantakehittäjä"],
+    ["Game Designer","Pelisuunnittelija","game designer","pelisuunnittelija"],
+    ["Game Programmer","Peliohjelmoija","game programmer","peliohjelmoija"],
+    ["Game Producer","Pelituottaja","game producer","pelituottaja"],
+    ["Game Sound Designer","Peliäänisuunnittelija","game sound designer","peliäänisuunnittelija"],
+    ["Telecommunications Engineer","Tietoliikenneinsinööri","telecommunications engineer","tietoliikenneinsinööri"],
+    ["ICT Technician","ICT-asentaja","ict technician","ict-asentaja","tieto- ja tietoliikennetekniikan asentaja"],
+    ["Webmaster","Verkkosivuston ylläpitäjä","webmaster","verkkosivuvastaava"],
+    ["Web Content Manager","Verkkosisällön ylläpitäjä","web content manager","verkkosisällönhallitsija"],
+    ["Web Designer","Web-suunnittelija","web designer","verkkosivusuunnittelija"],
+    ["Network Engineer","Verkkosuunnittelija","network engineer","verkkoasiantuntija"],
+    ["Technical Support Specialist","Teknisen tuen asiantuntija","technical support specialist","teknisen tuen asiantuntija"],
+    ["Product Manager","Tuotepäällikkö","product manager","tuotepäällikkö"],
+    ["Content Strategist","Sisältöstrategi","content strategist","sisältöstrategi"],
+    ["Radio Producer","Radiotuottaja","radio producer","radiotuottaja"],
+    ["School Counsellor","Koulunkäynnin ohjaaja","school counsellor","school counselor","opinto-ohjaaja"],
+    ["After-school Instructor","Iltapäivätoiminnan ohjaaja","after-school instructor","iltapäiväkerhon ohjaaja"]
   ];
   function normalize(value) {
     return String(value || "").normalize("NFKD").replace(/[\u0300-\u036f]/g,"")
