@@ -49,11 +49,13 @@ Validointi tarkistaa:
 2. Informative work-sample images now have Finnish and English alternative text. The language switch updates their `alt` values.
 3. Android gallery descriptions now have Finnish and English variants.
 4. PDF iframe titles now change with the selected language. The Remote Job Fit iframe title is also localized through the shared title handling.
+5. The standalone browser demo now has its own keyboard skip link; the validator recognizes both explicit `for` labels and controls nested inside a `<label>`.
 
 1. Kahdella koodiesimerkkien valintakentällä oli kiinteä suomenkielinen `aria-label`, vaikka näkyvät label-tekstit vaihtuvat kielivalitsimella. Kiinteä ARIA-nimi ohitti käännetyn näkyvän tekstin. Valintakentät käyttävät nyt niihin liitettyjä näkyviä `<label for="...">`-elementtejä.
 2. Työnäytekuvilla on nyt suomen- ja englanninkieliset vaihtoehtoiset tekstit. Kielivalinta päivittää niiden `alt`-arvot.
 3. Android-kuvagallerian kuvauksista on suomen- ja englanninkieliset versiot.
 4. PDF-iframe-kehysten otsikot vaihtuvat valitun kielen mukaan. Myös Remote Job Fit -kehyksen otsikko päivitetään yhteisellä käsittelyllä.
+5. Erillisessä selain-demossa on nyt oma näppäimistöllä käytettävä ohituslinkki. Validointi tunnistaa sekä `for`-attribuutilla liitetyt label-elementit että label-elementin sisään sijoitetut kentät.
 
 ## Manual checklist | Manuaalinen tarkistuslista
 
