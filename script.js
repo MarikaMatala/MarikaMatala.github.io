@@ -300,3 +300,32 @@ updateCarouselLabels(currentLanguage);
     if (window.innerWidth > 900) closeMenu();
   });
 })();
+
+
+// Backend coursework browser: five selectable panels with previous/next navigation.
+const backendBrowser = document.getElementById('backend-browser');
+if (backendBrowser) {
+  const panels = Array.from(backendBrowser.querySelectorAll('[data-backend-sample]'));
+  const selector = document.getElementById('backend-sample-select');
+  const counter = document.getElementById('backend-counter');
+  const previous = document.getElementById('backend-prev');
+  const next = document.getElementById('backend-next');
+  let activeSample = 0;
+
+  function showBackendSample(index) {
+    if (!panels.length) return;
+    activeSample = (index + panels.length) % panels.length;
+    panels.forEach((panel, panelIndex) => {
+      panel.hidden = panelIndex !== activeSample;
+    });
+    if (selector) selector.value = String(activeSample);
+    if (counter) counter.textContent = `${activeSample + 1} / ${panels.length}`;
+    if (previous) previous.disabled = activeSample === 0;
+    if (next) next.disabled = activeSample === panels.length - 1;
+  }
+
+  if (selector) selector.addEventListener('change', () => showBackendSample(Number(selector.value)));
+  if (previous) previous.addEventListener('click', () => showBackendSample(activeSample - 1));
+  if (next) next.addEventListener('click', () => showBackendSample(activeSample + 1));
+  showBackendSample(0);
+}
