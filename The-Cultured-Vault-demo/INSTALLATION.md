@@ -23,10 +23,13 @@ Samsung Internet may offer an **Add page to** or **Home screen** option dependin
 
 iOS uses Safari's Share menu for this flow. Chromium's JavaScript install prompt is not available in Safari.
 
-The catalogue currently contains 214 sample entries, including 100 additions from 1980s, 1990s and 2000s cult television, films, animation and cartoons. The instance-owner score is 0/10 for every work and no owner review text is prefilled. IMDb ratings are shown separately when verified; a dash means no verified rating has been added.
+The catalogue currently contains 500 sample entries, including 100 additions from 1980s, 1990s and 2000s cult television, films, animation and cartoons. The instance-owner score is 0/10 for every work and no owner review text is prefilled. IMDb ratings are shown separately when verified; a dash means no verified rating has been added.
 
 ## Important limitations
 
 This is a static PWA prototype, not a native APK/IPA or an App Store / Google Play release. It has no backend, user accounts, shared reviews or cloud synchronisation. Personal demo reviews remain in the current browser's local storage.
 
 The first visit needs an internet connection so the service worker can cache the app shell. Basic offline loading is available after a successful initial load.
+
+
+The catalogue now contains 500 works. The owner rating is shown as “Not rated yet” until the instance owner enters a rating. Visitors can suggest missing works, but suggestions are stored only in the current browser and are not transmitted to the maintainer because this demo has no backend.
