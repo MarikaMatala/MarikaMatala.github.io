@@ -32,9 +32,14 @@ function setLanguage(language) {
   const menuToggle = document.getElementById('menu-toggle');
   if (menuToggle && menuToggle.getAttribute('aria-expanded') !== 'true') menuToggle.setAttribute('aria-label', language === 'fi' ? 'Avaa navigaatiovalikko' : 'Open navigation menu');
   updateCarouselLabels(language);
+  document.querySelectorAll('[data-fi-alt][data-en-alt]').forEach((image) => {
+    image.setAttribute('alt', image.dataset[language + 'Alt']);
+  });
+  document.querySelectorAll('iframe[data-fi-title][data-en-title]').forEach((frame) => {
+    frame.title = frame.dataset[language + 'Title'];
+  });
   document.querySelectorAll('.remote-job-fit-embed iframe').forEach((frame) => {
     try { frame.contentWindow.postMessage({ type: 'portfolio-language', language }, '*'); } catch (error) { /* iframe may not be ready */ }
-    frame.title = language === 'fi' ? 'Remote Job Fit - interaktiivinen selain-demo' : 'Remote Job Fit interactive browser demo';
   });
 }
 
@@ -59,17 +64,17 @@ try {
 } catch (error) { /* storage may be disabled */ }
 
 const androidImages = [
-  { src: 'images/android-kurssin%20tehtavien%20kuvia/1.png', alt: 'Android-kurssin harjoitustyön kuvakaappaus' },
-  { src: 'images/android-kurssin%20tehtavien%20kuvia/12.png', alt: 'Android-kurssin harjoitustyön kuvakaappaus' },
-  { src: 'images/android-kurssin%20tehtavien%20kuvia/2.png', alt: 'Android-kurssin harjoitustyön kuvakaappaus' },
-  { src: 'images/android-kurssin%20tehtavien%20kuvia/3-1.png', alt: 'Android-kurssin harjoitustyön kuvakaappaus' },
-  { src: 'images/android-kurssin%20tehtavien%20kuvia/3-2.png', alt: 'Android-kurssin harjoitustyön kuvakaappaus' },
-  { src: 'images/android-kurssin%20tehtavien%20kuvia/4.png', alt: 'Android-kurssin harjoitustyön kuvakaappaus' },
-  { src: 'images/android-kurssin%20tehtavien%20kuvia/kuva-1.JPG', alt: 'Android-kurssin harjoitustyön valokuva' },
-  { src: 'images/android-kurssin%20tehtavien%20kuvia/kuva-11.JPG', alt: 'Android-kurssin harjoitustyön valokuva' },
-  { src: 'images/android-kurssin%20tehtavien%20kuvia/kuva-111.PNG', alt: 'Android-kurssin harjoitustyön kuvakaappaus' },
-  { src: 'images/android-kurssin%20tehtavien%20kuvia/kuva-112.PNG', alt: 'Android-kurssin harjoitustyön kuvakaappaus' },
-  { src: 'images/android-kurssin%20tehtavien%20kuvia/kuva-2.JPG', alt: 'Android-kurssin harjoitustyön valokuva' }
+  { src: 'images/android-kurssin%20tehtavien%20kuvia/1.png', altFi: 'Android-kurssin harjoitustyön kuvakaappaus', altEn: 'Screenshot from an Android course exercise' },
+  { src: 'images/android-kurssin%20tehtavien%20kuvia/12.png', altFi: 'Android-kurssin harjoitustyön kuvakaappaus', altEn: 'Screenshot from an Android course exercise' },
+  { src: 'images/android-kurssin%20tehtavien%20kuvia/2.png', altFi: 'Android-kurssin harjoitustyön kuvakaappaus', altEn: 'Screenshot from an Android course exercise' },
+  { src: 'images/android-kurssin%20tehtavien%20kuvia/3-1.png', altFi: 'Android-kurssin harjoitustyön kuvakaappaus', altEn: 'Screenshot from an Android course exercise' },
+  { src: 'images/android-kurssin%20tehtavien%20kuvia/3-2.png', altFi: 'Android-kurssin harjoitustyön kuvakaappaus', altEn: 'Screenshot from an Android course exercise' },
+  { src: 'images/android-kurssin%20tehtavien%20kuvia/4.png', altFi: 'Android-kurssin harjoitustyön kuvakaappaus', altEn: 'Screenshot from an Android course exercise' },
+  { src: 'images/android-kurssin%20tehtavien%20kuvia/kuva-1.JPG', altFi: 'Android-kurssin harjoitustyön valokuva', altEn: 'Photo from an Android course exercise' },
+  { src: 'images/android-kurssin%20tehtavien%20kuvia/kuva-11.JPG', altFi: 'Android-kurssin harjoitustyön valokuva', altEn: 'Photo from an Android course exercise' },
+  { src: 'images/android-kurssin%20tehtavien%20kuvia/kuva-111.PNG', altFi: 'Android-kurssin harjoitustyön kuvakaappaus', altEn: 'Screenshot from an Android course exercise' },
+  { src: 'images/android-kurssin%20tehtavien%20kuvia/kuva-112.PNG', altFi: 'Android-kurssin harjoitustyön kuvakaappaus', altEn: 'Screenshot from an Android course exercise' },
+  { src: 'images/android-kurssin%20tehtavien%20kuvia/kuva-2.JPG', altFi: 'Android-kurssin harjoitustyön valokuva', altEn: 'Photo from an Android course exercise' }
 ];
 
 const androidCarousel = document.getElementById('android-carousel');
@@ -82,7 +87,8 @@ function showAndroidImage(index) {
   androidImageIndex = (index + androidImages.length) % androidImages.length;
   const image = androidImages[androidImageIndex];
   androidImage.src = image.src;
-  androidImage.alt = `${image.alt}, ${androidImageIndex + 1} / ${androidImages.length}`;
+  const localizedAlt = currentLanguage === 'fi' ? image.altFi : image.altEn;
+  androidImage.alt = `${localizedAlt}, ${androidImageIndex + 1} / ${androidImages.length}`;
   androidCounter.textContent = `${androidImageIndex + 1} / ${androidImages.length}`;
 }
 
