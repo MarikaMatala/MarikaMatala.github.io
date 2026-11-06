@@ -933,3 +933,4 @@ h1 em, h2 em, h3 em, h4 em {
   order:2!important;
   width:100%;
 }
+.site-footer > .wordmark.full-name{order:3!important;}
