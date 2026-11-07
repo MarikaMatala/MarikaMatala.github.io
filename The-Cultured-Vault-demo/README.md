@@ -42,3 +42,12 @@ The demo includes an English-language [sources.html](sources.html) source regist
 ## Open-source licence and third-party material
 
 The demo's original source code and documentation are licensed under the MIT License; see [LICENSE](LICENSE). This licence does not apply to third-party works, data or trademarks. No third-party ratings, reviews, descriptions, posters, stills or covers are imported. IMDb and Open Library are outbound lookup links only. Rotten Tomatoes links are omitted because its current terms restrict deep links without prior written consent. The BookRank importer has been disabled because the published licence scope did not clearly cover every field previously consumed. See [sources.html](sources.html) for the licence analysis, source boundaries and reuse policy.
+
+
+## Visitor suggestions and ratings
+
+The browser demo includes separate navigation tabs for suggesting works and rating catalogue entries. Both features use browser `localStorage` only: submissions remain in the visitor's own browser, are not transmitted to the maintainer, and are not shared with other visitors. A public community feature requires a backend, moderation, privacy information and a retention policy; it is not claimed to exist in this static GitHub Pages demo.
+
+## Third-party rights boundary
+
+The MIT licence applies only to original project-authored code and documentation, not to films, books, music, games, titles, characters, artwork, logos, posters, cover images, third-party datasets or trademarks. The catalogue contains plain-text identifiers and factual metadata only. No third-party ratings, reviews, plot descriptions, posters, covers or promotional images are imported. See [Sources and licences](sources.html) before reusing or contributing content.
