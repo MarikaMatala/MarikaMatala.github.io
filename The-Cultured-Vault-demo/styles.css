@@ -249,3 +249,13 @@ select,input,textarea{background:#151310;color:var(--text);border:1px solid var(
 .about-panel .install-help,.about-panel .demo-notice{margin-top:20px}
 @media(max-width:600px){.header-actions{gap:7px}.menu-toggle{width:42px;height:42px}.contact-grid{grid-template-columns:1fr}.contact-panel{padding:19px}.contact-card{padding:17px}}
 @media(prefers-reduced-motion:reduce){.tab-panel.is-active{animation:none}.menu-toggle span{transition:none}}
+
+
+/* 17. Compact catalogue pagination. */
+.catalogue-pagination{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin:26px 0 10px;padding:14px;border:1px solid var(--line);border-radius:12px;background:rgba(33,30,25,.8)}
+.catalogue-pagination[hidden]{display:none}
+.page-button{min-height:42px;padding:8px 15px;border:1px solid var(--bronze);border-radius:999px;background:rgba(193,139,85,.12);color:var(--bronze-light);font-weight:800;cursor:pointer}
+.page-button:hover:not(:disabled){background:rgba(193,139,85,.24);border-color:var(--gold);color:var(--gold)}
+.page-button:disabled{opacity:.35;cursor:not-allowed}
+.page-status{color:var(--muted);font-size:.82rem;font-weight:700;text-align:center}
+@media(max-width:480px){.catalogue-pagination{gap:8px;padding:10px}.page-button{flex:1 1 42%;padding:8px 10px}.page-status{order:-1;flex-basis:100%}}
