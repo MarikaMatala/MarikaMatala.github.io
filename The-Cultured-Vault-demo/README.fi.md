@@ -112,7 +112,7 @@ iOS-laitteissa Safari on luotettavin tapa lisätä verkkosovellus Koti-valikkoon
 
 ~~~text
 The-Cultured-Vault-demo/
-├── index.html               # Sivun rakenne, tekstit ja saavutettavuuden maamerkit
+├── index.html               # Sivun rakenne, välilehdet ja saavutettavuus
 ├── styles.css               # Teema, komponentit, responsiivisuus ja saavutettavuus
 ├── app.js                   # Esimerkkidata, haku, suodattimet ja paikalliset arviot
 ├── manifest.webmanifest     # PWA:n nimi, kuvakkeet, käyttöalue ja näyttötila
@@ -120,6 +120,7 @@ The-Cultured-Vault-demo/
 ├── INSTALLATION.md          # Lyhyt Android- ja iOS-asennusohje
 ├── README.md                # Laaja englanninkielinen ohje
 ├── README.fi.md             # Tämä suomenkielinen ohje
+├── LICENSE                  # Demon oman koodin MIT-lisenssi
 └── icons/
     ├── vault-icon.svg       # Yleinen sovelluskuvake
     ├── vault-maskable.svg   # Android-käynnistimien maskable-kuvake
