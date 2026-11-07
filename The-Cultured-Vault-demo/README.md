@@ -17,7 +17,7 @@ This is a lightweight front-end prototype. It does not require a framework, buil
 - a 1,000-entry sample catalogue with multiple media categories, including 986 additions across films, series, animation, documentaries, podcasts, music albums, games and books; the expanded selection includes Studio Ghibli and Disney animation, 1990s and 2000s nostalgia films, supernatural and cult series, and internationally popular Netflix titles such as Stranger Things, Wednesday, Squid Game, Dark and Bridgerton;
 - search by title, creator, country and genre;
 - category filters and sorting, with alphabetical title order as the default;
-- an A–Z / Å–Ä–Ö letter index and a 0–9 numeric index; both jump to matching catalogue groups, disable unavailable entries and follow the current search and category filters; the catalogue is paginated at 36 works per page to keep the page compact;
+- an A–Z letter index and a 0–9 numeric index; both jump to matching catalogue groups, disable unavailable entries and follow the current search and category filters; the catalogue is paginated at 36 works per page to keep the page compact;
 - separate owner ratings, BookRank reader scores for books, and outbound IMDb / Rotten Tomatoes lookup links only (no copied IMDb or Rotten Tomatoes scores);
 - a form for adding a personal demo rating and optional comment;
 - English-only interface and documentation;
