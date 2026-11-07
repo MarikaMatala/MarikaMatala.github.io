@@ -1,53 +1,71 @@
-# The Cultured Vault — installable demo
+# The Cultured Vault — browser demo
 
-<!-- Last updated: 2026-11-07. -->
+<!-- Last reviewed: 2026-11-07. -->
 
 > Culture worth discovering. Stories worth remembering.
 
-The Cultured Vault is an open-source cultural catalogue concept. This folder contains its static, installable Progressive Web App (PWA) demo. It demonstrates a possible interface for exploring films, series, animation, documentaries, podcasts, music, games and books.
+The Cultured Vault is a static cultural-catalogue prototype for exploring films, series, animation, documentaries, podcasts, music, games and books.
 
 - Live demo: https://marikamatala.github.io/The-Cultured-Vault-demo/
-- Main project: https://github.com/MarikaMatala/The-Cultured-Vault
-- Short phone installation guide: [INSTALLATION.md](INSTALLATION.md)
+- Main project repository: https://github.com/MarikaMatala/The-Cultured-Vault
+- Source and licence register: [sources.html](sources.html)
+- Project code licence: [MIT License](LICENSE)
 
-## 1. What this demo does
+## Current features
 
-This is a lightweight front-end prototype. It does not require a framework, build process or third-party JavaScript package. It includes:
+- A manually curated catalogue of 1,000 works across eight media categories.
+- Search by title, creator, country and genre.
+- Category filters and sorting by title, featured order or release year.
+- A–Z and 0–9 navigation, including a one-character jump field.
+- Pagination at 36 catalogue entries per page.
+- External lookup links on each work: IMDb search and a Google search restricted to Rotten Tomatoes pages. Book entries also link to Open Library search.
+- Personal demo ratings and optional comments, stored in the visitor's current browser.
+- A local-only form for suggesting works.
+- English-only interface.
+- Responsive dark interface with bronze, silver and gold accents.
+- A web app manifest and service worker for app-shell metadata and basic same-origin caching.
 
-- a 1,000-entry sample catalogue with multiple media categories, including 986 additions across films, series, animation, documentaries, podcasts, music albums, games and books; the expanded selection includes Studio Ghibli and Disney animation, 1990s and 2000s nostalgia films, supernatural and cult series, and internationally popular Netflix titles such as Stranger Things, Wednesday, Squid Game, Dark and Bridgerton;
-- search by title, creator, country and genre;
-- category filters and sorting, with alphabetical title order as the default;
-- an A–Z letter index and a 0–9 numeric index; both jump to matching catalogue groups, disable unavailable entries and follow the current search and category filters; the catalogue is paginated at 36 works per page to keep the page compact;
-- owner-rating placeholders and outbound IMDb and Open Library lookup links; each work also has a Google search link restricted to Rotten Tomatoes pages (not a direct RT deep link); no third-party ratings or reviews are imported;
-- a form for adding a personal demo rating and optional comment;
-- English-only interface and documentation;
-- responsive layouts for phones, tablets and desktop browsers;
-- PWA metadata and app icons;
-- a service worker that caches the app shell for basic offline use.
+## External lookup and data policy
 
-The goal is to make the concept testable before implementing a production backend.
+The external links are navigation aids only. The Vault does not scrape IMDb or Rotten Tomatoes, call their data APIs, import their ratings, reproduce reviews, or copy their images or descriptions. Rotten Tomatoes is reached through a Google site-search link rather than a direct deep link because its current Terms of Use restrict links to pages other than its homepage without prior written consent.
 
-### External ratings and source policy
+Book entries open an Open Library search. The Vault does not currently call the Open Library API, import its records or download its covers.
 
-IMDb is provided as an outbound lookup link only. The Vault does not store or republish IMDb scores. Each work offers a Google site-search link for Rotten Tomatoes results; direct Rotten Tomatoes deep links are not used because its current terms restrict links to pages other than the homepage without prior written consent.
+No third-party numeric ratings, review text, plot descriptions, biographies, posters, covers, stills, album artwork or promotional images are imported. Catalogue records contain plain-text titles and manually curated factual fields. This does not mean every fact or collection has been individually cleared by a rights holder; database rights and source-specific restrictions may still apply.
 
-The BookRank importer has been disabled because its published CC BY 4.0 statement did not clearly cover every field previously imported by this demo. No BookRank scores or records are currently imported. See the [Sources and licences page](sources.html) for the licence review and reuse policy.
+See [Sources and licences](sources.html) for the current list of services and the project's rights boundary. Services and datasets that are not currently integrated are intentionally not listed as active sources.
 
+## Visitor data and privacy
 
-## Sources and licences page
+The suggestion and rating forms are local browser demonstrations:
 
-The demo includes an English-language [sources.html](sources.html) source register. It distinguishes the project's own software licence from external service terms and explains which sources are not imported. It also explains manually curated metadata, browser-local storage, and why third-party posters and covers are not copied.
+- Suggestions, ratings and optional comments are stored in the visitor's own browser using `localStorage`.
+- Entries are not sent to the maintainer, shared with other visitors or added to the public catalogue.
+- Clearing browser storage may remove the saved entries.
+- Do not enter sensitive or personal information.
 
+There is no server-side backend, database, user account, sign-in, cloud synchronisation or public community-review system.
 
-## Open-source licence and third-party material
+## Installation status
 
-The demo's original source code and documentation are licensed under the MIT License; see [LICENSE](LICENSE). This licence does not apply to third-party works, data or trademarks. No third-party ratings, reviews, descriptions, posters, stills or covers are imported. IMDb and Open Library are outbound lookup links only. Rotten Tomatoes is reached through a Google site-search link per work, not a direct RT deep link, because its current terms restrict deep links without prior written consent. The BookRank importer has been disabled because the published licence scope did not clearly cover every field previously consumed. See [sources.html](sources.html) for the licence analysis, source boundaries and reuse policy.
+The manifest and service worker are present as technical groundwork, but the app-install button and installation instructions are intentionally not offered. Installation readiness has not been fully validated, so this project should currently be used as a browser demo. Basic app-shell caching may work after the first successful online visit.
 
+## Development
 
-## Visitor suggestions and ratings
+The demo is built with plain HTML, CSS and JavaScript. It does not require a framework, build step or third-party JavaScript package.
 
-The browser demo includes separate navigation tabs for suggesting works and rating catalogue entries. Both features use browser `localStorage` only: submissions remain in the visitor's own browser, are not transmitted to the maintainer, and are not shared with other visitors. A public community feature requires a backend, moderation, privacy information and a retention policy; it is not claimed to exist in this static GitHub Pages demo.
+Main files:
 
-## Third-party rights boundary
+- `index.html` — page structure and interface content.
+- `app.js` — catalogue data, filtering, navigation, local suggestions and local ratings.
+- `styles.css` — responsive layout and visual theme.
+- `sources.html` — current source and licence register.
+- `sw.js` — service worker and app-shell cache.
+- `manifest.webmanifest` — web app metadata and icons.
+- `LICENSE` — MIT licence for original project code and documentation only.
 
-The MIT licence applies only to original project-authored code and documentation, not to films, books, music, games, titles, characters, artwork, logos, posters, cover images, third-party datasets or trademarks. The catalogue contains plain-text identifiers and factual metadata only. No third-party ratings, reviews, plot descriptions, posters, covers or promotional images are imported. See [Sources and licences](sources.html) before reusing or contributing content.
+## Licence boundary
+
+The MIT licence applies only to original project-authored code and documentation, to the extent those files contain no third-party material. It does not apply to the underlying films, series, books, music, games, characters, artwork, logos, datasets, trademarks or other third-party material.
+
+The presence of a title or creator name in the catalogue is not a claim of ownership, endorsement or permission to reproduce the underlying work. Review [sources.html](sources.html) before reusing or contributing material.
