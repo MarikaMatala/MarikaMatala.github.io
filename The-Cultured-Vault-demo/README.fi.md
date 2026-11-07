@@ -269,3 +269,10 @@ Alkuperäisten 14 esimerkin lisäksi katalogiin on lisätty 986 teosta eri kateg
 Katalogissa on nyt 1 000 teosta. Kävijä voi ehdottaa puuttuvaa elokuvaa, sarjaa, animaatiota, dokumenttia, podcastia, albumia, peliä tai kirjaa. Ehdotukseen voi lisätä julkaisuvuoden, tekijän ja lisätiedon. Ehdotukset tallentuvat selaimen localStorageen avaimella `cultured-vault-suggestions-v1`; ne näkyvät vain samassa selaimessa ja laitteessa, eikä niitä lähetetä ylläpitäjälle ilman backendia.
 
 Kaikkien teosten oma arvio näytetään tekstinä **Ei vielä arviota**. Oma numeroarvio ja arvosteluteksti lisätään vasta, kun ylläpitäjä itse arvioi teoksen. IMDb-arvosanat näytetään erillisinä ulkoisina viitetietoina.
+
+
+## Kirjojen arviot ja laajennettu katalogi
+
+Ensimmäisellä verkkokäynnillä demo tuo BookRankin julkisista kategoriatiedostoista enintään 1 000 lisäkirjaa. Jokaisesta tuodusta teoksesta saadaan nimi, kirjailija, vuosi, BookRankin yhdistelmäarvio, arvioiden määrä, kategoria, lähdeaineiston tilannepäivä ja suora linkki kirjan lähdesivulle. Ladattu katalogi tallennetaan localStorageen myöhempiä käyntejä varten. Paikallinen aloituskatalogi toimii myös silloin, jos lähdepalvelu ei ole käytettävissä.
+
+BookRank julkaisee pisteet, sijoitukset ja luottamusarvot **CC BY 4.0** -lisenssillä. Teosten lisätiedoissa näkyy lähdemaininta **BookRank (openbookrank.com)** sekä suora linkki lähdesivulle. Piste on BookRankin oma painotettu yhdistelmäarvio, eikä sitä esitetä Goodreads-, Google Books- tai Hardcover-arviona. Lähde ja pisteytysmenetelmä: https://openbookrank.com/en/open-data ja https://openbookrank.com/en/methodology. Lähdekategorioista muodostuvat tyylilajisuodattimet lisätään, kun aineisto latautuu.
