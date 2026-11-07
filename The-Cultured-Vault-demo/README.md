@@ -132,7 +132,7 @@ All app assets use relative paths so the demo can run under a GitHub Pages proje
 
 ### index.html
 
-Defines the semantic page structure, bilingual text, form controls, accessibility landmarks, PWA metadata and local asset links. It links to styles.css and app.js; it should not contain the main styling or application logic.
+Defines the semantic page structure, English interface copy, form controls, accessibility landmarks, PWA metadata and local asset links. It links to styles.css and app.js; it should not contain the main styling or application logic.
 
 ### styles.css
 
@@ -195,7 +195,7 @@ Every item needs a unique id. The type must match a key in typeLabels and a cate
 
 Use year: null when a year is not applicable or intentionally unknown. Demo ratings use a 1–10 scale.
 
-To add a category, update all three places: the data type in app.js, the bilingual typeLabels object, and the category filter buttons in index.html.
+To add a category, update all three places: the data type in app.js, the typeLabels object, and the category filter buttons in index.html.
 
 ## 9. Change the design and interface copy
 
