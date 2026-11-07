@@ -36,7 +36,7 @@
         <h1>The Cultured <span>Vault</span></h1>
         <p class="tagline" data-en="Culture worth discovering. Stories worth remembering.">Culture worth discovering. Stories worth remembering.</p>
       </div>
-      <div class="header-actions"><button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="vault-navigation" aria-label="Open menu"><span></span><span></span><span></span></button><nav class="vault-menu" id="vault-navigation" aria-label="Main navigation" hidden><button class="menu-tab is-active" type="button" data-tab-target="home" data-en="Collection">Collection</button><button class="menu-tab" type="button" data-tab-target="reviews" data-en="Reviews">Reviews</button><button class="menu-tab" type="button" data-tab-target="about" data-en="About the project">About the project</button><button class="menu-tab" type="button" data-tab-target="contact" data-en="Contact">Contact</button><a class="menu-tab menu-link" href="sources.html" data-en="Sources and licences">Sources and licences</a></nav></div>
+      <div class="header-actions"><button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="vault-navigation" aria-label="Open menu"><span></span><span></span><span></span></button><nav class="vault-menu" id="vault-navigation" aria-label="Main navigation" hidden><button class="menu-tab is-active" type="button" data-tab-target="home">Collection</button><button class="menu-tab" type="button" data-tab-target="suggestions">Suggest a work</button><button class="menu-tab" type="button" data-tab-target="reviews">Reviews</button><button class="menu-tab" type="button" data-tab-target="about">About the project</button><a class="menu-tab menu-link" href="sources.html">Sources and licences</a><button class="menu-tab" type="button" data-tab-target="contact">Contact</button></nav></div>
     </header>
 
     <div class="tab-panel is-active" id="panel-home" data-tab-panel="home">
@@ -44,9 +44,9 @@
     <section class="intro-panel">
       <p class="eyebrow" data-en="YOUR PERSONAL CULTURAL ARCHIVE">YOUR PERSONAL CULTURAL ARCHIVE</p>
       <h2><span data-en="Everything worth experiencing.">Everything worth experiencing.</span><br><em data-en="In one vault.">In one vault.</em></h2>
-      <p data-en="Explore films, series, animation, documentaries, podcasts, music, games and books. Open trusted external reference links, and add your own personal rating in this browser.">Explore films, series, animation, documentaries, podcasts, music, games and books. Check film and series ratings on IMDb and Rotten Tomatoes, and view BookRank book scores where available. You can also try adding your own review.</p>
+      <p data-en="Explore films, series, animation, documentaries, podcasts, music, games and books. Open trusted external reference links, and add your own personal rating in this browser.">Explore films, series, animation, documentaries, podcasts, music, games and books. Use external reference links to check original sources, suggest missing works and leave a personal rating in this browser.</p>
       <div class="vault-stats" aria-label="Catalogue summary">
-        <div><strong id="total-count">550</strong><span data-en="works in catalogue">works in catalogue</span></div>
+        <div><strong id="total-count">1,000</strong><span data-en="works in catalogue">works in catalogue</span></div>
         <div><strong>08</strong><span data-en="categories">categories</span></div>
         <div><strong>∞</strong><span data-en="stories to discover">stories to discover</span></div>
       </div>
@@ -89,10 +89,10 @@
 
       <label class="alphabet-jump" for="alphabet-jump-input"><span data-en="Jump to letter or number">Jump to letter or number</span> <input id="alphabet-jump-input" type="search" maxlength="1" placeholder="A–Z / 0–9" aria-label="Letter or number" data-en-aria-label="Letter or number"></label>
       <div class="index-sticky-shell" id="index-sticky-shell" hidden>
-        <nav class="alphabet-nav" id="alphabet-nav" aria-label="Aakkoshakemisto" data-en-aria-label="Alphabetical index" hidden></nav>
-        <nav class="alphabet-nav numeric-nav" id="numeric-nav" aria-label="Numerohakemisto" data-en-aria-label="Numeric index" hidden></nav>
+        <nav class="alphabet-nav" id="alphabet-nav" aria-label="Alphabetical index" data-en-aria-label="Alphabetical index" hidden></nav>
+        <nav class="alphabet-nav numeric-nav" id="numeric-nav" aria-label="Numeric index" data-en-aria-label="Numeric index" hidden></nav>
       </div>
-      <p id="catalogue-source-status" class="result-count" role="status" aria-live="polite" data-en="The catalogue uses manually curated entries. No third-party ratings or reviews are imported.">Book ratings and additional titles are loaded from BookRank when online.</p>
+      <p id="catalogue-source-status" class="result-count" role="status" aria-live="polite" data-en="The catalogue uses manually curated entries. No third-party ratings or reviews are imported.">The catalogue is manually curated. No third-party ratings, reviews, descriptions or images are imported.</p>
       <p class="result-count" id="result-count" role="status" aria-live="polite">Showing works</p>
       <div class="catalogue-grid" id="catalogue-grid"></div>
       <div class="catalogue-pagination" id="catalogue-pagination" hidden>
@@ -105,18 +105,28 @@
 
     </div>
 
+
+    <section class="tab-panel suggestion-panel" id="panel-suggestions" data-tab-panel="suggestions" hidden>
+      <section class="review-demo-section">
+        <p class="eyebrow">HELP CURATE THE VAULT</p>
+        <h2>Suggest a work for the collection.</h2>
+        <p class="contact-intro">Recommend a film, series, animation, documentary, podcast, album, game, book or comic that you think belongs in The Cultured Vault.</p>
+        <aside class="demo-notice" role="note"><strong>Prototype privacy note</strong><p>Suggestions are saved only in this browser's local storage. They are not transmitted to the site owner, shared with other visitors or added to the public catalogue. Do not include personal or sensitive information.</p></aside>
+        <form id="suggestion-form" class="personal-review-form suggestion-form"><div><p class="eyebrow" data-en="GROW THE COLLECTION">GROW THE COLLECTION</p><h3 data-en="Suggest a work to add">Suggest a work to add</h3><p data-en="Is a film, series, animation, album, game, book, podcast or documentary missing? Suggest it here. Suggestions are stored only in this browser and are not sent to the maintainer yet.">Is a film, series, animation, album, game, book, podcast or documentary missing? Suggest it here. Suggestions are stored only in this browser and are not sent to the maintainer yet.</p></div><label><span data-en="Title">Title</span><input id="suggestion-title" type="text" maxlength="120" required></label><label><span data-en="Category">Category</span><select id="suggestion-type" required><option value="film" data-en="Film">Film</option><option value="series" data-en="Series">Series</option><option value="animation" data-en="Animation">Animation</option><option value="documentary" data-en="Documentary">Documentary</option><option value="podcast" data-en="Podcast">Podcast</option><option value="music" data-en="Music / album">Music / album</option><option value="game" data-en="Game">Game</option><option value="book" data-en="Book / comic">Book / comic</option></select></label><label><span data-en="Release year (optional)">Release year (optional)</span><input id="suggestion-year" type="number" min="1880" max="2100"></label><label><span data-en="Creator / director / artist (optional)">Creator / director / artist (optional)</span><input id="suggestion-creator" type="text" maxlength="120"></label><label class="review-comment"><span data-en="Additional note (optional)">Additional note (optional)</span><textarea id="suggestion-note" rows="2" maxlength="400"></textarea></label><button class="vault-button" type="submit" data-en="Save suggestion">Save suggestion</button><p id="suggestion-status" class="form-status" role="status" aria-live="polite"></p></form>
+      </section>
+    </section>
     <div class="tab-panel" id="panel-reviews" data-tab-panel="reviews" hidden>
     <!-- Review-order example and browser-local demo review form. -->
     <section class="review-demo-section">
       <div class="section-heading">
         <p class="eyebrow" data-en="REVIEWS AND COMMUNITY">REVIEWS AND COMMUNITY</p>
-        <h2><span data-en="My rating first.">My rating first.</span><br><em data-en="External source links separately.">External source links separately.</em></h2>
-        <p data-en="Each independent deployment can feature its instance owner's review before the community average and member reviews. This demo illustrates how that experience could work.">Each independent deployment can feature its instance owner's review before the community average and member reviews. This demo illustrates how that experience could work.</p>
+        <h2><span data-en="Your rating matters.">My rating first.</span><br><em data-en="External source links separately.">External source links separately.</em></h2>
+        <p data-en="Choose a work and submit one personal rating per title. You can update your rating later. Ratings are private to this browser in this prototype; they are not combined into a public community score.">Each independent deployment can feature its instance owner's review before the community average and member reviews. This demo illustrates how that experience could work.</p>
       </div>
       <div class="review-order">
         <article class="review-card owner-review">
-          <div class="review-top"><span class="review-label" data-en="INSTANCE OWNER REVIEW">INSTANCE OWNER REVIEW</span><strong data-en="Not rated yet">Not rated yet</strong></div>
-          <h3 data-en="The owner's perspective comes first.">The owner's perspective comes first.</h3>
+          <div class="review-top"><span class="review-label" data-en="PROJECT OWNER REVIEW">INSTANCE OWNER REVIEW</span><strong data-en="Not rated yet">Not rated yet</strong></div>
+          <h3 data-en="Project owner ratings are not published yet.">The owner's perspective comes first.</h3>
           <p data-en="No personal rating or review text has been added yet. The status is shown as “Not rated yet”.">No personal rating or review text has been added yet. The status is shown as “Not rated yet”.</p>
           <span class="review-signature" data-en="Demo instance owner">Demo instance owner</span>
         </article>
@@ -127,39 +137,31 @@
       <form id="personal-review-form" class="personal-review-form">
         <div>
           <p class="eyebrow" data-en="TRY IT YOURSELF">TRY IT YOURSELF</p>
-          <h3 data-en="Add your demo review">Add your demo review</h3>
-          <p data-en="Choose a work from the catalogue first. Your rating and comment are stored only in this browser's local storage.">Choose a work from the catalogue first. Your rating and comment are stored only in this browser's local storage.</p>
+          <h3 data-en="Rate a work">Add your demo review</h3>
+          <p data-en="Select a title and give it a rating from 1 to 10. Your rating and optional comment are saved only in this browser.">Choose a work from the catalogue first. Your rating and comment are stored only in this browser's local storage.</p>
         </div>
         <label><span data-en="Choose a work">Choose a work</span><select id="review-work" required></select></label>
         <label><span data-en="Your rating (1–10)">Your rating (1–10)</span><input id="review-rating" type="number" min="1" max="10" step="0.5" value="8" required></label>
         <label class="review-comment"><span data-en="Comment (optional)">Comment (optional)</span><textarea id="review-comment" rows="3" maxlength="600" placeholder="What did you think about this work?" data-en-placeholder="What did you think about this work?"></textarea></label>
-        <button class="vault-button" type="submit" data-en="Save demo review">Save demo review</button>
+        <button class="vault-button" type="submit" data-en="Save my rating">Save demo review</button>
         <p id="review-status" class="form-status" role="status" aria-live="polite"></p>
       </form>
       <div class="local-review-list" id="local-review-list" aria-live="polite"></div>
-<form id="suggestion-form" class="personal-review-form suggestion-form"><div><p class="eyebrow" data-en="GROW THE COLLECTION">GROW THE COLLECTION</p><h3 data-en="Suggest a work to add">Suggest a work to add</h3><p data-en="Is a film, series, animation, album, game, book, podcast or documentary missing? Suggest it here. Suggestions are stored only in this browser and are not sent to the maintainer yet.">Is a film, series, animation, album, game, book, podcast or documentary missing? Suggest it here. Suggestions are stored only in this browser and are not sent to the maintainer yet.</p></div><label><span data-en="Title">Title</span><input id="suggestion-title" type="text" maxlength="120" required></label><label><span data-en="Category">Category</span><select id="suggestion-type" required><option value="film" data-en="Film">Film</option><option value="series" data-en="Series">Series</option><option value="animation" data-en="Animation">Animation</option><option value="documentary" data-en="Documentary">Documentary</option><option value="podcast" data-en="Podcast">Podcast</option><option value="music" data-en="Music / album">Music / album</option><option value="game" data-en="Game">Game</option><option value="book" data-en="Book / comic">Book / comic</option></select></label><label><span data-en="Release year (optional)">Release year (optional)</span><input id="suggestion-year" type="number" min="1880" max="2100"></label><label><span data-en="Creator / director / artist (optional)">Creator / director / artist (optional)</span><input id="suggestion-creator" type="text" maxlength="120"></label><label class="review-comment"><span data-en="Additional note (optional)">Additional note (optional)</span><textarea id="suggestion-note" rows="2" maxlength="400"></textarea></label><button class="vault-button" type="submit" data-en="Save suggestion">Save suggestion</button><p id="suggestion-status" class="form-status" role="status" aria-live="polite"></p></form><div class="local-review-list" id="local-suggestion-list" aria-live="polite"></div>
+<div class="local-review-list" id="local-suggestion-list" aria-live="polite"></div>
 
     </section>
 
     </div>
-    <section class="tab-panel contact-panel" id="panel-contact" data-tab-panel="contact" hidden>
-      <p class="eyebrow" data-en="GET IN TOUCH">GET IN TOUCH</p>
-      <h2 data-en="Let's start a conversation.">Let's start a conversation.</h2>
-      <p class="contact-intro" data-en="LinkedIn is the best way to contact me. My profile has more information about my skills, experience and professional interests. Feel free to contact me about entry-level and junior roles, paid company trainee and graduate programmes, or paid internships open to graduates. I am not looking for internships required as part of a Finnish university of applied sciences degree or unpaid work or internships. I am interested in IT, digital media, communications and creative fields. My first preference is on-site and hybrid work in the Helsinki metropolitan area (Helsinki, Espoo and Vantaa). I also consider suitable opportunities in Jyväskylä and am willing to relocate to the Helsinki metropolitan area for work. I am also open to remote roles and work involving travel in Finland and internationally. My preferred start date for on-site work is January 2027.">LinkedIn is the best way to contact me. My profile has more information about my skills, experience and professional interests. Feel free to contact me about entry-level and junior roles, paid company trainee and graduate programmes, or paid internships open to graduates. I am not looking for internships required as part of a Finnish university of applied sciences degree or unpaid work or internships. I am interested in IT, digital media, communications and creative fields. My first preference is on-site and hybrid work in the Helsinki metropolitan area (Helsinki, Espoo and Vantaa). I also consider suitable opportunities in Jyväskylä and am willing to relocate to the Helsinki metropolitan area for work. I am also open to remote roles and work involving travel in Finland and internationally. My preferred start date for on-site work is January 2027.</p>
-      <div class="contact-grid">
-        <article class="contact-card contact-card-primary"><h3>LinkedIn ↗</h3><p data-en="The best way to reach me. My LinkedIn profile has more information about my skills and experience.">The best way to reach me. My LinkedIn profile has more information about my skills and experience.</p><a href="https://www.linkedin.com/in/marika-matalamaki/" target="_blank" rel="noopener noreferrer" data-en="Contact me on LinkedIn ↗">Contact me on LinkedIn ↗</a></article>
-        <article class="contact-card"><h3 data-en="Email">Email</h3><p data-en="You can also reach me by email.">You can also reach me by email.</p><a href="mailto:marika.matalamaki@gmail.com">marika.matalamaki@gmail.com ↗</a></article>
-        <article class="contact-card"><h3>GitHub</h3><p data-en="Code, projects and technical examples.">Code, projects and technical examples.</p><a href="https://github.com/MarikaMatala" target="_blank" rel="noopener noreferrer">github.com/MarikaMatala ↗</a><a href="https://github.com/MarikaMatala/The-Cultured-Vault" target="_blank" rel="noopener noreferrer" data-en="The Cultured Vault project ↗">The Cultured Vault project ↗</a></article>
-        <article class="contact-card"><h3>GitHub Sponsors ♡</h3><p data-en="You can support my open-source projects and continued learning through GitHub Sponsors.">You can support my open-source projects and continued learning through GitHub Sponsors.</p><a href="https://github.com/sponsors/MarikaMatala" target="_blank" rel="noopener noreferrer" data-en="Sponsor me on GitHub ↗">Sponsor me on GitHub ↗</a></article>
-        <article class="contact-card"><h3>Buy Me a Coffee ☕</h3><p data-en="You can support my learning and creative open-source projects, including costs for software, tools and learning materials.">You can support my learning and creative open-source projects, including costs for software, tools and learning materials.</p><a href="https://buymeacoffee.com/marikamatala" target="_blank" rel="noopener noreferrer" data-en="Support me on Buy Me a Coffee ↗">Support me on Buy Me a Coffee ↗</a></article>
-      </div>
-      <section class="contact-support"><h3 data-en="Career support, sponsorship and collaboration">Career support, sponsorship and collaboration</h3>
-        <p data-en="I am building my career in IT, digital media and creative fields, and I am open to projects of different sizes. Support can take the form of financial contributions, project sponsorship, software and licences, development tools, equipment or other useful supplies. Enquiries from individuals and companies are welcome.">I am building my career in IT, digital media and creative fields, and I am open to projects of different sizes. Support can take the form of financial contributions, project sponsorship, software and licences, development tools, equipment or other useful supplies. Enquiries from individuals and companies are welcome.</p>
-        <p data-en="I am interested in projects involving web development, digital services, visual design, content creation, photography, video, communications and social media. I am also open to advertising and marketing projects, including agreed social media collaborations and sponsored posts. The scope, deliverables, compensation and any visibility are agreed in advance. Commercial collaborations and sponsored content are clearly disclosed.">I am interested in projects involving web development, digital services, visual design, content creation, photography, video, communications and social media. I am also open to advertising and marketing projects, including agreed social media collaborations and sponsored posts. The scope, deliverables, compensation and any visibility are agreed in advance. Commercial collaborations and sponsored content are clearly disclosed.</p>
-        <div class="contact-actions"><a class="vault-button" href="https://github.com/sponsors/MarikaMatala" target="_blank" rel="noopener noreferrer" data-en="Support me on GitHub Sponsors ↗">Support me on GitHub Sponsors ↗</a><a class="vault-button" href="https://buymeacoffee.com/marikamatala" target="_blank" rel="noopener noreferrer" data-en="Support my work on Buy Me a Coffee ↗">Support my work on Buy Me a Coffee ↗</a></div>
-      </section>
-    </section>
-    <div class="tab-panel about-panel" id="panel-about" data-tab-panel="about" hidden>
+    
+
+    <footer class="demo-footer">
+      <p>THE CULTURED VAULT · BROWSER DEMO</p>
+      <p data-en="Open the vault. Discover something extraordinary.">Open the vault. Discover something extraordinary.</p>
+      <a href="sources.html" data-en="Sources and licences">Sources and licences</a><br><a href="#" data-tab-target="contact" class="footer-tab-link" data-en="Contact">Contact</a><br><a href="https://github.com/MarikaMatala/The-Cultured-Vault" target="_blank" rel="noopener noreferrer" data-en="Explore the open-source project ↗">Explore the open-source project ↗</a>
+    </footer>
+  </main>
+</body>
+</html<div class="tab-panel about-panel" id="panel-about" data-tab-panel="about" hidden>
     <!-- Instructions for adding this PWA to Android and Apple home screens. -->
     <aside class="install-help" role="note">
       <strong data-en="Add to your home screen">Add to your home screen</strong>
@@ -174,12 +176,23 @@
     </aside>
 
     </div>
-
-    <footer class="demo-footer">
-      <p>THE CULTURED VAULT · BROWSER DEMO</p>
-      <p data-en="Open the vault. Discover something extraordinary.">Open the vault. Discover something extraordinary.</p>
-      <a href="sources.html" data-en="Sources and licences">Sources and licences</a><br><a href="#" data-tab-target="contact" class="footer-tab-link" data-en="Contact">Contact</a><br><a href="https://github.com/MarikaMatala/The-Cultured-Vault" target="_blank" rel="noopener noreferrer" data-en="Explore the open-source project ↗">Explore the open-source project ↗</a>
-    </footer>
-  </main>
-</body>
-</html>
+<section class="tab-panel contact-panel" id="panel-contact" data-tab-panel="contact" hidden>
+      <p class="eyebrow">GET IN TOUCH</p>
+      <h2>Let's start a conversation.</h2>
+      <p class="contact-intro">LinkedIn is the best way to contact me. My profile has more information about my skills, experience and professional interests. Feel free to contact me about entry-level and junior roles, paid company trainee and graduate programmes, or paid internships open to graduates, including people who graduated within the past 12 months. I am not looking for internships required as part of a Finnish university of applied sciences degree or unpaid work or internships. I am interested in roles in IT, digital media, communications and creative fields. My first preference is on-site and hybrid work in the Helsinki metropolitan area (Helsinki, Espoo and Vantaa). I also consider suitable opportunities in Jyväskylä and am willing to relocate to the Helsinki metropolitan area for work. I am also open to remote roles and work involving travel in Finland and internationally. My preferred start date for on-site work is January 2027.</p>
+      <div class="contact-grid">
+        <article class="contact-card contact-card-primary"><h3>LinkedIn ↗</h3><p>The best way to reach me. My LinkedIn profile has more information about my skills and experience. You can also message me to ask for work samples.</p><a href="https://www.linkedin.com/in/marika-matalamaki/" target="_blank" rel="noopener noreferrer">Contact me on LinkedIn ↗</a></article>
+        <article class="contact-card"><h3>Email</h3><p>You can also reach me by email.</p><a href="mailto:marika.matalamaki@gmail.com">marika.matalamaki@gmail.com ↗</a></article>
+        <article class="contact-card"><h3>GitHub</h3><p>Code, coursework and technical examples. The GitHub README also contains copyright and usage information.</p><a href="https://github.com/MarikaMatala" target="_blank" rel="noopener noreferrer">github.com/MarikaMatala ↗</a><a href="https://github.com/MarikaMatala/MarikaMatala.github.io#copyright-and-use--tekijänoikeudet-ja-käyttö" target="_blank" rel="noopener noreferrer">Read the README and usage terms ↗</a></article>
+        <article class="contact-card"><h3>GitHub Sponsors ♡</h3><p>You can support my open-source interests, projects and continued learning through GitHub Sponsors.</p><a href="https://github.com/sponsors/MarikaMatala" target="_blank" rel="noopener noreferrer">Sponsor me on GitHub ↗</a></article>
+        <article class="contact-card"><h3>Buy Me a Coffee ☕</h3><p>You can support my learning and personal creative and open-source projects, helping with costs such as software, development tools and learning materials.</p><a href="https://buymeacoffee.com/marikamatala" target="_blank" rel="noopener noreferrer">Support me on Buy Me a Coffee ↗</a></article>
+      </div>
+      <section class="contact-support">
+        <h3>Career support, sponsorship and collaboration</h3>
+        <p>I am building my career in IT, digital media and creative fields, and I am open to putting my skills into practice through projects of all sizes. Support for my work can take different forms: financial contributions, project-based sponsorship, software and licences, development tools, equipment or other useful supplies. I welcome enquiries from both individuals and companies.</p>
+        <p>I am interested in projects involving web development, digital services, visual design, content creation, photography, video, communications and social media. I am also open to advertising and marketing projects, including agreed social media collaborations and sponsored posts on my channels. The scope, deliverables, compensation and any visibility or publication arrangements are agreed in advance. Commercial collaborations and sponsored content are clearly disclosed.</p>
+        <p>You can also support my work through Buy Me a Coffee. Contributions help me keep learning, develop my skills and work on personal, creative and open-source projects. They can go towards practical resources such as software, development tools, learning materials and equipment for my work.</p>
+        <div class="contact-actions"><a class="vault-button" href="https://github.com/sponsors/MarikaMatala" target="_blank" rel="noopener noreferrer">Support me on GitHub Sponsors ↗</a><a class="vault-button" href="https://buymeacoffee.com/marikamatala" target="_blank" rel="noopener noreferrer">Support my work on Buy Me a Coffee ↗</a></div>
+      </section>
+    </section>
+>
