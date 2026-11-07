@@ -153,7 +153,7 @@ const ui = {
 fi:{count: n => `Näytetään ${n} teosta`, owner:"Oma arvio", notRated:"Ei vielä arviota", imdb:"IMDb-arvio", rtCritics:"RT-kriitikot", rtAudience:"RT-yleisö", reception:"Vastaanotto", ratingsMissing:"Ei vahvistettua arvosanaa", review:"Näytä arvosanatiedot", hide:"Piilota arvosanatiedot", noReview:"Ei vielä arviota.", saved:"Demoarvio tallennettu tähän selaimeen.", yourReview:"Oma paikallinen demoarviosi", choose:"Valitse teos", imdbMissing:"IMDb-arviota ei ole vahvistettu tähän demoon.", suggestionSaved:"Ehdotus tallennettu tähän selaimeen. Se ei vielä välity ylläpitäjälle."},
 en:{count: n => `Showing ${n} works`, owner:"My rating", notRated:"Not rated yet", imdb:"IMDb rating", rtCritics:"RT critics", rtAudience:"RT audience", reception:"Reception", ratingsMissing:"No verified score", review:"Show rating details", hide:"Hide rating details", noReview:"Not rated yet.", saved:"Demo review saved in this browser.", yourReview:"Your local demo review", choose:"Choose a work", imdbMissing:"Check the current rating on the IMDb source page.", suggestionSaved:"Suggestion saved in this browser. It is not sent to the maintainer yet."}
 };
-let language = "en";
+let language = "fi";
 let activeCategory = "all";
 let cataloguePage = 0;
 const cataloguePageSize = 36;
@@ -319,13 +319,13 @@ document.getElementById("suggestion-form").addEventListener("submit",event=>{eve
 setLanguage("en");
 const alphabetJumpInput=document.getElementById("alphabet-jump-input");
 alphabetJumpInput.addEventListener("input",()=>{
- const initial=alphabetJumpInput.value.trim().toLocaleUpperCase("en");
+ const initial=alphabetJumpInput.value.trim().toLocaleUpperCase(language==="fi"?"fi":"en");
  const isNumber=/^\d$/.test(initial);
- const isLetter=/^[A-Z]$/.test(initial);
+ const isLetter=/^[A-ZÅÄÖ]$/i.test(initial);
  if(!isNumber&&!isLetter)return;
  sortSelect.value="title";
  const matching=filteredWorks();
- const targetIndex=matching.findIndex(work=>{const first=work.title.trim().charAt(0).toLocaleUpperCase("en");return first===initial;});
+ const targetIndex=matching.findIndex(work=>{const first=work.title.trim().charAt(0).toLocaleUpperCase(language==="fi"?"fi":"en");return first===initial;});
  cataloguePage=targetIndex>=0?Math.floor(targetIndex/cataloguePageSize):0;
  renderCatalogue();
  const targetId=isNumber?"catalogue-number-"+initial:"catalogue-letter-"+initial;
