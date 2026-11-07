@@ -8,7 +8,6 @@ The Cultured Vault is an open-source cultural catalogue concept. This folder con
 
 - Live demo: https://marikamatala.github.io/The-Cultured-Vault-demo/
 - Main project: https://github.com/MarikaMatala/The-Cultured-Vault
-- Finnish guide: [README.fi.md](README.fi.md)
 - Short phone installation guide: [INSTALLATION.md](INSTALLATION.md)
 
 ## 1. What this demo does
@@ -21,7 +20,7 @@ This is a lightweight front-end prototype. It does not require a framework, buil
 - an A–Z / Å–Ä–Ö letter index and a 0–9 numeric index; both jump to matching catalogue groups, disable unavailable entries and follow the current search and category filters; the sticky indexes remain accessible while scrolling;
 - separate owner ratings, BookRank reader scores for books, and outbound IMDb / Rotten Tomatoes lookup links only (no copied IMDb or Rotten Tomatoes scores);
 - a form for adding a personal demo rating and optional comment;
-- Finnish and English interface text;
+- English-only interface and documentation;
 - responsive layouts for phones, tablets and desktop browsers;
 - PWA metadata and app icons;
 - a service worker that caches the app shell for basic offline use.
@@ -32,7 +31,7 @@ The goal is to make the concept testable before implementing a production backen
 
 IMDb and Rotten Tomatoes are provided as outbound lookup links only. The demo does not store or republish their numeric scores. This is deliberate: IMDb's non-commercial dataset terms restrict republication into an online/offline movie database, and Rotten Tomatoes' terms restrict copying, data extraction and republication. Visitors are directed to the original services to check current values.
 
-BookRank is the numeric reader-score source for imported book records. Its scores, ranks and confidence values are published under CC BY 4.0 with attribution to **BookRank (openbookrank.com)**. See the bilingual [Sources and licences page](sources.html) for the complete source inventory, upstream data chain, reasons for use, technical flow and limitations.
+BookRank is the numeric reader-score source for imported book records. Its scores, ranks and confidence values are published under CC BY 4.0 with attribution to **BookRank (openbookrank.com)**. See the [Sources and licences page](sources.html) for the complete source inventory, upstream data chain, reasons for use, technical flow and limitations.
 
 
 ## 2. What it does not do
@@ -119,7 +118,6 @@ The-Cultured-Vault-demo/
 ├── sw.js                    # App-shell cache and basic offline support
 ├── INSTALLATION.md          # Short Android and iOS installation guide
 ├── README.md                # This detailed English guide
-├── README.fi.md             # Detailed Finnish guide
 ├── LICENSE                  # MIT licence for original demo code
 └── icons/
     ├── vault-icon.svg       # General app icon
@@ -149,7 +147,7 @@ Contains the original sample works plus 986 additions (1,000 entries total), inc
 3. builds catalogue cards with DOM methods;
 4. displays the owner placeholder separately from BookRank book scores and IMDb / Rotten Tomatoes source links;
 5. stores personal demo reviews in localStorage;
-6. switches between Finnish and English;
+6. uses a single English-language interface;
 7. registers the service worker on HTTPS or localhost.
 
 Visitor-entered text is rendered using textContent instead of being interpreted as HTML.
@@ -199,10 +197,10 @@ Use year: null when a year is not applicable or intentionally unknown. Demo rati
 
 To add a category, update all three places: the data type in app.js, the bilingual typeLabels object, and the category filter buttons in index.html.
 
-## 9. Change the design and languages
+## 9. Change the design and interface copy
 
 - Change theme colours in the :root variables at the top of styles.css.
-- Update static Finnish and English text through data-fi and data-en attributes in index.html.
+- Update the English interface copy through data-en attributes in index.html.
 - Update dynamic labels in the ui and typeLabels objects in app.js.
 - Keep visible keyboard focus and sufficient colour contrast.
 - Test at narrow phone, tablet and desktop widths.
@@ -239,7 +237,7 @@ Before publishing changes, test:
 - phone layout at 320–390 CSS pixels;
 - browser zoom at 200%;
 - reduced-motion preference;
-- Finnish and English labels;
+- English interface labels;
 - search, sorting and every category filter;
 - review validation and local persistence;
 - PWA installation and offline reload over HTTPS.
@@ -280,7 +278,7 @@ BookRank publishes its scores, ranks and confidence values under **CC BY 4.0**. 
 
 ## Sources and licences page
 
-The demo includes a bilingual [sources.html](sources.html) source register. It distinguishes direct data sources from external lookup links and BookRank's upstream providers. It also explains manually curated metadata, browser-local storage, and why third-party posters and covers are not copied.
+The demo includes an English-language [sources.html](sources.html) source register. It distinguishes direct data sources from external lookup links and BookRank's upstream providers. It also explains manually curated metadata, browser-local storage, and why third-party posters and covers are not copied.
 
 
 ## Open-source licence and third-party material
