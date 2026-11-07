@@ -19,7 +19,7 @@ This is a lightweight front-end prototype. It does not require a framework, buil
 - search by title, creator, country and genre;
 - category filters and sorting, with alphabetical title order as the default;
 - an A–Z / Å–Ä–Ö letter index and a 0–9 numeric index; both jump to matching catalogue groups, disable unavailable entries and follow the current search and category filters; the sticky indexes remain accessible while scrolling;
-- separate owner ratings and external reference scores: IMDb ratings (0–10), Rotten Tomatoes critic scores (Tomatometer) and audience scores (Popcornmeter);
+- separate owner ratings, BookRank reader scores for books, and outbound IMDb / Rotten Tomatoes lookup links;
 - a form for adding a personal demo rating and optional comment;
 - Finnish and English interface text;
 - responsive layouts for phones, tablets and desktop browsers;
@@ -146,7 +146,7 @@ Contains the original sample works plus 986 additions (1,000 entries total), inc
 1. reads the sample catalogue;
 2. filters and sorts works using the controls, with alphabetic letter groups and quick navigation when title order is active;
 3. builds catalogue cards with DOM methods;
-4. displays the owner placeholder separately from available IMDb and Rotten Tomatoes reference scores (Tomatometer and Popcornmeter);
+4. displays the owner placeholder separately from BookRank book scores and IMDb / Rotten Tomatoes source links;
 5. stores personal demo reviews in localStorage;
 6. switches between Finnish and English;
 7. registers the service worker on HTTPS or localhost.
@@ -258,7 +258,7 @@ For an independent fork, use your own hosting, domain, database and API credenti
 
 ## Personal, IMDb and Rotten Tomatoes ratings
 
-Every catalogue entry starts with the instance-owner status **Not rated yet**. No personal owner score or review text is prefilled. IMDb ratings, when present, are shown separately. IMDb user ratings and Rotten Tomatoes Tomatometer (critics) and Popcornmeter (audience) percentages are shown separately and are never presented as the owner's rating. Rotten Tomatoes values are added only when the matching work and source page have been verified. A dash means no verified value has been added, not a zero score. Reception labels are derived from available ratings; they do not claim actual viewership or popularity. Values are static snapshots and may change. Each work has IMDb and Rotten Tomatoes search links for checking current ratings. IMDb rating data is sourced from IMDb chart/list pages; official non-commercial dataset details and terms are available at https://developer.imdb.com/non-commercial-datasets/.
+Every catalogue entry starts with the instance-owner status **Not rated yet**. No personal owner score or review text is prefilled. BookRank scores are shown for imported book records only, with rating counts and direct source-page links. IMDb and Rotten Tomatoes are outbound lookup links only; their numeric scores are not stored or republished in this catalogue. This avoids treating third-party website content as freely reusable data. A missing score does not mean zero. See the [Sources and licences page](sources.html) for source roles, terms and attribution.
 
 The catalogue contains 986 additions beyond the original 14 sample entries. Curated metadata (creator or author, release/publication year, genres and country of origin) has now been added to 322 of the 450 newest entries. The remaining 128 newest entries still need metadata research. Six additional pre-existing entries were also eligible for missing-field completion. Metadata is only filled where the title can be identified confidently; missing values are left blank. No IMDb or community ratings are invented.
 
@@ -267,7 +267,7 @@ The catalogue contains 986 additions beyond the original 14 sample entries. Cura
 
 The catalogue now contains 1,000 works. Visitors can suggest a missing film, series, animation, documentary, podcast, album, game or book, with optional year, creator and notes. Suggestions are stored in this browser's localStorage under `cultured-vault-suggestions-v1`; they remain local to this browser and device and are not sent to the maintainer without a backend.
 
-Every work displays **Not rated yet** for the instance owner's rating. No owner score or review text is prefilled. IMDb ratings are displayed separately as external reference information.
+Every work displays **Not rated yet** for the instance owner's rating. No owner score or review text is prefilled. BookRank book scores are separate external reader data; IMDb and Rotten Tomatoes are source links only.
 
 
 ## Book ratings and expanded catalogue
