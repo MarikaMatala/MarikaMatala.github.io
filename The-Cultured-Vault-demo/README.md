@@ -29,7 +29,7 @@ The goal is to make the concept testable before implementing a production backen
 
 ### External ratings and source policy
 
-IMDb and Rotten Tomatoes are provided as outbound lookup links only. The demo does not store or republish their numeric scores. This is deliberate: IMDb's non-commercial dataset terms restrict republication into an online/offline movie database, and Rotten Tomatoes' terms restrict copying, data extraction and republication. Visitors are directed to the original services to check current values.
+IMDb is provided as an outbound lookup link only. The Vault does not store or republish IMDb scores. Rotten Tomatoes links are omitted because its current terms restrict deep links to pages other than the home page without prior written consent.
 
 The BookRank importer has been disabled because its published CC BY 4.0 statement did not clearly cover every field previously imported by this demo. No BookRank scores or records are currently imported. See the [Sources and licences page](sources.html) for the licence review and reuse policy.
 
