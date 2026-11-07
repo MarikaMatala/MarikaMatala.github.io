@@ -19,7 +19,7 @@ Demo on tarkoituksella kevyt eikä tarvitse ulkoisia kirjastoja tai build-vaihet
 - haun nimen, tekijän, maan ja tyylilajien perusteella;
 - kategoriasuodattimet ja lajittelun, oletuksena aakkosjärjestys;
 - A–Ö- ja Å–Ä–Ö-aakkoshakemiston sekä 0–9-numerohakemiston; molemmista voi hypätä suoraan vastaavaan teosryhmään, puuttuvat vaihtoehdot eivät ole valittavissa ja hakemistot mukautuvat hakuun ja kategoriasuodatukseen; hakemistot pysyvät näkyvissä sivua vieritettäessä;
-- ylläpitäjän oma arvio erillään BookRankin kirja-arvioista sekä IMDb- ja Rotten Tomatoes -lähdesivuille vievistä linkeistä;
+- ylläpitäjän oma arvio erillään BookRankin kirja-arvioista sekä IMDb- ja Rotten Tomatoes -lähdesivuille vievistä linkeistä (niiden numeroarvoja ei kopioida);
 - lomakkeen oman paikallisen demoarvion ja vapaaehtoisen kommentin lisäämiseen;
 - suomen- ja englanninkielisen käyttöliittymän;
 - puhelimille, tableteille ja tietokoneille mukautuvan asettelun;
@@ -261,7 +261,7 @@ Jos julkaiset oman haarautetun version, käytä omaa hostausta, verkkotunnusta, 
 
 Kaikkien katalogin teosten ylläpitäjän oma arvio näkyy aluksi tekstinä **Ei vielä arviota**. Oma numeroarvio ja arvosteluteksti lisätään vasta, kun ylläpitäjä itse arvioi teoksen. BookRank-pisteet näytetään vain tuoduille kirjoille erillisenä lukija-arviona, mukana arvioiden määrä ja suora lähdelinkki. IMDb ja Rotten Tomatoes ovat ulkoisia tarkistuslinkkejä; niiden numeerisia arvoja ei tallenneta eikä julkaista tässä katalogissa. Puuttuva arvosana ei tarkoita nollaa. Katso [Lähteet ja lisenssit -sivu](sources.html), josta löytyvät lähteiden käyttötarkoitukset, ehdot ja lähdemerkinnät.
 
-Alkuperäisten 14 esimerkin lisäksi katalogiin on lisätty 986 teosta eri kategorioista. Uusimmista 450 lisäyksestä 322 teokselle on nyt täydennetty tekijä tai kirjailija, julkaisu- tai ilmestymisvuosi, lajityypit ja alkuperämaa. Kuudelle aiemmalle teokselle on lisäksi täydennetty puuttuvia tietoja. Uusimmista lisäyksistä 128 odottaa vielä metatietojen selvittämistä. Tiedot lisätään vain, kun nimike voidaan tunnistaa riittävän varmasti; epävarmat kentät jätetään tyhjiksi. IMDb- tai yhteisöarvosanoja ei keksitä.
+Alkuperäisten 14 esimerkin lisäksi katalogiin on lisätty 986 teosta eri kategorioista. Uusimmista 450 lisäyksestä 322 teokselle on nyt täydennetty tekijä tai kirjailija, julkaisu- tai ilmestymisvuosi, lajityypit ja alkuperämaa. Kuudelle aiemmalle teokselle on lisäksi täydennetty puuttuvia tietoja. Uusimmista lisäyksistä 128 odottaa vielä metatietojen selvittämistä. Tiedot lisätään vain, kun nimike voidaan tunnistaa riittävän varmasti; epävarmat kentät jätetään tyhjiksi. IMDb- tai Rotten Tomatoes -arvosanoja ei kopioida eikä yhteisöarvosanoja keksitä.
 
 
 ## Teosehdotukset ja omat arviot
@@ -288,3 +288,8 @@ BookRank on tuotujen kirjatietojen numeeristen lukija-arvioiden lähde. Sen pist
 ## Lähteet ja lisenssit -sivu
 
 Demossa on kaksikielinen [sources.html-lähdesivu](sources.html). Se erottaa suoraan käytetyt aineistolähteet ulkoisista tarkistuslinkeistä sekä BookRankin omista taustalähteistä. Sivulla kerrotaan myös käsin ylläpidetyistä metatiedoista, selaimeen tallennettavista tiedoista sekä siitä, miksi kolmansien osapuolten julisteita ja kansikuvia ei kopioida.
+
+
+## Avoimen lähdekoodin lisenssi ja kolmannen osapuolen aineisto
+
+Demon oma HTML-, CSS- ja JavaScript-koodi sekä dokumentaatio julkaistaan MIT-lisenssillä (katso [LICENSE](LICENSE)). MIT ei anna oikeuksia katalogissa mainittujen kolmansien osapuolten teoksiin, nimiin tai tavaramerkkeihin. IMDb ja Rotten Tomatoes ovat vain ulkoisia hakulinkkejä: niiden numeerisia arvosanoja, arvosteluja, julisteita, still-kuvia tai kansikuvia ei kopioida. BookRank-pisteet tuodaan vain BookRankin ilmoittaman CC BY 4.0 -lisenssin puitteissa ja lähdemerkinnällä. BookRankin metodologiassa mainituista taustapalveluista ei haeta suoraan eikä kopioida niiden raakadataa. Katso [Lähteet ja lisenssit](sources.html).
