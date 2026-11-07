@@ -30,10 +30,7 @@ Tämä on käyttöliittymäprototyyppi. Sen tarkoitus on tehdä konseptista koke
 
 ### IMDb- ja Rotten Tomatoes -arviot
 
-Teoskortit ja teosten lisätiedot voivat näyttää IMDb-arvosanan sekä Rotten Tomatoesin kaksi erillistä prosenttiarviota: **Tomatometer** kuvaa kriitikoiden arvioita ja **Popcornmeter** yleisön arvioita. Arvot ovat ulkoisista lähteistä koottuja viitetietoja, eivät tämän projektin omia arvioita. Tiedot näytetään vain silloin, kun ne on voitu yhdistää oikeaan teokseen ja lähdetieto on saatavilla. Puuttuva arvo merkitään puuttuvaksi — sitä ei tulkita nollaksi eikä arvailla.
-
-Vastaanottotunniste (esimerkiksi myönteinen tai mielipiteitä jakava vastaanotto) muodostetaan saatavilla olevien arvosanojen perusteella. Se on suuntaa antava luokitus, ei mittaus teoksen suosiosta, katselumääristä tai arvioiden lukumäärästä. Rotten Tomatoes -arvioita ei ole kaikille katalogin mediatyypeille.
-
+IMDb ja Rotten Tomatoes ovat vain ulkoisia tarkistuslinkkejä. Demo ei hae niiden numeroarvosanoja eikä kopioi käyttäjäarvioita, kriitikkoprosentteja tai muita palveluiden sisältöjä paikalliseen katalogiin. Käyttäjä voi avata alkuperäisen palvelun ja tarkistaa ajantasaiset arvot siellä. Tämä raja vähentää kolmannen osapuolen dataehtoihin ja uudelleenjulkaisuun liittyvää riskiä. Kirjojen BookRank-pisteet ovat erillistä CC BY 4.0 -lisensoitua aineistoa, ja niiden lähde mainitaan näkyvästi.
 
 ## 2. Mitä demo ei vielä tee?
 
