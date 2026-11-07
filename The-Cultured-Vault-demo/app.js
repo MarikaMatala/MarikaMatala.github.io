@@ -231,7 +231,7 @@ function renderLocalReviews(){
  reviews.forEach(review=>{
   const work=works.find(w=>w.id===review.id);if(!work)return;
   const item=document.createElement("article");item.className="local-review";
-  const heading=document.createElement("strong");heading.textContent=work.title+" · "+ui[language].yourReview+" · "+review.rating+"/10";
+  const heading=document.createElement("strong");heading.textContent=work.title+" · Your rating: "+review.rating+"/10";
   const comment=document.createElement("p");comment.textContent=review.comment|| (language==="fi"?"Ei kommenttia.":"No comment.");
   item.append(heading,comment);container.append(item);
  });
@@ -259,7 +259,7 @@ document.getElementById("personal-review-form").addEventListener("submit",event=
  const rating=Number(document.getElementById("review-rating").value);
  const id=reviewSelect.value;const comment=document.getElementById("review-comment").value.trim();
  if(!Number.isFinite(rating)||rating<1||rating>10){return}
- const reviews=getLocalReviews();reviews.push({id,rating,comment,createdAt:new Date().toISOString()});
+ const reviews=getLocalReviews();const entry={id,rating,comment,createdAt:new Date().toISOString()};const existingIndex=reviews.findIndex(item=>item.id===id);if(existingIndex>=0)reviews[existingIndex]=entry;else reviews.push(entry);
  try{localStorage.setItem(storageKey,JSON.stringify(reviews));document.getElementById("review-status").textContent=ui[language].saved;document.getElementById("review-comment").value="";renderLocalReviews()}
  catch{document.getElementById("review-status").textContent=language==="fi"?"Selaimen tallennustila ei ole käytettävissä.":"Browser storage is unavailable."}
 });
@@ -296,7 +296,7 @@ if ("serviceWorker" in navigator && (location.protocol === "https:" || location.
  });
 }
 
-// verification marker: reviewed 2026-11-06
+// verification marker: licence and visitor interaction review 2026-11-07
 
 
 // 8. Accessible hamburger navigation and compact tab views.
