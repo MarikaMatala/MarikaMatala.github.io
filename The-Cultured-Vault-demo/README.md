@@ -268,3 +268,10 @@ The catalogue contains 986 additions beyond the original 14 sample entries. Cura
 The catalogue now contains 1,000 works. Visitors can suggest a missing film, series, animation, documentary, podcast, album, game or book, with optional year, creator and notes. Suggestions are stored in this browser's localStorage under `cultured-vault-suggestions-v1`; they remain local to this browser and device and are not sent to the maintainer without a backend.
 
 Every work displays **Not rated yet** for the instance owner's rating. No owner score or review text is prefilled. IMDb ratings are displayed separately as external reference information.
+
+
+## Book ratings and expanded catalogue
+
+On the first online visit, the demo imports up to 1,000 additional book records from BookRank's public category JSON files. Each imported record includes its title, author, year, BookRank aggregate reader score, rating count, category, source snapshot and direct book page. The downloaded catalogue is cached in localStorage for later visits. The local starter catalogue remains usable if the source is unavailable.
+
+BookRank publishes its scores, ranks and confidence values under **CC BY 4.0**. Attribution is shown in the book details as **BookRank (openbookrank.com)**, with a direct source-page link. The score is BookRank's own weighted aggregate; it is not presented as a Goodreads, Google Books or Hardcover score. The BookRank source page and scoring method are documented at https://openbookrank.com/en/open-data and https://openbookrank.com/en/methodology. Genre filters are added from the source categories as the data loads.
