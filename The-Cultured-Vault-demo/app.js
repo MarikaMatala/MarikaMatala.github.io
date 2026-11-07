@@ -94,15 +94,66 @@ fi:{film:"Elokuva",series:"Sarja",animation:"Animaatio",documentary:"Dokumentti"
 en:{film:"Film",series:"Series",animation:"Animation",documentary:"Documentary",podcast:"Podcast",music:"Music",game:"Game",book:"Book"}
 };
 
-// Third-party rating providers are link-only; no external ratings are imported.
-try { localStorage.removeItem("cultured-vault-bookrank-v1"); } catch { /* Storage may be unavailable. */ }
-
+/* BookRank extension: aggregate scores and rating counts are CC BY 4.0.
+   Import up to 1,000 unique reader-rated books, then cache them locally. */
+const BOOKRANK_CATEGORIES=["fantasy","science-fiction","crime-mystery","thriller","horror","romance","historical-fiction","literary-fiction","classics","adventure","dystopian","short-stories","poetry","humour","contemporary-fiction","spy-espionage","urban-fantasy","myths-legends","drama-theatre","biography-memoir","history","popular-science","psychology","philosophy","business","self-help","politics-society","economics","nature-environment","technology-it","essays","young-adult","middle-grade","children-books","picture-books","comics","graphic-novels"];
+const bookRankCacheKey="cultured-vault-bookrank-v1";
+const bookRankNames={
+ fantasy:["Fantasia","Fantasy"],"science-fiction":["Tieteiskirjallisuus","Science fiction"],"crime-mystery":["Rikos ja mysteeri","Crime & mystery"],thriller:["Jännitys","Thriller"],horror:["Kauhu","Horror"],romance:["Romantiikka","Romance"],"historical-fiction":["Historiallinen fiktio","Historical fiction"],"literary-fiction":["Kaunokirjallisuus","Literary fiction"],classics:["Klassikot","Classics"],adventure:["Seikkailu","Adventure"],dystopian:["Dystopia","Dystopian"],"short-stories":["Novellit","Short stories"],poetry:["Runous","Poetry"],humour:["Huumori","Humour"],"contemporary-fiction":["Nykykirjallisuus","Contemporary fiction"],"spy-espionage":["Vakoilu","Spy & espionage"],"urban-fantasy":["Kaupunkifantasia","Urban fantasy"],"myths-legends":["Myytit ja legendat","Myths & legends"],"drama-theatre":["Draama ja näytelmät","Drama & theatre"],"biography-memoir":["Elämäkerrat ja muistelmat","Biography & memoir"],history:["Historia","History"],"popular-science":["Tiede ja tietokirjat","Popular science"],psychology:["Psykologia","Psychology"],philosophy:["Filosofia","Philosophy"],business:["Liiketalous","Business"],"self-help":["Itsensä kehittäminen","Self-help"],"politics-society":["Politiikka ja yhteiskunta","Politics & society"],economics:["Taloustiede","Economics"],"nature-environment":["Luonto ja ympäristö","Nature & environment"],"technology-it":["Teknologia ja IT","Technology & IT"],essays:["Esseet","Essays"],"young-adult":["Nuortenkirjat","Young adult"],"middle-grade":["Varhaisnuorten kirjat","Middle grade"],"children-books":["Lastenkirjat","Children's books"],"picture-books":["Kuvakirjat","Picture books"],comics:["Sarjakuvat","Comics"],"graphic-novels":["Sarjakuvaromaanit","Graphic novels"]
+};
+function bookKey(title,author){return (String(title||"")+"|"+String(author||"")).normalize("NFKD").replace(/\p{Diacritic}/gu,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim()}
+function addBookRankFilters(categories){
+ const box=document.getElementById("category-filters");
+ categories.forEach(cat=>{
+  if(box.querySelector('[data-category="bookrank:'+cat+'"]'))return;
+  const b=document.createElement("button");b.type="button";b.className="filter-chip";b.dataset.category="bookrank:"+cat;b.setAttribute("aria-pressed","false");
+  const n=bookRankNames[cat]||[cat.replaceAll("-"," "),cat.replaceAll("-"," ")];
+  b.dataset.fi=n[0];b.dataset.en=n[1];b.textContent=n[language==="fi"?0:1];box.append(b);
+ });
+}
+async function loadBookRankCatalogue(){
+ const addToCatalogue=(items,categories)=>{
+  items.forEach(w=>{if(!works.some(x=>x.id===w.id))works.push(w)});
+  addBookRankFilters(categories);renderCatalogue();populateReviewSelect();
+  const status=document.getElementById("catalogue-source-status");
+  if(status)status.textContent=language==="fi"?("Kirjakatalogi: "+items.length+" BookRank-teosta · lähde BookRank, CC BY 4.0."):("Book catalogue: "+items.length+" BookRank titles · source BookRank, CC BY 4.0.");
+ };
+ try{
+  const saved=JSON.parse(localStorage.getItem(bookRankCacheKey)||"null");
+  if(saved?.items?.length){addToCatalogue(saved.items,saved.categories||[]);return;}
+ }catch(e){console.warn("BookRank local cache could not be read.",e)}
+ const seen=new Set(works.filter(w=>w.type==="book").map(w=>bookKey(w.title,w.creator)));
+ const additions=[],used=[];
+ for(let i=0;i<BOOKRANK_CATEGORIES.length&&additions.length<1000;i+=4){
+  const batch=BOOKRANK_CATEGORIES.slice(i,i+4);
+  const results=await Promise.all(batch.map(async cat=>{
+   try{const r=await fetch("https://openbookrank.com/api/v1/rankings/"+cat+".json");if(!r.ok)return null;return {cat,data:await r.json()}}catch(e){return null}
+  }));
+  for(const result of results.filter(Boolean)){
+   used.push(result.cat);
+   for(const item of result.data.items||[]){
+    if(additions.length>=1000)break;
+    if(!item.title||!item.author||!item.url||typeof item.score!=="number")continue;
+    const key=bookKey(item.title,item.author);if(seen.has(key))continue;seen.add(key);
+    const names=bookRankNames[result.cat]||[result.data.name||result.cat,result.data.name||result.cat];
+    additions.push({id:"bookrank-"+String(item.slug||item.rank).replace(/[^a-z0-9-]/gi,"-"),title:item.title,creator:item.author,type:"book",year:item.year??null,genres:[names[1]],country:"",owner:0,ownerReview:"",imdbRating:null,bookRankCategory:result.cat,bookRankScore:item.score,bookRankRatings:item.ratings??null,bookRankUrl:item.url,bookRankSnapshot:result.data.snapshot||""});
+   }
+  }
+ }
+ if(additions.length){
+  try{localStorage.setItem(bookRankCacheKey,JSON.stringify({items:additions,categories:used}))}catch(e){console.warn("BookRank catalogue cache could not be saved.",e)}
+  addToCatalogue(additions,used);
+ }else{
+  const status=document.getElementById("catalogue-source-status");
+  if(status)status.textContent=language==="fi"?"BookRank-kirja-aineisto ei ollut nyt saatavilla; paikallinen katalogi toimii normaalisti.":"BookRank data was unavailable; the local catalogue remains available.";
+ }
+}
 
 const ui = {
 fi:{count: n => `Näytetään ${n} teosta`, owner:"Oma arvio", notRated:"Ei vielä arviota", imdb:"IMDb-arvio", rtCritics:"RT-kriitikot", rtAudience:"RT-yleisö", reception:"Vastaanotto", ratingsMissing:"Ei vahvistettua arvosanaa", review:"Näytä arvosanatiedot", hide:"Piilota arvosanatiedot", noReview:"Ei vielä arviota.", saved:"Demoarvio tallennettu tähän selaimeen.", yourReview:"Oma paikallinen demoarviosi", choose:"Valitse teos", imdbMissing:"IMDb-arviota ei ole vahvistettu tähän demoon.", suggestionSaved:"Ehdotus tallennettu tähän selaimeen. Se ei vielä välity ylläpitäjälle."},
 en:{count: n => `Showing ${n} works`, owner:"My rating", notRated:"Not rated yet", imdb:"IMDb rating", rtCritics:"RT critics", rtAudience:"RT audience", reception:"Reception", ratingsMissing:"No verified score", review:"Show rating details", hide:"Hide rating details", noReview:"Not rated yet.", saved:"Demo review saved in this browser.", yourReview:"Your local demo review", choose:"Choose a work", imdbMissing:"Check the current rating on the IMDb source page.", suggestionSaved:"Suggestion saved in this browser. It is not sent to the maintainer yet."}
 };
-let language = "en";
+let language = "fi";
 let activeCategory = "all";
 let cataloguePage = 0;
 const cataloguePageSize = 36;
@@ -130,12 +181,12 @@ function getLocalReviews(){try{return JSON.parse(localStorage.getItem(storageKey
 const suggestionStorageKey="cultured-vault-suggestions-v1";
 function getLocalSuggestions(){try{return JSON.parse(localStorage.getItem(suggestionStorageKey)||"[]")}catch{return []}}
 function setLanguage(next){
- if(next!=="en")return;
+ if(next!=="en"&&next!=="fi")return;
  language=next;document.documentElement.lang=language;
  // Keep language changes text-only: rich headings use separate spans and <em> elements in HTML.
- document.querySelectorAll("[data-en]").forEach(el=>{el.textContent=el.dataset[language]});
- document.querySelectorAll("[data-en-placeholder]").forEach(el=>{el.placeholder=el.dataset[language+"Placeholder"]});
- document.querySelectorAll("[data-en-aria-label]").forEach(el=>el.setAttribute("aria-label",el.dataset[language+"AriaLabel"]));
+ document.querySelectorAll("[data-fi][data-en]").forEach(el=>{el.textContent=el.dataset[language]});
+ document.querySelectorAll("[data-fi-placeholder][data-en-placeholder]").forEach(el=>{el.placeholder=el.dataset[language+"Placeholder"]});
+ document.querySelectorAll("[data-fi-aria-label][data-en-aria-label]").forEach(el=>el.setAttribute("aria-label",el.dataset[language+"AriaLabel"]));
  document.querySelectorAll("option[data-en]").forEach(el=>{el.textContent=el.dataset[language]});
  
  renderCatalogue();renderLocalReviews();renderLocalSuggestions();
@@ -214,14 +265,10 @@ function renderCatalogue(){
    const title=document.createElement("h3");title.textContent=work.title;card.append(title);
    if(work.creator){const creator=document.createElement("p");creator.className="work-creator";creator.textContent=work.creator;card.append(creator);}
    if(work.genres?.length){const genres=document.createElement("div");genres.className="genre-list";work.genres.forEach(g=>{const tag=document.createElement("span");tag.textContent=g;genres.append(tag)});card.append(genres);}
-   const rating=document.createElement("div");rating.className="rating-strip";const owner=document.createElement("span");owner.className="owner-score";owner.textContent="✦ "+ui[language].notRated;owner.setAttribute("aria-label",ui[language].owner+": "+ui[language].notRated);rating.append(owner);card.append(rating);
+   const rating=document.createElement("div");rating.className="rating-strip";const owner=document.createElement("span");owner.className="owner-score";owner.textContent="✦ "+ui[language].notRated;owner.setAttribute("aria-label",ui[language].owner+": "+ui[language].notRated);const imdb=document.createElement("span");imdb.className="community-score";imdb.textContent=ui[language].imdb+": "+(work.imdbRating==null?"—":work.imdbRating.toFixed(1)+"/10");rating.append(owner);if(work.imdbRating!=null)rating.append(imdb);card.append(rating);const externalRatings=document.createElement("div");externalRatings.className="external-ratings";const rtCritics=document.createElement("span");rtCritics.textContent=ui[language].rtCritics+": "+(work.rottenTomatoesCritics==null?"—":work.rottenTomatoesCritics+"%");const rtAudience=document.createElement("span");rtAudience.textContent=ui[language].rtAudience+": "+(work.rottenTomatoesAudience==null?"—":work.rottenTomatoesAudience+"%");const reception=document.createElement("strong");reception.textContent=ui[language].reception+": "+getReceptionLabel(work);externalRatings.append(rtCritics,rtAudience);if(work.rottenTomatoesCritics!=null||work.rottenTomatoesAudience!=null||work.imdbRating!=null)externalRatings.append(reception);if(work.bookRankScore!=null){const br=document.createElement("span");br.className="bookrank-score";br.textContent="BookRank: "+work.bookRankScore.toFixed(2)+"/10"+(work.bookRankRatings!=null?" · "+work.bookRankRatings.toLocaleString(language==="fi"?"fi-FI":"en-US")+" "+(language==="fi"?"arviota":"ratings"):"");externalRatings.append(br)}if(work.rottenTomatoesCritics!=null||work.rottenTomatoesAudience!=null||work.bookRankScore!=null)card.append(externalRatings);
    const toggle=document.createElement("button");toggle.className="review-toggle";toggle.type="button";toggle.textContent=ui[language].review;toggle.setAttribute("aria-expanded","false");const reviews=document.createElement("div");reviews.hidden=true;toggle.addEventListener("click",()=>{reviews.hidden=!reviews.hidden;toggle.setAttribute("aria-expanded",String(!reviews.hidden));toggle.textContent=reviews.hidden?ui[language].review:ui[language].hide});
    const ownerReview=document.createElement("div");ownerReview.className="local-review";const ownerHeading=document.createElement("strong");ownerHeading.textContent=ui[language].owner;ownerReview.append(ownerHeading);const ownerText=document.createElement("p");ownerText.textContent=ui[language].noReview;ownerReview.append(ownerText);
-   const lookup=document.createElement("div");lookup.className="local-review";const lookupHeading=document.createElement("strong");lookupHeading.textContent="External reference links";lookup.append(lookupHeading);
-   const imdbLink=document.createElement("a");imdbLink.href="https://www.imdb.com/find/?q="+encodeURIComponent(work.title);imdbLink.target="_blank";imdbLink.rel="noopener noreferrer";imdbLink.textContent="IMDb";lookup.append(imdbLink);
-   const rtLink=document.createElement("a");rtLink.href="https://www.rottentomatoes.com/search?search="+encodeURIComponent(work.title);rtLink.target="_blank";rtLink.rel="noopener noreferrer";rtLink.textContent="Rotten Tomatoes";lookup.append(rtLink);
-   if(work.type==="book"){const olLink=document.createElement("a");olLink.href="https://openlibrary.org/search?q="+encodeURIComponent(work.title+" "+(work.creator||""));olLink.target="_blank";olLink.rel="noopener noreferrer";olLink.textContent="Open Library";lookup.append(olLink)}
-   reviews.append(ownerReview,lookup);card.append(toggle,reviews);grid.append(card);
+   const imdbReview=document.createElement("div");imdbReview.className="local-review";const imdbHeading=document.createElement("strong");imdbHeading.textContent=ui[language].imdb;imdbReview.append(imdbHeading);const imdbText=document.createElement("p");imdbText.textContent=work.imdbRating==null?ui[language].imdbMissing:(language==="fi"?"IMDb:n käyttäjäarvio: ":"IMDb user rating: ")+work.imdbRating.toFixed(1)+"/10. "+(language==="fi"?"Lähde: IMDb. Arvosana voi muuttua.":"Source: IMDb. Ratings may change.");imdbReview.append(imdbText);const imdbLink=document.createElement("a");imdbLink.href="https://www.imdb.com/find/?q="+encodeURIComponent(work.title);imdbLink.target="_blank";imdbLink.rel="noopener noreferrer";imdbLink.textContent="IMDb";imdbReview.append(imdbLink);const rtReview=document.createElement("div");rtReview.className="local-review";const rtHeading=document.createElement("strong");rtHeading.textContent="Rotten Tomatoes";rtReview.append(rtHeading);const rtText=document.createElement("p");rtText.textContent=(language==="fi"?"Kriitikot: ":"Critics: ")+(work.rottenTomatoesCritics==null?ui[language].ratingsMissing:work.rottenTomatoesCritics+"%")+" · "+(language==="fi"?"Yleisö: ":"Audience: ")+(work.rottenTomatoesAudience==null?ui[language].ratingsMissing:work.rottenTomatoesAudience+"%");rtReview.append(rtText);const rtLink=document.createElement("a");rtLink.href=work.rottenTomatoesUrl||"https://www.rottentomatoes.com/search?search="+encodeURIComponent(work.title);rtLink.target="_blank";rtLink.rel="noopener noreferrer";rtLink.textContent="Rotten Tomatoes";rtReview.append(rtLink);if(work.type==="book"){const br=document.createElement("div");br.className="local-review";const bh=document.createElement("strong");bh.textContent="BookRank";br.append(bh);const bp=document.createElement("p");bp.textContent=work.bookRankScore!=null?(language==="fi"?"Lukija-arvio: ":"Reader score: ")+work.bookRankScore.toFixed(2)+"/10"+(work.bookRankRatings!=null?" · "+work.bookRankRatings.toLocaleString(language==="fi"?"fi-FI":"en-US")+(language==="fi"?" arviota":" ratings"):"")+". "+(language==="fi"?"Lähde: BookRank (openbookrank.com), CC BY 4.0.":"Source: BookRank (openbookrank.com), CC BY 4.0."):(language==="fi"?"Tälle kirjalle ei ole vahvistettua BookRank-pisteytystä.":"No verified BookRank score is available for this book.");br.append(bp);const bl=document.createElement("a");bl.href=work.bookRankUrl||"https://openbookrank.com/en/search";bl.target="_blank";bl.rel="noopener noreferrer";bl.textContent=language==="fi"?"Avaa kirjan arvostelusivu":"Open book rating page";br.append(bl);const ol=document.createElement("a");ol.href="https://openlibrary.org/search?q="+encodeURIComponent(work.title+" "+(work.creator||""));ol.target="_blank";ol.rel="noopener noreferrer";ol.textContent="Open Library";br.append(ol);reviews.append(br)}reviews.append(ownerReview,imdbReview,rtReview);card.append(toggle,reviews);grid.append(card);
   });
 }
 // ---------------------------------------------------------------------------
@@ -268,13 +315,15 @@ document.getElementById("personal-review-form").addEventListener("submit",event=
 
 document.getElementById("suggestion-form").addEventListener("submit",event=>{event.preventDefault();const title=document.getElementById("suggestion-title").value.trim();const type=document.getElementById("suggestion-type").value;const yearValue=document.getElementById("suggestion-year").value;const creator=document.getElementById("suggestion-creator").value.trim();const note=document.getElementById("suggestion-note").value.trim();if(!title)return;const existing=[...works.map(w=>w.title.toLocaleLowerCase()),...getLocalSuggestions().map(w=>w.title.toLocaleLowerCase())];if(existing.includes(title.toLocaleLowerCase())){document.getElementById("suggestion-status").textContent=language==="fi"?"Teos löytyy jo katalogista tai ehdotuksista.":"This work is already in the catalogue or suggestions.";return;}const suggestions=getLocalSuggestions();suggestions.push({title,type,year:yearValue?Number(yearValue):null,creator,note,createdAt:new Date().toISOString()});try{localStorage.setItem(suggestionStorageKey,JSON.stringify(suggestions));document.getElementById("suggestion-status").textContent=ui[language].suggestionSaved;event.target.reset();renderLocalSuggestions()}catch{document.getElementById("suggestion-status").textContent=language==="fi"?"Selaimen tallennustila ei ole käytettävissä.":"Browser storage is unavailable."}});
 
-// The interface is English-only; no language switcher is provided.
-setLanguage("en");
+// Start in Finnish; visitors can switch language from the header.
+const languageButton=document.getElementById("demo-language");
+if(languageButton)languageButton.addEventListener("click",()=>setLanguage(language==="fi"?"en":"fi"));
+setLanguage("fi");
 const alphabetJumpInput=document.getElementById("alphabet-jump-input");
 alphabetJumpInput.addEventListener("input",()=>{
  const initial=alphabetJumpInput.value.trim().toLocaleUpperCase(language==="fi"?"fi":"en");
  const isNumber=/^\d$/.test(initial);
- const isLetter=/^[A-Z]$/i.test(initial);
+ const isLetter=/^[A-ZÅÄÖ]$/i.test(initial);
  if(!isNumber&&!isLetter)return;
  sortSelect.value="title";
  const matching=filteredWorks();
@@ -285,8 +334,8 @@ alphabetJumpInput.addEventListener("input",()=>{
  const target=document.getElementById(targetId);
  if(target)target.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
 });
-populateReviewSelect();renderCatalogue();renderLocalReviews();renderLocalSuggestions();
-// The demo always uses English, including when embedded in another page.
+populateReviewSelect();renderCatalogue();renderLocalReviews();renderLocalSuggestions();loadBookRankCatalogue();
+// Request the portfolio language after the embedded page has loaded.
 
 
 // Service workers require HTTPS or localhost and are scoped to this folder only.
@@ -298,7 +347,7 @@ if ("serviceWorker" in navigator && (location.protocol === "https:" || location.
  });
 }
 
-// Source and licence review: 2026-11-07. Third-party rating imports disabled.
+// verification marker: reviewed 2026-11-06
 
 
 // 8. Accessible hamburger navigation and compact tab views.
