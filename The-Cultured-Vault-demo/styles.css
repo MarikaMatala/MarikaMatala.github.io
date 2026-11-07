@@ -259,3 +259,21 @@ select,input,textarea{background:#151310;color:var(--text);border:1px solid var(
 .page-button:disabled{opacity:.35;cursor:not-allowed}
 .page-status{color:var(--muted);font-size:.82rem;font-weight:700;text-align:center}
 @media(max-width:480px){.catalogue-pagination{gap:8px;padding:10px}.page-button{flex:1 1 42%;padding:8px 10px}.page-status{order:-1;flex-basis:100%}}
+
+
+/* 15. Separate suggestion, review and contact tabs. */
+.tab-panel[hidden]{display:none!important}
+.contact-panel{margin-top:38px;padding:clamp(20px,4vw,38px);border:1px solid var(--line);border-radius:16px;background:linear-gradient(145deg,rgba(45,39,30,.72),rgba(30,27,22,.94))}
+.contact-panel h2,.suggestion-panel h2{font-size:clamp(1.8rem,4vw,2.6rem);margin:.2em 0 .5em}
+.contact-intro{max-width:850px;color:var(--muted)}
+.contact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:24px}
+.contact-card{padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+.contact-card-primary{border-color:var(--bronze)}
+.contact-card h3,.contact-support h3{margin:0 0 8px;font-size:1.2rem}
+.contact-card p,.contact-support p{color:var(--muted);font-size:.9rem}
+.contact-card a{display:inline-block;margin:5px 12px 0 0}
+.contact-support{margin-top:20px;padding:22px;border:1px solid rgba(193,139,85,.5);border-radius:14px;background:rgba(193,139,85,.07)}
+.contact-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.contact-actions .vault-button{text-decoration:none}
+.suggestion-panel .demo-notice{margin:18px 0}
+@media(max-width:600px){.contact-grid{grid-template-columns:1fr}.contact-panel{padding:18px}.contact-actions{flex-direction:column;align-items:flex-start}}
