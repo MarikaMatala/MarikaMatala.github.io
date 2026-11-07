@@ -141,7 +141,7 @@ Contains the visual design. Theme variables are at the top in the :root block. E
 
 ### app.js
 
-Contains the original sample works plus 986 additions (1,000 entries total), and browser-side behaviour:
+Contains the original sample works plus 986 additions (1,000 entries total), including a curated metadata enrichment pass for 328 catalogue records, and browser-side behaviour:
 
 1. reads the sample catalogue;
 2. filters and sorts works using the controls, with alphabetic letter groups and quick navigation when title order is active;
@@ -260,7 +260,7 @@ For an independent fork, use your own hosting, domain, database and API credenti
 
 Every catalogue entry starts with the instance-owner status **Not rated yet**. No personal owner score or review text is prefilled. IMDb ratings, when present, are shown separately. IMDb user ratings and Rotten Tomatoes Tomatometer (critics) and Popcornmeter (audience) percentages are shown separately and are never presented as the owner's rating. Rotten Tomatoes values are added only when the matching work and source page have been verified. A dash means no verified value has been added, not a zero score. Reception labels are derived from available ratings; they do not claim actual viewership or popularity. Values are static snapshots and may change. Each work has IMDb and Rotten Tomatoes search links for checking current ratings. IMDb rating data is sourced from IMDb chart/list pages; official non-commercial dataset details and terms are available at https://developer.imdb.com/non-commercial-datasets/.
 
-The catalogue contains 986 additions beyond the original 14 sample entries. Some entries have not yet been enriched with creator, genre or country metadata.
+The catalogue contains 986 additions beyond the original 14 sample entries. Curated metadata (creator or author, release/publication year, genres and country of origin) has now been added to 322 of the 450 newest entries. The remaining 128 newest entries still need metadata research. Six additional pre-existing entries were also eligible for missing-field completion. Metadata is only filled where the title can be identified confidently; missing values are left blank. No IMDb or community ratings are invented.
 
 
 ## Catalogue suggestions and owner ratings
