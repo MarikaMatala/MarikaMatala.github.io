@@ -96,6 +96,11 @@
       <p id="catalogue-source-status" class="result-count" role="status" aria-live="polite" data-fi="Kirjojen arviot ja lisäteokset ladataan BookRankista verkkoyhteyden kautta." data-en="Book ratings and additional titles are loaded from BookRank when online.">Kirjojen arviot ja lisäteokset ladataan BookRankista verkkoyhteyden kautta.</p>
       <p class="result-count" id="result-count" role="status" aria-live="polite">Näytetään teokset</p>
       <div class="catalogue-grid" id="catalogue-grid"></div>
+      <div class="catalogue-pagination" id="catalogue-pagination" hidden>
+        <button class="page-button" id="catalogue-prev" type="button" data-fi="← Edellinen" data-en="← Previous" disabled>← Edellinen</button>
+        <span id="catalogue-page-status" class="page-status" aria-live="polite"></span>
+        <button class="page-button" id="catalogue-next" type="button" data-fi="Seuraava →" data-en="Next →">Seuraava →</button>
+      </div>
       <p class="empty-state" id="empty-state" hidden data-fi="Hakuehdoilla ei löytynyt teoksia. Kokeile toista hakusanaa tai kategoriaa." data-en="No works match your search. Try another keyword or category.">Hakuehdoilla ei löytynyt teoksia. Kokeile toista hakusanaa tai kategoriaa.</p>
     </section>
 
