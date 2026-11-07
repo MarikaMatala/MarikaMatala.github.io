@@ -15,7 +15,7 @@ The Cultured Vault on avoimen lähdekoodin kulttuurikatalogiprojekti. Tämä kan
 
 Demo on tarkoituksella kevyt eikä tarvitse ulkoisia kirjastoja tai build-vaihetta. Se sisältää:
 
-- 550 teoksen esimerkkikatalogin useista kulttuurisisällön kategorioista; alkuperäisten 14 esimerkin lisäksi mukana on 536 lisättyä teosta. Laajennettu valikoima sisältää Studio Ghiblin ja Disneyn animaatioita, 1990- ja 2000-lukujen nostalgiaelokuvia, yliluonnollisia ja kulttisarjoja sekä tunnettuja Netflix-sarjoja, kuten Stranger Things, Wednesday, Squid Game, Dark ja Bridgerton;
+- 1 000 teoksen esimerkkikatalogin useista kulttuurisisällön kategorioista; alkuperäisten 14 esimerkin lisäksi mukana on 986 lisättyä teosta. Laajennettu valikoima sisältää Studio Ghiblin ja Disneyn animaatioita, 1990- ja 2000-lukujen nostalgiaelokuvia, yliluonnollisia ja kulttisarjoja sekä tunnettuja Netflix-sarjoja, kuten Stranger Things, Wednesday, Squid Game, Dark ja Bridgerton;
 - haun nimen, tekijän, maan ja tyylilajien perusteella;
 - kategoriasuodattimet ja lajittelun, oletuksena aakkosjärjestys;
 - A–Ö- ja Å–Ä–Ö-aakkoshakemiston sekä 0–9-numerohakemiston; molemmista voi hypätä suoraan vastaavaan teosryhmään, puuttuvat vaihtoehdot eivät ole valittavissa ja hakemistot mukautuvat hakuun ja kategoriasuodatukseen; hakemistot pysyvät näkyvissä sivua vieritettäessä;
@@ -141,7 +141,7 @@ Sisältää visuaalisen ilmeen. Värit on määritelty tiedoston alussa :root-mu
 
 ### app.js
 
-Sisältää alkuperäisen works-katalogin ja 536 lisäystä (yhteensä 550 teosta) sekä selaimessa toimivan logiikan:
+Sisältää alkuperäisen works-katalogin ja 986 lisäystä (yhteensä 1 000 teosta) sekä selaimessa toimivan logiikan:
 
 1. lukee esimerkkikatalogin;
 2. suodattaa ja lajittelee teoksia käyttöliittymän valintojen perusteella; näyttää aakkosjärjestyksessä kirjainryhmät sekä niihin johtavat A–Ö- ja 0–9-hakemistot;
@@ -261,11 +261,11 @@ Jos julkaiset oman haarautetun version, käytä omaa hostausta, verkkotunnusta, 
 
 Kaikkien katalogin teosten ylläpitäjän oma arvio näkyy aluksi tekstinä **Ei vielä arviota**. Oma numeroarvio ja arvosteluteksti lisätään vasta, kun ylläpitäjä itse arvioi teoksen. IMDb:n käyttäjäarvosanat sekä Rotten Tomatoesin kriitikoiden Tomatometer- ja yleisön Popcornmeter-prosentit näytetään erillisinä ulkoisina viitetietoina, ei ylläpitäjän arvioina. Rotten Tomatoes -arvot lisätään vain, kun oikea teos ja lähdesivu on vahvistettu. Ajatusviiva tarkoittaa, ettei vahvistettua arvoa ole lisätty tähän demoon – se ei tarkoita nollaa. Vastaanottoluokitus muodostetaan saatavilla olevista arvosanoista; se ei väitä teoksen katsojamäärää tai todellista suosiota. Arvot ovat staattinen lähdehetken tilanne ja voivat muuttua. Jokaisesta teoksesta on IMDb- ja Rotten Tomatoes -hakulinkit ajantasaisen arvon tarkistamiseen. IMDb:n virallisen ei-kaupallisen aineiston kuvaus ja ehdot: https://developer.imdb.com/non-commercial-datasets/.
 
-Alkuperäisten 14 esimerkin lisäksi katalogiin on lisätty 486 teosta eri kategorioista. Kaikkien nimikkeiden tekijä-, lajityyppi- ja maatietoja ei ole vielä täydennetty. Osasta uusista teoksista puuttuu vielä tekijä-, lajityyppi- tai maatietoja.
+Alkuperäisten 14 esimerkin lisäksi katalogiin on lisätty 986 teosta eri kategorioista. Kaikkien nimikkeiden tekijä-, lajityyppi- ja maatietoja ei ole vielä täydennetty. Osasta uusista teoksista puuttuu vielä tekijä-, lajityyppi- tai maatietoja.
 
 
 ## Teosehdotukset ja omat arviot
 
-Katalogissa on nyt 550 teosta. Kävijä voi ehdottaa puuttuvaa elokuvaa, sarjaa, animaatiota, dokumenttia, podcastia, albumia, peliä tai kirjaa. Ehdotukseen voi lisätä julkaisuvuoden, tekijän ja lisätiedon. Ehdotukset tallentuvat selaimen localStorageen avaimella `cultured-vault-suggestions-v1`; ne näkyvät vain samassa selaimessa ja laitteessa, eikä niitä lähetetä ylläpitäjälle ilman backendia.
+Katalogissa on nyt 1 000 teosta. Kävijä voi ehdottaa puuttuvaa elokuvaa, sarjaa, animaatiota, dokumenttia, podcastia, albumia, peliä tai kirjaa. Ehdotukseen voi lisätä julkaisuvuoden, tekijän ja lisätiedon. Ehdotukset tallentuvat selaimen localStorageen avaimella `cultured-vault-suggestions-v1`; ne näkyvät vain samassa selaimessa ja laitteessa, eikä niitä lähetetä ylläpitäjälle ilman backendia.
 
 Kaikkien teosten oma arvio näytetään tekstinä **Ei vielä arviota**. Oma numeroarvio ja arvosteluteksti lisätään vasta, kun ylläpitäjä itse arvioi teoksen. IMDb-arvosanat näytetään erillisinä ulkoisina viitetietoina.
