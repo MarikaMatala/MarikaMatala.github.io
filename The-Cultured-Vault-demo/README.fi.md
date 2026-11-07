@@ -19,7 +19,7 @@ Demo on tarkoituksella kevyt eikä tarvitse ulkoisia kirjastoja tai build-vaihet
 - haun nimen, tekijän, maan ja tyylilajien perusteella;
 - kategoriasuodattimet ja lajittelun, oletuksena aakkosjärjestys;
 - A–Ö- ja Å–Ä–Ö-aakkoshakemiston sekä 0–9-numerohakemiston; molemmista voi hypätä suoraan vastaavaan teosryhmään, puuttuvat vaihtoehdot eivät ole valittavissa ja hakemistot mukautuvat hakuun ja kategoriasuodatukseen; hakemistot pysyvät näkyvissä sivua vieritettäessä;
-- ylläpitäjän oma arvio erillään ulkoisista viitearvioista: IMDb-arvosana (asteikko 0–10) sekä Rotten Tomatoesin kriitikkoarvio (Tomatometer) ja yleisöarvio (Popcornmeter);
+- ylläpitäjän oma arvio erillään BookRankin kirja-arvioista sekä IMDb- ja Rotten Tomatoes -lähdesivuille vievistä linkeistä;
 - lomakkeen oman paikallisen demoarvion ja vapaaehtoisen kommentin lisäämiseen;
 - suomen- ja englanninkielisen käyttöliittymän;
 - puhelimille, tableteille ja tietokoneille mukautuvan asettelun;
@@ -37,7 +37,7 @@ Vastaanottotunniste (esimerkiksi myönteinen tai mielipiteitä jakava vastaanott
 
 ## 2. Mitä demo ei vielä tee?
 
-Tässä versiossa ei ole rekisteröitymistä, kirjautumista, käyttäjäprofiileja, palvelinta, API:a, yhteistä tietokantaa, muille näkyviä käyttäjäarvioita, laitteiden välistä synkronointia, reaaliaikaista kolmannen osapuolen metadataa, natiivia APK- tai IPA-pakettia eikä Google Play- tai App Store -julkaisua.
+Tässä versiossa ei ole rekisteröitymistä, kirjautumista, käyttäjäprofiileja, omaa backend-rajapintaa, yhteistä tietokantaa, muille näkyviä käyttäjäarvioita, laitteiden välistä synkronointia, reaaliaikaisia IMDb- tai Rotten Tomatoes -arvioita, natiivia APK- tai IPA-pakettia eikä Google Play- tai App Store -julkaisua. Demo tekee kuitenkin lukuoikeudella pyyntöjä BookRankin julkiseen rajapintaan valinnaista kirjakatalogia varten.
 
 Katalogin teokset ja arvosanat ovat esimerkkejä. Demoon kirjoitettu arvio tallentuu vain kyseisen selaimen localStorage-tallennustilaan. Sitä ei lähetetä palvelimelle eikä GitHubiin. Selaintietojen tyhjentäminen voi poistaa arvion. Älä syötä salasanoja, yksityisiä tietoja tai arkaluonteista sisältöä.
 
@@ -146,7 +146,7 @@ Sisältää alkuperäisen works-katalogin ja 986 lisäystä (yhteensä 1 000 teo
 1. lukee esimerkkikatalogin;
 2. suodattaa ja lajittelee teoksia käyttöliittymän valintojen perusteella; näyttää aakkosjärjestyksessä kirjainryhmät sekä niihin johtavat A–Ö- ja 0–9-hakemistot;
 3. muodostaa katalogikortit DOM-menetelmillä;
-4. näyttää ylläpitäjän oman arvion erillään IMDb- ja Rotten Tomatoes -viitearvioista (Tomatometer ja Popcornmeter), kun tiedot ovat saatavilla;
+4. näyttää ylläpitäjän oman arvion erillään BookRankin kirja-arvioista sekä tarjoaa IMDb- ja Rotten Tomatoes -tarkistuslinkit;
 5. tallentaa kävijän oman demoarvion selaimen paikalliseen tallennustilaan;
 6. vaihtaa suomen- ja englanninkielisen käyttöliittymän;
 7. rekisteröi service workerin HTTPS- tai localhost-ympäristössä.
@@ -259,7 +259,7 @@ Jos julkaiset oman haarautetun version, käytä omaa hostausta, verkkotunnusta, 
 
 ## Omat arviot, IMDb ja Rotten Tomatoes
 
-Kaikkien katalogin teosten ylläpitäjän oma arvio näkyy aluksi tekstinä **Ei vielä arviota**. Oma numeroarvio ja arvosteluteksti lisätään vasta, kun ylläpitäjä itse arvioi teoksen. IMDb:n käyttäjäarvosanat sekä Rotten Tomatoesin kriitikoiden Tomatometer- ja yleisön Popcornmeter-prosentit näytetään erillisinä ulkoisina viitetietoina, ei ylläpitäjän arvioina. Rotten Tomatoes -arvot lisätään vain, kun oikea teos ja lähdesivu on vahvistettu. Ajatusviiva tarkoittaa, ettei vahvistettua arvoa ole lisätty tähän demoon – se ei tarkoita nollaa. Vastaanottoluokitus muodostetaan saatavilla olevista arvosanoista; se ei väitä teoksen katsojamäärää tai todellista suosiota. Arvot ovat staattinen lähdehetken tilanne ja voivat muuttua. Jokaisesta teoksesta on IMDb- ja Rotten Tomatoes -hakulinkit ajantasaisen arvon tarkistamiseen. IMDb:n virallisen ei-kaupallisen aineiston kuvaus ja ehdot: https://developer.imdb.com/non-commercial-datasets/.
+Kaikkien katalogin teosten ylläpitäjän oma arvio näkyy aluksi tekstinä **Ei vielä arviota**. Oma numeroarvio ja arvosteluteksti lisätään vasta, kun ylläpitäjä itse arvioi teoksen. BookRank-pisteet näytetään vain tuoduille kirjoille erillisenä lukija-arviona, mukana arvioiden määrä ja suora lähdelinkki. IMDb ja Rotten Tomatoes ovat ulkoisia tarkistuslinkkejä; niiden numeerisia arvoja ei tallenneta eikä julkaista tässä katalogissa. Puuttuva arvosana ei tarkoita nollaa. Katso [Lähteet ja lisenssit -sivu](sources.html), josta löytyvät lähteiden käyttötarkoitukset, ehdot ja lähdemerkinnät.
 
 Alkuperäisten 14 esimerkin lisäksi katalogiin on lisätty 986 teosta eri kategorioista. Uusimmista 450 lisäyksestä 322 teokselle on nyt täydennetty tekijä tai kirjailija, julkaisu- tai ilmestymisvuosi, lajityypit ja alkuperämaa. Kuudelle aiemmalle teokselle on lisäksi täydennetty puuttuvia tietoja. Uusimmista lisäyksistä 128 odottaa vielä metatietojen selvittämistä. Tiedot lisätään vain, kun nimike voidaan tunnistaa riittävän varmasti; epävarmat kentät jätetään tyhjiksi. IMDb- tai yhteisöarvosanoja ei keksitä.
 
@@ -268,7 +268,7 @@ Alkuperäisten 14 esimerkin lisäksi katalogiin on lisätty 986 teosta eri kateg
 
 Katalogissa on nyt 1 000 teosta. Kävijä voi ehdottaa puuttuvaa elokuvaa, sarjaa, animaatiota, dokumenttia, podcastia, albumia, peliä tai kirjaa. Ehdotukseen voi lisätä julkaisuvuoden, tekijän ja lisätiedon. Ehdotukset tallentuvat selaimen localStorageen avaimella `cultured-vault-suggestions-v1`; ne näkyvät vain samassa selaimessa ja laitteessa, eikä niitä lähetetä ylläpitäjälle ilman backendia.
 
-Kaikkien teosten oma arvio näytetään tekstinä **Ei vielä arviota**. Oma numeroarvio ja arvosteluteksti lisätään vasta, kun ylläpitäjä itse arvioi teoksen. IMDb-arvosanat näytetään erillisinä ulkoisina viitetietoina.
+Kaikkien teosten oma arvio näytetään tekstinä **Ei vielä arviota**. Oma numeroarvio ja arvosteluteksti lisätään vasta, kun ylläpitäjä itse arvioi teoksen. BookRankin kirja-arviot ovat erillisiä ulkoisia lukijatietoja; IMDb ja Rotten Tomatoes ovat vain lähdelinkkejä.
 
 
 ## Kirjojen arviot ja laajennettu katalogi
