@@ -73,7 +73,7 @@
       <label class="search-box">
         <span class="search-icon" aria-hidden="true">⌕</span>
         <span class="visually-hidden" data-fi="Hae teoksia" data-en="Search works">Hae teoksia</span>
-        <input id="search-input" type="search" maxlength="100" placeholder="Hae nimellä, tekijällä tai tyylilajilla…" data-fi-placeholder="Hae nimellä, tekijällä tai tyylilajilla…" data-en-placeholder="Search by title, creator or genre…">
+        <input id="search-input" type="search" maxlength="100" placeholder="Search by title, creator or genre…" data-fi-placeholder="Hae nimellä, tekijällä tai tyylilajilla…" data-en-placeholder="Search by title, creator or genre…">
       </label>
 
       <div class="category-filters" id="category-filters" aria-label="Catalogue categories">
@@ -88,13 +88,13 @@
         <button class="filter-chip" type="button" data-category="book" aria-pressed="false" data-fi="Kirjat" data-en="Books">Kirjat</button>
       </div>
 
-      <label class="alphabet-jump" for="alphabet-jump-input"><span data-fi="Siirry kirjaimella tai numerolla" data-en="Jump to letter or number">Siirry kirjaimella tai numerolla</span> <input id="alphabet-jump-input" type="search" maxlength="1" placeholder="A–Ö / 0–9" aria-label="Kirjain tai numero" data-fi-aria-label="Kirjain tai numero" data-en-aria-label="Letter or number"></label>
+      <label class="alphabet-jump" for="alphabet-jump-input"><span data-fi="Siirry kirjaimella tai numerolla" data-en="Jump to letter or number">Siirry kirjaimella tai numerolla</span> <input id="alphabet-jump-input" type="search" maxlength="1" placeholder="A–Z / 0–9" aria-label="Kirjain tai numero" data-fi-aria-label="Kirjain tai numero" data-en-aria-label="Letter or number"></label>
       <div class="index-sticky-shell" id="index-sticky-shell" hidden>
         <nav class="alphabet-nav" id="alphabet-nav" aria-label="Aakkoshakemisto" data-fi-aria-label="Aakkoshakemisto" data-en-aria-label="Alphabetical index" hidden></nav>
         <nav class="alphabet-nav numeric-nav" id="numeric-nav" aria-label="Numerohakemisto" data-fi-aria-label="Numerohakemisto" data-en-aria-label="Numeric index" hidden></nav>
       </div>
       <p id="catalogue-source-status" class="result-count" role="status" aria-live="polite" data-fi="Kirjojen arviot ja lisäteokset ladataan BookRankista verkkoyhteyden kautta." data-en="Book ratings and additional titles are loaded from BookRank when online.">Kirjojen arviot ja lisäteokset ladataan BookRankista verkkoyhteyden kautta.</p>
-      <p class="result-count" id="result-count" role="status" aria-live="polite">Näytetään teokset</p>
+      <p class="result-count" id="result-count" role="status" aria-live="polite">Showing works</p>
       <div class="catalogue-grid" id="catalogue-grid"></div>
       <div class="catalogue-pagination" id="catalogue-pagination" hidden>
         <button class="page-button" id="catalogue-prev" type="button" data-fi="← Edellinen" data-en="← Previous" disabled>← Edellinen</button>
@@ -133,7 +133,7 @@
         </div>
         <label><span data-fi="Valitse teos" data-en="Choose a work">Valitse teos</span><select id="review-work" required></select></label>
         <label><span data-fi="Oma arvosana (1–10)" data-en="Your rating (1–10)">Oma arvosana (1–10)</span><input id="review-rating" type="number" min="1" max="10" step="0.5" value="8" required></label>
-        <label class="review-comment"><span data-fi="Kommentti (valinnainen)" data-en="Comment (optional)">Kommentti (valinnainen)</span><textarea id="review-comment" rows="3" maxlength="600" placeholder="Mitä ajatuksia teos herätti?" data-fi-placeholder="Mitä ajatuksia teos herätti?" data-en-placeholder="What did you think about this work?"></textarea></label>
+        <label class="review-comment"><span data-fi="Kommentti (valinnainen)" data-en="Comment (optional)">Kommentti (valinnainen)</span><textarea id="review-comment" rows="3" maxlength="600" placeholder="What did you think about this work?" data-fi-placeholder="Mitä ajatuksia teos herätti?" data-en-placeholder="What did you think about this work?"></textarea></label>
         <button class="vault-button" type="submit" data-fi="Tallenna demoarvio" data-en="Save demo review">Tallenna demoarvio</button>
         <p id="review-status" class="form-status" role="status" aria-live="polite"></p>
       </form>
