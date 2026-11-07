@@ -2,7 +2,7 @@
    Dependency-free browser prototype. The sample catalogue is local code data;
    personal demo reviews are stored only in this browser's localStorage. */
 // ---------------------------------------------------------------------------
-// 1. Sample catalogue. Add or edit entries here; see README.fi.md for the schema.
+// 1. Sample catalogue. Add or edit entries here; see README.md for the schema.
 // ---------------------------------------------------------------------------
 const works = [
 {id:"film-the-godfather-1972",title:"The Godfather",creator:"Francis Ford Coppola",type:"film",year:1972,genres:["Crime","Drama"],country:"United States",owner:0,ownerReview:""},
@@ -87,7 +87,7 @@ function getReceptionLabel(work){
  return language==="fi"?"Arviotiedot puuttuvat":"Ratings unavailable";
 }
 
-// 2. Bilingual media labels, interface messages and application state.
+// 2. English media labels, interface messages and application state.
 // ---------------------------------------------------------------------------
 const typeLabels = {
 fi:{film:"Elokuva",series:"Sarja",animation:"Animaatio",documentary:"Dokumentti",podcast:"Podcast",music:"Musiikki",game:"Peli",book:"Kirja"},
@@ -181,7 +181,7 @@ function getLocalReviews(){try{return JSON.parse(localStorage.getItem(storageKey
 const suggestionStorageKey="cultured-vault-suggestions-v1";
 function getLocalSuggestions(){try{return JSON.parse(localStorage.getItem(suggestionStorageKey)||"[]")}catch{return []}}
 function setLanguage(next){
- if(next!=="fi"&&next!=="en")return;
+ if(next!=="en")return;
  language=next;document.documentElement.lang=language;
  // Keep language changes text-only: rich headings use separate spans and <em> elements in HTML.
  document.querySelectorAll("[data-en]").forEach(el=>{el.textContent=el.dataset[language]});
@@ -332,9 +332,10 @@ alphabetJumpInput.addEventListener("input",()=>{
  const target=document.getElementById(targetId);
  if(target)target.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
 });
+setLanguage("en");
 populateReviewSelect();renderCatalogue();renderLocalReviews();renderLocalSuggestions();loadBookRankCatalogue();
 // Request the portfolio language after the embedded page has loaded.
-if (window.parent !== window) window.parent.postMessage({type:"remote-job-fit-language-request"},"*");
+
 
 // Service workers require HTTPS or localhost and are scoped to this folder only.
 if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
