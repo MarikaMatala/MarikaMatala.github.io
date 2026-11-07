@@ -14,10 +14,10 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 .skip-link{position:absolute;left:-9999px;top:1rem;z-index:10;padding:10px 14px;background:var(--panel);color:var(--text);border:2px solid var(--gold);border-radius:8px}
 .skip-link:focus{left:1rem}
 .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-/* 4. Status banner and PWA install button. */
+/* 4. Status banner. */
 .demo-status{display:flex;justify-content:center;flex-wrap:wrap;gap:.35rem 1rem;padding:.75rem 1rem;background:#28241e;border-bottom:1px solid rgba(193,139,85,.4);color:var(--muted);font-size:.88rem;text-align:center}
 .demo-status strong{color:var(--bronze-light)}
-/* 5. Main page frame, brand header and language control. */
+/* 5. Main page frame and brand header. */
 .vault-shell{max-width:1160px;margin:0 auto;padding:clamp(18px,4vw,48px)}
 .vault-header{display:flex;align-items:center;gap:18px;padding-bottom:30px;border-bottom:1px solid var(--line)}
 .vault-mark{display:grid;place-items:center;width:62px;height:62px;border:1px solid var(--bronze);border-radius:50%;color:var(--gold);font-size:2rem;text-decoration:none;box-shadow:inset 0 0 0 5px rgba(193,139,85,.08)}
@@ -27,7 +27,6 @@ h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.16}
 h1{font-size:clamp(1.9rem,5vw,3.25rem);margin:0;color:var(--text);letter-spacing:.015em}
 h1 span{color:var(--gold)}
 .tagline{margin:7px 0 0;color:var(--muted);font-size:.94rem}
-.language-button{border:1px solid var(--line);border-radius:999px;padding:9px 14px;background:transparent;color:var(--silver);cursor:pointer;font-weight:800;font-size:.78rem}
 /* 6. Introductory hero panel and catalogue statistics. */
 .intro-panel{position:relative;overflow:hidden;margin:30px 0;padding:clamp(24px,5vw,54px);border:1px solid #725536;border-radius:18px;background:linear-gradient(120deg,rgba(70,52,33,.8),rgba(34,30,24,.96) 60%),var(--panel);box-shadow:0 18px 45px rgba(0,0,0,.2)}
 .intro-panel:after{content:"✧";position:absolute;right:5%;top:8%;font-size:clamp(6rem,18vw,13rem);line-height:1;color:rgba(224,189,104,.08);pointer-events:none}
@@ -93,7 +92,7 @@ select,input,textarea{background:#151310;color:var(--text);border:1px solid var(
 .local-review{padding:13px 16px;border-left:3px solid var(--bronze);background:rgba(193,139,85,.08);margin-top:9px}
 .local-review strong{color:var(--gold)}
 .local-review p{margin:4px 0;color:var(--muted);font-size:.88rem}
-/* 9. Privacy notice, installation help and footer. */
+/* 9. Privacy notice and footer. */
 .demo-notice{margin-top:38px;padding:17px 20px;border:1px solid #6c563a;border-left:4px solid var(--bronze);border-radius:12px;background:rgba(60,47,31,.35);color:var(--muted);font-size:.88rem}
 .demo-notice strong{color:var(--bronze-light)}
 .demo-notice p{margin:7px 0}
@@ -103,17 +102,10 @@ select,input,textarea{background:#151310;color:var(--text);border:1px solid var(
 /* 10. Tablet layout. */
 @media(max-width:850px){.catalogue-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.section-heading{align-items:flex-start;flex-direction:column}.sort-control{width:100%;max-width:240px}}
 /* 11. Phone layout. */
-@media(max-width:600px){.vault-shell{padding:16px}.vault-header{gap:12px;align-items:flex-start}.vault-mark{width:45px;height:45px;flex:0 0 45px}.language-button{padding:8px 10px}.brand-copy h1{font-size:1.65rem}.tagline{font-size:.78rem}.catalogue-grid,.review-order,.personal-review-form{grid-template-columns:1fr}.personal-review-form>div:first-child,.review-comment{grid-column:auto}.demo-status{flex-direction:column;gap:2px}.review-top{align-items:flex-start;flex-direction:column}.vault-stats{gap:16px 24px}}
+@media(max-width:600px){.vault-shell{padding:16px}.vault-header{gap:12px;align-items:flex-start}.vault-mark{width:45px;height:45px;flex:0 0 45px}.brand-copy h1{font-size:1.65rem}.tagline{font-size:.78rem}.catalogue-grid,.review-order,.personal-review-form{grid-template-columns:1fr}.personal-review-form>div:first-child,.review-comment{grid-column:auto}.demo-status{flex-direction:column;gap:2px}.review-top{align-items:flex-start;flex-direction:column}.vault-stats{gap:16px 24px}}
 /* 12. Respect the operating-system reduced-motion preference. */
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
 
-/* PWA installation controls and mobile guidance */
-.install-app-button{border:1px solid var(--gold);border-radius:999px;padding:5px 12px;background:var(--gold);color:#1c1710;font-size:.78rem;font-weight:900;cursor:pointer}
-.install-app-button[hidden]{display:none}
-.install-help{margin-top:22px;padding:16px 19px;border:1px solid #6c563a;border-radius:12px;background:rgba(60,47,31,.28);color:var(--muted);font-size:.86rem}
-.install-help strong{color:var(--bronze-light)}
-.install-help p{margin:6px 0 0}
-@media(max-width:600px){.demo-status{align-items:center}.install-app-button{margin-top:5px}}
 
 /* Local-only catalogue suggestion form. */
 .suggestion-form{margin-top:28px;border-color:rgba(193,139,85,.55)}
@@ -190,8 +182,6 @@ select,input,textarea{background:#151310;color:var(--text);border:1px solid var(
 }
 
 /* 13. External rating sources and reception labels. */
-.external-ratings{display:flex;flex-wrap:wrap;align-items:center;gap:7px 12px;margin-top:9px;color:var(--silver);font-size:.76rem}
-.external-ratings strong{flex-basis:100%;color:var(--bronze-light);font-weight:600}
 
 /* 15. Shared header navigation and the source-register page. */
 .header-actions{display:flex;align-items:center;gap:10px;flex:0 0 auto}
@@ -246,7 +236,7 @@ select,input,textarea{background:#151310;color:var(--text);border:1px solid var(
 .contact-support{margin-top:18px;padding:22px;border:1px solid rgba(200,203,208,.45);border-radius:14px;background:linear-gradient(120deg,rgba(200,203,208,.08),rgba(193,139,85,.08))}
 .contact-actions{display:flex;flex-wrap:wrap;gap:10px}
 .contact-actions .vault-button{text-decoration:none}
-.about-panel .install-help,.about-panel .demo-notice{margin-top:20px}
+.about-panel .demo-notice{margin-top:20px}
 @media(max-width:600px){.header-actions{gap:7px}.menu-toggle{width:42px;height:42px}.contact-grid{grid-template-columns:1fr}.contact-panel{padding:19px}.contact-card{padding:17px}}
 @media(prefers-reduced-motion:reduce){.tab-panel.is-active{animation:none}.menu-toggle span{transition:none}}
 
