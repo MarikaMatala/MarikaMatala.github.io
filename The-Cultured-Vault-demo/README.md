@@ -28,11 +28,11 @@ This is a lightweight front-end prototype. It does not require a framework, buil
 
 The goal is to make the concept testable before implementing a production backend.
 
-### IMDb and Rotten Tomatoes ratings
+### External ratings and source policy
 
-Catalogue cards and work details can display an IMDb rating alongside two separate Rotten Tomatoes percentages: the **Tomatometer** represents critics’ reviews, while the **Popcornmeter** represents audience ratings. These are external reference data, not ratings submitted by this project’s owner. Values are shown only when a title can be matched reliably and the source information is available. Missing values are left blank rather than guessed or treated as zero.
+IMDb and Rotten Tomatoes are provided as outbound lookup links only. The demo does not store or republish their numeric scores. This is deliberate: IMDb's non-commercial dataset terms restrict republication into an online/offline movie database, and Rotten Tomatoes' terms restrict copying, data extraction and republication. Visitors are directed to the original services to check current values.
 
-The reception label (for example, positive or divisive reception) is derived from the available scores. It is an indicative score-based label, not a measurement of a title’s popularity, viewership or number of reviews. Rotten Tomatoes scores are not available for every media category in the catalogue.
+BookRank is the numeric reader-score source for imported book records. Its scores, ranks and confidence values are published under CC BY 4.0 with attribution to **BookRank (openbookrank.com)**. See the bilingual [Sources and licences page](sources.html) for the complete source inventory, upstream data chain, reasons for use, technical flow and limitations.
 
 
 ## 2. What it does not do
@@ -275,3 +275,8 @@ Every work displays **Not rated yet** for the instance owner's rating. No owner 
 On the first online visit, the demo imports up to 1,000 additional book records from BookRank's public category JSON files. Each imported record includes its title, author, year, BookRank aggregate reader score, rating count, category, source snapshot and direct book page. The downloaded catalogue is cached in localStorage for later visits. The local starter catalogue remains usable if the source is unavailable.
 
 BookRank publishes its scores, ranks and confidence values under **CC BY 4.0**. Attribution is shown in the book details as **BookRank (openbookrank.com)**, with a direct source-page link. The score is BookRank's own weighted aggregate; it is not presented as a Goodreads, Google Books or Hardcover score. The BookRank source page and scoring method are documented at https://openbookrank.com/en/open-data and https://openbookrank.com/en/methodology. Genre filters are added from the source categories as the data loads.
+
+
+## Sources and licences page
+
+The demo includes a bilingual [sources.html](sources.html) source register. It distinguishes direct data sources from external lookup links and BookRank's upstream providers. It also explains manually curated metadata, browser-local storage, and why third-party posters and covers are not copied.
