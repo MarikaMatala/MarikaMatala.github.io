@@ -155,6 +155,8 @@ en:{count: n => `Showing ${n} works`, owner:"My rating", notRated:"Not rated yet
 };
 let language = "fi";
 let activeCategory = "all";
+let cataloguePage = 0;
+const cataloguePageSize = 36;
 const grid = document.getElementById("catalogue-grid");
 const searchInput = document.getElementById("search-input");
 const sortSelect = document.getElementById("sort-select");
@@ -205,6 +207,9 @@ function filteredWorks(){
 // ---------------------------------------------------------------------------
 function renderCatalogue(){
   const list=filteredWorks();
+  const totalPages=Math.max(1,Math.ceil(list.length/cataloguePageSize));
+  cataloguePage=Math.min(cataloguePage,totalPages-1);
+  const visibleList=list.slice(cataloguePage*cataloguePageSize,(cataloguePage+1)*cataloguePageSize);
   const alphabetNav=document.getElementById("alphabet-nav");
   const numericNav=document.getElementById("numeric-nav");
   const indexStickyShell=document.getElementById("index-sticky-shell");
@@ -212,6 +217,11 @@ function renderCatalogue(){
   grid.replaceChildren();
   document.getElementById("total-count").textContent=works.length;
   document.getElementById("result-count").textContent=ui[language].count(list.length);
+  const pagination=document.getElementById("catalogue-pagination");
+  const previousPage=document.getElementById("catalogue-prev");
+  const nextPage=document.getElementById("catalogue-next");
+  const pageStatus=document.getElementById("catalogue-page-status");
+  if(pagination&&previousPage&&nextPage&&pageStatus){pagination.hidden=list.length<=cataloguePageSize;previousPage.disabled=cataloguePage===0;nextPage.disabled=cataloguePage>=totalPages-1;pageStatus.textContent=(language==="fi"?"Sivu ":"Page ")+(cataloguePage+1)+" / "+totalPages+" · "+visibleList.length+(language==="fi"?" teosta näkyvissä":" works shown");}
   document.getElementById("empty-state").hidden=list.length!==0;
   alphabetNav.replaceChildren();
   numericNav.replaceChildren();
@@ -227,13 +237,13 @@ function renderCatalogue(){
     const label=document.createElement("span");label.className="alphabet-label";label.textContent=language==="fi"?"Siirry kirjaimeen:":"Jump to letter:";alphabetNav.append(label);
     letters.forEach(letter=>{
       const button=document.createElement("button");button.type="button";button.className="alphabet-link";button.textContent=letter;button.dataset.letter=letter;button.disabled=!availableLetters.has(letter);button.setAttribute("aria-label",(language==="fi"?"Siirry kirjaimeen ":"Jump to letter ")+letter);
-      button.addEventListener("click",()=>{const target=document.getElementById("catalogue-letter-"+letter);if(target)target.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});});
+      button.addEventListener("click",()=>{const targetIndex=list.findIndex(work=>work.title.trim().charAt(0).toLocaleUpperCase(language==="fi"?"fi":"en")===letter);if(targetIndex>=0){cataloguePage=Math.floor(targetIndex/cataloguePageSize);renderCatalogue();const target=document.getElementById("catalogue-letter-"+letter);if(target)target.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});}});
       alphabetNav.append(button);
     });
     const numberLabel=document.createElement("span");numberLabel.className="alphabet-label";numberLabel.textContent=language==="fi"?"Siirry numerolla:":"Jump to number:";numericNav.append(numberLabel);
     "0123456789".split("").forEach(number=>{
       const button=document.createElement("button");button.type="button";button.className="alphabet-link";button.textContent=number;button.dataset.number=number;button.disabled=!availableNumbers.has(number);button.setAttribute("aria-label",(language==="fi"?"Siirry numerolla ":"Jump to number ")+number);
-      button.addEventListener("click",()=>{const target=document.getElementById("catalogue-number-"+number);if(target)target.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});});
+      button.addEventListener("click",()=>{const targetIndex=list.findIndex(work=>work.title.trim().charAt(0)===number);if(targetIndex>=0){cataloguePage=Math.floor(targetIndex/cataloguePageSize);renderCatalogue();const target=document.getElementById("catalogue-number-"+number);if(target)target.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});}});
       numericNav.append(button);
     });
   }
@@ -285,12 +295,14 @@ function populateReviewSelect(){
 // ---------------------------------------------------------------------------
 document.getElementById("category-filters").addEventListener("click",event=>{
  const button=event.target.closest("button[data-category]");if(!button)return;
- activeCategory=button.dataset.category;
+ activeCategory=button.dataset.category;cataloguePage=0;
  document.querySelectorAll(".filter-chip").forEach(chip=>{const active=chip===button;chip.classList.toggle("is-active",active);chip.setAttribute("aria-pressed",String(active))});
  renderCatalogue();
 });
-searchInput.addEventListener("input",renderCatalogue);
-sortSelect.addEventListener("change",renderCatalogue);
+searchInput.addEventListener("input",()=>{cataloguePage=0;renderCatalogue();});
+sortSelect.addEventListener("change",()=>{cataloguePage=0;renderCatalogue();});
+document.getElementById("catalogue-prev").addEventListener("click",()=>{cataloguePage=Math.max(0,cataloguePage-1);renderCatalogue();document.getElementById("catalogue-section")?.scrollIntoView({block:"start"});});
+document.getElementById("catalogue-next").addEventListener("click",()=>{cataloguePage+=1;renderCatalogue();document.getElementById("catalogue-section")?.scrollIntoView({block:"start"});});
 document.getElementById("personal-review-form").addEventListener("submit",event=>{
  event.preventDefault();
  const rating=Number(document.getElementById("review-rating").value);
@@ -315,6 +327,9 @@ alphabetJumpInput.addEventListener("input",()=>{
  const isLetter=/^[A-ZÅÄÖ]$/.test(initial);
  if(!isNumber&&!isLetter)return;
  sortSelect.value="title";
+ const matching=filteredWorks();
+ const targetIndex=matching.findIndex(work=>{const first=work.title.trim().charAt(0).toLocaleUpperCase("fi");return first===initial;});
+ cataloguePage=targetIndex>=0?Math.floor(targetIndex/cataloguePageSize):0;
  renderCatalogue();
  const targetId=isNumber?"catalogue-number-"+initial:"catalogue-letter-"+initial;
  const target=document.getElementById(targetId);
