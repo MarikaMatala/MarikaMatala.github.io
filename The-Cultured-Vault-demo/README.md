@@ -15,7 +15,7 @@ The Cultured Vault is an open-source cultural catalogue concept. This folder con
 
 This is a lightweight front-end prototype. It does not require a framework, build process or third-party JavaScript package. It includes:
 
-- a 550-entry sample catalogue with multiple media categories, including 536 additions across films, series, animation, documentaries, podcasts, music albums, games and books; the expanded selection includes Studio Ghibli and Disney animation, 1990s and 2000s nostalgia films, supernatural and cult series, and internationally popular Netflix titles such as Stranger Things, Wednesday, Squid Game, Dark and Bridgerton;
+- a 1,000-entry sample catalogue with multiple media categories, including 986 additions across films, series, animation, documentaries, podcasts, music albums, games and books; the expanded selection includes Studio Ghibli and Disney animation, 1990s and 2000s nostalgia films, supernatural and cult series, and internationally popular Netflix titles such as Stranger Things, Wednesday, Squid Game, Dark and Bridgerton;
 - search by title, creator, country and genre;
 - category filters and sorting, with alphabetical title order as the default;
 - an A–Z / Å–Ä–Ö letter index and a 0–9 numeric index; both jump to matching catalogue groups, disable unavailable entries and follow the current search and category filters; the sticky indexes remain accessible while scrolling;
@@ -141,7 +141,7 @@ Contains the visual design. Theme variables are at the top in the :root block. E
 
 ### app.js
 
-Contains the original sample works plus 536 additions (550 entries total), and browser-side behaviour:
+Contains the original sample works plus 986 additions (1,000 entries total), and browser-side behaviour:
 
 1. reads the sample catalogue;
 2. filters and sorts works using the controls, with alphabetic letter groups and quick navigation when title order is active;
@@ -260,7 +260,7 @@ For an independent fork, use your own hosting, domain, database and API credenti
 
 Every catalogue entry starts with the instance-owner status **Not rated yet**. No personal owner score or review text is prefilled. IMDb ratings, when present, are shown separately. IMDb user ratings and Rotten Tomatoes Tomatometer (critics) and Popcornmeter (audience) percentages are shown separately and are never presented as the owner's rating. Rotten Tomatoes values are added only when the matching work and source page have been verified. A dash means no verified value has been added, not a zero score. Reception labels are derived from available ratings; they do not claim actual viewership or popularity. Values are static snapshots and may change. Each work has IMDb and Rotten Tomatoes search links for checking current ratings. IMDb rating data is sourced from IMDb chart/list pages; official non-commercial dataset details and terms are available at https://developer.imdb.com/non-commercial-datasets/.
 
-The catalogue contains 486 additions beyond the original 14 sample entries. Some entries have not yet been enriched with creator, genre or country metadata.
+The catalogue contains 986 additions beyond the original 14 sample entries. Some entries have not yet been enriched with creator, genre or country metadata.
 
 
 ## Catalogue suggestions and owner ratings
