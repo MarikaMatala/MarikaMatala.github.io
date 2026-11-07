@@ -248,7 +248,7 @@ function renderCatalogue(){
     });
   }
   let previousGroup="";
-  list.forEach(work=>{
+  visibleList.forEach(work=>{
    if(alphabetical){
     const first=work.title.trim().charAt(0).toLocaleUpperCase(language==="fi"?"fi":"en");
     const isNumber=/^\d$/.test(first);
