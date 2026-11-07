@@ -153,7 +153,7 @@ const ui = {
 fi:{count: n => `Näytetään ${n} teosta`, owner:"Oma arvio", notRated:"Ei vielä arviota", imdb:"IMDb-arvio", rtCritics:"RT-kriitikot", rtAudience:"RT-yleisö", reception:"Vastaanotto", ratingsMissing:"Ei vahvistettua arvosanaa", review:"Näytä arvosanatiedot", hide:"Piilota arvosanatiedot", noReview:"Ei vielä arviota.", saved:"Demoarvio tallennettu tähän selaimeen.", yourReview:"Oma paikallinen demoarviosi", choose:"Valitse teos", imdbMissing:"IMDb-arviota ei ole vahvistettu tähän demoon.", suggestionSaved:"Ehdotus tallennettu tähän selaimeen. Se ei vielä välity ylläpitäjälle."},
 en:{count: n => `Showing ${n} works`, owner:"My rating", notRated:"Not rated yet", imdb:"IMDb rating", rtCritics:"RT critics", rtAudience:"RT audience", reception:"Reception", ratingsMissing:"No verified score", review:"Show rating details", hide:"Hide rating details", noReview:"Not rated yet.", saved:"Demo review saved in this browser.", yourReview:"Your local demo review", choose:"Choose a work", imdbMissing:"Check the current rating on the IMDb source page.", suggestionSaved:"Suggestion saved in this browser. It is not sent to the maintainer yet."}
 };
-let language = "fi";
+let language = "en";
 let activeCategory = "all";
 let cataloguePage = 0;
 const cataloguePageSize = 36;
@@ -181,12 +181,12 @@ function getLocalReviews(){try{return JSON.parse(localStorage.getItem(storageKey
 const suggestionStorageKey="cultured-vault-suggestions-v1";
 function getLocalSuggestions(){try{return JSON.parse(localStorage.getItem(suggestionStorageKey)||"[]")}catch{return []}}
 function setLanguage(next){
- if(next!=="en"&&next!=="fi")return;
+ if(next!=="en")return;
  language=next;document.documentElement.lang=language;
  // Keep language changes text-only: rich headings use separate spans and <em> elements in HTML.
- document.querySelectorAll("[data-fi][data-en]").forEach(el=>{el.textContent=el.dataset[language]});
- document.querySelectorAll("[data-fi-placeholder][data-en-placeholder]").forEach(el=>{el.placeholder=el.dataset[language+"Placeholder"]});
- document.querySelectorAll("[data-fi-aria-label][data-en-aria-label]").forEach(el=>el.setAttribute("aria-label",el.dataset[language+"AriaLabel"]));
+ document.querySelectorAll("[data-en]").forEach(el=>{el.textContent=el.dataset[language]});
+ document.querySelectorAll("[data-en-placeholder]").forEach(el=>{el.placeholder=el.dataset[language+"Placeholder"]});
+ document.querySelectorAll("[data-en-aria-label]").forEach(el=>el.setAttribute("aria-label",el.dataset[language+"AriaLabel"]));
  document.querySelectorAll("option[data-en]").forEach(el=>{el.textContent=el.dataset[language]});
  
  renderCatalogue();renderLocalReviews();renderLocalSuggestions();
@@ -315,15 +315,13 @@ document.getElementById("personal-review-form").addEventListener("submit",event=
 
 document.getElementById("suggestion-form").addEventListener("submit",event=>{event.preventDefault();const title=document.getElementById("suggestion-title").value.trim();const type=document.getElementById("suggestion-type").value;const yearValue=document.getElementById("suggestion-year").value;const creator=document.getElementById("suggestion-creator").value.trim();const note=document.getElementById("suggestion-note").value.trim();if(!title)return;const existing=[...works.map(w=>w.title.toLocaleLowerCase()),...getLocalSuggestions().map(w=>w.title.toLocaleLowerCase())];if(existing.includes(title.toLocaleLowerCase())){document.getElementById("suggestion-status").textContent=language==="fi"?"Teos löytyy jo katalogista tai ehdotuksista.":"This work is already in the catalogue or suggestions.";return;}const suggestions=getLocalSuggestions();suggestions.push({title,type,year:yearValue?Number(yearValue):null,creator,note,createdAt:new Date().toISOString()});try{localStorage.setItem(suggestionStorageKey,JSON.stringify(suggestions));document.getElementById("suggestion-status").textContent=ui[language].suggestionSaved;event.target.reset();renderLocalSuggestions()}catch{document.getElementById("suggestion-status").textContent=language==="fi"?"Selaimen tallennustila ei ole käytettävissä.":"Browser storage is unavailable."}});
 
-// Start in Finnish; visitors can switch language from the header.
-const languageButton=document.getElementById("demo-language");
-if(languageButton)languageButton.addEventListener("click",()=>setLanguage(language==="fi"?"en":"fi"));
-setLanguage("fi");
+// The interface is English-only; no language switcher is provided.
+setLanguage("en");
 const alphabetJumpInput=document.getElementById("alphabet-jump-input");
 alphabetJumpInput.addEventListener("input",()=>{
  const initial=alphabetJumpInput.value.trim().toLocaleUpperCase(language==="fi"?"fi":"en");
  const isNumber=/^\d$/.test(initial);
- const isLetter=/^[A-ZÅÄÖ]$/i.test(initial);
+ const isLetter=/^[A-Z]$/i.test(initial);
  if(!isNumber&&!isLetter)return;
  sortSelect.value="title";
  const matching=filteredWorks();
@@ -335,7 +333,7 @@ alphabetJumpInput.addEventListener("input",()=>{
  if(target)target.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
 });
 populateReviewSelect();renderCatalogue();renderLocalReviews();renderLocalSuggestions();loadBookRankCatalogue();
-// Request the portfolio language after the embedded page has loaded.
+// The demo always uses English, including when embedded in another page.
 
 
 // Service workers require HTTPS or localhost and are scoped to this folder only.
