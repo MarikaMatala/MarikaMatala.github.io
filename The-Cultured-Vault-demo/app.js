@@ -321,11 +321,11 @@ const alphabetJumpInput=document.getElementById("alphabet-jump-input");
 alphabetJumpInput.addEventListener("input",()=>{
  const initial=alphabetJumpInput.value.trim().toLocaleUpperCase("en");
  const isNumber=/^\d$/.test(initial);
- const isLetter=/^[A-ZÅÄÖ]$/.test(initial);
+ const isLetter=/^[A-Z]$/.test(initial);
  if(!isNumber&&!isLetter)return;
  sortSelect.value="title";
  const matching=filteredWorks();
- const targetIndex=matching.findIndex(work=>{const first=work.title.trim().charAt(0).toLocaleUpperCase("fi");return first===initial;});
+ const targetIndex=matching.findIndex(work=>{const first=work.title.trim().charAt(0).toLocaleUpperCase("en");return first===initial;});
  cataloguePage=targetIndex>=0?Math.floor(targetIndex/cataloguePageSize):0;
  renderCatalogue();
  const targetId=isNumber?"catalogue-number-"+initial:"catalogue-letter-"+initial;
