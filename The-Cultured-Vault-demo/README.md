@@ -112,7 +112,7 @@ Use Safari for the most reliable iOS installation flow. Chromium's JavaScript in
 
 ~~~text
 The-Cultured-Vault-demo/
-├── index.html               # Page structure, text and accessibility landmarks
+├── index.html               # Page structure, text, tab views and accessibility landmarks
 ├── styles.css               # Theme, components, responsive and accessibility styles
 ├── app.js                   # Sample data, search, filters, rendering and local reviews
 ├── manifest.webmanifest     # PWA name, icons, scope and display mode
@@ -120,6 +120,7 @@ The-Cultured-Vault-demo/
 ├── INSTALLATION.md          # Short Android and iOS installation guide
 ├── README.md                # This detailed English guide
 ├── README.fi.md             # Detailed Finnish guide
+├── LICENSE                  # MIT licence for original demo code
 └── icons/
     ├── vault-icon.svg       # General app icon
     ├── vault-maskable.svg   # Maskable icon for Android launchers
