@@ -276,3 +276,15 @@ Kaikkien teosten oma arvio näytetään tekstinä **Ei vielä arviota**. Oma num
 Ensimmäisellä verkkokäynnillä demo tuo BookRankin julkisista kategoriatiedostoista enintään 1 000 lisäkirjaa. Jokaisesta tuodusta teoksesta saadaan nimi, kirjailija, vuosi, BookRankin yhdistelmäarvio, arvioiden määrä, kategoria, lähdeaineiston tilannepäivä ja suora linkki kirjan lähdesivulle. Ladattu katalogi tallennetaan localStorageen myöhempiä käyntejä varten. Paikallinen aloituskatalogi toimii myös silloin, jos lähdepalvelu ei ole käytettävissä.
 
 BookRank julkaisee pisteet, sijoitukset ja luottamusarvot **CC BY 4.0** -lisenssillä. Teosten lisätiedoissa näkyy lähdemaininta **BookRank (openbookrank.com)** sekä suora linkki lähdesivulle. Piste on BookRankin oma painotettu yhdistelmäarvio, eikä sitä esitetä Goodreads-, Google Books- tai Hardcover-arviona. Lähde ja pisteytysmenetelmä: https://openbookrank.com/en/open-data ja https://openbookrank.com/en/methodology. Lähdekategorioista muodostuvat tyylilajisuodattimet lisätään, kun aineisto latautuu.
+
+
+### Ulkoiset arviot ja lähdekäytäntö
+
+IMDb ja Rotten Tomatoes ovat katalogissa vain ulkoisia tarkistuslinkkejä. Demo ei tallenna eikä julkaise niiden numeerisia arvosanoja. Tämä on tarkoituksellista: IMDb:n ei-kaupallisen dataset-käytön ehdot rajoittavat tietojen uudelleenjulkaisua elokuvatietokantana, ja Rotten Tomatoesin käyttöehdot rajoittavat sisällön kopiointia, automaattista keräämistä ja uudelleenjulkaisua. Käyttäjä ohjataan tarkistamaan ajantasainen arvo alkuperäisestä palvelusta.
+
+BookRank on tuotujen kirjatietojen numeeristen lukija-arvioiden lähde. Sen pisteet, sijoitukset ja luottamusarvot julkaistaan CC BY 4.0 -lisenssillä, ja lähde mainitaan muodossa **BookRank (openbookrank.com)**. Katso sovelluksen oma [Lähteet ja lisenssit -sivu](sources.html), jossa eritellään lähteet, BookRankin tausta-aineistot, käyttötarkoitukset, tekninen tiedonkulku ja rajoitukset.
+
+
+## Lähteet ja lisenssit -sivu
+
+Demossa on kaksikielinen [sources.html-lähdesivu](sources.html). Se erottaa suoraan käytetyt aineistolähteet ulkoisista tarkistuslinkeistä sekä BookRankin omista taustalähteistä. Sivulla kerrotaan myös käsin ylläpidetyistä metatiedoista, selaimeen tallennettavista tiedoista sekä siitä, miksi kolmansien osapuolten julisteita ja kansikuvia ei kopioida.
