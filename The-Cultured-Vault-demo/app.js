@@ -113,7 +113,7 @@ const reviewSelect = document.getElementById("review-work");
 const storageKey = "cultured-vault-demo-reviews-v1";
 
 // ---------------------------------------------------------------------------
-// 2b. Local starter catalogue additions (1,000 works before BookRank sync).
+// 2b. Local starter catalogue additions (1,000 curated works).
 // Unverified external ratings and missing metadata are intentionally left blank.
 // Owner rating is 0 (not rated); no owner review text is pre-filled.
 // ---------------------------------------------------------------------------
@@ -143,11 +143,10 @@ function setLanguage(next){
 function getSearchText(work){return [work.title,work.creator,work.country,...work.genres].join(" ").toLocaleLowerCase()}
 function filteredWorks(){
  const query=searchInput.value.trim().toLocaleLowerCase();
- let list=works.filter(w=>{const match=activeCategory==="all"||(activeCategory.startsWith("bookrank:")?w.type==="book"&&w.bookRankCategory===activeCategory.slice(9):w.type===activeCategory);return match&&(!query||getSearchText(w).includes(query))});
+ let list=works.filter(w=>{const match=activeCategory==="all"||w.type===activeCategory;return match&&(!query||getSearchText(w).includes(query))});
  const sort=sortSelect.value;
  if(sort==="title"||sort==="featured")list.sort((a,b)=>a.title.localeCompare(b.title,"en",{sensitivity:"base"}));
  if(sort==="year")list.sort((a,b)=>(b.year||0)-(a.year||0));
- if(sort==="rating")list.sort((a,b)=>(b.bookRankScore||0)-(a.bookRankScore||0));
  return list;
 }
 // ---------------------------------------------------------------------------
