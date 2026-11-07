@@ -213,3 +213,39 @@ select,input,textarea{background:#151310;color:var(--text);border:1px solid var(
 .source-rules li{padding:5px 0}
 @media(max-width:700px){.source-grid{grid-template-columns:1fr}.header-actions{gap:6px}.header-link{padding:7px 9px;font-size:.72rem}}
 @media(max-width:430px){.vault-header{flex-wrap:wrap}.brand-copy{flex:1 1 calc(100% - 70px)}.header-actions{margin-left:auto}.header-actions .header-link{min-height:36px}}
+
+
+/* 16. Compact navigation and tabbed page views. */
+.vault-header{position:relative;z-index:50}
+.header-actions{position:relative;display:flex;align-items:center;gap:10px;margin-left:auto}
+.menu-toggle{width:46px;height:46px;display:grid;align-content:center;justify-items:center;gap:5px;border:1px solid var(--bronze);border-radius:12px;background:rgba(193,139,85,.12);cursor:pointer}
+.menu-toggle span{display:block;width:20px;height:2px;border-radius:2px;background:var(--gold);transition:transform .2s ease,opacity .2s ease}
+.menu-toggle[aria-expanded="true"] span:first-child{transform:translateY(7px) rotate(45deg)}
+.menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-toggle[aria-expanded="true"] span:last-child{transform:translateY(-7px) rotate(-45deg)}
+.vault-menu{position:absolute;right:0;top:calc(100% + 12px);z-index:100;display:grid;gap:5px;width:min(290px,calc(100vw - 34px));padding:12px;border:1px solid var(--bronze);border-radius:15px;background:rgba(33,30,25,.98);box-shadow:0 18px 42px rgba(0,0,0,.48);backdrop-filter:blur(16px)}
+.vault-menu[hidden]{display:none}
+.menu-tab{display:flex;align-items:center;width:100%;min-height:46px;padding:10px 13px;border:1px solid transparent;border-radius:9px;background:transparent;color:var(--text);font-weight:800;text-align:left;text-decoration:none;cursor:pointer}
+.menu-tab:hover,.menu-tab.is-active{border-color:rgba(193,139,85,.55);background:rgba(193,139,85,.14);color:var(--gold)}
+.menu-link{border-top:1px solid var(--line);border-radius:0 0 9px 9px;padding-top:14px}
+.tab-panel[hidden]{display:none!important}
+.tab-panel{min-height:42vh}
+.tab-panel.is-active{animation:panel-enter .24s ease both}
+@keyframes panel-enter{from{opacity:.35;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+.footer-tab-link{display:inline-block;margin:5px 0}
+.contact-panel{margin-top:32px;padding:clamp(22px,4vw,44px);border:1px solid var(--bronze);border-radius:18px;background:linear-gradient(145deg,rgba(65,49,32,.48),rgba(33,30,25,.96))}
+.contact-panel h2{margin:.25em 0 .5em;font-size:clamp(2rem,5vw,3.3rem)}
+.contact-panel h2:after{content:"";display:block;width:72px;height:2px;margin-top:18px;background:linear-gradient(90deg,var(--bronze),var(--silver),var(--gold))}
+.contact-intro{max-width:760px;color:var(--muted)}
+.contact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:26px}
+.contact-card{min-width:0;padding:21px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(145deg,rgba(51,44,34,.72),rgba(31,28,23,.95))}
+.contact-card-primary{border-color:var(--gold);background:linear-gradient(145deg,rgba(92,69,36,.46),var(--panel))}
+.contact-card h3,.contact-support h3{margin:0 0 10px;color:var(--gold);font:700 1.35rem Georgia,serif}
+.contact-card p,.contact-support p{color:var(--muted);font-size:.9rem}
+.contact-card a{display:inline-block;margin:5px 12px 0 0;font-size:.85rem;font-weight:800}
+.contact-support{margin-top:18px;padding:22px;border:1px solid rgba(200,203,208,.45);border-radius:14px;background:linear-gradient(120deg,rgba(200,203,208,.08),rgba(193,139,85,.08))}
+.contact-actions{display:flex;flex-wrap:wrap;gap:10px}
+.contact-actions .vault-button{text-decoration:none}
+.about-panel .install-help,.about-panel .demo-notice{margin-top:20px}
+@media(max-width:600px){.header-actions{gap:7px}.menu-toggle{width:42px;height:42px}.contact-grid{grid-template-columns:1fr}.contact-panel{padding:19px}.contact-card{padding:17px}}
+@media(prefers-reduced-motion:reduce){.tab-panel.is-active{animation:none}.menu-toggle span{transition:none}}
