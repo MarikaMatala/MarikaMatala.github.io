@@ -203,6 +203,8 @@ function renderCatalogue(){
    const ownerReview=document.createElement("div");ownerReview.className="local-review";const ownerHeading=document.createElement("strong");ownerHeading.textContent=ui[language].owner;ownerReview.append(ownerHeading);const ownerText=document.createElement("p");ownerText.textContent=ui[language].noReview;ownerReview.append(ownerText);
    const lookup=document.createElement("div");lookup.className="local-review";const lookupHeading=document.createElement("strong");lookupHeading.textContent="External reference links";lookup.append(lookupHeading);
    const imdbLink=document.createElement("a");imdbLink.href="https://www.imdb.com/find/?q="+encodeURIComponent(work.title);imdbLink.target="_blank";imdbLink.rel="noopener noreferrer";imdbLink.textContent="IMDb";lookup.append(imdbLink);
+   // Rotten Tomatoes terms restrict direct deep links; this searches Google results limited to RT instead.
+   const rtSearch=document.createElement("a");rtSearch.href="https://www.google.com/search?q="+encodeURIComponent("site:rottentomatoes.com "+work.title+(work.year?" "+work.year:""));rtSearch.target="_blank";rtSearch.rel="noopener noreferrer";rtSearch.textContent="Find on Rotten Tomatoes";lookup.append(rtSearch);
    if(work.type==="book"){const olLink=document.createElement("a");olLink.href="https://openlibrary.org/search?q="+encodeURIComponent(work.title+" "+(work.creator||""));olLink.target="_blank";olLink.rel="noopener noreferrer";olLink.textContent="Open Library";lookup.append(olLink)}
    reviews.append(ownerReview,lookup);card.append(toggle,reviews);grid.append(card);
   });
