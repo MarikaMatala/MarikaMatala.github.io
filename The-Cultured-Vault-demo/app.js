@@ -181,12 +181,12 @@ function getLocalReviews(){try{return JSON.parse(localStorage.getItem(storageKey
 const suggestionStorageKey="cultured-vault-suggestions-v1";
 function getLocalSuggestions(){try{return JSON.parse(localStorage.getItem(suggestionStorageKey)||"[]")}catch{return []}}
 function setLanguage(next){
- if(next!=="en")return;
+ if(next!=="en"&&next!=="fi")return;
  language=next;document.documentElement.lang=language;
  // Keep language changes text-only: rich headings use separate spans and <em> elements in HTML.
- document.querySelectorAll("[data-en]").forEach(el=>{el.textContent=el.dataset[language]});
- document.querySelectorAll("[data-en-placeholder]").forEach(el=>{el.placeholder=el.dataset[language+"Placeholder"]});
- document.querySelectorAll("[data-en-aria-label]").forEach(el=>el.setAttribute("aria-label",el.dataset[language+"AriaLabel"]));
+ document.querySelectorAll("[data-fi][data-en]").forEach(el=>{el.textContent=el.dataset[language]});
+ document.querySelectorAll("[data-fi-placeholder][data-en-placeholder]").forEach(el=>{el.placeholder=el.dataset[language+"Placeholder"]});
+ document.querySelectorAll("[data-fi-aria-label][data-en-aria-label]").forEach(el=>el.setAttribute("aria-label",el.dataset[language+"AriaLabel"]));
  document.querySelectorAll("option[data-en]").forEach(el=>{el.textContent=el.dataset[language]});
  
  renderCatalogue();renderLocalReviews();renderLocalSuggestions();
