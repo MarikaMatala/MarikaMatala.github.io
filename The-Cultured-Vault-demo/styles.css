@@ -192,3 +192,24 @@ select,input,textarea{background:#151310;color:var(--text);border:1px solid var(
 /* 13. External rating sources and reception labels. */
 .external-ratings{display:flex;flex-wrap:wrap;align-items:center;gap:7px 12px;margin-top:9px;color:var(--silver);font-size:.76rem}
 .external-ratings strong{flex-basis:100%;color:var(--bronze-light);font-weight:600}
+
+/* 15. Shared header navigation and the source-register page. */
+.header-actions{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.header-link{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:8px 13px;border:1px solid var(--line);border-radius:999px;color:var(--bronze-light);text-decoration:none;font-size:.8rem;font-weight:800}
+.header-link:hover{border-color:var(--gold);background:rgba(193,139,85,.12)}
+.sources-content{margin-top:46px}
+.sources-intro{margin-top:28px}
+.source-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:16px}
+.source-card{min-width:0;padding:20px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(145deg,rgba(51,44,34,.72),rgba(31,28,23,.95))}
+.source-featured{border-color:#8a663c;background:linear-gradient(145deg,rgba(82,59,32,.48),var(--panel))}
+.source-card h3{margin:12px 0 8px;font-size:1.45rem;color:var(--text)}
+.source-card p{color:var(--muted);font-size:.9rem}
+.source-card-top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.source-kind,.source-license{display:inline-flex;padding:4px 9px;border:1px solid var(--line);border-radius:999px;color:var(--bronze-light);font-size:.7rem;font-weight:900}
+.source-license{color:var(--gold);border-color:rgba(224,189,104,.5)}
+.source-links{display:flex;flex-wrap:wrap;gap:9px 16px;margin:14px 0}
+.source-note{padding:12px 14px;border-left:3px solid var(--bronze);background:rgba(193,139,85,.08);color:var(--muted);font-size:.82rem}
+.source-rules{padding-left:1.25rem;color:var(--muted)}
+.source-rules li{padding:5px 0}
+@media(max-width:700px){.source-grid{grid-template-columns:1fr}.header-actions{gap:6px}.header-link{padding:7px 9px;font-size:.72rem}}
+@media(max-width:430px){.vault-header{flex-wrap:wrap}.brand-copy{flex:1 1 calc(100% - 70px)}.header-actions{margin-left:auto}.header-actions .header-link{min-height:36px}}
