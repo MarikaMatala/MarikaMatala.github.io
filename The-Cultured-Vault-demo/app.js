@@ -315,8 +315,10 @@ document.getElementById("personal-review-form").addEventListener("submit",event=
 
 document.getElementById("suggestion-form").addEventListener("submit",event=>{event.preventDefault();const title=document.getElementById("suggestion-title").value.trim();const type=document.getElementById("suggestion-type").value;const yearValue=document.getElementById("suggestion-year").value;const creator=document.getElementById("suggestion-creator").value.trim();const note=document.getElementById("suggestion-note").value.trim();if(!title)return;const existing=[...works.map(w=>w.title.toLocaleLowerCase()),...getLocalSuggestions().map(w=>w.title.toLocaleLowerCase())];if(existing.includes(title.toLocaleLowerCase())){document.getElementById("suggestion-status").textContent=language==="fi"?"Teos löytyy jo katalogista tai ehdotuksista.":"This work is already in the catalogue or suggestions.";return;}const suggestions=getLocalSuggestions();suggestions.push({title,type,year:yearValue?Number(yearValue):null,creator,note,createdAt:new Date().toISOString()});try{localStorage.setItem(suggestionStorageKey,JSON.stringify(suggestions));document.getElementById("suggestion-status").textContent=ui[language].suggestionSaved;event.target.reset();renderLocalSuggestions()}catch{document.getElementById("suggestion-status").textContent=language==="fi"?"Selaimen tallennustila ei ole käytettävissä.":"Browser storage is unavailable."}});
 
-// The interface is intentionally English-only.
-setLanguage("en");
+// Start in Finnish; visitors can switch language from the header.
+const languageButton=document.getElementById("demo-language");
+if(languageButton)languageButton.addEventListener("click",()=>setLanguage(language==="fi"?"en":"fi"));
+setLanguage("fi");
 const alphabetJumpInput=document.getElementById("alphabet-jump-input");
 alphabetJumpInput.addEventListener("input",()=>{
  const initial=alphabetJumpInput.value.trim().toLocaleUpperCase(language==="fi"?"fi":"en");
@@ -332,7 +334,6 @@ alphabetJumpInput.addEventListener("input",()=>{
  const target=document.getElementById(targetId);
  if(target)target.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
 });
-setLanguage("en");
 populateReviewSelect();renderCatalogue();renderLocalReviews();renderLocalSuggestions();loadBookRankCatalogue();
 // Request the portfolio language after the embedded page has loaded.
 
