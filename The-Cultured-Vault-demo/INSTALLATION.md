@@ -1,11 +1,10 @@
 # The Cultured Vault — demo installation
 
-<!-- Last updated: 2026-11-06 21:00 (Europe/Helsinki). -->
+<!-- Last updated: 2026-11-07. -->
 
 For the full setup guide, project explanation, architecture, file map, sample data format, privacy notes, troubleshooting and contribution guidance, read:
 
 - [README — English](README.md)
-- [README — suomeksi](README.fi.md)
 
 ## Android (including Samsung)
 
