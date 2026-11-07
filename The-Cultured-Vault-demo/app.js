@@ -111,7 +111,7 @@ works.forEach(work => { work.owner = 0; work.ownerReview = ""; });
 // 3. Storage, language and catalogue filtering helpers.
 // Parse storage defensively so malformed data does not break the catalogue.
 // ---------------------------------------------------------------------------
-function getLocalReviews(){try{return JSON.parse(localStorage.getItem(storageKey)||"[]")}catch{return []}}
+function getLocalReviews(){try{const stored=JSON.parse(localStorage.getItem(storageKey)||"[]");const latest=new Map();stored.forEach(review=>{if(review&&review.id)latest.set(review.id,review)});return [...latest.values()]}catch{return []}}
 const suggestionStorageKey="cultured-vault-suggestions-v1";
 function getLocalSuggestions(){try{return JSON.parse(localStorage.getItem(suggestionStorageKey)||"[]")}catch{return []}}
 function setLanguage(next){
@@ -244,7 +244,7 @@ document.getElementById("personal-review-form").addEventListener("submit",event=
  const rating=Number(document.getElementById("review-rating").value);
  const id=reviewSelect.value;const comment=document.getElementById("review-comment").value.trim();
  if(!Number.isFinite(rating)||rating<1||rating>10){return}
- const reviews=getLocalReviews();const entry={id,rating,comment,createdAt:new Date().toISOString()};const existingIndex=reviews.findIndex(item=>item.id===id);if(existingIndex>=0)reviews[existingIndex]=entry;else reviews.push(entry);
+ const reviews=getLocalReviews();const entry={id,rating,comment,createdAt:new Date().toISOString()};const cleaned=reviews.filter(item=>item.id!==id);cleaned.push(entry);
  try{localStorage.setItem(storageKey,JSON.stringify(reviews));document.getElementById("review-status").textContent=ui[language].saved;document.getElementById("review-comment").value="";renderLocalReviews()}
  catch{document.getElementById("review-status").textContent=language==="fi"?"Selaimen tallennustila ei ole käytettävissä.":"Browser storage is unavailable."}
 });
