@@ -141,7 +141,7 @@ Sisältää visuaalisen ilmeen. Värit on määritelty tiedoston alussa :root-mu
 
 ### app.js
 
-Sisältää alkuperäisen works-katalogin ja 986 lisäystä (yhteensä 1 000 teosta) sekä selaimessa toimivan logiikan:
+Sisältää alkuperäisen works-katalogin ja 986 lisäystä (yhteensä 1 000 teosta), mukaan lukien 328 katalogimerkinnän metatietojen täydennyksen, sekä selaimessa toimivan logiikan:
 
 1. lukee esimerkkikatalogin;
 2. suodattaa ja lajittelee teoksia käyttöliittymän valintojen perusteella; näyttää aakkosjärjestyksessä kirjainryhmät sekä niihin johtavat A–Ö- ja 0–9-hakemistot;
@@ -261,7 +261,7 @@ Jos julkaiset oman haarautetun version, käytä omaa hostausta, verkkotunnusta, 
 
 Kaikkien katalogin teosten ylläpitäjän oma arvio näkyy aluksi tekstinä **Ei vielä arviota**. Oma numeroarvio ja arvosteluteksti lisätään vasta, kun ylläpitäjä itse arvioi teoksen. IMDb:n käyttäjäarvosanat sekä Rotten Tomatoesin kriitikoiden Tomatometer- ja yleisön Popcornmeter-prosentit näytetään erillisinä ulkoisina viitetietoina, ei ylläpitäjän arvioina. Rotten Tomatoes -arvot lisätään vain, kun oikea teos ja lähdesivu on vahvistettu. Ajatusviiva tarkoittaa, ettei vahvistettua arvoa ole lisätty tähän demoon – se ei tarkoita nollaa. Vastaanottoluokitus muodostetaan saatavilla olevista arvosanoista; se ei väitä teoksen katsojamäärää tai todellista suosiota. Arvot ovat staattinen lähdehetken tilanne ja voivat muuttua. Jokaisesta teoksesta on IMDb- ja Rotten Tomatoes -hakulinkit ajantasaisen arvon tarkistamiseen. IMDb:n virallisen ei-kaupallisen aineiston kuvaus ja ehdot: https://developer.imdb.com/non-commercial-datasets/.
 
-Alkuperäisten 14 esimerkin lisäksi katalogiin on lisätty 986 teosta eri kategorioista. Kaikkien nimikkeiden tekijä-, lajityyppi- ja maatietoja ei ole vielä täydennetty. Osasta uusista teoksista puuttuu vielä tekijä-, lajityyppi- tai maatietoja.
+Alkuperäisten 14 esimerkin lisäksi katalogiin on lisätty 986 teosta eri kategorioista. Uusimmista 450 lisäyksestä 322 teokselle on nyt täydennetty tekijä tai kirjailija, julkaisu- tai ilmestymisvuosi, lajityypit ja alkuperämaa. Kuudelle aiemmalle teokselle on lisäksi täydennetty puuttuvia tietoja. Uusimmista lisäyksistä 128 odottaa vielä metatietojen selvittämistä. Tiedot lisätään vain, kun nimike voidaan tunnistaa riittävän varmasti; epävarmat kentät jätetään tyhjiksi. IMDb- tai yhteisöarvosanoja ei keksitä.
 
 
 ## Teosehdotukset ja omat arviot
