@@ -36,9 +36,10 @@
         <h1>The Cultured <span>Vault</span></h1>
         <p class="tagline" data-fi="Kulttuuria löydettäväksi. Tarinoita muistettavaksi." data-en="Culture worth discovering. Stories worth remembering.">Kulttuuria löydettäväksi. Tarinoita muistettavaksi.</p>
       </div>
-      <nav class="header-actions" aria-label="Page navigation"><a class="header-link" href="sources.html" data-fi="Lähteet" data-en="Sources">Lähteet</a><button class="language-button" id="demo-language" type="button" aria-label="Vaihda kieltä">FIN / ENG</button></nav>
+      <div class="header-actions"><button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="vault-navigation" aria-label="Avaa valikko"><span></span><span></span><span></span></button><button class="language-button" id="demo-language" type="button" aria-label="Vaihda kieltä">FIN / ENG</button><nav class="vault-menu" id="vault-navigation" aria-label="Päänavigaatio" hidden><button class="menu-tab is-active" type="button" data-tab-target="home" data-fi="Kokoelma" data-en="Collection">Kokoelma</button><button class="menu-tab" type="button" data-tab-target="reviews" data-fi="Arvostelut" data-en="Reviews">Arvostelut</button><button class="menu-tab" type="button" data-tab-target="about" data-fi="Tietoa projektista" data-en="About the project">Tietoa projektista</button><button class="menu-tab" type="button" data-tab-target="contact" data-fi="Yhteystiedot" data-en="Contact">Yhteystiedot</button><a class="menu-tab menu-link" href="sources.html" data-fi="Lähteet ja lisenssit" data-en="Sources and licences">Lähteet ja lisenssit</a></nav></div>
     </header>
 
+    <div class="tab-panel is-active" id="panel-home" data-tab-panel="home">
     <!-- Introductory project description and catalogue summary. -->
     <section class="intro-panel">
       <p class="eyebrow" data-fi="OMA KULTTUURIARKISTOSI" data-en="YOUR PERSONAL CULTURAL ARCHIVE">OMA KULTTUURIARKISTOSI</p>
@@ -98,6 +99,9 @@
       <p class="empty-state" id="empty-state" hidden data-fi="Hakuehdoilla ei löytynyt teoksia. Kokeile toista hakusanaa tai kategoriaa." data-en="No works match your search. Try another keyword or category.">Hakuehdoilla ei löytynyt teoksia. Kokeile toista hakusanaa tai kategoriaa.</p>
     </section>
 
+    </div>
+
+    <div class="tab-panel" id="panel-reviews" data-tab-panel="reviews" hidden>
     <!-- Review-order example and browser-local demo review form. -->
     <section class="review-demo-section">
       <div class="section-heading">
@@ -113,9 +117,7 @@
           <span class="review-signature" data-fi="Demo-instanssin ylläpitäjä" data-en="Demo instance owner">Demo-instanssin ylläpitäjä</span>
         </article>
         <article class="review-card community-review">
-          <div class="review-top"><span class="review-label" data-fi="IMDB-ARVIO · LÄHDE" data-en="IMDB RATING · SOURCE">YHTEISÖN KESKIARVO · ESIMERKKI</span><strong>IMDb<span>/10</span></strong></div>
-          <p data-fi="IMDb:n käyttäjäarvosana sekä Rotten Tomatoesin kriitikoiden ja yleisön prosenttiarviot näytetään erillään ylläpitäjän omasta arviosta. Tarkista ajantasaiset arvot lähdesivuilta." data-en="IMDb user ratings and Rotten Tomatoes critics and audience scores are shown separately from the owner's personal score. Check current values on their source pages.">Yhteisön arvosana näytetään erillään ylläpitäjän henkilökohtaisesta arviosta. Tämä luku on vain havainnollistava esimerkki.</p>
-          <span class="review-signature" data-fi="IMDb:n käyttäjäarvio" data-en="IMDb user rating">128 esimerkkisummaa</span>
+          <div class="review-top"><span class="review-label" data-fi="ULKOISET LÄHTEET" data-en="EXTERNAL SOURCES">ULKOISET LÄHTEET</span><strong>↗</strong></div><h3 data-fi="Lähteet säilyttävät omat arvionsa." data-en="Ratings stay with their original sources.">Lähteet säilyttävät omat arvionsa.</h3><p data-fi="IMDb:n ja Rotten Tomatoesin numeroarvoja ei kopioida katalogiin. Ne avautuvat alkuperäisissä palveluissa. Kirjojen BookRank-pisteet näytetään erikseen CC BY 4.0 -lisenssin mukaisella lähdemerkinnällä." data-en="IMDb and Rotten Tomatoes numeric ratings are not copied into the catalogue; visitors can check them at the original services. BookRank book scores are shown separately with CC BY 4.0 attribution.">IMDb:n ja Rotten Tomatoesin numeroarvoja ei kopioida katalogiin. Ne avautuvat alkuperäisissä palveluissa. Kirjojen BookRank-pisteet näytetään erikseen CC BY 4.0 -lisenssin mukaisella lähdemerkinnällä.</p><span class="review-signature" data-fi="Katso lähteet ja lisenssit" data-en="See sources and licences">Katso lähteet ja lisenssit</span>
         </article>
       </div>
       <form id="personal-review-form" class="personal-review-form">
@@ -135,6 +137,25 @@
 
     </section>
 
+    </div>
+    <section class="tab-panel contact-panel" id="panel-contact" data-tab-panel="contact" hidden>
+      <p class="eyebrow" data-fi="OTA YHTEYTTÄ" data-en="GET IN TOUCH">OTA YHTEYTTÄ</p>
+      <h2 data-fi="Jatketaan keskustelua." data-en="Let's start a conversation.">Jatketaan keskustelua.</h2>
+      <p class="contact-intro" data-fi="LinkedIn on paras tapa ottaa minuun yhteyttä. Profiilistani löydät lisätietoa osaamisestani, työkokemuksestani ja ammatillisista kiinnostuksenkohteistani. Voit ottaa yhteyttä työmahdollisuuksista, yhteistyöstä ja The Cultured Vault -projektiin liittyvistä asioista." data-en="LinkedIn is the best way to contact me. My profile has more information about my skills, experience and professional interests. Feel free to get in touch about work opportunities, collaboration and The Cultured Vault project.">LinkedIn on paras tapa ottaa minuun yhteyttä. Profiilistani löydät lisätietoa osaamisestani, työkokemuksestani ja ammatillisista kiinnostuksenkohteistani. Voit ottaa yhteyttä työmahdollisuuksista, yhteistyöstä ja The Cultured Vault -projektiin liittyvistä asioista.</p>
+      <div class="contact-grid">
+        <article class="contact-card contact-card-primary"><h3>LinkedIn ↗</h3><p data-fi="Paras tapa tavoittaa minut. LinkedIn-profiilistani löydät lisää tietoa osaamisestani ja työkokemuksestani." data-en="The best way to reach me. My LinkedIn profile has more information about my skills and experience.">Paras tapa tavoittaa minut. LinkedIn-profiilistani löydät lisää tietoa osaamisestani ja työkokemuksestani.</p><a href="https://www.linkedin.com/in/marika-matalamaki/" target="_blank" rel="noopener noreferrer" data-fi="Ota yhteyttä LinkedInissä ↗" data-en="Contact me on LinkedIn ↗">Ota yhteyttä LinkedInissä ↗</a></article>
+        <article class="contact-card"><h3 data-fi="Sähköposti" data-en="Email">Sähköposti</h3><p data-fi="Voit ottaa yhteyttä myös sähköpostitse." data-en="You can also reach me by email.">Voit ottaa yhteyttä myös sähköpostitse.</p><a href="mailto:marika.matalamaki@gmail.com">marika.matalamaki@gmail.com ↗</a></article>
+        <article class="contact-card"><h3>GitHub</h3><p data-fi="Koodia, projekteja ja teknisiä esimerkkejä." data-en="Code, projects and technical examples.">Koodia, projekteja ja teknisiä esimerkkejä.</p><a href="https://github.com/MarikaMatala" target="_blank" rel="noopener noreferrer">github.com/MarikaMatala ↗</a><a href="https://github.com/MarikaMatala/The-Cultured-Vault" target="_blank" rel="noopener noreferrer" data-fi="The Cultured Vault -projekti ↗" data-en="The Cultured Vault project ↗">The Cultured Vault -projekti ↗</a></article>
+        <article class="contact-card"><h3>GitHub Sponsors ♡</h3><p data-fi="Voit tukea avoimen lähdekoodin projektejani ja osaamiseni kehittämistä GitHub Sponsorsin kautta." data-en="You can support my open-source projects and continued learning through GitHub Sponsors.">Voit tukea avoimen lähdekoodin projektejani ja osaamiseni kehittämistä GitHub Sponsorsin kautta.</p><a href="https://github.com/sponsors/MarikaMatala" target="_blank" rel="noopener noreferrer" data-fi="Tue minua GitHub Sponsorsissa ↗" data-en="Sponsor me on GitHub ↗">Tue minua GitHub Sponsorsissa ↗</a></article>
+        <article class="contact-card"><h3>Buy Me a Coffee ☕</h3><p data-fi="Voit tukea oppimistani ja omia luovia sekä avoimen lähdekoodin projektejani esimerkiksi ohjelmistoihin, työkaluihin ja oppimateriaaleihin liittyvissä kuluissa." data-en="You can support my learning and creative open-source projects, including costs for software, tools and learning materials.">Voit tukea oppimistani ja omia luovia sekä avoimen lähdekoodin projektejani esimerkiksi ohjelmistoihin, työkaluihin ja oppimateriaaleihin liittyvissä kuluissa.</p><a href="https://buymeacoffee.com/marikamatala" target="_blank" rel="noopener noreferrer" data-fi="Tue minua Buy Me a Coffeessa ↗" data-en="Support me on Buy Me a Coffee ↗">Tue minua Buy Me a Coffeessa ↗</a></article>
+      </div>
+      <section class="contact-support"><h3 data-fi="Uran tukeminen, sponsorointi ja yhteistyö" data-en="Career support, sponsorship and collaboration">Uran tukeminen, sponsorointi ja yhteistyö</h3>
+        <p data-fi="Rakennan uraani IT:n, digitaalisen median ja luovien alojen parissa ja olen valmis tarjoamaan osaamistani erikokoisiin projekteihin. Työskentelyäni voi tukea rahallisella tuella, projektikohtaisella sponsoroinnilla, ohjelmistoilla ja lisensseillä, kehitystyökaluilla, laitteilla tai muilla hyödyllisillä tarvikkeilla. Yhteydenotot ovat tervetulleita sekä yksityishenkilöiltä että yrityksiltä." data-en="I am building my career in IT, digital media and creative fields, and I am open to projects of different sizes. Support can take the form of financial contributions, project sponsorship, software and licences, development tools, equipment or other useful supplies. Enquiries from individuals and companies are welcome.">Rakennan uraani IT:n, digitaalisen median ja luovien alojen parissa ja olen valmis tarjoamaan osaamistani erikokoisiin projekteihin. Työskentelyäni voi tukea rahallisella tuella, projektikohtaisella sponsoroinnilla, ohjelmistoilla ja lisensseillä, kehitystyökaluilla, laitteilla tai muilla hyödyllisillä tarvikkeilla. Yhteydenotot ovat tervetulleita sekä yksityishenkilöiltä että yrityksiltä.</p>
+        <p data-fi="Olen kiinnostunut verkkosivuihin, digitaalisiin palveluihin, visuaaliseen suunnitteluun, sisällöntuotantoon, valokuvaukseen, videoihin, viestintään ja sosiaaliseen mediaan liittyvistä projekteista. Sovimme etukäteen työn sisällöstä, toimitettavista materiaaleista, korvauksesta ja näkyvyydestä." data-en="I am interested in web development, digital services, visual design, content creation, photography, video, communications and social media projects. We agree on the scope, deliverables, compensation and visibility in advance.">Olen kiinnostunut verkkosivuihin, digitaalisiin palveluihin, visuaaliseen suunnitteluun, sisällöntuotantoon, valokuvaukseen, videoihin, viestintään ja sosiaaliseen mediaan liittyvistä projekteista. Sovimme etukäteen työn sisällöstä, toimitettavista materiaaleista, korvauksesta ja näkyvyydestä.</p>
+        <div class="contact-actions"><a class="vault-button" href="https://github.com/sponsors/MarikaMatala" target="_blank" rel="noopener noreferrer" data-fi="Tue minua GitHub Sponsorsissa ↗" data-en="Support me on GitHub Sponsors ↗">Tue minua GitHub Sponsorsissa ↗</a><a class="vault-button" href="https://buymeacoffee.com/marikamatala" target="_blank" rel="noopener noreferrer" data-fi="Tue työtäni Buy Me a Coffeen kautta ↗" data-en="Support my work on Buy Me a Coffee ↗">Tue työtäni Buy Me a Coffeen kautta ↗</a></div>
+      </section>
+    </section>
+    <div class="tab-panel about-panel" id="panel-about" data-tab-panel="about" hidden>
     <!-- Instructions for adding this PWA to Android and Apple home screens. -->
     <aside class="install-help" role="note">
       <strong data-fi="Lisää puhelimen aloitusnäyttöön" data-en="Add to your home screen">Lisää puhelimen aloitusnäyttöön</strong>
@@ -148,10 +169,12 @@
       <a href="https://github.com/MarikaMatala/The-Cultured-Vault" target="_blank" rel="noopener noreferrer">The Cultured Vault on GitHub ↗</a>
     </aside>
 
+    </div>
+
     <footer class="demo-footer">
       <p>THE CULTURED VAULT · BROWSER DEMO</p>
       <p data-fi="Avaa holvi. Löydä jotain poikkeuksellista." data-en="Open the vault. Discover something extraordinary.">Avaa holvi. Löydä jotain poikkeuksellista.</p>
-      <a href="sources.html" data-fi="Lähteet ja lisenssit" data-en="Sources and licences">Lähteet ja lisenssit</a><br><a href="https://github.com/MarikaMatala/The-Cultured-Vault" target="_blank" rel="noopener noreferrer" data-fi="Tutustu avoimen lähdekoodin projektiin ↗" data-en="Explore the open-source project ↗">Tutustu avoimen lähdekoodin projektiin ↗</a>
+      <a href="sources.html" data-fi="Lähteet ja lisenssit" data-en="Sources and licences">Lähteet ja lisenssit</a><br><a href="#" data-tab-target="contact" class="footer-tab-link" data-fi="Yhteystiedot" data-en="Contact">Yhteystiedot</a><br><a href="https://github.com/MarikaMatala/The-Cultured-Vault" target="_blank" rel="noopener noreferrer" data-fi="Tutustu avoimen lähdekoodin projektiin ↗" data-en="Explore the open-source project ↗">Tutustu avoimen lähdekoodin projektiin ↗</a>
     </footer>
   </main>
 </body>
