@@ -19,7 +19,7 @@ This is a lightweight front-end prototype. It does not require a framework, buil
 - search by title, creator, country and genre;
 - category filters and sorting, with alphabetical title order as the default;
 - an A–Z / Å–Ä–Ö letter index and a 0–9 numeric index; both jump to matching catalogue groups, disable unavailable entries and follow the current search and category filters; the sticky indexes remain accessible while scrolling;
-- separate owner ratings, BookRank reader scores for books, and outbound IMDb / Rotten Tomatoes lookup links;
+- separate owner ratings, BookRank reader scores for books, and outbound IMDb / Rotten Tomatoes lookup links only (no copied IMDb or Rotten Tomatoes scores);
 - a form for adding a personal demo rating and optional comment;
 - Finnish and English interface text;
 - responsive layouts for phones, tablets and desktop browsers;
@@ -39,7 +39,7 @@ BookRank is the numeric reader-score source for imported book records. Its score
 
 This demo does not provide registration, sign-in, user profiles, a server, an API, a shared database, public user reviews, cross-device synchronisation, live third-party catalogue metadata, a native APK/IPA, or App Store / Google Play distribution.
 
-The catalogue and scores are examples. A review submitted in the demo is saved only in the current browser's localStorage. It is not uploaded to a server or committed to GitHub. Clearing browser data may remove it. Do not enter passwords, private details or sensitive information.
+The local catalogue contains curated titles and basic factual metadata; it does not include copied IMDb or Rotten Tomatoes scores. BookRank scores are imported only under its published CC BY 4.0 licence and are attributed. The catalogue does not reproduce third-party descriptions, reviews, posters or covers. A review submitted in the demo is saved only in the current browser's localStorage. It is not uploaded to a server or committed to GitHub. Clearing browser data may remove it. Do not enter passwords, private details or sensitive information.
 
 ## 3. Requirements
 
@@ -280,3 +280,8 @@ BookRank publishes its scores, ranks and confidence values under **CC BY 4.0**. 
 ## Sources and licences page
 
 The demo includes a bilingual [sources.html](sources.html) source register. It distinguishes direct data sources from external lookup links and BookRank's upstream providers. It also explains manually curated metadata, browser-local storage, and why third-party posters and covers are not copied.
+
+
+## Open-source licence and third-party material
+
+The demo's own source code and documentation are licensed under the MIT License; see [LICENSE](LICENSE). The MIT licence does not apply to third-party works or trademarks named in the catalogue. IMDb and Rotten Tomatoes are outbound lookup links only. No numeric scores, reviews, posters, stills or book covers from those services are copied into this demo. BookRank scores and ranks are attributed under the CC BY 4.0 terms stated by BookRank. Its methodology lists upstream providers with their own API terms; this demo does not query those providers directly or copy their raw datasets. See [sources.html](sources.html) for source boundaries and attribution details.
