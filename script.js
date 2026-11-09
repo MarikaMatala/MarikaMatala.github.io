@@ -60,10 +60,6 @@ if (languageToggle) {
   });
 }
 
-try {
-  if (localStorage.getItem('portfolio-language') === 'en') setLanguage('en');
-} catch (error) { /* storage may be disabled */ }
-
 const androidImages = [
   { src: 'images/android-kurssin%20tehtavien%20kuvia/1.png', altFi: 'Android-kurssin harjoitustyön kuvakaappaus', altEn: 'Screenshot from an Android course exercise' },
   { src: 'images/android-kurssin%20tehtavien%20kuvia/12.png', altFi: 'Android-kurssin harjoitustyön kuvakaappaus', altEn: 'Screenshot from an Android course exercise' },
@@ -126,6 +122,11 @@ if (androidCarousel) {
   }, { passive: true });
 }
 
+
+// Restore the saved language only after the Android carousel bindings exist.
+try {
+  if (localStorage.getItem('portfolio-language') === 'en') setLanguage('en');
+} catch (error) { /* storage may be disabled */ }
 
 const oopBrowser = document.getElementById('oop-browser');
 if (oopBrowser) {
