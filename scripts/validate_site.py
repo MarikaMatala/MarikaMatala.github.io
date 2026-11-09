@@ -5,9 +5,9 @@ This is a lightweight source-level check, not a WCAG conformance checker.
 Manual keyboard, screen-reader, zoom, responsive and contrast testing is still required.
 """
 
-# KOMMENTOINTIOHJE / CODE MAP
-# Tiedoston tarkoitus: Portfoliosivuston automaattinen rakenteen ja saavutettavuuden validointiskripti.
-# Etene ylhäältä alas: asetukset ja apufunktiot ensin, testit tai tarkistukset seuraavaksi.
+# CODE MAP / COMMENTING GUIDE
+# File purpose: Portfoliosivuston automaattinen rakenteen ja saavutettavuuden validointiskripti.
+# Read from top to bottom: settings and helper functions come first, followed by tests or checks.
 
 from html.parser import HTMLParser
 from pathlib import Path
@@ -91,8 +91,8 @@ class SiteParser(HTMLParser):
                 self.unnamed_buttons.append(attrs.get("id", "(button without id)"))
 
 
-# FUNKTIO-OSIO ALKAA: resolve_local_reference.
-# LUOKKA-OSIO PÄÄTTYY: SiteParser. Seuraava osio alkaa seuraavasta määrittelystä tai tiedoston lopusta.
+# FUNCTION SECTION START: resolve_local_reference.
+# CLASS SECTION END: SiteParser. The next section starts at the next definition or at the end of the file.
 def resolve_local_reference(source, value):
     parsed = urlsplit(value)
     if parsed.scheme or parsed.netloc:
@@ -104,8 +104,8 @@ def resolve_local_reference(source, value):
     return target.resolve()
 
 
-# FUNKTIO-OSIO ALKAA: audit_page.
-# FUNKTIO-OSIO PÄÄTTYY: resolve_local_reference. Seuraava osio alkaa seuraavasta määrittelystä tai tiedoston lopusta.
+# FUNCTION SECTION START: audit_page.
+# FUNCTION SECTION END: resolve_local_reference. The next section starts at the next definition or at the end of the file.
 def audit_page(page, parser):
     errors = []
     relative = page.relative_to(ROOT)
@@ -144,8 +144,8 @@ def audit_page(page, parser):
     return errors
 
 
-# FUNKTIO-OSIO ALKAA: main.
-# FUNKTIO-OSIO PÄÄTTYY: audit_page. Seuraava osio alkaa seuraavasta määrittelystä tai tiedoston lopusta.
+# FUNCTION SECTION START: main.
+# FUNCTION SECTION END: audit_page. The next section starts at the next definition or at the end of the file.
 def main():
     pages = sorted(ROOT.glob("*.html"))
     if not pages:
@@ -202,4 +202,4 @@ def main():
 if __name__ == "__main__":
     sys.exit(main())
 
-# FUNKTIO-OSIO PÄÄTTYY: main. Seuraava osio alkaa seuraavasta määrittelystä tai tiedoston lopusta.
+# FUNCTION SECTION END: main. The next section starts at the next definition or at the end of the file.
