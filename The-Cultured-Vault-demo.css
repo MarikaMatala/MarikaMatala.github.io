@@ -1,7 +1,7 @@
 /*
- * KOMMENTOINTIOHJE / CODE MAP
- * Tiedoston tarkoitus: Vanhan Cultured Vault -prototyypin tyylitiedosto.
- * Rakenne: teeman muuttujat ja yleissäännöt ensin, komponenttien tyylit seuraavaksi, responsiiviset säännöt lopuksi.
+ * CODE MAP / COMMENTING GUIDE
+ * File purpose: Vanhan Cultured Vault -prototyypin tyylitiedosto.
+ * Structure: teeman muuttujat ja yleissäännöt ensin, komponenttien tyylit seuraavaksi, responsiiviset säännöt lopuksi.
  */
 :root{color-scheme:dark;--bg:#171512;--panel:#211e19;--panel-2:#29251f;--text:#f2eee5;--muted:#c1b9aa;--bronze:#c18b55;--bronze-light:#e0b47c;--silver:#c8cbd0;--gold:#e0bd68;--line:#514536;--green:#a9c7a5}
 *{box-sizing:border-box}
@@ -93,11 +93,11 @@ select,input,textarea{background:#151310;color:var(--text);border:1px solid var(
 .demo-footer{margin-top:28px;padding:20px 0;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:.8rem}
 .demo-footer p:first-child{color:var(--bronze-light);font-weight:900;letter-spacing:.15em}
 .empty-state{padding:25px;border:1px dashed var(--line);border-radius:12px;color:var(--muted)}
-/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:850px){.catalogue-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.section-heading{align-items:flex-start;flex-direction:column}.sort-control{width:100%;max-width:240px}}
-/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:600px){.vault-shell{padding:16px}.vault-header{gap:12px;align-items:flex-start}.vault-mark{width:45px;height:45px;flex:0 0 45px}.language-button{padding:8px 10px}.brand-copy h1{font-size:1.65rem}.tagline{font-size:.78rem}.catalogue-grid,.review-order,.personal-review-form{grid-template-columns:1fr}.personal-review-form>div:first-child,.review-comment{grid-column:auto}.demo-status{flex-direction:column;gap:2px}.review-top{align-items:flex-start;flex-direction:column}.vault-stats{gap:16px 24px}}
-/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
 
-/* TIEDOSTON TYYLIOSIO PÄÄTTYY TÄHÄN. */
+/* END OF STYLESHEET. */
