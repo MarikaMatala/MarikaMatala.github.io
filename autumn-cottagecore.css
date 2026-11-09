@@ -1,7 +1,7 @@
 /*
  * CODE MAP / COMMENTING GUIDE
- * File purpose: Sivuston tumma metsä-, syksy- ja kuparisävyinen teema sekä responsiiviset tyylit.
- * Structure: teeman muuttujat ja yleissäännöt ensin, komponenttien tyylit seuraavaksi, responsiiviset säännöt lopuksi.
+ * File purpose: Dark woodland, autumn, and copper color theme for the website, including responsive styles.
+ * Structure: theme variables and global rules first, followed by component styles and responsive rules.
  */
 /* Autumn cottagecore portfolio theme — accessible, responsive and low-dependency. */
 :root{
