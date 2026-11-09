@@ -1,6 +1,6 @@
 # The Cultured Vault — browser demo
 
-<!-- Last reviewed: 2026-11-07. -->
+<!-- Last reviewed: 2026-11-09. -->
 
 > Culture worth discovering. Stories worth remembering.
 
@@ -15,7 +15,7 @@ The Cultured Vault is a static cultural-catalogue prototype for exploring films,
 
 - A manually curated catalogue of 1,000 works across eight media categories.
 - Search by title, creator, country and genre.
-- Category filters and sorting by title, featured order or release year.
+- Category filters and sorting by title, original catalogue order (Featured) or release year.
 - A–Z and 0–9 navigation, including a one-character jump field.
 - Pagination at 36 catalogue entries per page.
 - External lookup links on each work: IMDb search and a Google search restricted to Rotten Tomatoes pages. Book entries also link to Open Library search.
@@ -62,10 +62,11 @@ Main files:
 - `sources.html` — current source and licence register.
 - `sw.js` — service worker and app-shell cache.
 - `manifest.webmanifest` — web app metadata and icons.
-- `LICENSE` — MIT licence for original project code and documentation only.
+- `LICENSE` — MIT licence for original project-authored HTML, CSS and JavaScript source code only; excludes catalogue records, documentation, icons, the manifest and third-party material.
 
 ## Licence boundary
 
-The MIT licence applies only to original project-authored code and documentation, to the extent those files contain no third-party material. It does not apply to the underlying films, series, books, music, games, characters, artwork, logos, datasets, trademarks or other third-party material.
+For this project, the MIT licence applies only to original project-authored application source code in HTML, CSS and JavaScript, excluding embedded catalogue records and all third-party material. It does not cover documentation, SVG or PNG icons, other visual assets, the web app manifest, or any third-party content. It does not apply to the underlying films, series, books, music, games, characters, artwork, logos, datasets, trademarks or other third-party material.
 
 The presence of a title or creator name in the catalogue is not a claim of ownership, endorsement or permission to reproduce the underlying work. Review [sources.html](sources.html) before reusing or contributing material.
+\n\n### Asset provenance\n\nThe 180 × 180 PNG touch icon is referenced by the web app manifest but is not covered by the MIT code licence. Its original source and export provenance should be verified before reuse or redistribution. The alternate `apple-touch-icon.svg` file is not referenced by the page or manifest and is not part of the service-worker cache.\n
