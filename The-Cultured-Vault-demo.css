@@ -1,7 +1,7 @@
 /*
  * CODE MAP / COMMENTING GUIDE
  * File purpose: Vanhan Cultured Vault -prototyypin tyylitiedosto.
- * Structure: teeman muuttujat ja yleissäännöt ensin, komponenttien tyylit seuraavaksi, responsiiviset säännöt lopuksi.
+ * Structure: theme variables and global rules first, followed by component styles and responsive rules.
  */
 :root{color-scheme:dark;--bg:#171512;--panel:#211e19;--panel-2:#29251f;--text:#f2eee5;--muted:#c1b9aa;--bronze:#c18b55;--bronze-light:#e0b47c;--silver:#c8cbd0;--gold:#e0bd68;--line:#514536;--green:#a9c7a5}
 *{box-sizing:border-box}
