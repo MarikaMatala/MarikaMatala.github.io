@@ -160,7 +160,7 @@ function renderCatalogue(){
   indexStickyShell.hidden=!showIndex;
   if(alphabetical&&list.length){
     const firstCharacters=list.map(work=>work.title.trim().charAt(0).toLocaleUpperCase(language==="fi"?"fi":"en"));
-    const availableLetters=new Set(firstCharacters.filter(first=>/^[A-Z]$/i.test(first)));
+    const availableLetters=new Set(firstCharacters.filter(first=>/^[A-ZÅÄÖ]$/i.test(first)));
     const availableNumbers=new Set(firstCharacters.filter(first=>/^\d$/.test(first)));
     const letters="ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ".split("");
     const label=document.createElement("span");label.className="alphabet-label";label.textContent=language==="fi"?"Siirry kirjaimeen:":"Jump to letter:";alphabetNav.append(label);
@@ -255,7 +255,7 @@ const alphabetJumpInput=document.getElementById("alphabet-jump-input");
 alphabetJumpInput.addEventListener("input",()=>{
  const initial=alphabetJumpInput.value.trim().toLocaleUpperCase(language==="fi"?"fi":"en");
  const isNumber=/^\d$/.test(initial);
- const isLetter=/^[A-Z]$/i.test(initial);
+ const isLetter=/^[A-ZÅÄÖ]$/i.test(initial);
  if(!isNumber&&!isLetter)return;
  sortSelect.value="title";
  const matching=filteredWorks();
