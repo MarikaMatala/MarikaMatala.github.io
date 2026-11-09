@@ -286,3 +286,5 @@ select,input,textarea{background:#151310;color:var(--text);border:1px solid var(
 .suggestion-panel .demo-notice{margin:18px 0}
 /* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
 @media(max-width:600px){.contact-grid{grid-template-columns:1fr}.contact-panel{padding:18px}.contact-actions{flex-direction:column;align-items:flex-start}}
+
+/* TIEDOSTON TYYLIOSIO PÄÄTTYY TÄHÄN. */
