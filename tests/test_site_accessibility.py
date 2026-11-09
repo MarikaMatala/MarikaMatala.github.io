@@ -1,3 +1,7 @@
+# KOMMENTOINTIOHJE / CODE MAP
+# Tiedoston tarkoitus: Portfoliosivuston saavutettavuuden ja HTML-rakenteen automaattiset testit.
+# Etene ylhäältä alas: asetukset ja apufunktiot ensin, testit tai tarkistukset seuraavaksi.
+
 import unittest
 from scripts.validate_site import ROOT, SiteParser, audit_page
 
