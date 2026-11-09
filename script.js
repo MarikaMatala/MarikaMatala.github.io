@@ -1,14 +1,21 @@
+/*
+ * KOMMENTOINTIOHJE / CODE MAP
+ * Tiedoston tarkoitus: Sivuston JavaScript-toiminnot: kielenvaihto, kuvakaruselli, esimerkkien selaus ja käyttöliittymän tapahtumat.
+ * Rakenne: ensin muuttujat ja asetukset, sen jälkeen funktiot ja lopuksi tapahtumankuuntelijat / käynnistys.
+ */
 // Portfolio interactions: language switch, responsive Android image gallery and interactive C# examples.
 const languageToggle = document.getElementById('language-toggle');
 const primaryNavigation = document.getElementById('primary-navigation');
 let currentLanguage = 'fi';
 
+// FUNKTIO-OSIO ALKAA: updateCarouselLabels – katso funktion sisältä tarkempi toimintakuvaus.
 function updateCarouselLabels(language) {
   document.querySelectorAll('[data-fi-label][data-en-label]').forEach((element) => {
     element.setAttribute('aria-label', element.dataset[language + 'Label']);
   });
 }
 
+// FUNKTIO-OSIO ALKAA: setLanguage – katso funktion sisältä tarkempi toimintakuvaus.
 function setLanguage(language) {
   currentLanguage = language;
   try { localStorage.setItem('portfolio-language', language); } catch (error) { /* storage may be disabled */ }
@@ -79,6 +86,7 @@ const androidImage = document.getElementById('android-carousel-image');
 const androidCounter = document.getElementById('android-counter');
 let androidImageIndex = 0;
 
+// FUNKTIO-OSIO ALKAA: showAndroidImage – katso funktion sisältä tarkempi toimintakuvaus.
 function showAndroidImage(index) {
   if (!androidImage || !androidCounter || !androidImages.length) return;
   androidImageIndex = (index + androidImages.length) % androidImages.length;
