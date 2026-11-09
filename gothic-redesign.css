@@ -1,7 +1,7 @@
 /*
  * CODE MAP / COMMENTING GUIDE
  * File purpose: Style rules for the redesigned gothic appearance of the website.
- * Structure: teeman muuttujat ja yleissäännöt ensin, komponenttien tyylit seuraavaksi, responsiiviset säännöt lopuksi.
+ * Structure: theme variables and global rules first, followed by component styles and responsive rules.
  */
 /* Decorative details retained for the autumn cottagecore theme. Main colors and typography are set in autumn-cottagecore.css. */
 :root{
