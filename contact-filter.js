@@ -1,3 +1,8 @@
+/*
+ * KOMMENTOINTIOHJE / CODE MAP
+ * Tiedoston tarkoitus: Yhteydenottolomakkeen tekstin tarkistus ennen lomakkeen lähettämistä.
+ * Rakenne: ensin muuttujat ja asetukset, sen jälkeen funktiot ja lopuksi tapahtumankuuntelijat / käynnistys.
+ */
 /* Lightweight contact-form content filter. Valid submissions use native HTML POST. */
 (() => {
   const form = document.querySelector('.contact-form');
