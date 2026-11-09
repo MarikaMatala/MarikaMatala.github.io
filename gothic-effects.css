@@ -1,7 +1,11 @@
 /*
  * CODE MAP / COMMENTING GUIDE
  * File purpose: Decorative elements, visual effects, and interface details for the gothic visual theme.
- * Structure: theme variables and global rules first, followed by component styles and responsive rules.
+ * CODE MAP: gothic theme tokens -> decorative effects -> project-card enhancements -> image and gallery details -> responsive rules.
+ * EDITING TIPS:
+ * - This file adds decorative effects; core layout and shared colors may be defined in other stylesheets.
+ * - Search for the target component ID or class with Ctrl+F.
+ * - Check the stylesheet loading order before assuming a rule is not applied.
  */
 /* Gothic effects for Portfolio 2026 — no JavaScript dependency required. */
 :root{--gothic-paper:#f1e9df;--gothic-rose:#b65c72;--gothic-moss:#a6b49c;--gothic-ink:#050407}
