@@ -1,5 +1,12 @@
 <!doctype html>
+<!--
+  KOMMENTOINTIOHJE / CODE MAP
+  Tiedoston tarkoitus: Virhesivu: auttaa kävijää palaamaan sivuston toimiville sivuille.
+  Rakenne: HEAD sisältää metatiedot ja resurssilinkit; BODY sisältää kävijälle näkyvän sivun.
+  Etsi osioita tämän tiedoston ALKAA- ja PÄÄTTYY-merkintöjen avulla.
+-->
 <html lang="fi">
+<!-- HEAD-OSIO ALKAA: metatiedot, otsikko ja tyylitiedostot. -->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,6 +33,8 @@
     @media(max-width:520px){.error-actions{flex-direction:column}.error-actions a{width:100%}}
   </style>
 </head>
+<!-- HEAD-OSIO PÄÄTTYY. -->
+<!-- BODY-OSIO ALKAA: sivun näkyvä sisältö. -->
 <body>
 <a class="skip-link" href="#main-content" data-fi="Siirry sisältöön" data-en="Skip to content">Siirry sisältöön</a>
   <div class="notice info-ribbon site-status" role="status" aria-label="Sivuston tila / Website status">
@@ -44,7 +53,8 @@
     </nav>
     <button class="language-toggle" id="language-toggle" type="button" aria-label="Vaihda sivuston kieltä / Change language" title="FIN / ENG"><span class="language-label" data-fi="FIN / ENG" data-en="FIN / ENG">FIN / ENG</span></button>
   </header>
-  <main id="main-content" class="error-page">
+  <!-- PÄÄSISÄLTÖ ALKAA: sivun varsinainen sisältö. -->
+<main id="main-content" class="error-page">
     <section class="error-content" aria-labelledby="error-title">
       <p class="error-code" aria-hidden="true">404</p>
       <p class="eyebrow"><span class="eyebrow-line"></span><span data-fi="Kadonnut sivupolku" data-en="A missing page">Kadonnut sivupolku</span></p>
@@ -55,7 +65,8 @@
         <a class="home-work-cta" href="tyonaytteet.html"><span data-fi="Katso työnäytteet" data-en="View work samples">Katso työnäytteet</span><span aria-hidden="true">↗</span></a>
       </div>
     </section>
-  </main>
+  <!-- PÄÄSISÄLTÖ PÄÄTTYY. -->
+</main>
   <footer class="site-footer section-wrap">
     <nav class="footer-nav" aria-label="Alatunnisteen navigaatio">
       <a href="index.html" data-fi="Etusivu" data-en="Home">Etusivu</a>
@@ -68,5 +79,6 @@
   <div class="copyright-bar">
     <p class="footer-rights" data-fi="© 2026 Marika Matalamäki. Kaikki oikeudet pidätetään.<br>Lisätietoa GitHub-profiilini README-tiedostossa." data-en="© 2026 Marika Matalamäki. All rights reserved.<br>More information in my GitHub profile README.">© 2026 Marika Matalamäki. Kaikki oikeudet pidätetään.<br>Lisätietoa GitHub-profiilini README-tiedostossa.</p>
   </div>
+<!-- BODY-OSIO PÄÄTTYY: sivun sisältö päättyy tähän. -->
 </body>
 </html>
