@@ -1,3 +1,7 @@
+// KOMMENTOINTIOHJE / CODE MAP
+// Tiedoston tarkoitus: Cultured Vault -demon service worker: staattisten resurssien välimuisti ja offline-perustoiminta.
+// Etene ylhäältä alas: asetukset ja apufunktiot ensin, testit tai tarkistukset seuraavaksi.
+
 /* THE CULTURED VAULT SERVICE WORKER
    Caches the static app shell for basic offline use. app.js registers this
    worker with a scope limited to this demo directory. Increment CACHE_NAME
