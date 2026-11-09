@@ -1,3 +1,8 @@
+/*
+ * KOMMENTOINTIOHJE / CODE MAP
+ * Tiedoston tarkoitus: Sivuston visuaaliset ja käyttöliittymän lisätoiminnot.
+ * Rakenne: ensin muuttujat ja asetukset, sen jälkeen funktiot ja lopuksi tapahtumankuuntelijat / käynnistys.
+ */
 /* Lightweight progressive enhancements; no animation or icon framework required. */
 (function () {
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
