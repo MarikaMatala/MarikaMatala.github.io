@@ -1,4 +1,9 @@
 /*
+ * KOMMENTOINTIOHJE / CODE MAP
+ * Tiedoston tarkoitus: Esimerkkiasetukset Remote Job Fit -prototyypin asetusrakenteelle; arvot ovat paikkamerkkejä.
+ * Rakenne: esimerkkiasetukset ensin, niiden käyttötarkoitus on kuvattu avainten yhteydessä.
+ */
+/*
  * FICTIONAL CONFIGURATION TEMPLATE — NOT LOADED BY THE CURRENT DEMO.
  *
  * The GitHub Pages demo is browser-only and does not need this file.
