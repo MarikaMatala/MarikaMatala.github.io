@@ -1,7 +1,7 @@
 /*
- * KOMMENTOINTIOHJE / CODE MAP
- * Tiedoston tarkoitus: Sivuston tumma metsä-, syksy- ja kuparisävyinen teema sekä responsiiviset tyylit.
- * Rakenne: teeman muuttujat ja yleissäännöt ensin, komponenttien tyylit seuraavaksi, responsiiviset säännöt lopuksi.
+ * CODE MAP / COMMENTING GUIDE
+ * File purpose: Sivuston tumma metsä-, syksy- ja kuparisävyinen teema sekä responsiiviset tyylit.
+ * Structure: teeman muuttujat ja yleissäännöt ensin, komponenttien tyylit seuraavaksi, responsiiviset säännöt lopuksi.
  */
 /* Autumn cottagecore portfolio theme — accessible, responsive and low-dependency. */
 :root{
@@ -214,7 +214,7 @@ button,summary{cursor:pointer}
 img{max-width:100%;height:auto}
 main{min-width:0}
 section[id]{scroll-margin-top:7rem}
-/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:760px){
   body{font-size:16px}
   .site-header{gap:10px}
@@ -222,13 +222,13 @@ section[id]{scroll-margin-top:7rem}
   .gothic-mandala{width:54vw!important;right:-18vw!important;top:28vh!important;opacity:.075!important}
   .project-card,.skills-card,.contact-method,.creative-samples-grid .creative-sample{border-radius:12px!important}
 }
-/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:560px){
   .hero-copy h1,.work-page-intro h1,.contact-page h1{font-size:clamp(2.1rem,10vw,3.25rem)!important}
   .section-heading{font-size:clamp(1.8rem,8vw,2.6rem)!important}
   .language-toggle{min-height:44px}
 }
-/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
@@ -258,7 +258,7 @@ section[id]{scroll-margin-top:7rem}
 .hero-index .portfolio-word{font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em}
 .hero-index .portfolio-year{font-size:1.9rem;font-weight:700;line-height:1}
 .site-footer::after{background-image:url("images/metal-rose-sigil.svg?v=4")!important}
-/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:760px){.hero-index{position:relative!important;right:auto!important;bottom:auto!important;justify-self:start;margin-top:8px}}
 
 
@@ -412,7 +412,7 @@ input::placeholder,textarea::placeholder{color:#b7c4b9!important;opacity:1}
 button{color:#f1f0e8}
 hr{border-color:#526657!important}
 ::selection{background:#e7a06a!important;color:#101512!important}
-/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(prefers-color-scheme:light){
   :root,html{color-scheme:dark!important}
 }
@@ -563,7 +563,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible{
 .project-card:focus-within,.skills-card:focus-within,.contact-method:focus-within{
  outline:2px solid #E6A06A!important;outline-offset:3px;
 }
-/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(prefers-color-scheme:light){:root,html,body{color-scheme:dark!important}}
 
 
@@ -707,7 +707,7 @@ a:not(.hero-index):not(.gothic-button):not(.home-work-cta):not(.sample-pdf-link)
 /* Display PDF work samples directly inside their portfolio cards. */
 .creative-samples-grid .sample-pdf-embed{width:100%;height:clamp(440px,65vw,760px);overflow:hidden;border:1px solid #526657;border-radius:14px;background:#111914;box-shadow:0 12px 30px rgba(0,0,0,.28)}
 .creative-samples-grid .sample-pdf-embed iframe{display:block;width:100%;height:100%;border:0;background:#111914}
-/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:600px){.creative-samples-grid .sample-pdf-embed{height: min(78vh,680px);min-height:440px}}
 
 
@@ -741,7 +741,7 @@ a:not(.hero-index):not(.gothic-button):not(.home-work-cta):not(.sample-pdf-link)
   hyphens:auto;
   text-wrap:balance;
 }
-/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:700px){
   .hero-copy h1,.work-page-intro h1,.about-page-intro h1,.contact-page h1{
     font-size:clamp(1.8rem,8.1vw,2.65rem)!important;
@@ -755,7 +755,7 @@ a:not(.hero-index):not(.gothic-button):not(.home-work-cta):not(.sample-pdf-link)
   .footer-nav{gap:8px 14px!important}
   .footer-nav a{font-size:.8rem!important;min-height:38px!important}
 }
-/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:380px){
   .hero-copy h1,.work-page-intro h1,.about-page-intro h1,.contact-page h1{
     font-size:clamp(1.65rem,7.8vw,2rem)!important;
@@ -768,7 +768,7 @@ a:not(.hero-index):not(.gothic-button):not(.home-work-cta):not(.sample-pdf-link)
 
 
 /* Mobile typography and footer refinement (November 2026). */
-/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media (max-width: 700px) {
   .hero-copy h1,
   .work-page-intro h1,
@@ -823,7 +823,7 @@ a:not(.hero-index):not(.gothic-button):not(.home-work-cta):not(.sample-pdf-link)
   }
 }
 
-/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media (max-width: 380px) {
   .hero-copy h1,
   .work-page-intro h1,
@@ -870,7 +870,7 @@ h1 em, h2 em, h3 em, h4 em {
 }
 
 /* Preserve intentional line breaks in headings on narrow screens. */
-/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media (max-width: 700px) {
   .hero-copy h1 br,
   .work-page-intro h1 br,
@@ -1005,9 +1005,9 @@ h1 em, h2 em, h3 em, h4 em {
   color:#e6a06a;
   text-underline-offset:3px;
 }
-/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:760px){
   .legal-page .legal-section{padding:1.1rem}
 }
 
-/* TIEDOSTON TYYLIOSIO PÄÄTTYY TÄHÄN. */
+/* END OF STYLESHEET. */
