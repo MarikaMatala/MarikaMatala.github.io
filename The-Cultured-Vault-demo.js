@@ -1,3 +1,8 @@
+/*
+ * KOMMENTOINTIOHJE / CODE MAP
+ * Tiedoston tarkoitus: Vanhan Cultured Vault -prototyypin esimerkkiaineisto, suodatus ja käyttöliittymän toiminnot.
+ * Rakenne: asetukset ja aineistot ensin, apufunktiot ja käyttöliittymän toiminnot seuraavaksi.
+ */
 const works = [
 {id:"film-the-godfather-1972",title:"The Godfather",creator:"Francis Ford Coppola",type:"film",year:1972,genres:["Crime","Drama"],country:"United States",owner:9.5,community:9.2,ownerReview:"A defining crime drama with extraordinary performances, atmosphere and a story that rewards revisiting."},
 {id:"film-spirited-away-2001",title:"Spirited Away",creator:"Hayao Miyazaki",type:"animation",year:2001,genres:["Adventure","Fantasy"],country:"Japan",owner:10,community:9.1,ownerReview:"A beautifully imagined world, full of detail, emotion and unforgettable visual storytelling."},
@@ -31,7 +36,9 @@ const sortSelect = document.getElementById("sort-select");
 const reviewSelect = document.getElementById("review-work");
 const storageKey = "cultured-vault-demo-reviews-v1";
 
+// FUNKTIO-OSIO ALKAA: getLocalReviews.
 function getLocalReviews(){try{return JSON.parse(localStorage.getItem(storageKey)||"[]")}catch{return []}}
+// FUNKTIO-OSIO ALKAA: setLanguage.
 function setLanguage(next){
  if(next!=="fi"&&next!=="en")return;
  language=next;document.documentElement.lang=language;
@@ -41,7 +48,9 @@ function setLanguage(next){
  document.getElementById("demo-language").setAttribute("aria-label",language==="fi"?"Switch to English":"Vaihda suomeksi");
  renderCatalogue();renderLocalReviews();
 }
+// FUNKTIO-OSIO ALKAA: getSearchText.
 function getSearchText(work){return [work.title,work.creator,work.country,...work.genres].join(" ").toLocaleLowerCase()}
+// FUNKTIO-OSIO ALKAA: filteredWorks.
 function filteredWorks(){
  const query=searchInput.value.trim().toLocaleLowerCase();
  let list=works.filter(w=>(activeCategory==="all"||w.type===activeCategory)&&(!query||getSearchText(w).includes(query)));
@@ -51,6 +60,7 @@ function filteredWorks(){
  if(sort==="rating")list.sort((a,b)=>b.community-a.community);
  return list;
 }
+// FUNKTIO-OSIO ALKAA: renderCatalogue.
 function renderCatalogue(){
  const list=filteredWorks();
  grid.replaceChildren();
@@ -82,6 +92,7 @@ function renderCatalogue(){
   reviews.append(ownerReview,communityReview);card.append(toggle,reviews);grid.append(card);
  });
 }
+// FUNKTIO-OSIO ALKAA: renderLocalReviews.
 function renderLocalReviews(){
  const container=document.getElementById("local-review-list");container.replaceChildren();
  const reviews=getLocalReviews();
@@ -93,6 +104,7 @@ function renderLocalReviews(){
   item.append(heading,comment);container.append(item);
  });
 }
+// FUNKTIO-OSIO ALKAA: populateReviewSelect.
 function populateReviewSelect(){
  reviewSelect.replaceChildren();
  works.forEach(work=>{const option=document.createElement("option");option.value=work.id;option.textContent=work.title;reviewSelect.append(option)});
