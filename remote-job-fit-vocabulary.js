@@ -1,7 +1,7 @@
 /*
  * CODE MAP / COMMENTING GUIDE
  * File purpose: Remote Job Fit -prototyypin osaamis- ja avainsanaluettelo.
-* TODO: Translate this code comment into clear English. Structure: ensin muuttujat ja asetukset, sen jlkeen funktiot ja lopuksi tapahtumankuuntelijat / kynnistys.
+* Structure: variables and settings first, followed by functions, then event listeners and initialization.
  */
 /* Project-maintained bilingual keyword vocabulary. See README.md for source notes. */
 (function(root) {
