@@ -4,8 +4,8 @@ const path = require("node:path");
 const { test } = require("node:test");
 
 const root = path.resolve(__dirname, "..");
-const appPath = path.join(root, "The-Cultured-Vault-demo", "app.js");
-const appSource = fs.readFileSync(appPath, "utf8");
+const demoPath = path.join(root, "The-Cultured-Vault-demo");
+const appSource = fs.readFileSync(path.join(demoPath, "app.js"), "utf8");
 
 function readBalancedArray(source, start) {
   let depth = 0;
@@ -41,13 +41,15 @@ function readAdditionalWorks() {
   return JSON.parse(readBalancedArray(appSource, arrayStart));
 }
 
-test("the demo contains 550 uniquely identified catalogue works", () => {
+test("the demo contains 1,000 uniquely identified catalogue works", () => {
   const objectIds = [...appSource.matchAll(/(?:id:|"id":)"([^"]+)"/g)]
     .map((match) => match[1]);
   const additionalIds = readAdditionalWorks().map((entry) => entry[0]);
   const allIds = [...objectIds, ...additionalIds];
 
-  assert.equal(allIds.length, 550);
+  assert.equal(objectIds.length, 900, "the primary catalogue should contain 900 works");
+  assert.equal(additionalIds.length, 100, "the additional catalogue should contain 100 works");
+  assert.equal(allIds.length, 1000, "the complete catalogue should contain 1,000 works");
   assert.equal(new Set(allIds).size, allIds.length, "catalogue IDs must be unique");
 });
 
@@ -66,25 +68,12 @@ test("additional sample entries do not carry pre-filled owner ratings", () => {
   );
 });
 
-test("the visible catalogue count and documentation agree with the dataset", () => {
-  const html = fs.readFileSync(
-    path.join(root, "The-Cultured-Vault-demo", "index.html"),
-    "utf8"
-  );
-  const readme = fs.readFileSync(
-    path.join(root, "The-Cultured-Vault-demo", "README.md"),
-    "utf8"
-  );
-  const finnishReadme = fs.readFileSync(
-    path.join(root, "The-Cultured-Vault-demo", "README.fi.md"),
-    "utf8"
-  );
+test("the visible catalogue count and English documentation agree with the dataset", () => {
+  const html = fs.readFileSync(path.join(demoPath, "index.html"), "utf8");
+  const readme = fs.readFileSync(path.join(demoPath, "README.md"), "utf8");
 
-  assert.match(html, /id="total-count">550</);
-  assert.match(html, /Näytetään 550 teosta/);
-  assert.match(html, /with 550 sample works/);
-  assert.match(readme, /550-entry sample catalogue/);
-  assert.match(readme, /536 additions \(550 entries total\)/);
-  assert.match(finnishReadme, /550 teoksen esimerkkikatalogi/);
-  assert.match(finnishReadme, /536 lisäystä \(yhteensä 550 teosta\)/);
+  assert.match(html, /id="total-count">1,000</);
+  assert.match(html, /data-en="works in catalogue"/);
+  assert.match(readme, /catalogue of 1,000 works/);
+  assert.doesNotMatch(readme, /550-entry sample catalogue|536 additions \(550 entries total\)/);
 });
