@@ -8,14 +8,14 @@ const languageToggle = document.getElementById('language-toggle');
 const primaryNavigation = document.getElementById('primary-navigation');
 let currentLanguage = 'fi';
 
-// FUNKTIO-OSIO ALKAA: updateCarouselLabels – katso funktion sisältä tarkempi toimintakuvaus.
+// Päivittää kuvakarusellin painikkeiden saavutettavat nimet valitun kielen mukaan.
 function updateCarouselLabels(language) {
   document.querySelectorAll('[data-fi-label][data-en-label]').forEach((element) => {
     element.setAttribute('aria-label', element.dataset[language + 'Label']);
   });
 }
 
-// FUNKTIO-OSIO ALKAA: setLanguage – katso funktion sisältä tarkempi toimintakuvaus.
+// Vaihtaa sivuston kielen, tallentaa valinnan selaimeen ja päivittää tekstit, kuvien vaihtoehtoiset tekstit sekä upotetut näkymät.
 // FUNKTIO-OSIO PÄÄTTYY: updateCarouselLabels. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
 function setLanguage(language) {
   currentLanguage = language;
@@ -87,7 +87,7 @@ const androidImage = document.getElementById('android-carousel-image');
 const androidCounter = document.getElementById('android-counter');
 let androidImageIndex = 0;
 
-// FUNKTIO-OSIO ALKAA: showAndroidImage – katso funktion sisältä tarkempi toimintakuvaus.
+// Näyttää valitun Android-harjoitustyön kuvan ja päivittää kuvan vaihtoehtoisen tekstin sekä numerolaskurin.
 // FUNKTIO-OSIO PÄÄTTYY: setLanguage. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
 function showAndroidImage(index) {
   if (!androidImage || !androidCounter || !androidImages.length) return;
