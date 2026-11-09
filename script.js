@@ -16,6 +16,7 @@ function updateCarouselLabels(language) {
 }
 
 // FUNKTIO-OSIO ALKAA: setLanguage – katso funktion sisältä tarkempi toimintakuvaus.
+// FUNKTIO-OSIO PÄÄTTYY: updateCarouselLabels. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
 function setLanguage(language) {
   currentLanguage = language;
   try { localStorage.setItem('portfolio-language', language); } catch (error) { /* storage may be disabled */ }
@@ -87,6 +88,7 @@ const androidCounter = document.getElementById('android-counter');
 let androidImageIndex = 0;
 
 // FUNKTIO-OSIO ALKAA: showAndroidImage – katso funktion sisältä tarkempi toimintakuvaus.
+// FUNKTIO-OSIO PÄÄTTYY: setLanguage. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
 function showAndroidImage(index) {
   if (!androidImage || !androidCounter || !androidImages.length) return;
   androidImageIndex = (index + androidImages.length) % androidImages.length;
@@ -363,3 +365,5 @@ if (backendBrowser) {
   if (next) next.addEventListener('click', () => showBackendSample(activeSample + 1));
   showBackendSample(0);
 }
+
+// FUNKTIO-OSIO PÄÄTTYY: showAndroidImage. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
