@@ -39,6 +39,7 @@ const storageKey = "cultured-vault-demo-reviews-v1";
 // FUNKTIO-OSIO ALKAA: getLocalReviews.
 function getLocalReviews(){try{return JSON.parse(localStorage.getItem(storageKey)||"[]")}catch{return []}}
 // FUNKTIO-OSIO ALKAA: setLanguage.
+// FUNKTIO-OSIO PÄÄTTYY: getLocalReviews. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
 function setLanguage(next){
  if(next!=="fi"&&next!=="en")return;
  language=next;document.documentElement.lang=language;
@@ -49,8 +50,10 @@ function setLanguage(next){
  renderCatalogue();renderLocalReviews();
 }
 // FUNKTIO-OSIO ALKAA: getSearchText.
+// FUNKTIO-OSIO PÄÄTTYY: setLanguage. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
 function getSearchText(work){return [work.title,work.creator,work.country,...work.genres].join(" ").toLocaleLowerCase()}
 // FUNKTIO-OSIO ALKAA: filteredWorks.
+// FUNKTIO-OSIO PÄÄTTYY: getSearchText. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
 function filteredWorks(){
  const query=searchInput.value.trim().toLocaleLowerCase();
  let list=works.filter(w=>(activeCategory==="all"||w.type===activeCategory)&&(!query||getSearchText(w).includes(query)));
@@ -61,6 +64,7 @@ function filteredWorks(){
  return list;
 }
 // FUNKTIO-OSIO ALKAA: renderCatalogue.
+// FUNKTIO-OSIO PÄÄTTYY: filteredWorks. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
 function renderCatalogue(){
  const list=filteredWorks();
  grid.replaceChildren();
@@ -93,6 +97,7 @@ function renderCatalogue(){
  });
 }
 // FUNKTIO-OSIO ALKAA: renderLocalReviews.
+// FUNKTIO-OSIO PÄÄTTYY: renderCatalogue. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
 function renderLocalReviews(){
  const container=document.getElementById("local-review-list");container.replaceChildren();
  const reviews=getLocalReviews();
@@ -105,6 +110,7 @@ function renderLocalReviews(){
  });
 }
 // FUNKTIO-OSIO ALKAA: populateReviewSelect.
+// FUNKTIO-OSIO PÄÄTTYY: renderLocalReviews. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
 function populateReviewSelect(){
  reviewSelect.replaceChildren();
  works.forEach(work=>{const option=document.createElement("option");option.value=work.id;option.textContent=work.title;reviewSelect.append(option)});
@@ -133,3 +139,5 @@ window.addEventListener("message",event=>{
 populateReviewSelect();renderCatalogue();renderLocalReviews();
 // Request the portfolio language after the embedded page has loaded.
 if (window.parent !== window) window.parent.postMessage({type:"remote-job-fit-language-request"},"*");
+
+// FUNKTIO-OSIO PÄÄTTYY: populateReviewSelect. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
