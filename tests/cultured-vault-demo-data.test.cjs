@@ -1,3 +1,7 @@
+// KOMMENTOINTIOHJE / CODE MAP
+// Tiedoston tarkoitus: Automaattiset testit Cultured Vault -demon tietueiden määrälle, rakenteelle ja yksilöllisyydelle.
+// Etene ylhäältä alas: asetukset ja apufunktiot ensin, testit tai tarkistukset seuraavaksi.
+
 const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const path = require("node:path");
@@ -7,6 +11,7 @@ const root = path.resolve(__dirname, "..");
 const demoPath = path.join(root, "The-Cultured-Vault-demo");
 const appSource = fs.readFileSync(path.join(demoPath, "app.js"), "utf8");
 
+// FUNKTIO-OSIO ALKAA: readBalancedArray.
 function readBalancedArray(source, start) {
   let depth = 0;
   let inString = false;
@@ -33,6 +38,7 @@ function readBalancedArray(source, start) {
   throw new Error("Could not find the end of the catalogue array.");
 }
 
+// FUNKTIO-OSIO ALKAA: readAdditionalWorks.
 function readAdditionalWorks() {
   const marker = "const additionalWorks = ";
   const markerIndex = appSource.indexOf(marker);
