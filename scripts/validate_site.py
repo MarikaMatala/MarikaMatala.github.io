@@ -1,3 +1,7 @@
+# KOMMENTOINTIOHJE / CODE MAP
+# Tiedoston tarkoitus: Portfoliosivuston automaattinen rakenteen ja saavutettavuuden validointiskripti.
+# Etene ylhäältä alas: asetukset ja apufunktiot ensin, testit tai tarkistukset seuraavaksi.
+
 #!/usr/bin/env python3
 """Validate local references and baseline accessibility semantics in the static portfolio.
 
@@ -86,6 +90,7 @@ class SiteParser(HTMLParser):
                 self.unnamed_buttons.append(attrs.get("id", "(button without id)"))
 
 
+# FUNKTIO-OSIO ALKAA: resolve_local_reference.
 def resolve_local_reference(source, value):
     parsed = urlsplit(value)
     if parsed.scheme or parsed.netloc:
@@ -97,6 +102,7 @@ def resolve_local_reference(source, value):
     return target.resolve()
 
 
+# FUNKTIO-OSIO ALKAA: audit_page.
 def audit_page(page, parser):
     errors = []
     relative = page.relative_to(ROOT)
@@ -135,6 +141,7 @@ def audit_page(page, parser):
     return errors
 
 
+# FUNKTIO-OSIO ALKAA: main.
 def main():
     pages = sorted(ROOT.glob("*.html"))
     if not pages:
