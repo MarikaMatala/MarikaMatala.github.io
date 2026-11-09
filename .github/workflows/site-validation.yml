@@ -1,15 +1,24 @@
+# KOMMENTOINTIOHJE / CODE MAP
+# Tiedoston tarkoitus: GitHub Actions -työnkulku, joka ajaa portfoliosivuston rakenteen, saavutettavuuden ja muiden automaattisten tarkistusten testit.
+# Rakenne: on = käynnistystapahtumat; jobs = suoritettavat työt; steps = yksittäiset vaiheet.
+# Tarkista aina sisennys, kun lisäät tai muutat vaiheita.
+
 name: Site validation
 
 on:
+# TYÖVAIHEEN MÄÄRITYS: tämän nimen alla ovat kyseisen työn suoritettavat vaiheet.
   pull_request:
     branches: [main]
+# TYÖVAIHEEN MÄÄRITYS: tämän nimen alla ovat kyseisen työn suoritettavat vaiheet.
   push:
     branches: [main]
 
 permissions:
+# TYÖVAIHEEN MÄÄRITYS: tämän nimen alla ovat kyseisen työn suoritettavat vaiheet.
   contents: read
 
 jobs:
+# TYÖVAIHEEN MÄÄRITYS: tämän nimen alla ovat kyseisen työn suoritettavat vaiheet.
   validate:
     name: Validate HTML, accessibility baseline and JavaScript
     runs-on: ubuntu-latest
