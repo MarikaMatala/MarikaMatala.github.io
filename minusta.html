@@ -1,12 +1,12 @@
 <!doctype html>
 <!--
-  KOMMENTOINTIOHJE / CODE MAP
-  Tiedoston tarkoitus: Tietoa minusta -sivu: esittelee koulutuksen, osaamisen, kokemuksen ja ammatilliset tavoitteet.
-  Rakenne: HEAD sisältää metatiedot ja resurssilinkit; BODY sisältää kävijälle näkyvän sivun.
+  CODE MAP / COMMENTING GUIDE
+  File purpose: Tietoa minusta -sivu: esittelee koulutuksen, osaamisen, kokemuksen ja ammatilliset tavoitteet.
+  Structure: HEAD sisältää metatiedot ja resurssilinkit; BODY sisältää kävijälle näkyvän sivun.
   Etsi osioita tämän tiedoston ALKAA- ja PÄÄTTYY-merkintöjen avulla.
 -->
 <html lang="fi">
-<!-- HEAD-OSIO ALKAA: metatiedot, otsikko ja tyylitiedostot. -->
+<!-- HEAD SECTION STARTS: metadata, page title, and stylesheets. -->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,7 +30,7 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; upgrade-insecure-requests; script-src 'self' 'unsafe-inline' https://cloud.umami.is https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://raw.githubusercontent.com; connect-src 'self' https://cloud.umami.is">
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
   <title data-fi-title="Marika Matalamäki — Portfolio 2026 | Minusta ja osaamisestani" data-en-title="Marika Matalamäki — Portfolio 2026 | About me and my skills">Marika Matalamäki — Portfolio 2026 | Minusta ja osaamisestani</title>
-  <!-- MUOKKAUSVINKKI: sivun ulkoasu on tiedostossa style.css. Kommentit eivät näy verkkosivulla. -->
+  <!-- EDITING TIP: the page styles are defined in style.css. Comments are not displayed on the website. -->
   <link rel="stylesheet" href="style.css?v=47">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,7 +40,7 @@
   <link rel="stylesheet" href="autumn-cottagecore.css?v=17">
   <script src="gothic-enhancements.js?v=2" defer></script>
   <script src="script.js?v=24" defer></script>
-  <!-- Umami Cloud: kävijätilastointi. Lisää ?owner=1 URL-osoitteeseen merkitäksesi tämän selaimen omistajan käynneiksi. -->
+  <!-- Umami Cloud: visitor analytics. Add ?owner=1 to the URL to mark visits from this browser as owner visits. -->
   <script>
     (function () {
       const params = new URLSearchParams(window.location.search);
@@ -63,8 +63,8 @@
     })();
   </script>
 </head>
-<!-- HEAD-OSIO PÄÄTTYY. -->
-<!-- BODY-OSIO ALKAA: sivun näkyvä sisältö. -->
+<!-- HEAD SECTION ENDS. -->
+<!-- BODY SECTION STARTS: the visible page content. -->
 <body>
   <div class="gothic-mandala" aria-hidden="true"></div>
   <div class="gothic-mist" aria-hidden="true"></div>
@@ -87,7 +87,7 @@
     <button class="language-toggle" id="language-toggle" type="button" aria-label="Vaihda sivuston kieltä / Change language" title="FIN / ENG"><span class="language-label" data-fi="FIN / ENG" data-en="FIN / ENG">FIN / ENG</span></button>
   </header>
 
-  <!-- PÄÄSISÄLTÖ ALKAA: sivun varsinainen sisältö. -->
+  <!-- MAIN CONTENT STARTS: the primary content of the page. -->
 <main id="main-content">
     <section class="work-page-intro about-page-intro section-wrap">
       <p class="eyebrow"><span class="eyebrow-line"></span><span data-fi="Tausta ja osaaminen" data-en="Background and skills">Tausta ja osaaminen</span></p>
@@ -317,14 +317,14 @@
       </div>
     </section>
 
-    <!-- TYÖNÄYTTEET: kopioi project-card-rakenne, kun lisäät uuden projektin. -->
+    <!-- WORK SAMPLES: copy the project-card structure when adding a new project. -->
 
     <!-- VISUAL INTERLUDE: original CSS artwork with selected work from my own repositories. -->
     <section class="about-page-cta section-wrap">
       <a class="gothic-button" href="tyonaytteet.html"><span data-fi="Katso työnäytteet ja selaa esimerkkejä" data-en="Browse work samples and examples">Katso työnäytteet ja selaa esimerkkejä</span><span aria-hidden="true">↗</span></a>
       <a class="gothic-button" href="yhteystiedot.html"><span data-fi="Yhteystiedot" data-en="Contact">Yhteystiedot</span><span aria-hidden="true">↗</span></a>
     </section>
-  <!-- PÄÄSISÄLTÖ PÄÄTTYY. -->
+  <!-- MAIN CONTENT ENDS. -->
 </main>
   <footer class="site-footer section-wrap">
     <nav class="footer-nav" aria-label="Alatunnisteen navigaatio">
@@ -338,6 +338,6 @@
   <div class="copyright-bar">
     <p class="footer-rights" data-fi="© 2026 Marika Matalamäki. Kaikki oikeudet pidätetään.<br>Lisätietoa GitHub-profiilini README-tiedostossa." data-en="© 2026 Marika Matalamäki. All rights reserved.<br>More information in my GitHub profile README.">© 2026 Marika Matalamäki. Kaikki oikeudet pidätetään.<br>Lisätietoa GitHub-profiilini README-tiedostossa.</p>
   </div>
-<!-- BODY-OSIO PÄÄTTYY: sivun sisältö päättyy tähän. -->
+<!-- BODY SECTION ENDS: the page content ends here. -->
 </body>
 </html>
