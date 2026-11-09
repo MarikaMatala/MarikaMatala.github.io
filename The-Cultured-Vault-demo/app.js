@@ -116,8 +116,10 @@ works.forEach(work => { work.owner = 0; work.ownerReview = ""; });
 function getLocalReviews(){try{const stored=JSON.parse(localStorage.getItem(storageKey)||"[]");const latest=new Map();stored.forEach(review=>{if(review&&review.id)latest.set(review.id,review)});return [...latest.values()]}catch{return []}}
 const suggestionStorageKey="cultured-vault-suggestions-v1";
 // FUNKTIO-OSIO ALKAA: getLocalSuggestions.
+// FUNKTIO-OSIO PÄÄTTYY: getLocalReviews. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
 function getLocalSuggestions(){try{return JSON.parse(localStorage.getItem(suggestionStorageKey)||"[]")}catch{return []}}
 // FUNKTIO-OSIO ALKAA: setLanguage.
+// FUNKTIO-OSIO PÄÄTTYY: getLocalSuggestions. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
 function setLanguage(next){
  if(next!=="en")return;
  language=next;document.documentElement.lang=language;
@@ -130,8 +132,10 @@ function setLanguage(next){
  renderCatalogue();renderLocalReviews();renderLocalSuggestions();
 }
 // FUNKTIO-OSIO ALKAA: getSearchText.
+// FUNKTIO-OSIO PÄÄTTYY: setLanguage. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
 function getSearchText(work){return [work.title,work.creator,work.country,...work.genres].join(" ").toLocaleLowerCase()}
 // FUNKTIO-OSIO ALKAA: filteredWorks.
+// FUNKTIO-OSIO PÄÄTTYY: getSearchText. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
 function filteredWorks(){
  const query=searchInput.value.trim().toLocaleLowerCase();
  let list=works.filter(w=>{const match=activeCategory==="all"||w.type===activeCategory;return match&&(!query||getSearchText(w).includes(query))});
@@ -145,6 +149,7 @@ function filteredWorks(){
 // parsing it as HTML, including any visitor-entered review comments.
 // ---------------------------------------------------------------------------
 // FUNKTIO-OSIO ALKAA: renderCatalogue.
+// FUNKTIO-OSIO PÄÄTTYY: filteredWorks. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
 function renderCatalogue(){
   const list=filteredWorks();
   const totalPages=Math.max(1,Math.ceil(list.length/cataloguePageSize));
@@ -220,6 +225,7 @@ function renderCatalogue(){
 // 5. Render this browser's own demo reviews and populate the work selector.
 // ---------------------------------------------------------------------------
 // FUNKTIO-OSIO ALKAA: renderLocalReviews.
+// FUNKTIO-OSIO PÄÄTTYY: renderCatalogue. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
 function renderLocalReviews(){
  const container=document.getElementById("local-review-list");container.replaceChildren();
  const reviews=getLocalReviews();
@@ -232,8 +238,10 @@ function renderLocalReviews(){
  });
 }
 // FUNKTIO-OSIO ALKAA: renderLocalSuggestions.
+// FUNKTIO-OSIO PÄÄTTYY: renderLocalReviews. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
 function renderLocalSuggestions(){const container=document.getElementById("local-suggestion-list");if(!container)return;container.replaceChildren();getLocalSuggestions().forEach(item=>{const card=document.createElement("article");card.className="local-review";const heading=document.createElement("strong");heading.textContent=item.title+" · "+(typeLabels[language][item.type]||item.type);const details=document.createElement("p");details.textContent=[item.year||"",item.creator||"",item.note||""].filter(Boolean).join(" · ")||(language==="fi"?"Ei lisätietoja.":"No extra details.");card.append(heading,details);container.append(card)});}
 // FUNKTIO-OSIO ALKAA: populateReviewSelect.
+// FUNKTIO-OSIO PÄÄTTYY: renderLocalSuggestions. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
 function populateReviewSelect(){
  reviewSelect.replaceChildren();
  works.forEach(work=>{const option=document.createElement("option");option.value=work.id;option.textContent=work.title;reviewSelect.append(option)});
@@ -315,3 +323,5 @@ if ("serviceWorker" in navigator && (location.protocol === "https:" || location.
  document.addEventListener("click",event=>{if(!menu.hidden&&!menu.contains(event.target)&&!toggle.contains(event.target))closeMenu();});
  document.addEventListener("keydown",event=>{if(event.key==="Escape"&&!menu.hidden){closeMenu();toggle.focus();}});
 })();
+
+// FUNKTIO-OSIO PÄÄTTYY: populateReviewSelect. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
