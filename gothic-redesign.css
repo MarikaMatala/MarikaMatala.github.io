@@ -1,7 +1,11 @@
 /*
  * CODE MAP / COMMENTING GUIDE
  * File purpose: Style rules for the redesigned gothic appearance of the website.
- * Structure: theme variables and global rules first, followed by component styles and responsive rules.
+ * CODE MAP: decorative color tokens -> gothic details -> component overrides -> responsive adjustments.
+ * EDITING TIPS:
+ * - Main colors and typography are defined in autumn-cottagecore.css; this file adds selected decorative overrides.
+ * - Search for a class or ID with Ctrl+F and inspect later matching rules.
+ * - Confirm stylesheet loading order when a change appears to have no effect.
  */
 /* Decorative details retained for the autumn cottagecore theme. Main colors and typography are set in autumn-cottagecore.css. */
 :root{
