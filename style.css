@@ -4,29 +4,29 @@
 * Structure: theme variables and global rules first, followed by component styles and responsive rules.
  */
 /*
-  STYLE.CSS — PORTFOLION TYYLIT
+  STYLE.CSS — PORTFOLIO STYLES
 
-  SISÄLLYSLUETTELO
-  01. Perusasetukset: värit, typografia, saavutettavuuden perustyylit
-  02. Sivuston runko: header, navigaatio, hero, osiot ja footer
-  03. Etusivun ja työnäytteiden kortit sekä kuvat
-  04. Projektikohtaiset komponentit: Android-galleria ja C#-koodiesimerkit
-  05. Visuaalinen ilme: värit, tekstuurit, koristeet ja animaatiot
-  06. Työnäytteet, osaamisalueet ja taitokortit
-  07. Yhteystietosivu ja yhteydenottolomakkeen tyylit
-  08. Responsiivisuus: tabletit, puhelimet ja pienet näytöt
-  09. Alatunniste, kielivalitsin ja mobiilinavigaatio
-  10. Lopulliset tarkennukset ja komponenttikohtaiset yliajot
+  CODE MAP
+  01. Base settings: theme colors, typography, and accessibility defaults.
+  02. Site layout: header, navigation, hero, content sections, and footer.
+  03. Cards and images: home page and work sample components.
+  04. Project components: Android image gallery and C# code examples.
+  05. Visual effects: colors, textures, decorative elements, and animations.
+  06. Work samples: skills, technology lists, and project cards.
+  07. Contact page and contact-related components.
+  08. Responsive layouts: tablet, mobile, and narrow viewport rules.
+  09. Footer, language selector, and mobile navigation.
+  10. Final component overrides and small visual adjustments.
 
-  HUOMAUTUS YLLÄPIDOSTA
-  - Tämä tiedosto sisältää useita myöhempiä tarkennuskerroksia.
-  - Myöhemmin tiedostossa oleva sääntö voi tarkoituksella yliajaa aiemman säännön.
-  - Tarkista aina myös saman komponentin media query -säännöt ennen muutoksia.
-  - Käytä CSS-kommentteja muodossa /* ... */. //-kommentit eivät ole CSS:ssä kelvollisia.
-  - Muuta ulkoasua vain pieni osa kerrallaan ja testaa kaikki sivut sekä näyttökoot.
+  EDITING TIPS
+  - This file contains intentional override layers; a later rule may override an earlier rule.
+  - Before changing a component, search for its class name (Ctrl+F) and inspect all matching rules.
+  - Check the related @media rules before changing spacing, sizing, or visibility.
+  - Use CSS comments in the form /* ... */. JavaScript-style // comments are not valid CSS.
+  - Change one visual area at a time, then test all pages at desktop and mobile widths.
 */
 
-/* 01. PERUSASETUKSET JA SAAVUTETTAVUUDEN POHJATYYLIT */
+/* 01. BASE SETTINGS AND ACCESSIBILITY DEFAULTS */
 
 
 :root{
@@ -235,7 +235,7 @@ h1 em,h2 em{font-style:normal;color:var(--copper)}
 }
 
 
-/* 04. PROJEKTIKOMPONENTIT — C#: koodipaneelit ja teknisen projektin esittely */
+/* 04. PROJECT COMPONENTS — C#: code panels and technical project presentation. */
 .project-oop{grid-column:span 2;background:linear-gradient(135deg,#132E33 0%,#102F2B 100%);border-color:#3B6B66;padding:clamp(18px,3vw,32px)}
 .project-oop:hover{box-shadow:8px 8px 0 #b85c7a22}
 .oop-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
