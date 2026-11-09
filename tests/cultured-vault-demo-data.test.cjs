@@ -60,7 +60,7 @@ test("additional sample entries do not carry pre-filled owner ratings", () => {
   assert.ok(additionalWorks.every((entry) => entry.length === 7));
   assert.match(
     appSource,
-    /works\.push\(\.\.\.additionalWorks\.map\(\(\[id,title,creator,type,year,genres,country,community\]\) => \(\{\s*id,title,creator,type,year,genres,country,owner:0,community,ownerReview:""/
+    /works\.push\(\.\.\.additionalWorks\.map\(\(\[id,title,creator,type,year,genres,country\]\) => \(\{\s*id,title,creator,type,year,genres,country,owner:0,ownerReview:""/
   );
   assert.match(
     appSource,
