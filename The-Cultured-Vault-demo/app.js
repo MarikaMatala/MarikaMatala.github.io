@@ -126,7 +126,7 @@ function filteredWorks(){
  const query=searchInput.value.trim().toLocaleLowerCase();
  let list=works.filter(w=>{const match=activeCategory==="all"||w.type===activeCategory;return match&&(!query||getSearchText(w).includes(query))});
  const sort=sortSelect.value;
- if(sort==="title"||sort==="featured")list.sort((a,b)=>a.title.localeCompare(b.title,"en",{sensitivity:"base"}));
+ if(sort==="title")list.sort((a,b)=>a.title.localeCompare(b.title,"en",{sensitivity:"base"}));
  if(sort==="year")list.sort((a,b)=>(b.year||0)-(a.year||0));
  return list;
 }
@@ -142,7 +142,7 @@ function renderCatalogue(){
   const alphabetNav=document.getElementById("alphabet-nav");
   const numericNav=document.getElementById("numeric-nav");
   const indexStickyShell=document.getElementById("index-sticky-shell");
-  const alphabetical=sortSelect.value==="title"||sortSelect.value==="featured";
+  const alphabetical=sortSelect.value==="title";
   grid.replaceChildren();
   document.getElementById("total-count").textContent=works.length;
   document.getElementById("result-count").textContent=ui[language].count(list.length);
@@ -243,7 +243,7 @@ document.getElementById("personal-review-form").addEventListener("submit",event=
  const id=reviewSelect.value;const comment=document.getElementById("review-comment").value.trim();
  if(!Number.isFinite(rating)||rating<1||rating>10){return}
  const reviews=getLocalReviews();const entry={id,rating,comment,createdAt:new Date().toISOString()};const cleaned=reviews.filter(item=>item.id!==id);cleaned.push(entry);
- try{localStorage.setItem(storageKey,JSON.stringify(reviews));document.getElementById("review-status").textContent=ui[language].saved;document.getElementById("review-comment").value="";renderLocalReviews()}
+ try{localStorage.setItem(storageKey,JSON.stringify(cleaned));document.getElementById("review-status").textContent=ui[language].saved;document.getElementById("review-comment").value="";renderLocalReviews()}
  catch{document.getElementById("review-status").textContent=language==="fi"?"Selaimen tallennustila ei ole käytettävissä.":"Browser storage is unavailable."}
 });
 
@@ -279,7 +279,7 @@ if ("serviceWorker" in navigator && (location.protocol === "https:" || location.
  });
 }
 
-// verification marker: licence and visitor interaction review 2026-11-07
+// verification marker: licence and visitor interaction review 2026-11-09
 
 
 // 8. Accessible hamburger navigation and compact tab views.
