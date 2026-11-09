@@ -69,4 +69,7 @@ Main files:
 For this project, the MIT licence applies only to original project-authored application source code in HTML, CSS and JavaScript, excluding embedded catalogue records and all third-party material. It does not cover documentation, SVG or PNG icons, other visual assets, the web app manifest, or any third-party content. It does not apply to the underlying films, series, books, music, games, characters, artwork, logos, datasets, trademarks or other third-party material.
 
 The presence of a title or creator name in the catalogue is not a claim of ownership, endorsement or permission to reproduce the underlying work. Review [sources.html](sources.html) before reusing or contributing material.
-\n\n### Asset provenance\n\nThe 180 × 180 PNG touch icon is referenced by the web app manifest but is not covered by the MIT code licence. Its original source and export provenance should be verified before reuse or redistribution. The alternate `apple-touch-icon.svg` file is not referenced by the page or manifest and is not part of the service-worker cache.\n
+
+### Asset provenance
+
+The 180 × 180 PNG touch icon is referenced by the web app manifest but is not covered by the MIT code licence. Its original source and export provenance should be verified before reuse or redistribution. The alternate `apple-touch-icon.svg` file is not referenced by the page or manifest and is not part of the service-worker cache.
