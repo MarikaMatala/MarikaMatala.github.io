@@ -1,5 +1,5 @@
 # CODE MAP / COMMENTING GUIDE
-# File purpose: GitHub Actions -työnkulku, joka ajaa portfoliosivuston rakenteen, saavutettavuuden ja muiden automaattisten tarkistusten testit.
+# File purpose: GitHub Actions workflow that tests the portfolio site's structure, accessibility, and other automated checks.
 # Structure: on = workflow triggers; jobs = tasks to run; steps = individual actions.
 # Always check indentation when adding or changing steps.
 
