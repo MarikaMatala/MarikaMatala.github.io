@@ -1,5 +1,12 @@
 <!doctype html>
+<!--
+  KOMMENTOINTIOHJE / CODE MAP
+  Tiedoston tarkoitus: Sivuston etusivu: sisältää sivun rakenteen, pääsisällön ja etusivun osiot.
+  Rakenne: HEAD sisältää metatiedot ja resurssilinkit; BODY sisältää kävijälle näkyvän sivun.
+  Etsi osioita tämän tiedoston ALKAA- ja PÄÄTTYY-merkintöjen avulla.
+-->
 <html lang="fi">
+<!-- HEAD-OSIO ALKAA: metatiedot, otsikko ja tyylitiedostot. -->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -71,6 +78,8 @@
     })();
   </script>
 </head>
+<!-- HEAD-OSIO PÄÄTTYY. -->
+<!-- BODY-OSIO ALKAA: sivun näkyvä sisältö. -->
 <body>
   <div class="gothic-mandala" aria-hidden="true"></div>
   <div class="gothic-mist" aria-hidden="true"></div>
@@ -94,7 +103,8 @@
   </header>
 
   <!-- ETUSIVU: intro ja profiilikuva. Kuvan tiedostopolku löytyy alta img-elementistä. -->
-  <main id="main-content">
+  <!-- PÄÄSISÄLTÖ ALKAA: sivun varsinainen sisältö. -->
+<main id="main-content">
     <section class="hero section-wrap" id="home">
       <div class="hero-copy">
         <p class="eyebrow"><span class="eyebrow-line"></span><span data-fi="ICT-insinööri · Luova tekijä" data-en="ICT Engineer · Creative Maker">ICT-insinööri · Luova tekijä</span></p>
@@ -145,7 +155,8 @@
       <p data-fi="Onko mielessä työmahdollisuus, yhteistyö tai kysymys työnäytteistä? Yhteystiedot-sivulta löydät eri kanavat, joiden kautta voit ottaa minuun yhteyttä, sekä tiedot tavoista tukea tekemistäni Buy Me a Coffeen ja GitHub Sponsorsin kautta." data-en="Have a job opportunity, collaboration idea or a question about my work? The Contact page lists the different ways to get in touch with me, as well as information about supporting my work through Buy Me a Coffee and GitHub Sponsors.">Onko mielessä työmahdollisuus, yhteistyö tai kysymys työnäytteistä? Yhteystiedot-sivulta löydät eri kanavat, joiden kautta voit ottaa minuun yhteyttä, sekä tiedot tavoista tukea tekemistäni Buy Me a Coffeen ja GitHub Sponsorsin kautta.</p>
       <a class="gothic-button" href="yhteystiedot.html#contact"><span data-fi="Ota yhteyttä" data-en="Get in touch">Ota yhteyttä</span><span aria-hidden="true">↗</span></a>
     </section>
-  </main>
+  <!-- PÄÄSISÄLTÖ PÄÄTTYY. -->
+</main>
 
   <footer class="site-footer section-wrap">
     <nav class="footer-nav" aria-label="Alatunnisteen navigaatio">
@@ -159,5 +170,6 @@
   <div class="copyright-bar">
     <p class="footer-rights" data-fi="© 2026 Marika Matalamäki. Kaikki oikeudet pidätetään.<br>Lisätietoa GitHub-profiilini README-tiedostossa." data-en="© 2026 Marika Matalamäki. All rights reserved.<br>More information in my GitHub profile README.">© 2026 Marika Matalamäki. Kaikki oikeudet pidätetään.<br>Lisätietoa GitHub-profiilini README-tiedostossa.</p>
   </div>
+<!-- BODY-OSIO PÄÄTTYY: sivun sisältö päättyy tähän. -->
 </body>
 </html>
