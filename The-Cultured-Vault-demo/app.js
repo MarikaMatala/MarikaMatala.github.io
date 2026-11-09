@@ -112,13 +112,13 @@ works.forEach(work => { work.owner = 0; work.ownerReview = ""; });
 // 3. Storage, language and catalogue filtering helpers.
 // Parse storage defensively so malformed data does not break the catalogue.
 // ---------------------------------------------------------------------------
-// FUNKTIO-OSIO ALKAA: getLocalReviews.
+// Lukee käyttäjän omat arviot selaimen localStorage-tallennuksesta. Virheellinen tallennus palauttaa tyhjän listan.
 function getLocalReviews(){try{const stored=JSON.parse(localStorage.getItem(storageKey)||"[]");const latest=new Map();stored.forEach(review=>{if(review&&review.id)latest.set(review.id,review)});return [...latest.values()]}catch{return []}}
 const suggestionStorageKey="cultured-vault-suggestions-v1";
-// FUNKTIO-OSIO ALKAA: getLocalSuggestions.
+// Lukee käyttäjän omat teosehdotukset selaimen localStorage-tallennuksesta.
 // FUNKTIO-OSIO PÄÄTTYY: getLocalReviews. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
 function getLocalSuggestions(){try{return JSON.parse(localStorage.getItem(suggestionStorageKey)||"[]")}catch{return []}}
-// FUNKTIO-OSIO ALKAA: setLanguage.
+// Vaihtaa demon käyttöliittymän kielen ja päivittää näkyvät tekstit sekä saavutettavat nimet.
 // FUNKTIO-OSIO PÄÄTTYY: getLocalSuggestions. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
 function setLanguage(next){
  if(next!=="en")return;
@@ -131,10 +131,10 @@ function setLanguage(next){
  
  renderCatalogue();renderLocalReviews();renderLocalSuggestions();
 }
-// FUNKTIO-OSIO ALKAA: getSearchText.
+// Kokoaa teoksen haussa käytettävät tekstikentät yhdeksi pienaakkosmuotoiseksi hakutekstiksi.
 // FUNKTIO-OSIO PÄÄTTYY: setLanguage. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
 function getSearchText(work){return [work.title,work.creator,work.country,...work.genres].join(" ").toLocaleLowerCase()}
-// FUNKTIO-OSIO ALKAA: filteredWorks.
+// Suodattaa katalogin hakusanan ja valittujen suodattimien perusteella sekä järjestää tulokset valitulla tavalla.
 // FUNKTIO-OSIO PÄÄTTYY: getSearchText. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
 function filteredWorks(){
  const query=searchInput.value.trim().toLocaleLowerCase();
@@ -148,7 +148,7 @@ function filteredWorks(){
 // 4. Build catalogue cards. textContent displays data as text instead of
 // parsing it as HTML, including any visitor-entered review comments.
 // ---------------------------------------------------------------------------
-// FUNKTIO-OSIO ALKAA: renderCatalogue.
+// Piirtää suodatetut teokset sivulle ja päivittää tulosmäärän sekä sivutuksen.
 // FUNKTIO-OSIO PÄÄTTYY: filteredWorks. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
 function renderCatalogue(){
   const list=filteredWorks();
@@ -224,7 +224,7 @@ function renderCatalogue(){
 // ---------------------------------------------------------------------------
 // 5. Render this browser's own demo reviews and populate the work selector.
 // ---------------------------------------------------------------------------
-// FUNKTIO-OSIO ALKAA: renderLocalReviews.
+// Piirtää selaimeen tallennetut käyttäjän omat arviot.
 // FUNKTIO-OSIO PÄÄTTYY: renderCatalogue. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
 function renderLocalReviews(){
  const container=document.getElementById("local-review-list");container.replaceChildren();
@@ -237,10 +237,10 @@ function renderLocalReviews(){
   item.append(heading,comment);container.append(item);
  });
 }
-// FUNKTIO-OSIO ALKAA: renderLocalSuggestions.
+// Piirtää selaimeen tallennetut käyttäjän omat teosehdotukset.
 // FUNKTIO-OSIO PÄÄTTYY: renderLocalReviews. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
 function renderLocalSuggestions(){const container=document.getElementById("local-suggestion-list");if(!container)return;container.replaceChildren();getLocalSuggestions().forEach(item=>{const card=document.createElement("article");card.className="local-review";const heading=document.createElement("strong");heading.textContent=item.title+" · "+(typeLabels[language][item.type]||item.type);const details=document.createElement("p");details.textContent=[item.year||"",item.creator||"",item.note||""].filter(Boolean).join(" · ")||(language==="fi"?"Ei lisätietoja.":"No extra details.");card.append(heading,details);container.append(card)});}
-// FUNKTIO-OSIO ALKAA: populateReviewSelect.
+// Täyttää arvion valintalistan katalogin teoksilla.
 // FUNKTIO-OSIO PÄÄTTYY: renderLocalSuggestions. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
 function populateReviewSelect(){
  reviewSelect.replaceChildren();
