@@ -1,5 +1,12 @@
 <!doctype html>
+<!--
+  KOMMENTOINTIOHJE / CODE MAP
+  Tiedoston tarkoitus: Tietoa minusta -sivu: esittelee koulutuksen, osaamisen, kokemuksen ja ammatilliset tavoitteet.
+  Rakenne: HEAD sisältää metatiedot ja resurssilinkit; BODY sisältää kävijälle näkyvän sivun.
+  Etsi osioita tämän tiedoston ALKAA- ja PÄÄTTYY-merkintöjen avulla.
+-->
 <html lang="fi">
+<!-- HEAD-OSIO ALKAA: metatiedot, otsikko ja tyylitiedostot. -->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -56,6 +63,8 @@
     })();
   </script>
 </head>
+<!-- HEAD-OSIO PÄÄTTYY. -->
+<!-- BODY-OSIO ALKAA: sivun näkyvä sisältö. -->
 <body>
   <div class="gothic-mandala" aria-hidden="true"></div>
   <div class="gothic-mist" aria-hidden="true"></div>
@@ -78,7 +87,8 @@
     <button class="language-toggle" id="language-toggle" type="button" aria-label="Vaihda sivuston kieltä / Change language" title="FIN / ENG"><span class="language-label" data-fi="FIN / ENG" data-en="FIN / ENG">FIN / ENG</span></button>
   </header>
 
-  <main id="main-content">
+  <!-- PÄÄSISÄLTÖ ALKAA: sivun varsinainen sisältö. -->
+<main id="main-content">
     <section class="work-page-intro about-page-intro section-wrap">
       <p class="eyebrow"><span class="eyebrow-line"></span><span data-fi="Tausta ja osaaminen" data-en="Background and skills">Tausta ja osaaminen</span></p>
       <h1 data-fi="Minusta ja<br><em>osaamisestani.</em>" data-en="About me and<br><em>my skills.</em>">Minusta ja<br><em>osaamisestani.</em></h1>
@@ -314,7 +324,8 @@
       <a class="gothic-button" href="tyonaytteet.html"><span data-fi="Katso työnäytteet ja selaa esimerkkejä" data-en="Browse work samples and examples">Katso työnäytteet ja selaa esimerkkejä</span><span aria-hidden="true">↗</span></a>
       <a class="gothic-button" href="yhteystiedot.html"><span data-fi="Yhteystiedot" data-en="Contact">Yhteystiedot</span><span aria-hidden="true">↗</span></a>
     </section>
-  </main>
+  <!-- PÄÄSISÄLTÖ PÄÄTTYY. -->
+</main>
   <footer class="site-footer section-wrap">
     <nav class="footer-nav" aria-label="Alatunnisteen navigaatio">
       <a href="index.html" data-fi="Etusivu" data-en="Home">Etusivu</a>
@@ -327,5 +338,6 @@
   <div class="copyright-bar">
     <p class="footer-rights" data-fi="© 2026 Marika Matalamäki. Kaikki oikeudet pidätetään.<br>Lisätietoa GitHub-profiilini README-tiedostossa." data-en="© 2026 Marika Matalamäki. All rights reserved.<br>More information in my GitHub profile README.">© 2026 Marika Matalamäki. Kaikki oikeudet pidätetään.<br>Lisätietoa GitHub-profiilini README-tiedostossa.</p>
   </div>
+<!-- BODY-OSIO PÄÄTTYY: sivun sisältö päättyy tähän. -->
 </body>
 </html>
