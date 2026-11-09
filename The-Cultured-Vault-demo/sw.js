@@ -2,7 +2,7 @@
    Caches the static app shell for basic offline use. app.js registers this
    worker with a scope limited to this demo directory. Increment CACHE_NAME
    when the cached asset list changes or a fresh cache is required. */
-const CACHE_NAME = "cultured-vault-pwa-v25";
+const CACHE_NAME = "cultured-vault-pwa-v26";
 // Keep this list in sync with the files referenced by index.html and the manifest.
 const APP_SHELL = [
   "./",
@@ -10,7 +10,7 @@ const APP_SHELL = [
   "./sources.html",
   "./LICENSE",
   "./styles.css",
-  "./app.js",
+  "./app.js?v=2",
   "./manifest.webmanifest",
   "./icons/vault-icon.svg",
   "./icons/vault-maskable.svg",
