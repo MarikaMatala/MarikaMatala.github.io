@@ -1,3 +1,8 @@
+/*
+ * KOMMENTOINTIOHJE / CODE MAP
+ * Tiedoston tarkoitus: Remote Job Fit -prototyypin osaamis- ja avainsanaluettelo.
+ * Rakenne: ensin muuttujat ja asetukset, sen jälkeen funktiot ja lopuksi tapahtumankuuntelijat / käynnistys.
+ */
 /* Project-maintained bilingual keyword vocabulary. See README.md for source notes. */
 (function(root) {
   "use strict";
