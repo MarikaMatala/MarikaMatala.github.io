@@ -1,6 +1,6 @@
-// KOMMENTOINTIOHJE / CODE MAP
-// Tiedoston tarkoitus: Automaattiset testit Cultured Vault -demon tietueiden määrälle, rakenteelle ja yksilöllisyydelle.
-// Etene ylhäältä alas: asetukset ja apufunktiot ensin, testit tai tarkistukset seuraavaksi.
+// CODE MAP / COMMENTING GUIDE
+// File purpose: Automaattiset testit Cultured Vault -demon tietueiden määrälle, rakenteelle ja yksilöllisyydelle.
+// Read from top to bottom: settings and helper functions come first, followed by tests or checks.
 
 const assert = require("node:assert/strict");
 const fs = require("node:fs");
@@ -11,7 +11,7 @@ const root = path.resolve(__dirname, "..");
 const demoPath = path.join(root, "The-Cultured-Vault-demo");
 const appSource = fs.readFileSync(path.join(demoPath, "app.js"), "utf8");
 
-// FUNKTIO-OSIO ALKAA: readBalancedArray.
+// FUNCTION SECTION START: readBalancedArray.
 function readBalancedArray(source, start) {
   let depth = 0;
   let inString = false;
@@ -38,8 +38,8 @@ function readBalancedArray(source, start) {
   throw new Error("Could not find the end of the catalogue array.");
 }
 
-// FUNKTIO-OSIO ALKAA: readAdditionalWorks.
-// FUNKTIO-OSIO PÄÄTTYY: readBalancedArray. Seuraava osio alkaa seuraavasta määrittelystä tai tiedoston lopusta.
+// FUNCTION SECTION START: readAdditionalWorks.
+// FUNCTION SECTION END: readBalancedArray. The next section starts at the next definition or at the end of the file.
 function readAdditionalWorks() {
   const marker = "const additionalWorks = ";
   const markerIndex = appSource.indexOf(marker);
@@ -85,4 +85,4 @@ test("the visible catalogue count and English documentation agree with the datas
   assert.doesNotMatch(readme, /550-entry sample catalogue|536 additions \(550 entries total\)/);
 });
 
-// FUNKTIO-OSIO PÄÄTTYY: readAdditionalWorks. Seuraava osio alkaa seuraavasta määrittelystä tai tiedoston lopusta.
+// FUNCTION SECTION END: readAdditionalWorks. The next section starts at the next definition or at the end of the file.
