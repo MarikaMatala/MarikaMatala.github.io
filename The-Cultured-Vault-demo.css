@@ -99,3 +99,5 @@ select,input,textarea{background:#151310;color:var(--text);border:1px solid var(
 @media(max-width:600px){.vault-shell{padding:16px}.vault-header{gap:12px;align-items:flex-start}.vault-mark{width:45px;height:45px;flex:0 0 45px}.language-button{padding:8px 10px}.brand-copy h1{font-size:1.65rem}.tagline{font-size:.78rem}.catalogue-grid,.review-order,.personal-review-form{grid-template-columns:1fr}.personal-review-form>div:first-child,.review-comment{grid-column:auto}.demo-status{flex-direction:column;gap:2px}.review-top{align-items:flex-start;flex-direction:column}.vault-stats{gap:16px 24px}}
 /* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+
+/* TIEDOSTON TYYLIOSIO PÄÄTTYY TÄHÄN. */
