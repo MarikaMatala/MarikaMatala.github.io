@@ -1,3 +1,8 @@
+/*
+ * KOMMENTOINTIOHJE / CODE MAP
+ * Tiedoston tarkoitus: Sivuston goottilaisen ulkoasun uudistuksen tyylisäännöt.
+ * Rakenne: teeman muuttujat ja yleissäännöt ensin, komponenttien tyylit seuraavaksi, responsiiviset säännöt lopuksi.
+ */
 /* Decorative details retained for the autumn cottagecore theme. Main colors and typography are set in autumn-cottagecore.css. */
 :root{
   --metal-copper:#ce8147;
@@ -186,6 +191,7 @@ h1 em,h2 em{
 .metal-rose-sigil img{width:100%;height:auto;display:block}
 .reveal-ready [data-gothic-reveal]{opacity:0;transform:translateY(16px)}
 [data-gothic-reveal].is-visible{opacity:1;transform:none;transition:opacity .55s ease,transform .55s ease}
+/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
 @media(max-width:760px){
   .site-header{flex-wrap:wrap;justify-content:space-between;padding:12px 5vw;gap:10px}
   .metal-rose-mark{width:40px;height:50px;margin-right:-5px}
@@ -194,6 +200,7 @@ h1 em,h2 em{
   .hero::after{width:75vw;height:75vw;right:-34vw;opacity:.7}
   .project-card::before,.skills-card::before,.contact-method::before,.creative-samples-grid .creative-sample::before{width:28px;height:28px}
 }
+/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
 @media(prefers-reduced-motion:reduce){
   .metal-rose-mark,.metal-rose-mark img,[data-gothic-reveal]{animation:none!important;transition:none!important;transform:none!important;opacity:1!important}
 }
@@ -291,10 +298,12 @@ h1 em,h2 em{
   color:var(--ornament-rose);
   text-shadow:0 0 10px rgba(185,133,145,.3);
 }
+/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
 @media(max-width:640px){
   .project-card::before,.skills-card::before,.contact-method::before,.creative-samples-grid .creative-sample::before{width:30px;height:30px}
   .project-card::after,.skills-card::after,.contact-method::after,.creative-samples-grid .creative-sample::after{width:25px;height:25px}
 }
+/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
 @media(prefers-reduced-motion:reduce){
   .project-card,.skills-card,.contact-method{scroll-behavior:auto}
 }
@@ -378,6 +387,7 @@ h3 em {
   box-shadow:0 0 14px rgba(185,133,145,.2),3px 3px 0 rgba(46,0,20,.78);
 }
 .language-toggle:focus-visible{outline:2px solid var(--metal-silver);outline-offset:3px}
+/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
 @media(max-width:760px){
   .language-toggle{min-height:40px;padding:8px 10px;gap:7px;font-size:.66rem}
   .language-toggle .language-icon,.language-toggle .language-icon svg{width:18px;height:18px}
@@ -405,6 +415,7 @@ h3 em {
   content:none!important;
   display:none!important;
 }
+/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
 @media(max-width:640px){
   .gothic-mandala{
     width:82vw;
@@ -413,6 +424,7 @@ h3 em {
     opacity:.09;
   }
 }
+/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
 @media(prefers-reduced-motion:reduce){
   .gothic-mandala{animation:none!important;transform:none!important}
 }
@@ -436,6 +448,7 @@ h3 em {
 }
 .gothic-mandala::before,
 .gothic-mandala::after{display:none!important;content:none!important;border:0!important;box-shadow:none!important}
+/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
 @media(max-width:640px){
   .gothic-mandala{width:58vw;right:-18vw;top:28vh;opacity:.09}
 }
