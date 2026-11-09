@@ -1,7 +1,7 @@
 /*
- * KOMMENTOINTIOHJE / CODE MAP
- * Tiedoston tarkoitus: Cultured Vault -demon tumma visuaalinen teema, komponentit ja responsiivinen asettelu.
- * Rakenne: teeman muuttujat ja yleissäännöt ensin, komponenttien tyylit seuraavaksi, responsiiviset säännöt lopuksi.
+ * CODE MAP / COMMENTING GUIDE
+ * File purpose: Cultured Vault -demon tumma visuaalinen teema, komponentit ja responsiivinen asettelu.
+ * Structure: teeman muuttujat ja yleissäännöt ensin, komponenttien tyylit seuraavaksi, responsiiviset säännöt lopuksi.
  */
 /* THE CULTURED VAULT DEMO STYLES
    Theme tokens are defined first. Component styles follow the page sections.
@@ -105,13 +105,13 @@ select,input,textarea{background:#151310;color:var(--text);border:1px solid var(
 .demo-footer p:first-child{color:var(--bronze-light);font-weight:900;letter-spacing:.15em}
 .empty-state{padding:25px;border:1px dashed var(--line);border-radius:12px;color:var(--muted)}
 /* 10. Tablet layout. */
-/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:850px){.catalogue-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.section-heading{align-items:flex-start;flex-direction:column}.sort-control{width:100%;max-width:240px}}
 /* 11. Phone layout. */
-/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:600px){.vault-shell{padding:16px}.vault-header{gap:12px;align-items:flex-start}.vault-mark{width:45px;height:45px;flex:0 0 45px}.brand-copy h1{font-size:1.65rem}.tagline{font-size:.78rem}.catalogue-grid,.review-order,.personal-review-form{grid-template-columns:1fr}.personal-review-form>div:first-child,.review-comment{grid-column:auto}.demo-status{flex-direction:column;gap:2px}.review-top{align-items:flex-start;flex-direction:column}.vault-stats{gap:16px 24px}}
 /* 12. Respect the operating-system reduced-motion preference. */
-/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
 
 
@@ -129,14 +129,14 @@ select,input,textarea{background:#151310;color:var(--text);border:1px solid var(
 .alphabet-link:not(:disabled):hover{border-color:var(--gold);color:var(--gold)}
 .alphabet-link:disabled{opacity:.28;cursor:not-allowed}
 .catalogue-letter-heading{grid-column:1/-1;margin:22px 0 2px;padding:7px 12px;border-bottom:1px solid var(--line);border-left:3px solid var(--bronze);color:var(--gold);font-size:1.35rem;scroll-margin-top:18px}
-/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:600px){.alphabet-nav{gap:5px;padding:10px}.alphabet-link{min-width:31px;min-height:32px;padding:3px 5px}.catalogue-letter-heading{margin-top:16px}}
 
 /* 14. A–Ö type-to-jump field. */
 .alphabet-jump{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:16px 0 8px;color:var(--muted);font-size:.86rem;font-weight:800}
 #alphabet-jump-input{width:86px;min-height:42px;border:1px solid var(--bronze);border-radius:9px;padding:7px 12px;background:var(--panel);color:var(--text);font-size:1.05rem;font-weight:900;text-align:center;text-transform:uppercase}
 #alphabet-jump-input:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
-/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:600px){.alphabet-jump{align-items:flex-start;flex-direction:column;gap:6px}#alphabet-jump-input{width:100%;max-width:180px}}
 
 
@@ -144,7 +144,7 @@ select,input,textarea{background:#151310;color:var(--text);border:1px solid var(
 .numeric-nav{margin-top:10px}
 .numeric-nav .alphabet-link{min-width:38px}
 .catalogue-number-heading{grid-column:1/-1;margin:22px 0 2px;padding:7px 12px;border-bottom:1px solid var(--line);border-left:3px solid var(--bronze);color:var(--gold);font-size:1.35rem;scroll-margin-top:18px}
-/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:600px){.numeric-nav .alphabet-link{min-width:34px}.catalogue-number-heading{margin-top:16px}}
 
 
@@ -182,14 +182,14 @@ select,input,textarea{background:#151310;color:var(--text);border:1px solid var(
 }
 .index-sticky-shell .alphabet-link{flex:0 0 auto}
 .catalogue-letter-heading,.catalogue-number-heading{scroll-margin-top:150px}
-/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:600px){
   .index-sticky-shell{top:4px;margin:10px 0 14px;padding:5px;border-radius:11px}
   .index-sticky-shell .alphabet-nav{gap:4px;padding:3px}
   .index-sticky-shell .alphabet-label{font-size:.72rem}
   .catalogue-letter-heading,.catalogue-number-heading{scroll-margin-top:170px}
 }
-/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(prefers-reduced-motion:reduce){
   .index-sticky-shell{scroll-behavior:auto}
 }
@@ -214,9 +214,9 @@ select,input,textarea{background:#151310;color:var(--text);border:1px solid var(
 .source-note{padding:12px 14px;border-left:3px solid var(--bronze);background:rgba(193,139,85,.08);color:var(--muted);font-size:.82rem}
 .source-rules{padding-left:1.25rem;color:var(--muted)}
 .source-rules li{padding:5px 0}
-/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:700px){.source-grid{grid-template-columns:1fr}.header-actions{gap:6px}.header-link{padding:7px 9px;font-size:.72rem}}
-/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:430px){.vault-header{flex-wrap:wrap}.brand-copy{flex:1 1 calc(100% - 70px)}.header-actions{margin-left:auto}.header-actions .header-link{min-height:36px}}
 
 
@@ -252,9 +252,9 @@ select,input,textarea{background:#151310;color:var(--text);border:1px solid var(
 .contact-actions{display:flex;flex-wrap:wrap;gap:10px}
 .contact-actions .vault-button{text-decoration:none}
 .about-panel .demo-notice{margin-top:20px}
-/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:600px){.header-actions{gap:7px}.menu-toggle{width:42px;height:42px}.contact-grid{grid-template-columns:1fr}.contact-panel{padding:19px}.contact-card{padding:17px}}
-/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(prefers-reduced-motion:reduce){.tab-panel.is-active{animation:none}.menu-toggle span{transition:none}}
 
 
@@ -265,7 +265,7 @@ select,input,textarea{background:#151310;color:var(--text);border:1px solid var(
 .page-button:hover:not(:disabled){background:rgba(193,139,85,.24);border-color:var(--gold);color:var(--gold)}
 .page-button:disabled{opacity:.35;cursor:not-allowed}
 .page-status{color:var(--muted);font-size:.82rem;font-weight:700;text-align:center}
-/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:480px){.catalogue-pagination{gap:8px;padding:10px}.page-button{flex:1 1 42%;padding:8px 10px}.page-status{order:-1;flex-basis:100%}}
 
 
@@ -284,7 +284,7 @@ select,input,textarea{background:#151310;color:var(--text);border:1px solid var(
 .contact-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
 .contact-actions .vault-button{text-decoration:none}
 .suggestion-panel .demo-notice{margin:18px 0}
-/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:600px){.contact-grid{grid-template-columns:1fr}.contact-panel{padding:18px}.contact-actions{flex-direction:column;align-items:flex-start}}
 
-/* TIEDOSTON TYYLIOSIO PÄÄTTYY TÄHÄN. */
+/* END OF STYLESHEET. */
