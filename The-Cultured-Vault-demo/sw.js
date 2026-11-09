@@ -1,6 +1,6 @@
 // CODE MAP / COMMENTING GUIDE
-// File purpose: Cultured Vault -demon service worker: staattisten resurssien välimuisti ja offline-perustoiminta.
-// Etene ylhäältä alas: asetukset ja apufunktiot ensin, testit tai tarkistukset seuraavaksi.
+// File purpose: Cultured Vault demo service worker: static asset caching and basic offline functionality.
+// Read from top to bottom: settings and helper functions first, followed by tests or checks.
 
 /* THE CULTURED VAULT SERVICE WORKER
    Caches the static app shell for basic offline use. app.js registers this
