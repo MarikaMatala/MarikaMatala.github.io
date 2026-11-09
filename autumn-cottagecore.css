@@ -1,7 +1,12 @@
 /*
  * CODE MAP / COMMENTING GUIDE
  * File purpose: Dark woodland, autumn, and copper color theme for the website, including responsive styles.
- * Structure: theme variables and global rules first, followed by component styles and responsive rules.
+ * CODE MAP: autumn color tokens -> typography and page surfaces -> woodland decorations -> cards and controls -> page-specific details -> responsive rules.
+ * EDITING TIPS:
+ * - Change the palette in :root near the top of the file.
+ * - Search for a component selector with Ctrl+F before changing its appearance.
+ * - Check later overrides and @media blocks before changing a property.
+ * - This file is an optional visual theme layer; verify where it is loaded before editing shared base styles.
  */
 /* Autumn cottagecore portfolio theme — accessible, responsive and low-dependency. */
 :root{
