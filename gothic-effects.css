@@ -1,3 +1,8 @@
+/*
+ * KOMMENTOINTIOHJE / CODE MAP
+ * Tiedoston tarkoitus: Goottilaisen visuaalisen ilmeen koristeet, tehosteet ja käyttöliittymän yksityiskohdat.
+ * Rakenne: teeman muuttujat ja yleissäännöt ensin, komponenttien tyylit seuraavaksi, responsiiviset säännöt lopuksi.
+ */
 /* Gothic effects for Portfolio 2026 — no JavaScript dependency required. */
 :root{--gothic-paper:#f1e9df;--gothic-rose:#b65c72;--gothic-moss:#a6b49c;--gothic-ink:#050407}
 html{scroll-behavior:smooth}
@@ -26,7 +31,9 @@ h1 em,h2 em,.work-page-intro h1 em,.contact-page h1 em{font-family:"Lora",Georgi
 .site-footer::after{content:"";font-size:0}
 @keyframes mandala-turn{to{transform:rotate(360deg)}}
 @keyframes ribbon-glint{0%,60%{left:-35%;opacity:0}68%{opacity:.7}88%,100%{left:120%;opacity:0}}
+/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
 @media(max-width:640px){.gothic-mandala{width:105vw;right:-54vw;top:30vh;opacity:.045}.info-ribbon p{font-size:.72rem;letter-spacing:.025em}h1,h2,h3,.wordmark{letter-spacing:-.015em}}
+/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.gothic-mandala,.info-ribbon::before{animation:none!important}.site-header nav a,.gothic-button,.home-work-cta,.contact-method a,.project-card .project-image img,.android-carousel-stage img{transition:none!important}}
 
 
@@ -83,6 +90,7 @@ body{isolation:isolate}
 #projects .oop-samples-toggle .samples-toggle-content{padding:12px}
 #projects .oop-samples-toggle .oop-browser{width:100%;margin:0}
 #projects .oop-samples-toggle .oop-sample-panel pre{max-width:100%;white-space:pre;overflow-x:auto}
+/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
 @media(max-width:640px){
   .project-samples-toggle summary{padding:10px 12px;font-size:.8rem}
   #projects .branding-samples-toggle .branding-gallery{grid-template-columns:1fr}
@@ -90,6 +98,7 @@ body{isolation:isolate}
   #projects .oop-samples-toggle{width:calc(100% - 28px);margin:12px 14px 18px}
   #projects .oop-samples-toggle .samples-toggle-content{padding:8px}
 }
+/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
 @media(prefers-reduced-motion:reduce){.project-samples-toggle .expand-symbol{transition:none}}
 
 /* Portfolio 2026 — tactile print texture, restrained motion and layered colour.
@@ -178,10 +187,12 @@ main{position:relative}
 .site-footer{
   border-top-color:rgba(206,129,71,.28);
 }
+/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
 @media(max-width:760px){
   body{background-attachment:scroll}
   body::before{opacity:.12}
 }
+/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
 @media(prefers-reduced-motion:reduce){
   .hero-index{transition:none!important}
 }
@@ -311,10 +322,12 @@ a:not(.wordmark):not(.hero-index):not(.skip-link){
   border-color:var(--portfolio-copper);
   background:rgba(46,0,20,.5);
 }
+/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
 @media(max-width:760px){
   .home-about-teaser::before,.home-work-cta-section::before,.contact-section::before{opacity:.5}
   .portrait-frame{box-shadow:8px 8px 0 var(--portfolio-wine),10px 10px 0 rgba(206,129,71,.18)}
 }
+/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
 @media(prefers-reduced-motion:reduce){
   .project-image img,.sample-visual img{transition:none!important}
 }
@@ -404,6 +417,7 @@ body{
   color:var(--portfolio-silver);
   filter:drop-shadow(0 0 7px rgba(185,133,145,.3));
 }
+/* RESPONSIIVINEN OSIO: sääntö mukauttaa näkymää näyttökoon tai käyttäjän asetuksen mukaan. */
 @media(max-width:760px){
   .gothic-mandala{opacity:.045}
   .portrait-frame{box-shadow:8px 8px 0 var(--portfolio-wine),10px 10px 0 rgba(191,194,200,.12)}
