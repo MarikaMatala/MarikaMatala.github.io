@@ -1,22 +1,23 @@
 /*
  * CODE MAP / COMMENTING GUIDE
-* File purpose: Sivuston JavaScript-toiminnot: kielenvaihto, kuvakaruselli, esimerkkien selaus ja kyttliittymn tapahtumat.
+* File purpose: Portfolio interactions, including language selection, image galleries, example navigation, and interface events.
 * Structure: variables and settings first, followed by functions, then event listeners and initialization.
  */
-// Portfolio interactions: language switch, responsive Android image gallery and interactive C# examples.
+// SECTION MAP: language controls, Android image gallery, accessible lightbox, responsive navigation, and coursework example browser.
+// EDITING TIP: change behaviour inside the named function first; check its event listeners before renaming HTML IDs or classes.
 const languageToggle = document.getElementById('language-toggle');
 const primaryNavigation = document.getElementById('primary-navigation');
 let currentLanguage = 'fi';
 
-// Pivitt kuvakarusellin painikkeiden saavutettavat nimet valitun kielen mukaan.
+// Updates the gallery buttons' accessible names to match the selected language.
 function updateCarouselLabels(language) {
   document.querySelectorAll('[data-fi-label][data-en-label]').forEach((element) => {
     element.setAttribute('aria-label', element.dataset[language + 'Label']);
   });
 }
 
-// Vaihtaa sivuston kielen, tallentaa valinnan selaimeen ja pivitt tekstit, kuvien vaihtoehtoiset tekstit sek upotetut nkymt.
-// FUNCTION SECTION END: updateCarouselLabels. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston pttymisest.
+// Changes the site language, saves the preference in the browser, and updates text, image alternative text, and embedded views.
+// FUNCTION SECTION END: updateCarouselLabels. The next section starts at the next function or at the end of the file.
 function setLanguage(language) {
   currentLanguage = language;
   try { localStorage.setItem('portfolio-language', language); } catch (error) { /* storage may be disabled */ }
@@ -87,8 +88,8 @@ const androidImage = document.getElementById('android-carousel-image');
 const androidCounter = document.getElementById('android-counter');
 let androidImageIndex = 0;
 
-// Nytt valitun Android-harjoitustyn kuvan ja pivitt kuvan vaihtoehtoisen tekstin sek numerolaskurin.
-// FUNCTION SECTION END: setLanguage. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston pttymisest.
+// Displays the selected Android coursework image and updates its alternative text and image counter.
+// FUNCTION SECTION END: setLanguage. The next section starts at the next function or at the end of the file.
 function showAndroidImage(index) {
   if (!androidImage || !androidCounter || !androidImages.length) return;
   androidImageIndex = (index + androidImages.length) % androidImages.length;
@@ -366,4 +367,4 @@ if (backendBrowser) {
   showBackendSample(0);
 }
 
-// FUNCTION SECTION END: showAndroidImage. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston pttymisest.
+// FUNCTION SECTION END: showAndroidImage. The next section starts at the next function or at the end of the file.
