@@ -1,5 +1,5 @@
 // CODE MAP / COMMENTING GUIDE
-// File purpose: Automaattiset testit Cultured Vault -demon tietueiden määrälle, rakenteelle ja yksilöllisyydelle.
+// File purpose: Automated tests for the Cultured Vault demo record count, structure, and uniqueness.
 // Read from top to bottom: settings and helper functions come first, followed by tests or checks.
 
 const assert = require("node:assert/strict");
