@@ -1,6 +1,6 @@
-# KOMMENTOINTIOHJE / CODE MAP
-# Tiedoston tarkoitus: Portfoliosivuston saavutettavuuden ja HTML-rakenteen automaattiset testit.
-# Etene ylhäältä alas: asetukset ja apufunktiot ensin, testit tai tarkistukset seuraavaksi.
+# CODE MAP / COMMENTING GUIDE
+# File purpose: Portfoliosivuston saavutettavuuden ja HTML-rakenteen automaattiset testit.
+# Read from top to bottom: settings and helper functions come first, followed by tests or checks.
 
 import unittest
 from scripts.validate_site import ROOT, SiteParser, audit_page
@@ -67,4 +67,4 @@ class AccessibilityValidatorTests(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 
-# LUOKKA-OSIO PÄÄTTYY: AccessibilityValidatorTests. Seuraava osio alkaa seuraavasta määrittelystä tai tiedoston lopusta.
+# CLASS SECTION END: AccessibilityValidatorTests. The next section starts at the next definition or at the end of the file.
