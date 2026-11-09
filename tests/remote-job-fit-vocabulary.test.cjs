@@ -1,3 +1,7 @@
+// KOMMENTOINTIOHJE / CODE MAP
+// Tiedoston tarkoitus: Automaattiset testit Remote Job Fit -prototyypin osaamissanastolle.
+// Etene ylhäältä alas: asetukset ja apufunktiot ensin, testit tai tarkistukset seuraavaksi.
+
 const test = require("node:test");
 const assert = require("node:assert/strict");
 const vocabulary = require("../remote-job-fit-vocabulary.js");
