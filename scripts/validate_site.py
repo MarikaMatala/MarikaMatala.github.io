@@ -91,6 +91,7 @@ class SiteParser(HTMLParser):
 
 
 # FUNKTIO-OSIO ALKAA: resolve_local_reference.
+# LUOKKA-OSIO PÄÄTTYY: SiteParser. Seuraava osio alkaa seuraavasta määrittelystä tai tiedoston lopusta.
 def resolve_local_reference(source, value):
     parsed = urlsplit(value)
     if parsed.scheme or parsed.netloc:
@@ -103,6 +104,7 @@ def resolve_local_reference(source, value):
 
 
 # FUNKTIO-OSIO ALKAA: audit_page.
+# FUNKTIO-OSIO PÄÄTTYY: resolve_local_reference. Seuraava osio alkaa seuraavasta määrittelystä tai tiedoston lopusta.
 def audit_page(page, parser):
     errors = []
     relative = page.relative_to(ROOT)
@@ -142,6 +144,7 @@ def audit_page(page, parser):
 
 
 # FUNKTIO-OSIO ALKAA: main.
+# FUNKTIO-OSIO PÄÄTTYY: audit_page. Seuraava osio alkaa seuraavasta määrittelystä tai tiedoston lopusta.
 def main():
     pages = sorted(ROOT.glob("*.html"))
     if not pages:
@@ -197,3 +200,5 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
+
+# FUNKTIO-OSIO PÄÄTTYY: main. Seuraava osio alkaa seuraavasta määrittelystä tai tiedoston lopusta.
