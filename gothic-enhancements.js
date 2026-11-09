@@ -1,7 +1,7 @@
 /*
  * CODE MAP / COMMENTING GUIDE
-* TODO: Translate this code comment into clear English. File purpose: Sivuston visuaaliset ja kyttliittymn listoiminnot.
-* TODO: Translate this code comment into clear English. Structure: ensin muuttujat ja asetukset, sen jlkeen funktiot ja lopuksi tapahtumankuuntelijat / kynnistys.
+* File purpose: Visual and interface enhancements for the website.
+* Structure: variables and settings first, followed by functions, then event listeners and initialization.
  */
 /* Lightweight progressive enhancements; no animation or icon framework required. */
 (function () {
