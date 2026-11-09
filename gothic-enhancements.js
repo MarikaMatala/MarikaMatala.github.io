@@ -1,7 +1,7 @@
 /*
- * KOMMENTOINTIOHJE / CODE MAP
- * Tiedoston tarkoitus: Sivuston visuaaliset ja käyttöliittymän lisätoiminnot.
- * Rakenne: ensin muuttujat ja asetukset, sen jälkeen funktiot ja lopuksi tapahtumankuuntelijat / käynnistys.
+ * CODE MAP / COMMENTING GUIDE
+* TODO: Translate this code comment into clear English. File purpose: Sivuston visuaaliset ja kyttliittymn listoiminnot.
+* TODO: Translate this code comment into clear English. Structure: ensin muuttujat ja asetukset, sen jlkeen funktiot ja lopuksi tapahtumankuuntelijat / kynnistys.
  */
 /* Lightweight progressive enhancements; no animation or icon framework required. */
 (function () {
