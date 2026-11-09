@@ -1,7 +1,7 @@
 /*
  * CODE MAP / COMMENTING GUIDE
-* TODO: Translate this code comment into clear English. File purpose: Sivuston perus-CSS: yleinen asettelu, vrit, typografia ja komponenttien perustyylit.
-* TODO: Translate this code comment into clear English. Structure: teeman muuttujat ja yleissnnt ensin, komponenttien tyylit seuraavaksi, responsiiviset snnt lopuksi.
+* File purpose: Core site CSS, including layout, colors, typography, and base component styles.
+* Structure: theme variables and global rules first, followed by component styles and responsive rules.
  */
 /*
   STYLE.CSS — PORTFOLION TYYLIT
@@ -148,7 +148,7 @@ h1 em,h2 em{font-style:normal;color:var(--copper)}
 @keyframes float-shape{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-12px) rotate(5deg)}}
 @keyframes stamp-wiggle{0%,90%,100%{transform:rotate(12deg)}94%{transform:rotate(18deg)}97%{transform:rotate(8deg)}}
 @keyframes slow-spin{to{transform:rotate(360deg)}}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:800px){
   .site-header{padding:0 5vw;height:68px}
   .section-wrap{padding-left:6vw;padding-right:6vw}
@@ -168,7 +168,7 @@ h1 em,h2 em{font-style:normal;color:var(--copper)}
   .about-mark{font-size:5rem}
   .contact-section{padding-top:75px;padding-bottom:75px}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:540px){
   nav{gap:12px}
   nav a{font-size:.68rem}
@@ -191,14 +191,14 @@ h1 em,h2 em{font-style:normal;color:var(--copper)}
   .branding-gallery figure:first-child img{height:62px}
   .branding-gallery figure:nth-child(2) img{height:76px}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{transition:none!important;animation:none!important}
 }
 
 
-/* TODO: Translate this code comment into clear English. 04. PROJEKTIKOMPONENTIT — Android-galleria: kuvasuhteet, ohjaimet ja kosketuskytt */
+/* 04. PROJECT COMPONENTS — Android gallery: image ratios, controls, and touch interactions. */
 .android-project{min-width:0}
 .android-carousel{min-width:0;width:100%;background:#0A151B;border:1px solid var(--line);align-self:start;display:flex;flex-direction:column;overflow:hidden}
 .android-carousel-stage{position:relative;display:flex;align-items:center;justify-content:center;height:190px;min-height:190px;padding:12px 58px;overflow:hidden;background:#0A151B}
@@ -213,13 +213,13 @@ h1 em,h2 em{font-style:normal;color:var(--copper)}
 .carousel-counter{min-width:54px;text-align:center;font:.72rem var(--mono);color:#f0e6ec;font-variant-numeric:tabular-nums}
 .android-project-copy{min-width:0}
 .carousel-hint{margin-top:18px;font-size:.75rem!important;color:#B5C9C5!important}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:800px){
   .android-project{grid-template-columns:1fr}
   .android-carousel-stage{height:175px;min-height:175px;padding:10px 56px}
   .android-carousel-stage img{max-height:145px}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:540px){
   .android-carousel-stage{height:155px;min-height:155px;padding:8px 50px}
   .android-carousel-stage img{max-height:125px}
@@ -228,7 +228,7 @@ h1 em,h2 em{font-style:normal;color:var(--copper)}
   .carousel-arrow-next{right:4px}
   .android-carousel-controls{padding:6px}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:360px){
   .android-carousel-stage{height:140px;min-height:140px;padding:6px 46px}
   .android-carousel-stage img{max-height:112px}
@@ -257,12 +257,12 @@ h1 em,h2 em{font-style:normal;color:var(--copper)}
 .code-sample code{font:inherit}
 .sample-source{display:block;padding:9px 12px;color:#8ECFBE;font:.62rem var(--mono);letter-spacing:.04em}
 .oop-note{margin:18px 0 0!important;color:#BBD2CC!important;font-size:.76rem!important}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:800px){
   .oop-samples{grid-template-columns:repeat(2,minmax(0,1fr))}
   .code-sample:last-child{grid-column:span 2}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:540px){
   .project-oop{grid-column:span 1}
   .oop-samples{grid-template-columns:1fr}
@@ -272,7 +272,7 @@ h1 em,h2 em{font-style:normal;color:var(--copper)}
 }
 
 
-/* TODO: Translate this code comment into clear English. 05. VISUAALINEN ILME — alkuperinen suunta: nocturnal grunge, dark academia ja analog-retro.
+/* 05. VISUAL STYLE — original direction: nocturnal grunge, dark academia, and analogue retro.
    Tämä kerros muokkaa peruskomponenttien värejä ja tunnelmaa; se ei ole erillinen sivupohja.
    Custom palette; no company brand palette or assets are used. */
 body{
@@ -423,22 +423,22 @@ a:focus-visible,button:focus-visible{outline-color:#B6FF3B}
 .code-sample pre{border-color:#30392b;color:#DCE9D0;background:#080A0D}
 .sample-source{color:#B6FF3B}
 .oop-note{color:#B8C1AD!important}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:800px){
   .android-carousel-stage{height:285px;min-height:285px;padding:14px 58px}
   .android-carousel-stage img{max-height:249px}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:540px){
   .android-carousel-stage{height:250px;min-height:250px;padding:12px 52px}
   .android-carousel-stage img{max-height:214px}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:360px){
   .android-carousel-stage{height:220px;min-height:220px;padding:10px 48px}
   .android-carousel-stage img{max-height:184px}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(prefers-reduced-motion:reduce){
   .work-section:after{display:none}
 }
@@ -447,17 +447,17 @@ a:focus-visible,button:focus-visible{outline-color:#B6FF3B}
 /* Slightly larger Android screenshots and accessible OOP sample navigation. */
 .android-carousel-stage{height:360px;min-height:360px}
 .android-carousel-stage img{max-height:322px}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:800px){
   .android-carousel-stage{height:315px;min-height:315px;padding:14px 58px}
   .android-carousel-stage img{max-height:279px}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:540px){
   .android-carousel-stage{height:280px;min-height:280px;padding:12px 52px}
   .android-carousel-stage img{max-height:244px}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:360px){
   .android-carousel-stage{height:245px;min-height:245px;padding:10px 48px}
   .android-carousel-stage img{max-height:209px}
@@ -482,7 +482,7 @@ a:focus-visible,button:focus-visible{outline-color:#B6FF3B}
 .oop-nav-button:hover:not(:disabled){background:#B6FF3B;color:#090A0F;border-color:#D5FF93}
 .oop-nav-button:disabled{opacity:.45;cursor:not-allowed}
 .oop-counter{color:#B6FF3B;font:.75rem var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:540px){
   .oop-browser-toolbar{grid-template-columns:1fr;gap:8px}
   .oop-sample-panel{padding:14px}
@@ -516,9 +516,9 @@ img.image-zoomable:focus-visible{outline:3px solid #B6FF3B;outline-offset:4px}
 .image-lightbox:focus-visible{outline:3px solid #B6FF3B;outline-offset:-6px}
 .oop-browser-controls .oop-nav-button{width:50%;min-width:0;height:32px;min-height:32px;padding:5px 8px}
 .oop-browser-controls .oop-nav-button:first-child{justify-self:start}\n.oop-browser-controls .oop-nav-button:last-child{justify-self:end}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:800px){.intro-strip{grid-template-columns:1fr;gap:10px;padding-top:28px;padding-bottom:36px}.intro-strip-mark{font-size:2.5rem}.intro-strip-mark span{display:inline-block;margin:0 0 0 12px}.study-topics{grid-template-columns:1fr}}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(prefers-reduced-motion:reduce){.image-lightbox img{scroll-behavior:auto}}
 
 
@@ -717,7 +717,7 @@ a:focus-visible,button:focus-visible{outline-color:#E7A16D}
   0%,100%{transform:translate3d(0,0,0);opacity:.45}
   50%{transform:translate3d(7px,-12px,0);opacity:.8}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:540px){
   .site-header{gap:8px}
   nav{gap:10px}
@@ -728,7 +728,7 @@ a:focus-visible,button:focus-visible{outline-color:#E7A16D}
   .wordmark.full-name{font-size:.78rem}
   .about-section:before{display:none}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(prefers-reduced-motion:reduce){
   .hero:before,.hero-stamp{animation:none!important}
   .hero-tags span,.project-card,.contact-links a,.language-toggle{transition:none!important}
@@ -760,7 +760,7 @@ a:focus-visible,button:focus-visible{outline-color:#E7A16D}
   font-size:1.5rem;cursor:pointer;
 }
 .copyright-close:hover{border-color:#D47A42;color:#EBA16D}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:540px){
   .copyright-trigger{font-size:.58rem;padding:7px 8px}
 }
@@ -887,7 +887,7 @@ body:after{opacity:.055}
 }
 .lightbox-rights strong{display:block;color:var(--copper);font: .72rem var(--mono);letter-spacing:.12em;text-transform:uppercase;margin-bottom:5px}
 @keyframes stamp-wobble{0%,100%{rotate:8deg}50%{rotate:15deg}}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:800px){
   .hero{min-height:auto;grid-template-columns:1fr;padding-top:65px;gap:35px}
   .hero-copy{max-width:700px}
@@ -900,7 +900,7 @@ body:after{opacity:.055}
   .site-footer{grid-template-columns:1fr;gap:8px}
   .site-footer .footer-note{font-size:.62rem}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:540px){
   .notice{font-size:.58rem;letter-spacing:.06em}
   .site-header{padding-inline:4vw;flex-wrap:wrap;justify-content:space-between}
@@ -920,7 +920,7 @@ body:after{opacity:.055}
   .image-lightbox{justify-content:flex-start}
   .image-lightbox img{max-width:94vw;max-height:53vh}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(prefers-reduced-motion:reduce){.hero-stamp{animation:none!important}}
 
 
@@ -983,11 +983,11 @@ body:after{opacity:.075;background:repeating-linear-gradient(0deg,transparent 0 
 .interlude-photo figcaption span:last-child{color:#a99b8e;font-size:.5rem}
 .interlude-credit{margin:28px 0 0;text-align:right;font:.65rem var(--mono);color:#a99c90}
 @keyframes record-turn{to{transform:rotate(360deg)}}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:800px){.interlude-copy{margin-left:0;max-width:85%}.interlude-art{right:5vw;top:26%;width:clamp(150px,30vw,240px);opacity:.7}.interlude-photo-grid{grid-template-columns:1fr 1fr}.interlude-photo:nth-child(1){grid-column:1 / -1;margin:0 8% 12px 0}.interlude-photo:nth-child(1) img{height:260px}.interlude-photo:nth-child(2),.interlude-photo:nth-child(3){margin-top:0}.interlude-photo:nth-child(2) img,.interlude-photo:nth-child(3) img{height:230px}}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:540px){.visual-interlude{padding:54px 6vw}.interlude-topline{font-size:.55rem;letter-spacing:.08em;margin-bottom:55px}.interlude-copy{max-width:100%}.interlude-copy h2{font-size:clamp(3rem,14vw,4.4rem)}.interlude-copy>p:last-child{max-width:90%;font-size:.92rem}.interlude-art{right:2vw;top:35%;width:125px;opacity:.55}.interlude-photo-grid{grid-template-columns:1fr;gap:20px;margin-top:65px}.interlude-photo:nth-child(1),.interlude-photo:nth-child(2),.interlude-photo:nth-child(3){grid-column:auto;margin:0 4%}.interlude-photo img,.interlude-photo:nth-child(2) img,.interlude-photo:nth-child(3) img{height:220px}.interlude-photo figcaption{font-size:.57rem}.interlude-credit{text-align:left;line-height:1.7}}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(prefers-reduced-motion:reduce){.vinyl-record{animation:none}.interlude-photo{transition:none}}
 
 
@@ -1086,13 +1086,13 @@ body:after{opacity:.075;background:repeating-linear-gradient(0deg,transparent 0 
   50%{transform:translate(-1%, 1%);opacity:.19}
   75%{transform:translate(.5%, .5%);opacity:.28}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:540px){
   .android-carousel-stage::after,.branding-gallery figure::after{
     min-width:68px;height:30px;font-size:11px;padding:0 8px;
   }
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(prefers-reduced-motion:reduce){
   .work-section .eyebrow:before,.contact-section .eyebrow:before,.visual-interlude:after{animation:none}
   .project-card:before{transition:none}
@@ -1152,7 +1152,7 @@ body:after{opacity:.075;background:repeating-linear-gradient(0deg,transparent 0 
     linear-gradient(135deg,#d5b66f05,transparent 34%),
     repeating-linear-gradient(45deg,transparent 0 18px,#d5b66f03 19px,#d5b66f03 20px);
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(prefers-reduced-motion:reduce){
   .reveal-on-scroll,.reveal-on-scroll.is-revealed{
     opacity:1;
@@ -1189,7 +1189,7 @@ body:after{opacity:.075;background:repeating-linear-gradient(0deg,transparent 0 
 }
 .android-carousel-stage::after{right:12px;bottom:10px}
 .branding-gallery figure::after{left:10px;bottom:9px}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:540px){
   .android-carousel-stage::after,.branding-gallery figure::after{
     min-width:0;height:auto;font-size:9px;padding:0;
@@ -1346,16 +1346,16 @@ body:after{opacity:.075;background:repeating-linear-gradient(0deg,transparent 0 
   50%{translate:0 -9px;rotate:1deg}
 }
 @keyframes reel-turn{to{transform:rotate(360deg)}}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:800px){
   .media-reel-art{right:2vw;top:23%;width:clamp(170px,34vw,270px);opacity:.86}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:540px){
   .media-reel-art{right:1vw;top:31%;width:145px;opacity:.72}
   .media-art-label{font-size:7px}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(prefers-reduced-motion:reduce){
   .film-strip-back,.film-strip-front,.film-camera,.camera-reel{animation:none}
 }
@@ -1423,13 +1423,13 @@ body:after{opacity:.075;background:repeating-linear-gradient(0deg,transparent 0 
   font-size:.91rem;
   line-height:1.7!important;
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:640px){
   .skills-grid{grid-template-columns:minmax(0,1fr)}
   .skills-card{padding:20px}
   .skills-overview{margin-top:35px;padding-top:24px}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(prefers-reduced-motion:reduce){
   .skills-card,.skills-card:hover{transition:none;transform:none}
 }
@@ -1483,7 +1483,7 @@ body:after{opacity:.075;background:repeating-linear-gradient(0deg,transparent 0 
 #projects .project-oop .oop-grade{flex-shrink:0}
 #projects .project-oop .oop-heading h3{font-size:clamp(1.7rem,3vw,2.6rem)}
 #media,#android,#branding,#wimma,#oop{scroll-margin-top:90px}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:640px){
   #projects .android-carousel-stage{height:clamp(300px,90vw,420px);min-height:clamp(300px,90vw,420px);padding:16px 48px}
   #projects .branding-gallery{grid-template-columns:1fr}
@@ -1494,7 +1494,7 @@ body:after{opacity:.075;background:repeating-linear-gradient(0deg,transparent 0 
   #projects .project-oop .oop-sample-panel pre{font-size:.88rem}
   .home-work-cta{align-items:flex-start;font-size:.92rem}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(prefers-reduced-motion:reduce){#projects .project-card:hover{transform:none}}
 
 
@@ -1514,9 +1514,9 @@ body:after{opacity:.075;background:repeating-linear-gradient(0deg,transparent 0 
 .skill-bars i.is-filled{background:#d5b66f;border-color:#d5b66f}
 .skill-level{min-width:25px;color:#d8b18c;font:.7rem/1.2 var(--mono);text-align:right}
 .skills-scale .skill-bars i{height:12px;width:7px}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:760px){.skills-grid-detailed{grid-template-columns:minmax(0,1fr)}.skills-grid-detailed .skills-card:last-child{grid-column:auto}}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:420px){.skill-row{gap:8px}.skill-name{font-size:.82rem}.skill-rating{gap:5px}.skill-bars{gap:2px}.skill-bars i{width:6px;height:13px}.skills-card{padding:16px}}
 
 
@@ -1532,7 +1532,7 @@ body:after{opacity:.075;background:repeating-linear-gradient(0deg,transparent 0 
 .copyright-line{color:#e5d7c8;font-weight:600;letter-spacing:.025em}
 .contact-links{display:flex;flex-wrap:wrap;gap:12px 24px}
 .contact-links a{overflow-wrap:anywhere}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:520px){
   .info-ribbon{gap:10px;padding:14px 16px;min-height:74px}
   .info-ribbon p{font-size:.9rem;line-height:1.45;text-align:left}
@@ -1617,7 +1617,7 @@ h1 em,h2 em,.work-page-intro h1 em,.contact-page h1 em{color:#c77c8a;font-style:
 .contact-method p{margin:0;color:#c9bac7;line-height:1.7}
 .contact-method a{display:inline-block;margin-top:12px;color:#e1a0ab;overflow-wrap:anywhere}
 .contact-page-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:760px){
   #projects .project-grid{grid-template-columns:minmax(0,1fr)}
   #projects .project-card,#projects .project-card:nth-child(n){grid-column:1!important}
@@ -1627,7 +1627,7 @@ h1 em,h2 em,.work-page-intro h1 em,.contact-page h1 em{color:#c77c8a;font-style:
   #projects .project-oop .oop-sample-panel pre{font-size:.75rem}
   .contact-page-grid{grid-template-columns:1fr}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(prefers-reduced-motion:reduce){.gothic-button{transition:none}}
 
 /* === Gothic portfolio refresh: page structure, texture and compact sample cards === */
@@ -1726,7 +1726,7 @@ a:focus-visible,button:focus-visible{outline-color:#e2a8b8}
 .site-footer .copyright-line,.site-footer .footer-note{color:#ad9aaa}
 @keyframes gothic-shimmer{0%,100%{opacity:.35;transform:translateY(0)}50%{opacity:.8;transform:translateY(-3px)}}
 .home-about-emblem span:first-child{animation:gothic-shimmer 5s ease-in-out infinite}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:800px){
   .home-about-teaser{grid-template-columns:90px minmax(0,1fr);gap:22px;padding-top:64px;padding-bottom:64px}
   .home-about-emblem{max-width:90px}
@@ -1734,14 +1734,14 @@ a:focus-visible,button:focus-visible{outline-color:#e2a8b8}
   .home-about-emblem span:first-child{font-size:1rem}
   .home-about-emblem span:last-child{font-size:2rem}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:760px){
   .site-header{padding-inline:4vw;gap:10px}
   .site-header nav{gap:clamp(8px,2vw,16px)}
   .site-header nav a{font-size:.59rem;letter-spacing:0}
   #projects .project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:540px){
   .site-header{flex-wrap:wrap;justify-content:space-between;padding-top:8px}
   .site-header nav{order:3;width:100%;justify-content:space-between;padding:0 0 10px;flex-wrap:wrap}
@@ -1754,7 +1754,7 @@ a:focus-visible,button:focus-visible{outline-color:#e2a8b8}
   #projects .branding-gallery{min-height:160px}
   #projects .branding-gallery img{height:clamp(110px,32vw,150px)}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(prefers-reduced-motion:reduce){
   .home-about-emblem span:first-child{animation:none}
   .gothic-button,.project-card{transition:none!important}
@@ -1800,11 +1800,11 @@ a:focus-visible,button:focus-visible{outline-color:#e2a8b8}
 .contact-page-grid{align-items:stretch}
 .contact-method{height:100%;display:flex;flex-direction:column;align-items:flex-start}
 .contact-method a{overflow-wrap:anywhere;word-break:break-word}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:760px){
   #projects .project-card{padding:14px}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:540px){
   .skills-grid-detailed{grid-template-columns:minmax(0,1fr)}
 }
@@ -1838,9 +1838,9 @@ h1 em,h2 em{color:#d782a0}
 .site-footer{border-top-color:#49303f}
 .home-work-cta{border-color:#573447}
 @keyframes gothic-code-drift{0%{transform:translateY(-10px);opacity:.08}35%{opacity:.2}100%{transform:translateY(24px);opacity:.08}}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:640px){.notice p{padding:0 10px}.info-ribbon::after,.notice::after{display:none}.hero-copy::after{right:0;top:-1rem;font-size:.62rem;opacity:.1}}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(prefers-reduced-motion:reduce){.hero-copy::after{animation:none}body{background-attachment:scroll}}
 
 
@@ -1913,9 +1913,9 @@ a:hover{color:#d6bba5}
 .skill-bars i.is-filled{background:#a33b51;box-shadow:0 0 8px #a33b512b}
 .site-footer{border-top-color:#3d2528}
 .hero-copy::after{color:#a9c2a0}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:640px){.site-header::before{font-size:1rem}}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(prefers-reduced-motion:reduce){.site-header::before{animation:none;display:none}}
 
 
@@ -1925,7 +1925,7 @@ a:hover{color:#d6bba5}
 .skills-grid-detailed .skill-rating{flex:0 0 auto;white-space:nowrap}
 .skills-grid-detailed .skill-level{display:inline-block;text-align:right}
 .skills-grid-detailed .skills-card h4{line-height:1.25;overflow-wrap:anywhere}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:520px){
   .skills-grid-detailed .skill-row{align-items:flex-start}
   .skills-grid-detailed .skill-name{font-size:.88rem}
@@ -2000,14 +2000,14 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
   animation:fox-glow 5s ease-in-out infinite;
 }
 @keyframes fox-glow{0%,100%{opacity:.65;transform:translateY(0)}50%{opacity:1;transform:translateY(-3px)}}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:640px){
   .site-header{position:sticky;top:0;padding-top:8px}
   .site-header::before{font-size:.95rem}
   .site-footer{padding-bottom:48px}
   .site-footer::after{right:20px;bottom:12px}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(prefers-reduced-motion:reduce){
   .site-header::before,.site-footer::after{animation:none!important}
 }
@@ -2023,7 +2023,7 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
   line-height:1.8;
   text-wrap:pretty;
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:640px){
   .hero-greeting{max-width:100%;font-size:1rem;line-height:1.75;margin-top:18px}
 }
@@ -2101,7 +2101,7 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
   background:linear-gradient(180deg,#d48aa2 0%,#a33d60 45%,#63152f 100%);
   box-shadow:inset 0 1px 0 #ffe5ef5c,0 0 8px #9b34552b;
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(prefers-reduced-motion:reduce){
   .gothic-button,.home-work-cta,.contact-method,.project-card{transition:none!important}
 }
@@ -2121,7 +2121,7 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
   outline:3px solid var(--copper);
   outline-offset:6px;
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(prefers-reduced-motion:reduce){
   .hero-index{transition:none}
 }
@@ -2209,19 +2209,19 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
   white-space:nowrap;
   width:max-content;
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:760px){
   .hero-index{right:18px;bottom:16px;padding:7px 9px}
   .hero-index::after{left:-.5rem;top:-1rem;font-size:.52rem;letter-spacing:.1em}
   .hero-index .portfolio-word{font-size:1.45rem}
   .hero-index .portfolio-year{font-size:1.25rem}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:420px){
   .hero-index{right:12px;bottom:12px}
   .hero-index::after{content:"0101 0010 1011";opacity:.25}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(prefers-reduced-motion:reduce){
   .hero-index::after{animation:none}
 }
@@ -2309,13 +2309,13 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
 .sample-file-title{font:clamp(1.5rem,2vw,2.1rem) var(--display);letter-spacing:.03em}
 .sample-file-action{font-size:.78rem;line-height:1.5;color:#e7bd83}
 .sample-pdf-link:hover .sample-file-icon{transform:translateY(-3px);box-shadow:8px 11px 0 #d5b66f20}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:860px){
   .interlude-photo-grid.creative-samples-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
   .creative-samples-grid .sample-visual{height:clamp(190px,30vw,260px)}
   .creative-samples-grid .creative-sample:last-child{grid-column:1/-1;max-width:calc(50% - 9px);width:100%;justify-self:center}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:560px){
   .interlude-photo-grid.creative-samples-grid{grid-template-columns:minmax(0,1fr);gap:18px;margin-top:32px}
   .creative-samples-grid .creative-sample,
@@ -2324,7 +2324,7 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
   .creative-sample-copy h3{font-size:1.25rem}
   .creative-sample-copy p{font-size:.95rem;line-height:1.75}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(prefers-reduced-motion:reduce){
   .creative-samples-grid .creative-sample,.creative-samples-grid .sample-visual img,.sample-pdf-link .sample-file-icon{transition:none}
 }
@@ -2355,7 +2355,7 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
 .creative-samples-grid .sample-pdf-preview .sample-file-title{font-size:clamp(1.35rem,2vw,1.8rem);text-align:center}
 .creative-samples-grid .sample-pdf-preview .sample-file-action{color:#e7bd83;font-size:.82rem;text-align:center}
 .creative-samples-grid .sample-pdf-preview:hover .sample-file-icon{transform:translateY(-3px)}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(prefers-reduced-motion:reduce){.creative-samples-grid .sample-pdf-preview .sample-file-icon{transition:none}}
 
 
@@ -2396,14 +2396,14 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
   outline:2px solid #e0a0b5;
   outline-offset:3px;
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:640px){
   .contact-method-primary{grid-column:auto;padding:22px}
   .contact-method-primary a{max-width:100%;overflow-wrap:anywhere}
 }
 
 
-/* TODO: Translate this code comment into clear English. 07. YHTEYSTIEDOT — kaksikielisen lomakkeen kentt, asettelu ja palautteet */
+/* 07. CONTACT — bilingual form fields, layout, and feedback states. */
 .contact-form-section{
   display:grid;
   grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
@@ -2467,12 +2467,12 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
 .contact-form-submit:focus-visible{outline:2px solid #e0a0b5;outline-offset:4px}
 .contact-form-note{margin:0;color:#a9949e;font-size:.82rem;line-height:1.65}
 .contact-form-honey{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:760px){
   .contact-form-section{grid-template-columns:minmax(0,1fr);gap:24px;padding:22px}
   .contact-form-submit{width:100%}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(prefers-reduced-motion:reduce){
   .contact-form-field input,.contact-form-field textarea{transition:none}
 }
@@ -2503,7 +2503,7 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
   color:#fff;
   border-color:#fff;
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:800px){
   .site-footer{flex-wrap:wrap;padding-top:22px;padding-bottom:22px;}
 }
@@ -2570,7 +2570,7 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
   color:#fff;
 }
 .contact-form-discard:focus-visible{outline:2px solid #e0a0b5;outline-offset:4px}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:640px){
   .contact-form{grid-template-columns:minmax(0,1fr);padding:18px}
   .contact-message-field,.contact-form-feedback,.contact-form-actions,.contact-form-note{grid-column:1}
@@ -2588,7 +2588,7 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
 .footer-nav a{color:#d8c8d0;text-decoration:none;font-family:var(--mono);font-size:.75rem;font-weight:700}
 .footer-nav a:hover,.footer-nav a:focus-visible{color:var(--copper);text-decoration:underline;text-underline-offset:5px}
 .site-footer{flex-wrap:wrap;row-gap:18px}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:900px){
   .site-header{display:flex;gap:14px}
   .site-header .wordmark.full-name{margin-left:auto}
@@ -2601,7 +2601,7 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
   .site-footer{align-items:flex-start}
   .footer-nav{width:100%;justify-content:flex-start;order:3}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:560px){
   .site-header{padding:0 4vw;gap:9px}
   .site-header .wordmark.full-name{font-size:.78rem;white-space:normal;text-align:right;line-height:1.2}
@@ -2612,10 +2612,10 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
   .footer-nav a{padding:8px 0}
   .site-footer .copyright-line,.site-footer .footer-note{width:100%}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(prefers-reduced-motion:reduce){.menu-toggle span{transition:none}}
 
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:420px){
   .site-header .language-toggle{min-width:0;width:auto;height:34px;min-height:34px;padding:4px 8px}
   .site-header .language-label{display:inline;font-size:.62rem}
@@ -2641,12 +2641,12 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
   color:#fff;
   text-decoration-color:#d99aaa;
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:900px){
   .footer-nav{gap:10px 24px}
   .footer-nav a{font-size:1rem;min-height:46px}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:560px){
   .footer-nav{gap:8px 18px}
   .footer-nav a{font-size:.98rem;min-height:48px}
@@ -2654,7 +2654,7 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
 
 
 /* Compact language switch beside the hamburger menu on smaller screens. */
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:900px){
   .site-header .language-toggle{
     display:inline-flex;
@@ -2669,7 +2669,7 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
     border-radius:4px;
   }
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:560px){
   .site-header .language-toggle{height:34px;min-height:34px;padding:4px 8px;font-size:.62rem}
 }
@@ -2728,13 +2728,13 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
 .skills-card-summary:hover .skills-toggle{
   background:rgba(206,129,71,.18);
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:420px){
   .skills-card-summary{min-height:92px;padding:17px 16px;gap:5px 10px}
   .skills-toggle{width:38px;height:38px}
   .skills-card > .skill-rows{padding:0 16px 18px}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(prefers-reduced-motion:reduce){
   .skills-toggle{transition:none}
 }
@@ -2744,7 +2744,7 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
 .skills-card-title{grid-area:title;display:flex;align-items:center;gap:12px;min-width:0}
 .skills-card-title h4{grid-area:auto;min-width:0}
 .skills-category-icon{display:inline-grid;place-items:center;flex:0 0 42px;width:42px;height:42px;border:1px solid rgba(206,129,71,.55);border-radius:50%;background:rgba(206,129,71,.10);font-size:1.2rem;line-height:1}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:420px){.skills-card-title{gap:9px}.skills-category-icon{flex-basis:36px;width:36px;height:36px;font-size:1.05rem}}
 
 
@@ -2753,7 +2753,7 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
 .skills-card-title h4{font-size:clamp(1rem,1.35vw,1.2rem);line-height:1.28;overflow-wrap:break-word;hyphens:auto}
 .skills-card-summary{grid-template-columns:minmax(0,1fr) 42px;column-gap:12px}
 .skills-card-summary .skills-number{font-size:clamp(.58rem,.75vw,.7rem);letter-spacing:.07em;overflow-wrap:anywhere}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:560px){
   .skills-card-summary{grid-template-columns:minmax(0,1fr) 38px;padding:16px 14px;column-gap:9px}
   .skills-card-title{gap:8px}
@@ -2761,7 +2761,7 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
   .skills-category-icon{flex-basis:36px;width:36px;height:36px}
   .skills-toggle{width:36px;height:36px}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:360px){
   .skills-card-summary{grid-template-columns:minmax(0,1fr) 34px;padding:14px 11px;column-gap:7px}
   .skills-card-title{gap:7px}
@@ -2775,9 +2775,9 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
 .project-jump-nav{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 28px;padding:16px;border:1px solid rgba(206,129,71,.42);background:rgba(12,13,16,.72)}
 .project-jump-nav a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 14px;border:1px solid rgba(206,129,71,.55);border-radius:3px;color:#f0e9df;text-decoration:none;font-size:.88rem;font-weight:700;transition:background .2s ease,border-color .2s ease,color .2s ease}
 .project-jump-nav a:hover,.project-jump-nav a:focus-visible{background:rgba(206,129,71,.16);border-color:#e7a16d;color:#fff;text-decoration:underline;text-underline-offset:4px}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:560px){.project-jump-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:12px}.project-jump-nav a{padding:9px 8px;text-align:center;font-size:.78rem}}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(prefers-reduced-motion:reduce){.project-jump-nav a{transition:none}}
 
 
@@ -2787,7 +2787,7 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
   letter-spacing:-.04em;
   min-width:0;
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:540px){
   .site-header > .wordmark.full-name{
     font-size:clamp(.58rem,2.7vw,.72rem);
@@ -2825,7 +2825,7 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
 }
 .site-header > .wordmark.full-name{font-size:clamp(.9rem,1.4vw,1.08rem)}
 .site-footer > .wordmark.full-name{font-size:.95rem}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:540px){
   .site-header > .wordmark.full-name{font-size:.88rem}
   .site-header > .wordmark.full-name .wordmark-subtitle{font-size:.56em}
@@ -2852,7 +2852,7 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
 }
 
 /* Final header layout: keep the two-line wordmark and controls readable without crowding. */
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:1100px){
   .site-header{
     display:flex;
@@ -2905,7 +2905,7 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
     height:42px;
   }
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:560px){
   .site-header{gap:7px;padding:7px 3vw}
   .site-header .metal-rose-mark{width:38px;height:46px;flex:0 0 38px}
@@ -2921,7 +2921,7 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
   .site-header .language-toggle{padding:4px 7px;min-height:34px;height:34px}
   .site-header .menu-toggle{width:38px;height:38px;flex-basis:38px;padding:8px}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:360px){
   .site-header{gap:5px;padding-inline:2.5vw}
   .site-header .metal-rose-mark{width:34px;height:42px;flex-basis:34px}
@@ -2963,11 +2963,11 @@ h1 em,h2 em,.home-work-cta-section h2 em,.work-page-intro h1 em{color:#b65c72}
   opacity:.82;
 }
 .site-header > a.wordmark.full-name .wordmark-break{display:none}
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:560px){
   .site-header > a.wordmark.full-name{max-width:calc(100vw - 150px);font-size:clamp(.68rem,3.1vw,.82rem)}
 }
-/* TODO: Translate this code comment into clear English. RESPONSIVE SECTION: snt mukauttaa nkym nyttkoon tai kyttjn asetuksen mukaan. */
+/* RESPONSIVE SECTION: this rule adapts the layout to the viewport size or user preferences. */
 @media(max-width:360px){
   .site-header > a.wordmark.full-name{font-size:.66rem;max-width:calc(100vw - 132px)}
 }
