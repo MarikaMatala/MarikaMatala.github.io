@@ -1,13 +1,14 @@
-# KOMMENTOINTIOHJE / CODE MAP
-# Tiedoston tarkoitus: Portfoliosivuston automaattinen rakenteen ja saavutettavuuden validointiskripti.
-# Etene ylhäältä alas: asetukset ja apufunktiot ensin, testit tai tarkistukset seuraavaksi.
-
 #!/usr/bin/env python3
 """Validate local references and baseline accessibility semantics in the static portfolio.
 
 This is a lightweight source-level check, not a WCAG conformance checker.
 Manual keyboard, screen-reader, zoom, responsive and contrast testing is still required.
 """
+
+# KOMMENTOINTIOHJE / CODE MAP
+# Tiedoston tarkoitus: Portfoliosivuston automaattinen rakenteen ja saavutettavuuden validointiskripti.
+# Etene ylhäältä alas: asetukset ja apufunktiot ensin, testit tai tarkistukset seuraavaksi.
+
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
