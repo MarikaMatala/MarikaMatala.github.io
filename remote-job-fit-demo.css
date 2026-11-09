@@ -1,7 +1,7 @@
 /*
- * KOMMENTOINTIOHJE / CODE MAP
- * Tiedoston tarkoitus: Vanhan Remote Job Fit -selainprototyypin tyylitiedosto; säilytetty lähdekoodina, ei nykyisen julkaistun demon tyyleinä.
- * Rakenne: prototyypin värit ja perussäännöt ensin, komponenttien tyylit seuraavaksi, responsiiviset säännöt lopuksi.
+ * CODE MAP / COMMENTING GUIDE
+* TODO: Translate this code comment into clear English. File purpose: Vanhan Remote Job Fit -selainprototyypin tyylitiedosto; silytetty lhdekoodina, ei nykyisen julkaistun demon tyylein.
+* TODO: Translate this code comment into clear English. Structure: prototyypin vrit ja perussnnt ensin, komponenttien tyylit seuraavaksi, responsiiviset snnt lopuksi.
  */
 :root{color-scheme:dark;--bg:#100b12;--panel:#1b121d;--panel2:#241724;--text:#f1e8ef;--muted:#c0b0bd;--accent:#c27b92;--line:#56384b;--good:#9fc7a4;--warn:#e7c28b}
 *{box-sizing:border-box}
@@ -42,9 +42,9 @@ input:focus,textarea:focus,button:focus-visible,a:focus-visible{outline:3px soli
 .matched{font-size:.82rem!important}
 .demo-footer{color:var(--muted);font-size:.82rem;margin:18px 2px 0}
 .demo-footer a{color:var(--accent)}
-/* RESPONSIIVINEN OSIO: mukauttaa prototyypin asettelua eri näyttökoille. */
+/* RESPONSIVE SECTION: adapts the prototype layout to different screen sizes. */
 @media(max-width:650px){.form-grid{grid-template-columns:1fr}.demo-heading{flex-direction:column}.language-button{align-self:flex-start}.results-heading{flex-direction:column}.result-top{flex-direction:column;gap:4px}}
-/* RESPONSIIVINEN OSIO: mukauttaa prototyypin asettelua eri näyttökoille. */
+/* RESPONSIVE SECTION: adapts the prototype layout to different screen sizes. */
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 
 .import-panel{margin:24px 0;padding:clamp(16px,3vw,26px);background:var(--panel);border:1px solid var(--line);border-radius:16px}
@@ -71,7 +71,7 @@ input:focus,textarea:focus,button:focus-visible,a:focus-visible{outline:3px soli
   text-align: center;
 }
 .demo-status strong { color: #e5b77b; }
-/* RESPONSIIVINEN OSIO: mukauttaa prototyypin asettelua eri näyttökoille. */
+/* RESPONSIVE SECTION: adapts the prototype layout to different screen sizes. */
 @media (max-width: 520px) {
   .demo-status { flex-direction: column; gap: 0.2rem; }
 }
@@ -117,4 +117,4 @@ input:focus,textarea:focus,button:focus-visible,a:focus-visible{outline:3px soli
   outline-offset:3px;
 }
 
-/* TIEDOSTON TYYLIOSIO PÄÄTTYY TÄHÄN. */
+/* END OF STYLESHEET. */
