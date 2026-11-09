@@ -181,7 +181,7 @@ function renderCatalogue(){
    if(alphabetical){
     const first=work.title.trim().charAt(0).toLocaleUpperCase(language==="fi"?"fi":"en");
     const isNumber=/^\d$/.test(first);
-    const group=isNumber?"number:"+first:"letter:"+( /^[A-Z]$/i.test(first)?first:"#");
+    const group=isNumber?"number:"+first:"letter:"+( /^[A-ZÅÄÖ]$/i.test(first)?first:"#");
     if(group!==previousGroup){
       const heading=document.createElement("h3");
       if(isNumber){heading.className="catalogue-number-heading";heading.id="catalogue-number-"+first;heading.textContent=first;heading.setAttribute("aria-label",(language==="fi"?"Numero ":"Number ")+first);}
