@@ -1,7 +1,7 @@
 /*
- * KOMMENTOINTIOHJE / CODE MAP
- * Tiedoston tarkoitus: Vanhan Remote Job Fit -selainprototyypin JavaScript-lähdekoodi; ei nykyinen julkaistu demo.
- * Rakenne: ensin muuttujat ja asetukset, sen jälkeen funktiot ja lopuksi tapahtumankuuntelijat / käynnistys.
+ * CODE MAP / COMMENTING GUIDE
+* TODO: Translate this code comment into clear English. File purpose: Vanhan Remote Job Fit -selainprototyypin JavaScript-lhdekoodi; ei nykyinen julkaistu demo.
+* TODO: Translate this code comment into clear English. Structure: ensin muuttujat ja asetukset, sen jlkeen funktiot ja lopuksi tapahtumankuuntelijat / kynnistys.
  */
 // Browser-only prototype. Do not add network requests, analytics, or persistent storage here.
 const form = document.getElementById("fit-form");
@@ -20,7 +20,7 @@ const importStatus = document.getElementById("import-status");
 const importButton = document.getElementById("import-cv");
 const linkedinInput = document.getElementById("linkedin-url");
 
-// FUNKTIO-OSIO ALKAA: extractKnownSkills – katso funktion sisältä tarkempi toimintakuvaus.
+// TODO: Translate this code comment into clear English. FUNCTION SECTION START: extractKnownSkills – katso funktion sislt tarkempi toimintakuvaus.
 function extractKnownSkills(text) { return vocabulary.extractSkills(text, language); }
 cvFileInput.addEventListener("change", async () => {
   const file = cvFileInput.files && cvFileInput.files[0];
@@ -159,19 +159,19 @@ const roleTitlesFi = {
   "Junior ICT Systems Specialist": "Junior-tason ICT-järjestelmäasiantuntija"
 };
 
-// FUNKTIO-OSIO ALKAA: terms – katso funktion sisältä tarkempi toimintakuvaus.
-// FUNKTIO-OSIO PÄÄTTYY: extractKnownSkills. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
+// TODO: Translate this code comment into clear English. FUNCTION SECTION START: terms – katso funktion sislt tarkempi toimintakuvaus.
+// TODO: Translate this code comment into clear English. FUNCTION SECTION END: extractKnownSkills. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston pttymisest.
 function terms(value) {
   const values = [...new Set(value.toLowerCase().split(/[,;\n]+/).map(item => item.trim()).filter(item => item.length > 1))];
   return [...new Set(vocabulary.normalizeSkillTerms(values))];
 }
-// FUNKTIO-OSIO ALKAA: tokenise – katso funktion sisältä tarkempi toimintakuvaus.
-// FUNKTIO-OSIO PÄÄTTYY: terms. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
+// TODO: Translate this code comment into clear English. FUNCTION SECTION START: tokenise – katso funktion sislt tarkempi toimintakuvaus.
+// TODO: Translate this code comment into clear English. FUNCTION SECTION END: terms. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston pttymisest.
 function tokenise(value) {
   return value.toLowerCase().replace(/[^a-z0-9+#.\s-]/g, " ").split(/\s+/).filter(word => word.length > 1);
 }
-// FUNKTIO-OSIO ALKAA: scoreRole – katso funktion sisältä tarkempi toimintakuvaus.
-// FUNKTIO-OSIO PÄÄTTYY: tokenise. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
+// TODO: Translate this code comment into clear English. FUNCTION SECTION START: scoreRole – katso funktion sislt tarkempi toimintakuvaus.
+// TODO: Translate this code comment into clear English. FUNCTION SECTION END: tokenise. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston pttymisest.
 function scoreRole(role, skills, targetTitle, mustHave, excluded) {
   const searchable = (role.title + " " + role.text).toLowerCase();
   const detectedTerms = vocabulary.extractSkills(searchable).map(item => item.canonical.toLowerCase());
@@ -194,8 +194,8 @@ function scoreRole(role, skills, targetTitle, mustHave, excluded) {
   if (excludedMatches.length) score = Math.max(0, score - 35);
   return { score: Math.min(100, score), matchedSkills, matchedTitle, matchedMust, excludedMatches, matchedRequirements, missingRequirements, optionalRequirements };
 }
-// FUNKTIO-OSIO ALKAA: addText – katso funktion sisältä tarkempi toimintakuvaus.
-// FUNKTIO-OSIO PÄÄTTYY: scoreRole. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
+// TODO: Translate this code comment into clear English. FUNCTION SECTION START: addText – katso funktion sislt tarkempi toimintakuvaus.
+// TODO: Translate this code comment into clear English. FUNCTION SECTION END: scoreRole. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston pttymisest.
 function addText(parent, tag, className, value) {
   const element = document.createElement(tag);
   if (className) element.className = className;
@@ -203,8 +203,8 @@ function addText(parent, tag, className, value) {
   parent.appendChild(element);
   return element;
 }
-// FUNKTIO-OSIO ALKAA: renderRole – katso funktion sisältä tarkempi toimintakuvaus.
-// FUNKTIO-OSIO PÄÄTTYY: addText. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
+// TODO: Translate this code comment into clear English. FUNCTION SECTION START: renderRole – katso funktion sislt tarkempi toimintakuvaus.
+// TODO: Translate this code comment into clear English. FUNCTION SECTION END: addText. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston pttymisest.
 function renderRole(role, result, isCustom = false) {
   const card = document.createElement("article");
   card.className = "result-card";
@@ -289,8 +289,8 @@ languageButton.addEventListener("click", () => {
 
 
 // Keep the embedded demo language aligned with the portfolio page.
-// FUNKTIO-OSIO ALKAA: applyDemoLanguage – katso funktion sisältä tarkempi toimintakuvaus.
-// FUNKTIO-OSIO PÄÄTTYY: renderRole. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
+// TODO: Translate this code comment into clear English. FUNCTION SECTION START: applyDemoLanguage – katso funktion sislt tarkempi toimintakuvaus.
+// TODO: Translate this code comment into clear English. FUNCTION SECTION END: renderRole. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston pttymisest.
 function applyDemoLanguage(nextLanguage) {
   if (nextLanguage !== "fi" && nextLanguage !== "en") return;
   language = nextLanguage;
@@ -312,4 +312,4 @@ window.addEventListener("load", () => {
   try { window.parent.postMessage({ type: "remote-job-fit-language-request" }, "*"); } catch (error) { /* standalone demo */ }
 });
 
-// FUNKTIO-OSIO PÄÄTTYY: applyDemoLanguage. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
+// TODO: Translate this code comment into clear English. FUNCTION SECTION END: applyDemoLanguage. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston pttymisest.
