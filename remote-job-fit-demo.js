@@ -160,15 +160,18 @@ const roleTitlesFi = {
 };
 
 // FUNKTIO-OSIO ALKAA: terms – katso funktion sisältä tarkempi toimintakuvaus.
+// FUNKTIO-OSIO PÄÄTTYY: extractKnownSkills. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
 function terms(value) {
   const values = [...new Set(value.toLowerCase().split(/[,;\n]+/).map(item => item.trim()).filter(item => item.length > 1))];
   return [...new Set(vocabulary.normalizeSkillTerms(values))];
 }
 // FUNKTIO-OSIO ALKAA: tokenise – katso funktion sisältä tarkempi toimintakuvaus.
+// FUNKTIO-OSIO PÄÄTTYY: terms. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
 function tokenise(value) {
   return value.toLowerCase().replace(/[^a-z0-9+#.\s-]/g, " ").split(/\s+/).filter(word => word.length > 1);
 }
 // FUNKTIO-OSIO ALKAA: scoreRole – katso funktion sisältä tarkempi toimintakuvaus.
+// FUNKTIO-OSIO PÄÄTTYY: tokenise. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
 function scoreRole(role, skills, targetTitle, mustHave, excluded) {
   const searchable = (role.title + " " + role.text).toLowerCase();
   const detectedTerms = vocabulary.extractSkills(searchable).map(item => item.canonical.toLowerCase());
@@ -192,6 +195,7 @@ function scoreRole(role, skills, targetTitle, mustHave, excluded) {
   return { score: Math.min(100, score), matchedSkills, matchedTitle, matchedMust, excludedMatches, matchedRequirements, missingRequirements, optionalRequirements };
 }
 // FUNKTIO-OSIO ALKAA: addText – katso funktion sisältä tarkempi toimintakuvaus.
+// FUNKTIO-OSIO PÄÄTTYY: scoreRole. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
 function addText(parent, tag, className, value) {
   const element = document.createElement(tag);
   if (className) element.className = className;
@@ -200,6 +204,7 @@ function addText(parent, tag, className, value) {
   return element;
 }
 // FUNKTIO-OSIO ALKAA: renderRole – katso funktion sisältä tarkempi toimintakuvaus.
+// FUNKTIO-OSIO PÄÄTTYY: addText. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
 function renderRole(role, result, isCustom = false) {
   const card = document.createElement("article");
   card.className = "result-card";
@@ -285,6 +290,7 @@ languageButton.addEventListener("click", () => {
 
 // Keep the embedded demo language aligned with the portfolio page.
 // FUNKTIO-OSIO ALKAA: applyDemoLanguage – katso funktion sisältä tarkempi toimintakuvaus.
+// FUNKTIO-OSIO PÄÄTTYY: renderRole. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
 function applyDemoLanguage(nextLanguage) {
   if (nextLanguage !== "fi" && nextLanguage !== "en") return;
   language = nextLanguage;
@@ -305,3 +311,5 @@ window.addEventListener("message", (event) => {
 window.addEventListener("load", () => {
   try { window.parent.postMessage({ type: "remote-job-fit-language-request" }, "*"); } catch (error) { /* standalone demo */ }
 });
+
+// FUNKTIO-OSIO PÄÄTTYY: applyDemoLanguage. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
