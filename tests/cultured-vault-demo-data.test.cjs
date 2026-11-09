@@ -39,6 +39,7 @@ function readBalancedArray(source, start) {
 }
 
 // FUNKTIO-OSIO ALKAA: readAdditionalWorks.
+// FUNKTIO-OSIO PÄÄTTYY: readBalancedArray. Seuraava osio alkaa seuraavasta määrittelystä tai tiedoston lopusta.
 function readAdditionalWorks() {
   const marker = "const additionalWorks = ";
   const markerIndex = appSource.indexOf(marker);
@@ -83,3 +84,5 @@ test("the visible catalogue count and English documentation agree with the datas
   assert.match(readme, /catalogue of 1,000 works/);
   assert.doesNotMatch(readme, /550-entry sample catalogue|536 additions \(550 entries total\)/);
 });
+
+// FUNKTIO-OSIO PÄÄTTYY: readAdditionalWorks. Seuraava osio alkaa seuraavasta määrittelystä tai tiedoston lopusta.
