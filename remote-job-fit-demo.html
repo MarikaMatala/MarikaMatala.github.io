@@ -3,112 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="referrer" content="no-referrer">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; form-action 'none'; script-src 'self'; style-src 'self'; img-src 'none'; connect-src 'none';">
-  <meta name="robots" content="noindex, nofollow">
-  <title>Remote Job Fit — Browser Demo</title>
-  <link rel="stylesheet" href="remote-job-fit-demo.css">
-  <script src="remote-job-fit-vocabulary.js" defer></script>
-  <script src="remote-job-fit-demo.js" defer></script>
+  <meta name="robots" content="noindex,follow">
+  <meta http-equiv="refresh" content="0; url=https://marikamatala.github.io/remote-job-fit/">
+  <title>Remote Job Fit — siirrytään uuteen demoon</title>
+  <style>
+    :root{color-scheme:dark;background:#100b12;color:#f1e8ef;font:16px/1.6 system-ui,sans-serif}
+    body{min-height:100vh;display:grid;place-items:center;margin:0;padding:1.5rem}
+    main{max-width:42rem;padding:2rem;border:1px solid #56384b;border-radius:1rem;background:#1b121d}
+    a{color:#e6a6bd}p{color:#c0b0bd}
+  </style>
 </head>
 <body>
-  <a class="skip-link" href="#main-content" data-fi="Siirry pääsisältöön" data-en="Skip to main content">Siirry pääsisältöön</a>
-  <div class="demo-status" role="status">
-    <strong data-fi="Sivusto ja demo ovat vielä työn alla." data-en="The website and demo are still a work in progress.">Sivusto ja demo ovat vielä työn alla.</strong>
-    <span data-fi="Päivitetty viimeksi: 6.11.2026 klo 13.27 (Suomen aikaa)." data-en="Last updated: 6 November 2026 at 13:27 (Finland time).">Päivitetty viimeksi: 6.11.2026 klo 13.27 (Suomen aikaa).</span>
-  </div>
-  <main class="demo-shell" id="main-content">
-    <header class="demo-heading">
-      <div>
-        <p class="eyebrow" data-fi="INTERAKTIIVINEN DEMO · KESKENERÄINEN PROJEKTI" data-en="INTERACTIVE DEMO · WORK IN PROGRESS">INTERAKTIIVINEN DEMO · KESKENERÄINEN PROJEKTI</p>
-        <h1>Remote Job Fit</h1>
-        <p data-fi="Kokeilu auttaa vertaamaan omaa osaamisprofiilia kiinnostavaan työtehtävään. Se nostaa esiin sekä ilmoituksessa mainitut profiilistasi löytyvät osaamiset että tunnistetut osaamiset, joita profiilistasi ei vielä löydy. Näin voit muodostaa konkreettisia oppimistavoitteita ja kehittää osaamistasi tulevia hakuja varten. Mukana on myös esimerkkitehtäviä IT-, ICT-, ohjelmisto-, media-, design- ja viestintäaloilta." data-en="This experiment compares your skills profile with a target role. It highlights both the requirements found in your profile and detected skills mentioned in the job description that are not yet listed in your profile. Use the gaps to set practical learning goals and build skills for future applications. Sample roles cover IT, ICT, software, media, design and communications.">Kokeilu sai alkunsa oman osaamiseni kartoittamisesta ja erilaisten työroolien hahmottamisesta. Mukana on nyt yleisiä IT-, ICT-, ohjelmisto-, media-, design- ja viestintäalan esimerkkitehtäviä. Muokkaa tehtävänimikkeitä, osaamissanoja ja ilmoitustekstiä vapaasti oman tilanteesi mukaan.</p>
-      </div>
-      <button class="language-button" id="demo-language" type="button" aria-label="Vaihda kieltä">FIN / ENG</button>
-    </header>
-
-    <div class="privacy-banner" role="note">
-      <strong data-fi="Yksityisyys:" data-en="Privacy:">Yksityisyys:</strong>
-      <span data-fi="CV-teksti ja valittu tekstitiedosto käsitellään vain tässä selaimen välilehdessä. Niitä ei lähetetä palvelimelle, tallenneta tai lisätä GitHub-repositorioon. LinkedIn-linkkiä ei avata eikä profiilia haeta automaattisesti. Sivun päivittäminen tyhjentää kentät." data-en="CV text and the selected text file are processed only in this browser tab. They are not sent to a server, stored, or added to the GitHub repository. The LinkedIn URL is not opened and the profile is not fetched automatically. Refreshing the page clears the fields.">CV-teksti ja valittu tekstitiedosto käsitellään vain tässä selaimen välilehdessä. Niitä ei lähetetä palvelimelle, tallenneta tai lisätä GitHub-repositorioon. LinkedIn-linkkiä ei avata eikä profiilia haeta automaattisesti. Sivun päivittäminen tyhjentää kentät.</span>
-    </div>
-
-    <aside class="privacy-banner" role="note">
-      <strong data-fi="Asetuspohjat ja käyttöoikeudet:" data-en="Setup templates and licences:">Asetuspohjat ja käyttöoikeudet:</strong>
-      <span data-fi="Nykyinen selain-demo ei tarvitse .env-tiedostoa, API-avaimia, tietokantaa tai backend-palvelinta. Repositorion remote-job-fit-kansiossa olevat .env.example-, JSON- ja JavaScript-pohjat ovat vain jatkokehityksen esimerkkejä. Ne sisältävät satunnaisia paikkamerkkejä, eivät oikeita tunnistetietoja. Älä lisää oikeita avaimia julkisiin tiedostoihin." data-en="The current browser demo does not need an .env file, API keys, a database or a backend. The .env.example, JSON and JavaScript templates in the repository's remote-job-fit folder are examples for future development only. They contain fictional placeholders, not real credentials. Never add real keys to public files.">Nykyinen selain-demo ei tarvitse .env-tiedostoa, API-avaimia, tietokantaa tai backend-palvelinta. Repositorion remote-job-fit-kansiossa olevat .env.example-, JSON- ja JavaScript-pohjat ovat vain jatkokehityksen esimerkkejä. Ne sisältävät satunnaisia paikkamerkkejä, eivät oikeita tunnistetietoja. Älä lisää oikeita avaimia julkisiin tiedostoihin.</span>
-    </aside>
-
-    <section class="import-panel" aria-labelledby="import-title">
-      <h2 id="import-title" data-fi="Tuo oma osaamisprofiilisi" data-en="Import your skills profile">Tuo oma osaamisprofiilisi</h2>
-      <p data-fi="Voit poimia osaamisia CV:stäsi. Liitä CV:n tekstisisältö tai valitse tekstitiedosto (.txt, .md). Tiedosto luetaan vain selaimessa." data-en="The demo recognises Finnish and English skills, programming languages, software, tools and job titles, including common Finnish inflections. Paste your CV text or select a text file (.txt, .md). The file is read locally in your browser only.">Voit poimia osaamisia CV:stäsi. Liitä CV:n tekstisisältö tai valitse tekstitiedosto (.txt, .md). Tiedosto luetaan vain selaimessa.</p>
-      <label>
-        <span data-fi="LinkedIn-profiilin osoite (valinnainen)" data-en="LinkedIn profile URL (optional)">LinkedIn-profiilin osoite (valinnainen)</span>
-        <input id="linkedin-url" type="url" maxlength="300" placeholder="https://www.linkedin.com/in/profiili/" data-fi-placeholder="https://www.linkedin.com/in/profiili/" data-en-placeholder="https://www.linkedin.com/in/your-profile/">
-        <small data-fi="Linkkiä ei haeta automaattisesti. LinkedIn rajoittaa profiilitietojen automaattista lukemista. Voit lisätä profiilin tekstisisällön CV-kenttään." data-en="The profile is not fetched automatically. LinkedIn restricts automated profile access. You can paste profile text into the CV field instead.">Linkkiä ei haeta automaattisesti. LinkedIn rajoittaa profiilitietojen automaattista lukemista. Voit lisätä profiilin tekstisisällön CV-kenttään.</small>
-      </label>
-      <label class="cv-upload">
-        <span data-fi="Valitse CV:n tekstitiedosto" data-en="Choose a CV text file">Valitse CV:n tekstitiedosto</span>
-        <input id="cv-file" type="file" accept=".txt,.md,.text,text/plain,text/markdown">
-        <small data-fi="PDF- tai Word-CV:stä voit kopioida tekstin ja liittää sen alla olevaan kenttään." data-en="For a PDF or Word CV, copy its text and paste it into the field below.">PDF- tai Word-CV:stä voit kopioida tekstin ja liittää sen alla olevaan kenttään.</small>
-      </label>
-      <label>
-        <span data-fi="CV:n tai LinkedIn-profiilin tekstisisältö" data-en="CV or LinkedIn profile text">CV:n tai LinkedIn-profiilin tekstisisältö</span>
-        <textarea id="cv-text" rows="6" maxlength="20000" placeholder="Paste your CV text here..." data-fi-placeholder="Liitä CV:si tai LinkedIn-profiilisi tekstisisältö tähän..." data-en-placeholder="Paste your CV or LinkedIn profile text here..."></textarea>
-      </label>
-      <div class="actions">
-        <button class="secondary-button" id="import-cv" type="button" data-fi="Tunnista osaamiset CV:stä" data-en="Extract skills from CV">Tunnista osaamiset CV:stä</button>
-      </div>
-      <p id="import-status" class="import-status" role="status" aria-live="polite"></p>
-    </section>
-
-    <form id="fit-form" autocomplete="off">
-      <div class="form-grid">
-        <label>
-          <span data-fi="Tavoiteltu tehtävänimike" data-en="Target job title">Tavoiteltu tehtävänimike</span>
-          <input id="target-title" type="text" maxlength="100" placeholder="esim. Junior Frontend Developer" data-fi-placeholder="esim. Junior Frontend Developer" data-en-placeholder="e.g. Junior Frontend Developer">
-        </label>
-        <label>
-          <span data-fi="Osaamiset ja teknologiat (pilkuilla eroteltuna)" data-en="Skills and technologies (comma-separated)">Osaamiset ja teknologiat (pilkuilla eroteltuna)</span>
-          <textarea id="skills" rows="3" maxlength="1500" placeholder="HTML, CSS, JavaScript, React, REST API, MySQL" data-fi-placeholder="HTML, CSS, JavaScript, React, REST API, MySQL" data-en-placeholder="HTML, CSS, JavaScript, React, REST API, MySQL"></textarea>
-          <small data-fi="Voit käyttää myös esimerkiksi media-, viestintä-, markkinointi-, tuki-, data- tai suunnitteluosaamista. Poista esimerkeistä itsellesi sopimattomat ja lisää omasi." data-en="You can also enter media, communications, marketing, support, data or design skills. Remove examples that do not apply and add your own.">Voit käyttää myös esimerkiksi media-, viestintä-, markkinointi-, tuki-, data- tai suunnitteluosaamista. Poista esimerkeistä itsellesi sopimattomat ja lisää omasi.</small>
-        </label>
-        <label>
-          <span data-fi="Tärkeät hakusanat (valinnainen)" data-en="Important keywords (optional)">Tärkeät hakusanat (valinnainen)</span>
-          <input id="must-have" type="text" maxlength="500" placeholder="esim. etätyö, junior, saavutettavuus" data-fi-placeholder="esim. etätyö, junior, saavutettavuus" data-en-placeholder="e.g. remote, junior, accessibility">
-        </label>
-        <label>
-          <span data-fi="Poissuljettavat sanat (valinnainen)" data-en="Words to exclude (optional)">Poissuljettavat sanat (valinnainen)</span>
-          <input id="exclude" type="text" maxlength="500" placeholder="esim. senior, palkaton, harjoittelu" data-fi-placeholder="esim. senior, palkaton, harjoittelu" data-en-placeholder="e.g. senior, unpaid, internship">
-        </label>
-      </div>
-
-      <label class="job-description">
-        <span data-fi="Liitä työpaikkailmoituksen teksti (valinnainen)" data-en="Paste a job description (optional)">Liitä työpaikkailmoituksen teksti (valinnainen)</span>
-        <textarea id="custom-job" rows="5" maxlength="6000" placeholder="Paste a job title and description here. The text stays in this browser tab." data-fi-placeholder="Liitä tähän työpaikan nimi ja ilmoituksen teksti. Teksti pysyy tässä selaimen välilehdessä." data-en-placeholder="Paste a job title and description here. The text stays in this browser tab."></textarea>
-      </label>
-
-      <div class="actions">
-        <button class="primary-button" type="submit" data-fi="Arvioi sopivuus" data-en="Calculate match">Arvioi sopivuus</button>
-        <button class="secondary-button" id="reset-demo" type="reset" data-fi="Tyhjennä kentät" data-en="Clear fields">Tyhjennä kentät</button>
-      </div>
-    </form>
-
-    <section class="results-section" aria-live="polite" aria-labelledby="results-title">
-      <div class="results-heading">
-        <div>
-          <p class="eyebrow" data-fi="ESIMERKKIARVIOINTI" data-en="DEMO RESULTS">ESIMERKKIARVIOINTI</p>
-          <h2 id="results-title" data-fi="Sopivuusvertailu" data-en="Job fit comparison">Sopivuusvertailu</h2>
-        </div>
-        <span class="demo-tag" data-fi="Ei oikeita työpaikkailmoituksia" data-en="No live job listings">Ei oikeita työpaikkailmoituksia</span>
-      </div>
-      <div id="results" class="results-list">
-        <p class="empty-state" data-fi="Täytä osaamisesi ja paina “Arvioi sopivuus”. Voit käyttää esimerkkitehtäviä tai liittää oman ilmoitustekstin." data-en="Enter your skills and select “Calculate match”. You can use the sample roles or paste your own job description.">Täytä osaamisesi ja paina “Arvioi sopivuus”. Voit käyttää esimerkkitehtäviä tai liittää oman ilmoitustekstin.</p>
-      </div>
-    </section>
-
-    <footer class="demo-footer">
-      <p data-fi="KEHITYSVAIHEESSA — KOKEELLINEN. Sopivuusprosentti perustuu yksinkertaiseen hakusanojen vertailuun. Se ei ole rekrytointipäätös, työllistymistodennäköisyys eikä arvio hakijan todellisesta osaamistasosta." data-en="WORK IN PROGRESS — EXPERIMENTAL. Match percentages use simple keyword comparison. They are not hiring decisions, employment probabilities, or assessments of actual skill level.">KEHITYSVAIHEESSA — KOKEELLINEN. Sopivuusprosentti perustuu yksinkertaiseen hakusanojen vertailuun. Se ei ole rekrytointipäätös, työllistymistodennäköisyys eikä arvio hakijan todellisesta osaamistasosta.</p>
-      <p><a href="https://github.com/MarikaMatala/remote-job-fit" target="_blank" rel="noopener noreferrer" data-fi="Avaa projektin lähdekoodi GitHubissa ↗" data-en="View the source project on GitHub ↗">Avaa projektin lähdekoodi GitHubissa ↗</a></p>
-    </footer>
+  <main>
+    <h1>Remote Job Fit</h1>
+    <p>Tämä vanha demo-osoite on korvattu projektin virallisella selain-demolla.</p>
+    <p lang="en">This legacy demo URL has been replaced by the project's canonical browser demo.</p>
+    <p><a href="https://marikamatala.github.io/remote-job-fit/">Avaa Remote Job Fit -demo / Open the Remote Job Fit demo ↗</a></p>
   </main>
 </body>
 </html>
