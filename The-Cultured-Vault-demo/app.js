@@ -1,7 +1,7 @@
 /*
- * KOMMENTOINTIOHJE / CODE MAP
- * Tiedoston tarkoitus: Cultured Vault -demon katalogi, haku, suodatus, lajittelu, paikalliset arviot ja käyttöliittymä.
- * Rakenne: asetukset ja aineistot ensin, apufunktiot ja käyttöliittymän toiminnot seuraavaksi.
+ * CODE MAP / COMMENTING GUIDE
+* TODO: Translate this code comment into clear English. File purpose: Cultured Vault -demon katalogi, haku, suodatus, lajittelu, paikalliset arviot ja kyttliittym.
+* TODO: Translate this code comment into clear English. Structure: asetukset ja aineistot ensin, apufunktiot ja kyttliittymn toiminnot seuraavaksi.
  */
 /* THE CULTURED VAULT DEMO APPLICATION
    Dependency-free browser prototype. The sample catalogue is local code data;
@@ -112,14 +112,14 @@ works.forEach(work => { work.owner = 0; work.ownerReview = ""; });
 // 3. Storage, language and catalogue filtering helpers.
 // Parse storage defensively so malformed data does not break the catalogue.
 // ---------------------------------------------------------------------------
-// Lukee käyttäjän omat arviot selaimen localStorage-tallennuksesta. Virheellinen tallennus palauttaa tyhjän listan.
+// TODO: Translate this code comment into clear English. Lukee kyttjn omat arviot selaimen localStorage-tallennuksesta. Virheellinen tallennus palauttaa tyhjn listan.
 function getLocalReviews(){try{const stored=JSON.parse(localStorage.getItem(storageKey)||"[]");const latest=new Map();stored.forEach(review=>{if(review&&review.id)latest.set(review.id,review)});return [...latest.values()]}catch{return []}}
 const suggestionStorageKey="cultured-vault-suggestions-v1";
-// Lukee käyttäjän omat teosehdotukset selaimen localStorage-tallennuksesta.
-// FUNKTIO-OSIO PÄÄTTYY: getLocalReviews. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
+// TODO: Translate this code comment into clear English. Lukee kyttjn omat teosehdotukset selaimen localStorage-tallennuksesta.
+// TODO: Translate this code comment into clear English. FUNCTION SECTION END: getLocalReviews. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston pttymisest.
 function getLocalSuggestions(){try{return JSON.parse(localStorage.getItem(suggestionStorageKey)||"[]")}catch{return []}}
-// Vaihtaa demon käyttöliittymän kielen ja päivittää näkyvät tekstit sekä saavutettavat nimet.
-// FUNKTIO-OSIO PÄÄTTYY: getLocalSuggestions. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
+// TODO: Translate this code comment into clear English. Vaihtaa demon kyttliittymn kielen ja pivitt nkyvt tekstit sek saavutettavat nimet.
+// TODO: Translate this code comment into clear English. FUNCTION SECTION END: getLocalSuggestions. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston pttymisest.
 function setLanguage(next){
  if(next!=="en")return;
  language=next;document.documentElement.lang=language;
@@ -131,11 +131,11 @@ function setLanguage(next){
  
  renderCatalogue();renderLocalReviews();renderLocalSuggestions();
 }
-// Kokoaa teoksen haussa käytettävät tekstikentät yhdeksi pienaakkosmuotoiseksi hakutekstiksi.
-// FUNKTIO-OSIO PÄÄTTYY: setLanguage. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
+// TODO: Translate this code comment into clear English. Kokoaa teoksen haussa kytettvt tekstikentt yhdeksi pienaakkosmuotoiseksi hakutekstiksi.
+// TODO: Translate this code comment into clear English. FUNCTION SECTION END: setLanguage. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston pttymisest.
 function getSearchText(work){return [work.title,work.creator,work.country,...work.genres].join(" ").toLocaleLowerCase()}
-// Suodattaa katalogin hakusanan ja valittujen suodattimien perusteella sekä järjestää tulokset valitulla tavalla.
-// FUNKTIO-OSIO PÄÄTTYY: getSearchText. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
+// TODO: Translate this code comment into clear English. Suodattaa katalogin hakusanan ja valittujen suodattimien perusteella sek jrjest tulokset valitulla tavalla.
+// TODO: Translate this code comment into clear English. FUNCTION SECTION END: getSearchText. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston pttymisest.
 function filteredWorks(){
  const query=searchInput.value.trim().toLocaleLowerCase();
  let list=works.filter(w=>{const match=activeCategory==="all"||w.type===activeCategory;return match&&(!query||getSearchText(w).includes(query))});
@@ -148,8 +148,8 @@ function filteredWorks(){
 // 4. Build catalogue cards. textContent displays data as text instead of
 // parsing it as HTML, including any visitor-entered review comments.
 // ---------------------------------------------------------------------------
-// Piirtää suodatetut teokset sivulle ja päivittää tulosmäärän sekä sivutuksen.
-// FUNKTIO-OSIO PÄÄTTYY: filteredWorks. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
+// TODO: Translate this code comment into clear English. Piirt suodatetut teokset sivulle ja pivitt tulosmrn sek sivutuksen.
+// TODO: Translate this code comment into clear English. FUNCTION SECTION END: filteredWorks. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston pttymisest.
 function renderCatalogue(){
   const list=filteredWorks();
   const totalPages=Math.max(1,Math.ceil(list.length/cataloguePageSize));
@@ -224,8 +224,8 @@ function renderCatalogue(){
 // ---------------------------------------------------------------------------
 // 5. Render this browser's own demo reviews and populate the work selector.
 // ---------------------------------------------------------------------------
-// Piirtää selaimeen tallennetut käyttäjän omat arviot.
-// FUNKTIO-OSIO PÄÄTTYY: renderCatalogue. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
+// TODO: Translate this code comment into clear English. Piirt selaimeen tallennetut kyttjn omat arviot.
+// TODO: Translate this code comment into clear English. FUNCTION SECTION END: renderCatalogue. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston pttymisest.
 function renderLocalReviews(){
  const container=document.getElementById("local-review-list");container.replaceChildren();
  const reviews=getLocalReviews();
@@ -237,11 +237,11 @@ function renderLocalReviews(){
   item.append(heading,comment);container.append(item);
  });
 }
-// Piirtää selaimeen tallennetut käyttäjän omat teosehdotukset.
-// FUNKTIO-OSIO PÄÄTTYY: renderLocalReviews. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
+// TODO: Translate this code comment into clear English. Piirt selaimeen tallennetut kyttjn omat teosehdotukset.
+// TODO: Translate this code comment into clear English. FUNCTION SECTION END: renderLocalReviews. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston pttymisest.
 function renderLocalSuggestions(){const container=document.getElementById("local-suggestion-list");if(!container)return;container.replaceChildren();getLocalSuggestions().forEach(item=>{const card=document.createElement("article");card.className="local-review";const heading=document.createElement("strong");heading.textContent=item.title+" · "+(typeLabels[language][item.type]||item.type);const details=document.createElement("p");details.textContent=[item.year||"",item.creator||"",item.note||""].filter(Boolean).join(" · ")||(language==="fi"?"Ei lisätietoja.":"No extra details.");card.append(heading,details);container.append(card)});}
-// Täyttää arvion valintalistan katalogin teoksilla.
-// FUNKTIO-OSIO PÄÄTTYY: renderLocalSuggestions. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
+// TODO: Translate this code comment into clear English. Tytt arvion valintalistan katalogin teoksilla.
+// TODO: Translate this code comment into clear English. FUNCTION SECTION END: renderLocalSuggestions. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston pttymisest.
 function populateReviewSelect(){
  reviewSelect.replaceChildren();
  works.forEach(work=>{const option=document.createElement("option");option.value=work.id;option.textContent=work.title;reviewSelect.append(option)});
@@ -324,4 +324,4 @@ if ("serviceWorker" in navigator && (location.protocol === "https:" || location.
  document.addEventListener("keydown",event=>{if(event.key==="Escape"&&!menu.hidden){closeMenu();toggle.focus();}});
 })();
 
-// FUNKTIO-OSIO PÄÄTTYY: populateReviewSelect. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
+// TODO: Translate this code comment into clear English. FUNCTION SECTION END: populateReviewSelect. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston pttymisest.
