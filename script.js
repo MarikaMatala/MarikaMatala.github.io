@@ -1,22 +1,22 @@
 /*
- * KOMMENTOINTIOHJE / CODE MAP
- * Tiedoston tarkoitus: Sivuston JavaScript-toiminnot: kielenvaihto, kuvakaruselli, esimerkkien selaus ja käyttöliittymän tapahtumat.
- * Rakenne: ensin muuttujat ja asetukset, sen jälkeen funktiot ja lopuksi tapahtumankuuntelijat / käynnistys.
+ * CODE MAP / COMMENTING GUIDE
+* TODO: Translate this code comment into clear English. File purpose: Sivuston JavaScript-toiminnot: kielenvaihto, kuvakaruselli, esimerkkien selaus ja kyttliittymn tapahtumat.
+* TODO: Translate this code comment into clear English. Structure: ensin muuttujat ja asetukset, sen jlkeen funktiot ja lopuksi tapahtumankuuntelijat / kynnistys.
  */
 // Portfolio interactions: language switch, responsive Android image gallery and interactive C# examples.
 const languageToggle = document.getElementById('language-toggle');
 const primaryNavigation = document.getElementById('primary-navigation');
 let currentLanguage = 'fi';
 
-// Päivittää kuvakarusellin painikkeiden saavutettavat nimet valitun kielen mukaan.
+// TODO: Translate this code comment into clear English. Pivitt kuvakarusellin painikkeiden saavutettavat nimet valitun kielen mukaan.
 function updateCarouselLabels(language) {
   document.querySelectorAll('[data-fi-label][data-en-label]').forEach((element) => {
     element.setAttribute('aria-label', element.dataset[language + 'Label']);
   });
 }
 
-// Vaihtaa sivuston kielen, tallentaa valinnan selaimeen ja päivittää tekstit, kuvien vaihtoehtoiset tekstit sekä upotetut näkymät.
-// FUNKTIO-OSIO PÄÄTTYY: updateCarouselLabels. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
+// TODO: Translate this code comment into clear English. Vaihtaa sivuston kielen, tallentaa valinnan selaimeen ja pivitt tekstit, kuvien vaihtoehtoiset tekstit sek upotetut nkymt.
+// TODO: Translate this code comment into clear English. FUNCTION SECTION END: updateCarouselLabels. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston pttymisest.
 function setLanguage(language) {
   currentLanguage = language;
   try { localStorage.setItem('portfolio-language', language); } catch (error) { /* storage may be disabled */ }
@@ -87,8 +87,8 @@ const androidImage = document.getElementById('android-carousel-image');
 const androidCounter = document.getElementById('android-counter');
 let androidImageIndex = 0;
 
-// Näyttää valitun Android-harjoitustyön kuvan ja päivittää kuvan vaihtoehtoisen tekstin sekä numerolaskurin.
-// FUNKTIO-OSIO PÄÄTTYY: setLanguage. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
+// TODO: Translate this code comment into clear English. Nytt valitun Android-harjoitustyn kuvan ja pivitt kuvan vaihtoehtoisen tekstin sek numerolaskurin.
+// TODO: Translate this code comment into clear English. FUNCTION SECTION END: setLanguage. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston pttymisest.
 function showAndroidImage(index) {
   if (!androidImage || !androidCounter || !androidImages.length) return;
   androidImageIndex = (index + androidImages.length) % androidImages.length;
@@ -366,4 +366,4 @@ if (backendBrowser) {
   showBackendSample(0);
 }
 
-// FUNKTIO-OSIO PÄÄTTYY: showAndroidImage. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston päättymisestä.
+// TODO: Translate this code comment into clear English. FUNCTION SECTION END: showAndroidImage. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston pttymisest.
