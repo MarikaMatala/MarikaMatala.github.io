@@ -1,7 +1,7 @@
 /*
- * KOMMENTOINTIOHJE / CODE MAP
- * Tiedoston tarkoitus: Esimerkkiasetukset Remote Job Fit -prototyypin asetusrakenteelle; arvot ovat paikkamerkkejä.
- * Rakenne: esimerkkiasetukset ensin, niiden käyttötarkoitus on kuvattu avainten yhteydessä.
+ * CODE MAP / COMMENTING GUIDE
+ * File purpose: Example settings for the Remote Job Fit prototype configuration; values are placeholders.
+ * Structure: example settings first, with each key's purpose documented alongside it.
  */
 /*
  * FICTIONAL CONFIGURATION TEMPLATE — NOT LOADED BY THE CURRENT DEMO.
