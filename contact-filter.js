@@ -1,7 +1,7 @@
 /*
- * KOMMENTOINTIOHJE / CODE MAP
- * Tiedoston tarkoitus: Yhteydenottolomakkeen tekstin tarkistus ennen lomakkeen lähettämistä.
- * Rakenne: ensin muuttujat ja asetukset, sen jälkeen funktiot ja lopuksi tapahtumankuuntelijat / käynnistys.
+ * CODE MAP / COMMENTING GUIDE
+* TODO: Translate this code comment into clear English. File purpose: Yhteydenottolomakkeen tekstin tarkistus ennen lomakkeen lhettmist.
+* TODO: Translate this code comment into clear English. Structure: ensin muuttujat ja asetukset, sen jlkeen funktiot ja lopuksi tapahtumankuuntelijat / kynnistys.
  */
 /* Lightweight contact-form content filter. Valid submissions use native HTML POST. */
 (() => {
