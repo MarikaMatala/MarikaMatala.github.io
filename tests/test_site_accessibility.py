@@ -66,3 +66,5 @@ class AccessibilityValidatorTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+# LUOKKA-OSIO PÄÄTTYY: AccessibilityValidatorTests. Seuraava osio alkaa seuraavasta määrittelystä tai tiedoston lopusta.
