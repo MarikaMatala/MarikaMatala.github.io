@@ -1,7 +1,7 @@
 /*
  * CODE MAP / COMMENTING GUIDE
-* TODO: Translate this code comment into clear English. File purpose: Vanhan Remote Job Fit -selainprototyypin tyylitiedosto; silytetty lhdekoodina, ei nykyisen julkaistun demon tyylein.
-* TODO: Translate this code comment into clear English. Structure: prototyypin vrit ja perussnnt ensin, komponenttien tyylit seuraavaksi, responsiiviset snnt lopuksi.
+* File purpose: Stylesheet for the legacy Remote Job Fit browser prototype; retained as source code and not used by the currently published demo.
+* Structure: prototype colors and base rules first, followed by component styles and responsive rules.
  */
 :root{color-scheme:dark;--bg:#100b12;--panel:#1b121d;--panel2:#241724;--text:#f1e8ef;--muted:#c0b0bd;--accent:#c27b92;--line:#56384b;--good:#9fc7a4;--warn:#e7c28b}
 *{box-sizing:border-box}
