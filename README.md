@@ -133,9 +133,9 @@ Portfolion koodit ja visuaaliset työt ovat Marika Matalamäen itse tekemiä, jo
 
 ## Remote Job Fit vocabulary and data sources | Osaamissanaston lähteet
 
-The browser demo uses a project-maintained, manually curated bilingual vocabulary of skills, programming languages, software, tools and job titles. Finnish and English aliases are mapped to shared internal terms. It is a keyword helper, not a complete labour-market taxonomy or an assessment of actual competence. The vocabulary is stored in `remote-job-fit-vocabulary.js`; no third-party skill-extraction model, scraped job-ad corpus or bulk dataset is bundled.
+The retained Remote Job Fit prototype vocabulary file contains a project-maintained, manually curated bilingual vocabulary of skills, programming languages, software, tools and job titles. Finnish and English aliases are mapped to shared internal terms. It is a keyword helper, not a complete labour-market taxonomy or an assessment of actual competence. The vocabulary is stored in `remote-job-fit-vocabulary.js`; no third-party skill-extraction model, scraped job-ad corpus or bulk dataset is bundled.
 
-Sources with documented reuse terms are listed as potential references only; no third-party data or code is copied into the current demo. See [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md) for source-by-source status and required attribution. The current vocabulary consists of manually curated short terms and aliases, not downloaded source text.
+Sources with documented reuse terms are listed as potential references only; no third-party data or code is copied into the retained prototype source. See [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md) for source-by-source status and required attribution. The vocabulary consists of manually curated short terms and aliases, not downloaded source text.
 
 Sources consulted as terminology and taxonomy references:
 
