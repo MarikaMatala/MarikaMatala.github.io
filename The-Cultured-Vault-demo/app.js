@@ -1,3 +1,8 @@
+/*
+ * KOMMENTOINTIOHJE / CODE MAP
+ * Tiedoston tarkoitus: Cultured Vault -demon katalogi, haku, suodatus, lajittelu, paikalliset arviot ja käyttöliittymä.
+ * Rakenne: asetukset ja aineistot ensin, apufunktiot ja käyttöliittymän toiminnot seuraavaksi.
+ */
 /* THE CULTURED VAULT DEMO APPLICATION
    Dependency-free browser prototype. The sample catalogue is local code data;
    personal demo reviews are stored only in this browser's localStorage. */
@@ -107,9 +112,12 @@ works.forEach(work => { work.owner = 0; work.ownerReview = ""; });
 // 3. Storage, language and catalogue filtering helpers.
 // Parse storage defensively so malformed data does not break the catalogue.
 // ---------------------------------------------------------------------------
+// FUNKTIO-OSIO ALKAA: getLocalReviews.
 function getLocalReviews(){try{const stored=JSON.parse(localStorage.getItem(storageKey)||"[]");const latest=new Map();stored.forEach(review=>{if(review&&review.id)latest.set(review.id,review)});return [...latest.values()]}catch{return []}}
 const suggestionStorageKey="cultured-vault-suggestions-v1";
+// FUNKTIO-OSIO ALKAA: getLocalSuggestions.
 function getLocalSuggestions(){try{return JSON.parse(localStorage.getItem(suggestionStorageKey)||"[]")}catch{return []}}
+// FUNKTIO-OSIO ALKAA: setLanguage.
 function setLanguage(next){
  if(next!=="en")return;
  language=next;document.documentElement.lang=language;
@@ -121,7 +129,9 @@ function setLanguage(next){
  
  renderCatalogue();renderLocalReviews();renderLocalSuggestions();
 }
+// FUNKTIO-OSIO ALKAA: getSearchText.
 function getSearchText(work){return [work.title,work.creator,work.country,...work.genres].join(" ").toLocaleLowerCase()}
+// FUNKTIO-OSIO ALKAA: filteredWorks.
 function filteredWorks(){
  const query=searchInput.value.trim().toLocaleLowerCase();
  let list=works.filter(w=>{const match=activeCategory==="all"||w.type===activeCategory;return match&&(!query||getSearchText(w).includes(query))});
@@ -134,6 +144,7 @@ function filteredWorks(){
 // 4. Build catalogue cards. textContent displays data as text instead of
 // parsing it as HTML, including any visitor-entered review comments.
 // ---------------------------------------------------------------------------
+// FUNKTIO-OSIO ALKAA: renderCatalogue.
 function renderCatalogue(){
   const list=filteredWorks();
   const totalPages=Math.max(1,Math.ceil(list.length/cataloguePageSize));
@@ -208,6 +219,7 @@ function renderCatalogue(){
 // ---------------------------------------------------------------------------
 // 5. Render this browser's own demo reviews and populate the work selector.
 // ---------------------------------------------------------------------------
+// FUNKTIO-OSIO ALKAA: renderLocalReviews.
 function renderLocalReviews(){
  const container=document.getElementById("local-review-list");container.replaceChildren();
  const reviews=getLocalReviews();
@@ -219,7 +231,9 @@ function renderLocalReviews(){
   item.append(heading,comment);container.append(item);
  });
 }
+// FUNKTIO-OSIO ALKAA: renderLocalSuggestions.
 function renderLocalSuggestions(){const container=document.getElementById("local-suggestion-list");if(!container)return;container.replaceChildren();getLocalSuggestions().forEach(item=>{const card=document.createElement("article");card.className="local-review";const heading=document.createElement("strong");heading.textContent=item.title+" · "+(typeLabels[language][item.type]||item.type);const details=document.createElement("p");details.textContent=[item.year||"",item.creator||"",item.note||""].filter(Boolean).join(" · ")||(language==="fi"?"Ei lisätietoja.":"No extra details.");card.append(heading,details);container.append(card)});}
+// FUNKTIO-OSIO ALKAA: populateReviewSelect.
 function populateReviewSelect(){
  reviewSelect.replaceChildren();
  works.forEach(work=>{const option=document.createElement("option");option.value=work.id;option.textContent=work.title;reviewSelect.append(option)});
