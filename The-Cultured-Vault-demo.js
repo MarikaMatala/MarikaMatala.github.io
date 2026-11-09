@@ -1,7 +1,7 @@
 /*
  * CODE MAP / COMMENTING GUIDE
-* TODO: Translate this code comment into clear English. File purpose: Vanhan Cultured Vault -prototyypin esimerkkiaineisto, suodatus ja kyttliittymn toiminnot.
-* TODO: Translate this code comment into clear English. Structure: asetukset ja aineistot ensin, apufunktiot ja kyttliittymn toiminnot seuraavaksi.
+* File purpose: Legacy Cultured Vault prototype data, filtering, and interface interactions.
+* Structure: settings and data first, followed by helper functions and interface interactions.
  */
 const works = [
 {id:"film-the-godfather-1972",title:"The Godfather",creator:"Francis Ford Coppola",type:"film",year:1972,genres:["Crime","Drama"],country:"United States",owner:9.5,community:9.2,ownerReview:"A defining crime drama with extraordinary performances, atmosphere and a story that rewards revisiting."},
@@ -39,7 +39,7 @@ const storageKey = "cultured-vault-demo-reviews-v1";
 // FUNCTION SECTION START: getLocalReviews.
 function getLocalReviews(){try{return JSON.parse(localStorage.getItem(storageKey)||"[]")}catch{return []}}
 // FUNCTION SECTION START: setLanguage.
-// TODO: Translate this code comment into clear English. FUNCTION SECTION END: getLocalReviews. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston pttymisest.
+// FUNCTION SECTION END: getLocalReviews. The next section starts at the next function or at the end of the file.
 function setLanguage(next){
  if(next!=="fi"&&next!=="en")return;
  language=next;document.documentElement.lang=language;
@@ -50,10 +50,10 @@ function setLanguage(next){
  renderCatalogue();renderLocalReviews();
 }
 // FUNCTION SECTION START: getSearchText.
-// TODO: Translate this code comment into clear English. FUNCTION SECTION END: setLanguage. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston pttymisest.
+// FUNCTION SECTION END: setLanguage. The next section starts at the next function or at the end of the file.
 function getSearchText(work){return [work.title,work.creator,work.country,...work.genres].join(" ").toLocaleLowerCase()}
 // FUNCTION SECTION START: filteredWorks.
-// TODO: Translate this code comment into clear English. FUNCTION SECTION END: getSearchText. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston pttymisest.
+// FUNCTION SECTION END: getSearchText. The next section starts at the next function or at the end of the file.
 function filteredWorks(){
  const query=searchInput.value.trim().toLocaleLowerCase();
  let list=works.filter(w=>(activeCategory==="all"||w.type===activeCategory)&&(!query||getSearchText(w).includes(query)));
@@ -64,7 +64,7 @@ function filteredWorks(){
  return list;
 }
 // FUNCTION SECTION START: renderCatalogue.
-// TODO: Translate this code comment into clear English. FUNCTION SECTION END: filteredWorks. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston pttymisest.
+// FUNCTION SECTION END: filteredWorks. The next section starts at the next function or at the end of the file.
 function renderCatalogue(){
  const list=filteredWorks();
  grid.replaceChildren();
@@ -97,7 +97,7 @@ function renderCatalogue(){
  });
 }
 // FUNCTION SECTION START: renderLocalReviews.
-// TODO: Translate this code comment into clear English. FUNCTION SECTION END: renderCatalogue. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston pttymisest.
+// FUNCTION SECTION END: renderCatalogue. The next section starts at the next function or at the end of the file.
 function renderLocalReviews(){
  const container=document.getElementById("local-review-list");container.replaceChildren();
  const reviews=getLocalReviews();
@@ -110,7 +110,7 @@ function renderLocalReviews(){
  });
 }
 // FUNCTION SECTION START: populateReviewSelect.
-// TODO: Translate this code comment into clear English. FUNCTION SECTION END: renderLocalReviews. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston pttymisest.
+// FUNCTION SECTION END: renderLocalReviews. The next section starts at the next function or at the end of the file.
 function populateReviewSelect(){
  reviewSelect.replaceChildren();
  works.forEach(work=>{const option=document.createElement("option");option.value=work.id;option.textContent=work.title;reviewSelect.append(option)});
@@ -140,4 +140,4 @@ populateReviewSelect();renderCatalogue();renderLocalReviews();
 // Request the portfolio language after the embedded page has loaded.
 if (window.parent !== window) window.parent.postMessage({type:"remote-job-fit-language-request"},"*");
 
-// TODO: Translate this code comment into clear English. FUNCTION SECTION END: populateReviewSelect. Seuraava osio alkaa seuraavasta funktiosta tai tiedoston pttymisest.
+// FUNCTION SECTION END: populateReviewSelect. The next section starts at the next function or at the end of the file.
