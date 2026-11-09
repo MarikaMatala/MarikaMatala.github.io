@@ -1,5 +1,11 @@
 <!doctype html>
+<!--
+  KOMMENTOINTIOHJE / CODE MAP
+  Tiedoston tarkoitus: Vanhan Cultured Vault -prototyypin HTML-rakenne.
+  Rakenne: HEAD = metatiedot ja resurssit; BODY = näkyvä käyttöliittymä.
+-->
 <html lang="fi">
+<!-- HEAD-OSIO ALKAA. -->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,6 +17,8 @@
   <link rel="stylesheet" href="The-Cultured-Vault-demo.css">
   <script src="The-Cultured-Vault-demo.js" defer></script>
 </head>
+<!-- HEAD-OSIO PÄÄTTYY. -->
+<!-- BODY-OSIO ALKAA. -->
 <body>
   <a class="skip-link" href="#main-content" data-fi="Siirry pääsisältöön" data-en="Skip to main content">Siirry pääsisältöön</a>
   <div class="demo-status" role="status">
@@ -18,7 +26,8 @@
     <span data-fi="Tämä versio toimii ilman backendia." data-en="This version works without a backend.">Tämä versio toimii ilman backendia.</span>
   </div>
 
-  <main class="vault-shell" id="main-content">
+  <!-- PÄÄSISÄLTÖ ALKAA. -->
+<main class="vault-shell" id="main-content">
     <header class="vault-header">
       <a class="vault-mark" href="#top" aria-label="The Cultured Vault home"><span aria-hidden="true">✦</span></a>
       <div class="brand-copy" id="top">
@@ -126,6 +135,8 @@
       <p data-fi="Avaa holvi. Löydä jotain poikkeuksellista." data-en="Open the vault. Discover something extraordinary.">Avaa holvi. Löydä jotain poikkeuksellista.</p>
       <a href="https://github.com/MarikaMatala/The-Cultured-Vault" target="_blank" rel="noopener noreferrer" data-fi="Tutustu avoimen lähdekoodin projektiin ↗" data-en="Explore the open-source project ↗">Tutustu avoimen lähdekoodin projektiin ↗</a>
     </footer>
-  </main>
+  <!-- PÄÄSISÄLTÖ PÄÄTTYY. -->
+</main>
+<!-- BODY-OSIO PÄÄTTYY. -->
 </body>
 </html>
