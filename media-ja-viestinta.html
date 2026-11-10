@@ -1,0 +1,234 @@
+<!doctype html>
+<!--
+  CODE MAP / COMMENTING GUIDE
+  File purpose: Portfolio work samples page containing projects, screenshots, documents, and project links.
+  CODE MAP: HEAD metadata and resources -> BODY navigation and page content -> project cards and visual artwork.
+  EDITING TIP: duplicate an existing project-card structure when adding a new work sample; update its title, description, image, and links.
+  Navigation: use the HEAD, BODY, and MAIN CONTENT section markers to move through the page.
+-->
+<html lang="fi">
+<!-- HEAD SECTION STARTS: metadata, page title, and stylesheets. -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Työnäytteitä visuaalisesta suunnittelusta, graafisesta työstä, audiovisuaalisesta tuotannosta ja viestinnästä.">
+  <link rel="canonical" href="https://marikamatala.github.io/media-ja-viestinta.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fi_FI">
+  <meta property="og:site_name" content="Marika Matalamäki — Portfolio">
+  <meta property="og:title" content="Marika Matalamäki — Media- ja viestintätyöt">
+  <meta property="og:description" content="Työnäytteitä visuaalisesta suunnittelusta, graafisesta työstä, audiovisuaalisesta tuotannosta ja viestinnästä.">
+  <meta property="og:url" content="https://marikamatala.github.io/media-ja-viestinta.html">
+  <meta property="og:image" content="https://marikamatala.github.io/images/omakuva.png">
+  <meta property="og:image:alt" content="Marika Matalamäen portfolio ja profiilikuva">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Marika Matalamäki — Media and communications">
+  <meta name="twitter:description" content="Work samples in visual design, graphic work, audiovisual production and communications.">
+  <meta name="twitter:image" content="https://marikamatala.github.io/images/omakuva.png">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#344a35">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; upgrade-insecure-requests; script-src 'self' 'unsafe-inline' https://cloud.umami.is https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://raw.githubusercontent.com; connect-src 'self' https://cloud.umami.is">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+  <title data-fi-title="Marika Matalamäki — Portfolio 2026 | Media- ja viestintätyöt" data-en-title="Marika Matalamäki — Portfolio 2026 | Media and communications">Marika Matalamäki — Portfolio 2026 | Media- ja viestintätyöt</title>
+  <!-- EDITING TIP: the page styles are defined in style.css. Comments are not displayed on the website. -->
+  <link rel="stylesheet" href="style.css?v=47">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="gothic-effects.css?v=8">
+  <link rel="stylesheet" href="gothic-redesign.css?v=6">
+  <link rel="stylesheet" href="autumn-cottagecore.css?v=17"><script src="gothic-enhancements.js?v=2" defer></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/themes/prism-tomorrow.min.css">
+  <script src="script.js?v=24" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-core.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-clike.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-csharp.min.js" defer></script>
+  <!-- Umami Cloud: visitor analytics. Add ?owner=1 to the URL to mark visits from this browser as owner visits. -->
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('owner') === '1') {
+        localStorage.setItem('portfolio-analytics-owner', '1');
+      } else if (params.get('owner') === '0') {
+        localStorage.removeItem('portfolio-analytics-owner');
+      }
+
+      const tracker = document.createElement('script');
+      tracker.defer = true;
+      tracker.src = 'https://cloud.umami.is/script.js';
+      tracker.dataset.websiteId = '0f1e9249-905e-4386-881c-295fd7c92e3c';
+
+      if (localStorage.getItem('portfolio-analytics-owner') === '1') {
+        tracker.dataset.distinctId = 'portfolio-owner';
+      }
+
+      document.head.appendChild(tracker);
+    })();
+  </script>
+<style>
+.work-category-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem;margin:2.5rem auto 4rem}
+.work-category-card{display:flex;align-items:center;gap:1rem;padding:1.5rem;border:1px solid rgba(196,151,103,.48);border-radius:14px;background:rgba(29,34,28,.72);color:inherit;text-decoration:none;transition:transform .2s ease,border-color .2s ease,background .2s ease}
+.work-category-card:hover{transform:translateY(-3px);border-color:#c58b55;background:rgba(91,68,43,.35)}
+.work-category-card:focus-visible{outline:3px solid #d9a66d;outline-offset:4px}
+.work-category-symbol{display:grid;place-items:center;flex:0 0 3rem;width:3rem;height:3rem;border:1px solid rgba(217,166,109,.55);border-radius:50%;color:#d9a66d;font-family:monospace;font-size:1.1rem}
+.work-category-card-copy{display:grid;gap:.45rem;flex:1}.work-category-card-copy strong{font-size:1.15rem}.work-category-card-copy>span{line-height:1.55;opacity:.86}
+.work-subnav{display:flex;flex-wrap:wrap;gap:.8rem;margin:1.5rem auto 2rem}
+@media(max-width:700px){.work-category-cards{grid-template-columns:1fr}.work-category-card{padding:1.2rem}}
+@media(prefers-reduced-motion:reduce){.work-category-card{transition:none}.work-category-card:hover{transform:none}}
+</style></head>
+<!-- HEAD SECTION ENDS. -->
+<!-- BODY SECTION STARTS: the visible page content. -->
+<body>
+  <div class="gothic-mandala" aria-hidden="true"></div>
+  <div class="gothic-mist" aria-hidden="true"></div>
+  <a class="skip-link" href="#main-content" data-fi="Siirry sisältöön" data-en="Skip to content">Siirry sisältöön</a>
+  <div class="notice info-ribbon site-status" role="status" aria-label="Sivuston tila / Website status">
+    <span class="notice-dot" aria-hidden="true"></span>
+    <p><strong data-fi="Sivusto on vielä työn alla." data-en="This website is still a work in progress.">Sivusto on vielä työn alla.</strong> <span data-fi="Päivitetty viimeksi: 9.11.2026 (Suomen aikaa)." data-en="Last updated: 9 November 2026 (Finland time).">Päivitetty viimeksi: 9.11.2026 (Suomen aikaa).</span></p>
+  </div>
+
+  <header class="site-header">
+    <a class="metal-rose-mark flex items-center justify-center shrink-0" href="index.html#home" aria-label="Marika Matalamäki — etusivu"><img src="images/metal-rose-sigil.svg?v=4" alt="" width="58" height="68"></a>
+    <a class="wordmark full-name" href="index.html#home" aria-label="Marika Matalamäki, etusivu"><span class="wordmark-name">Marika Matalamäki</span><br class="wordmark-break"><span class="wordmark-subtitle" data-fi="Portfoliosivusto" data-en="Portfolio website">Portfoliosivusto</span></a>
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Avaa navigaatiovalikko"><span></span><span></span><span></span></button>
+    <nav id="primary-navigation" aria-label="Päänavigaatio">
+      <a href="index.html" data-fi="Etusivu" data-en="Home">Etusivu</a>
+      <a href="minusta.html" data-fi="Minusta" data-en="About">Minusta</a>
+      <a href="tyonaytteet.html" aria-current="page" data-fi="Työnäytteet" data-en="Work samples">Työnäytteet</a>
+      <a href="yhteystiedot.html" data-fi="Yhteystiedot" data-en="Contact">Yhteystiedot</a>
+    </nav>
+    <button class="language-toggle" id="language-toggle" type="button" aria-label="Vaihda sivuston kieltä / Change language" title="FIN / ENG"><span class="language-label" data-fi="FIN / ENG" data-en="FIN / ENG">FIN / ENG</span></button>
+  </header>
+
+  <!-- MAIN CONTENT STARTS: the primary content of the page. -->
+<main id="main-content">
+<section class="work-page-intro section-wrap"><p class="eyebrow"><span class="eyebrow-line"></span><span data-fi="Visuaalinen ilmaisu ja sisällöntuotanto" data-en="Visual expression and content production">Visuaalinen ilmaisu ja sisällöntuotanto</span></p><h1 data-fi="Media- ja<br><em>viestintätyöt.</em>" data-en="Media and<br><em>communications.</em>">Media- ja<br><em>viestintätyöt.</em></h1><p data-fi="Tällä sivulla esittelen media-alan, visuaalisen suunnittelun, audiovisuaalisen tuotannon ja viestinnän työnäytteitäni. Työt ovat syntyneet opintojen, työtehtävien ja omien projektien yhteydessä." data-en="This page presents selected work in media, visual design, audiovisual production and communications. The work comes from my studies, professional experience and personal projects.">Tällä sivulla esittelen media-alan, visuaalisen suunnittelun, audiovisuaalisen tuotannon ja viestinnän työnäytteitäni. Työt ovat syntyneet opintojen, työtehtävien ja omien projektien yhteydessä.</p></section><nav class="work-subnav section-wrap" aria-label="Työnäytteiden navigaatio"><a class="gothic-button" href="tyonaytteet.html"><span data-fi="← Kaikki työnäytteet" data-en="← All work samples">← Kaikki työnäytteet</span></a></nav>
+<section class="work-section section-wrap" id="media-branding"><div class="section-heading"><p class="eyebrow"><span class="eyebrow-line"></span><span data-fi="Visuaalinen suunnittelu" data-en="Visual design">Visuaalinen suunnittelu</span></p><h2 data-fi="Brändit ja<br><em>logosuunnittelu.</em>" data-en="Branding and<br><em>logo design.</em>">Brändit ja<br><em>logosuunnittelu.</em></h2></div><div class="project-grid"><article class="project-card" id="branding">
+          <div class="project-meta"><span>VISUAL DESIGN</span><span data-fi="Oma suunnittelutyö" data-en="Design by me">Oma suunnittelutyö</span></div>
+          <h3 data-fi="WI- ja WIMMA Capstone -logot" data-en="WI and WIMMA Capstone logos">WI- ja WIMMA Capstone -logot</h3>
+          <p data-fi="Suunnittelin WI-logon ja WIMMA Capstone -logon osana visuaalisen ilmeen kehittämistä. Työskentelin typografian, kontrastin ja tunnistettavan ilmeen parissa. Logot ovat esillä tässä portfoliossa, ja WIMMA Capstone -brändityötä hyödynnetään projektin verkkosivustolla." data-en="I designed the WI logo and the WIMMA Capstone logo as part of visual identity work, exploring typography, contrast and a recognisable look. The logos are shown in this portfolio, and the WIMMA Capstone visual identity work is used on the project website.">Suunnittelin WI-logon ja WIMMA Capstone -logon osana visuaalisen ilmeen kehittämistä. Työskentelin typografian, kontrastin ja tunnistettavan ilmeen parissa. Logot ovat esillä tässä portfoliossa, ja WIMMA Capstone -brändityötä hyödynnetään projektin verkkosivustolla.</p>
+          <div class="skill-list"><span>Logo design</span><span>Typography</span><span>Visual identity</span></div>
+          <details class="project-samples-toggle branding-samples-toggle">
+            <summary><span data-fi="Avaa logonäytteet" data-en="Open logo samples">Avaa logonäytteet</span><span class="expand-symbol" aria-hidden="true">+</span></summary>
+            <div class="samples-toggle-content">
+              <div class="project-image branding-gallery" aria-label="Logo design samples">
+                <figure>
+                  <img src="images/wi-branding/wi-logo.png" alt="WI-logoluonnos: valkoinen WI-typografia mustalla taustalla ja turkoosilla yksityiskohdalla" data-fi-alt="WI-logoluonnos: valkoinen WI-typografia mustalla taustalla ja turkoosilla yksityiskohdalla" data-en-alt="WI logo concept: white WI typography on a black background with a turquoise detail" loading="lazy">
+                  <figcaption>WI logo</figcaption>
+                </figure>
+                <figure>
+                  <img src="images/wi-branding/wimma-capstone-logo.png" alt="WIMMA Capstone -logoluonnos: valkoinen typografia ja musta varjostus tummalla taustalla" data-fi-alt="WIMMA Capstone -logoluonnos: valkoinen typografia ja musta varjostus tummalla taustalla" data-en-alt="WIMMA Capstone logo concept: white typography with a black shadow on a dark background" loading="lazy">
+                  <figcaption>WIMMA Capstone</figcaption>
+                </figure>
+              </div>
+            </div>
+          </details>
+        </article><article class="project-card" id="wimma">
+          <a class="wimma-homepage-preview wimma-logo-link" href="https://wimma-capstone.jamk.fi/" target="_blank" rel="noopener noreferrer" aria-label="Avaa WIMMA Capstone -sivusto uudessa välilehdessä"><img src="images/wi-branding/wimma-capstone-logo.png" alt="WIMMA Capstone -logo. Avaa projektin verkkosivusto." data-fi-alt="WIMMA Capstone -logo. Avaa projektin verkkosivusto." data-en-alt="WIMMA Capstone logo. Opens the project website." loading="lazy" decoding="async"><span data-fi="Avaa WIMMA Capstone -sivusto" data-en="Visit the WIMMA Capstone website">Avaa WIMMA Capstone -sivusto</span> ↗</a>
+          <div class="project-meta"><span>WIMMA CAPSTONE</span><span data-fi="Brändiuudistus" data-en="Brand identity">Brändiuudistus</span></div>
+          <h3>WIMMA Capstone</h3>
+          <p data-fi="Suunnittelin WIMMA Capstonen brändiuudistuksen visuaalista perustaa: logon, väripaletin ja visuaalisen ilmeen. Suunnittelin myös verkkosivun visuaalista ilmettä ja huomioin käytettävyyden sekä saavutettavuuden. Työni pohjalta syntynyttä visuaalista perustaa hyödynnetään projektin verkkosivustolla." data-en="I designed the visual foundation for the WIMMA Capstone brand renewal, including the logo, colour palette and visual identity. I also designed the website’s visual direction, considering usability and accessibility. My work established a visual foundation for further development and is used on the project website.">Suunnittelin WIMMA Capstonen brändiuudistuksen visuaalista perustaa: logon, väripaletin ja visuaalisen ilmeen. Suunnittelin myös verkkosivun visuaalista ilmettä ja huomioin käytettävyyden sekä saavutettavuuden. Työni pohjalta syntynyttä visuaalista perustaa hyödynnetään projektin verkkosivustolla.</p>
+          <a class="text-link small-link" href="https://wimma-capstone.jamk.fi/" target="_blank" rel="noreferrer"><span data-fi="Avaa projektisivusto" data-en="Visit project website">Avaa projektisivusto</span> ↗</a>
+        </article></div></section><section class="visual-interlude section-wrap" id="media" aria-labelledby="visual-interlude-title">
+      <div class="interlude-topline">
+        <span data-fi="DIGITAALINEN MEDIA" data-en="DIGITAL MEDIA">DIGITAALINEN MEDIA</span>
+        
+      </div>
+      <div class="interlude-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span><span data-fi="Visuaalinen suunnittelu ja audiovisuaalinen tuotanto" data-en="Visual Design and Audiovisual Production">Visuaalinen suunnittelu ja audiovisuaalinen tuotanto</span></p>
+        <h2 id="visual-interlude-title" data-fi="Kuvaa, ääntä ja visuaalista suunnittelua" data-en="Image, Sound and Visual Design">Kuvaa, ääntä ja visuaalista suunnittelua</h2>
+        <p data-fi="Minua kiinnostavat pinnat, värit ja tunnelmat, mutta myös se, miten visuaalinen idea muuttuu toimivaksi digitaaliseksi kokemukseksi." data-en="I’m drawn to texture, colour and atmosphere, as well as the process of turning a visual idea into a working digital experience.">Minua kiinnostavat pinnat, värit ja tunnelmat, mutta myös se, miten visuaalinen idea muuttuu toimivaksi digitaaliseksi kokemukseksi.</p>
+      </div>
+      <div class="media-reel-art" role="img" aria-label="Animoitu filmikamera ja liikkuva filminauha">
+        <div class="film-strip film-strip-back" aria-hidden="true">
+          <span class="film-frame"></span><span class="film-frame"></span><span class="film-frame"></span><span class="film-frame"></span>
+        </div>
+        <div class="film-camera" aria-hidden="true">
+          <span class="camera-top"></span>
+          <span class="camera-reel camera-reel-left"></span>
+          <span class="camera-reel camera-reel-right"></span>
+          <span class="camera-body"><span class="camera-lens"></span><span class="camera-flash"></span></span>
+          <span class="camera-grip"></span>
+        </div>
+        <div class="film-strip film-strip-front" aria-hidden="true">
+          <span class="film-frame"></span><span class="film-frame"></span><span class="film-frame"></span>
+        </div>
+        
+      </div>
+      <div class="interlude-photo-grid creative-samples-grid">
+        <figure class="interlude-photo creative-sample creative-sample-poster">
+          <div class="creative-sample-copy">
+            <h3 data-fi="Sana Vapaa -tapahtumajuliste" data-en="Sana Vapaa event poster">Sana Vapaa -tapahtumajuliste</h3>
+            <p data-fi="Suunnittelin julisteen Jyvässeudun 4H-yhdistyksen Luotsaamo-hankkeessa järjestettyyn Sana Vapaa -tapahtumaan. Työssä yhdistyivät tapahtuman viestin välittäminen, visuaalinen ilme ja selkeä tiedon hierarkia." data-en="I designed a poster for the Sana Vapaa event as part of the Luotsaamo project run by Jyvässeudun 4H-yhdistys. The work combined event communication, visual identity and a clear information hierarchy.">Suunnittelin julisteen Jyvässeudun 4H-yhdistyksen Luotsaamo-hankkeessa järjestettyyn Sana Vapaa -tapahtumaan. Työssä yhdistyivät tapahtuman viestin välittäminen, visuaalinen ilme ja selkeä tiedon hierarkia.</p>
+            <a class="sample-open-link" href="images/Sana-Vapaa-tapahtumajuliste.pdf" target="_blank" rel="noreferrer"><span data-fi="Katso koko juliste (PDF)" data-en="View full poster (PDF)">Katso koko juliste (PDF)</span> ↗</a>
+          </div>
+          <figcaption><span data-fi="TAPAHTUMAJULISTE" data-en="EVENT POSTER">TAPAHTUMAJULISTE</span><span>PDF · LUOTSAAMO</span></figcaption>
+          <div class="sample-pdf-embed">
+            <iframe src="images/Sana-Vapaa-tapahtumajuliste.pdf#view=FitH" title="Sana Vapaa -tapahtumajuliste" data-fi-title="Sana Vapaa -tapahtumajuliste" data-en-title="Sana Vapaa event poster" loading="lazy"></iframe>
+          </div>
+        </figure>
+        <figure class="interlude-photo creative-sample creative-sample-video-portfolio">
+          <div class="creative-sample-copy">
+            <h3 data-fi="Audiovisuaalisen viestinnän portfolio" data-en="Audiovisual communications portfolio">Audiovisuaalisen viestinnän portfolio</h3>
+            <p data-fi="Audiovisuaalisen viestinnän perustutkinnon aikana kokoamani portfolio. Se esittelee opintojen yhteydessä tekemiäni media-alan töitä ja osaamistani." data-en="A portfolio compiled during my vocational qualification in audiovisual communications, showcasing media work and skills developed during my studies.">Audiovisuaalisen viestinnän perustutkinnon aikana kokoamani portfolio. Se esittelee opintojen yhteydessä tekemiäni media-alan töitä ja osaamistani.</p>
+            <a class="sample-open-link" href="images/Video%20ja%20valokuvaesittely%20PDF.pdf" target="_blank" rel="noreferrer"><span data-fi="Avaa koko portfolio (PDF)" data-en="Open full portfolio (PDF)">Avaa koko portfolio (PDF)</span> ↗</a>
+          </div>
+          <figcaption><span data-fi="AV-VIESTINTÄ" data-en="AUDIOVISUAL MEDIA">AV-VIESTINTÄ</span><span>PERUSTUTKINTO</span></figcaption>
+          <div class="sample-pdf-embed">
+            <iframe src="images/Video%20ja%20valokuvaesittely%20PDF.pdf#view=FitH" title="Audiovisuaalisen viestinnän portfolio" data-fi-title="Audiovisuaalisen viestinnän portfolio" data-en-title="Audiovisual communications portfolio" loading="lazy"></iframe>
+          </div>
+        </figure>
+        <figure class="interlude-photo creative-sample creative-sample-animation">
+          <div class="creative-sample-copy">
+            <h3 data-fi="Pelialan kurssin animaatio" data-en="Game course animation">Pelialan kurssin animaatio</h3>
+            <p data-fi="Pelialan perusteet -kurssilla tehty animaatioharjoitus. Työ liittyy 3D- ja pelisisältöjen tekemisen perusteisiin." data-en="An animation exercise created during a Fundamentals of Game Development course, exploring the basics of 3D and game content creation.">Pelialan perusteet -kurssilla tehty animaatioharjoitus. Työ liittyy 3D- ja pelisisältöjen tekemisen perusteisiin.</p>
+          </div>
+          <figcaption><span data-fi="ANIMAATIO" data-en="ANIMATION">ANIMAATIO</span><span>PELIALAN PERUSTEET</span></figcaption>
+          <a class="sample-visual sample-image-link" href="images/peli.jpg" target="_blank" rel="noreferrer" aria-label="Avaa pelialan perusteiden kurssilla tehdyn animaation kuva suurempana">
+            <img src="images/peli.jpg" alt="Pelialan perusteiden kurssilla tehdyn animaatioharjoituksen kuva" data-fi-alt="Pelialan perusteiden kurssilla tehdyn animaatioharjoituksen kuva" data-en-alt="Image from an animation exercise created in a game development fundamentals course" loading="lazy" decoding="async">
+            <span class="sample-expand" aria-hidden="true">+</span>
+          </a>
+        </figure>
+        <figure class="interlude-photo creative-sample creative-sample-game">
+          <div class="creative-sample-copy">
+            <h3 data-fi="Kaivo – peliprojekti" data-en="Well – game project">Kaivo – peliprojekti</h3>
+            <p data-fi="Pelialan perusteet -kurssin harjoitustyö. Kuva on osa peliprojektia, jossa tutustuin pelialan työskentelyyn ja digitaalisen ympäristön rakentamiseen." data-en="A coursework project for the Fundamentals of Game Development course. The image is part of a game project exploring game-production workflows and digital environment creation.">Pelialan perusteet -kurssin harjoitustyö. Kuva on osa peliprojektia, jossa tutustuin pelialan työskentelyyn ja digitaalisen ympäristön rakentamiseen.</p>
+          </div>
+          <figcaption><span data-fi="PELIPROJEKTI" data-en="GAME PROJECT">PELIPROJEKTI</span><span>PELIALAN PERUSTEET</span></figcaption>
+          <a class="sample-visual sample-image-link" href="images/kaivo.jpg" target="_blank" rel="noreferrer" aria-label="Avaa kaivo-peliprojektin kuva suurempana">
+            <img src="images/kaivo.jpg" alt="Kaivo-aiheinen pelialan perusteiden kurssilla tehty peliprojektin kuva" data-fi-alt="Kaivo-aiheinen pelialan perusteiden kurssilla tehty peliprojektin kuva" data-en-alt="Image from a well-themed game project created in a game development fundamentals course" loading="lazy">
+            <span class="sample-expand" aria-hidden="true">↗</span>
+          </a>
+        </figure>
+        <figure class="interlude-photo creative-sample creative-sample-environment">
+          <div class="creative-sample-copy">
+            <h3 data-fi="Digitaalinen ympäristö" data-en="Digital environment">Digitaalinen ympäristö</h3>
+            <p data-fi="Omena2 on JAMKin graafisen suunnittelun opintojaksolla tekemäni visuaalinen harjoitustyö. Työssä keskityin kuvan sommitteluun, muotoihin ja visuaaliseen kokonaisuuteen." data-en="Omena2 is a visual exercise I created as part of a graphic design course at JAMK. The work focused on composition, shapes and the overall visual result.">Omena2 on JAMKin graafisen suunnittelun opintojaksolla tekemäni visuaalinen harjoitustyö. Työssä keskityin kuvan sommitteluun, muotoihin ja visuaaliseen kokonaisuuteen.</p>
+          </div>
+          <figcaption><span data-fi="DIGITAALINEN YMPÄRISTÖ" data-en="DIGITAL ENVIRONMENT">DIGITAALINEN YMPÄRISTÖ</span><span>GRAAFINEN SUUNNITTELU</span></figcaption>
+          <a class="sample-visual sample-image-link" href="images/omena2.png" target="_blank" rel="noreferrer" aria-label="Avaa digitaalisen ympäristön harjoitustyö suurempana">
+            <img src="images/omena2.png" alt="Digitaalisen ympäristön ja grafiikan harjoitustyö omena2" data-fi-alt="Digitaalisen ympäristön ja grafiikan harjoitustyö omena2" data-en-alt="Digital environment and graphics exercise, omena2" loading="lazy">
+            <span class="sample-expand" aria-hidden="true">↗</span>
+          </a>
+        </figure>
+      </div>
+      <p class="interlude-credit" data-fi="Valikoituja omia opinto- ja luovia töitä GitHub-repositoriostani." data-en="Selected original coursework and creative work from my GitHub repository.">Valikoituja omia opinto- ja luovia töitä GitHub-repositoriostani.</p>
+    </section><p class="privacy-note" data-fi="Sovellus on kokeilu, jonka paikallisessa käytössä käyttäjän oma profiili säilytetään omassa ympäristössä. Älä lisää julkiseen repositorioon henkilötietoja, salasanoja, API-avaimia tai sähköpostitunnuksia." data-en="The application is an experiment intended for local use, with the user profile kept in their own environment. Do not add personal information, passwords, API keys or email credentials to the public repository.">Sovellus on kokeilu, jonka paikallisessa käytössä käyttäjän oma profiili säilytetään omassa ympäristössä. Älä lisää julkiseen repositorioon henkilötietoja, salasanoja, API-avaimia tai sähköpostitunnuksia.</p></main>  <footer class="site-footer section-wrap">
+    <nav class="footer-nav" aria-label="Alatunnisteen navigaatio">
+      <a href="index.html" data-fi="Etusivu" data-en="Home">Etusivu</a>
+      <a href="minusta.html" data-fi="Minusta" data-en="About">Minusta</a>
+      <a href="tyonaytteet.html" data-fi="Työnäytteet" data-en="Work samples">Työnäytteet</a>
+      <a href="yhteystiedot.html" data-fi="Yhteystiedot" data-en="Contact">Yhteystiedot</a>
+    </nav>
+    <a class="wordmark full-name" href="index.html#home"><span class="wordmark-name">Marika Matalamäki</span><span class="wordmark-subtitle" data-fi="Portfoliosivusto" data-en="Portfolio website">Portfoliosivusto</span></a>
+  </footer>
+  <div class="copyright-bar">
+    <p class="footer-rights" data-fi="© 2026 Marika Matalamäki. Kaikki oikeudet pidätetään.<br>Lisätietoa GitHub-profiilini README-tiedostossa." data-en="© 2026 Marika Matalamäki. All rights reserved.<br>More information in my GitHub profile README.">© 2026 Marika Matalamäki. Kaikki oikeudet pidätetään.<br>Lisätietoa GitHub-profiilini README-tiedostossa.</p>
+  </div>
+<!-- BODY SECTION ENDS: the page content ends here. -->
+
+
+
+</body>
+</html></body>
