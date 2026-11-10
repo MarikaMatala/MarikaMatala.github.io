@@ -39,6 +39,82 @@
   <link rel="stylesheet" href="gothic-effects.css?v=8">
   <link rel="stylesheet" href="gothic-redesign.css?v=6">
   <link rel="stylesheet" href="autumn-cottagecore.css?v=17">
+
+  <!-- Work sample category switcher styles. -->
+  <style>
+    .work-category-tabs {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    .work-category-tab {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .85rem;
+      min-height: 76px;
+      padding: 1rem 1.25rem;
+      border: 1px solid rgba(196, 151, 103, .48);
+      border-radius: 12px;
+      background: rgba(29, 34, 28, .72);
+      color: inherit;
+      font: inherit;
+      font-weight: 700;
+      text-align: left;
+      cursor: pointer;
+      transition: border-color .2s ease, background .2s ease, transform .2s ease, box-shadow .2s ease;
+    }
+    .work-category-tab:hover { transform: translateY(-2px); border-color: #c58b55; }
+    .work-category-tab.is-active {
+      border-color: #c58b55;
+      background: rgba(91, 68, 43, .42);
+      box-shadow: inset 0 0 0 1px rgba(197, 139, 85, .22), 0 8px 24px rgba(0, 0, 0, .18);
+    }
+    .work-category-tab:focus-visible { outline: 3px solid #d9a66d; outline-offset: 4px; }
+    .work-tab-icon {
+      display: inline-grid;
+      place-items: center;
+      flex: 0 0 2.25rem;
+      width: 2.25rem;
+      height: 2.25rem;
+      border: 1px solid rgba(217, 166, 109, .55);
+      border-radius: 50%;
+      color: #d9a66d;
+      font-family: monospace;
+      font-size: 1rem;
+    }
+    body[data-work-category="coding"] #branding,
+    body[data-work-category="coding"] #wimma,
+    body[data-work-category="coding"] #media,
+    body[data-work-category="media"] #android,
+    body[data-work-category="media"] #remote-job-fit-demo,
+    body[data-work-category="media"] #oop,
+    body[data-work-category="media"] #personal-style-colour-guide,
+    body[data-work-category="media"] #access-subtitle-qa-toolkit,
+    body[data-work-category="media"] #the-cultured-vault-demo,
+    body[data-work-category="media"] #backend-examples { display: none !important; }
+    body[data-work-category="coding"] .project-jump-nav a[href="#branding"],
+    body[data-work-category="coding"] .project-jump-nav a[href="#wimma"],
+    body[data-work-category="coding"] .project-jump-nav a[href="#media"],
+    body[data-work-category="media"] .project-jump-nav a[href="#android"],
+    body[data-work-category="media"] .project-jump-nav a[href="#remote-job-fit-demo"],
+    body[data-work-category="media"] .project-jump-nav a[href="#oop"],
+    body[data-work-category="media"] .project-jump-nav a[href="#personal-style-colour-guide"],
+    body[data-work-category="media"] .project-jump-nav a[href="#access-subtitle-qa-toolkit"],
+    body[data-work-category="media"] .project-jump-nav a[href="#the-cultured-vault-demo"],
+    body[data-work-category="media"] .project-jump-nav a[href="#backend-examples"] { display: none !important; }
+    @media (max-width: 640px) {
+      .work-category-tabs { grid-template-columns: 1fr; gap: .7rem; }
+      .work-category-tab { justify-content: flex-start; min-height: 66px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .work-category-tab { transition: none; }
+      .work-category-tab:hover { transform: none; }
+    }
+  </style>
+
   <script src="gothic-enhancements.js?v=2" defer></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/themes/prism-tomorrow.min.css">
   <script src="script.js?v=24" defer></script>
@@ -105,6 +181,19 @@
       <strong data-fi="Tietoturva ja yksityisyys:" data-en="Security and privacy:">Tietoturva ja yksityisyys:</strong>
       <span data-fi="Kaikki esimerkit on tarkistettu ja muokattu ennen julkaisua. Niissä ei ole henkilökohtaisia tietoja tai oikeita tunnistetietoja. Esimerkiksi salasanat, käyttäjätunnukset, API-avaimet, käyttöoikeustokenit, tietokantayhteydet, istuntosalaisuudet ja palvelintiedot on poistettu tai korvattu paikkamerkeillä. Käytä omia arvojasi äläkä koskaan julkaise oikeita tunnistetietoja." data-en="All examples have been reviewed and modified before publication. They contain no personal information or real credentials. Passwords, usernames, API keys, access tokens, database connection strings, session secrets and server details have been removed or replaced with placeholders. Use your own values and never publish real credentials.">Kaikki esimerkit on tarkistettu ja muokattu ennen julkaisua. Niissä ei ole henkilökohtaisia tietoja tai oikeita tunnistetietoja. Esimerkiksi salasanat, käyttäjätunnukset, API-avaimet, käyttöoikeustokenit, tietokantayhteydet, istuntosalaisuudet ja palvelintiedot on poistettu tai korvattu paikkamerkeillä. Käytä omia arvojasi äläkä koskaan julkaise oikeita tunnistetietoja.</span>
     </aside>
+
+    <!-- WORK SAMPLE CATEGORY SWITCHER: switch between coding and media/communications work. -->
+    <nav class="work-category-tabs section-wrap" aria-label="Työnäytteiden kategoriat" data-fi-label="Työnäytteiden kategoriat" data-en-label="Work sample categories">
+      <button class="work-category-tab is-active" type="button" data-work-tab="coding" aria-pressed="true">
+        <span class="work-tab-icon" aria-hidden="true">&lt;/&gt;</span>
+        <span data-fi="Koodaustyöt ja IT-projektit" data-en="Coding and IT projects">Koodaustyöt ja IT-projektit</span>
+      </button>
+      <button class="work-category-tab" type="button" data-work-tab="media" aria-pressed="false">
+        <span class="work-tab-icon" aria-hidden="true">✦</span>
+        <span data-fi="Media- ja viestintätyöt" data-en="Media and communications">Media- ja viestintätyöt</span>
+      </button>
+    </nav>
+
     <section class="work-section section-wrap" id="projects">
       <div class="section-heading">
         <p class="eyebrow"><span class="eyebrow-line"></span><span data-fi="Valikoituja töitä" data-en="Selected work">Valikoituja töitä</span></p>
@@ -711,5 +800,29 @@ expect(response.body.title).toBe("Example Album");</code></pre>
     <p class="footer-rights" data-fi="© 2026 Marika Matalamäki. Kaikki oikeudet pidätetään.<br>Lisätietoa GitHub-profiilini README-tiedostossa." data-en="© 2026 Marika Matalamäki. All rights reserved.<br>More information in my GitHub profile README.">© 2026 Marika Matalamäki. Kaikki oikeudet pidätetään.<br>Lisätietoa GitHub-profiilini README-tiedostossa.</p>
   </div>
 <!-- BODY SECTION ENDS: the page content ends here. -->
+
+  <!-- Work sample category switching: all existing project content remains in the document. -->
+  <script>
+    (function () {
+      const tabs = Array.from(document.querySelectorAll('[data-work-tab]'));
+      if (!tabs.length) return;
+
+      function setWorkCategory(category) {
+        document.body.dataset.workCategory = category;
+        tabs.forEach((tab) => {
+          const active = tab.dataset.workTab === category;
+          tab.classList.toggle('is-active', active);
+          tab.setAttribute('aria-pressed', String(active));
+        });
+      }
+
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => setWorkCategory(tab.dataset.workTab));
+      });
+
+      setWorkCategory('coding');
+    })();
+  </script>
+
 </body>
 </html>
