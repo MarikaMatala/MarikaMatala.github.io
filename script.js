@@ -170,7 +170,8 @@ if (oopBrowser) {
 // Accessible image enlargement: activate any portfolio image to open it, then
 // click the enlarged image or backdrop (or press Escape) to return to the page.
 (function setupImageLightbox() {
-  const images = Array.from(document.querySelectorAll('main img'));
+  // Linked images must keep their normal link behaviour; only standalone images open the lightbox.
+  const images = Array.from(document.querySelectorAll('main img')).filter((image) => !image.closest('a'));
   if (!images.length) return;
 
   const overlay = document.createElement('div');
