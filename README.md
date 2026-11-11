@@ -4,6 +4,11 @@
 
 **Portfolio website:** https://marikamatala.github.io/
 
+
+## Security reporting
+
+See [SECURITY.md](SECURITY.md) for responsible vulnerability disclosure and guidance on public assets, third-party resources and contributions.
+
 ## About
 
 I am an ICT engineer who graduated from JAMK. My interests and skills include frontend and web development, application development, UI/UX, visual design and digital media. My background combines technical skills with experience in visual communication and media production.
