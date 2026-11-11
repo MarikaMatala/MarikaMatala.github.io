@@ -55,6 +55,21 @@
   <link rel="stylesheet" href="autumn-cottagecore.css?v=18">
   <script src="gothic-enhancements.js?v=2" defer></script>
   <script src="script.js?v=24" defer></script>
+  <style>
+    .home-project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.15rem;margin:2rem 0 1.5rem}
+    .home-project-card{display:flex;flex-direction:column;align-items:flex-start;min-width:0;min-height:100%;padding:1.45rem;border:1px solid #526657;border-radius:16px;background:linear-gradient(145deg,#1b2a20,#17271d);color:#e8e5da!important;text-decoration:none!important;box-shadow:0 12px 28px rgba(0,0,0,.24);transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+    .home-project-card:hover{transform:translateY(-4px);border-color:#d98245;box-shadow:0 16px 34px rgba(0,0,0,.34)}
+    .home-project-card:focus-visible{outline:3px solid #e6a06a;outline-offset:4px}
+    .home-project-icon{display:grid;place-items:center;width:2.7rem;height:2.7rem;margin-bottom:1rem;border:1px solid #b6cdaf;border-radius:50%;color:#e6a06a;font-size:1.45rem}
+    .home-project-type{margin-bottom:.55rem;color:#b6cdaf;font-size:.68rem;font-weight:800;letter-spacing:.08em;line-height:1.5}
+    .home-project-card strong{margin-bottom:.55rem;color:#d98245;font-family:"Lora",Georgia,serif;font-size:1.25rem;line-height:1.3;overflow-wrap:anywhere}
+    .home-project-description{color:#c9d2c6;font-size:.93rem;line-height:1.65}
+    .home-project-link{margin-top:auto;padding-top:1.2rem;color:#e6a06a;font-weight:800;font-size:.88rem}
+    .home-work-categories{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1rem}
+    @media(max-width:700px){.home-project-grid{grid-template-columns:1fr;gap:.9rem}.home-project-card{padding:1.2rem;min-height:0}}
+    @media(prefers-reduced-motion:reduce){.home-project-card{transition:none}.home-project-card:hover{transform:none}}
+  </style>
+
   <!-- Umami Cloud: visitor analytics. Add ?owner=1 to the URL to mark visits from this browser as owner visits. -->
   <script>
     (function () {
@@ -147,10 +162,42 @@
     <section class="home-work-cta-section section-wrap" id="work">
       <p class="eyebrow"><span class="eyebrow-line"></span><span data-fi="Projektit ja työnäytteet" data-en="Projects and work samples">Projektit ja työnäytteet</span></p>
       <h2 data-fi="Katso, miten osaamiseni<br><em>näkyy käytännössä.</em>" data-en="See my skills<br><em>in practice.</em>">Katso, miten osaamiseni<br><em>näkyy käytännössä.</em></h2>
-      <p data-fi="Työnäytteissäni näkyy sekä opintojen aikana kertynyttä osaamista että omia projektejani. Tutustu esimerkiksi Remote Job Fit -sovellukseen, The Cultured Vaultiin, Access & Subtitle QA Toolkitiin ja WIMMA Capstonen brändiuudistukseen. Mukana on myös ohjelmoinnin harjoitustöitä, visuaalista suunnittelua ja media- ja viestintätöitä." data-en="My work samples include both coursework and personal projects. Explore projects such as the Remote Job Fit application, The Cultured Vault, the Access & Subtitle QA Toolkit and the WIMMA Capstone brand renewal. You’ll also find programming exercises, visual design and media and communications work.">Työnäytteissäni näkyy sekä opintojen aikana kertynyttä osaamista että omia projektejani. Tutustu esimerkiksi Remote Job Fit -sovellukseen, The Cultured Vaultiin, Access & Subtitle QA Toolkitiin ja WIMMA Capstonen brändiuudistukseen. Mukana on myös ohjelmoinnin harjoitustöitä, visuaalista suunnittelua ja media- ja viestintätöitä.</p>
-      <a class="home-work-cta" href="tyonaytteet.html"><span data-fi="Tutustu työnäytteisiin ja teknisiin yksityiskohtiin" data-en="Explore work samples and technical details">Tutustu työnäytteisiin ja teknisiin yksityiskohtiin</span><span aria-hidden="true">↗</span></a>
-      <a class="gothic-button" href="koodaustyot.html"><span data-fi="Koodaustyöt ja IT-projektit" data-en="Coding and IT projects">Koodaustyöt ja IT-projektit</span><span aria-hidden="true">↗</span></a>
-      <a class="gothic-button" href="media-ja-viestinta.html"><span data-fi="Visuaalinen ilmaisu ja sisällöntuotanto" data-en="Visual expression and content production">Visuaalinen ilmaisu ja sisällöntuotanto</span><span aria-hidden="true">↗</span></a>
+      <p data-fi="Tässä on muutamia esimerkkejä omista projekteistani ja käytännön osaamisestani. Avaa kortti, niin pääset tutustumaan työnäytteeseen ja sen toteutukseen tarkemmin." data-en="Here are a few examples of my personal projects and practical skills. Open a card to explore each work sample and its implementation in more detail.">Tässä on muutamia esimerkkejä omista projekteistani ja käytännön osaamisestani. Avaa kortti, niin pääset tutustumaan työnäytteeseen ja sen toteutukseen tarkemmin.</p>
+      <div class="home-project-grid" aria-label="Valikoidut työnäytteet">
+        <a class="home-project-card" href="koodaustyot.html#remote-job-fit-demo">
+          <span class="home-project-icon" aria-hidden="true">⌕</span>
+          <span class="home-project-type" data-fi="WEB-SOVELLUS · OMA PROJEKTI" data-en="WEB APPLICATION · PERSONAL PROJECT">WEB-SOVELLUS · OMA PROJEKTI</span>
+          <strong>Remote Job Fit</strong>
+          <span class="home-project-description" data-fi="Kokeellinen sovellus osaamisen jäsentämiseen ja työpaikkailmoitusten vertailuun." data-en="An experimental application for organising skills and comparing them with job postings.">Kokeellinen sovellus osaamisen jäsentämiseen ja työpaikkailmoitusten vertailuun.</span>
+          <span class="home-project-link" data-fi="Tutustu projektiin ↗" data-en="Explore project ↗">Tutustu projektiin ↗</span>
+        </a>
+        <a class="home-project-card" href="koodaustyot.html#the-cultured-vault-demo">
+          <span class="home-project-icon" aria-hidden="true">✧</span>
+          <span class="home-project-type" data-fi="DIGITAALINEN ARKISTO · PWA-DEMO" data-en="DIGITAL ARCHIVE · PWA DEMO">DIGITAALINEN ARKISTO · PWA-DEMO</span>
+          <strong>The Cultured Vault</strong>
+          <span class="home-project-description" data-fi="Kulttuuriarkisto, jossa yhdistyvät tiedon jäsentely, haku ja käyttöliittymäsuunnittelu." data-en="A cultural archive combining information organisation, search and interface design.">Kulttuuriarkisto, jossa yhdistyvät tiedon jäsentely, haku ja käyttöliittymäsuunnittelu.</span>
+          <span class="home-project-link" data-fi="Tutustu projektiin ↗" data-en="Explore project ↗">Tutustu projektiin ↗</span>
+        </a>
+        <a class="home-project-card" href="koodaustyot.html#access-subtitle-qa-toolkit">
+          <span class="home-project-icon" aria-hidden="true">◈</span>
+          <span class="home-project-type" data-fi="SAAVUTETTAVUUS · LAADUNVARMISTUS" data-en="ACCESSIBILITY · QUALITY ASSURANCE">SAAVUTETTAVUUS · LAADUNVARMISTUS</span>
+          <strong>Access &amp; Subtitle QA Toolkit</strong>
+          <span class="home-project-description" data-fi="Työkalukokonaisuus verkkosisällön saavutettavuuden ja tekstitysten teknisen laadun tarkistamiseen." data-en="A toolkit for checking web accessibility and the technical quality of subtitles.">Työkalukokonaisuus verkkosisällön saavutettavuuden ja tekstitysten teknisen laadun tarkistamiseen.</span>
+          <span class="home-project-link" data-fi="Tutustu projektiin ↗" data-en="Explore project ↗">Tutustu projektiin ↗</span>
+        </a>
+        <a class="home-project-card" href="media-ja-viestinta.html#wimma">
+          <span class="home-project-icon" aria-hidden="true">✦</span>
+          <span class="home-project-type" data-fi="BRÄNDIUUDISTUS · VISUAALINEN SUUNNITTELU" data-en="BRAND RENEWAL · VISUAL DESIGN">BRÄNDIUUDISTUS · VISUAALINEN SUUNNITTELU</span>
+          <strong>WIMMA Capstone</strong>
+          <span class="home-project-description" data-fi="Visuaalisen ilmeen, logojen, värimaailman ja verkkosivuston version 1.0 uudistaminen." data-en="A visual identity refresh covering logos, colour palette and website version 1.0.">Visuaalisen ilmeen, logojen, värimaailman ja verkkosivuston version 1.0 uudistaminen.</span>
+          <span class="home-project-link" data-fi="Tutustu projektiin ↗" data-en="Explore project ↗">Tutustu projektiin ↗</span>
+        </a>
+      </div>
+      <a class="home-work-cta" href="tyonaytteet.html"><span data-fi="Katso kaikki työnäytteet" data-en="View all work samples">Katso kaikki työnäytteet</span><span aria-hidden="true">↗</span></a>
+      <div class="home-work-categories">
+        <a class="gothic-button" href="koodaustyot.html"><span data-fi="Koodaustyöt ja IT-projektit" data-en="Coding and IT projects">Koodaustyöt ja IT-projektit</span><span aria-hidden="true">↗</span></a>
+        <a class="gothic-button" href="media-ja-viestinta.html"><span data-fi="Media- ja viestintätyöt" data-en="Media and communications">Media- ja viestintätyöt</span><span aria-hidden="true">↗</span></a>
+      </div>
     </section>
 
     <section class="contact-section section-wrap home-contact-cta" id="contact">
