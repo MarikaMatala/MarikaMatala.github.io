@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Marika Matalamäen portfoliosivuston tietosuojaseloste ja tiedot evästeistä sekä paikallisesta tallennuksesta.">
+  <link rel="canonical" href="https://marikamatala.github.io/tietosuoja.html">
+  <meta name="theme-color" content="#344a35">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; upgrade-insecure-requests; script-src 'self' 'unsafe-inline' https://cloud.umami.is https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://raw.githubusercontent.com; connect-src 'self' https://cloud.umami.is">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+  <title data-fi-title="Tietosuoja ja evästeet | Marika Matalamäki" data-en-title="Privacy and cookies | Marika Matalamäki">Tietosuoja ja evästeet | Marika Matalamäki</title>
+  <link rel="stylesheet" href="style.css?v=47">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="gothic-effects.css?v=8">
+  <link rel="stylesheet" href="gothic-redesign.css?v=6">
+  <link rel="stylesheet" href="autumn-cottagecore.css?v=18">
+  <script src="gothic-enhancements.js?v=2" defer></script>
+  <script src="script.js?v=24" defer></script>
+  <!-- Umami Cloud: cookie-free analytics. -->
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('owner') === '1') localStorage.setItem('portfolio-analytics-owner', '1');
+      else if (params.get('owner') === '0') localStorage.removeItem('portfolio-analytics-owner');
+      const tracker = document.createElement('script');
+      tracker.defer = true;
+      tracker.src = 'https://cloud.umami.is/script.js';
+      tracker.dataset.websiteId = '0f1e9249-905e-4386-881c-295fd7c92e3c';
+      if (localStorage.getItem('portfolio-analytics-owner') === '1') tracker.dataset.distinctId = 'portfolio-owner';
+      document.head.appendChild(tracker);
+    })();
+  </script>
+</head>
+<body>
+  <div class="gothic-mandala" aria-hidden="true"></div>
+  <div class="gothic-mist" aria-hidden="true"></div>
+  <a class="skip-link" href="#main-content" data-fi="Siirry sisältöön" data-en="Skip to content">Siirry sisältöön</a>
+  <header class="site-header">
+    <a class="metal-rose-mark flex items-center justify-center shrink-0" href="index.html#home" aria-label="Marika Matalamäki — etusivu"><img src="images/metal-rose-sigil.svg?v=4" alt="" width="58" height="68"></a>
+    <a class="wordmark full-name" href="index.html#home"><span class="wordmark-name">Marika Matalamäki</span><br class="wordmark-break"><span class="wordmark-subtitle" data-fi="Portfoliosivusto" data-en="Portfolio website">Portfoliosivusto</span></a>
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Avaa navigaatiovalikko"><span></span><span></span><span></span></button>
+    <nav id="primary-navigation" aria-label="Päänavigaatio">
+      <a href="index.html" data-fi="Etusivu" data-en="Home">Etusivu</a>
+      <a href="minusta.html" data-fi="Minusta" data-en="About">Minusta</a>
+      <a href="tyonaytteet.html" data-fi="Työnäytteet" data-en="Work samples">Työnäytteet</a>
+      <a href="yhteystiedot.html" data-fi="Yhteystiedot" data-en="Contact">Yhteystiedot</a>
+    </nav>
+    <button class="language-toggle" id="language-toggle" type="button" aria-label="Vaihda sivuston kieltä / Change language" title="FIN / ENG"><span class="language-label">FIN / ENG</span></button>
+  </header>
+  <main id="main-content" class="section-wrap legal-page">
+    <header class="work-page-intro">
+      <p class="eyebrow"><span class="eyebrow-line"></span><span data-fi="Sivuston tiedot" data-en="Website information">Sivuston tiedot</span></p>
+      <h1 data-fi="Tietosuoja ja<br><em>evästeet.</em>" data-en="Privacy and<br><em>cookies.</em>">Tietosuoja ja<br><em>evästeet.</em></h1>
+      <p data-fi="Tässä selosteessa kerrotaan, miten Marika Matalamäen portfoliosivuston yhteydessä käsitellään henkilötietoja ja mitä tietoja selaimeen tallennetaan. Seloste koskee osoitteessa marikamatala.github.io julkaistua portfoliosivustoa ja sen samalla verkkotunnuksella toimivaa The Cultured Vault -selain-demoa." data-en="This notice explains how personal data is processed in connection with Marika Matalamäki’s portfolio website and what information is stored in the visitor’s browser. It applies to the portfolio at marikamatala.github.io and The Cultured Vault browser demo hosted on the same domain.">Tässä selosteessa kerrotaan, miten Marika Matalamäen portfoliosivuston yhteydessä käsitellään henkilötietoja ja mitä tietoja selaimeen tallennetaan.</p>
+    </header>
+    <article class="legal-content">
+      <p class="notice info-ribbon" role="note"><strong data-fi="Päivitetty 11.11.2026." data-en="Last updated 11 November 2026.">Päivitetty 11.11.2026.</strong> <span data-fi="Sivustolla ei tällä hetkellä käytetä evästeitä eikä näytetä evästebanneria. Tilanne arvioidaan uudelleen, jos sivustolle lisätään evästeitä tai vastaavia seurantatekniikoita." data-en="The website does not currently use cookies or display a cookie banner. This will be reassessed if cookies or similar tracking technologies are added.">Sivustolla ei tällä hetkellä käytetä evästeitä eikä näytetä evästebanneria.</span></p>
+
+      <section>
+        <h2 data-fi="1. Rekisterinpitäjä" data-en="1. Data controller">1. Rekisterinpitäjä</h2>
+        <p><strong>Marika Matalamäki</strong><br><span data-fi="Sähköposti:" data-en="Email:">Sähköposti:</span> <a href="mailto:marika.matalamaki@gmail.com">marika.matalamaki@gmail.com</a></p>
+        <p data-fi="Voit ottaa yhteyttä tietosuojaa koskevissa kysymyksissä tai käyttää tietosuojaoikeuksiasi sähköpostitse." data-en="You can contact the controller by email with privacy questions or to exercise your data protection rights.">Voit ottaa yhteyttä tietosuojaa koskevissa kysymyksissä tai käyttää tietosuojaoikeuksiasi sähköpostitse.</p>
+      </section>
+
+      <section>
+        <h2 data-fi="2. Käsittelyn tarkoitukset ja oikeusperusteet" data-en="2. Purposes and legal bases">2. Käsittelyn tarkoitukset ja oikeusperusteet</h2>
+        <ul>
+          <li data-fi="Sivuston tarjoaminen, ylläpito, tietoturva ja teknisten ongelmien selvittäminen. Oikeusperusteena on rekisterinpitäjän oikeutettu etu ylläpitää toimivaa ja turvallista portfoliosivustoa." data-en="Providing, maintaining and securing the website and troubleshooting technical issues. The legal basis is the controller’s legitimate interest in operating a functional and secure portfolio website.">Sivuston tarjoaminen, ylläpito, tietoturva ja teknisten ongelmien selvittäminen.</li>
+          <li data-fi="Sivuston kävijätilastojen tarkastelu Umami Analyticsin avulla. Oikeusperusteena on rekisterinpitäjän oikeutettu etu ymmärtää sivuston yleistä käyttöä ja kehittää sen sisältöä. Analytiikan käyttö ja sen vaikutukset kävijöiden yksityisyyteen pyritään pitämään mahdollisimman vähäisinä." data-en="Reviewing aggregate website traffic using Umami Analytics. The legal basis is the controller’s legitimate interest in understanding general website use and improving the site. Analytics and its impact on visitors’ privacy are kept as limited as possible.">Sivuston kävijätilastojen tarkastelu Umami Analyticsin avulla.</li>
+          <li data-fi="Sähköpostitse saapuneisiin viesteihin vastaaminen ja mahdollisen yhteydenpidon hoitaminen. Oikeusperusteena on viestin käsittelyä koskeva tilanne: yleensä viestin lähettäjän pyynnöstä tehtävät toimet, sopimusta edeltävät toimet tai rekisterinpitäjän oikeutettu etu vastata yhteydenottoon." data-en="Responding to emails and managing related correspondence. Depending on the enquiry, the legal basis is taking steps at the sender’s request, pre-contractual steps, or the controller’s legitimate interest in responding.">Sähköpostitse saapuneisiin viesteihin vastaaminen ja mahdollisen yhteydenpidon hoitaminen.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 data-fi="3. Käsiteltävät tiedot" data-en="3. Data processed">3. Käsiteltävät tiedot</h2>
+        <ul>
+          <li data-fi="Tekniset käyttötiedot: katsellut sivut, viittaava osoite, ajankohta sekä selaimen, käyttöjärjestelmän ja laitetyypin kaltaiset tiedot ja karkea sijaintitieto." data-en="Technical usage information: pages viewed, referrer, time of visit, browser, operating system, device type and approximate location.">Tekniset käyttötiedot.</li>
+          <li data-fi="Umamin kävijätunnisteen muodostamisessa IP-osoitetta käsitellään tilapäisesti yhdessä selaimen User-Agent-tiedon kanssa. Umamin tavanomaisessa analytiikkatietueessa IP-osoitetta ei tallenneta omana kenttänään; tunniste muodostetaan tiivisteenä ja suola vaihtuu oletusarvoisesti kuukausittain. Palvelun teknisissä ja tietoturvalokeissa IP-osoitteita voidaan silti käsitellä palveluntarjoajan käytäntöjen mukaisesti." data-en="To generate Umami’s visitor identifier, the IP address is processed transiently together with the browser User-Agent. Umami’s standard analytics records do not store the IP address as a separate field; the identifier is hashed and the salt rotates monthly by default. IP addresses may still be processed in the provider’s operational and security logs under its own policies.">Umamin kävijätunnisteen muodostamisessa IP-osoitetta käsitellään tilapäisesti yhdessä selaimen User-Agent-tiedon kanssa.</li>
+          <li data-fi="Yhteydenottoviestien sisältö ja lähettäjän itse ilmoittamat yhteystiedot, kuten nimi ja sähköpostiosoite." data-en="The contents of messages and contact details voluntarily provided by the sender, such as name and email address.">Yhteydenottoviestien sisältö ja lähettäjän itse ilmoittamat yhteystiedot.</li>
+        </ul>
+        <p data-fi="Sivustolla ei ole käyttäjätilejä, kirjautumista, kommentointijärjestelmää eikä yhteydenottolomaketta. Älä lähetä sähköpostitse tarpeettomia arkaluonteisia henkilötietoja." data-en="The website has no user accounts, login, public commenting system or contact form. Please do not send unnecessary sensitive personal data by email.">Sivustolla ei ole käyttäjätilejä, kirjautumista, kommentointijärjestelmää eikä yhteydenottolomaketta.</p>
+      </section>
+
+      <section>
+        <h2 data-fi="4. Evästeet ja selaimen paikallinen tallennus" data-en="4. Cookies and local browser storage">4. Evästeet ja selaimen paikallinen tallennus</h2>
+        <p data-fi="Portfoliosivusto ei tällä hetkellä aseta omia evästeitä. Umami Analyticsin seurantakoodi ei käytä evästeitä. Siksi sivustolla ei tällä hetkellä ole evästebanneria eikä evästeiden hyväksymis- tai hylkäysvalintaa." data-en="The portfolio does not currently set its own cookies. The Umami Analytics tracking code does not use cookies. Therefore, the website currently has no cookie banner or cookie accept/reject controls.">Portfoliosivusto ei tällä hetkellä aseta omia evästeitä. Umami Analyticsin seurantakoodi ei käytä evästeitä.</p>
+        <p data-fi="Sivusto käyttää selaimen localStorage-tallennusta, joka on erillinen tekniikka evästeistä:" data-en="The website uses browser localStorage, which is a technology separate from cookies:">Sivusto käyttää selaimen localStorage-tallennusta, joka on erillinen tekniikka evästeistä:</p>
+        <ul>
+          <li data-fi="Portfoliosivusto tallentaa valitsemasi kieliasetuksen selaimeen, jotta kielivalinta säilyy sivulta toiselle." data-en="The portfolio stores your selected language in the browser so the preference persists between pages.">Portfoliosivusto tallentaa valitsemasi kieliasetuksen selaimeen.</li>
+          <li data-fi="Valinnainen portfolio-analytics-owner-asetus erottaa sivuston ylläpitäjän omat käynnit analytiikassa. URL-parametri owner=1 tallentaa selaimeen asetuksen ja lähettää Umamille kiinteän tunnisteen portfolio-owner; owner=0 poistaa asetuksen. Tämä ei estä analytiikan latautumista." data-en="An optional portfolio-analytics-owner setting distinguishes the site owner’s visits in analytics. The URL parameter owner=1 stores a browser setting and sends Umami the fixed identifier portfolio-owner; owner=0 clears the setting. This does not disable analytics.">Valinnainen portfolio-analytics-owner-asetus erottaa sivuston ylläpitäjän omat käynnit analytiikassa.</li>
+          <li data-fi="The Cultured Vault -demossa omat arviot, kommentit ja teosehdotukset tallentuvat vain kävijän selaimen localStorageen. Niitä ei lähetetä sivuston ylläpitäjälle eikä jaeta muille kävijöille. Tallennetut tiedot voi poistaa selaimen sivustokohtaisista tallennustiedoista." data-en="In The Cultured Vault demo, personal ratings, comments and work suggestions are stored only in the visitor’s browser localStorage. They are not sent to the site owner or shared with other visitors. They can be deleted using the browser’s site data controls.">The Cultured Vault -demossa omat arviot, kommentit ja teosehdotukset tallentuvat vain kävijän selaimen localStorageen.</li>
+        </ul>
+        <p data-fi="Voit poistaa selaimen paikalliset tiedot selaimen asetuksista. Poistaminen voi nollata kielivalinnan ja poistaa The Cultured Vault -demoon tallentamasi omat tiedot." data-en="You can clear local browser data in your browser settings. Doing so may reset the language preference and delete your personal data saved in The Cultured Vault demo.">Voit poistaa selaimen paikalliset tiedot selaimen asetuksista.</p>
+      </section>
+
+      <section>
+        <h2 data-fi="5. Ulkopuoliset palveluntarjoajat ja vastaanottajat" data-en="5. Third-party providers and recipients">5. Ulkopuoliset palveluntarjoajat ja vastaanottajat</h2>
+        <ul>
+          <li><strong>GitHub Pages / GitHub</strong> — <span data-fi="sivuston hosting ja jakelu. GitHub käsittelee palvelun tarjoamiseen ja tietoturvaan liittyviä teknisiä tietoja omien käytäntöjensä mukaisesti." data-en="website hosting and delivery. GitHub processes technical information needed to provide and secure the service under its own policies.">sivuston hosting ja jakelu.</span> <a href="https://docs.github.com/en/pages" target="_blank" rel="noopener noreferrer">GitHub Pages</a> · <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub Privacy Statement</a></li>
+          <li><strong>Umami Cloud</strong> — <span data-fi="kävijätilastojen tuottaminen rekisterinpitäjän lukuun. Umamin käsittelyä, alihankkijoita, lokitietoja ja palvelualueita koskevat tiedot löytyvät sen omista dokumenteista." data-en="website analytics on behalf of the controller. Umami’s documentation describes its processing, subprocessors, logs and service regions.">kävijätilastojen tuottaminen.</span> <a href="https://docs.umami.is/docs/metric-definitions" target="_blank" rel="noopener noreferrer">Metric definitions</a> · <a href="https://docs.umami.is/docs/cloud/faq" target="_blank" rel="noopener noreferrer">Umami Cloud FAQ</a> · <a href="https://umami.is/privacy" target="_blank" rel="noopener noreferrer">Umami Privacy Policy</a></li>
+          <li><strong>Google Fonts</strong> — <span data-fi="sivuston typografian lataaminen Google-palvelusta. Fonttien lataaminen voi välittää selaimen ja verkkoyhteyden teknisiä tietoja Googlelle." data-en="loading website fonts from Google. Font requests may transmit technical browser and connection information to Google.">sivuston fonttien lataaminen.</span> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a></li>
+          <li><strong>jsDelivr</strong> — <span data-fi="PrismJS-koodikorostuskirjaston lataaminen työnäytesivulla. CDN-pyynnöissä välittyy palvelulle teknisiä yhteystietoja." data-en="loading the PrismJS syntax-highlighting library on the work samples page. CDN requests transmit technical connection information to the provider.">PrismJS-koodikorostuskirjaston lataaminen työnäytesivulla.</span> <a href="https://www.jsdelivr.com/terms/privacy-policy-jsdelivr-net" target="_blank" rel="noopener noreferrer">jsDelivr privacy policy</a></li>
+          <li><strong>Google / Gmail</strong> — <span data-fi="sähköpostipalvelu, jonka kautta vastaanotetut yhteydenotot käsitellään." data-en="email service through which incoming enquiries are processed.">sähköpostipalvelu yhteydenottoja varten.</span> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a></li>
+        </ul>
+        <p data-fi="Sivustolla on myös linkkejä ulkopuolisiin palveluihin, kuten LinkedIniin, GitHubiin, GitHub Sponsorsiin ja Buy Me a Coffeeen. Linkin avaamisen jälkeen kyseinen palvelu vastaa omasta tietojenkäsittelystään. Sivusto ei upota näiden palveluiden sisältöä sivulle." data-en="The site also links to external services such as LinkedIn, GitHub, GitHub Sponsors and Buy Me a Coffee. Once you follow a link, the destination service is responsible for its own data processing. The portfolio does not embed content from these services.">Sivustolla on myös linkkejä ulkopuolisiin palveluihin.</p>
+      </section>
+
+      <section>
+        <h2 data-fi="6. Tietojen siirrot ja säilytysajat" data-en="6. Data transfers and retention">6. Tietojen siirrot ja säilytysajat</h2>
+        <p data-fi="Palveluntarjoajat voivat käsitellä teknisiä tietoja omissa palveluympäristöissään ja alihankkijoidensa kautta. Tietojen käsittelyalue ja mahdolliset ETA-alueen ulkopuoliset siirrot määräytyvät kunkin palveluntarjoajan asetusten, sopimusten ja käytäntöjen perusteella. Umami Cloud -tilin valittu data-alue tulee tarkistaa palvelutilin asetuksista." data-en="Providers may process technical data in their own service environments and through subprocessors. Processing locations and any transfers outside the EEA depend on each provider’s settings, agreements and policies. The selected data region for the Umami Cloud account should be checked in the account settings.">Palveluntarjoajat voivat käsitellä teknisiä tietoja omissa palveluympäristöissään ja alihankkijoidensa kautta.</p>
+        <p data-fi="Analytiikkatietoja säilytetään Umami Cloud -tilin palvelupaketin ja asetusten mukaisen ajan. Yhteydenottoviestejä säilytetään vain niin kauan kuin niihin vastaaminen, asian hoitaminen tai lakisääteiset velvoitteet edellyttävät. Selaimen localStorage-tiedot säilyvät kävijän omassa selaimessa, kunnes ne poistetaan tai selain tyhjentää ne." data-en="Analytics data is retained for the period specified by the Umami Cloud plan and account settings. Enquiry emails are retained only as long as needed to respond, handle the matter or meet legal obligations. Browser localStorage data remains in the visitor’s browser until deleted by the visitor or browser.">Analytiikkatietoja säilytetään Umami Cloud -tilin palvelupaketin ja asetusten mukaisen ajan.</p>
+      </section>
+
+      <section>
+        <h2 data-fi="7. Rekisteröidyn oikeudet" data-en="7. Your data protection rights">7. Rekisteröidyn oikeudet</h2>
+        <p data-fi="Soveltuvan tietosuojalainsäädännön mukaisesti sinulla voi olla oikeus saada pääsy itseäsi koskeviin henkilötietoihin, pyytää virheellisten tietojen oikaisua tai tietojen poistamista, rajoittaa käsittelyä, vastustaa oikeutettuun etuun perustuvaa käsittelyä sekä tehdä valitus valvontaviranomaiselle. Oikeuksien soveltuminen riippuu käsittelyn oikeusperusteesta ja tilanteesta." data-en="Under applicable data protection law, you may have the right to access personal data concerning you, request rectification or erasure, restrict processing, object to processing based on legitimate interests, and lodge a complaint with a supervisory authority. The availability of each right depends on the legal basis and circumstances.">Sinulla voi olla oikeus saada pääsy itseäsi koskeviin henkilötietoihin, pyytää tietojen oikaisua tai poistamista, rajoittaa käsittelyä ja vastustaa käsittelyä.</p>
+        <p data-fi="Voit esittää pyynnön rekisterinpitäjälle sähköpostitse: " data-en="You can submit a request to the controller by email:">Voit esittää pyynnön rekisterinpitäjälle sähköpostitse: <a href="mailto:marika.matalamaki@gmail.com">marika.matalamaki@gmail.com</a>.</p>
+        <p data-fi="Suomessa tietosuojaviranomainen on " data-en="The supervisory authority in Finland is the ">Suomessa tietosuojaviranomainen on <a href="https://tietosuoja.fi/" target="_blank" rel="noopener noreferrer">Tietosuojavaltuutetun toimisto</a>.</p>
+      </section>
+
+      <section>
+        <h2 data-fi="8. Automatisoitu päätöksenteko" data-en="8. Automated decision-making">8. Automatisoitu päätöksenteko</h2>
+        <p data-fi="Sivusto ei tee kävijöitä koskevia oikeusvaikutuksia tai vastaavalla tavalla merkittäviä vaikutuksia aiheuttavia automatisoituja päätöksiä eikä profiloi kävijöitä tällaisia tarkoituksia varten." data-en="The website does not make automated decisions about visitors that produce legal or similarly significant effects, and it does not profile visitors for such purposes.">Sivusto ei tee kävijöitä koskevia oikeusvaikutuksia tai vastaavalla tavalla merkittäviä vaikutuksia aiheuttavia automatisoituja päätöksiä.</p>
+      </section>
+
+      <section>
+        <h2 data-fi="9. Selosteen muutokset" data-en="9. Changes to this notice">9. Selosteen muutokset</h2>
+        <p data-fi="Selostetta voidaan päivittää, jos sivuston toiminnallisuudet, palveluntarjoajat tai tietojenkäsittely muuttuvat. Ajantasainen versio julkaistaan tällä sivulla." data-en="This notice may be updated if the website’s features, providers or data processing change. The current version will be published on this page.">Selostetta voidaan päivittää, jos sivuston toiminnallisuudet, palveluntarjoajat tai tietojenkäsittely muuttuvat.</p>
+      </section>
+      <p><a href="tekijanoikeudet.html" data-fi="Lue myös tekijänoikeuksista ja materiaalin käytöstä." data-en="Read the copyright and permitted-use notice.">Lue myös tekijänoikeuksista ja materiaalin käytöstä.</a></p>
+    </article>
+  </main>
+  <footer class="site-footer section-wrap">
+    <nav class="footer-nav" aria-label="Alatunnisteen navigaatio">
+      <a href="index.html" data-fi="Etusivu" data-en="Home">Etusivu</a>
+      <a href="minusta.html" data-fi="Minusta" data-en="About">Minusta</a>
+      <a href="tyonaytteet.html" data-fi="Työnäytteet" data-en="Work samples">Työnäytteet</a>
+      <a href="yhteystiedot.html" data-fi="Yhteystiedot" data-en="Contact">Yhteystiedot</a>
+      <a href="tietosuoja.html" aria-current="page" data-fi="Tietosuoja ja evästeet" data-en="Privacy and cookies">Tietosuoja ja evästeet</a>
+      <a href="tekijanoikeudet.html" data-fi="Tekijänoikeudet" data-en="Copyright">Tekijänoikeudet</a>
+    </nav>
+    <a class="wordmark full-name" href="index.html#home"><span class="wordmark-name">Marika Matalamäki</span><span class="wordmark-subtitle" data-fi="Portfoliosivusto" data-en="Portfolio website">Portfoliosivusto</span></a>
+  </footer>
+  <div class="copyright-bar"><p class="footer-rights">© 2026 Marika Matalamäki. <span data-fi="Kaikki oikeudet pidätetään." data-en="All rights reserved.">Kaikki oikeudet pidätetään.</span></p></div>
+</body>
+</html>
