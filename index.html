@@ -60,7 +60,14 @@
     .home-project-card{display:flex;flex-direction:column;align-items:flex-start;min-width:0;min-height:100%;padding:1.45rem;border:1px solid #526657;border-radius:16px;background:linear-gradient(145deg,#1b2a20,#17271d);color:#e8e5da!important;text-decoration:none!important;box-shadow:0 12px 28px rgba(0,0,0,.24);transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
     .home-project-card:hover{transform:translateY(-4px);border-color:#d98245;box-shadow:0 16px 34px rgba(0,0,0,.34)}
     .home-project-card:focus-visible{outline:3px solid #e6a06a;outline-offset:4px}
-    .home-project-icon{display:grid;place-items:center;width:2.7rem;height:2.7rem;margin-bottom:1rem;border:1px solid #b6cdaf;border-radius:50%;color:#e6a06a;font-size:1.45rem}
+
+    .home-project-icon{display:grid;place-items:center;width:100%;height:132px;margin:0 0 1.1rem;padding:1rem;border:1px solid rgba(182,205,175,.3);border-radius:12px;background:radial-gradient(ellipse at 50% 45%,rgba(121,185,185,.16),transparent 68%),linear-gradient(135deg,#26392c,#142219);color:#e6a06a;overflow:hidden}
+    .home-project-icon svg{width:min(82%,190px);height:78px;fill:none;stroke:#e6a06a;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+    .home-project-icon img{display:block;max-width:82%;max-height:90px;object-fit:contain}
+    .home-project-icon--vault img{max-width:94px;max-height:94px}
+    .home-project-icon--wimma{background:linear-gradient(135deg,#e8e2d4,#d5d0c3)}
+    .home-project-icon--wimma img{max-width:90%;max-height:86px}
+
     .home-project-type{margin-bottom:.55rem;color:#b6cdaf;font-size:.68rem;font-weight:800;letter-spacing:.08em;line-height:1.5}
     .home-project-card strong{margin-bottom:.55rem;color:#d98245;font-family:"Lora",Georgia,serif;font-size:1.25rem;line-height:1.3;overflow-wrap:anywhere}
     .home-project-description{color:#c9d2c6;font-size:.93rem;line-height:1.65}
@@ -165,28 +172,28 @@
       <p data-fi="Tässä on muutamia esimerkkejä omista projekteistani ja käytännön osaamisestani. Avaa kortti, niin pääset tutustumaan työnäytteeseen ja sen toteutukseen tarkemmin." data-en="Here are a few examples of my personal projects and practical skills. Open a card to explore each work sample and its implementation in more detail.">Tässä on muutamia esimerkkejä omista projekteistani ja käytännön osaamisestani. Avaa kortti, niin pääset tutustumaan työnäytteeseen ja sen toteutukseen tarkemmin.</p>
       <div class="home-project-grid" aria-label="Valikoidut työnäytteet">
         <a class="home-project-card" href="koodaustyot.html#remote-job-fit-demo">
-          <span class="home-project-icon" aria-hidden="true">⌕</span>
+          <span class="home-project-icon home-project-icon--remote" aria-hidden="true"><svg viewBox="0 0 96 64" focusable="false"><rect x="8" y="7" width="80" height="50" rx="7"/><path d="M8 19h80M18 13h2m7 0h2m7 0h2M22 31h23M22 39h48M22 47h35"/><circle cx="69" cy="32" r="7"/></svg></span>
           <span class="home-project-type" data-fi="WEB-SOVELLUS · OMA PROJEKTI" data-en="WEB APPLICATION · PERSONAL PROJECT">WEB-SOVELLUS · OMA PROJEKTI</span>
           <strong>Remote Job Fit</strong>
           <span class="home-project-description" data-fi="Kokeellinen sovellus osaamisen jäsentämiseen ja työpaikkailmoitusten vertailuun." data-en="An experimental application for organising skills and comparing them with job postings.">Kokeellinen sovellus osaamisen jäsentämiseen ja työpaikkailmoitusten vertailuun.</span>
           <span class="home-project-link" data-fi="Tutustu projektiin ↗" data-en="Explore project ↗">Tutustu projektiin ↗</span>
         </a>
         <a class="home-project-card" href="koodaustyot.html#the-cultured-vault-demo">
-          <span class="home-project-icon" aria-hidden="true">✧</span>
+          <span class="home-project-icon home-project-icon--vault" aria-hidden="true"><img src="The-Cultured-Vault-demo/icons/vault-icon.svg" alt="" loading="lazy"></span>
           <span class="home-project-type" data-fi="DIGITAALINEN ARKISTO · PWA-DEMO" data-en="DIGITAL ARCHIVE · PWA DEMO">DIGITAALINEN ARKISTO · PWA-DEMO</span>
           <strong>The Cultured Vault</strong>
           <span class="home-project-description" data-fi="Kulttuuriarkisto, jossa yhdistyvät tiedon jäsentely, haku ja käyttöliittymäsuunnittelu." data-en="A cultural archive combining information organisation, search and interface design.">Kulttuuriarkisto, jossa yhdistyvät tiedon jäsentely, haku ja käyttöliittymäsuunnittelu.</span>
           <span class="home-project-link" data-fi="Tutustu projektiin ↗" data-en="Explore project ↗">Tutustu projektiin ↗</span>
         </a>
         <a class="home-project-card" href="koodaustyot.html#access-subtitle-qa-toolkit">
-          <span class="home-project-icon" aria-hidden="true">◈</span>
+          <span class="home-project-icon home-project-icon--qa" aria-hidden="true"><svg viewBox="0 0 96 64" focusable="false"><path d="M48 5 78 16v17c0 16-12 25-30 27C30 58 18 49 18 33V16z"/><path d="m33 32 10 10 21-23"/><path d="M12 11h8m56 0h8M12 53h8m56 0h8"/></svg></span>
           <span class="home-project-type" data-fi="SAAVUTETTAVUUS · LAADUNVARMISTUS" data-en="ACCESSIBILITY · QUALITY ASSURANCE">SAAVUTETTAVUUS · LAADUNVARMISTUS</span>
           <strong>Access &amp; Subtitle QA Toolkit</strong>
           <span class="home-project-description" data-fi="Työkalukokonaisuus verkkosisällön saavutettavuuden ja tekstitysten teknisen laadun tarkistamiseen." data-en="A toolkit for checking web accessibility and the technical quality of subtitles.">Työkalukokonaisuus verkkosisällön saavutettavuuden ja tekstitysten teknisen laadun tarkistamiseen.</span>
           <span class="home-project-link" data-fi="Tutustu projektiin ↗" data-en="Explore project ↗">Tutustu projektiin ↗</span>
         </a>
         <a class="home-project-card" href="media-ja-viestinta.html#wimma">
-          <span class="home-project-icon" aria-hidden="true">✦</span>
+          <span class="home-project-icon home-project-icon--wimma" aria-hidden="true"><img src="images/wi-branding/wimma-capstone-logo.png" alt="" loading="lazy"></span>
           <span class="home-project-type" data-fi="BRÄNDIUUDISTUS · VISUAALINEN SUUNNITTELU" data-en="BRAND RENEWAL · VISUAL DESIGN">BRÄNDIUUDISTUS · VISUAALINEN SUUNNITTELU</span>
           <strong>WIMMA Capstone</strong>
           <span class="home-project-description" data-fi="Visuaalisen ilmeen, logojen, värimaailman ja verkkosivuston version 1.0 uudistaminen." data-en="A visual identity refresh covering logos, colour palette and website version 1.0.">Visuaalisen ilmeen, logojen, värimaailman ja verkkosivuston version 1.0 uudistaminen.</span>
