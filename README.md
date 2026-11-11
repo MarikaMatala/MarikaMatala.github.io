@@ -46,6 +46,9 @@ Kehitän portfoliotani jatkuvasti ja lisään verkkosivulle valikoituja projekte
 - `THIRD-PARTY-NOTICES.md` — source and licence register for third-party data and libraries considered for Remote Job Fit
 - `backend-code-examples.md` — five reviewed backend code examples covering Mongoose, REST API CRUD, session authentication and automated testing
 - `yhteystiedot.html` — email, LinkedIn, GitHub and job availability
+- `tietosuoja.html` — bilingual privacy, analytics, local-storage and cookie notice
+- `tekijanoikeudet.html` — bilingual copyright and permitted-use information
+- `legal-pages.css` — responsive styling for the legal information pages
 - `style.css` — responsive layout and shared component styles
 - `autumn-cottagecore.css` — autumn colors, readable typography, cottagecore-inspired details and accessibility refinements
 - `script.js` — persistent language toggle, Android image carousel and interactive OOP examples
