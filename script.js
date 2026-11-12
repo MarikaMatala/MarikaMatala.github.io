@@ -180,7 +180,7 @@ if (oopBrowser) {
   overlay.tabIndex = -1;
   overlay.setAttribute('role', 'dialog');
   overlay.setAttribute('aria-modal', 'true');
-  overlay.setAttribute('aria-label', 'Suurenna kuva / Enlarge image');
+  overlay.setAttribute('aria-label', currentLanguage === 'fi' ? 'Suurenna kuva' : 'Enlarge image');
 
   const closeButton = document.createElement('button');
   closeButton.className = 'lightbox-close';
@@ -198,17 +198,25 @@ if (oopBrowser) {
   document.body.appendChild(overlay);
 
   let previousFocus = null;
+  let previousBodyOverflow = '';
+  let previousInertStates = [];
 
   function openImage(image) {
     previousFocus = image;
     enlarged.src = image.currentSrc || image.src;
-    enlarged.alt = image.alt || 'Portfolio image';
+    enlarged.alt = image.alt || (currentLanguage === 'fi' ? 'Portfolio-kuva' : 'Portfolio image');
+    overlay.setAttribute('aria-label', currentLanguage === 'fi' ? 'Suurenna kuva' : 'Enlarge image');
     help.textContent = currentLanguage === 'fi'
       ? 'Sulje-painikkeella tai painamalla ESC'
       : 'Use the Close button or press ESC';
     closeButton.setAttribute('aria-label', currentLanguage === 'fi' ? 'Sulje suurennettu kuva' : 'Close enlarged image');
     rights.querySelector('.rights-copy-fi').hidden = currentLanguage !== 'fi';
     rights.querySelector('.rights-copy-en').hidden = currentLanguage !== 'en';
+    previousInertStates = Array.from(document.body.children)
+      .filter((element) => element !== overlay)
+      .map((element) => ({ element, wasInert: element.inert }));
+    previousInertStates.forEach(({ element }) => { element.inert = true; });
+    previousBodyOverflow = document.body.style.overflow;
     overlay.hidden = false;
     closeButton.focus();
     document.body.style.overflow = 'hidden';
@@ -220,7 +228,9 @@ if (oopBrowser) {
     if (overlay.hidden) return;
     overlay.hidden = true;
     enlarged.removeAttribute('src');
-    document.body.style.overflow = '';
+    previousInertStates.forEach(({ element, wasInert }) => { element.inert = wasInert; });
+    previousInertStates = [];
+    document.body.style.overflow = previousBodyOverflow;
     if (previousFocus && typeof previousFocus.focus === 'function') previousFocus.focus();
   }
 
@@ -229,7 +239,7 @@ if (oopBrowser) {
     image.tabIndex = 0;
     image.setAttribute('role', 'button');
     image.setAttribute('aria-haspopup', 'dialog');
-    image.setAttribute('aria-label', (image.alt || 'Portfolio image') + ' — enlarge image');
+    image.setAttribute('aria-label', `${image.alt || (currentLanguage === 'fi' ? 'Portfolio-kuva' : 'Portfolio image')} — ${currentLanguage === 'fi' ? 'suurenna kuva' : 'enlarge image'}`);
   });
 
   document.addEventListener('click', (event) => {
