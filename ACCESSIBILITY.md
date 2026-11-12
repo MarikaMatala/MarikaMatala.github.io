@@ -50,12 +50,14 @@ Validointi tarkistaa:
 3. Android gallery descriptions now have Finnish and English variants.
 4. PDF iframe titles now change with the selected language. The Remote Job Fit iframe title is also localized through the shared title handling.
 5. The standalone browser demo now has its own keyboard skip link; the validator recognizes both explicit `for` labels and controls nested inside a `<label>`.
+6. The image lightbox now uses a Finnish or English dialog name and localized image-trigger names. While it is open, the page content behind it is made inert and the previous inert states and body scrolling style are restored when it closes.
 
 1. Kahdella koodiesimerkkien valintakentällä oli kiinteä suomenkielinen `aria-label`, vaikka näkyvät label-tekstit vaihtuvat kielivalitsimella. Kiinteä ARIA-nimi ohitti käännetyn näkyvän tekstin. Valintakentät käyttävät nyt niihin liitettyjä näkyviä `<label for="...">`-elementtejä.
 2. Työnäytekuvilla on nyt suomen- ja englanninkieliset vaihtoehtoiset tekstit. Kielivalinta päivittää niiden `alt`-arvot.
 3. Android-kuvagallerian kuvauksista on suomen- ja englanninkieliset versiot.
 4. PDF-iframe-kehysten otsikot vaihtuvat valitun kielen mukaan. Myös Remote Job Fit -kehyksen otsikko päivitetään yhteisellä käsittelyllä.
 5. Erillisessä selain-demossa on nyt oma näppäimistöllä käytettävä ohituslinkki. Validointi tunnistaa sekä `for`-attribuutilla liitetyt label-elementit että label-elementin sisään sijoitetut kentät.
+6. Kuvan suurennusikkunan dialogin nimi ja kuvan avauspainikkeiden nimet vaihtuvat suomen ja englannin välillä. Ikkunan ollessa auki taustalla oleva sivusisältö asetetaan inert-tilaan. Suljettaessa aiemmat inert-tilat ja sivun vieritysasetukset palautetaan.
 
 ## Contrast spot-check and remaining work | Kontrastin pistetarkistus ja jäljellä oleva työ
 
@@ -86,14 +88,16 @@ Nykyinen `style.css` on noin 137 kt ja sisältää 11 erillistä `:root`-väripa
 - [ ] Focus order follows the visual and reading order.
 - [ ] Focus is clearly visible and not hidden behind sticky elements.
 - [ ] Mobile navigation opens, closes with Escape and returns focus to its trigger.
-- [ ] The image lightbox traps focus, closes with Escape and returns focus to the image.
+- [ ] The image lightbox keeps keyboard focus inside the dialog, closes with Escape and returns focus to the image.
+- [ ] While the lightbox is open, background content cannot receive keyboard focus or be operated; closing it restores the page.
 - [ ] No keyboard trap exists outside intentionally modal interactions.
 
 - [ ] Käy jokainen sivu läpi käyttäen vain Tab-, Shift+Tab-, Enter- ja välilyöntinäppäimiä sekä tarvittaessa nuolinäppäimiä.
 - [ ] Fokusjärjestys vastaa visuaalista ja lukujärjestystä.
 - [ ] Fokus näkyy selvästi eikä jää kiinnitettyjen elementtien taakse.
 - [ ] Mobiilinavigaatio avautuu, sulkeutuu Esc-näppäimellä ja palauttaa fokuksen avauspainikkeeseen.
-- [ ] Kuvan suurennus pitää fokuksen dialogissa, sulkeutuu Esc-näppäimellä ja palauttaa fokuksen alkuperäiseen kuvaan.
+- [ ] Kuvan suurennus pitää näppäimistöfokuksen dialogissa, sulkeutuu Esc-näppäimellä ja palauttaa fokuksen alkuperäiseen kuvaan.
+- [ ] Suurennusikkunan ollessa auki taustasisältöön ei voi siirtää näppäimistöfokusta eikä sitä voi käyttää; sulkeminen palauttaa sivun normaalin käytettävyyden.
 - [ ] Näppäimistöjumiutumista ei esiinny tarkoituksellisten modaalisten toimintojen ulkopuolella.
 
 ### Screen readers and language | Ruudunlukijat ja kieli
