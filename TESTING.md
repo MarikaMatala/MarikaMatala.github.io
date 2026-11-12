@@ -27,6 +27,11 @@ Confirm that the GitHub Actions **Site validation** workflow passes for the pull
 - [ ] The selected language remains active when navigating between pages.
 - [ ] The browser tab title changes with the selected language.
 
+## Manual test results | Manuaalisten testien tulokset
+
+- 12 November 2026: The mobile navigation's basic functions were tested on the user's own phone. No issues were noticed during the test.
+- 12.11.2026: Mobiilivalikon perustoiminnot testattiin omalla puhelimella. Testin aikana ei havaittu toimintaongelmia.
+
 ## Keyboard and accessibility | Näppäimistö ja saavutettavuus
 
 - [ ] The skip link appears when reached by keyboard and moves focus to the main content.
