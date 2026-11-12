@@ -5,9 +5,9 @@ Internal development checklist. This file is not linked from or displayed on the
 ## High priority
 - [ ] Review all Finnish and English pages for equivalent content, correct language and consistent terminology.
 - [ ] Verify that each project card describes the actual implementation and distinguishes study work from independent projects.
-- [ ] Review the IT Support & Service Desk Learning Lab work sample against its repository and completed exercise records.
+- [x] Review the IT Support & Service Desk Learning Lab work sample against its repository and completed exercise records.
 - [ ] Check navigation, project, social and external links.
-- [ ] Verify website status and last-updated information.
+- [x] Verify website status and last-updated information.
 - [ ] Run existing HTML, JavaScript, accessibility and link checks; document any gaps.
 
 ## Accessibility and responsive behaviour
@@ -18,7 +18,7 @@ Internal development checklist. This file is not linked from or displayed on the
 
 ## Content
 - [ ] Review About, Work Samples, Media & Communications and Contact pages for current information.
-- [ ] Ensure WIMMA Capstone is identified as study-related thesis work and independent projects are labelled accurately.
+- [x] Ensure WIMMA Capstone is identified as study-related thesis work and independent projects are labelled accurately.
 - [ ] Review screenshots, logos, image credits and third-party asset notices.
 - [ ] Ensure unfinished or removed features are not presented as available.
 - [ ] Keep the presentation balanced across ICT, media, visual design and communications.
@@ -33,4 +33,4 @@ Internal development checklist. This file is not linked from or displayed on the
 ## Maintenance
 - [ ] Check GitHub Pages deployment after meaningful changes.
 - [ ] Verify sitemap, robots.txt and 404 page.
-- [ ] Keep README structure and documentation links accurate.
+- [x] Keep README structure and documentation links accurate.
