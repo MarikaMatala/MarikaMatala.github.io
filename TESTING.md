@@ -36,8 +36,9 @@ Confirm that the GitHub Actions **Site validation** workflow passes for the pull
 - [ ] ARIA ID references such as `aria-controls`, `aria-labelledby` and `aria-describedby` point to existing elements.
 - [ ] Links, buttons, menus, galleries and interactive examples can be operated without a mouse.
 - [ ] Keyboard focus is always visible.
-- [ ] The image lightbox opens from a focused image, has a labelled close button and closes with Escape.
-- [ ] Focus returns to the original image after the lightbox closes.
+- [ ] The image lightbox opens from a focused image, has a localized dialog name and close-button label, and closes with Escape.
+- [ ] Tab and Shift+Tab keep focus inside the lightbox; background content is unavailable while it is open.
+- [ ] Focus returns to the original image and the page becomes usable after the lightbox closes.
 - [ ] The Android gallery responds to the left and right arrow keys.
 - [ ] The OOP example selector and previous/next buttons work with a keyboard.
 - [ ] Informative images have useful alternative text; decorative images use empty alternative text.
@@ -48,13 +49,14 @@ Confirm that the GitHub Actions **Site validation** workflow passes for the pull
 
 Check at representative viewport widths:
 
+- [ ] Narrow mobile: 320 px
 - [ ] Small mobile: 360–390 px
 - [ ] Large mobile: 430 px
 - [ ] Tablet: 768 px
 - [ ] Laptop: 1024–1280 px
 - [ ] Desktop: 1440 px and wider
 
-At each width, check for horizontal overflow, clipped text, overlapping controls, readable line lengths and usable touch targets. Repeat the mobile checks in both portrait and landscape orientation.
+At each width, check for horizontal overflow, clipped text, overlapping controls, readable line lengths and usable touch targets. Open and close the mobile navigation with touch and keyboard, and verify its expanded state and Escape behaviour. Repeat the mobile checks in both portrait and landscape orientation.
 
 ## Interactive content | Vuorovaikutteinen sisältö
 
