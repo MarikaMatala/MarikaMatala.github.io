@@ -1,6 +1,6 @@
 # Portfolio | Marika Matalamäki
 
-<!-- // Last reviewed: 2026-11-09 (Europe/Helsinki). -->
+<!-- // Last reviewed: 2026-11-12 (Europe/Helsinki). -->
 
 **Portfolio website:** https://marikamatala.github.io/
 
@@ -39,21 +39,25 @@ Kehitän portfoliotani jatkuvasti ja lisään verkkosivulle valikoituja projekte
 
 - `index.html` — homepage and short introduction, in Finnish and English
 - `minusta.html` — education, background and self-assessed skills
-- `tyonaytteet.html` — project descriptions, image galleries, interactive C# examples and inline PDF previews
-- `remote-job-fit-demo.html` — accessible status page explaining that a hosted Remote Job Fit demo is not currently available; `remote-job-fit-demo.css`, `remote-job-fit-demo.js` and `remote-job-fit-vocabulary.js` are retained prototype source files, not a currently published interactive demo
-- `remote-job-fit/` — optional configuration and backend reference files; the full application is maintained in the separate Remote Job Fit repository
-- `.gitignore` — excludes local `.env` files, credentials, dependency folders and local development output
-- `THIRD-PARTY-NOTICES.md` — source and licence register for third-party data and libraries considered for Remote Job Fit
-- `backend-code-examples.md` — five reviewed backend code examples covering Mongoose, REST API CRUD, session authentication and automated testing
-- `yhteystiedot.html` — email, LinkedIn, GitHub and job availability
-- `tietosuoja.html` — bilingual privacy, analytics, local-storage and cookie notice
-- `tekijanoikeudet.html` — bilingual copyright and permitted-use information
-- `legal-pages.css` — responsive styling for the legal information pages
-- `style.css` — responsive layout and shared component styles
-- `autumn-cottagecore.css` — autumn colors, readable typography, cottagecore-inspired details and accessibility refinements
-- `script.js` — persistent language toggle, Android image carousel and interactive OOP examples
-- `images/` — image assets, the `Sana-Vapaa-tapahtumajuliste.pdf` event poster and the audiovisual communications portfolio PDF
-- `scripts/validate_site.py` and `.github/workflows/site-validation.yml` — automated checks for missing local references, duplicate HTML IDs and broken same-site HTML anchors
+- `tyonaytteet.html` — work-sample categories and project overview
+- `koodaustyot.html` — software development, web projects and IT support work samples
+- `media-ja-viestinta.html` — media production, visual design, WIMMA Capstone and communications work
+- `yhteystiedot.html` — contact details and professional links
+- `tietosuoja-ja-tekijanoikeudet.html` — bilingual privacy, analytics, copyright and permitted-use information
+- `404.html` — custom GitHub Pages not-found page
+- `The-Cultured-Vault-demo.html`, `The-Cultured-Vault-demo.css` and `The-Cultured-Vault-demo.js` — retained standalone browser-demo files for The Cultured Vault
+- `remote-job-fit-demo.html`, `remote-job-fit-demo.css`, `remote-job-fit-demo.js` and `remote-job-fit-vocabulary.js` — retained Remote Job Fit prototype and status-page source files; no hosted interactive browser demo is currently available
+- `remote-job-fit/` — optional configuration and backend reference files for the separate Remote Job Fit project
+- `README.md` and `TODO.md` — repository overview and internal development checklist; TODO is not displayed on the published website
+- `DEVELOPMENT.md`, `TESTING.md`, `ACCESSIBILITY.md` and `SECURITY.md` — development, QA, accessibility and security documentation
+- `THIRD-PARTY-NOTICES.md` and `UI-LIBRARIES.md` — third-party source/licence notes and possible future UI library references
+- `backend-code-examples.md` — reviewed backend code examples
+- `style.css`, `autumn-cottagecore.css`, `gothic-effects.css`, `gothic-redesign.css` and `legal-pages.css` — layout, visual theme and legal-page styles
+- `script.js`, `gothic-enhancements.js` and `contact-filter.js` — shared language, interface and filtering behaviour
+- `images/` — image assets, PDF work samples and visual materials
+- `scripts/validate_site.py` and `.github/workflows/site-validation.yml` — automated local-reference, duplicate-ID and HTML accessibility-baseline checks
+- `sitemap.xml` and `robots.txt` — search-engine discovery files
+- `.gitignore` — excludes local development files, credentials and dependency folders
 
 ## Development and local preview
 
