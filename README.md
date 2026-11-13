@@ -1,6 +1,6 @@
 # Portfolio | Marika Matalamäki
 
-<!-- // Last reviewed: 2026-11-12 (Europe/Helsinki). -->
+<!-- // Last reviewed: 2026-11-13 (Europe/Helsinki). -->
 
 **Portfolio website:** https://marikamatala.github.io/
 
@@ -31,9 +31,9 @@ Kehitän portfoliotani jatkuvasti ja lisään verkkosivulle valikoituja projekte
 
 ---
 
-**Website status:** This portfolio is still a work in progress. Its content, translations and work samples are being updated. The latest update is shown at the top of the published website.
+**Website status:** This portfolio is continuously being developed and updated. More work samples, content and improvements will be added as development continues. The latest update is shown at the top of the published website.
 
-**Sivuston tila:** Portfolio on edelleen työn alla. Sen sisältöä, kieliversioita ja työnäytteitä päivitetään. Viimeisimmän päivityksen ajankohta näkyy julkaistun sivuston yläosassa.
+**Sivuston tila:** Portfoliota kehitetään ja päivitetään jatkuvasti. Lisää työnäytteitä, sisältöä ja parannuksia julkaistaan työn edetessä. Viimeisimmän päivityksen ajankohta näkyy julkaistun sivuston yläosassa.
 
 ## Repository structure
 
