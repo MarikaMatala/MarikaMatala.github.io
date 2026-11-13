@@ -86,7 +86,7 @@ At each width, check for horizontal overflow, clipped text, overlapping controls
 
 - [ ] Each public page has a unique title and meta description.
 - [ ] Canonical URLs point to the matching public page.
-- [ ] Open Graph and Twitter/X preview metadata are present.
+- [ ] Open Graph preview metadata is present.
 - [ ] `sitemap.xml` lists the four public portfolio pages.
 - [ ] `robots.txt` points to the sitemap.
 - [ ] The custom 404 page provides working links back to the site.
