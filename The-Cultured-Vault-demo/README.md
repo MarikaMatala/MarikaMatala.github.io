@@ -1,6 +1,6 @@
 # The Cultured Vault — browser demo
 
-<!-- Last reviewed: 2026-11-09. -->
+<!-- Last reviewed: 2026-11-16. -->
 
 > Culture worth discovering. Stories worth remembering.
 
@@ -23,7 +23,7 @@ The Cultured Vault is a static cultural-catalogue prototype for exploring films,
 - A local-only form for suggesting works.
 - English-only interface.
 - Responsive dark interface with bronze, silver and gold accents.
-- A web app manifest and service worker for app-shell metadata and basic same-origin caching.
+- A web app manifest and a service worker with a demo-directory-limited scope, same-scope GET caching and an offline fallback for navigation requests.
 
 ## External lookup and data policy
 
@@ -60,7 +60,7 @@ Main files:
 - `app.js` — catalogue data, filtering, navigation, local suggestions and local ratings.
 - `styles.css` — responsive layout and visual theme.
 - `sources.html` — current source and licence register.
-- `sw.js` — service worker and app-shell cache.
+- `sw.js` — service worker and scoped app-shell cache.
 - `manifest.webmanifest` — web app metadata and icons.
 - `LICENSE` — MIT licence for original project-authored HTML, CSS and JavaScript source code only; excludes catalogue records, documentation, icons, the manifest and third-party material.
 
