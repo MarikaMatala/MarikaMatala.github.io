@@ -17,6 +17,9 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 FORM_CONTROLS = {"input", "select", "textarea"}
 IDREF_ATTRIBUTES = {"aria-labelledby", "aria-describedby", "aria-controls", "aria-owns", "aria-activedescendant"}
+EXCLUDED_HTML_DIRECTORIES = {
+    ".git", ".github", "build", "coverage", "dist", "node_modules", "tests", "vendor"
+}
 
 
 class SiteParser(HTMLParser):
@@ -91,8 +94,20 @@ class SiteParser(HTMLParser):
                 self.unnamed_buttons.append(attrs.get("id", "(button without id)"))
 
 
+# FUNCTION SECTION START: discover_html_pages.
+def discover_html_pages(root=ROOT):
+    """Return public HTML pages recursively, excluding tooling and dependency folders."""
+    root = Path(root)
+    return sorted(
+        page for page in root.rglob("*.html")
+        if not any(
+            part in EXCLUDED_HTML_DIRECTORIES or part.startswith(".")
+            for part in page.relative_to(root).parts[:-1]
+        )
+    )
+
+
 # FUNCTION SECTION START: resolve_local_reference.
-# CLASS SECTION END: SiteParser. The next section starts at the next definition or at the end of the file.
 def resolve_local_reference(source, value):
     parsed = urlsplit(value)
     if parsed.scheme or parsed.netloc:
@@ -105,7 +120,6 @@ def resolve_local_reference(source, value):
 
 
 # FUNCTION SECTION START: audit_page.
-# FUNCTION SECTION END: resolve_local_reference. The next section starts at the next definition or at the end of the file.
 def audit_page(page, parser):
     errors = []
     relative = page.relative_to(ROOT)
@@ -145,9 +159,8 @@ def audit_page(page, parser):
 
 
 # FUNCTION SECTION START: main.
-# FUNCTION SECTION END: audit_page. The next section starts at the next definition or at the end of the file.
 def main():
-    pages = sorted(ROOT.glob("*.html"))
+    pages = discover_html_pages()
     if not pages:
         print("No HTML pages found.")
         return 1
