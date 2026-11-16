@@ -39,7 +39,7 @@
     return value
       .toLocaleLowerCase()
       .normalize('NFKD')
-      .replace(/[\u0300-\\u036f]/g, '')
+      .replace(/[\u0300-\u036f]/g, '')
       .replace(/[0]/g, 'o')
       .replace(/[1!|]/g, 'i')
       .replace(/[3]/g, 'e')
