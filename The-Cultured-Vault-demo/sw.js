@@ -1,12 +1,14 @@
 // CODE MAP / COMMENTING GUIDE
-// File purpose: Cultured Vault demo service worker: static asset caching and basic offline functionality.
-// Read from top to bottom: settings and helper functions first, followed by tests or checks.
+// File purpose: Cultured Vault demo service worker: scoped static asset caching and basic offline navigation.
+// Read from top to bottom: settings and helper functions first, followed by install, activate and fetch handlers.
 
 /* THE CULTURED VAULT SERVICE WORKER
-   Caches the static app shell for basic offline use. app.js registers this
-   worker with a scope limited to this demo directory. Increment CACHE_NAME
-   when the cached asset list changes or a fresh cache is required. */
-const CACHE_NAME = "cultured-vault-pwa-v26";
+   Caches this demo's app shell and same-scope GET requests only.
+   The worker scope is limited to the The-Cultured-Vault-demo directory.
+   Increment CACHE_NAME when the cached asset list or cache strategy changes. */
+const CACHE_NAME = "cultured-vault-pwa-v27";
+const SCOPE_URL = new URL(self.registration.scope);
+
 // Keep this list in sync with the files referenced by index.html and the manifest.
 const APP_SHELL = [
   "./",
@@ -20,23 +22,65 @@ const APP_SHELL = [
   "./icons/vault-maskable.svg",
   "./icons/apple-touch-icon.png"
 ];
+
+// FUNCTION SECTION START: isInWorkerScope.
+function isInWorkerScope(url) {
+  return url.origin === SCOPE_URL.origin && url.pathname.startsWith(SCOPE_URL.pathname);
+}
+
 // Install: cache the app shell before the worker takes control.
 self.addEventListener("install", event => {
-  event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL)).then(() => self.skipWaiting()));
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(cache => cache.addAll(APP_SHELL))
+      .then(() => self.skipWaiting())
+  );
 });
+
 // Activate: delete older caches belonging to this demo, then claim its clients.
 self.addEventListener("activate", event => {
-  event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key.startsWith("cultured-vault-pwa-") && key !== CACHE_NAME).map(key => caches.delete(key)))).then(() => self.clients.claim()));
+  event.waitUntil(
+    caches.keys()
+      .then(keys => Promise.all(
+        keys
+          .filter(key => key.startsWith("cultured-vault-pwa-") && key !== CACHE_NAME)
+          .map(key => caches.delete(key))
+      ))
+      .then(() => self.clients.claim())
+  );
 });
-// Fetch: use cached same-origin GET responses first; leave other requests alone.
+
+// Fetch: handle only same-origin GET requests inside this worker's own scope.
 self.addEventListener("fetch", event => {
   const request = event.request;
-  if (request.method !== "GET" || new URL(request.url).origin !== self.location.origin) return;
-  event.respondWith(caches.match(request).then(cached => cached || fetch(request).then(response => {
-    if (response.ok && response.type === "basic") {
-      const copy = response.clone();
-      caches.open(CACHE_NAME).then(cache => cache.put(request, copy));
+  const requestUrl = new URL(request.url);
+
+  if (request.method !== "GET" || !isInWorkerScope(requestUrl)) return;
+
+  event.respondWith((async () => {
+    const cache = await caches.open(CACHE_NAME);
+    const cachedResponse = await cache.match(request);
+
+    if (cachedResponse) return cachedResponse;
+
+    try {
+      const response = await fetch(request);
+
+      if (response.ok && response.type === "basic") {
+        await cache.put(request, response.clone());
+      }
+
+      return response;
+    } catch (error) {
+      // The app shell is a navigation fallback, not a substitute for failed assets.
+      if (request.mode === "navigate") {
+        const fallbackUrl = new URL("./index.html", SCOPE_URL);
+        const fallbackResponse = await cache.match(fallbackUrl.href);
+
+        if (fallbackResponse) return fallbackResponse;
+      }
+
+      throw error;
     }
-    return response;
-  }).catch(() => caches.match("./index.html"))));
+  })());
 });

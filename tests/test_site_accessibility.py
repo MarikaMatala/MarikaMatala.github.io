@@ -2,8 +2,10 @@
 # File purpose: Portfoliosivuston saavutettavuuden ja HTML-rakenteen automaattiset testit.
 # Read from top to bottom: settings and helper functions come first, followed by tests or checks.
 
+import tempfile
 import unittest
-from scripts.validate_site import ROOT, SiteParser, audit_page
+from pathlib import Path
+from scripts.validate_site import ROOT, SiteParser, audit_page, discover_html_pages
 
 
 class AccessibilityValidatorTests(unittest.TestCase):
@@ -36,7 +38,7 @@ class AccessibilityValidatorTests(unittest.TestCase):
             '</main></body></html>'
         )
         errors = audit_page(ROOT / "fixture.html", parser)
-        joined = "\\n".join(errors)
+        joined = "\n".join(errors)
         for expected in (
             "lang attribute", "heading level jumps", "button has no accessible name",
             "has no programmatic label", "image is missing alt text",
@@ -62,6 +64,28 @@ class AccessibilityValidatorTests(unittest.TestCase):
             '</main></body></html>'
         )
         self.assertEqual(audit_page(ROOT / "fixture.html", parser), [])
+
+    def test_html_page_discovery_includes_public_subdirectories(self):
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory)
+            expected = sorted([
+                root / "index.html",
+                root / "The-Cultured-Vault-demo" / "index.html",
+            ])
+            for page in expected:
+                page.parent.mkdir(parents=True, exist_ok=True)
+                page.write_text("<html></html>", encoding="utf-8")
+
+            excluded = [
+                root / ".github" / "example.html",
+                root / "node_modules" / "package" / "example.html",
+                root / "tests" / "fixture.html",
+            ]
+            for page in excluded:
+                page.parent.mkdir(parents=True, exist_ok=True)
+                page.write_text("<html></html>", encoding="utf-8")
+
+            self.assertEqual(discover_html_pages(root), expected)
 
 
 if __name__ == "__main__":
