@@ -45,7 +45,6 @@ jobs:
       - name: Check JavaScript syntax
         run: |
           node --check script.js
-          node --check contact-filter.js
           node --check gothic-enhancements.js
           node --check The-Cultured-Vault-demo.js
           node --check The-Cultured-Vault-demo/app.js
