@@ -22,8 +22,50 @@
   ];
   const abusivePhrases = [
     'kill all','go kill yourself','you should die','i will kill you',
+    'i know where you live','i will find you','you will pay for this',
     'heil hitler','white power','white supremac','racial supremac',
-    'tapa itsesi','kuole pois','toivon että kuolet','painu vittuun'
+    'go back to your country','you do not belong here',
+    'tapa itsesi','kuole pois','toivon että kuolet','painu vittuun',
+    'tiedän missä asut','löydän sinut','saat vielä maksaa tästä',
+    'painu takaisin omaan maahasi'
+  ];
+
+  // Common scam and unsolicited advertising phrases in Finnish and English.
+  // Specific phrases are used to reduce the risk of blocking normal messages.
+  const spamPhrases = [
+    'verify your account now',
+    'confirm your password',
+    'your account has been suspended',
+    'claim your prize now',
+    'you have won a prize',
+    'you are our lucky winner',
+    'send your bank details',
+    'send us your password',
+    'pay the processing fee',
+    'pay an upfront fee',
+    'guaranteed investment returns',
+    'double your money today',
+    'earn money fast with no experience',
+    'work from home and earn thousands',
+    'limited time crypto investment',
+    'tarkista tilisi välittömästi',
+    'vahvista salasanasi',
+    'tilisi on suljettu',
+    'tilisi on jäädytetty',
+    'olet voittanut palkinnon',
+    'lunasta palkintosi heti',
+    'lähetä pankkitietosi',
+    'lähetä meille salasanasi',
+    'maksa käsittelymaksu',
+    'maksa ennakkomaksu',
+    'taattu sijoitustuotto',
+    'tuplaa rahasi tänään',
+    'ansaitse nopeasti rahaa ilman kokemusta',
+    'tienaa tuhansia kotoa käsin',
+    'rajoitetun ajan kryptosijoitus',
+    'osta seuraajia ja tykkäyksiä',
+    'tarjoamme hakukoneoptimointipalveluita',
+    'myymme laadukkaita linkkejä verkkosivustollesi'
   ];
 
   const normalize = (value) => value.toLocaleLowerCase()
@@ -34,8 +76,19 @@
 
   function containsBlockedContent(value) {
     const normalized = ' ' + normalize(value) + ' ';
-    return blockedTerms.some((term) => normalized.includes(' ' + normalize(term) + ' ')) ||
-      abusivePhrases.some((phrase) => normalized.includes(normalize(phrase)));
+    const containsBlockedTerm = blockedTerms.some((term) => {
+      return normalized.includes(' ' + normalize(term) + ' ');
+    });
+
+    const containsAbusivePhrase = abusivePhrases.some((phrase) => {
+      return normalized.includes(normalize(phrase));
+    });
+
+    const containsSpamPhrase = spamPhrases.some((phrase) => {
+      return normalized.includes(normalize(phrase));
+    });
+
+    return containsBlockedTerm || containsAbusivePhrase || containsSpamPhrase;
   }
 
   form.addEventListener('submit', (event) => {
