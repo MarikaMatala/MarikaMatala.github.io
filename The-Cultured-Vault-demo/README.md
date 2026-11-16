@@ -20,6 +20,7 @@ The Cultured Vault is a static cultural-catalogue prototype for exploring films,
 - Pagination at 36 catalogue entries per page.
 - External lookup links on each work: IMDb search and a Google search restricted to Rotten Tomatoes pages. Book entries also link to Open Library search.
 - Personal demo ratings and optional comments, stored in the visitor's current browser.
+- Catalogue-card rating labels use placeholder test text (`Test test · test numbers`), not real owner ratings or visitor reviews.
 - A local-only form for suggesting works.
 - English-only interface.
 - Responsive dark interface with bronze, silver and gold accents.
@@ -37,7 +38,7 @@ See [Sources and licences](sources.html) for the current list of services and th
 
 ## Visitor data and privacy
 
-The suggestion and rating forms are local browser demonstrations:
+The suggestion and rating forms are local browser demonstrations. Catalogue-card rating text is a placeholder only, not a real score or review. No project-owner ratings or visitor reviews are published:
 
 - Suggestions, ratings and optional comments are stored in the visitor's own browser using `localStorage`.
 - Entries are not sent to the maintainer, shared with other visitors or added to the public catalogue.
