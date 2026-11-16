@@ -60,19 +60,14 @@ test("the demo contains 1,000 uniquely identified catalogue works", () => {
   assert.equal(new Set(allIds).size, allIds.length, "catalogue IDs must be unique");
 });
 
-test("additional sample entries do not carry pre-filled owner ratings", () => {
+test("catalogue records contain no project-owner ratings or reviews", () => {
   const additionalWorks = readAdditionalWorks();
 
   assert.equal(additionalWorks.length, 100);
   assert.ok(additionalWorks.every((entry) => entry.length === 7));
-  assert.match(
-    appSource,
-    /works\.push\(\.\.\.additionalWorks\.map\(\(\[id,title,creator,type,year,genres,country\]\) => \(\{\s*id,title,creator,type,year,genres,country,owner:0,ownerReview:""/
-  );
-  assert.match(
-    appSource,
-    /works\.forEach\(work => \{ work\.owner = 0; work\.ownerReview = ""; \}\);/
-  );
+  assert.doesNotMatch(appSource, /ownerReview|ownerScore|notRated|owner:\s*(?:0|null)/);
+  assert.match(appSource, /Test test · test numbers/);
+  assert.match(appSource, /Placeholder test data, not a real rating/);
 });
 
 test("the visible catalogue count and English documentation agree with the dataset", () => {

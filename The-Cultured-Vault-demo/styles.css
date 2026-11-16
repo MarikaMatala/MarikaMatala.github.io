@@ -73,13 +73,10 @@ select,input,textarea{background:#151310;color:var(--text);border:1px solid var(
 .review-toggle:hover{border-color:var(--bronze);color:var(--bronze-light)}
 .review-order{display:grid;grid-template-columns:1.2fr 1fr;gap:14px}
 .review-card{padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
-.owner-review{border-color:#8a663c;background:linear-gradient(145deg,rgba(82,59,32,.5),var(--panel))}
 .community-review{border-color:#687078}
 .review-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
 .review-label{font-size:.68rem;font-weight:900;letter-spacing:.1em;color:var(--bronze-light)}
 .community-review .review-label{color:var(--silver)}
-.review-top strong{font:700 1.5rem Georgia,serif;color:var(--gold);white-space:nowrap}
-.review-top strong span{font:400 .75rem Arial,sans-serif;color:var(--muted)}
 .review-card h3{font-size:1.25rem;margin:16px 0 8px}
 .review-card p{color:var(--muted);font-size:.9rem}
 .review-signature{color:var(--bronze-light);font-size:.76rem}
@@ -288,3 +285,7 @@ select,input,textarea{background:#151310;color:var(--text);border:1px solid var(
 @media(max-width:600px){.contact-grid{grid-template-columns:1fr}.contact-panel{padding:18px}.contact-actions{flex-direction:column;align-items:flex-start}}
 
 /* END OF STYLESHEET. */
+
+/* Explicit placeholder label; never present demo text as a real rating. */
+.rating-placeholder{color:var(--muted);font-size:.82rem;font-style:italic}
+.test-data-notice{margin:12px 0;padding:12px 16px;border-left:3px solid var(--bronze);background:rgba(193,139,85,.08);color:var(--muted);font-size:.88rem}
