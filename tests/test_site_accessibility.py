@@ -68,10 +68,10 @@ class AccessibilityValidatorTests(unittest.TestCase):
     def test_html_page_discovery_includes_public_subdirectories(self):
         with tempfile.TemporaryDirectory() as temporary_directory:
             root = Path(temporary_directory)
-            expected = [
+            expected = sorted([
                 root / "index.html",
                 root / "The-Cultured-Vault-demo" / "index.html",
-            ]
+            ])
             for page in expected:
                 page.parent.mkdir(parents=True, exist_ok=True)
                 page.write_text("<html></html>", encoding="utf-8")
