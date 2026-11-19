@@ -739,3 +739,48 @@ button.button, a.button {
   outline:3px solid var(--journal-blue-dark)!important;
   outline-offset:5px!important;
 }
+
+
+/* MOBILE READABILITY — keep large headings inside narrow screens. */
+h1,h2,h3,h4,
+.hero-copy h1,.work-page-intro h1,.contact-page h1,
+.section-heading h2,.home-about-copy h2,.home-work-cta-section h2,
+.contact-section h2 {
+  max-width:100%;
+  overflow-wrap:anywhere;
+  word-break:normal;
+}
+@media(max-width:600px) {
+  h1,.hero-copy h1,.work-page-intro h1,.contact-page h1 {
+    max-width:100%!important;
+    font-size:clamp(1.8rem,8vw,2.7rem)!important;
+    line-height:1.12!important;
+    letter-spacing:-.035em!important;
+    overflow-wrap:anywhere;
+  }
+  h2,.section-heading h2,.home-about-copy h2,
+  .home-work-cta-section h2,.contact-section h2 {
+    max-width:100%!important;
+    font-size:clamp(1.5rem,6.5vw,2.15rem)!important;
+    line-height:1.16!important;
+    letter-spacing:-.025em!important;
+    overflow-wrap:anywhere;
+  }
+  h3 {font-size:clamp(1.12rem,4.8vw,1.55rem)!important;line-height:1.25!important;overflow-wrap:anywhere}
+  h1 em,h2 em,h3 em {overflow-wrap:anywhere}
+  .home-work-categories,.work-page-actions,.about-page-cta {
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .home-work-categories > a,.work-page-actions > a,.about-page-cta > a {
+    margin:0!important;
+    max-width:100%;
+    white-space:normal;
+  }
+  .contact-support .gothic-button + .gothic-button {margin-top:12px!important}
+  .gothic-button,.home-work-cta,.contact-method-primary a,.error-actions a,.button,
+  .gothic-button :is(span,strong),.home-work-cta :is(span,strong),
+  .contact-method-primary a :is(span,strong),.error-actions a :is(span,strong),
+  .button :is(span,strong) {color:#FFFFFF!important}
+}
