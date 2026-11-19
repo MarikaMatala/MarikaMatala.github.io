@@ -1,10 +1,10 @@
 /* BULLET JOURNAL PORTFOLIO — experimental visual theme */
 :root {
   color-scheme: light;
-  --journal-paper:#F7F4EF; --journal-card:#FFFCF7; --journal-ink:#34313D;
-  --journal-muted:#625E68; --journal-lavender:#B7A6D9; --journal-lavender-dark:#65527F;
-  --journal-blue:#A9C2D8; --journal-blue-dark:#38566F; --journal-pink:#DDA9B8;
-  --journal-pink-dark:#784657; --journal-peach:#E8B8A5; --journal-line:#DED8D2;
+  --journal-paper:#F7F5F0; --journal-card:#FFFEFA; --journal-ink:#37343F;
+  --journal-muted:#625F69; --journal-lavender:#B9AED0; --journal-lavender-dark:#695B80;
+  --journal-blue:#8FAFC2; --journal-blue-dark:#344F63; --journal-pink:#D9AEB9;
+  --journal-pink-dark:#754D5B; --journal-peach:#E9BEAC; --journal-line:#E0DBD5;
   --journal-shadow:rgba(52,49,61,.10);
   --ed-paper:var(--journal-paper); --ed-paper-light:var(--journal-card);
   --ed-ink:var(--journal-ink); --ed-muted:var(--journal-muted);
@@ -57,3 +57,465 @@ a:not(.gothic-button):not(.home-work-cta):not(.site-wordmark):hover{color:var(--
 ::selection{color:var(--journal-ink);background:#E7DDF4}
 @media(max-width:760px){body{background-attachment:scroll}.site-wordmark{width:42px;height:42px;flex-basis:42px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+
+/* Global clean-up: keep the journal paper, remove legacy theme decoration. */
+body, main, .section-wrap, .page-shell, .hero, .visual-interlude,
+.contact-page, .about-page, .work-page-intro, .site-footer {
+  color:var(--journal-ink)!important;
+  background-color:var(--journal-paper)!important;
+  background-image:none!important;
+}
+body {
+  background-image:repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 31px,
+    rgba(169,194,216,.16) 31px,
+    rgba(169,194,216,.16) 32px
+  )!important;
+}
+.site-header, .site-footer, .copyright-bar,
+.project-card, .project-featured, .project-panel, .work-category-card,
+.work-browse-note, .skills-card, .skills-overview, .contact-method,
+.contact-support, .contact-page-grid article, .legal-section,
+.sample-card, .sample-explanation, .code-sample, .project-note,
+.about-work-callout, .home-about-teaser, .home-project-card,
+.creative-sample, .creative-samples-grid .creative-sample,
+.error-card, .notice, .info-ribbon {
+  color:var(--journal-ink)!important;
+  background-color:var(--journal-card)!important;
+  background-image:none!important;
+  border-color:var(--journal-line)!important;
+}
+.work-section, .work-category-card, .work-browse-note,
+.security-notice, .contact-support {
+  background-image:none!important;
+}
+h1,h2,h3,h4,strong,.project-card h2,.project-card h3,
+.work-category-card h2,.work-category-card h3,
+.site-footer .wordmark-name,.site-footer .wordmark-subtitle {
+  color:var(--journal-ink)!important;
+  text-shadow:none!important;
+}
+p,li,small,.project-card p,.work-category-card p,
+.work-browse-note p,.site-footer p,.copyright-bar p,
+.contact-support p,.project-note,.sample-explanation {
+  color:var(--journal-muted)!important;
+}
+a:not(.gothic-button):not(.home-work-cta):not(.site-wordmark) {
+  color:var(--journal-blue-dark)!important;
+  text-shadow:none!important;
+}
+a:not(.gothic-button):not(.home-work-cta):not(.site-wordmark):hover,
+a:not(.gothic-button):not(.home-work-cta):not(.site-wordmark):focus-visible {
+  color:var(--journal-lavender-dark)!important;
+}
+button,.button,.gothic-button,.home-work-cta,.contact-method-primary a,
+.error-actions a,.contact-page-actions a {
+  color:#fff!important;
+  background:var(--journal-lavender-dark)!important;
+  border-color:var(--journal-lavender-dark)!important;
+}
+.home-project-card strong,.home-project-type,.home-project-description,
+.home-project-link,.home-project-icon,.home-project-icon svg {
+  color:var(--journal-ink)!important;
+}
+.home-project-card strong,.home-project-type,.project-meta {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  width:100%;
+  padding:0;
+  background:transparent;
+  border:0;
+  box-shadow:none;
+  transform:none;
+}
+.project-meta span {
+  display:inline-block;
+  max-width:100%;
+  padding:4px 7px;
+  background:#F0EAF8;
+  border:1px solid var(--journal-lavender);
+  border-radius:3px 7px 4px 6px;
+}
+.home-project-link {
+  color:var(--journal-lavender-dark)!important;
+}
+.home-project-icon {
+  background:var(--journal-blue)!important;
+  border-color:var(--journal-blue-dark)!important;
+}
+.home-project-icon svg {stroke:var(--journal-blue-dark)!important}
+.site-footer {
+  border-top:1px solid var(--journal-line)!important;
+  box-shadow:none!important;
+}
+.site-footer::before,.site-footer::after,
+body::before,body::after,
+main::before,main::after,
+.hero::before,.hero::after,
+.visual-interlude::before,.visual-interlude::after,
+.site-header::before,.site-header::after,
+.project-card::before,.project-card::after,
+.site-footer .metal-rose-mark,.site-footer .metal-rose-sigil,
+.metal-rose-mark,.metal-rose-sigil,
+.gothic-mandala,.gothic-mist,
+.vinyl-record,.vinyl-label,
+.code-rain,.code-rain canvas,.matrix-rain,
+.floating-code,.floating-orb,.decorative-circle,
+.background-orb,.background-circle,.ornament,
+.orbit-decoration,.ambient-decoration {
+  display:none!important;
+  content:none!important;
+  background-image:none!important;
+  animation:none!important;
+  box-shadow:none!important;
+}
+
+/* Keep code examples readable within the light notebook palette. */
+.code-sample pre,.code-sample pre[class*="language-"],
+pre[class*="language-"] {
+  color:var(--journal-ink)!important;
+  background:#F0EDF4!important;
+  text-shadow:none!important;
+}
+.code-sample code,.code-sample code[class*="language-"],
+code[class*="language-"] {
+  color:var(--journal-ink)!important;
+  background:transparent!important;
+  text-shadow:none!important;
+}
+.token.comment,.token.prolog,.token.doctype,.token.cdata {color:#77717F!important}
+.token.punctuation,.token.operator {color:#514B59!important}
+.token.property,.token.tag,.token.boolean,.token.number,.token.constant,
+.token.symbol,.token.deleted {color:#8A5267!important}
+.token.selector,.token.attr-name,.token.string,.token.char,.token.builtin,
+.token.inserted {color:#466D60!important}
+.token.keyword,.token.atrule,.token.attr-value {color:#65527F!important}
+
+
+/* BULLET EXPERIMENT — layered paper stickers and playful notebook details. */
+:root {
+  --journal-sticker-shadow: 2px 4px 0 rgba(55,52,63,.16), 0 7px 14px rgba(55,52,63,.08);
+}
+
+/* Small paper accents: intentionally varied rather than repeated everywhere. */
+.hero-copy {
+  position:relative;
+}
+.hero-copy::before {
+  content:"✦";
+  position:absolute;
+  top:-2.1rem;
+  right:4%;
+  display:grid;
+  place-items:center;
+  width:2.35rem;
+  height:2.35rem;
+  color:var(--journal-pink-dark);
+  background:var(--journal-pink);
+  border:1px solid var(--journal-pink-dark);
+  clip-path:polygon(50% 0,61% 34%,96% 18%,76% 50%,100% 75%,64% 70%,50% 100%,37% 69%,0 78%,24% 50%,5% 20%,40% 34%);
+  filter:drop-shadow(2px 3px 0 rgba(55,52,63,.16));
+  transform:rotate(11deg);
+  pointer-events:none;
+}
+.hero-index {
+  display:inline-grid;
+  place-items:center;
+  gap:2px;
+  min-width:76px;
+  min-height:76px;
+  padding:10px;
+  color:var(--journal-ink)!important;
+  background:var(--journal-peach)!important;
+  border:1px solid var(--journal-pink-dark);
+  box-shadow:var(--journal-sticker-shadow);
+  clip-path:polygon(7% 0,94% 5%,100% 88%,87% 100%,0 91%);
+  transform:rotate(7deg);
+  text-align:center;
+  text-decoration:none!important;
+  transition:transform .18s ease,filter .18s ease;
+}
+.hero-index:hover {
+  transform:rotate(2deg) translateY(-3px);
+  filter:brightness(1.02);
+}
+.hero-index .portfolio-word {
+  font-size:.62rem;
+  font-weight:800;
+  letter-spacing:.08em;
+}
+.hero-index .portfolio-year {
+  font-size:1.05rem;
+  font-weight:800;
+}
+
+/* Tags become little cut-paper labels, with restrained alternating angles. */
+.hero-tags span,.skill-list span,.about-tags span {
+  display:inline-flex;
+  align-items:center;
+  min-height:30px;
+  padding:6px 11px!important;
+  color:var(--journal-ink)!important;
+  background:var(--journal-card)!important;
+  border:1px solid var(--journal-line)!important;
+  border-radius:4px 8px 5px 7px!important;
+  box-shadow:1px 2px 0 rgba(55,52,63,.10);
+  transform:rotate(-1deg);
+}
+.hero-tags span:nth-child(3n+2),.skill-list span:nth-child(3n+2),.about-tags span:nth-child(3n+2) {
+  background:#F0EAF8!important;
+  border-color:var(--journal-lavender)!important;
+  transform:rotate(1.4deg);
+}
+.hero-tags span:nth-child(3n),.skill-list span:nth-child(3n),.about-tags span:nth-child(3n) {
+  background:#EDF3F6!important;
+  border-color:var(--journal-blue)!important;
+  transform:rotate(-.5deg);
+}
+
+/* A few lifted labels and paper tabs add depth without obscuring content. */
+.portrait-caption {
+  padding:7px 12px;
+  color:var(--journal-ink)!important;
+  background:var(--journal-card);
+  border:1px solid var(--journal-pink);
+  box-shadow:var(--journal-sticker-shadow);
+  transform:rotate(-4deg);
+}
+.home-about-emblem {
+  position:relative;
+  display:grid;
+  place-items:center;
+  width:clamp(88px,12vw,132px);
+  aspect-ratio:1;
+  color:var(--journal-lavender-dark);
+  background:#F0EAF8;
+  border:1px solid var(--journal-lavender-dark);
+  border-radius:8px 18px 7px 15px;
+  box-shadow:var(--journal-sticker-shadow);
+  transform:rotate(-6deg);
+}
+.home-about-emblem::after {
+  content:"";
+  position:absolute;
+  top:-8px;
+  right:10px;
+  width:38px;
+  height:13px;
+  background:rgba(233,190,172,.78);
+  border:1px solid rgba(117,77,91,.22);
+  transform:rotate(12deg);
+}
+.home-about-emblem span:last-child {
+  font-weight:800;
+  letter-spacing:-.08em;
+}
+
+/* Selected cards and navigation links get subtle, tactile paper treatment. */
+.home-project-card,.project-card,.skills-card,.contact-method {
+  box-shadow:3px 4px 0 rgba(55,52,63,.11),0 8px 18px rgba(55,52,63,.05)!important;
+}
+.home-project-card:nth-child(odd),.project-grid .project-card:nth-child(odd) {
+  transform:rotate(-.35deg);
+}
+.home-project-card:nth-child(even),.project-grid .project-card:nth-child(even) {
+  transform:rotate(.35deg);
+}
+.home-project-card:hover,.project-card:hover {
+  transform:translateY(-3px) rotate(0)!important;
+}
+.home-project-type {
+  display:inline-flex;
+  align-items:center;
+  width:fit-content;
+  max-width:100%;
+  padding:4px 8px;
+  background:#F0EAF8;
+  border:1px solid var(--journal-lavender);
+  border-radius:3px 7px 4px 6px;
+  transform:rotate(-1deg);
+}
+.home-project-link {
+  display:inline-flex;
+  align-items:center;
+  width:fit-content;
+  padding:6px 10px;
+  background:#EDF3F6;
+  border:1px solid var(--journal-blue);
+  box-shadow:1px 2px 0 rgba(55,52,63,.10);
+  transform:rotate(-1deg);
+}
+.text-link {
+  display:inline-flex;
+  align-items:center;
+  padding:8px 12px;
+  color:var(--journal-ink)!important;
+  background:var(--journal-peach);
+  border:1px solid var(--journal-pink-dark);
+  border-bottom:1px solid var(--journal-pink-dark)!important;
+  box-shadow:2px 3px 0 rgba(55,52,63,.14);
+  transform:rotate(-1deg);
+  text-decoration:none!important;
+}
+.text-link:hover {
+  color:var(--journal-ink)!important;
+  transform:rotate(0) translateY(-2px);
+}
+.site-header nav a[aria-current="page"] {
+  display:inline-block;
+  padding:5px 9px;
+  background:#F0EAF8;
+  border:1px solid var(--journal-lavender);
+  border-radius:3px 7px 4px 6px;
+  transform:rotate(-1deg);
+}
+.footer-nav a {
+  display:inline-block;
+  padding:5px 8px;
+  background:rgba(255,254,250,.72);
+  border:1px solid var(--journal-line);
+  box-shadow:1px 2px 0 rgba(55,52,63,.08);
+  transform:rotate(-.6deg);
+}
+.footer-nav a:nth-child(even) {transform:rotate(.8deg)}
+.footer-nav a:hover {transform:translateY(-2px) rotate(0)}
+
+@media(max-width:760px) {
+  .hero-copy::before {top:-1.5rem;right:2%;width:1.9rem;height:1.9rem}
+  .hero-index {right:6vw;bottom:14px;min-width:64px;min-height:64px}
+  .home-project-card:nth-child(n),.project-grid .project-card:nth-child(n) {transform:none}
+}
+@media(prefers-reduced-motion:reduce) {
+  .hero-index,.text-link,.home-project-card,.project-card,.footer-nav a {transition:none!important}
+}
+
+
+/* FINAL JOURNAL PALETTE FIX — mobile navigation, footer and text contrast. */
+:root {
+  --journal-muted:#4F4B56;
+}
+p, li, small, .section-lead, .hero-intro, .portrait-caption,
+.project-card p, .work-category-card p, .work-browse-note p,
+.contact-support p, .project-note, .sample-explanation,
+.site-footer, .site-footer p, .copyright-bar, .copyright-bar p {
+  color:#4F4B56!important;
+}
+.site-footer {
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+  justify-content:center!important;
+  gap:14px!important;
+  padding:26px clamp(20px,6vw,72px)!important;
+  color:var(--journal-ink)!important;
+  background:var(--journal-card)!important;
+  border-top:2px solid var(--journal-line)!important;
+}
+.site-footer > .wordmark,
+.site-footer > .site-wordmark,
+.site-footer .metal-rose-mark,
+.site-footer .metal-rose-sigil {
+  display:none!important;
+}
+.footer-nav a {
+  color:var(--journal-blue-dark)!important;
+  background:var(--journal-paper)!important;
+  border-color:var(--journal-line)!important;
+  box-shadow:1px 2px 0 rgba(55,52,63,.08)!important;
+}
+.footer-nav a:hover,.footer-nav a:focus-visible {
+  color:var(--journal-pink-dark)!important;
+  background:#F5EDF2!important;
+}
+.site-header nav#primary-navigation {
+  background:var(--journal-card)!important;
+  border:1px solid var(--journal-lavender)!important;
+  box-shadow:3px 4px 0 rgba(55,52,63,.12),0 8px 18px rgba(55,52,63,.08)!important;
+}
+.site-header nav#primary-navigation a {
+  color:var(--journal-ink)!important;
+  background:transparent!important;
+  border-bottom:1px solid var(--journal-line)!important;
+}
+.site-header nav#primary-navigation a:hover,
+.site-header nav#primary-navigation a:focus-visible,
+.site-header nav#primary-navigation a[aria-current="page"] {
+  color:var(--journal-blue-dark)!important;
+  background:#EDF3F6!important;
+}
+.menu-toggle {
+  color:var(--journal-ink)!important;
+  background:var(--journal-card)!important;
+  border:1px solid var(--journal-lavender-dark)!important;
+  box-shadow:2px 2px 0 rgba(55,52,63,.12)!important;
+}
+.menu-toggle span {background:var(--journal-ink)!important}
+.copyright-bar {
+  color:#4F4B56!important;
+  background:var(--journal-paper)!important;
+  border-top:1px solid var(--journal-line)!important;
+}
+.copyright-bar .footer-rights {color:#4F4B56!important}
+
+
+/* Darker blue accents for stronger contrast across the journal theme. */
+.site-header nav#primary-navigation a:hover,
+.site-header nav#primary-navigation a:focus-visible,
+.site-header nav#primary-navigation a[aria-current="page"] {
+  color:#344F63!important;
+  background:#E5EDF2!important;
+}
+.footer-nav a {
+  color:#344F63!important;
+}
+.footer-nav a:hover,.footer-nav a:focus-visible {
+  color:#344F63!important;
+  background:#E5EDF2!important;
+}
+a:not(.gothic-button):not(.home-work-cta):not(.site-wordmark) {
+  color:#344F63!important;
+}
+.home-project-link,.home-project-icon {
+  color:#344F63!important;
+  background:#E5EDF2!important;
+  border-color:#8FAFC2!important;
+}
+.home-project-icon svg {stroke:#344F63!important}
+
+
+/* FINAL PALETTE CLEANUP — legacy components use the bullet journal palette. */
+:root{--journal-green:#466D60;--journal-green-dark:#344F43;--journal-green-soft:#E8EEE8}
+body,main,section,article,aside,footer,header{color:var(--journal-ink)}
+a{color:var(--journal-blue-dark)}
+a:hover,a:focus-visible{color:var(--journal-pink-dark)}
+.notice,.info-ribbon{color:var(--journal-ink)!important;background:#F0EAF8!important;border-color:var(--journal-lavender-dark)!important}
+.hero,.about-section,.contact-section,.work-section,.contact-page,.page-section{color:var(--journal-ink)!important;background-color:var(--journal-paper)!important}
+.hero-intro,.about-section p:not(.eyebrow),.contact-section>p:not(.eyebrow),.section-lead,.project-card p,.privacy-note,.contact-page-intro,.contact-method p,.contact-support p,.work-category-card p{color:var(--journal-muted)!important}
+h1,h2,h3,.eyebrow,.project-meta,.home-project-type,.home-project-card strong,.home-project-description,.home-project-link,.work-category-symbol{color:var(--journal-ink)!important}
+h1 em,h2 em,h3 em{color:var(--journal-lavender-dark)!important}
+.project-card,.home-project-card,.work-category-card,.contact-method,.skills-card,.contact-support,.project-oop,.code-sample{color:var(--journal-ink)!important;background:var(--journal-card)!important;border-color:var(--journal-line)!important;box-shadow:2px 3px 0 var(--journal-shadow)!important}
+.project-card:hover,.home-project-card:hover,.work-category-card:hover,.contact-method:hover,.skills-card:hover{border-color:var(--journal-lavender-dark)!important}
+.project-image,.image-employee,.image-calculator,.coming-art,.branding-gallery,.android-carousel,.android-carousel-stage{color:var(--journal-ink)!important;background:#F0EDF4!important;border-color:var(--journal-line)!important}
+.home-project-icon,.work-category-symbol{color:var(--journal-blue-dark)!important;background:#E5EDF2!important;border-color:var(--journal-blue)!important}
+.home-project-icon svg{stroke:var(--journal-blue-dark)!important}
+.home-project-card strong,.home-project-link,.work-category-symbol,.project-meta{color:var(--journal-blue-dark)!important}
+.gothic-button,.home-work-cta,.contact-method a,.contact-page-actions a,.error-actions a,button,.button{color:#fff!important;background:var(--journal-lavender-dark)!important;border-color:var(--journal-lavender-dark)!important}
+.gothic-button:hover,.home-work-cta:hover,.contact-method a:hover,.contact-page-actions a:hover,.error-actions a:hover,button:hover,.button:hover{color:#fff!important;background:var(--journal-pink-dark)!important;border-color:var(--journal-pink-dark)!important}
+.contact-links a{border-color:var(--journal-blue-dark)!important;color:var(--journal-blue-dark)!important}
+.contact-links a:hover{background:#E5EDF2!important;color:var(--journal-blue-dark)!important}
+.site-footer{color:var(--journal-ink)!important;background:#EAE4F1!important;border-color:#D1C5E0!important}
+.site-footer *, .copyright-bar,.copyright-bar *{color:var(--journal-muted)!important}
+.skip-link{color:#fff!important;background:var(--journal-lavender-dark)!important}
+.interaction-hint{color:var(--journal-ink)!important;background:var(--journal-green-soft)!important;border-color:var(--journal-green)!important}
+.interaction-hint:before{color:var(--journal-green-dark)!important}
+.oop-grade{color:var(--journal-green-dark)!important;border-color:var(--journal-green)!important}
+.code-sample pre{color:var(--journal-ink)!important;background:#F0EDF4!important;border-color:var(--journal-line)!important}
+.sample-source,.oop-note,.carousel-hint{color:var(--journal-green-dark)!important}
+.token.inserted,.token.string,.token.attr-value{color:var(--journal-green-dark)!important}
+.token.deleted{color:var(--journal-pink-dark)!important}
+::selection{color:var(--journal-ink)!important;background:#E7DDF4!important}
