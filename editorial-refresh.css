@@ -1,0 +1,313 @@
+/*
+ * EDITORIAL PORTFOLIO — visual identity refresh
+ * A tactile, print-inspired system for a creative technologist's portfolio.
+ * Links remain visibly links; controls are reserved for actual actions.
+ */
+:root {
+  color-scheme: light;
+  --ed-paper: #f2ead9;
+  --ed-paper-light: #fbf6eb;
+  --ed-ink: #25271f;
+  --ed-muted: #555747;
+  --ed-forest: #263c30;
+  --ed-forest-2: #3f5943;
+  --ed-rust: #963f25;
+  --ed-copper: #bd7040;
+  --ed-rule: #c8b99c;
+  --ed-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --ed-body: "Source Sans 3", "Segoe UI", sans-serif;
+  --ed-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+}
+html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+body {
+  color: var(--ed-ink) !important;
+  background-color: var(--ed-paper) !important;
+  background-image:
+    radial-gradient(ellipse at 12% 8%, rgba(150,63,37,.075), transparent 32%),
+    radial-gradient(ellipse at 92% 38%, rgba(63,89,67,.09), transparent 30%),
+    repeating-linear-gradient(0deg, transparent 0 5px, rgba(66,52,34,.012) 6px 7px) !important;
+  font-family: var(--ed-body) !important;
+  font-size: 17px;
+  line-height: 1.68;
+  letter-spacing: .005em;
+}
+body::before { opacity: .07 !important; }
+h1,h2,h3,h4,h5,h6,
+.hero-copy h1,.work-page-intro h1,.contact-page h1,
+.section-heading,.wordmark {
+  color: var(--ed-forest) !important;
+  font-family: var(--ed-display) !important;
+  font-weight: 650 !important;
+  letter-spacing: -.035em !important;
+  line-height: 1.08 !important;
+  text-wrap: balance;
+}
+h1 { font-size: clamp(3.1rem, 7.8vw, 7.3rem) !important; }
+h2 { font-size: clamp(2.15rem, 4.6vw, 4.4rem) !important; }
+h3 { font-size: clamp(1.35rem, 2vw, 1.9rem) !important; }
+h1 em,h2 em,h3 em { color: var(--ed-rust) !important; font-style: italic; }
+p,li,dd,dt,label,input,textarea,button,summary {
+  font-family: var(--ed-body) !important;
+}
+p,li { color: var(--ed-muted); }
+::selection { background: var(--ed-forest); color: var(--ed-paper-light); }
+
+/* A link has a typographic affordance, not a generic pill shape. */
+a {
+  color: var(--ed-rust);
+  text-decoration-line: underline;
+  text-decoration-thickness: .075em;
+  text-underline-offset: .2em;
+  text-decoration-color: rgba(150,63,37,.58);
+  transition: color .18s ease, text-decoration-color .18s ease;
+}
+a:hover { color: #572719; text-decoration-color: currentColor; }
+a:focus-visible,button:focus-visible,summary:focus-visible {
+  outline: 3px solid var(--ed-copper) !important;
+  outline-offset: 4px !important;
+  border-radius: 2px !important;
+}
+.skip-link { background: var(--ed-forest) !important; color: var(--ed-paper-light) !important; }
+
+/* Masthead: more journal, less app toolbar. */
+.site-header {
+  min-height: 88px;
+  padding: 10px clamp(18px,5vw,76px) !important;
+  gap: clamp(12px,2vw,28px) !important;
+  background: rgba(251,246,235,.96) !important;
+  border-bottom: 1px solid var(--ed-rule) !important;
+  box-shadow: 0 5px 20px rgba(40,35,25,.055) !important;
+  backdrop-filter: blur(14px);
+}
+.wordmark.full-name { letter-spacing: -.015em !important; }
+.wordmark.full-name .wordmark-name {
+  color: var(--ed-forest) !important;
+  font-family: var(--ed-display) !important;
+  font-size: clamp(1.05rem,1.8vw,1.42rem);
+  font-weight: 700;
+}
+.wordmark.full-name .wordmark-subtitle {
+  color: var(--ed-rust) !important;
+  font: 600 .66rem/1.3 var(--ed-mono) !important;
+  letter-spacing: .075em;
+  text-transform: uppercase;
+}
+.site-header nav { gap: clamp(12px,2vw,30px) !important; }
+.site-header nav a {
+  position: relative;
+  display: inline-block;
+  padding: 9px 0 !important;
+  color: var(--ed-forest) !important;
+  font: 650 .82rem/1.3 var(--ed-body) !important;
+  text-decoration: none !important;
+  letter-spacing: .015em;
+}
+.site-header nav a::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 100%; bottom: 3px;
+  height: 2px;
+  background: var(--ed-rust);
+  transition: right .2s ease;
+}
+.site-header nav a:hover::after,
+.site-header nav a[aria-current="page"]::after { right: 0; }
+.site-header nav a[aria-current="page"] { color: var(--ed-rust) !important; }
+.language-toggle {
+  min-height: 40px !important;
+  padding: 7px 10px !important;
+  border: 1px solid var(--ed-forest) !important;
+  border-radius: 2px !important;
+  background: transparent !important;
+  color: var(--ed-forest) !important;
+  box-shadow: none !important;
+  font: 650 .7rem var(--ed-mono) !important;
+}
+.language-toggle:hover { background: var(--ed-forest) !important; color: var(--ed-paper-light) !important; }
+
+/* The front page becomes a cover with a deliberate editorial rhythm. */
+.hero {
+  min-height: min(760px, calc(100svh - 88px));
+  padding-top: clamp(64px,9vw,132px) !important;
+  padding-bottom: clamp(64px,8vw,110px) !important;
+  gap: clamp(30px,6vw,90px) !important;
+}
+.hero::before {
+  width: min(42vw,520px) !important;
+  height: min(42vw,520px) !important;
+  right: -18vw !important;
+  top: 8% !important;
+  border: 1px solid rgba(150,63,37,.24) !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 0 16px rgba(63,89,67,.035), 0 0 0 34px rgba(150,63,37,.025);
+}
+.hero::after { border-color: rgba(63,89,67,.24) !important; }
+.hero-copy .eyebrow,.eyebrow,.section-wrap > .eyebrow {
+  color: var(--ed-rust) !important;
+  font: 600 .72rem/1.5 var(--ed-mono) !important;
+  letter-spacing: .08em;
+}
+.eyebrow-line { background: var(--ed-copper) !important; }
+.hero-intro,.hero-copy p,.section-lead,.work-page-intro p,.about-section p,.contact-page p {
+  color: var(--ed-muted) !important;
+  max-width: 62ch;
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+.hero-tags { gap: 0 !important; }
+.hero-tags span,.skill-list span,.about-tags span {
+  border: 0 !important;
+  border-bottom: 1px solid var(--ed-rule) !important;
+  border-radius: 0 !important;
+  padding: 6px 12px 6px 0 !important;
+  margin-right: 12px;
+  background: transparent !important;
+  color: var(--ed-forest) !important;
+  font: 600 .68rem var(--ed-mono) !important;
+}
+.portrait-frame {
+  border: 1px solid var(--ed-rust) !important;
+  border-radius: 0 !important;
+  padding: 9px !important;
+  background: var(--ed-paper-light) !important;
+  box-shadow: 13px 13px 0 var(--ed-forest) !important;
+  transform: rotate(1.2deg) !important;
+}
+.portrait { filter: saturate(.78) contrast(1.04); }
+.portrait-caption {
+  color: var(--ed-forest) !important;
+  background: var(--ed-paper-light);
+  padding: 5px 8px;
+  font: 600 .66rem var(--ed-mono) !important;
+}
+.hero-stamp {
+  width: 92px !important; height: 92px !important;
+  border-radius: 50% !important;
+  background: var(--ed-rust) !important;
+  color: var(--ed-paper-light) !important;
+  border: 1px solid var(--ed-paper-light) !important;
+  box-shadow: 0 0 0 5px var(--ed-paper), 0 0 0 6px var(--ed-rust);
+  font-family: var(--ed-mono) !important;
+}
+.hero-stamp span { color: var(--ed-paper-light) !important; }
+
+/* Section transitions resemble pages in a printed field journal. */
+.section-wrap { padding-left: clamp(22px,8vw,130px) !important; padding-right: clamp(22px,8vw,130px) !important; }
+.work-section,.about-section,.contact-section,.home-work-cta-section {
+  padding-top: clamp(68px,9vw,124px) !important;
+  padding-bottom: clamp(72px,9vw,130px) !important;
+}
+.work-section {
+  background: var(--ed-forest) !important;
+  color: var(--ed-paper-light) !important;
+  border-top: 1px solid #526b55;
+  border-bottom: 1px solid #526b55;
+}
+.work-section h2,.work-section h3,.work-section .section-heading h2 { color: var(--ed-paper-light) !important; }
+.work-section p,.work-section .section-lead { color: #e0dfce !important; }
+.section-heading { max-width: 850px; }
+.section-heading::after,.work-page-intro::after {
+  width: 110px !important;
+  height: 2px !important;
+  margin-top: 24px !important;
+  background: linear-gradient(90deg,var(--ed-rust),var(--ed-copper),transparent) !important;
+}
+
+/* Cards become project index entries, not floating app widgets. */
+.project-card,.skills-card,.contact-method,.creative-samples-grid .creative-sample,
+.home-about-teaser,.project-featured,.skills-overview,.about-work-callout,
+.home-project-card {
+  border: 1px solid var(--ed-rule) !important;
+  border-radius: 2px !important;
+  background: rgba(251,246,235,.88) !important;
+  box-shadow: 4px 5px 0 rgba(38,60,48,.09) !important;
+  color: var(--ed-ink) !important;
+}
+.project-card:hover,.skills-card:hover,.contact-method:hover,.home-project-card:hover {
+  border-color: var(--ed-rust) !important;
+  box-shadow: 7px 8px 0 rgba(150,63,37,.12) !important;
+  transform: translate(-2px,-2px);
+}
+.project-card h2,.project-card h3,.skills-card h2,.skills-card h3,
+.contact-method h2,.creative-sample-copy h3,.sample-panel-heading,.skills-heading,
+.home-project-card strong { color: var(--ed-forest) !important; }
+.project-card p,.skills-card p,.contact-method p,.creative-sample-copy p,
+.home-project-description { color: var(--ed-muted) !important; }
+.home-project-card { text-decoration: none !important; }
+.home-project-card strong { font-family: var(--ed-display) !important; }
+.home-project-link { color: var(--ed-rust) !important; text-decoration: underline !important; text-underline-offset: .22em; }
+.home-project-icon { border-radius: 0 !important; background: var(--ed-forest) !important; }
+.home-project-icon svg { stroke: #e5b27e !important; }
+
+/* Only genuine actions look like buttons. Text links remain text links. */
+.gothic-button,.home-work-cta,.contact-method-primary a,
+.error-actions a,.project-samples-toggle summary {
+  border-radius: 2px !important;
+}
+.gothic-button,.home-work-cta,.contact-method-primary a,.error-actions a {
+  background: var(--ed-forest) !important;
+  color: var(--ed-paper-light) !important;
+  border: 1px solid var(--ed-forest) !important;
+  box-shadow: 3px 3px 0 rgba(38,60,48,.16) !important;
+  text-decoration: none !important;
+}
+.gothic-button:hover,.home-work-cta:hover,.contact-method-primary a:hover,.error-actions a:hover {
+  background: var(--ed-rust) !important;
+  border-color: var(--ed-rust) !important;
+  color: #fff8eb !important;
+  transform: translate(-1px,-1px);
+}
+.text-link,.small-link,.project-card .sample-open-link,.sample-pdf-link {
+  color: var(--ed-rust) !important;
+  text-decoration: underline !important;
+  text-decoration-thickness: .08em !important;
+  text-underline-offset: .22em !important;
+}
+.site-footer {
+  background: var(--ed-forest) !important;
+  border-top: 4px solid var(--ed-copper) !important;
+  color: var(--ed-paper-light) !important;
+}
+.site-footer p,.site-footer a,.site-footer .footer-note,.site-footer .copyright-line {
+  color: var(--ed-paper-light) !important;
+}
+.site-footer a { text-decoration-color: #d8a47d !important; }
+
+/* Small metadata and labels use a consistent archival voice. */
+.project-meta,.home-project-type,.hero-index,.portrait-caption,
+.footer-note,.skill-rating,.project-card .project-meta {
+  font-family: var(--ed-mono) !important;
+  letter-spacing: .025em;
+}
+.notice,.info-ribbon {
+  background: #e4d8c1 !important;
+  color: var(--ed-forest) !important;
+  border-color: var(--ed-rule) !important;
+  box-shadow: none !important;
+}
+.notice p,.info-ribbon p { color: var(--ed-forest) !important; }
+.gothic-mandala { opacity: .035 !important; }
+.gothic-mist { opacity: .07 !important; }
+
+/* Mobile: preserve the editorial hierarchy without crowding the masthead. */
+@media (max-width: 900px) {
+  .site-header { flex-wrap: wrap; justify-content: space-between; }
+  .site-header nav { order: 4; width: 100%; justify-content: flex-start; flex-wrap: wrap; padding: 4px 0 10px; }
+  .hero { min-height: auto !important; grid-template-columns: 1fr !important; }
+  .portrait-wrap { min-height: 350px !important; }
+  .portrait-frame { width: min(72%,330px) !important; }
+}
+@media (max-width: 560px) {
+  body { font-size: 16px; }
+  .site-header { gap: 8px !important; padding: 8px 16px !important; }
+  .site-header nav { gap: 8px 18px !important; }
+  .site-header nav a { font-size: .78rem !important; }
+  .section-wrap { padding-left: 20px !important; padding-right: 20px !important; }
+  .hero { padding-top: 54px !important; padding-bottom: 58px !important; }
+  .hero-tags span { margin-bottom: 5px; }
+  .home-project-grid { grid-template-columns: 1fr !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,*::before,*::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
