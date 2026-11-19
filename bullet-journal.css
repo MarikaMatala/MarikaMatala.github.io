@@ -3,7 +3,7 @@
   color-scheme: light;
   --journal-paper:#F7F5F0; --journal-card:#FFFEFA; --journal-ink:#37343F;
   --journal-muted:#625F69; --journal-lavender:#B9AED0; --journal-lavender-dark:#695B80;
-  --journal-blue:#B3C7D7; --journal-blue-dark:#405D72; --journal-pink:#D9AEB9;
+  --journal-blue:#8FAFC2; --journal-blue-dark:#344F63; --journal-pink:#D9AEB9;
   --journal-pink-dark:#754D5B; --journal-peach:#E9BEAC; --journal-line:#E0DBD5;
   --journal-shadow:rgba(52,49,61,.10);
   --ed-paper:var(--journal-paper); --ed-paper-light:var(--journal-card);
@@ -461,3 +461,28 @@ p, li, small, .section-lead, .hero-intro, .portrait-caption,
   border-top:1px solid var(--journal-line)!important;
 }
 .copyright-bar .footer-rights {color:#4F4B56!important}
+
+
+/* Darker blue accents for stronger contrast across the journal theme. */
+.site-header nav#primary-navigation a:hover,
+.site-header nav#primary-navigation a:focus-visible,
+.site-header nav#primary-navigation a[aria-current="page"] {
+  color:#344F63!important;
+  background:#E5EDF2!important;
+}
+.footer-nav a {
+  color:#344F63!important;
+}
+.footer-nav a:hover,.footer-nav a:focus-visible {
+  color:#344F63!important;
+  background:#E5EDF2!important;
+}
+a:not(.gothic-button):not(.home-work-cta):not(.site-wordmark) {
+  color:#344F63!important;
+}
+.home-project-link,.home-project-icon {
+  color:#344F63!important;
+  background:#E5EDF2!important;
+  border-color:#8FAFC2!important;
+}
+.home-project-icon svg {stroke:#344F63!important}
