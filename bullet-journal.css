@@ -556,3 +556,86 @@ h1 em,h2 em,h3 em{color:var(--journal-lavender-dark)!important}
   background:#754D5B!important;
   border-color:#754D5B!important;
 }
+
+
+/* PORTRAIT BACKGROUND — replace legacy circles with layered notebook paper. */
+.portrait-shape {
+  border-radius:4px 12px 5px 10px!important;
+  animation:none!important;
+  box-shadow:3px 4px 0 rgba(55,52,63,.12),0 8px 16px rgba(55,52,63,.07)!important;
+}
+.portrait-shape.shape-one {
+  width:72%!important;
+  height:72%!important;
+  right:2%!important;
+  top:9%!important;
+  left:auto!important;
+  bottom:auto!important;
+  background:#EAE4F1!important;
+  border:1px solid var(--journal-lavender)!important;
+  border-radius:8px 18px 7px 14px!important;
+  transform:rotate(-7deg)!important;
+}
+.portrait-shape.shape-one::before {
+  content:"";
+  position:absolute;
+  top:-10px;
+  left:35%;
+  width:76px;
+  height:20px;
+  background:rgba(233,190,172,.82);
+  border:1px solid rgba(117,77,91,.22);
+  transform:rotate(3deg);
+}
+.portrait-shape.shape-two {
+  width:92px!important;
+  height:62px!important;
+  left:4%!important;
+  bottom:9%!important;
+  right:auto!important;
+  top:auto!important;
+  background:#E5EDF2!important;
+  border:1px solid var(--journal-blue)!important;
+  border-radius:4px 9px 5px 8px!important;
+  transform:rotate(9deg)!important;
+}
+.portrait-frame {
+  z-index:2!important;
+  transform:rotate(2deg)!important;
+}
+.portrait-caption {z-index:3!important}
+
+/* Make the Portfolio 2026 sticker unmistakably link to the work samples. */
+.hero-index {
+  z-index:4!important;
+  min-width:132px!important;
+  min-height:104px!important;
+  gap:4px!important;
+  padding:12px 14px!important;
+  clip-path:polygon(4% 0,96% 4%,100% 91%,91% 100%,0 94%)!important;
+  border-radius:5px 12px 6px 10px!important;
+  cursor:pointer;
+}
+.hero-index .portfolio-word {font-size:.62rem!important;letter-spacing:.1em}
+.hero-index .portfolio-year {font-size:1.3rem!important;line-height:1.1}
+.hero-index .portfolio-action {
+  display:block;
+  margin-top:3px;
+  padding-top:5px;
+  border-top:1px solid rgba(117,77,91,.45);
+  color:var(--journal-blue-dark)!important;
+  font-size:.65rem;
+  font-weight:800;
+  letter-spacing:0;
+  line-height:1.3;
+  text-decoration:underline;
+  text-decoration-color:var(--journal-pink-dark);
+  text-underline-offset:3px;
+}
+.hero-index:hover .portfolio-action,
+.hero-index:focus-visible .portfolio-action {color:var(--journal-ink)!important}
+.hero-index:focus-visible {outline:3px solid var(--journal-blue-dark)!important;outline-offset:5px}
+@media(max-width:760px) {
+  .portrait-shape.shape-one {width:68%!important;height:68%!important;right:9%!important;top:8%!important}
+  .hero-index {min-width:124px!important;min-height:98px!important}
+}
