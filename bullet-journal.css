@@ -676,3 +676,23 @@ button.button, a.button {
 .contact-method-primary a:hover,.contact-method-primary a:focus-visible,
 .error-actions a:hover,.error-actions a:focus-visible,
 .button:hover,.button:focus-visible {color:#FFFFFF!important}
+
+
+/* HEADER WORDMARK — improve the name and portfolio subtitle contrast. */
+.site-header > a.wordmark.full-name,
+.site-header > a.wordmark.full-name .wordmark-name {
+  color:#37343F!important;
+  text-shadow:none!important;
+}
+.site-header > a.wordmark.full-name .wordmark-subtitle {
+  color:#695B80!important;
+  text-shadow:none!important;
+}
+.site-header > a.wordmark.full-name:hover .wordmark-name,
+.site-header > a.wordmark.full-name:focus-visible .wordmark-name {
+  color:#695B80!important;
+}
+.site-header > a.wordmark.full-name:focus-visible {
+  outline:3px solid #695B80!important;
+  outline-offset:4px!important;
+}
