@@ -121,7 +121,27 @@ button,.button,.gothic-button,.home-work-cta,.contact-method-primary a,
 .home-project-link,.home-project-icon,.home-project-icon svg {
   color:var(--journal-ink)!important;
 }
-.home-project-card strong,.home-project-type,.home-project-link {
+.home-project-card strong,.home-project-type,.project-meta {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  width:100%;
+  padding:0;
+  background:transparent;
+  border:0;
+  box-shadow:none;
+  transform:none;
+}
+.project-meta span {
+  display:inline-block;
+  max-width:100%;
+  padding:4px 7px;
+  background:#F0EAF8;
+  border:1px solid var(--journal-lavender);
+  border-radius:3px 7px 4px 6px;
+}
+.home-project-link {
   color:var(--journal-lavender-dark)!important;
 }
 .home-project-icon {
@@ -309,7 +329,7 @@ code[class*="language-"] {
 .home-project-card:hover,.project-card:hover {
   transform:translateY(-3px) rotate(0)!important;
 }
-.home-project-type,.project-meta {
+.home-project-type {
   display:inline-flex;
   align-items:center;
   width:fit-content;
