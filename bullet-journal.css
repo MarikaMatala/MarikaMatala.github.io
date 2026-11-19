@@ -519,3 +519,40 @@ h1 em,h2 em,h3 em{color:var(--journal-lavender-dark)!important}
 .token.inserted,.token.string,.token.attr-value{color:var(--journal-green-dark)!important}
 .token.deleted{color:var(--journal-pink-dark)!important}
 ::selection{color:var(--journal-ink)!important;background:#E7DDF4!important}
+
+
+/* LINK CONTRAST FIX — keep ordinary links readable and reserve filled buttons for primary actions. */
+.contact-method:not(.contact-method-primary) a {
+  display:inline-block;
+  max-width:100%;
+  padding:0!important;
+  color:#344F63!important;
+  background:transparent!important;
+  border:0!important;
+  border-bottom:2px solid #754D5B!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  text-decoration:underline!important;
+  text-decoration-color:#754D5B!important;
+  text-decoration-thickness:2px!important;
+  text-underline-offset:4px!important;
+  overflow-wrap:anywhere;
+}
+.contact-method:not(.contact-method-primary) a:hover,
+.contact-method:not(.contact-method-primary) a:focus-visible {
+  color:#37343F!important;
+  background:#E5EDF2!important;
+  outline:2px solid #344F63;
+  outline-offset:3px;
+}
+.contact-method-primary a {
+  color:#FFFFFF!important;
+  background:#695B80!important;
+  border:1px solid #695B80!important;
+}
+.contact-method-primary a:hover,
+.contact-method-primary a:focus-visible {
+  color:#FFFFFF!important;
+  background:#754D5B!important;
+  border-color:#754D5B!important;
+}
