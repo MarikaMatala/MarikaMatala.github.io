@@ -1,0 +1,59 @@
+/* BULLET JOURNAL PORTFOLIO — experimental visual theme */
+:root {
+  color-scheme: light;
+  --journal-paper:#F7F4EF; --journal-card:#FFFCF7; --journal-ink:#34313D;
+  --journal-muted:#625E68; --journal-lavender:#B7A6D9; --journal-lavender-dark:#65527F;
+  --journal-blue:#A9C2D8; --journal-blue-dark:#38566F; --journal-pink:#DDA9B8;
+  --journal-pink-dark:#784657; --journal-peach:#E8B8A5; --journal-line:#DED8D2;
+  --journal-shadow:rgba(52,49,61,.10);
+  --ed-paper:var(--journal-paper); --ed-paper-light:var(--journal-card);
+  --ed-ink:var(--journal-ink); --ed-muted:var(--journal-muted);
+  --ed-forest:var(--journal-blue-dark); --ed-forest-2:var(--journal-lavender-dark);
+  --ed-rust:var(--journal-pink-dark); --ed-copper:var(--journal-peach); --ed-rule:var(--journal-line);
+}
+html{background:var(--journal-paper)!important}
+body{color:var(--journal-ink)!important;background-color:var(--journal-paper)!important;
+ background-image:linear-gradient(to right,transparent 0,transparent 34px,rgba(221,169,184,.18) 34px,rgba(221,169,184,.18) 35px,transparent 35px),
+ repeating-linear-gradient(to bottom,transparent 0,transparent 31px,rgba(169,194,216,.20) 31px,rgba(169,194,216,.20) 32px)!important;background-attachment:fixed}
+body::before,body::after{content:none!important;display:none!important}
+.gothic-mandala,.gothic-mist,.metal-rose-mark,.metal-rose-sigil{display:none!important;background:none!important;animation:none!important}
+.site-wordmark{display:inline-flex!important;align-items:center;justify-content:center;width:48px;height:48px;flex:0 0 48px;color:var(--journal-ink)!important;background:var(--journal-lavender)!important;border:2px solid var(--journal-ink);border-radius:12px 5px 12px 5px;box-shadow:3px 3px 0 var(--journal-ink);font-family:var(--ed-display,Georgia,serif);font-size:1.15rem;font-weight:800;letter-spacing:-.08em;text-decoration:none!important}
+.site-header,header.site-header{color:var(--journal-ink)!important;background:rgba(255,252,247,.96)!important;border-bottom:1px solid var(--journal-line)!important;box-shadow:0 3px 12px var(--journal-shadow)!important;backdrop-filter:blur(8px)}
+.site-header nav a{color:var(--journal-ink)!important;text-shadow:none!important;text-decoration-color:var(--journal-pink)!important}
+.site-header nav a:hover,.site-header nav a:focus-visible,.site-header nav a[aria-current=page]{color:var(--journal-lavender-dark)!important;text-shadow:none!important}
+.hero,.section-wrap,main,.page-shell{color:var(--journal-ink)}
+.hero-copy h1,h1,h2,h3,h4,.section-heading h2,.work-page-intro h1,.about-page-intro h1{color:var(--journal-ink)!important;text-shadow:none!important}
+p,li,.section-lead,.hero-copy p,.project-card p,.home-about-copy p,.contact-method p{color:var(--journal-muted)!important}
+.eyebrow,.hero-copy .eyebrow,.section-wrap>.eyebrow{color:var(--journal-lavender-dark)!important;letter-spacing:.09em}
+.section-heading::after,.work-page-intro::after{background:linear-gradient(90deg,var(--journal-lavender),var(--journal-blue),transparent)!important;height:3px!important}
+.project-card,.skills-card,.contact-method,.creative-samples-grid .creative-sample,.home-about-teaser,.project-featured,.skills-overview,.about-work-callout,.home-project-card,.legal-page .legal-section{color:var(--journal-ink)!important;background:var(--journal-card)!important;background-image:none!important;border:1px solid var(--journal-line)!important;border-radius:9px 15px 10px 14px!important;box-shadow:4px 5px 0 var(--journal-shadow)!important}
+.project-card:nth-child(4n+1),.home-project-card:nth-child(4n+1){border-top:4px solid var(--journal-lavender)!important}
+.project-card:nth-child(4n+2),.home-project-card:nth-child(4n+2){border-top:4px solid var(--journal-blue)!important}
+.project-card:nth-child(4n+3),.home-project-card:nth-child(4n+3){border-top:4px solid var(--journal-pink)!important}
+.project-card:nth-child(4n),.home-project-card:nth-child(4n){border-top:4px solid var(--journal-peach)!important}
+.project-card:hover,.skills-card:hover,.contact-method:hover,.home-project-card:hover{border-color:var(--journal-lavender-dark)!important;box-shadow:5px 7px 0 rgba(101,82,127,.18)!important;transform:translateY(-2px)}
+.project-card h2,.project-card h3,.skills-card h2,.skills-card h3,.contact-method h2,.contact-method h3,.home-project-card h3{color:var(--journal-ink)!important}
+.project-meta,.project-card .project-meta{color:var(--journal-pink-dark)!important}
+.hero-tags span,.skill-list span,.about-tags span{color:var(--journal-ink)!important;background:#F0EAF8!important;border:1px dashed #A997C9!important;border-radius:5px!important}
+.home-project-icon{background:#E9F0F6!important;border:1px solid var(--journal-blue)!important;border-radius:9px!important}
+.home-project-icon svg{stroke:var(--journal-blue-dark)!important}
+.gothic-button,.home-work-cta,.contact-method-primary a,.error-actions a,button,.button{color:#fff!important;background:var(--journal-lavender-dark)!important;border:1px solid var(--journal-lavender-dark)!important;border-radius:7px 11px 7px 11px!important;box-shadow:3px 3px 0 rgba(52,49,61,.16)!important}
+.gothic-button:hover,.home-work-cta:hover,.contact-method-primary a:hover,.error-actions a:hover,button:hover,.button:hover{color:#fff!important;background:var(--journal-pink-dark)!important;border-color:var(--journal-pink-dark)!important}
+a:not(.gothic-button):not(.home-work-cta):not(.site-wordmark){color:var(--journal-blue-dark);text-decoration-color:var(--journal-pink);text-underline-offset:3px}
+a:not(.gothic-button):not(.home-work-cta):not(.site-wordmark):hover{color:var(--journal-lavender-dark)}
+.notice,.info-ribbon{color:var(--journal-ink)!important;background:#F1ECF8!important;border:1px dashed var(--journal-lavender-dark)!important;border-radius:8px!important;box-shadow:none!important}
+.notice p,.info-ribbon p{color:var(--journal-ink)!important}
+.work-section{color:var(--journal-ink)!important;background:#EAF0F5!important;background-image:repeating-linear-gradient(0deg,transparent 0 27px,rgba(56,86,111,.08) 27px 28px)!important;border-top:1px solid #C7D7E4!important;border-bottom:1px solid #C7D7E4!important}
+.work-section h2,.work-section h3,.work-section p,.work-section .section-lead{color:var(--journal-ink)!important}
+.portrait-frame{border:2px solid var(--journal-pink)!important;border-radius:12px 5px 12px 5px!important;background:var(--journal-card)!important;box-shadow:7px 7px 0 rgba(221,169,184,.35)!important}
+.portrait-caption{color:var(--journal-muted)!important}
+.site-footer{color:var(--journal-ink)!important;background:#EAE4F1!important;border-top:1px solid #D1C5E0!important}
+.site-footer p,.site-footer a,.site-footer .footer-note,.site-footer .copyright-line{color:var(--journal-ink)!important}
+.site-footer a{text-decoration-color:var(--journal-pink-dark)!important}
+.copyright-bar{color:var(--journal-muted)!important;background:#F0EBE5!important;border-top:1px solid var(--journal-line)!important}
+.copyright-bar .footer-rights{color:var(--journal-muted)!important}
+.skip-link{color:#fff!important;background:var(--journal-lavender-dark)!important}
+:focus-visible{outline:3px solid var(--journal-pink-dark)!important;outline-offset:3px!important}
+::selection{color:var(--journal-ink);background:#E7DDF4}
+@media(max-width:760px){body{background-attachment:scroll}.site-wordmark{width:42px;height:42px;flex-basis:42px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important}}
