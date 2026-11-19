@@ -639,3 +639,40 @@ h1 em,h2 em,h3 em{color:var(--journal-lavender-dark)!important}
   .portrait-shape.shape-one {width:68%!important;height:68%!important;right:9%!important;top:8%!important}
   .hero-index {min-width:124px!important;min-height:98px!important}
 }
+
+
+/* READABILITY PASS — lighten skill cards and strengthen skill-rating contrast. */
+.skills-overview {border-top-color:var(--journal-line)!important}
+.skills-heading>p:last-child {color:var(--journal-muted)!important}
+.skills-card,
+.skills-card:hover {
+  color:var(--journal-ink)!important;
+  background:#FFFEFA!important;
+  border:1px solid var(--journal-line)!important;
+  box-shadow:3px 4px 0 rgba(55,52,63,.08)!important;
+}
+.skills-card {box-shadow:inset 4px 0 0 var(--journal-lavender)!important}
+.skills-card:hover {
+  border-color:var(--journal-lavender-dark)!important;
+  box-shadow:3px 5px 0 rgba(55,52,63,.1)!important;
+}
+.skills-card :is(h3,h4,p,li,.skill-name) {color:var(--journal-ink)!important}
+.skills-card .skill-row {border-top-color:var(--journal-line)!important}
+.skills-card .skill-name {color:var(--journal-ink)!important;font-weight:600}
+.skills-card .skill-level {color:var(--journal-lavender-dark)!important;font-weight:800}
+.skills-card .skill-bars i {border-color:#82788D!important;background:#F0EDF4!important}
+.skills-card .skill-bars i.is-filled {background:var(--journal-lavender-dark)!important;border-color:var(--journal-lavender-dark)!important}
+
+/* White lettering on lavender-filled buttons for reliable contrast. */
+.gothic-button,.home-work-cta,.contact-method-primary a,.error-actions a,.button,
+button.button, a.button {
+  color:#FFFFFF!important;
+}
+.gothic-button :is(span,strong),.home-work-cta :is(span,strong),
+.contact-method-primary a :is(span,strong),.error-actions a :is(span,strong),
+.button :is(span,strong) {color:#FFFFFF!important}
+.gothic-button:hover,.gothic-button:focus-visible,
+.home-work-cta:hover,.home-work-cta:focus-visible,
+.contact-method-primary a:hover,.contact-method-primary a:focus-visible,
+.error-actions a:hover,.error-actions a:focus-visible,
+.button:hover,.button:focus-visible {color:#FFFFFF!important}
