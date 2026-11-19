@@ -175,3 +175,201 @@ code[class*="language-"] {
 .token.selector,.token.attr-name,.token.string,.token.char,.token.builtin,
 .token.inserted {color:#466D60!important}
 .token.keyword,.token.atrule,.token.attr-value {color:#65527F!important}
+
+
+/* BULLET EXPERIMENT — layered paper stickers and playful notebook details. */
+:root {
+  --journal-sticker-shadow: 2px 4px 0 rgba(55,52,63,.16), 0 7px 14px rgba(55,52,63,.08);
+}
+
+/* Small paper accents: intentionally varied rather than repeated everywhere. */
+.hero-copy {
+  position:relative;
+}
+.hero-copy::before {
+  content:"✦";
+  position:absolute;
+  top:-2.1rem;
+  right:4%;
+  display:grid;
+  place-items:center;
+  width:2.35rem;
+  height:2.35rem;
+  color:var(--journal-pink-dark);
+  background:var(--journal-pink);
+  border:1px solid var(--journal-pink-dark);
+  clip-path:polygon(50% 0,61% 34%,96% 18%,76% 50%,100% 75%,64% 70%,50% 100%,37% 69%,0 78%,24% 50%,5% 20%,40% 34%);
+  filter:drop-shadow(2px 3px 0 rgba(55,52,63,.16));
+  transform:rotate(11deg);
+  pointer-events:none;
+}
+.hero-index {
+  display:inline-grid;
+  place-items:center;
+  gap:2px;
+  min-width:76px;
+  min-height:76px;
+  padding:10px;
+  color:var(--journal-ink)!important;
+  background:var(--journal-peach)!important;
+  border:1px solid var(--journal-pink-dark);
+  box-shadow:var(--journal-sticker-shadow);
+  clip-path:polygon(7% 0,94% 5%,100% 88%,87% 100%,0 91%);
+  transform:rotate(7deg);
+  text-align:center;
+  text-decoration:none!important;
+  transition:transform .18s ease,filter .18s ease;
+}
+.hero-index:hover {
+  transform:rotate(2deg) translateY(-3px);
+  filter:brightness(1.02);
+}
+.hero-index .portfolio-word {
+  font-size:.62rem;
+  font-weight:800;
+  letter-spacing:.08em;
+}
+.hero-index .portfolio-year {
+  font-size:1.05rem;
+  font-weight:800;
+}
+
+/* Tags become little cut-paper labels, with restrained alternating angles. */
+.hero-tags span,.skill-list span,.about-tags span {
+  display:inline-flex;
+  align-items:center;
+  min-height:30px;
+  padding:6px 11px!important;
+  color:var(--journal-ink)!important;
+  background:var(--journal-card)!important;
+  border:1px solid var(--journal-line)!important;
+  border-radius:4px 8px 5px 7px!important;
+  box-shadow:1px 2px 0 rgba(55,52,63,.10);
+  transform:rotate(-1deg);
+}
+.hero-tags span:nth-child(3n+2),.skill-list span:nth-child(3n+2),.about-tags span:nth-child(3n+2) {
+  background:#F0EAF8!important;
+  border-color:var(--journal-lavender)!important;
+  transform:rotate(1.4deg);
+}
+.hero-tags span:nth-child(3n),.skill-list span:nth-child(3n),.about-tags span:nth-child(3n) {
+  background:#EDF3F6!important;
+  border-color:var(--journal-blue)!important;
+  transform:rotate(-.5deg);
+}
+
+/* A few lifted labels and paper tabs add depth without obscuring content. */
+.portrait-caption {
+  padding:7px 12px;
+  color:var(--journal-ink)!important;
+  background:var(--journal-card);
+  border:1px solid var(--journal-pink);
+  box-shadow:var(--journal-sticker-shadow);
+  transform:rotate(-4deg);
+}
+.home-about-emblem {
+  position:relative;
+  display:grid;
+  place-items:center;
+  width:clamp(88px,12vw,132px);
+  aspect-ratio:1;
+  color:var(--journal-lavender-dark);
+  background:#F0EAF8;
+  border:1px solid var(--journal-lavender-dark);
+  border-radius:8px 18px 7px 15px;
+  box-shadow:var(--journal-sticker-shadow);
+  transform:rotate(-6deg);
+}
+.home-about-emblem::after {
+  content:"";
+  position:absolute;
+  top:-8px;
+  right:10px;
+  width:38px;
+  height:13px;
+  background:rgba(233,190,172,.78);
+  border:1px solid rgba(117,77,91,.22);
+  transform:rotate(12deg);
+}
+.home-about-emblem span:last-child {
+  font-weight:800;
+  letter-spacing:-.08em;
+}
+
+/* Selected cards and navigation links get subtle, tactile paper treatment. */
+.home-project-card,.project-card,.skills-card,.contact-method {
+  box-shadow:3px 4px 0 rgba(55,52,63,.11),0 8px 18px rgba(55,52,63,.05)!important;
+}
+.home-project-card:nth-child(odd),.project-grid .project-card:nth-child(odd) {
+  transform:rotate(-.35deg);
+}
+.home-project-card:nth-child(even),.project-grid .project-card:nth-child(even) {
+  transform:rotate(.35deg);
+}
+.home-project-card:hover,.project-card:hover {
+  transform:translateY(-3px) rotate(0)!important;
+}
+.home-project-type,.project-meta {
+  display:inline-flex;
+  align-items:center;
+  width:fit-content;
+  max-width:100%;
+  padding:4px 8px;
+  background:#F0EAF8;
+  border:1px solid var(--journal-lavender);
+  border-radius:3px 7px 4px 6px;
+  transform:rotate(-1deg);
+}
+.home-project-link {
+  display:inline-flex;
+  align-items:center;
+  width:fit-content;
+  padding:6px 10px;
+  background:#EDF3F6;
+  border:1px solid var(--journal-blue);
+  box-shadow:1px 2px 0 rgba(55,52,63,.10);
+  transform:rotate(-1deg);
+}
+.text-link {
+  display:inline-flex;
+  align-items:center;
+  padding:8px 12px;
+  color:var(--journal-ink)!important;
+  background:var(--journal-peach);
+  border:1px solid var(--journal-pink-dark);
+  border-bottom:1px solid var(--journal-pink-dark)!important;
+  box-shadow:2px 3px 0 rgba(55,52,63,.14);
+  transform:rotate(-1deg);
+  text-decoration:none!important;
+}
+.text-link:hover {
+  color:var(--journal-ink)!important;
+  transform:rotate(0) translateY(-2px);
+}
+.site-header nav a[aria-current="page"] {
+  display:inline-block;
+  padding:5px 9px;
+  background:#F0EAF8;
+  border:1px solid var(--journal-lavender);
+  border-radius:3px 7px 4px 6px;
+  transform:rotate(-1deg);
+}
+.footer-nav a {
+  display:inline-block;
+  padding:5px 8px;
+  background:rgba(255,254,250,.72);
+  border:1px solid var(--journal-line);
+  box-shadow:1px 2px 0 rgba(55,52,63,.08);
+  transform:rotate(-.6deg);
+}
+.footer-nav a:nth-child(even) {transform:rotate(.8deg)}
+.footer-nav a:hover {transform:translateY(-2px) rotate(0)}
+
+@media(max-width:760px) {
+  .hero-copy::before {top:-1.5rem;right:2%;width:1.9rem;height:1.9rem}
+  .hero-index {right:6vw;bottom:14px;min-width:64px;min-height:64px}
+  .home-project-card:nth-child(n),.project-grid .project-card:nth-child(n) {transform:none}
+}
+@media(prefers-reduced-motion:reduce) {
+  .hero-index,.text-link,.home-project-card,.project-card,.footer-nav a {transition:none!important}
+}
