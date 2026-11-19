@@ -57,3 +57,100 @@ a:not(.gothic-button):not(.home-work-cta):not(.site-wordmark):hover{color:var(--
 ::selection{color:var(--journal-ink);background:#E7DDF4}
 @media(max-width:760px){body{background-attachment:scroll}.site-wordmark{width:42px;height:42px;flex-basis:42px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+
+/* Global clean-up: keep the journal paper, remove legacy theme decoration. */
+body, main, .section-wrap, .page-shell, .hero, .visual-interlude,
+.contact-page, .about-page, .work-page-intro, .site-footer {
+  color:var(--journal-ink)!important;
+  background-color:var(--journal-paper)!important;
+  background-image:none!important;
+}
+body {
+  background-image:repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 31px,
+    rgba(169,194,216,.16) 31px,
+    rgba(169,194,216,.16) 32px
+  )!important;
+}
+.site-header, .site-footer, .copyright-bar,
+.project-card, .project-featured, .project-panel, .work-category-card,
+.work-browse-note, .skills-card, .skills-overview, .contact-method,
+.contact-support, .contact-page-grid article, .legal-section,
+.sample-card, .sample-explanation, .code-sample, .project-note,
+.about-work-callout, .home-about-teaser, .home-project-card,
+.creative-sample, .creative-samples-grid .creative-sample,
+.error-card, .notice, .info-ribbon {
+  color:var(--journal-ink)!important;
+  background-color:var(--journal-card)!important;
+  background-image:none!important;
+  border-color:var(--journal-line)!important;
+}
+.work-section, .work-category-card, .work-browse-note,
+.security-notice, .contact-support {
+  background-image:none!important;
+}
+h1,h2,h3,h4,strong,.project-card h2,.project-card h3,
+.work-category-card h2,.work-category-card h3,
+.site-footer .wordmark-name,.site-footer .wordmark-subtitle {
+  color:var(--journal-ink)!important;
+  text-shadow:none!important;
+}
+p,li,small,.project-card p,.work-category-card p,
+.work-browse-note p,.site-footer p,.copyright-bar p,
+.contact-support p,.project-note,.sample-explanation {
+  color:var(--journal-muted)!important;
+}
+a:not(.gothic-button):not(.home-work-cta):not(.site-wordmark) {
+  color:var(--journal-blue-dark)!important;
+  text-shadow:none!important;
+}
+a:not(.gothic-button):not(.home-work-cta):not(.site-wordmark):hover,
+a:not(.gothic-button):not(.home-work-cta):not(.site-wordmark):focus-visible {
+  color:var(--journal-lavender-dark)!important;
+}
+button,.button,.gothic-button,.home-work-cta,.contact-method-primary a,
+.error-actions a,.contact-page-actions a {
+  color:#fff!important;
+  background:var(--journal-lavender-dark)!important;
+  border-color:var(--journal-lavender-dark)!important;
+}
+.home-project-card strong,.home-project-type,.home-project-description,
+.home-project-link,.home-project-icon,.home-project-icon svg {
+  color:var(--journal-ink)!important;
+}
+.home-project-card strong,.home-project-type,.home-project-link {
+  color:var(--journal-lavender-dark)!important;
+}
+.home-project-icon {
+  background:var(--journal-blue)!important;
+  border-color:var(--journal-blue-dark)!important;
+}
+.home-project-icon svg {stroke:var(--journal-blue-dark)!important}
+.site-footer {
+  border-top:1px solid var(--journal-line)!important;
+  box-shadow:none!important;
+}
+.site-footer::before,.site-footer::after,
+body::before,body::after,
+main::before,main::after,
+.hero::before,.hero::after,
+.visual-interlude::before,.visual-interlude::after,
+.site-header::before,.site-header::after,
+.project-card::before,.project-card::after,
+.site-footer .metal-rose-mark,.site-footer .metal-rose-sigil,
+.metal-rose-mark,.metal-rose-sigil,
+.gothic-mandala,.gothic-mist,
+.vinyl-record,.vinyl-label,
+.code-rain,.code-rain canvas,.matrix-rain,
+.floating-code,.floating-orb,.decorative-circle,
+.background-orb,.background-circle,.ornament,
+.orbit-decoration,.ambient-decoration {
+  display:none!important;
+  content:none!important;
+  background-image:none!important;
+  animation:none!important;
+  box-shadow:none!important;
+}
