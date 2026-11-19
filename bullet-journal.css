@@ -393,3 +393,71 @@ code[class*="language-"] {
 @media(prefers-reduced-motion:reduce) {
   .hero-index,.text-link,.home-project-card,.project-card,.footer-nav a {transition:none!important}
 }
+
+
+/* FINAL JOURNAL PALETTE FIX — mobile navigation, footer and text contrast. */
+:root {
+  --journal-muted:#4F4B56;
+}
+p, li, small, .section-lead, .hero-intro, .portrait-caption,
+.project-card p, .work-category-card p, .work-browse-note p,
+.contact-support p, .project-note, .sample-explanation,
+.site-footer, .site-footer p, .copyright-bar, .copyright-bar p {
+  color:#4F4B56!important;
+}
+.site-footer {
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+  justify-content:center!important;
+  gap:14px!important;
+  padding:26px clamp(20px,6vw,72px)!important;
+  color:var(--journal-ink)!important;
+  background:var(--journal-card)!important;
+  border-top:2px solid var(--journal-line)!important;
+}
+.site-footer > .wordmark,
+.site-footer > .site-wordmark,
+.site-footer .metal-rose-mark,
+.site-footer .metal-rose-sigil {
+  display:none!important;
+}
+.footer-nav a {
+  color:var(--journal-blue-dark)!important;
+  background:var(--journal-paper)!important;
+  border-color:var(--journal-line)!important;
+  box-shadow:1px 2px 0 rgba(55,52,63,.08)!important;
+}
+.footer-nav a:hover,.footer-nav a:focus-visible {
+  color:var(--journal-pink-dark)!important;
+  background:#F5EDF2!important;
+}
+.site-header nav#primary-navigation {
+  background:var(--journal-card)!important;
+  border:1px solid var(--journal-lavender)!important;
+  box-shadow:3px 4px 0 rgba(55,52,63,.12),0 8px 18px rgba(55,52,63,.08)!important;
+}
+.site-header nav#primary-navigation a {
+  color:var(--journal-ink)!important;
+  background:transparent!important;
+  border-bottom:1px solid var(--journal-line)!important;
+}
+.site-header nav#primary-navigation a:hover,
+.site-header nav#primary-navigation a:focus-visible,
+.site-header nav#primary-navigation a[aria-current="page"] {
+  color:var(--journal-blue-dark)!important;
+  background:#EDF3F6!important;
+}
+.menu-toggle {
+  color:var(--journal-ink)!important;
+  background:var(--journal-card)!important;
+  border:1px solid var(--journal-lavender-dark)!important;
+  box-shadow:2px 2px 0 rgba(55,52,63,.12)!important;
+}
+.menu-toggle span {background:var(--journal-ink)!important}
+.copyright-bar {
+  color:#4F4B56!important;
+  background:var(--journal-paper)!important;
+  border-top:1px solid var(--journal-line)!important;
+}
+.copyright-bar .footer-rights {color:#4F4B56!important}
