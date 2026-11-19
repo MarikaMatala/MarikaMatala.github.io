@@ -696,3 +696,46 @@ button.button, a.button {
   outline:3px solid #695B80!important;
   outline-offset:4px!important;
 }
+
+
+/* Portfolio 2026 sticker: match the bullet journal palette and keep the link obvious. */
+.hero-index {
+  color:var(--journal-ink)!important;
+  background:var(--journal-lavender)!important;
+  border:1px solid var(--journal-lavender-dark)!important;
+  border-radius:7px 12px 6px 10px!important;
+  clip-path:none!important;
+  box-shadow:3px 4px 0 rgba(55,52,63,.16),0 7px 14px rgba(55,52,63,.08)!important;
+  text-shadow:none!important;
+}
+.hero-index::before,
+.hero-index::after {
+  content:none!important;
+  display:none!important;
+}
+.hero-index .portfolio-word,
+.hero-index .portfolio-year,
+.hero-index .portfolio-action {
+  color:var(--journal-ink)!important;
+  text-shadow:none!important;
+}
+.hero-index .portfolio-word {font-family:Georgia,serif!important}
+.hero-index .portfolio-year {color:var(--journal-blue-dark)!important}
+.hero-index .portfolio-action {
+  display:block;
+  margin-top:7px;
+  padding-top:6px;
+  border-top:1px dashed var(--journal-lavender-dark);
+  font:700 .68rem/1.35 var(--ed-body,Arial,sans-serif);
+  letter-spacing:0;
+}
+.hero-index:hover {
+  color:var(--journal-ink)!important;
+  background:#D8CFE8!important;
+  filter:none!important;
+  transform:translateY(-3px) rotate(2deg)!important;
+}
+.hero-index:focus-visible {
+  outline:3px solid var(--journal-blue-dark)!important;
+  outline-offset:5px!important;
+}
