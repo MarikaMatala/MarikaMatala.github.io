@@ -486,3 +486,36 @@ a:not(.gothic-button):not(.home-work-cta):not(.site-wordmark) {
   border-color:#8FAFC2!important;
 }
 .home-project-icon svg {stroke:#344F63!important}
+
+
+/* FINAL PALETTE CLEANUP — legacy components use the bullet journal palette. */
+:root{--journal-green:#466D60;--journal-green-dark:#344F43;--journal-green-soft:#E8EEE8}
+body,main,section,article,aside,footer,header{color:var(--journal-ink)}
+a{color:var(--journal-blue-dark)}
+a:hover,a:focus-visible{color:var(--journal-pink-dark)}
+.notice,.info-ribbon{color:var(--journal-ink)!important;background:#F0EAF8!important;border-color:var(--journal-lavender-dark)!important}
+.hero,.about-section,.contact-section,.work-section,.contact-page,.page-section{color:var(--journal-ink)!important;background-color:var(--journal-paper)!important}
+.hero-intro,.about-section p:not(.eyebrow),.contact-section>p:not(.eyebrow),.section-lead,.project-card p,.privacy-note,.contact-page-intro,.contact-method p,.contact-support p,.work-category-card p{color:var(--journal-muted)!important}
+h1,h2,h3,.eyebrow,.project-meta,.home-project-type,.home-project-card strong,.home-project-description,.home-project-link,.work-category-symbol{color:var(--journal-ink)!important}
+h1 em,h2 em,h3 em{color:var(--journal-lavender-dark)!important}
+.project-card,.home-project-card,.work-category-card,.contact-method,.skills-card,.contact-support,.project-oop,.code-sample{color:var(--journal-ink)!important;background:var(--journal-card)!important;border-color:var(--journal-line)!important;box-shadow:2px 3px 0 var(--journal-shadow)!important}
+.project-card:hover,.home-project-card:hover,.work-category-card:hover,.contact-method:hover,.skills-card:hover{border-color:var(--journal-lavender-dark)!important}
+.project-image,.image-employee,.image-calculator,.coming-art,.branding-gallery,.android-carousel,.android-carousel-stage{color:var(--journal-ink)!important;background:#F0EDF4!important;border-color:var(--journal-line)!important}
+.home-project-icon,.work-category-symbol{color:var(--journal-blue-dark)!important;background:#E5EDF2!important;border-color:var(--journal-blue)!important}
+.home-project-icon svg{stroke:var(--journal-blue-dark)!important}
+.home-project-card strong,.home-project-link,.work-category-symbol,.project-meta{color:var(--journal-blue-dark)!important}
+.gothic-button,.home-work-cta,.contact-method a,.contact-page-actions a,.error-actions a,button,.button{color:#fff!important;background:var(--journal-lavender-dark)!important;border-color:var(--journal-lavender-dark)!important}
+.gothic-button:hover,.home-work-cta:hover,.contact-method a:hover,.contact-page-actions a:hover,.error-actions a:hover,button:hover,.button:hover{color:#fff!important;background:var(--journal-pink-dark)!important;border-color:var(--journal-pink-dark)!important}
+.contact-links a{border-color:var(--journal-blue-dark)!important;color:var(--journal-blue-dark)!important}
+.contact-links a:hover{background:#E5EDF2!important;color:var(--journal-blue-dark)!important}
+.site-footer{color:var(--journal-ink)!important;background:#EAE4F1!important;border-color:#D1C5E0!important}
+.site-footer *, .copyright-bar,.copyright-bar *{color:var(--journal-muted)!important}
+.skip-link{color:#fff!important;background:var(--journal-lavender-dark)!important}
+.interaction-hint{color:var(--journal-ink)!important;background:var(--journal-green-soft)!important;border-color:var(--journal-green)!important}
+.interaction-hint:before{color:var(--journal-green-dark)!important}
+.oop-grade{color:var(--journal-green-dark)!important;border-color:var(--journal-green)!important}
+.code-sample pre{color:var(--journal-ink)!important;background:#F0EDF4!important;border-color:var(--journal-line)!important}
+.sample-source,.oop-note,.carousel-hint{color:var(--journal-green-dark)!important}
+.token.inserted,.token.string,.token.attr-value{color:var(--journal-green-dark)!important}
+.token.deleted{color:var(--journal-pink-dark)!important}
+::selection{color:var(--journal-ink)!important;background:#E7DDF4!important}
