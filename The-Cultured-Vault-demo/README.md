@@ -71,6 +71,6 @@ For this project, the MIT licence applies only to original project-authored appl
 
 The presence of a title or creator name in the catalogue is not a claim of ownership, endorsement or permission to reproduce the underlying work. Review [sources.html](sources.html) before reusing or contributing material.
 
-### Asset provenance
+### Visual asset provenance
 
-The 180 × 180 PNG touch icon is referenced by the web app manifest but is not covered by the MIT code licence. Its original source and export provenance should be verified before reuse or redistribution. The alternate `apple-touch-icon.svg` file is not referenced by the page or manifest and is not part of the service-worker cache.
+The 180 × 180 PNG touch icon with undocumented source/export provenance has been removed from the demo and is no longer referenced. The remaining SVG icons are separate visual assets and are not covered by the MIT code licence. Check their ownership and permission separately before reusing or redistributing them.
