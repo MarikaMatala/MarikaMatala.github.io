@@ -8,11 +8,11 @@ Portfolio on tarkoituksella kevyt staattinen HTML-, CSS- ja JavaScript-sivusto. 
 
 Sivustossa on jo käytössä:
 
-- Google Fonts: Lora otsikoihin ja Nunito Sans leipätekstiin.
+- Google Fonts: nykyisissä sivupohjissa käytetään muun muassa Fraunces-, IBM Plex Mono- ja Source Sans 3 -fontteja. Ne ovat SIL Open Font License 1.1 -lisensoituja avoimia fontteja; sivusto lataa ne Google Fonts -palvelusta eikä fonttitiedostoja ole kopioitu tähän repositorioon.
 - `gothic-effects.css`: goottilainen mandala, sumumaiset taustavärit, infonauhan hohde, hover-siirtymät ja koristeelliset yksityiskohdat.
 - `style.css`: sivuston varsinainen responsiivinen asettelu ja komponenttityylit.
 - `script.js`: kielenvaihto, työnäytteiden vuorovaikutukset ja hillityt scroll-reveal-animaatiot.
-- PrismJS 1.30.0: C#-koodiesimerkkien syntaksikorostus työnäytteet-sivulla.
+- PrismJS 1.30.0: C#-koodiesimerkkien syntaksikorostus työnäytteet-sivulla. Kirjasto ladataan jsDelivr-CDN:stä; sen lisenssi on MIT.
 
 Animaatioissa huomioidaan `prefers-reduced-motion`-asetus, jonka avulla käyttäjä voi vähentää tai poistaa liikkeen käyttöjärjestelmän asetuksista.
 
@@ -79,3 +79,12 @@ Tämä on pieni, riippuvuuksista vapaa esimerkki. Lisää se vain koristeellisee
 ## English summary
 
 The current portfolio is a lightweight static HTML/CSS/JavaScript website. It uses Lora and Nunito Sans typography and an autumn-inspired cottagecore colour palette. Tailwind CSS v4, Radix/shadcn UI and `lucide-react` are documented as options for a possible future React/Vite version, not as dependencies already installed on the live site. Existing CSS effects are dependency-free and respect reduced-motion preferences. Add third-party images or generated audio only when the assets, intended use and permissions are clear.
+
+
+## Visual asset licensing check — 23 November 2026
+
+The current portfolio pages do not load Font Awesome, Lucide, Bootstrap Icons, Heroicons or another external icon package. The homepage contains two inline SVG project-card illustrations; these are custom project visuals rather than a linked icon-font or icon-library dependency.
+
+The portfolio's decorative SVGs (`images/metal-rose-sigil.svg` and `images/antique-paper-texture.svg`) and The Cultured Vault demo's two app-icon SVGs were generated with ChatGPT assistance for this project. They are not copied from an icon library. Their provenance is documented in the relevant image and demo source notes. OpenAI's Terms of Use assign the user OpenAI's rights, if any, in generated Output as between OpenAI and the user, to the extent permitted by applicable law; generated output may not be unique and must not infringe third-party rights.
+
+The fonts and PrismJS are external runtime dependencies, not copied image/icon assets. Check each upstream licence again before bundling or redistributing the actual font or library files.
