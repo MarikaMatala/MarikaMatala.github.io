@@ -1,6 +1,6 @@
 # Portfolio | Marika Matalamäki
 
-<!-- // Last reviewed: 2026-11-13 (Europe/Helsinki). -->
+<!-- // Last reviewed: 2026-11-23 (Europe/Helsinki). -->
 
 **Portfolio website:** https://marikamatala.github.io/
 
@@ -45,7 +45,7 @@ Kehitän portfoliotani jatkuvasti ja lisään verkkosivulle valikoituja projekte
 - `yhteystiedot.html` — contact details and professional links
 - `tietosuoja-ja-tekijanoikeudet.html` — bilingual privacy, analytics, copyright and permitted-use information
 - `404.html` — custom GitHub Pages not-found page
-- `The-Cultured-Vault-demo.html`, `The-Cultured-Vault-demo.css` and `The-Cultured-Vault-demo.js` — retained standalone browser-demo files for The Cultured Vault
+- `The-Cultured-Vault-demo/` — current standalone browser demo, including its HTML, CSS, JavaScript, manifest, service worker, icons and project documentation
 - `remote-job-fit-demo.html`, `remote-job-fit-demo.css`, `remote-job-fit-demo.js` and `remote-job-fit-vocabulary.js` — retained Remote Job Fit prototype and status-page source files; no hosted interactive browser demo is currently available
 - `remote-job-fit/` — optional configuration and backend reference files for the separate Remote Job Fit project
 - `README.md` and `TODO.md` — repository overview and internal development checklist; TODO is not displayed on the published website
