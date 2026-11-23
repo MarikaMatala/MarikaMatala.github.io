@@ -6,7 +6,7 @@
    Caches this demo's app shell and same-scope GET requests only.
    The worker scope is limited to the The-Cultured-Vault-demo directory.
    Increment CACHE_NAME when the cached asset list or cache strategy changes. */
-const CACHE_NAME = "cultured-vault-pwa-v27";
+const CACHE_NAME = "cultured-vault-pwa-v28";
 const SCOPE_URL = new URL(self.registration.scope);
 
 // Keep this list in sync with the files referenced by index.html and the manifest.
@@ -19,8 +19,7 @@ const APP_SHELL = [
   "./app.js?v=2",
   "./manifest.webmanifest",
   "./icons/vault-icon.svg",
-  "./icons/vault-maskable.svg",
-  "./icons/apple-touch-icon.png"
+  "./icons/vault-maskable.svg"
 ];
 
 // FUNCTION SECTION START: isInWorkerScope.
