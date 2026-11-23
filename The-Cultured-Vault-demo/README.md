@@ -73,4 +73,6 @@ The presence of a title or creator name in the catalogue is not a claim of owner
 
 ### Visual asset provenance
 
-The 180 × 180 PNG touch icon with undocumented source/export provenance has been removed from the demo and is no longer referenced. The remaining SVG icons are separate visual assets and are not covered by the MIT code licence. Check their ownership and permission separately before reusing or redistributing them.
+The app icons `icons/vault-icon.svg` and `icons/vault-maskable.svg` are custom SVG artwork generated with ChatGPT assistance for this project, not copied from an icon library. OpenAI's Terms of Use state that, as between OpenAI and the user and to the extent permitted by applicable law, the user owns generated Output. Output may not be unique, and the user remains responsible for checking that its use does not infringe third-party rights. These SVG files are visual assets and are not covered by this repository's MIT code licence.
+
+The undocumented 180 × 180 PNG touch icon and an unused SVG touch icon were removed. The manifest and page now reference only the two documented custom SVG icons.
